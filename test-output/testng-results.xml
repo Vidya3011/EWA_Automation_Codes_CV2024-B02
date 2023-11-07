@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
+  <reporter-output>
+    <line>
+      <![CDATA[Login without msg]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="220457" started-at="2023-11-06T13:11:29Z" finished-at="2023-11-06T13:15:10Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="220457" started-at="2023-11-06T13:11:29Z" finished-at="2023-11-06T13:15:10Z">
+      <class name="Script.SearchSelectDocumentLocation">
+        <test-method status="PASS" signature="ladBrowser()[pri:0, instance:Script.SearchSelectDocumentLocation@1e98b1c]" name="ladBrowser" is-config="true" duration-ms="22002" started-at="2023-11-06T13:11:29Z" finished-at="2023-11-06T13:11:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ladBrowser -->
+        <test-method status="PASS" signature="CVSLogin()[pri:1, instance:Script.SearchSelectDocumentLocation@1e98b1c]" name="CVSLogin" duration-ms="14581" started-at="2023-11-06T13:11:51Z" finished-at="2023-11-06T13:12:06Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Login without msg]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CVSLogin -->
+        <test-method status="FAIL" signature="ExactSearchInIndexWithLoadMoreCount()[pri:3, instance:Script.SearchSelectDocumentLocation@1e98b1c]" name="ExactSearchInIndexWithLoadMoreCount" duration-ms="36352" started-at="2023-11-06T13:12:06Z" finished-at="2023-11-06T13:12:42Z">
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+            <message>
+              <![CDATA[unexpected alert open: {Alert text : No more data found !}
+  (Session info: chrome=119.0.6045.105): No more data found !
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56756}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3329a0f7f79439a488b35ddf6eee86b1
+*** Element info: {Using=xpath, value=(//td[@class=' details-control'])[66]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : No more data found !}
+  (Session info: chrome=119.0.6045.105): No more data found !
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.105, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56756}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3329a0f7f79439a488b35ddf6eee86b1
+*** Element info: {Using=xpath, value=(//td[@class=' details-control'])[66]}
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy9.getWrappedElement(Unknown Source)
+at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+at java.util.Spliterators$ArraySpliterator.forEachRemaining(Unknown Source)
+at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+at java.util.stream.ReferencePipeline.collect(Unknown Source)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+at Generic.BaseClass.scrollDown(BaseClass.java:397)
+at Script.SearchSelectDocumentLocation.ExactSearchInIndexWithLoadMoreCount(SearchSelectDocumentLocation.java:82)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExactSearchInIndexWithLoadMoreCount -->
+        <test-method status="PASS" signature="TextSearchWithSQLData()[pri:16, instance:Script.SearchSelectDocumentLocation@1e98b1c]" name="TextSearchWithSQLData" duration-ms="50760" started-at="2023-11-06T13:12:42Z" finished-at="2023-11-06T13:13:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TextSearchWithSQLData -->
+        <test-method status="PASS" signature="TextSearchWithAllOftheWords()[pri:17, instance:Script.SearchSelectDocumentLocation@1e98b1c]" name="TextSearchWithAllOftheWords" duration-ms="50196" started-at="2023-11-06T13:13:33Z" finished-at="2023-11-06T13:14:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TextSearchWithAllOftheWords -->
+        <test-method status="PASS" signature="TextSearchWithAtpartOftheWord()[pri:18, instance:Script.SearchSelectDocumentLocation@1e98b1c]" name="TextSearchWithAtpartOftheWord" duration-ms="46544" started-at="2023-11-06T13:14:23Z" finished-at="2023-11-06T13:15:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TextSearchWithAtpartOftheWord -->
+      </class> <!-- Script.SearchSelectDocumentLocation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
