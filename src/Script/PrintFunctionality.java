@@ -46,7 +46,7 @@ public class PrintFunctionality extends Generic.BaseClass {
 	 
 	@BeforeClass
 	public void ladBrowser() {
-		//loadBrowser("Chrome");
+	//	loadBrowser("Chrome");
 		log.info("Chrome Browser started Successfully...");
 		WebDriverManager.chromedriver().setup();
 		 ChromeOptions options = new ChromeOptions();
@@ -114,7 +114,7 @@ public class PrintFunctionality extends Generic.BaseClass {
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.alertIsPresent());
-		    acceptAlert();  
+		acceptAlert();  
 		Thread.sleep(3000);
 		jsclick(pojo.getCheckBox());
 		jsclick(pojo.getSendToIcon());

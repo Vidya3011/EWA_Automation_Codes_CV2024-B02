@@ -353,7 +353,7 @@ public class SearchFunction extends BaseClass {
 	//forSeconndDochtml[1]/body[1]/div[56]/div[59]/div[4]/div[2]/div[4]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[2]/td[3]
 	
 	
-	@FindBy(xpath = ("/html[1]/body[1]/div[56]/div[59]/div[4]/div[2]/div[4]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[3]"))
+	@FindBy(xpath = ("//*[@id=\"searchTableRow_80896\"]/td[4]"))
 	private WebElement OpenDocumentForTodoSearch;
 	
 	@FindBy(xpath = ("(//a[normalize-space()='Update'])[1]"))
@@ -502,7 +502,7 @@ public class SearchFunction extends BaseClass {
 		jsclick(MetadataSearch);
 		Thread.sleep(3000);
 		jsclick(todo.getAcceptButton());
-		todo.getWorkflowComments().sendKeys(TodoListExcel(4, 2));
+		todo.getWorkflowComments().sendKeys(TodoListExcel(7, 0));
 		Thread.sleep(3000);
 		jsclick(todo.getWorkflowCommentsOKButton());
 		Thread.sleep(8000);
@@ -524,7 +524,7 @@ public void SearchTodolistEndByUSerRAm() throws Exception {
 		Thread.sleep(6000);
 		jsclick(todo.getEndWfButton());
 		Thread.sleep(2000);
-		todo.getWorkflowComments().sendKeys(TodoListExcel(6, 1));
+		todo.getWorkflowComments().sendKeys(TodoListExcel(7, 1));
 		Thread.sleep(3000);
 		jsclick(todo.getWorkflowCommentsOKButton());
 		Thread.sleep(8000);

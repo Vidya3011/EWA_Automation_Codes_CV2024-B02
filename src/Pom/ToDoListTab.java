@@ -102,7 +102,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"79760\"]/ins"))
 	private WebElement dynamicWfDrawer;
 	
-	@FindBy(xpath = ("//*[@id=\"79761\"]/a"))
+	@FindBy(xpath = ("//*[@id=\"81133\"]/a"))
 	private WebElement DynamicWfAutoFolder;
 	
 	@FindBy(xpath = ("(//span[@id='viewSendToWrkflw'])[1]"))
@@ -118,15 +118,15 @@ public class ToDoListTab extends BaseClass {
 	private WebElement sendwfsuccessdialogOKBTN;
 
 	                 //html/body/div[56]/div[59]/div[4]/div[2]/div[3]/div/div[2]/div[2]/table/tbody/tr[1]/td[2]
-	@FindBy(xpath = ("/html/body/div[56]/div[59]/div[4]/div[2]/div[3]/div/div/div[2]/table/tbody/tr[1]/td[2]"))
+	@FindBy(xpath = ("//*[@id=\"todoListTable\"]/tbody/tr[1]/td[2]"))
 	private WebElement Open1stDocument;		
 			
 	                  
-	@FindBy(xpath = ("/html/body/div[56]/div[59]/div[4]/div[2]/div[1]/div/div[2]/div[2]/table/tbody/tr[4]/td[3]"))
+	@FindBy(xpath = ("/html/body/div[57]/div[59]/div[4]/div[2]/div[1]/div/div[2]/div[2]/table/tbody/tr[5]/td[3]"))
 	private WebElement OpenDocument;
 	
 	
-	@FindBy(xpath = ("(//td[normalize-space()='2023-10-26 20:07:21'])[1]"))
+	@FindBy(xpath = ("/html/body/div[56]/div[59]/div[4]/div[2]/div[1]/div/div[2]/div[2]/table/tbody/tr[1]/td[3]"))
 	private WebElement OpenDocumentDWS;
 	
 	
@@ -169,7 +169,7 @@ public class ToDoListTab extends BaseClass {
 			
 			
 	public void AnnotationPageSendWF() throws Exception {
-	VisiblityOf(TestCabinet);
+	    VisiblityOf(TestCabinet);
 		movingDoublecli(TestCabinet,TestCabinet);
 		Thread.sleep(2000);
 		jsclick(dynamicWfDrawer);
@@ -423,9 +423,8 @@ public void SentItemsWithSummary() throws InterruptedException {
 	 public void LogVidyaTaskUser1() throws Exception {
 		     LogoutPage();
 		      Thread.sleep(3000);
-		  
-				WebElement Username=driver.findElement(By.xpath("//input[@id='userName']"));
-				VisiblityOf(Username);
+		      WebElement Username=driver.findElement(By.xpath("//input[@id='userName']"));
+				Thread.sleep(3000);
 				Username.sendKeys(TodoListExcel(1, 1));
 				driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 1));
 				WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
@@ -497,7 +496,7 @@ public void SentItemsWithSummary() throws InterruptedException {
 	 
 	
 	 public void refrshLogDipakTaskUser() throws Exception {
-		 LogoutPage();
+		       LogoutPage();
 		      Thread.sleep(3000);
 				driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 3));
 				driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
@@ -550,7 +549,9 @@ public void SentItemsWithSummary() throws InterruptedException {
 	 public void RamTaskUser() throws Exception {
       	LogoutPage();
 	      Thread.sleep(3000);
-			driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(5, 0));
+			WebElement UserNam = driver.findElement(By.xpath("//input[@id='userName']"));
+			  Thread.sleep(3000);
+			  UserNam.sendKeys(TodoListExcel(5, 0));
 			driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 2));
 			WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 			a1 = new Actions(driver);
@@ -761,7 +762,7 @@ public void SentItemsWithSummary() throws InterruptedException {
 	@FindBy(xpath = ("//a[@id='endwf']"))
 	private WebElement EndWfButton;
 	
-	@FindBy(xpath = ("//*[@id=\"summary1\"]"))
+	@FindBy(xpath = ("/html/body/div[57]/div[59]/div[4]/div[2]/div[4]/div/div[2]/div[2]/table/tbody/tr[2]/td/div/div[1]/div/div/div/div[2]/a"))
 	private WebElement SummaryButton;
 	
 	@FindBy(xpath = ("(//a[normalize-space()='Comment'])[1]"))

@@ -34,7 +34,7 @@ public class TodoListAnnotationAddedPageTestedByWfUsers_AndAllUsersAcceptDocScri
 	@Test(priority = 2)
 	public void SendAnnotationPageToWf() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
-		//todo.AnnotationPageSendWF();
+		todo.AnnotationPageSendWF();
 		log.info("The Added annotation page document send to dynamic wf successfull...");
 		todo.LogVidyaTaskUser1();
 		log.info("Logged as USer 2 Vidya");
@@ -44,11 +44,21 @@ public class TodoListAnnotationAddedPageTestedByWfUsers_AndAllUsersAcceptDocScri
 	    log.info("Logged as Third user Dipak");
 	    todo.VerifyingAnnotationPageByThirdUSerDipak();
 	    log.info("The third user has check the document and accept the document and the user add one more user successfull");
-	    todo.RamTaskUser();
+	}
+	
+	@Test(priority = 3)
+	public void UpdateAndAddOneMoreUSer() throws Exception{
+		ToDoListTab todo = new ToDoListTab();
+		todo.RamTaskUser();
 	    log.info("Ram usser has added successfull");
 	    todo.VerifyingAnnotationPageByFourthUSerRAm();
 	    log.info("Ram user verify the page and accept the document successfull.");
 	    LogoutPage();
+	}
+	@Test(priority = 4)
+	public void SendItemsWithSummary() throws Exception{
+		ToDoListTab todo = new ToDoListTab();
+	   
 	    log.info("Wf Ended successfull.And The creator got mail successfull");
 	    loginCVS();
 	    log.info("when opening this wf ended document it shows document locked by EWS admin... ");

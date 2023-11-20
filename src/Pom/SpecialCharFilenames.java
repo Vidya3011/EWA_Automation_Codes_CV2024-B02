@@ -87,7 +87,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Enter_Report_Name_Text;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/span[1]")
+	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
 	private WebElement Move_To_PlusIcon;
 
 	public WebElement getMove_To_PlusIcon() {

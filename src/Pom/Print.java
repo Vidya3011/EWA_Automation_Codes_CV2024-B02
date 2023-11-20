@@ -193,6 +193,17 @@ public class Print extends Generic.BaseClass {
 		return Expunlockredbox;
 	}
     
+    
+  
+    
+    
+   
+    
+    
+    
+    
+    
+    
     public WebElement getExpPDFpaswrdbox() {
 		return ExpPDFpaswrdbox;
 	}
@@ -222,9 +233,7 @@ public class Print extends Generic.BaseClass {
 	public WebElement getForemaliPasswrd() {
 		return ForemailPasswrd;
 	}
-	
-	
-	
+
 	
 	public WebElement getForRetainEmail() {
 		return ForRetainEmail;
@@ -413,5 +422,112 @@ public class Print extends Generic.BaseClass {
 		return CertifiedPageCheckbox;
 	}
 	
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"recepientEmailId\"]"))
+	private WebElement secureLinkReceipientMail;
 
+	public WebElement getsecureLinkReceipientMail() {
+		return secureLinkReceipientMail;
+	}
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"confirmEmailIdSecure\"]"))
+	private WebElement secureLinkConfirmMail;
+
+	public WebElement getsecureLinkConfirmtMail() {
+		return secureLinkConfirmMail;
+	}
+	
+
+	
+	@FindBy(xpath = ("//*[@id=\"modifyPermissionCheckbox\"]"))
+	private WebElement secureLinkModifyCheckBox;
+
+	public WebElement getsecureLinkModifyCheckBox() {
+		return secureLinkModifyCheckBox;
+	}
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"navigatorTreeOk32\"]"))
+	private WebElement secureLinkOKBTN;
+
+	public WebElement getsecureLinkOKBTN() {
+		return secureLinkOKBTN;
+	}
+	
+	
+	
+	@FindBy(id = ("recipientMailIdSecond"))
+	private WebElement secLinkReceipientMailAgain;
+
+	public WebElement getsecLinkReceipientMailAgain() {
+		return secLinkReceipientMailAgain;
+	}
+	
+	
+	@FindBy(xpath = ("//*[@id=\"confirmEmailIdSecureSecond\"]"))
+	private WebElement secLinkConfirmMailAgain;
+
+	public WebElement getsecLinkConfirmtMailAgain() {
+		return secLinkConfirmMailAgain;
+	}
+	
+	@FindBy(xpath = ("//*[@id=\"userName\"]"))
+	private WebElement secLinkUserName;
+
+	public WebElement getsecLinkUserName() {
+		return secLinkUserName;
+	}
+	
+	
+	@FindBy(xpath = ("//*[@id=\"password\"]"))
+	private WebElement secLinkUserPwrd;
+
+	public WebElement getsecLinkUserPwrd() {
+		return secLinkUserPwrd;
+	}
+	@FindBy(xpath = ("//*[@id=\"submitid\"]"))
+	private WebElement secLinkLogin;
+
+	public WebElement getsecLinkLogin() {
+		return secLinkLogin;
+	}
+	
+	@FindBy(xpath = ("//*[@id=\"navigatorTreeOk33\"]"))
+	private WebElement secureLinkOKBTNsecond;
+
+	public WebElement getsecureLinkOKBTNsecond() {
+		return secureLinkOKBTNsecond;
+	}
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"documentSendToLi\"]"))
+	private WebElement secureLinkFromDocTab;
+
+	public WebElement getsecureLinkFromDocTab() {
+		return secureLinkFromDocTab;
+	}
+	
+	//*[@id="sendToSecureMail"]
+	@FindBy(xpath = ("//*[@id=\"sendToSecureMail\"]"))
+	private WebElement sendToDocTab;
+
+	public WebElement getsendToDocTab() {
+		return sendToDocTab;
+	}
+
+	@FindBy(xpath = ("//*[@id=\"sendToSecureMailView\"]"))
+	private WebElement secureLink;
+
+	public WebElement getsecureLink() {
+		return secureLink;
+	}
+
+	
+	
 }

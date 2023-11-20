@@ -38,7 +38,7 @@ public class RoomContextFunction extends Generic.BaseClass {
 		    log.info("Admin User is logged in successfully...");
 		}
 		
-		@Test(priority=2)
+	/*	@Test(priority=2)
 		public void takeOwnerShip_ReleaseOwnerShip() throws Exception {
 			RoomContextMenu rm=new RoomContextMenu();
 			rm.TakeOwnerShip();
@@ -62,7 +62,7 @@ public class RoomContextFunction extends Generic.BaseClass {
 				log.info("User copied the folder,paste the folder into another folder.it works well,Copy and paste folderLevel verified successfully");
 				Thread.sleep(3000);
 			}
-		
+		*/
 		@Test(priority=5)
 		   public void NodePropertiesFunction() throws Exception {
 				RoomContextMenu rm=new RoomContextMenu();

@@ -66,7 +66,7 @@ public class TodoListFromSearchTab  extends Generic.BaseClass {
 	   todo.RamTaskUser();
 		  log.info("Ram user logged in sucessfull");
 	  sr.SearchTodolistEndByUSerRAm();
-	
+	 jsclick(Refresh_Button(driver));
 	
    }
 	   

@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Script.SearchSelectDocumentLocation">
+      <class name="Script.SecureLink">
         <methods>
-          <include name="ExactSearchInIndexWithLoadMoreCount"/>
           <include name="ladBrowser"/>
+          <include name="SecureLinkFromDocumentList"/>
         </methods>
-      </class> <!-- Script.SearchSelectDocumentLocation -->
+      </class> <!-- Script.SecureLink -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

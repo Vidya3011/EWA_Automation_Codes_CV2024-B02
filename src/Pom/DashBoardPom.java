@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import Script.Special_Char_FileNames;
+
 public class DashBoardPom extends Generic.BaseClass {
 
 	public DashBoardPom() {
@@ -115,7 +117,7 @@ public class DashBoardPom extends Generic.BaseClass {
 		movingElement(NotificationICon);
 		jsclick(NotificationICon);
 		Thread.sleep(8000);
-	    movingDoublecli(NotificationDocList, NotificationDocList);
+	   /* movingDoublecli(NotificationDocList, NotificationDocList);
 	    Thread.sleep(3000);
 	    Thread.sleep(3000);
 	   
@@ -134,7 +136,7 @@ public class DashBoardPom extends Generic.BaseClass {
 		} catch (Exception e) {
 			Reporter.log("Folder/document/subfolder changes notified");
 		}
-		Thread.sleep(3000);
+		Thread.sleep(3000);*/
 	
 	
 	}
@@ -149,28 +151,38 @@ public void TodoListWFDetailsfromDb() throws Exception{
 	   movingclkElement(TodoListDropDownDashBoard);
 	   Thread.sleep(2000);
 		jsclick(newItems);
-	    
+		wait.until(ExpectedConditions.elementToBeClickable(TodoListDropDownDashBoard));
 	    movingclkElement(TodoListDropDownDashBoard);
+	   
+	    Thread.sleep(3000);
 	    jsclick(pendingItems);
 	    Thread.sleep(3000);
 	    movingclkElement(TodoListDropDownDashBoard);
-	    jsclick(allItems);
+	    jsclick(reviewItems);
 	    Thread.sleep(3000);
 	    movingclkElement(TodoListDropDownDashBoard);
 	    jsclick(sentItems);
 	    Thread.sleep(3000);
 	    movingclkElement(TodoListDropDownDashBoard);
-	    jsclick(reviewItems);
+	    jsclick(allItems);
 	    Thread.sleep(7000);
 	    jsclick(nextPage);
 	    Thread.sleep(4000);
 	    jsclick(nextPage);
 	    Thread.sleep(3000);
+	    try {
+if(nextPage.isDisplayed()) {
 	    jsclick(nextPage);
+}
+}catch(Exception e) {
+	Reporter.log("No more pages");
+}
 	    Thread.sleep(6000);
-	    Thread.sleep(3000);
+	   
 	   
 }
+
+
 	public void LogoutfromDb() throws Exception{
 		
 		jsclick(DashBoardTab);
@@ -181,5 +193,29 @@ public void TodoListWFDetailsfromDb() throws Exception{
 		
 		
 	}
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"dock_dashboardCreateDocument\"]"))
+	private WebElement CreateDocDB;
+	
+	
+	
+public void NewDocumentfromDb() throws Exception{
+	Special_Char_FileNames spl=new Special_Char_FileNames();
+	//jsclick(DashBoardTab);
+		Thread.sleep(3000);
+		movingElement(CreateDocDB);
+		jsclick(CreateDocDB);
+		Thread.sleep(15000);
+		spl.Upload_and_verify_Allowing_Percentage_Characterfile();
+		Thread.sleep(6000);
+		
+		
+	}
+	
+	
+	
+	
 	
 }

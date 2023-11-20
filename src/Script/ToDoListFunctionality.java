@@ -81,6 +81,7 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 		Thread.sleep(3000);
 		jsclick(todo.getNewItems());
 		Thread.sleep(5000);
+		ElementToBeClickable(todo.getMetadata());
 		movingclkElement(todo.getMetadata());
 		Thread.sleep(3000);
 		todo.getAcceptButton().click();
@@ -171,8 +172,8 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	
 	
 		
-		
-	/*@Test(priority = 10)
+	/*	
+	@Test(priority = 10)
 	public void DynamicWf() throws Exception {
 
 		ToDoListTab todo = new ToDoListTab();
@@ -284,12 +285,20 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	}
 	
 	
-   @Test(priority = 18)
+	
+	
+	
+	
+	
+	
+	
+  @Test(priority = 18)
 	public void SummaryStatuswithReviewFunction() throws Exception {
 		
 		 ToDoListTab todo=new ToDoListTab();
-		 jsclick(todo.getTodolistTab());
+		 movingElement(todo.getTodolistTab());
 			Thread.sleep(3000);
+			VisiblityOf(todo.getRewiewITems());
 			jsclick(todo.getRewiewITems());
 			
 			WebDriverWait wait =new WebDriverWait(driver,30);
@@ -310,8 +319,7 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	}
 	 
 	
-	 */
-	 
+	 	 
 	 
 	 
 	 

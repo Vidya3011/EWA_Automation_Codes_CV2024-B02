@@ -9,13 +9,13 @@ import org.testng.asserts.SoftAssert;
 import Pom.DashBoardPom;
 
 public class DashBoardScript  extends Generic.BaseClass {
-	public static Actions act;
-    public static SoftAssert so;
+	
     private static org.apache.logging.log4j.Logger log = LogManager.getLogger(DashBoardScript.class);
 	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser");
+		//launchLocalUrl();
 		launchUrl();
 		log.info("ContentVerseURL");
 	}
@@ -23,31 +23,44 @@ public class DashBoardScript  extends Generic.BaseClass {
 	@Test (priority=1)
 	public void Login() throws Exception {
 		loginCVS();
+		//loginLocalCVS();
 		log.info("User is Successfully logged in");
 	}
 	
-	/*@Test(priority=2)
+	@Test(priority=2)
 	public void SearchIconDashBoardFunctionality() throws Exception {
 		
 		DashBoardPom db=new DashBoardPom();
 		db.DashBoardSeachIcon();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=3)
 	public void NotifiactionIconDashBoardFunctionality() throws Exception {
 		
 		DashBoardPom db=new DashBoardPom();
 		db.NotificationIcon();
-	}*/
+	}
 	
-	@Test(priority=3)
+	@Test(priority=4)
 	public void TodoListWFDetailsDashBoardFunctionality() throws Exception {
 		
 		DashBoardPom db=new DashBoardPom();
 		db.TodoListWFDetailsfromDb();
 	}
 	
+	@Test(priority=5)
+	public void CreateNewDocumentFromDB() throws Exception {
+		
+		DashBoardPom db=new DashBoardPom();
+		db.NewDocumentfromDb();
+	}
 	
+	@Test(priority=6)
+	public void logoutFromDB() throws Exception {
+		
+		DashBoardPom db=new DashBoardPom();
+		db.LogoutfromDb();
+	}
 	
 
 	

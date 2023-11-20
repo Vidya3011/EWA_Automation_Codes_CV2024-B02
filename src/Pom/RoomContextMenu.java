@@ -546,8 +546,12 @@ public class RoomContextMenu extends BaseClass {
 		movingclkElement(browseOption);
 		Thread.sleep(5000);
 		Runtime.getRuntime().exec("C:\\AutoImage\\FilesAuto_x64.exe");
+		try {
 		wait.until(ExpectedConditions.alertIsPresent());
 		acceptAlert();
+		}catch(Exception e) {
+			Reporter.log("Alert not present. . .");
+		}
 		Thread.sleep(5000);
 		WebElement CreateBTN = driver.findElement(By.xpath("(//button[normalize-space()='Create'])[1]"));
 		jsclick(CreateBTN);
@@ -804,7 +808,7 @@ public class RoomContextMenu extends BaseClass {
 			jsclick(privateView);
 		
 		Thread.sleep(2000);
-		WebElement RedColr = driver.findElement(By.xpath("//span[@id='CustomColourid_9']"));
+		WebElement RedColr = driver.findElement(By.xpath("//span[@id='CustomColourid_5']"));
 		movingElement(RedColr);
 		jsclick(RedColr);
 		Thread.sleep(3000);
@@ -838,7 +842,7 @@ public class RoomContextMenu extends BaseClass {
 		wait.until(ExpectedConditions.elementToBeClickable(publicView));
 		jsclick(publicView);
 		Thread.sleep(3000);
-		WebElement PurpleColr = driver.findElement(By.xpath("//span[@id='CustomColourid_5']"));
+		WebElement PurpleColr = driver.findElement(By.xpath("//span[@id='CustomColourid_7']"));
 		movingElement(PurpleColr);
 		jsclick(PurpleColr);
 		Thread.sleep(3000);

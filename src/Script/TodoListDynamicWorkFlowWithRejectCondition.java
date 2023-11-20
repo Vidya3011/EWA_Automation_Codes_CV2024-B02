@@ -125,8 +125,14 @@ public class TodoListDynamicWorkFlowWithRejectCondition extends Generic.BaseClas
 	
 	}
 	
-	
-   @Test(priority = 8)
+	@Test(priority=8)
+	 public void dynamic_WF_OriginatorRnisha() throws Exception {
+		 ToDoListTab todo=new ToDoListTab();
+		 Thread.sleep(8000);
+		 todo.refrshLogNishaTaskUser();
+		 log.info("Originator RNisha Logged in successful");
+	}
+   @Test(priority = 9)
 	public void SummaryStatuswithReviewFunction() throws Exception {
 		
 		 ToDoListTab todo=new ToDoListTab();
@@ -139,6 +145,7 @@ public class TodoListDynamicWorkFlowWithRejectCondition extends Generic.BaseClas
 		    wait.until(ExpectedConditions.visibilityOf((todo.getMetadata())));
 		    movingclkElement(todo.getMetadata());
 		    Thread.sleep(3000);
+		    VisiblityOf(todo.getSummaryButton());
 			jsclick(todo.getSummaryButton());
 			Thread.sleep(8000);
 	        jsclick(todo.getsummarycancelbtn());
@@ -148,7 +155,7 @@ public class TodoListDynamicWorkFlowWithRejectCondition extends Generic.BaseClas
 	        todo.getWorkflowComments().sendKeys(TodoListExcel(1, 4));
 			todo.getWorkflowCommentsOKButton().click();
 	        Thread.sleep(3000);
-		log.info("Task user3 Dipak has received the document.it will displayed in review items.User 2 shows the summary and give review for the wf document successful");
+		log.info("originaotor has received the document.it will displayed in review items.User 2 shows the summary and give review for the wf document successful");
 	    LogoutPage();
    }
 	 

@@ -19,7 +19,7 @@ public class My_Preferences_Redaction_View_Password extends BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Redaction_View_Password.class);
 	
-	//@BeforeClass
+	@BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -27,7 +27,7 @@ public class My_Preferences_Redaction_View_Password extends BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+@Test
 
 	public void Login_EWA() throws Exception {
 		loginCVS();

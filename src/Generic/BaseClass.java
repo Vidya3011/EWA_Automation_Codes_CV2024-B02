@@ -116,7 +116,9 @@ public class BaseClass {
 	
 	public static void loginCVS() throws Exception {
 		
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(2, 0));
+		WebElement UserName=driver.findElement(By.xpath("//input[@id='userName']"));
+		Thread.sleep(3000);
+		UserName.sendKeys(readFromExLogin(2, 0));
 		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(2, 1));
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		a1 = new Actions(driver);

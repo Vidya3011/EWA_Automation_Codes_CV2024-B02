@@ -103,6 +103,7 @@ public class AnnotationFunctionality  extends Generic.BaseClass {
 			an.PolygonAnnotation();
 			an.closeAndReopenThePage();
 			Thread.sleep(8000);
+		
 			jsclick(Refresh_Button(driver));
 			}
 		

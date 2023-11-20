@@ -40,9 +40,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 	public void Upload_and_verify_Allowing_Percentage_Characterfile() throws Exception {
 
 		SpecialCharFilenames pojo = new SpecialCharFilenames();
-		jsclick(Refresh_Button(driver));
+		//jsclick(Refresh_Button(driver));
 		Thread.sleep(4000);
-		jsclick(pojo.getNewDocuments_MenuOption());
+		//jsclick(pojo.getNewDocuments_MenuOption());
 		Thread.sleep(4000);
 		jsclick(pojo.getDestination_Folder_Textbox());
 		Thread.sleep(4000);
