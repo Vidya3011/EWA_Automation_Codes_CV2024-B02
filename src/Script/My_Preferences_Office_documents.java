@@ -19,8 +19,8 @@ import Pom.My_Preferences;
 public class My_Preferences_Office_documents extends Generic.BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Office_documents.class);
-	
-	//@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -28,10 +28,10 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -40,7 +40,8 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 	public void Verify_Browse_Office_documents_Advancedviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -49,6 +50,8 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 		pojo.getSelect_Office_document_Advancedviewing();
 		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_New_Document());
 		Thread.sleep(4000);
@@ -70,17 +73,18 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(3000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficedoc.exe");
+		Thread.sleep(6000);
 		Reporter.log("Browse document and Page is uploaded successfully", true);
 		log.info("Browse document and Page is uploaded successfully");
-		Thread.sleep(6000);
+
 	}
 
 	@Test(priority = 2)
 	public void Verify_NewWordDocuments_Office_documents_Advancedviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+		Thread.sleep(6000);
 		pojo.getMove_To_PlusIcon();
-		Thread.sleep(3000);
 		pojo.getNew_Word_Document_Option();
 		Thread.sleep(4000);
 		pojo.getEnter_Word_File_Name();
@@ -96,13 +100,12 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 
 		My_Preferences pojo = new My_Preferences();
 		pojo.getMove_To_PlusIcon();
-		Thread.sleep(3000);
 		pojo.getNew_Excel_Spreadsheet_Option();
 		Thread.sleep(4000);
 		pojo.getEnter_Excel_File_Name();
 		Thread.sleep(4000);
 		jsclick(pojo.getOpen_Excel_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		jsclick(pojo.getCreate_button());
 		jsclick(pojo.getNavigate_button());
 		Reporter.log("Advanced Viewing New Excel Document Created", true);
@@ -114,7 +117,7 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 	public void Verify_Browse_Office_documents_Defaultviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -123,6 +126,8 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 		pojo.getSelect_Office_document_Defaultviewing();
 		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_New_Document());
 		Thread.sleep(4000);
@@ -149,7 +154,6 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 		Thread.sleep(6000);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.alertIsPresent());
-
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
 		jsclick(pojo.getCreate_button());
@@ -158,9 +162,7 @@ public class My_Preferences_Office_documents extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Reporter.log("New Office Document Created successfully", true);
 		log.info("New Office Document Created successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
-	
 }
-

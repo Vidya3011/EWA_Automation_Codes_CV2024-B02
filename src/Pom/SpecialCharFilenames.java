@@ -19,10 +19,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
 public class SpecialCharFilenames extends Generic.BaseClass {
 
-
+	public static WebElement element = null;
 
 	public SpecialCharFilenames() {
 		PageFactory.initElements(driver, this);
@@ -64,6 +65,18 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Select_Folder;
 	}
 
+	
+	
+	@FindBy(xpath = "//*[@id=\"78608\"]/a")
+	private WebElement NewDrawerFolder;
+	
+	
+	public WebElement getNewDrawerFolder() {
+		return NewDrawerFolder;
+	}
+	
+	
+	
 	@FindBy(xpath = "//button[@id='navigatorTreeOk']")
 	private WebElement OK_Button_BrowseforFolder;
 
@@ -87,7 +100,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Enter_Report_Name_Text;
 	}
 
-	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
+	@FindBy(xpath = "//div[@id='addPagesDropDown']//span[1]")
 	private WebElement Move_To_PlusIcon;
 
 	public WebElement getMove_To_PlusIcon() {
@@ -114,6 +127,14 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Create_Button;
 
 	}
+	
+	@FindBy(xpath= "//*[@id=\"docTypeIndicesTable\"]/tbody/tr/td[2]")
+	private WebElement DocumentCVRep;
+	
+	public WebElement getDocumentCVRep() {
+		return DocumentCVRep;
+		
+	}
 
 	@FindBy(xpath = "//button[@id='viewCreatedDocument']")
 	private WebElement View_Button;
@@ -139,7 +160,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Message_Ok_button;
 	}
 
-	@FindBy(css = "#saveAddedPages > .icon")
+	@FindBy(xpath = "//*[@id=\"saveAddedPages\"]/span")
 	private WebElement Save_button;
 
 	public WebElement getSave_button() {
@@ -154,7 +175,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//img[@id='createDocumentDocTypeRefresh']")
+	@FindBy(xpath = "//img[@src='images/newRe.png']")
 	private WebElement Refresh_button;
 
 	public WebElement getRefresh_button() {
@@ -176,7 +197,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return cellType;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[3]")
+	@FindBy(xpath = "(//a[normalize-space()='Update'])[1]")
 	private WebElement Update_Button;
 
 	public WebElement getUpdate_Button() {
@@ -190,7 +211,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Update_ReportName;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[2]")
+	@FindBy(xpath = "(//a[normalize-space()='Save'])[1]")
 	private WebElement Save_UpdateButton;
 
 	public WebElement getSave_UpdateButton() {
@@ -204,56 +225,56 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Update_Ok_button;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")
+	@FindBy(xpath = "//div[@class='elementHeader']//span[contains(text(),'Properties')]")
 	private WebElement Properties_option;
 
 	public WebElement getProperties_option() {
 		return Properties_option;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[12]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Round Brackets__.docx\"]/div/img")
 	private WebElement Open_RoundBrackets_page;
 
 	public WebElement getOpen_RoundBrackets_page() {
 		return Open_RoundBrackets_page;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[13]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Accent _.pdf\"]/div/img")
 	private WebElement Open_Accent_page;
 
 	public WebElement getOpen_Accent_page() {
 		return Open_Accent_page;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[14]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Ampersant &.djvu\"]/div/img")
 	private WebElement Open_Ampersant_page;
 
 	public WebElement getOpen_Ampersant_page() {
-		return Open_Accent_page;
+		return Open_Ampersant_page;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[15]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Underscore _.pdf\"]/div/img")
 	private WebElement Open_Underscore_page;
 
 	public WebElement getOpen_Underscore_page() {
 		return Open_Underscore_page;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[16]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Flower or Curly bracket __.JPG\"]/div/img")
 	private WebElement Open_Flowerbracket_Page;
 
 	public WebElement getOpen_Flowerbracket_Page() {
-		return Open_Underscore_page;
+		return Open_Flowerbracket_Page;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[17]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Square Bracket __.tiff\"]/div/img")
 	private WebElement Open_Squarebracket_page;
 
 	public WebElement getOpen_Squarebracket_page() {
-		return Open_Underscore_page;
+		return Open_Squarebracket_page;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[18]/div[1]/img[1]")
+	@FindBy(xpath = "//*[@id=\"Semi Colon _.tif\"]/div/img")
 	private WebElement Open_SemiColon_page;
 
 	public WebElement getOpen_SemiColon_page() {
@@ -269,80 +290,159 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Click_FileInfo_Option;
 	}
 
+	public WebElement getClick_FileInfo_Option1() {
+		
+		return Click_FileInfo_Option;
+	}
+	
+	
+	
+	
 	@FindBy(xpath = "//span[@id='fileNameLabel']")
 	private WebElement Click_FileInfo_OkButton_withFileName;
 	@FindBy(xpath = "//button[@id='fileRenameOK']")
 	private WebElement RemarkOk;
 
+	
+	
+	
+	
+	
+	
+	
+	
 	public WebElement getClick_FileInfo_OkButton_withFileName() {
 		WebElement Filename = Click_FileInfo_OkButton_withFileName;
 		System.out.println("File name is:" + Filename.getText());
 		WebElement ele = RemarkOk;
-		ele.click();
+	//	ele.click();
+		
+		JavascriptExecutor js= (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()", ele);
 		return Click_FileInfo_OkButton_withFileName;
 
 	}
-	
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[2]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Tile_.TIF\"]/div/img")
 	private WebElement Open_Tile_page;
 
 	public WebElement getOpen_Tile_page() {
 		return Open_Tile_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[3]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"At the rate _.xls\"]/div/img")
 	private WebElement Open_Attherate_page;
 
 	public WebElement getOpen_Attherate_page() {
 		return Open_Attherate_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[4]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Hash _.TIF\"]/div/img")
 	private WebElement Open_Hash_page;
 
 	public WebElement getOpen_Hash_page() {
 		return Open_Hash_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[5]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Dollar _.jpg\"]/div/img")
 	private WebElement Open_Dollar_page;
 
 	public WebElement getOpen_Dollar_page() {
 		return Open_Dollar_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[6]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Plus _.TIF\"]/div/img")
 	private WebElement Open_Plus_page;
 
 	public WebElement getOpen_Plus_page() {
 		return Open_Plus_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[7]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Caret _.TIF\"]/div/img")
 	private WebElement Open_Caret_page;
 
 	public WebElement getOpen_Caret_page() {
 		return Open_Caret_page;
 	}
-	
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[8]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Equal to _.TIF\"]/div/img")
 	private WebElement Open_Equals_page;
 
 	public WebElement getOpen_Equals_page() {
 		return Open_Equals_page;
 	}
-	
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[9]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Single Quote _.png\"]/div/img")
 	private WebElement Open_SingleQuote_page;
 
 	public WebElement getOpen_SingleQuote_page() {
 		return Open_SingleQuote_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[10]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Comm_.DOCX\"]/div/img")
 	private WebElement Open_Comma_page;
 
 	public WebElement getOpen_Comma_page() {
 		return Open_Comma_page;
 	}
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[11]/div[1]/img[1]")
+
+	@FindBy(xpath = "//*[@id=\"Exclamatory _.csv\"]/div/img")
 	private WebElement Open_Exclamatory_page;
 
 	public WebElement getOpen_Exclamatory_page() {
 		return Open_Exclamatory_page;
+	}
+
+	@FindBy(xpath = "//*[@id=\"Hyphen -.tif\"]/div/img")
+	private WebElement Open_Hyphen_page;
+
+	public WebElement getOpen_Hyphen_page() {
+		return Open_Hyphen_page;
+
+	}
+
+	@FindBy(xpath = "//*[@id=\"commentMessage\"]")
+	private WebElement FolderSelectMessage;
+	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
+	private WebElement CommentOK;
+
+	public WebElement getFolderSelectMessage() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please select a folder to create document";
+		String actualtext = FolderSelectMessage.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+		System.out.println(FolderSelectMessage.getText());
+		jsclick(CommentOK);
+		return FolderSelectMessage;
+	}
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Reportvaluevalidationerror;
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
+	private WebElement CommentOKbutton;
+
+	public WebElement getReportvaluevalidationerror() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "ReportName*  	field is required";
+		String actualtext = Reportvaluevalidationerror.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(Reportvaluevalidationerror.getText());
+		jsclick(CommentOKbutton);
+		return Reportvaluevalidationerror;
+	}
+
+	@FindBy(xpath = "//*[@id=\"createDocumentMessage\"]")
+	private WebElement NavigateDoc;
+	@FindBy(xpath = "//*[@id=\"modelHome\"]")
+	private WebElement NavigateButton;
+
+	public WebElement getNavigateDoc() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Document created successfully";
+		String actualtext = NavigateDoc.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(NavigateDoc.getText());
+		jsclick(NavigateButton);
+		return Reportvaluevalidationerror;
 	}
 }

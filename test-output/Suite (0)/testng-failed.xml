@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite (0)]">
+  <listeners>
+    <listener class-name="Generic.ListenersRetry"/>
+  </listeners>
+  <test thread-count="5" name="Test3(failed)">
+    <classes>
+      <class name="French_Language.AnnotationFunctionality">
+        <methods>
+          <include name="Polygon"/>
+          <include name="StampAnnotation"/>
+          <include name="LineAnnotation_Ellipse_Annotation"/>
+          <include name="Signature_Annotation"/>
+        </methods>
+      </class> <!-- French_Language.AnnotationFunctionality -->
+    </classes>
+  </test> <!-- Test3(failed) -->
+  <test thread-count="5" name="Test4(failed)">
+    <classes>
+      <class name="French_Language.SearchSelectDocumentLocation">
+        <methods>
+          <include name="ExactSearchInIndexWithLoadMoreCount"/>
+          <include name="AllVrsn_Incldcmnt_FindInHit_AppendToHit"/>
+        </methods>
+      </class> <!-- French_Language.SearchSelectDocumentLocation -->
+    </classes>
+  </test> <!-- Test4(failed) -->
+  <test thread-count="5" name="Test5(failed)">
+    <classes>
+      <class name="French_Language.RoomContextFunction">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="CategoriesFunction"/>
+        </methods>
+      </class> <!-- French_Language.RoomContextFunction -->
+    </classes>
+  </test> <!-- Test5(failed) -->
+  <test thread-count="5" name="Test 9(failed)">
+    <classes>
+      <class name="French_Language.DashBoardScript">
+        <methods>
+          <include name="logoutFromDB"/>
+          <include name="CreateNewDocumentFromDB"/>
+        </methods>
+      </class> <!-- French_Language.DashBoardScript -->
+    </classes>
+  </test> <!-- Test 9(failed) -->
+  <test thread-count="5" name="Test 10(failed)">
+    <classes>
+      <class name="French_Language.Favorites">
+        <methods>
+          <include name="FavoriteInUserLevel"/>
+          <include name="CVSLogin"/>
+          <include name="FavoriteInSystemLevel"/>
+        </methods>
+      </class> <!-- French_Language.Favorites -->
+    </classes>
+  </test> <!-- Test 10(failed) -->
+  <test thread-count="5" name="Test 11(failed)">
+    <classes>
+      <class name="French_Language.SecureLink">
+        <methods>
+          <include name="SecureLinkFromSearchTab"/>
+          <include name="DocumentSendToSecureLink"/>
+          <include name="SecureLinkFromDocumentList"/>
+          <include name="SentDocumentToView"/>
+        </methods>
+      </class> <!-- French_Language.SecureLink -->
+    </classes>
+  </test> <!-- Test 11(failed) -->
+  <test thread-count="5" name="Test 12(failed)">
+    <classes>
+      <class name="French_Language.PrintFunctionality">
+        <methods>
+          <include name="exports_with_Retain"/>
+          <include name="exports_with_convert_to_pdf_with_passwords"/>
+          <include name="exports_with_convert_to_pdf_and_include_workflow_summary"/>
+          <include name="ladBrowser"/>
+          <include name="exports_with_convert_to_pdf_and_best_quality"/>
+        </methods>
+      </class> <!-- French_Language.PrintFunctionality -->
+    </classes>
+  </test> <!-- Test 12(failed) -->
+</suite> <!-- Failed suite [Suite (0)] -->

@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>TestNG:  Test 12</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test 12</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Feb 28 01:09:43 CST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>412 seconds (412710 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.PrintFunctionality.LogVCS()'><b>LogVCS</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-23124380" onClick='toggleBox("Output-23124380", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-23124380" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-23124380">
+Login without msg<br/>
+</div>
+</td>
+<td></td>
+<td>15</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.TC_03_Email_ConvertPDF_WithAll_Annotations()'><b>TC_03_Email_ConvertPDF_WithAll_Annotations</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-26773165" onClick='toggleBox("Output-26773165", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-26773165" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-26773165">
+Scenario 03:Verify email with burn annotation <br/>
+Email dialog burn annotation working fine<br/>
+</div>
+</td>
+<td></td>
+<td>58</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.TC_1_Email_Reference()'><b>TC_1_Email_Reference</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-3831301" onClick='toggleBox("Output-3831301", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-3831301" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-3831301">
+Scenario 01: Verify reference Email<br/>
+User expand the cabinet<br/>
+User expand the drawer<br/>
+User click on the folder<br/>
+User open a document<br/>
+User select a page<br/>
+User click on sendto tool icon<br/>
+User click on email submenu<br/>
+User click on reference radio button<br/>
+User expand the valid email<br/>
+User click on email dialog OK button<br/>
+User should receive 'Email sent successfull' message dialog<br/>
+Email sent dialog displayed successfull<br/>
+</div>
+</td>
+<td></td>
+<td>108</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.TC_2_Email_Copy_WithMsgBox_SubjectBox()'><b>TC_2_Email_Copy_WithMsgBox_SubjectBox</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-10567798" onClick='toggleBox("Output-10567798", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-10567798" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-10567798">
+Scenario 02:Verify copy email and message textbox<br/>
+User open a document and select a page<br/>
+User click on sendto tool icon<br/>
+User select email submenu<br/>
+User select copy radio button<br/>
+User enter a valid email id<br/>
+User enter suject into subject textbox<br/>
+User enter message into message dialog box<br/>
+User click on Email dialog OK button<br/>
+User should receive 'Email sent successfull' message dialog<br/>
+Email sent successfully dialog displayed...<br/>
+</div>
+</td>
+<td></td>
+<td>50</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.exports_with_Retain()'><b>exports_with_Retain</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-25232973" onClick='toggleBox("Output-25232973", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-25232973" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-25232973">
+Scenario 04:verifying export functionality retain format,with average quality and zip password<br/>
+User open a document and select a page<br/>
+User click on sendto tool icon<br/>
+User select export submenu<br/>
+User select retain radio button<br/>
+User click on export dialog OK button<br/>
+Document exported successfull<br/>
+</div>
+</td>
+<td></td>
+<td>41</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.exports_with_convert_to_pdf_and_best_quality()'><b>exports_with_convert_to_pdf_and_best_quality</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-33443321" onClick='toggleBox("Output-33443321", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-33443321" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-33443321">
+Scenario 05:Verify Export with convert to PDF<br/>
+User open a document and select a page<br/>
+User click on sendto tool icon<br/>
+User select export submenu<br/>
+User select convert to pdf radio button<br/>
+User select the burn annotation check box<br/>
+User click on export dialog OK button<br/>
+</div>
+</td>
+<td></td>
+<td>48</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.exports_with_convert_to_pdf_and_include_workflow_summary()'><b>exports_with_convert_to_pdf_and_include_workflow_summary</b><br>Test class: Script.PrintFunctionality<br/>
+<a href="#Output-17360595" onClick='toggleBox("Output-17360595", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-17360595" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-17360595">
+Scenario 06:Verify Export with convert to PDF<br/>
+User open a document and select a page<br/>
+User select send to tool icon<br/>
+User click on export submenu<br/>
+User select convert to pdf radio button<br/>
+User click on export dialog OK button<br/>
+User click on refresh button<br/>
+</div>
+</td>
+<td></td>
+<td>39</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+<tr>
+<td title='Script.PrintFunctionality.exports_with_convert_to_pdf_with_passwords()'><b>exports_with_convert_to_pdf_with_passwords</b><br>Test class: Script.PrintFunctionality</td>
+<td></td>
+<td>32</td>
+<td>Script.PrintFunctionality@29bb3f</td></tr>
+</table><p>
+</body>
+</html>

@@ -19,8 +19,8 @@ import Pom.My_Preferences;
 public class My_Preferences_PDF_with_Overlay extends BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Add_signature.class);
-	
-	//@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -28,10 +28,10 @@ public class My_Preferences_PDF_with_Overlay extends BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS URL started Successfully...");
 
 	}
@@ -40,7 +40,8 @@ public class My_Preferences_PDF_with_Overlay extends BaseClass {
 	public void Verify_PDF_with_Overlay_Disable() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -66,13 +67,14 @@ public class My_Preferences_PDF_with_Overlay extends BaseClass {
 		Thread.sleep(4000);
 		pojo.getEnter_ReportNamePDFwithOverlay();
 		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
+		movingclkElement(pojo.getMove_To_PlusIcon());
 		pojo.getBrowse_Option();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\PDFwithOverlay.exe");
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.alertIsPresent());
-
+		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+		wait1.until(ExpectedConditions.alertIsPresent());
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
 		Reporter.log("Pdf with annotation is uploaded successfully", true);
@@ -93,6 +95,7 @@ public class My_Preferences_PDF_with_Overlay extends BaseClass {
 	public void Verify_PDF_with_Overlay_Enable() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+		Thread.sleep(8000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
@@ -102,7 +105,7 @@ public class My_Preferences_PDF_with_Overlay extends BaseClass {
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
 		jsclick(pojo.getOpen_Document());
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		pojo.getMove_to_ViewMenu_Option_inViewer();
 		Thread.sleep(8000);
 		pojo.getVerify_PDF_with_Overlay_option();
@@ -118,10 +121,7 @@ public class My_Preferences_PDF_with_Overlay extends BaseClass {
 		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
-		jsclick(BaseClass.Refresh_Button(driver));
-
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
-	
 }
-

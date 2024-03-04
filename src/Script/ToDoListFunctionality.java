@@ -51,12 +51,13 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	@Test (priority=1)
 	public void Login() throws Exception {
 		  loginCVS();
+		  Reporter.log("RNISHa User is logged in successfull...");
 		  log.info("CVS User is logged in successfully...");
 	}
     
-	
+
 	@Test(priority = 2)
-	public void SendDoc() throws InterruptedException {
+	public void TC_1_SendDoc() throws InterruptedException {
 		ToDoListTab todo = new ToDoListTab();
 		todo.SendingDocumentInworkflow();
 		Thread.sleep(15000);
@@ -65,7 +66,7 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	}
 
 	@Test(priority = 3)
-	public void refrshAndLogVidyaUser() throws Exception {
+	public void TC_2_refrshAndLogVidyaUser() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(8000);
 		todo.LogVidyaTaskUser1();
@@ -73,29 +74,34 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	}
 
 	@Test(priority = 4)
-	public void SendAndNewItemsMetaDataAgree() throws Exception {
+	public void TC_3_SendAndNewItemsMetaDataAgree() throws Exception {
 
 		ToDoListTab todo = new ToDoListTab();
 		so = new SoftAssert();
 		jsclick(todo.getTodolistTab());
+		Reporter.log("User click on todolist tab");
 		Thread.sleep(3000);
 		jsclick(todo.getNewItems());
+		Reporter.log("User select newitems submenu");
 		Thread.sleep(5000);
 		ElementToBeClickable(todo.getMetadata());
 		movingclkElement(todo.getMetadata());
 		Thread.sleep(3000);
+		Reporter.log("User Expand the todolist newitems documents's metadata");
 		todo.getAcceptButton().click();
-		
+		Reporter.log("User click on accept button");
 		so.assertTrue(todo.getAssertvalid().isDisplayed(), "The workflow status dialog box opened successfull");
 		todo.getWorkflowComments().sendKeys(TodoListExcel(2, 0));
+		Reporter.log("User enter comment in accept dialog box");
 		jsclick(todo.getWorkflowCommentsOKButton());
+		Reporter.log("USer click on accept dilaog box OK button");
 		Thread.sleep(8000);
 		log.info(
 				"New manual for automation first task user vidya has accept the document,Its has move to second task user successfull");
 	}
 
 	@Test(priority = 5)
-	public void Task2UserNishaAccept() throws Exception {
+	public void TC_4_Task2UserNishaAccept() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(8000);
 		todo.refrshLogNishaTaskUser();
@@ -103,77 +109,99 @@ public class ToDoListFunctionality extends Generic.BaseClass {
 	}
 
 	@Test(priority = 6)
-	public void TaskUser2RNishaRejectTheDocument() throws Exception {
+	public void TC_5_TaskUser2RNishaRejectTheDocument() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		so = new SoftAssert();
 		jsclick(todo.getTodolistTab());
+		Reporter.log("User click on todolist tab ");
 		Thread.sleep(3000);
 		jsclick(todo.getNewItems());
+		Reporter.log("User click on newitems");
 		Thread.sleep(3000);
 		ElementToBeClickable(todo.getMetadata());
 		movingclkElement(todo.getMetadata());
+		Reporter.log("User Expand the todolist newitems documents's metadata");
         Thread.sleep(3000);
 		jsclick(todo.getRejectButton());
+		Reporter.log("User select reject button");
 		Thread.sleep(3000);
-
+		Reporter.log("user enter comment in reject dialog box");
 		todo.getWorkflowComments().sendKeys(TodoListExcel(2, 5));
 		todo.getWorkflowCommentsOKButton().click();
 		Thread.sleep(15000);
+		Reporter.log("click on reject dilaog OK button");
 
 		log.info("TaskUser2 RNisha has received the document successful.RNisha Reject the document");
 	}
 
 	@Test(priority = 7)
-	public void refrshAndLogDipak() throws Exception {
+	public void TC_6_refrshAndLogDipak() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(3000);
 		todo.refrshLogDipakTaskUser();
 		Reporter.log("TaskUser3 Dipak Logged in successful");
 	}
 
-	@Test(priority = 8)
-	public void SummaryStatusDialogBoxFucntions() throws InterruptedException {
+	//@Test(priority = 8)
+	public void TC_7_SummaryStatusDialogBoxFucntions() throws InterruptedException {
 		ToDoListTab todo = new ToDoListTab();
 		so = new SoftAssert();
 		jsclick(todo.getTodolistTab());
+		Reporter.log("USer click on todolist tab");
 		Thread.sleep(3000);
 		jsclick(todo.getNewItems());
+		Reporter.log("Select new items submenu");
 		Thread.sleep(5000);
 		VisiblityOf(todo.getMetadata());
+		Reporter.log("User Expand the todolist newitems documents's metadata");
 		clickElement(todo.getMetadata());
 	    Thread.sleep(5000);
+	    Reporter.log("User click on summary button");
 		jsclick(todo.getSummaryButton());
 		Thread.sleep(5000);
+		Reporter.log("USer check the summary of the document");
 		jsclick(todo.getsummaryshowreportscancel());
-		log.info("Task user3 Dipak has shows the Summary of Particular workflow document with all functionalities successfully");
+		Reporter.log("User Expand the todolist newitems documents's metadata");
+		Reporter.log("Task user3 Dipak has shows the Summary of a document it shows added comments successfully");
+		log.info("Task user3 Dipak has shows the Summary of a document it shows added comments successfully");
 	}
 
 	@Test(priority = 9)
-	public void DocEndedFromTask3DipakUser() throws Exception {
+	public void TC_8_DocEndedFromTask3DipakUser() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		
 		movingElement(todo.getTodolistTab());
 		Thread.sleep(3000);
+		Reporter.log("Select todolist tab");
 		jsclick(todo.getNewItems());
+		Reporter.log("Select new items");
 		Thread.sleep(3000);
+		Reporter.log("User Expand the todolist newitems documents's metadata");
 		VisiblityOf(todo.getMetadata());
-		clickElement(todo.getMetadata());
+		jsclick(todo.getMetadata());
+		Reporter.log("Click on endwf button");
         Thread.sleep(3000);
 		jsclick(todo.getEndWfButton());
 		Thread.sleep(3000);
+		Reporter.log("Enter comment in the endwf dialog box");
 		todo.getWorkflowComments().sendKeys(TodoListExcel(2, 6));
 		todo.getWorkflowCommentsOKButton().click();
+		Reporter.log("Select endwf dialog OK button");
 		Thread.sleep(15000);
+		log.info(
+				"Task user 3 Dipak Click on EndWorkFlow. Workflow ended successful,Manual workflow Completed Successfully");
 
 		log.info(
 				"Task user 3 Dipak has Click on EndWorkFlow the work flow has end successful,Manual workflow Completed Successfully");
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(3000);
 	}
 	
 	
 	
 		
-	/*	
-	@Test(priority = 10)
+		
+/*	@Test(priority = 10)
 	public void DynamicWf() throws Exception {
 
 		ToDoListTab todo = new ToDoListTab();

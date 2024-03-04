@@ -218,6 +218,15 @@ public class SearchFunction extends BaseClass {
 	}
 	
 	
+	@FindBy(xpath = ("//li[text()='CVReports']"))
+	private WebElement forCVReportsCSR;
+
+	public WebElement getforCVReportsCSR() {
+		return forCVReportsCSR;
+	}
+	
+	
+	
 	
 	@FindBy(xpath = ("(//div[@class='elementHeader'])[3]"))
 	private WebElement forComments;
@@ -353,7 +362,7 @@ public class SearchFunction extends BaseClass {
 	//forSeconndDochtml[1]/body[1]/div[56]/div[59]/div[4]/div[2]/div[4]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[2]/td[3]
 	
 	
-	@FindBy(xpath = ("//*[@id=\"searchTableRow_80896\"]/td[4]"))
+	@FindBy(xpath = ("(//td[@class=' document-option'])[5]"))
 	private WebElement OpenDocumentForTodoSearch;
 	
 	@FindBy(xpath = ("(//a[normalize-space()='Update'])[1]"))
@@ -512,8 +521,8 @@ public class SearchFunction extends BaseClass {
 public void SearchTodolistEndByUSerRAm() throws Exception {
       
 	ToDoListTab todo = new ToDoListTab();
-		
-		jsclick(TodolistTab);
+		Thread.sleep(4000);
+		movingElement(TodolistTab);
 		Thread.sleep(3000);
 		jsclick(NewItems);
 		Thread.sleep(5000);
@@ -568,6 +577,29 @@ public void SearchTodolistEndByUSerRAm() throws Exception {
 		return Searchlocation;
 	}
 
+	public WebElement getCabinetCSR() {
+		return cabinetCSR;
+	}
+
+	public WebElement getDrawerCSR() {
+		return drawerCSR;
+	}
+
+	public WebElement getFolderCSR() {
+		return folderCSR;
+	}
+
+	@FindBy(xpath =("//*[@id=\"1\"]/a"))
+    private WebElement cabinetCSR;
+	
+	
+	@FindBy(xpath =("//*[@id=\"2\"]/a"))
+    private WebElement drawerCSR;
+	
+	@FindBy(xpath =("//*[@id=\"3\"]/a"))
+    private WebElement folderCSR;
+	
+	
 	public WebElement getCabinet() {
 		return cabinet;
 	}
@@ -579,7 +611,13 @@ public void SearchTodolistEndByUSerRAm() throws Exception {
 	public WebElement getFolder() {
 		return folder;
 	}
-
+	
+	
+	
+	
+	
+	
+	
 	public WebElement getOKbuttonforsearchlocation() {
 		return OKbuttonforsearchlocation;
 	}
@@ -705,17 +743,27 @@ public void SearchTodolistEndByUSerRAm() throws Exception {
 		return foratleastoneword;
 	}
 
-	@FindBy(xpath = ("//a[text()='4']"))
+	@FindBy(xpath = ("/html/body/div[62]/div[2]/div[2]/table/tbody/tr[2]/td[5]"))
 	private WebElement CreatedToDate;
 
 	
 	
-	@FindBy(xpath = ("//a[text()='3']"))
+	@FindBy(xpath = ("/html/body/div[63]/div[2]/div[2]/table/tbody/tr[1]/td[6]"))
 	private WebElement Createdfromdate;
 
 	public WebElement getCreatedfromdate() {
 		return Createdfromdate;
 	}
+	
+	
+	@FindBy(xpath = ("//*[@id=\"mc-btn__ok\"]"))
+	private WebElement DatePickerOKBTN;
+
+	public WebElement getDatePickerOKBTN() {
+		return DatePickerOKBTN;
+	}
+	
+	
 
 	 @FindBy(xpath = ("(//td[@class=' details-control'])[1]"))
 	    private WebElement Metadata;
@@ -825,13 +873,13 @@ public void SearchTodolistEndByUSerRAm() throws Exception {
 		
 	
 
-	@FindBy(xpath = ("//a[text()='2']"))
+	@FindBy(xpath = ("/html/body/div[62]/div[2]/div[2]/table/tbody/tr[2]/td[3]"))
 	private WebElement Modifiedfromdate;
 	public WebElement getModifiedfromdate() {
 		return Modifiedfromdate;
 	}
 
-	@FindBy(xpath = ("//a[text()='7']"))
+	@FindBy(xpath = ("/html/body/div[62]/div[2]/div[2]/table/tbody/tr[2]/td[5]"))
 	private WebElement ModifiedTodate;
 
 	public WebElement getModifiedTodate() {
@@ -882,6 +930,17 @@ public void SearchTodolistEndByUSerRAm() throws Exception {
 	public WebElement getopendocfortext() {
 		return opendocfortext;
 	}
+	
+	@FindBy(xpath = ("//*[@id=\"searchTableRow_131\"]/td[3]"))
+	private WebElement opendocfortextSQL;
+
+	public WebElement getopendocfortextSQL() {
+		return opendocfortextSQL;
+	}
+	
+	
+	
+	
 	
 	@FindBy(xpath = ("//*[@id=\"docViewerMetaData\"]"))
 	private WebElement newdocscroll;

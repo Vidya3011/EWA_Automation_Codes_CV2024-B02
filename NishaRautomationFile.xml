@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ <listeners>
+<listener class-name="Generic.ListenersRetry"></listener>
+</listeners> 
+      <test name="Test1">
+   <classes>
+      <class name="Script.AdvancedViewer_Script"/>
+    </classes>
+  </test>  
+  <test name="Test2"> 
+   <classes>
+      <class name="Script.AnnotationFunctionality"/>
+    </classes>
+  </test> 
+   <test name="Test3">
+    <classes>
+      <class name="Script.SearchSelectDocumentLocation"/>
+       </classes>
+       </test>  
+     
+    <!--  <test name="Test 5">
+       <classes>
+       <class name="Script.ToDoListFunctionality"/> 
+    </classes>
+  </test>  
+  <test name="Test 6">
+       <classes>
+      <class name="Script.TodoListDynamicWorkFlowWithRejectCondition"/>
+    </classes>
+  </test>    
+     <test name="Test 7"> 
+       <classes>
+      <class name="Script.TodoListAnnotationAddedPageTestedByWfUsers_AndAllUsersAcceptDocScript"/>
+    </classes> 
+  </test>   -->
+   
+  <test name="Test 9">
+       <classes>
+      <class name="Script.Favorites"/>
+    </classes>
+  </test> 
+   <test name="Test 10">
+       <classes>
+      <class name="Script.DashBoardScript"/>
+    </classes>
+  </test>    
+  <test name="Test 11">
+       <classes>
+      <class name="Script.SecureLink"/>
+    </classes>
+  </test> 
+  <test name="Test 12">
+       <classes>
+      <class name="Script.PrintFunctionality"/>
+    </classes>
+  </test> 
+       <test name="Test 13">
+       <classes>
+      <class name="Script.SecureLink_Negative_Scenerio"/>
+    </classes>
+  </test>
+   <test name="Test 14">
+       <classes>
+      <class name="Script.Print_Email_Export_Negative_Scenerio"/>
+    </classes>
+  </test>
+  <test name="Test 15">
+       <classes>
+      <class name="Script.LargeFiles_AutomationTesting"/>
+    </classes>
+  </test>
+ 
+   <test name="Test 16">
+       <classes>
+      <class name="Script.Thumbnail_MicroSoft_FabBTN"/>
+    </classes>
+  </test>
+   <test name="Test 17">
+       <classes>
+      <class name="Script.DocumentContextSingleFolderDocSendTo"/>
+    </classes>
+  </test>
+   <test name="Test 18">
+       <classes>
+      <class name="Script.DocuSignScript"/>
+    </classes>
+  </test>
+    <test name="Test19">
+       <classes>
+      <class name="Script.RoomContextFunction"/>
+    </classes>
+  </test>     
+ </suite> 

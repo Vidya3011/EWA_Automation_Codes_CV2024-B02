@@ -26,9 +26,10 @@ import org.testng.Reporter;
 
 import com.sun.javafx.tk.Toolkit;
 
+import Generic.BaseClass;
 import Script.Viewer;
 
-public class NewDocument {
+public class NewDocument extends BaseClass {
 
 	@FindBy(xpath = ("//a[@id='createDocument']"))
 	private WebElement NewDocumentID;
@@ -39,10 +40,21 @@ public class NewDocument {
 	@FindBy(xpath = ("//*[@id='addPagesDropDown']/span"))
 	private WebElement AddFileicon;
 
+	@FindBy(xpath = ("//*[@id=\"78992\"]/ins"))
+	private WebElement NishaCabinet;
+
+	@FindBy(xpath = ("//*[@id=\"78994\"]/ins"))
+	private WebElement NishaDrawer;
+
+	@FindBy(xpath = ("//*[@id=\"78995\"]/a"))
+	private WebElement NishFolder;
+	
+
+	
 	@FindBy(xpath = ("//input[@id='viewDocumentAddPages']"))
 	private WebElement Browse;
 
-	@FindBy(xpath = ("//select[@id='docTypeList']"))
+	@FindBy(xpath = ("//*[@id=\"docTypeList\"]"))
 	private WebElement DocTypeList;
 
 	@FindBy(xpath = ("//input[@id='indices_33']"))
@@ -54,11 +66,123 @@ public class NewDocument {
 	@FindBy(xpath = ("//div[@id='addDocdropdwn']"))
 	private WebElement menuitem;
 
-	// @FindBy(xpath = ("/div[contains(text(),'Destination Folder')]"))
-	// private WebElement DestinationFolder;
+	 @FindBy(xpath = ("//*[@id=\"navigatorTreeOk\"]"))
+	 private WebElement DestinationLocationOKBTN;
 
 	@FindBy(xpath = ("//div[@id='locationDiv']"))
 	private WebElement Docfolderdiv;
+	
+	@FindBy(xpath = ("//*[@id=\"commentMessage\"]"))
+	private WebElement DestinationFolderMessage;
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"CommentsMessageModelOk\"]"))
+	private WebElement ValidationMessageBoxOKBTN;
+	
+	
+	@FindBy(xpath = ("//*[@id=\"navigatorTreeCancle\"]"))
+	private WebElement CancelBTNDestination;
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"messageButtonOK\"]"))
+	private WebElement DocTypeOKBTN;
+	
+	@FindBy(xpath = ("//*[@id=\"messageContent\"]"))
+	private WebElement DocTypeMessage;
+	
+	
+	@FindBy(xpath = ("//*[@id=\"docTypeList\"]/option[13]"))
+	private WebElement CVReportIndice;
+	
+	@FindBy(xpath = ("//*[@id=\"messageContent\"]"))
+	private WebElement FileNameMessage;
+	
+	
+	
+	public void CreateNewDocumentWithoutFolder() throws Exception {
+		Reporter.log("Scneario 01: Create newdocument without folder");
+
+		Thread.sleep(4000);
+		Reporter.log("User Click on Newdocument tab");
+		jsclick(NewDocumentID);
+		Thread.sleep(4000);
+		Reporter.log("User Click on create button");
+		jsclick(CreateButton);
+		Thread.sleep(3000);
+		Reporter.log("User Click on destination location textbox");
+		jsclick(DestinationLocationOKBTN);
+		Reporter.log("User Click on destination location OK button without selecting a folder");
+		Thread.sleep(3000);
+		System.out.println("Validation Message :"+DestinationFolderMessage.getText());
+		Reporter.log("User should get 'Please select a folder to create document' warning message, Warning message displayed successfull");
+		SoftAssertEqalValidation(DestinationFolderMessage, "Please select a folder to create document");
+		Thread.sleep(3000);
+		Reporter.log("User Click on warning alert OK button");
+		jsclick(ValidationMessageBoxOKBTN);
+		Thread.sleep(3000);
+		Reporter.log("Negative scenario passed");
+
+		jsclick(CancelBTNDestination);
+	}
+	
+	public void CreateNewDocumentWithoutDocumentType() throws Exception {
+		Reporter.log("Scenario 02:Create newdocument without document type");
+
+		Thread.sleep(4000);
+		
+		jsclick(DestinationFolder);
+		Reporter.log("User Click on destination location textbox");
+
+		Thread.sleep(4000);
+		Reporter.log("User expand the cabinet");
+
+		jsclick(NishaCabinet);
+		Thread.sleep(2000);
+		Reporter.log("User expand the drawer");
+		jsclick(NishaDrawer);
+		Thread.sleep(2000);
+		jsclick(NishFolder);
+		Reporter.log("User select a folder");
+		Thread.sleep(2000);
+		jsclick(DestinationLocationOKBTN);
+		Reporter.log("User click on destination location OK button");
+		Thread.sleep(3000);
+		jsclick(CreateButton);
+		Reporter.log("User click on create button without selecting document type");
+		Thread.sleep(2000);
+		System.out.println("Validation Message :"+DocTypeMessage.getText());
+		Reporter.log("User should get 'Select document type' warning dialog");
+		SoftAssertEqalValidation(DocTypeMessage, "Select document type");
+		Thread.sleep(3000);
+		Reporter.log("Negative scenario passed successfull");
+		jsclick(DocTypeOKBTN);
+	}
+	
+	public void CreateNewDocumentWithoutFileName() throws Exception {
+		Thread.sleep(4000);
+		SpecialCharFilenames pojo = new SpecialCharFilenames();
+		Reporter.log("Scenario 03: New document without file name");
+		jsclick(pojo.getSelect_Document_Type_Dropdown());
+	Thread.sleep(3000);
+	Reporter.log("User click on create ");
+	jsclick(CreateButton);
+	Thread.sleep(3000);
+	System.out.println("Validation message:"+FileNameMessage.getText());
+	Thread.sleep(2000);
+	SoftAssertEqalValidation(FileNameMessage, "ReportName*  	field is required");
+	jsclick(DocTypeOKBTN);
+	Thread.sleep(6000);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/*
 	 * @FindBy(id="createDocuemtnLocation") private WebElement
@@ -129,6 +253,20 @@ public class NewDocument {
 
 	@FindBy(id = "cvDocumentClose")
 	private WebElement CloseVeiwerIcon;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	// @FindBy(id="cvDocumentClose")
 	// private WebElement CloseVeiwer;

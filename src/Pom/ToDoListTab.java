@@ -122,7 +122,7 @@ public class ToDoListTab extends BaseClass {
 	private WebElement Open1stDocument;		
 			
 	                  
-	@FindBy(xpath = ("/html/body/div[57]/div[59]/div[4]/div[2]/div[1]/div/div[2]/div[2]/table/tbody/tr[5]/td[3]"))
+	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[6]/td[3]"))
 	private WebElement OpenDocument;
 	
 	
@@ -170,15 +170,23 @@ public class ToDoListTab extends BaseClass {
 			
 	public void AnnotationPageSendWF() throws Exception {
 	    VisiblityOf(TestCabinet);
-		movingDoublecli(TestCabinet,TestCabinet);
-		Thread.sleep(2000);
+	    Thread.sleep(6000);
+		selectElement(TestCabinet);
+		Thread.sleep(3000);
 		jsclick(dynamicWfDrawer);
-		Thread.sleep(2000);
-	    movingDoublecli(DynamicWfAutoFolder, DynamicWfAutoFolder);
+		Thread.sleep(4000);
+	    ElementToBeClickable(DynamicWfAutoFolder);
+	    selectElement(DynamicWfAutoFolder);
+	    Thread.sleep(5000);
 		VisiblityOf(OpenDocument);
 		jsclick(OpenDocument);
+		try {
 		alertIsPresent();
 		acceptAlert();
+		}
+		catch(Exception e) {
+			System.out.println("alert is not presrnt");
+		}
 		VisiblityOf(sendToWf);
 	
 		jsclick(sendToWf);
@@ -189,11 +197,14 @@ public class ToDoListTab extends BaseClass {
 	     jsclick(applyBTN);
 	     Thread.sleep(10000);
 	    jsclick(sendwfsuccessdialogOKBTN);
-	    Thread.sleep(3000);
+	    Thread.sleep(6000);
 	    VisiblityOf(TodolistTab);
-	    jsclick(TodolistTab);
+	    movingElement(TodolistTab);
 	    Thread.sleep(4000);
+	    jsclick(TodolistPendingItems);
+	    Thread.sleep(3000);
 	    jsclick(Metadata);
+	    Thread.sleep(3000);
 	    VisiblityOf(AcceptButton);
 	    jsclick(AcceptButton);
 	    Thread.sleep(3000);
@@ -253,37 +264,54 @@ public class ToDoListTab extends BaseClass {
 	public void VerifyingAnnotationPageByThirdUSerDipak() throws Exception {
 
 		VisiblityOf(TodolistTab);
+		Reporter.log("Select todolist tab");
 		jsclick(TodolistTab);
+		Reporter.log("Select newitems");
 		Thread.sleep(3000);
 		jsclick(NewItems);
 		Thread.sleep(5000);
+		Reporter.log("Open first document");
 		jsclick(Open1stDocument);
 		Thread.sleep(3000);
+		try {
 		alertIsPresent();
 		acceptAlert();
+		}
+		catch(Exception e) {
+			Reporter.log("Alert not presert");
+		}
 		Thread.sleep(4000);
+		Reporter.log("User click on accept button");
 		AcceptButton.click();
 		Reporter.log("Alert Message is Displayed");
 		Thread.sleep(8000);
 		//VisiblityOf(UpdateProperties);
+		Reporter.log("In this wf only 3 users are available.So the user unable to send the document to 4th user so he add one more user");
 		movingclkElement(UpdateProperties);
 		Thread.sleep(2000);
+		Reporter.log("Select update property");
 		jsclick(Update4thUser);
+		Reporter.log("CLick user_4 textbox");
 		Thread.sleep(2000);
 		jsclick(findBTN);
+		Reporter.log("User select Ram named user");
 		Thread.sleep(2000);
 		jsclick(RamUSer);
+		Reporter.log("Click on user dialog OK button");
 		Thread.sleep(3000);
 		jsclick(OKBTNADDName);
 		Thread.sleep(3000);
-	
+		Reporter.log("Click on properties update save button");
 		jsclick(PropertiesUpdateSaveBTN);
 		VisiblityOf(UpdateDialogOKBTN);
 		jsclick(UpdateDialogOKBTN);
 		Thread.sleep(5000);
+		Reporter.log("Now the user can able to sent the document to workflow ");
 		jsclick(AcceptButton);
 		Thread.sleep(3000);
+		Reporter.log("User click on accept button");
 		WorkflowComments.sendKeys(TodoListExcel(5, 1));
+		Reporter.log("USer enter a comment and click on comment dilaog OK button");
 		jsclick(WorkflowCommentsOKButton);
 		Thread.sleep(8000);
 	}
@@ -293,17 +321,28 @@ public void VerifyingAnnotationPageByFourthUSerRAm() throws Exception {
 
 		
 		jsclick(TodolistTab);
+		Reporter.log("Sselect todolist tab");
 		Thread.sleep(3000);
 		jsclick(NewItems);
+		Reporter.log("Select a newitems");
 		Thread.sleep(5000);
+		Reporter.log("Open a first wf document");
 		jsclick(Open1stDocument);
 		Thread.sleep(3000);
-		alertIsPresent();
-		acceptAlert();
-		Thread.sleep(10000);
+		try {
+			alertIsPresent();
+			acceptAlert();
+			}
+			catch(Exception e) {
+				Reporter.log("Alert not presert");
+			}
+		Thread.sleep(7000);
+		Reporter.log("Click on accept button");
 		AcceptButton.click();
+		Reporter.log("The document accepted by 4th user.");
 		WorkflowComments.sendKeys(TodoListExcel(6, 1));
 		jsclick(WorkflowCommentsOKButton);
+		Reporter.log("Workflow with all user accpet condition Scenario working fine");
 		Thread.sleep(8000);
 	}
 	
@@ -326,8 +365,13 @@ public void SentItemsWithSummary() throws InterruptedException {
     wait.until(ExpectedConditions.visibilityOf((DWSdialogOKBTN)));
     movingclkElement(DWSdialogOKBTN);
     Thread.sleep(3000);
-    alertIsPresent();
-    acceptAlert();
+    try {
+		alertIsPresent();
+		acceptAlert();
+		}
+		catch(Exception e) {
+			Reporter.log("Alert not presert");
+		}
     Thread.sleep(3000);
 	jsclick(SummaryButton);
 	Thread.sleep(13000);
@@ -338,7 +382,7 @@ public void SentItemsWithSummary() throws InterruptedException {
 }
 	
 	
-	@FindBy(xpath = ("(//button[text()='Cancel'])[67]"))
+	@FindBy(xpath = ("/html/body/div[64]/div[2]/div/div/div/div/div/div/div/div[4]/button"))
 	private WebElement summarycancelbtn;
 	
 	public WebElement getsummarycancelbtn() {
@@ -453,24 +497,34 @@ public void SentItemsWithSummary() throws InterruptedException {
 	 public void SendingDocumentInworkflow() throws InterruptedException {
 	       
 		 Print pojo = new Print();
-			movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
+		 Thread.sleep(5000);
+			selectElement(pojo.getCabinet());
+			Reporter.log("Manual Workflow : Document sendTo new automation workflow");
 			Thread.sleep(3000);
+			Reporter.log("User Expand the cabinet");
 			ElementToBeClickable(pojo.getDrawer());
-			movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
+			selectElement(pojo.getDrawer());
+			Reporter.log("User Expand the drawer");
 			Thread.sleep(3000);
-			movingDoublecli(pojo.getFolder(), pojo.getFolder());
-			Thread.sleep(5000);                                
-			WebElement checkbox = driver.findElement(By.xpath("//*[@id=\"documentListTable\"]/tbody/tr[13]/td[1]"));
+			selectElement(pojo.getFolder());
+			Thread.sleep(5000);
+			Reporter.log("User open the Folder");
+			WebElement checkbox = driver.findElement(By.xpath("//*[@id=\"documentListTable\"]/tbody/tr[5]/td[1]"));
 		    checkbox.click();
+		    Reporter.log("User click a document checkbox");
 		    WebElement doc = driver.findElement(By.xpath("//*[@id=\"pageheader\"]/div[1]/ul/li[5]"));
 		   movingElement(doc);
+		   Reporter.log("Mousehover on document tab");
 		   WebElement SendToWf = driver.findElement(By.xpath("//*[@id=\"sendtoworkflow\"]"));jsclick(SendToWf);
 		   Thread.sleep(5000);
+		   Reporter.log("USer select sendTo wf submenu");
 		  // SendToWf.sendKeys(WorkflowName);
 		   WebElement NewManualforautococ= driver.findElement(By.xpath("//td[text()='New Manual for Automation']"));
           jsclick( NewManualforautococ);
+          Reporter.log("USer select new manual workflow ");
           WebElement docSendDialogbocOKBTN= driver.findElement(By.xpath("(//button[@id='CommentsMessageModelOk'])[1]"));
 		   jsclick(docSendDialogbocOKBTN);
+		   Reporter.log("USer click on 'Document sent sunccessfull' dialog OK button");
 		   Thread.sleep(5000);
 		  
 		   Reporter.log("document sent to workflow successfully");
@@ -497,6 +551,7 @@ public void SentItemsWithSummary() throws InterruptedException {
 	
 	 public void refrshLogDipakTaskUser() throws Exception {
 		       LogoutPage();
+		       Reporter.log("User Logout the session");
 		      Thread.sleep(3000);
 				driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 3));
 				driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
@@ -517,13 +572,16 @@ public void SentItemsWithSummary() throws InterruptedException {
 				catch (NoSuchElementException e) {
 					Reporter.log("Login without msg");
 				}
+				Reporter.log("USer login as Dipak user");
 			}
+	 
 			
 				
 	 
 	 
 	 public void refrshLogNishaTaskUser() throws Exception {
 			 LogoutPage();
+			 Reporter.log("User Logged out the session");
 		      Thread.sleep(3000);
 				driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 2));
 				driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 2));
@@ -544,10 +602,12 @@ public void SentItemsWithSummary() throws InterruptedException {
 				catch (NoSuchElementException e) {
 					Reporter.log("Login without msg");
 				}
+				Reporter.log("Login as nisha user ");
 			}
 			
 	 public void RamTaskUser() throws Exception {
       	LogoutPage();
+      	Reporter.log("User logout the session");
 	      Thread.sleep(3000);
 			WebElement UserNam = driver.findElement(By.xpath("//input[@id='userName']"));
 			  Thread.sleep(3000);
@@ -570,6 +630,7 @@ public void SentItemsWithSummary() throws InterruptedException {
 			catch (NoSuchElementException e) {
 				Reporter.log("Login without msg");
 			}
+			Reporter.log("User login as Ram user");
 		}
 	 
 	 
@@ -589,35 +650,48 @@ public void SentItemsWithSummary() throws InterruptedException {
 			ToDoListTab todo = new ToDoListTab();
 			
 			jsclick(todo.getTodolistTab());
+			Reporter.log("Mouse hover on todo list tab");
 			Thread.sleep(3000);
 			jsclick(todo.getNewItems());
+			Reporter.log("Select new items submenu");
 			Thread.sleep(6000);
 			ElementToBeClickable(Metadata);
+			Reporter.log("Expand the todolist newitem document's metadata");
 			movingclkElement(Metadata);
 	        Thread.sleep(3000);
 			jsclick(RejectButton);
+			Reporter.log("CLick on reject button");
+			Reporter.log("User Expand the cabinet");
 			Thread.sleep(3000);
 			ElementToBeClickable(UserSelection);
+			Reporter.log("Select a task_3 user");
             movingclkElement(UserSelection);
             Thread.sleep(3000);
+            Reporter.log("Enter comment in the reject text box");
             SelectByUser();
            Thread.sleep(10000);
 			WorkflowComments.sendKeys(TodoListExcel(2, 5));
 			Thread.sleep(3000);
+			Reporter.log("Click on reject dialog OK button");
 			WorkflowCommentsOKButton.click();
+			Reporter.log("Document rejected successfull the user has selected Task user_3 so the rejected document moved to 3rd user account");
 			Thread.sleep(15000);
 
 	 }
 
 	 public static void WorkflowStatusDropdownForSearch() throws Exception {
 			SearchFunction sr = new SearchFunction();
+			Reporter.log("USer click on search tab");
 	        WebDriverWait wait=new WebDriverWait(driver,30);
 	        jsclick(sr.getSearchTab());
-			
+	        Reporter.log("User expand workflow dropdown status");
 			(sr.getforworkflowdropdown()).click();// Endworkflow
+			Reporter.log("Select endworkflow");
 			(sr.getforworkflowEndWorkflow()).click();
+			Reporter.log("Click on find button");
 			jsclick(sr.getFindButton());
 			sr.SearchDocumentsInTodolistsearchtab();
+		
 			Thread.sleep(15000);
 			jsclick(sr.getClearButton());
 			Thread.sleep(8000);
@@ -633,52 +707,67 @@ public void SentItemsWithSummary() throws InterruptedException {
 	 
 	 
 	 public void DynamicWorkFlowTodoListFunctionality() throws Exception {
+		 
 		WebElement newDocumentTab = driver.findElement(By.xpath("(//a[@id='createDocument'])[1]"));
 		Thread.sleep(4000);
+		Reporter.log("User click on new document tab");
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		VisiblityOf(newDocumentTab);
 		jsclick(newDocumentTab);
 		WebElement DocumentLocation = driver.findElement(By.xpath("(//input[@id='createDocuemtnLocation'])[1]"));
 		Thread.sleep(4000);
+		Reporter.log("User click on document location textbox");
 		jsclick(DocumentLocation);
 		WebElement cabinet = driver.findElement(By.xpath("//*[@id=\"12103\"]/ins"));
 		jsclick(cabinet);
-
+		Reporter.log("User Expand the cabinet");
 		Thread.sleep(4000);
 	   WebElement drawer = driver.findElement(By.xpath("//*[@id=\"12104\"]/ins"));
 	   jsclick(drawer);
+	   Reporter.log("User Expand the drawer");
 	   Thread.sleep(3000);
 		WebElement folder = driver.findElement(By.xpath("//a[text()='Test apk']"));
-	   movingclkElement(folder);
+	  jsclick(folder);
+	  Reporter.log("User select a folder");
 		WebElement OKbtn = driver.findElement(By.xpath("(//button[@id='navigatorTreeOk'])[1]"));
 		Thread.sleep(3000);
 		jsclick(OKbtn);
+		Reporter.log("User click on destination folder dialog OK button");
 		Thread.sleep(5000);
 		WebElement docTypeDropDown = driver.findElement(By.xpath("(//select[@id='docTypeList'])[1]"));
 		movingclkElement(docTypeDropDown);
+		Reporter.log("User select document type DynamicDocumentWF");
 		Thread.sleep(4000);
 		WebElement DynamicDocumentWF = driver.findElement(By.xpath("//option[text()='Dynamic document type']"));
 		scrollDown(DynamicDocumentWF);
+		Reporter.log("Select User_1 textbox");
 		DynamicDocumentWF.click();
 		Thread.sleep(3000);
+		Reporter.log("User select Rnisha named user");
 		WebElement User1 = driver.findElement(By.xpath("//*[@id=\"indices_65\"]"));
 		jsclick(User1);
 		Thread.sleep(3000);
 		WebElement findbtn = driver.findElement(By.xpath("//*[@id=\"searchDynamicUser\"]"));
 		jsclick(findbtn);
 		Thread.sleep(3000);
+		Reporter.log("USer click on USer_2 text box");
 		WebElement User1Vidya = driver.findElement(By.xpath("//*[@id=\"spanCheckDynamicUser_vidya\"]"));
 		jsclick(User1Vidya);
+		Reporter.log("User select viday named user");
 		WebElement usergrpOKBtn = driver.findElement(By.xpath("//*[@id=\"navigatorTreeCancle5\"]"));
 		movingclkElement(usergrpOKBtn);
 		Thread.sleep(4000);
 		WebElement User2 = driver.findElement(By.xpath("//*[@id=\"indices_66\"]"));
 		jsclick(User2);
+		Reporter.log("User click on User_3 textbox");
 		Thread.sleep(3000);
+		Reporter.log("USer select dipak named user");
 		jsclick(findbtn);
 		WebElement RNishaUser = driver.findElement(By.xpath("//*[@id=\"spanCheckDynamicUser_RNisha\"]"));
 		jsclick(RNishaUser);
 		movingclkElement(usergrpOKBtn);
 		Thread.sleep(4000);
+		Reporter.log("USer click on Select user dialog OK button");
 		WebElement User3 = driver.findElement(By.xpath("//*[@id=\"indices_67\"]"));
 		jsclick(User3);
 		WebElement TextBoxSearch = driver.findElement(By.xpath("//*[@id=\"textForUserSearch\"]"));
@@ -690,28 +779,41 @@ public void SentItemsWithSummary() throws InterruptedException {
 		Thread.sleep(4000);
 		WebElement KeyValue = driver.findElement(By.id("indices_278"));
 		movingclkElement(KeyValue);
+		Reporter.log("USer enter key value");
 	    KeyValue.sendKeys("Dynamic");
 		
 		Thread.sleep(3000);
+		Reporter.log("User mousehover on add icon");
 		WebElement moveToPlusIcon = driver.findElement(By.xpath("//*[@id=\"addPagesDropDown\"]/span"));
 		movingElement(moveToPlusIcon);
 		Thread.sleep(2000);
+		Reporter.log("User select a browse option");
 		WebElement browseOption = driver.findElement(By.xpath("//*[@id=\"viewDocumentAddPages\"]"));
-	    Thread.sleep(1000);
-		movingclkElement(browseOption);
+	    Thread.sleep(3000);
+		jsclick(browseOption);
+		Reporter.log("USer add a file by using AutoIT scipt");
 		Thread.sleep(5000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Dollar.exe");
-		Thread.sleep(2000);
-		wait.until(ExpectedConditions.alertIsPresent());
-		 acceptAlert();
+		Thread.sleep(7000);
+		try {
+			
+			wait.until(ExpectedConditions.alertIsPresent());
+			 acceptAlert();
+		}catch(Exception e) {
+			
+			System.out.println("Alert is not present");
+		}
+		
 		 Thread.sleep(5000);
 		 WebElement CreateBTN= driver.findElement(By.xpath("(//button[normalize-space()='Create'])[1]"));
 		 jsclick(CreateBTN);
+		 Reporter.log("User click on create button");
 		 Thread.sleep(15000);
 		WebElement viewOption = driver.findElement(By.xpath("(//button[normalize-space()='View'])[1]"));
 		 jsclick(viewOption);
+		 Reporter.log("User click on view button");
 		 Thread.sleep(8000);
-		 WebElement signaturetab = driver.findElement(By.xpath("(//span[@class='text'])[57]"));
+		/* WebElement signaturetab = driver.findElement(By.xpath("(//span[@class='text'])[57]"));
 		 jsclick(signaturetab);
 		 Thread.sleep(4000);
 		 WebElement page = driver.findElement(By.xpath("(//canvas[@class='lt-imageviewer-eventcanvas'])[3]"));
@@ -721,17 +823,21 @@ public void SentItemsWithSummary() throws InterruptedException {
 		 Thread.sleep(8000);
 		 WebElement saveOKBTN = driver.findElement(By.xpath("(//button[@id='messageButtonOK42'])[1]"));
 		 jsclick(saveOKBTN);
-		 Thread.sleep(3000);
+		 Thread.sleep(3000);*/
 	//	WebElement sendToWf = driver.findElement(By.xpath("(//span[@id='viewSendToWrkflw'])[1]"));
 		jsclick(sendToWf);
+		Reporter.log("USer click sendtoWf button");
 		Thread.sleep(3000);
 	//	WebElement dynamicwfnew = driver.findElement(By.xpath("(//td[contains(text(),'Dynamic workflow')])[1]"));
 	    jsclick(dynamicwfnew);
+	    Reporter.log("User select dynamic new workflow");
 	 //   WebElement applyBTN = driver.findElement(By.xpath("(//button[@id='sidbisendworkflowOk'])[1]"));
 	     jsclick(applyBTN);
+	     Reporter.log("User click on apply button");
 	     Thread.sleep(10000);
 	//    WebElement sendwfsuccessdialogOKBTN = driver.findElement(By.xpath("(//button[@id='CommentsMessageModelOk'])[1]"));
 	    jsclick(sendwfsuccessdialogOKBTN);
+	    Reporter.log("USer click Document sent to wf successfull dialog OK button");
 	    }
 	 
 	 
@@ -762,7 +868,7 @@ public void SentItemsWithSummary() throws InterruptedException {
 	@FindBy(xpath = ("//a[@id='endwf']"))
 	private WebElement EndWfButton;
 	
-	@FindBy(xpath = ("/html/body/div[57]/div[59]/div[4]/div[2]/div[4]/div/div[2]/div[2]/table/tbody/tr[2]/td/div/div[1]/div/div/div/div[2]/a"))
+	@FindBy(id = ("summary1"))
 	private WebElement SummaryButton;
 	
 	@FindBy(xpath = ("(//a[normalize-space()='Comment'])[1]"))

@@ -1,5 +1,6 @@
 package Pom;
 
+//Dipak Automation Pom
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -7,6 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -66,7 +68,7 @@ public class TemplatePage extends Generic.BaseClass {
 		return Cancel_Button_BrowseforFolder;
 	}
 
-	@FindBy(xpath = "//button[@id='navigatorTreeOk']")
+	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
 
 	public WebElement getOK_Button_BrowseforFolder() {
@@ -89,7 +91,7 @@ public class TemplatePage extends Generic.BaseClass {
 		return Select_Retain_Checkbox;
 	}
 
-	@FindBy(id = "createTemplateBtn")
+	@FindBy(xpath = "//*[@id=\"createTemplateBtn\"]")
 	private WebElement Save_Template_Button;
 
 	public WebElement getSave_Template_Button() {
@@ -124,7 +126,7 @@ public class TemplatePage extends Generic.BaseClass {
 		return Select_Folder_Alert_OK_Button;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/span[1]")
+	@FindBy(xpath = "(//span[contains(@class,'addFileIcon')])[2]")
 	private WebElement Move_To_PlusIcon;
 
 	public WebElement getMove_To_PlusIcon() {
@@ -142,17 +144,6 @@ public class TemplatePage extends Generic.BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele);
 		return ele;
-	}
-
-	@FindBy(xpath = "//span[@id='commentMessage']")
-	private WebElement Folder_ErrorMessage;
-
-	public WebElement getFolder_ErrorMessage() {
-		SoftAssert softassert = new SoftAssert();
-		String expectedtext = "Please add pages to the template before creating!";
-		String actualtext = Folder_ErrorMessage.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
-		return Folder_ErrorMessage;
 	}
 
 	@FindBy(css = "#createDocuemntNavigator #\\33 5 > .jstree-icon")
@@ -190,7 +181,7 @@ public class TemplatePage extends Generic.BaseClass {
 		return Template_Description_Messagebox;
 	}
 
-	@FindBy(id = "createTemplateOk")
+	@FindBy(xpath = "//*[@id=\"createTemplateOk\"]")
 	private WebElement Template_Description_OK_button;
 
 	public WebElement getTemplate_Description_OK_button() {
@@ -225,13 +216,6 @@ public class TemplatePage extends Generic.BaseClass {
 		return ele;
 	}
 
-	@FindBy(id = "Template_Automation_Test")
-	private WebElement Select_Template_Automation_Test_Option;
-
-	public WebElement getSelect_Template_Automation_Test_Option() {
-		return Select_Template_Automation_Test_Option;
-	}
-
 	@FindBy(id = "indices_33")
 	private WebElement Select_ReportName_Test;
 
@@ -246,7 +230,7 @@ public class TemplatePage extends Generic.BaseClass {
 		return Enter_Report_Name_Test;
 	}
 
-	@FindBy(id = "Template_Automation_Test1")
+	@FindBy(id = "Template_Automation1")
 	private WebElement Select_Created_Template;
 
 	public WebElement getSelect_Created_Template() {
@@ -420,28 +404,6 @@ public class TemplatePage extends Generic.BaseClass {
 		return ele1;
 	}
 
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[2]/div[1]/img[1]")
-	private WebElement OpenExcel_Document;
-
-	public WebElement getOpenExcel_Document() throws Exception {
-		return OpenExcel_Document;
-	}
-
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[3]/div[1]/img[1]")
-	private WebElement Openpdf_Document;
-
-	public WebElement getOpenpdf_Document() throws Exception {
-		return OpenExcel_Document;
-
-	}
-
-	@FindBy(xpath = "/html[1]/body[1]/div[56]/div[59]/div[7]/div[4]/div[4]/div[1]/img[1]")
-	private WebElement OpenDefaultView_Document;
-
-	public WebElement getOpenDefaultView_Document() throws Exception {
-		return OpenExcel_Document;
-	}
-
 	// Special characters datadriven
 
 	public String Templates_excelRead(int rowNo, int cellNo) throws Exception {
@@ -455,4 +417,263 @@ public class TemplatePage extends Generic.BaseClass {
 		String cellType = cll.getStringCellValue();
 		return cellType;
 	}
+
+	@FindBy(xpath = "//select[@id='defaultPdfDocViewListNo']")
+	private WebElement Pdf_document_Advancedviewing;
+
+	public WebElement getPdf_document_Advancedviewing() {
+		Select drop = new Select(Pdf_document_Advancedviewing);
+		drop.selectByVisibleText("Advanced viewing");
+		return Pdf_document_Advancedviewing;
+	}
+
+	@FindBy(linkText = "New Pdf Document")
+	private WebElement New_pdf_Document_Option;
+
+	public WebElement getNew_pdf_Document_Option() {
+		WebElement ele1 = New_pdf_Document_Option;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", ele1);
+		return New_pdf_Document_Option;
+	}
+
+	@FindBy(id = "newTemplateFileName")
+	private WebElement Enter_pdf_File_Name;
+	@FindBy(id = "templateOK")
+	private WebElement TempOK;
+
+	public WebElement getEnter_pdf_File_Name() throws Exception {
+		WebElement ele1 = Enter_pdf_File_Name;
+		ele1.sendKeys(Templates_excelRead(7, 0));
+		Thread.sleep(3000);
+		TempOK.click();
+		return Enter_pdf_File_Name;
+	}
+
+	@FindBy(xpath = "//img[@src='images/newRe.png']")
+	private WebElement Refreshbutton;
+
+	public WebElement getRefreshbutton() {
+		return Refreshbutton;
+	}
+
+	@FindBy(xpath = "//span[@id='pdfViewerDiv_formdesignerIcon']")
+	private WebElement pdfViewer;
+
+	public WebElement getpdfViewer() {
+		return pdfViewer;
+	}
+
+	@FindBy(xpath = "//span[@id='pdfViewerDiv_formdesigner_textboxIcon']")
+	private WebElement Textbox;
+
+	public WebElement getTextbox() {
+		return Textbox;
+	}
+
+	@FindBy(css = "#pdfViewerDiv_textLayer_0")
+	private WebElement Add_Textbox_Onpage;
+
+	public WebElement getAdd_Textbox_Onpage() throws Exception {
+		Actions action = new Actions(driver);
+		WebElement element = Add_Textbox_Onpage;
+		action.dragAndDropBy(element, 200, 100).build().perform();
+		return Add_Textbox_Onpage;
+	}
+
+	@FindBy(xpath = "//*[@id=\"formMapper\"]")
+	private WebElement Click_Formmapper;
+
+	public WebElement getClick_Formmapper() throws Exception {
+		return Click_Formmapper;
+	}
+
+	@FindBy(xpath = "//select[@id='formField1']")
+	private WebElement Select_FormFiled;
+
+	public WebElement getSelect_FormFiled() {
+		Select sel = new Select(Select_FormFiled);
+		sel.selectByVisibleText("Textbox1");
+		return Select_FormFiled;
+	}
+
+	@FindBy(xpath = "//button[@id='setFormMapping']")
+	private WebElement FormOK;
+
+	public WebElement getFormOK() {
+		return FormOK;
+	}
+
+	@FindBy(xpath = "//select[@id='defaultPdfDocViewListNo']")
+	private WebElement Pdf_document_Defaultviewing;
+
+	public WebElement getPdf_document_Defaultviewing() {
+		Select drop = new Select(Pdf_document_Defaultviewing);
+		drop.selectByVisibleText("Default viewing");
+		return Pdf_document_Defaultviewing;
+	}
+
+	@FindBy(xpath = "//span[@id='messageContent']")
+	private WebElement Verify_DuplicateTemp_Message;
+
+	public WebElement getVerify_DuplicateTemp_Message() {
+		WebElement Message = Verify_DuplicateTemp_Message;
+		System.out.println(Message.getText());
+		return Message;
+	}
+
+	@FindBy(xpath = "//button[@id='messageButtonOK']")
+	private WebElement Okbutton;
+
+	public WebElement getOkbutton() {
+		return Okbutton;
+	}
+
+	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
+	private WebElement Nobutton;
+
+	public WebElement getNobutton() {
+		return Nobutton;
+	}
+
+	@FindBy(xpath = "//*[@id=\"commentMessage\"]")
+	private WebElement FolderSelectMessage;
+	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
+	private WebElement CommentOK;
+
+	public WebElement getFolderSelectMessage() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please select a folder to create document";
+		String actualtext = FolderSelectMessage.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+		System.out.println(FolderSelectMessage.getText());
+		jsclick(CommentOK);
+		return FolderSelectMessage;
+	}
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement addpagesMessage;
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
+	private WebElement CommentOKbutton;
+
+	public WebElement getFolder_ErrorMessage() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please add pages to the template before creating!";
+		String actualtext = addpagesMessage.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(addpagesMessage.getText());
+		jsclick(CommentOKbutton);
+		return addpagesMessage;
+	}
+
+	@FindBy(xpath = "//*[@id=\"saveTemplate\"]")
+	private WebElement savetemp;
+
+	public WebElement getsavetemp() {
+		return savetemp;
+	}
+
+	@FindBy(xpath = "//*[@id=\"createDocumentClear\"]")
+	private WebElement ClearButton;
+
+	public WebElement getClearButton() {
+		return ClearButton;
+	}
+
+	@FindBy(xpath = "//*[@id=\"templateErr\"]")
+	private WebElement validationerror;
+
+	public WebElement getvalidationerror() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "*Template name should be specified.";
+		String actualtext = validationerror.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(validationerror.getText());
+		return validationerror;
+	}
+
+	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
+	private WebElement Createdoc;
+
+	public WebElement getCreatedoc() {
+		return Createdoc;
+	}
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Reportvaluevalidationerror;
+
+	public WebElement getReportvaluevalidationerror() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "ReportName*  	field is required";
+		String actualtext = Reportvaluevalidationerror.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(Reportvaluevalidationerror.getText());
+		jsclick(CommentOKbutton);
+		return Reportvaluevalidationerror;
+	}
+
+	@FindBy(xpath = "//*[@id=\"Word document automation.docx\"]/div/img")
+	private WebElement Open_Word_page;
+
+	public WebElement getOpen_Word_page() throws Exception {
+		return Open_Word_page;
+	}
+
+	@FindBy(xpath = "//*[@id=\"Excel document automation.xlsx\"]/div/img")
+	private WebElement Open_Excel_page;
+
+	public WebElement getOpen_Excel_page() throws Exception {
+		return Open_Excel_page;
+	}
+
+	@FindBy(xpath = "//*[@id=\"templateOK\"]")
+	private WebElement OKButton;
+
+	public WebElement getOKButton() {
+		return OKButton;
+	}
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Filenamevalidation;
+
+	public WebElement getFilenamevalidation() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter file name ";
+		String actualtext = Filenamevalidation.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(Filenamevalidation.getText());
+		jsclick(CommentOKbutton);
+		return Reportvaluevalidationerror;
+	}
+
+	@FindBy(xpath = "//*[@id=\"createDocumentMessage\"]")
+	private WebElement NavigateDoc;
+	@FindBy(xpath = "//*[@id=\"modelHome\"]")
+	private WebElement NavigateButton;
+
+	public WebElement getNavigateDoc() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Document created successfully";
+		String actualtext = NavigateDoc.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		System.out.println(NavigateDoc.getText());
+		jsclick(NavigateButton);
+		return Reportvaluevalidationerror;
+	}
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Formmappingvalidation;
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
+	private WebElement FormOKbutton;
+
+	public WebElement getFormmappingvalidation() {
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please add form fields before mapping.";
+		String actualtext = Formmappingvalidation.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+		System.out.println(Formmappingvalidation.getText());
+		jsclick(FormOKbutton);
+		return FolderSelectMessage;
+	}
+
 }

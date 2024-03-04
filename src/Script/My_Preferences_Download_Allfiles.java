@@ -19,7 +19,7 @@ public class My_Preferences_Download_Allfiles extends BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Download_Allfiles.class);
 
-	//@BeforeClass
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -27,10 +27,10 @@ public class My_Preferences_Download_Allfiles extends BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -39,8 +39,9 @@ public class My_Preferences_Download_Allfiles extends BaseClass {
 	public void Verify_Download_All_Files() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
 		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
@@ -56,15 +57,16 @@ public class My_Preferences_Download_Allfiles extends BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(5000);
 		pojo.getSelect_Document();
-		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
 		pojo.getDownload_File();
 		Thread.sleep(5000);
 		pojo.getDownload_File_OK_button();
 		Reporter.log(" All files should be Downloaded successfully", true);
 		log.info("All files should be Downloaded successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
-	
 }
-

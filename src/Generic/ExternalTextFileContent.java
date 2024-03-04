@@ -10,7 +10,7 @@ public class ExternalTextFileContent {
 
 	@Test
 	public void readFromTextFile() throws Exception{
-		FileReader read=new FileReader("D:\\nisha.txt");
+		FileReader read=new FileReader("D:\\00pagespdf.PDF");
 		BufferedReader br=new BufferedReader(read);
 		String st=br.readLine();
 		

@@ -13,10 +13,11 @@ import Pom.Logout;
 import Pom.Security;
 
 // Dipak Automation script
+
 public class Custom_Columns_Test extends Generic.BaseClass {
 	private static final Logger log = LogManager.getLogger(Custom_Columns_Test.class);
 
-	//@BeforeClass
+	@BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -24,10 +25,10 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	 @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -38,17 +39,19 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	public void Open_Custom_List_Dialog_And_Verify_Title_Roomcolumn() throws InterruptedException {
 
 		Customcolumns pojo = new Customcolumns();
-		jsclick(Refresh_Button(driver));
-		Thread.sleep(8000);
-		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
 		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Drawer(), pojo.getSelect_Drawer());
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
+		jsclick(pojo.getSelect_Cabinet());
 		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
-		Thread.sleep(8000);
+		jsclick(pojo.getSelect_Drawer());
+		Thread.sleep(4000);
+		jsclick(pojo.getSelect_Folder());
+		Thread.sleep(4000);
 		pojo.getMoveTo_Menu_RoomName();
 		Thread.sleep(3000);
 		jsclick(pojo.getCustomColumnOption());
+		Thread.sleep(4000);
 		pojo.gettitelvalidation();
 		Reporter.log("Custom List title validate", true);
 		log.info("Custom List dialog Title verified");
@@ -65,16 +68,22 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	}
 
 	@Test(priority = 3)
-	public void Set_And_Verify_Custom_Columns_NodeLevel() throws InterruptedException {
+	public void Set_And_Verify_Custom_Columns_NodeLevel() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
+		pojo.getSearchBoxIndices1();
+		Thread.sleep(2000);
 		jsclick(pojo.getSelect_Indices01());
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		pojo.getSearchBoxIndices2();
+		Thread.sleep(2000);
 		jsclick(pojo.getSelect_Indices02());
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		pojo.getSearchBoxIndices3();
+		Thread.sleep(2000);
 		jsclick(pojo.getSelect_Indices03());
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		pojo.Ok_Button_CustomList(driver);
 		Reporter.log("Indices Selected Successfully", true);
 		Thread.sleep(4000);
@@ -85,8 +94,17 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 		pojo.Verify_CompactView_checkbox(driver);
 		Thread.sleep(6000);
 		jsclick(pojo.getApply_button());
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(6000);
+		jsclick(pojo.getSelect_Cabinet());
+		Thread.sleep(4000);
+		jsclick(pojo.getSelect_Drawer());
+		Thread.sleep(4000);
+		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
 		Thread.sleep(6000);
 		pojo.Verify_Indicess_Value(driver);
+		Thread.sleep(5000);
 		Reporter.log("Custom Columns is set Node Level successfully", true);
 		log.info("Custom Columns is set Node Level successfully");
 
@@ -96,10 +114,24 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	public void Verify_Default_Custom_Columns() throws InterruptedException {
 
 		Customcolumns pojo = new Customcolumns();
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
+		jsclick(pojo.getSelect_Cabinet());
+		Thread.sleep(4000);
+		jsclick(pojo.getSelect_Drawer());
+		Thread.sleep(4000);
+		jsclick(pojo.getSelect_Folder());
+		Thread.sleep(4000);
+		pojo.getMoveTo_Menu_RoomName();
+		Thread.sleep(3000);
+		jsclick(pojo.getCustomColumnOption());
+		Thread.sleep(4000);
 		pojo.getMoveTo_Menu_RoomName();
 		Thread.sleep(4000);
 		jsclick(pojo.getCustomColumnOption());
+		Thread.sleep(4000);
 		pojo.getDefault_Button_CustomList();
+		Thread.sleep(4000);
 		pojo.Ok_Button_CustomList(driver);
 		Reporter.log("Set and Verify Default Custom columns successfully", true);
 		log.info("Set and Verify Default Custom columns successfully");
@@ -111,6 +143,7 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 		Customcolumns pojo = new Customcolumns();
 		pojo.getMoveTo_Menu_RoomName();
 		jsclick(pojo.getCustomColumnOption());
+		Thread.sleep(4000);
 		pojo.getCancel_Button_CustomList();
 		Reporter.log("Cancle button is clicked", true);
 		log.info("Cancle button is clicked successfully");
@@ -122,9 +155,10 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 		Customcolumns pojo = new Customcolumns();
 		pojo.getMoveTo_Menu_RoomName();
 		jsclick(pojo.getCustomColumnOption());
+		Thread.sleep(4000);
 		jsclick(pojo.getClick_DropdownOption());
 		pojo.Select_DropdownValue(driver);
-		// pojo.Scroll_Button(driver);
+		Thread.sleep(4000);
 		jsclick(pojo.getSet_RoomLevel_Indices());
 		Thread.sleep(4000);
 		pojo.Ok_Button_CustomList(driver);
@@ -139,6 +173,7 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 		Customcolumns pojo = new Customcolumns();
 		pojo.getMoveTo_Menu_RoomName();
 		jsclick(pojo.getReset_Column_option());
+		Thread.sleep(4000);
 		jsclick(pojo.getResetColumn_popup_OK_button());
 		Reporter.log("Custom columns Reset Successfully", true);
 		log.info("Custom columns Reset Successfully");
@@ -171,20 +206,45 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	}
 
 	@Test(priority = 10)
-	public void Verify_Set_Custom_Columns_for_Search() throws InterruptedException {
+	public void Verify_Set_Custom_Columns_for_Search() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
+		pojo.getSearchBoxIndices4();
+		Thread.sleep(3000);
 		jsclick(pojo.getSearch_Select_Indices01());
-		Thread.sleep(5000);
+		Thread.sleep(4000);
+		pojo.getSearchBoxIndices5();
+		Thread.sleep(3000);
+		jsclick(pojo.getSearch_Select_Indices02());
+		Thread.sleep(4000);
+		pojo.getSearchBoxIndices6();
+		Thread.sleep(3000);
+		jsclick(pojo.getSearch_Select_Indices03());
+		Thread.sleep(4000);
 		jsclick(pojo.getSearch_Ok_Button_CustomList());
 		Reporter.log("Indices Selected Successfully", true);
 		Thread.sleep(5000);
 		jsclick(pojo.getClick_Search_Option());
 		Thread.sleep(4000);
+		jsclick(pojo.getDocument_Location(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getCabinetPlus());
+		Thread.sleep(4000);
+		jsclick(pojo.getDrawerPlus(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getFolder(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getOk_button());
+		Thread.sleep(8000);
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(6000);
-		pojo.Search_Verify_Indicess_Value(driver);
+		pojo.Search_Verify_Indicess_Value4(driver);
+		Thread.sleep(3000);
+		pojo.Search_Verify_Indicess_Value5(driver);
+		Thread.sleep(3000);
+		pojo.Search_Verify_Indicess_Value6(driver);
+		Thread.sleep(6000);
 		Reporter.log("Custom column is set successfully for Search Functionality", true);
 		log.info("Custom column is set successfully for Search Functionality");
 	}
@@ -212,6 +272,8 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	public void Open_Custom_List_Dialog_And_Verify_Title_ToDoList() throws InterruptedException {
 
 		Customcolumns pojo = new Customcolumns();
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(4000);
 		pojo.getMoveTo_ToDoList_Option();
 		Thread.sleep(4000);
 		jsclick(pojo.getToDoList_Custom_Columns_option());
@@ -222,7 +284,7 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	}
 
 	@Test(priority = 13)
-	public void Verify_The_Text_of_Custom_List_Dialog_ToDoList() throws InterruptedException {
+	public void Verify_The_Text_of_Custom_List_Dialog_ToDoList() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		Thread.sleep(5000);
@@ -232,15 +294,40 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	}
 
 	@Test(priority = 14)
-	public void Verify_Set_Custom_Columns_for_ToDoList() throws InterruptedException {
+	public void Verify_Set_Custom_Columns_for_ToDoList() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(5000);
-		jsclick(pojo.getToDoList_Select_Indices());
-		Thread.sleep(5000);
-		Customcolumns.ToDoList_Ok_Button_CustomList(driver);
+
+		Thread.sleep(9000);
+		jsclick(pojo.getToDoList_Select_Indices01());
+		Thread.sleep(4000);
+		Customcolumns.ToDoList_Ok_Button_CustomList(driver).click();
 		Reporter.log("Indices Selected Successfully", true);
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(4000);
+		jsclick(pojo.getSelect_Cabinet());
+		Thread.sleep(4000);
+		jsclick(pojo.getSelect_Drawer());
+		Thread.sleep(4000);
+		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
+		Thread.sleep(6000);
+		jsclick(pojo.getSelectDoc(driver));
+		Thread.sleep(4000);
+		pojo.getMoveTo_Menu_Documents();
+		Thread.sleep(2000);
+		jsclick(pojo.getsendWorkflow(driver));
+		Thread.sleep(3000);
+		jsclick(pojo.getWFAssign(driver));
 		Thread.sleep(5000);
+		pojo.getSelectDoc(driver);
+		Thread.sleep(8000);
+		pojo.getMoveTo_Menu_Documents();
+		Thread.sleep(4000);
+		pojo.getVerify_CopyandPaste_Document();
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(4000);
 		pojo.getMoveTo_ToDoList_Option();
 		Thread.sleep(4000);
 		jsclick(pojo.getSelect_All_Item());
@@ -261,9 +348,6 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 		jsclick(pojo.getToDoList_Reset_Column_OK_Button());
 		Reporter.log("ToDoList Custom column Reset Successfully", true);
 		log.info("ToDoList Custom column Reset Successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
-
+		jsclick(pojo.getRefreshbutton());
 	}
-
-//@AfterClass
 }

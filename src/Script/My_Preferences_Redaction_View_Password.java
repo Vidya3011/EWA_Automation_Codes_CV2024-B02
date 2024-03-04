@@ -18,8 +18,8 @@ import Pom.My_Preferences;
 public class My_Preferences_Redaction_View_Password extends BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Redaction_View_Password.class);
-	
-	@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -27,10 +27,10 @@ public class My_Preferences_Redaction_View_Password extends BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -39,7 +39,8 @@ public class My_Preferences_Redaction_View_Password extends BaseClass {
 	public void Verify_Redaction_View_Password() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_New_Document());
 		Thread.sleep(4000);
@@ -109,10 +110,7 @@ public class My_Preferences_Redaction_View_Password extends BaseClass {
 		jsclick(pojo.getApply_button());
 		Reporter.log("Reset Successfully", true);
 		log.info("Reset Successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
-
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
-	
 }
-

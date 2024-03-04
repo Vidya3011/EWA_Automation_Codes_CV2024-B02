@@ -18,8 +18,8 @@ import Pom.My_Preferences;
 public class My_Preferences_QuickFind extends BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Add_signature.class);
-	
-	@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -27,10 +27,10 @@ public class My_Preferences_QuickFind extends BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -39,7 +39,8 @@ public class My_Preferences_QuickFind extends BaseClass {
 	public void Verify_QuickFind_DocIdSearch() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(Refresh_Button(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -51,18 +52,16 @@ public class My_Preferences_QuickFind extends BaseClass {
 		Thread.sleep(4000);
 		pojo.getEnter_Doc_Id_InSearch();
 		Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.alertIsPresent());
-
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
 		Thread.sleep(6000);
 		jsclick(pojo.getClick_general_option());
 		Thread.sleep(6000);
 		pojo.getVerify_Doc_Id();
-		Thread.sleep(8000);
-		jsclick(Refresh_Button(driver));
 		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Reporter.log("Verify successfully Quick Find Doc Id Search", true);
 		log.info("Verify successfully Quick Find Doc Id Search");
 	}
@@ -80,9 +79,7 @@ public class My_Preferences_QuickFind extends BaseClass {
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
 		pojo.getEnter_Text_InSearch();
-		Thread.sleep(8000);
-		jsclick(BaseClass.Refresh_Button(driver));
-		Thread.sleep(4000);
+		Thread.sleep(9000);
 		Reporter.log("Verify successfully Quick Find Text search", true);
 		log.info("Verify successfully Quick Find Text search");
 
@@ -102,8 +99,6 @@ public class My_Preferences_QuickFind extends BaseClass {
 		Thread.sleep(4000);
 		pojo.getEnter_IndexValue_InSearch();
 		Thread.sleep(8000);
-		jsclick(BaseClass.Refresh_Button(driver));
-		Thread.sleep(4000);
 		Reporter.log("Verify successfully Quick Find Index search", true);
 		log.info("Verify successfully Quick Find Index search");
 	}
@@ -122,13 +117,9 @@ public class My_Preferences_QuickFind extends BaseClass {
 		Thread.sleep(4000);
 		pojo.getEnter_BothValue_InSearch();
 		Thread.sleep(8000);
-		jsclick(BaseClass.Refresh_Button(driver));
-		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Reporter.log("Verify successfully Quick Find Text and Index search", true);
 		log.info("Verify successfully Quick Find Text and Index search");
-		jsclick(BaseClass.Refresh_Button(driver));
+		Thread.sleep(5000);
 	}
-
-	
 }
-

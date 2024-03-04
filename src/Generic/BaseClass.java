@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -65,7 +66,8 @@ public class BaseClass {
 		public static void loadBrowser(String browserName) {
 			
 			if (browserName.equals("Chrome")) {
-				WebDriverManager.chromedriver().setup();
+			//	WebDriverManager.chromedriver().setup();
+			  System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe");
 				driver = new ChromeDriver();
 
 			} else if (browserName.equals("edge")) {
@@ -140,7 +142,167 @@ public class BaseClass {
 		}
 	}
 		
+	
+public static void loginSQL2022() throws Exception {
+		
+		WebElement UserName=driver.findElement(By.xpath("//input[@id='userName']"));
+		Thread.sleep(3000);
+		UserName.sendKeys(readFromExLogin(2, 0));
+		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(2, 1));
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+        Select sel=new Select(room);
+		sel.selectByVisibleText(readFromExLogin(3, 2));//SQLroom 3,2
+		Thread.sleep(3000);
+		
+		WebElement LoginBTN=driver.findElement(By.id("submitid"));
+		jsclick(LoginBTN);
+		Thread.sleep(3000);
+		
+		try {
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if(sessiomsg.isDisplayed()) {
+		    jsclick(sessiomsgOK);
+			}
+			}
+		catch (NoSuchElementException e) {
+			Reporter.log("Login without msg");
+		}
+	}
 			
+public static void loginSQL2022RAM() throws Exception {
+	
+	WebElement UserName=driver.findElement(By.xpath("//input[@id='userName']"));
+	Thread.sleep(4000);
+	UserName.sendKeys("rnisha");
+	Thread.sleep(4000);
+	driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(2, 1));
+	WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+	 Select sel=new Select(room);
+		sel.selectByVisibleText(readFromExLogin(3, 2));//SQLroom 3,2
+		Thread.sleep(3000);
+	WebElement LoginBTN=driver.findElement(By.id("submitid"));
+	jsclick(LoginBTN);
+	Thread.sleep(3000);
+	try {
+		WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+		WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+		if(sessiomsg.isDisplayed()) {
+	    jsclick(sessiomsgOK);
+		}
+		}
+	catch (NoSuchElementException e) {
+		Reporter.log("Login without msg");
+	}
+}
+		
+
+public static void loginCaseSensitiveRoom() throws Exception {
+		
+		WebElement UserName=driver.findElement(By.xpath("//input[@id='userName']"));
+		Thread.sleep(3000);
+		UserName.sendKeys("vwadmin");
+		driver.findElement(By.id("loginPassword")).sendKeys("vw");
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		a1 = new Actions(driver);
+		a1.moveToElement(room).click().build().perform();
+		WebElement roomCV = driver.findElement(By.xpath("//*[@id=\"rooms\"]/option[5]"));
+		roomCV.click();
+		WebElement LoginBTN=driver.findElement(By.id("submitid"));
+		jsclick(LoginBTN);
+		Thread.sleep(3000);
+		try {
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if(sessiomsg.isDisplayed()) {
+		    jsclick(sessiomsgOK);
+			}
+			}
+		catch (NoSuchElementException e) {
+			Reporter.log("Login without msg");
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			
+	
+	 public static void LogRamUser() throws Exception {
+	      
+	      Thread.sleep(3000);
+			driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("ram");
+			driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
+			WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+			a1 = new Actions(driver);
+			a1.moveToElement(room).click().build().perform();
+			WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
+			ro.click();
+			WebElement ele=driver.findElement(By.id("submitid"));jsclick(ele);
+			Thread.sleep(3000);
+			try {
+				WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+				WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+				if(sessiomsg.isDisplayed()) {
+			    jsclick(sessiomsgOK);
+				}
+				}
+			catch (NoSuchElementException e) {
+				Reporter.log("Login without msg");
+			}
+		}
+		
+			
+	 public static void LogDipakUser() throws Exception {
+	      
+	      Thread.sleep(3000);
+			driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 3));
+			driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
+			WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+			a1 = new Actions(driver);
+			a1.moveToElement(room).click().build().perform();
+			WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
+			ro.click();
+			WebElement ele=driver.findElement(By.id("submitid"));jsclick(ele);
+			Thread.sleep(3000);
+			try {
+				WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+				WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+				if(sessiomsg.isDisplayed()) {
+			    jsclick(sessiomsgOK);
+				}
+				}
+			catch (NoSuchElementException e) {
+				Reporter.log("Login without msg");
+			}
+		}
+		
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 public static void loginLocalCVS() throws Exception {
 		
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(4, 0));
@@ -214,9 +376,19 @@ public static HashMap<String,String> getCreddential(){
 	
 	
 	
+	 public static CharSequence[] getNoOfRows()throws IOException { 
+		 File f= new File("./data/TestData.xlsx");
+			FileInputStream fis=new FileInputStream(f);
+			Workbook wb=new XSSFWorkbook(fis);
+			
+			
+			int data=(int)wb.getSheet("SearchTab").getRow(5).getCell(0).getNumericCellValue();
+			
+			System.out.println("150");
+			return null;
+			
 	
-	
-	
+	 }
 	
 	
 	
@@ -259,18 +431,38 @@ public static HashMap<String,String> getCreddential(){
 				WebElement logout= driver.findElement(By.xpath("(//span[@id='logedinusername'])[1]"));
 				Thread.sleep(2000);
 				jsclick(logout);
-				Thread.sleep(2000);
-				WebElement logoutOKBTN=driver.findElement(By.xpath("(//a[normalize-space()='Logout'])[1]"));
+				Thread.sleep(5000);
+				
+				WebElement logoutOKBTN=driver.findElement(By.xpath("//*[@id=\"idSidenav\"]/ul/li[1]/a"));
 				jsclick(logoutOKBTN);
+				
 				Thread.sleep(3000);
 				 
 			}
 	
 	
 	
+	/*@FindBy(xpath = "//*[@id=\"rubberBandInteractiveMode_shortcut\"]/span")
+	private WebElement ClickOCR;
+
+	public WebElement getClickOCR() throws Exception {
+		return ClickOCR;
+	}
+
+	@FindBy(css = "#imageViewerDiv .lt-imageviewer-eventcanvas")
+	private WebElement setOCR;
+
+	public WebElement getSet_OCR_ToDocument() throws Exception {
+
+		Actions action = new Actions(driver);
+		WebElement element = setOCR;
+		action.dragAndDropBy(element, 65, 15).build().perform();
+		jsclick(setOCR);
+		return element;
+
+	}
 	
-	
-	
+	*/
 	
 
 	// 3.
@@ -379,6 +571,22 @@ public static HashMap<String,String> getCreddential(){
 		a = driver.switchTo().alert();
 		a.dismiss();
 	}
+	
+	 public static String excelRead( int rowNo, int cellNo) throws IOException {
+		 File f= new File("./data/TestData.xlsx");
+			FileInputStream fis=new FileInputStream(f);
+			Workbook wb=new XSSFWorkbook(fis);
+			Sheet mySht = wb.getSheet("SearchTab");
+			Row row = mySht.getRow(rowNo);
+			Cell cell = row.getCell(cellNo);
+		    CellType cellType = cell.getCellType(); String text="";
+			   double d = cell.getNumericCellValue();
+			  long l = (long)d; 
+			  return text = String.valueOf(l); 
+			   }
+			  
+			   
+			  
 
 	// 19.
 	public static String getTextFromAlert() {
@@ -461,7 +669,7 @@ public static HashMap<String,String> getCreddential(){
 		boolean s = element.isSelected();
 		return s;
 	}
-	public static void Soft(WebElement expected,String actual) {
+	public static void SoftAssertEqalValidation(WebElement expected,String actual) {
 		SoftAssert so=new SoftAssert();
 		so.assertEquals(expected, actual);
 	}

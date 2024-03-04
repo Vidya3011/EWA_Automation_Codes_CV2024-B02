@@ -1,0 +1,45 @@
+name: Suite
+configFailurePolicy: skip
+listeners:
+  - Generic.ListenersRetry
+tests:
+  - name: Test2
+    classes:
+      - CVS_Hindi_French_Language.AdvancedViewer_Script
+
+  - name: Test3
+    classes:
+      - CVS_Hindi_French_Language.AnnotationFunctionality
+
+  - name: Test4
+    classes:
+      - CVS_Hindi_French_Language.SearchSelectDocumentLocation
+
+  - name: Test5
+    classes:
+      - CVS_Hindi_French_Language.RoomContextFunction
+
+  - name: Test 9
+    classes:
+      - CVS_Hindi_French_Language.DashBoardScript
+
+  - name: Test 10
+    classes:
+      - CVS_Hindi_French_Language.Favorites
+
+  - name: Test 11
+    classes:
+      - CVS_Hindi_French_Language.SecureLink
+
+  - name: Test 12
+    classes:
+      - CVS_Hindi_French_Language.PrintFunctionality
+
+  - name: Test 13
+    classes:
+      - CVS_Hindi_French_Language.SecureLink_Negative_Scenerio
+
+  - name: Test 14
+    classes:
+      - CVS_Hindi_French_Language.Print_Email_Export_Negative_Scenerio
+

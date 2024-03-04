@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test 1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 20 06:35:17 CST 2023</td>
+<td>Started on:</td><td>Fri Dec 15 02:57:45 CST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>233 seconds (233855 ms)</td>
+<tr><td>Total time:</td><td>283 seconds (283825 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,65 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Script.SecureLink.SentDocumentToView()'><b>SentDocumentToView</b><br>Test class: Script.SecureLink</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.72, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:51474}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fbf78241d62f3135e51596b76ee92c72
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Generic.BaseClass.alertIsPresent(BaseClass.java:648)
-	at Script.SecureLink.SentDocumentToView(SecureLink.java:81)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace22056764", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace22056764'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.72, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:51474}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fbf78241d62f3135e51596b76ee92c72
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Generic.BaseClass.alertIsPresent(BaseClass.java:648)
-	at Script.SecureLink.SentDocumentToView(SecureLink.java:81)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>40</td>
-<td>Script.SecureLink@1e98b1c</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -134,32 +75,85 @@ Session ID: fbf78241d62f3135e51596b76ee92c72
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.SecureLink.DocumentSendToSecureLink()'><b>DocumentSendToSecureLink</b><br>Test class: Script.SecureLink</td>
+<td title='Script.ToDoListFunctionality.DocEndedFromTask3DipakUser()'><b>DocEndedFromTask3DipakUser</b><br>Test class: Script.ToDoListFunctionality</td>
 <td></td>
-<td>48</td>
-<td>Script.SecureLink@1e98b1c</td></tr>
+<td>32</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
 <tr>
-<td title='Script.SecureLink.Login()'><b>Login</b><br>Test class: Script.SecureLink</td>
-<td></td>
-<td>16</td>
-<td>Script.SecureLink@1e98b1c</td></tr>
-<tr>
-<td title='Script.SecureLink.SecureLinkFromDocumentList()'><b>SecureLinkFromDocumentList</b><br>Test class: Script.SecureLink<br/>
-<a href="#Output-10339536" onClick='toggleBox("Output-10339536", this, "Show output", "Hide output");'>Show output</a>
+<td title='Script.ToDoListFunctionality.Login()'><b>Login</b><br>Test class: Script.ToDoListFunctionality<br/>
+<a href="#Output-882808" onClick='toggleBox("Output-882808", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-10339536" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-10339536">
+<a href="#Output-882808" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-882808">
 Login without msg<br/>
 </div>
 </td>
 <td></td>
-<td>78</td>
-<td>Script.SecureLink@1e98b1c</td></tr>
+<td>17</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
 <tr>
-<td title='Script.SecureLink.SecureLinkFromSearchTab()'><b>SecureLinkFromSearchTab</b><br>Test class: Script.SecureLink</td>
+<td title='Script.ToDoListFunctionality.SendAndNewItemsMetaDataAgree()'><b>SendAndNewItemsMetaDataAgree</b><br>Test class: Script.ToDoListFunctionality</td>
+<td></td>
+<td>21</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
+<tr>
+<td title='Script.ToDoListFunctionality.SendDoc()'><b>SendDoc</b><br>Test class: Script.ToDoListFunctionality<br/>
+<a href="#Output-6966794" onClick='toggleBox("Output-6966794", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-6966794" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-6966794">
+document sent to workflow successfully<br/>
+</div>
+</td>
+<td></td>
+<td>40</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
+<tr>
+<td title='Script.ToDoListFunctionality.SummaryStatusDialogBoxFucntions()'><b>SummaryStatusDialogBoxFucntions</b><br>Test class: Script.ToDoListFunctionality</td>
+<td></td>
+<td>19</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
+<tr>
+<td title='Script.ToDoListFunctionality.Task2UserNishaAccept()'><b>Task2UserNishaAccept</b><br>Test class: Script.ToDoListFunctionality<br/>
+<a href="#Output-13225875" onClick='toggleBox("Output-13225875", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-13225875" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-13225875">
+Login without msg<br/>
+</div>
+</td>
+<td></td>
+<td>31</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
+<tr>
+<td title='Script.ToDoListFunctionality.TaskUser2RNishaRejectTheDocument()'><b>TaskUser2RNishaRejectTheDocument</b><br>Test class: Script.ToDoListFunctionality</td>
+<td></td>
+<td>33</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
+<tr>
+<td title='Script.ToDoListFunctionality.refrshAndLogDipak()'><b>refrshAndLogDipak</b><br>Test class: Script.ToDoListFunctionality<br/>
+<a href="#Output-591637" onClick='toggleBox("Output-591637", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-591637" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-591637">
+TaskUser3 Dipak Logged in successful<br/>
+</div>
+</td>
+<td></td>
+<td>32</td>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
+<tr>
+<td title='Script.ToDoListFunctionality.refrshAndLogVidyaUser()'><b>refrshAndLogVidyaUser</b><br>Test class: Script.ToDoListFunctionality<br/>
+<a href="#Output-742055" onClick='toggleBox("Output-742055", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-742055" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-742055">
+Login without msg<br/>
+</div>
+</td>
 <td></td>
 <td>39</td>
-<td>Script.SecureLink@1e98b1c</td></tr>
+<td>Script.ToDoListFunctionality@f5239f</td></tr>
 </table><p>
 </body>
 </html>

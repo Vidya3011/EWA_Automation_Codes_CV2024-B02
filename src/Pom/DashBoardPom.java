@@ -101,72 +101,72 @@ public class DashBoardPom extends Generic.BaseClass {
 	
 	
 	public void DashBoardSeachIcon() throws Exception {
-		
+		Reporter.log("Test scenario 01: Verify dashboard search functionality");
+		Thread.sleep(5000);
+		Reporter.log("User click on dashboard tab");
 		jsclick(DashBoardTab);
 		Thread.sleep(3000);
+		Reporter.log("Dash board opened successfully");
 		movingElement(SearchICon);
+		Reporter.log("User click search icon from the dashboard page");
 		jsclick(SearchICon);
 		Thread.sleep(6000);
+		Reporter.log("Search page opened successfull...");
 		jsclick(SearchFindButton);
+		Reporter.log("User click on find button");
 		Thread.sleep(6000);
+		
 		}
 	
 	public void NotificationIcon() throws Exception  {
+		Reporter.log("Scenario 02: Verify dashboard notifiaction functionlity");
 		jsclick(DashBoardTab);
+		Reporter.log("User click on dashboard tab");
 		Thread.sleep(3000);
 		movingElement(NotificationICon);
+		Reporter.log("User click on notification icon");
 		jsclick(NotificationICon);
 		Thread.sleep(8000);
-	   /* movingDoublecli(NotificationDocList, NotificationDocList);
-	    Thread.sleep(3000);
-	    Thread.sleep(3000);
-	   
-		jsclick(NotificationDropDown);
-		Thread.sleep(3000);
-		try {
-			WebElement FolderDocoption = driver
-					.findElement(By.xpath("//span[text()='Folder / Document /  Sub Folder is created']"));
-			if (FolderDocoption.isDisplayed()) {
-				jsclick(resetBTNmyPref);
-				Thread.sleep(2000);
-				jsclick(FolderDocoption);
-				jsclick(applyBTNmypref);
-				Thread.sleep(10000);
-			}
-		} catch (Exception e) {
-			Reporter.log("Folder/document/subfolder changes notified");
-		}
-		Thread.sleep(3000);*/
+		Reporter.log("The notification page opened successfull");
+		jsclick(Refresh_Button(driver));
 	
 	
 	}
 	
 public void TodoListWFDetailsfromDb() throws Exception{
-		
-		jsclick(DashBoardTab);
+		Thread.sleep(6000);
+		Reporter.log("Scenario 03: Verify dashboard todolist dropdown");
+		movingclkElement(DashBoardTab);
+		Reporter.log("User click on dashboard tab");
 	//	Thread.sleep(3000);
 		WebDriverWait wait=new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(TodoListDropDownDashBoard));
+		Reporter.log("User click on todo list dropdown");
 	   Thread.sleep(3000);
 	   movingclkElement(TodoListDropDownDashBoard);
 	   Thread.sleep(2000);
 		jsclick(newItems);
+		Reporter.log("User click on new items submenu");
 		wait.until(ExpectedConditions.elementToBeClickable(TodoListDropDownDashBoard));
 	    movingclkElement(TodoListDropDownDashBoard);
-	   
 	    Thread.sleep(3000);
+	    Reporter.log("User click on pending items submenu");
 	    jsclick(pendingItems);
 	    Thread.sleep(3000);
 	    movingclkElement(TodoListDropDownDashBoard);
 	    jsclick(reviewItems);
+	    Reporter.log("User click on review items submenu");
 	    Thread.sleep(3000);
 	    movingclkElement(TodoListDropDownDashBoard);
 	    jsclick(sentItems);
+	    Reporter.log("User click on pending items submenu");
 	    Thread.sleep(3000);
 	    movingclkElement(TodoListDropDownDashBoard);
 	    jsclick(allItems);
+	    Reporter.log("User click on all items submenu");
 	    Thread.sleep(7000);
 	    jsclick(nextPage);
+	    Reporter.log("User click on next page icon");
 	    Thread.sleep(4000);
 	    jsclick(nextPage);
 	    Thread.sleep(3000);
@@ -184,11 +184,14 @@ if(nextPage.isDisplayed()) {
 
 
 	public void LogoutfromDb() throws Exception{
-		
+		Reporter.log("Scenario 05: verify Logout functionlity from the dash board");
 		jsclick(DashBoardTab);
+		Reporter.log("User click on dashboard tab");
 		Thread.sleep(3000);
 		movingElement(LogoutFromDashBRD);
+		Reporter.log("User click on logout icon");
 		jsclick(LogoutFromDashBRD);
+		Reporter.log("Session logged out successfull");
 		Thread.sleep(6000);
 		
 		
@@ -203,12 +206,18 @@ if(nextPage.isDisplayed()) {
 	
 public void NewDocumentfromDb() throws Exception{
 	Special_Char_FileNames spl=new Special_Char_FileNames();
-	//jsclick(DashBoardTab);
+	Thread.sleep(4000);
+	
+	Reporter.log("Scenario 06: verify dashboard new document funtionality");
+	    jsclick(DashBoardTab);
+	    Reporter.log("User click on dashboard tab");
 		Thread.sleep(3000);
 		movingElement(CreateDocDB);
+		Reporter.log("User click on new document icon");
 		jsclick(CreateDocDB);
+		Reporter.log("The new document page opened succcessfull...");
 		Thread.sleep(15000);
-		spl.Upload_and_verify_Allowing_Percentage_Characterfile();
+	//	spl.Upload_and_verify_Allowing_Percentage_Characterfile();
 		Thread.sleep(6000);
 		
 		

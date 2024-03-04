@@ -21,7 +21,7 @@ import Pom.SpecialCharFilenames;
 public class Special_Char_FileNames extends Generic.BaseClass {
 	private static final Logger log = LogManager.getLogger(Special_Char_FileNames.class);
 
-	//@BeforeClass
+	@BeforeClass
 	public void LandBrowser() {
 
 		loadBrowser("Chrome");
@@ -29,9 +29,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	@Test
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -40,9 +40,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 	public void Upload_and_verify_Allowing_Percentage_Characterfile() throws Exception {
 
 		SpecialCharFilenames pojo = new SpecialCharFilenames();
-		//jsclick(Refresh_Button(driver));
+		jsclick(pojo.getRefresh_button());
 		Thread.sleep(4000);
-		//jsclick(pojo.getNewDocuments_MenuOption());
+		jsclick(pojo.getNewDocuments_MenuOption());
 		Thread.sleep(4000);
 		jsclick(pojo.getDestination_Folder_Textbox());
 		Thread.sleep(4000);
@@ -59,21 +59,22 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		pojo.getEnter_Report_Name_Text().sendKeys(pojo.Specialchar_excelRead(1, 0));
 		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
+		movingclkElement(pojo.getMove_To_PlusIcon());
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Percentage .exe");
-		Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		wait.until(ExpectedConditions.alertIsPresent());
+		Thread.sleep(5000);
+		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+		wait1.until(ExpectedConditions.alertIsPresent());
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
-		Thread.sleep(4000);
 		jsclick(pojo.getCreate_Button());
 		Thread.sleep(4000);
 		jsclick(pojo.getView_Button());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -81,8 +82,8 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		jsclick(pojo.getSave_button());
 		Thread.sleep(4000);
 		jsclick(pojo.getDocumentSave_Ok_button());
-		Reporter.log("Upload and verify Allowing Percentage Characterfile", true);
 		Thread.sleep(4000);
+		Reporter.log("Upload and verify Allowing Percentage Characterfile", true);
 		log.info("Upload and verify Allowing Percentage Characterfile");
 	}
 
@@ -95,13 +96,17 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		pojo.getUpdate_ReportName().clear();
 		pojo.getUpdate_ReportName().sendKeys(pojo.Specialchar_excelRead(2, 0));
+		Thread.sleep(6000);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
+		movingclkElement(pojo.getMove_To_PlusIcon());
 		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Tile.exe");
+		Thread.sleep(12000);
 		jsclick(pojo.getOpen_Tile_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -134,9 +139,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\At the rate .exe");
-		Thread.sleep(4000);
+		Thread.sleep(12000);
 		jsclick(pojo.getOpen_Attherate_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -170,9 +175,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Hash .exe");
-		Thread.sleep(4000);
+		Thread.sleep(12000);
 		jsclick(pojo.getOpen_Hash_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -206,9 +211,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Dollar.exe");
-		Thread.sleep(4000);
+		Thread.sleep(12000);
 		jsclick(pojo.getOpen_Dollar_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -242,9 +247,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Plus.exe");
-		Thread.sleep(4000);
+		Thread.sleep(12000);
 		jsclick(pojo.getOpen_Plus_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -278,9 +283,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Caret.exe");
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Caret_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -314,9 +319,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Equals.exe");
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Equals_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -351,9 +356,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Single Quote .exe");
-		Thread.sleep(4000);
+		Thread.sleep(14000);
 		jsclick(pojo.getOpen_SingleQuote_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -387,9 +392,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Comma.exe");
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Comma_page());
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -424,9 +429,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Exclamatory.exe");
-		Thread.sleep(4000);
+		Thread.sleep(20000);
 		jsclick(pojo.getOpen_Exclamatory_page());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -460,11 +465,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Hyphen.exe");
-
-		Thread.sleep(4000);
-		jsclick(pojo.getOpen_Exclamatory_page());
-		Thread.sleep(4000);
-
+		Thread.sleep(15000);
+		jsclick(pojo.getOpen_Hyphen_page());
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -498,11 +501,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Round Brackets.exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_RoundBrackets_page());
-		Thread.sleep(4000);
-
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -535,11 +536,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Accent.exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Accent_page());
-		Thread.sleep(4000);
-
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -571,15 +570,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		pojo.getBrowse_Option();
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Ampersant.exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Ampersant_page());
-		Thread.sleep(4000);
-
-		pojo.getClick_FileInfo_Option();
-		Thread.sleep(4000);
-		pojo.getClick_FileInfo_OkButton_withFileName();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		jsclick(pojo.getSave_button());
 		Thread.sleep(6000);
 		jsclick(pojo.getDocumentSave_Ok_button());
@@ -608,11 +601,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Underscore.exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Underscore_page());
-		Thread.sleep(4000);
-
+		Thread.sleep(8000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -645,13 +636,11 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime().exec(
 				"D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Flower or Curly bracket .exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Flowerbracket_Page());
-		Thread.sleep(4000);
-
+		Thread.sleep(8000);
 		pojo.getClick_FileInfo_Option();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
 		Thread.sleep(4000);
 		jsclick(pojo.getSave_button());
@@ -682,11 +671,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Square bracket.exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_Squarebracket_page());
-		Thread.sleep(4000);
-
+		Thread.sleep(8000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -719,11 +706,9 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		Thread.sleep(4000);
 		Runtime.getRuntime()
 				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Semi Colon.exe");
-
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		jsclick(pojo.getOpen_SemiColon_page());
-		Thread.sleep(4000);
-
+		Thread.sleep(8000);
 		pojo.getClick_FileInfo_Option();
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
@@ -739,8 +724,7 @@ public class Special_Char_FileNames extends Generic.BaseClass {
 		jsclick(pojo.getProperties_option());
 		Reporter.log("Upload and verify Allowing Semicolon Characterfile", true);
 		log.info("Upload and verify Allowing Semicolon Characterfile");
-		jsclick(Refresh_Button(driver));
+		jsclick(pojo.getRefresh_button());
+		Thread.sleep(4000);
 	}
-
-	
 }

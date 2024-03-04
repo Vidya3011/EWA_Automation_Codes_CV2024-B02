@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="Generic.ListenersRetry"/>
+  </listeners>
+  <test thread-count="5" name="Test3(failed)">
     <classes>
-      <class name="Script.SecureLink">
+      <class name="SQL2022_DB.RamACCreateDocINEdge">
         <methods>
           <include name="ladBrowser"/>
-          <include name="SecureLinkFromDocumentList"/>
+          <include name="Createdocumentagain"/>
         </methods>
-      </class> <!-- Script.SecureLink -->
+      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test3(failed) -->
+  <test thread-count="5" name="Test4(failed)">
+    <classes>
+      <class name="SQL2022_DB.RamACCreateDocINEdge">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="Createdocumentagain"/>
+        </methods>
+      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+    </classes>
+  </test> <!-- Test4(failed) -->
+  <test thread-count="5" name="Test5(failed)">
+    <classes>
+      <class name="SQL2022_DB.RamACCreateDocINEdge">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="Createdocumentagain"/>
+        </methods>
+      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+    </classes>
+  </test> <!-- Test5(failed) -->
+  <test thread-count="5" name="Test6(failed)">
+    <classes>
+      <class name="SQL2022_DB.RamACCreateDocINEdge">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="Createdocumentagain"/>
+        </methods>
+      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+    </classes>
+  </test> <!-- Test6(failed) -->
+  <test thread-count="5" name="Test7(failed)">
+    <classes>
+      <class name="SQL2022_DB.RamACCreateDocINEdge">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="Createdocumentagain"/>
+        </methods>
+      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+    </classes>
+  </test> <!-- Test7(failed) -->
+  <test thread-count="5" name="Test8(failed)">
+    <classes>
+      <class name="SQL2022_DB.RamACCreateDocINEdge">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="Createdocumentagain"/>
+        </methods>
+      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+    </classes>
+  </test> <!-- Test8(failed) -->
+</suite> <!-- Failed suite [Suite] -->

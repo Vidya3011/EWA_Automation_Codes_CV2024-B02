@@ -20,8 +20,8 @@ import Pom.My_Preferences;
 public class My_Preferences_Defaultviewing extends Generic.BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Defaultviewing.class);
-	
-	//@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -29,10 +29,10 @@ public class My_Preferences_Defaultviewing extends Generic.BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -41,8 +41,9 @@ public class My_Preferences_Defaultviewing extends Generic.BaseClass {
 	public void Verify_Defaultviewing_Convert_To_PDF() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
-		Thread.sleep(4000);
+		Thread.sleep(6000);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(6000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
@@ -60,24 +61,29 @@ public class My_Preferences_Defaultviewing extends Generic.BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(12000);
 		pojo.getSelect_Document();
-		Thread.sleep(4000);
-		//pojo.getSearch_Page_Number();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		Thread.sleep(8000);
+		pojo.getSearch_Page_Number();
 		Reporter.log(" Defaultviewing Convert To PDF Format verified successfully", true);
 		log.info("Defaultviewing Convert To PDF Format verified successfully");
-		
+
 	}
 
 	@Test(priority = 2)
 	public void Verify_Defaultviewing_Native_Format() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(5000);
 		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		pojo.getClick_Dropdown_DefaultViewing();
-		Thread.sleep(0);
+		Thread.sleep(4000);
 		pojo.getSelect_Dropdown_Native_Format();
 		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
@@ -89,11 +95,14 @@ public class My_Preferences_Defaultviewing extends Generic.BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(5000);
 		pojo.getSelect_Document();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		Thread.sleep(6000);
 		Reporter.log("Defaultviewing Native Format verified successfully", true);
 		log.info("Defaultviewing Native Format verified successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
-
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
-	
 }

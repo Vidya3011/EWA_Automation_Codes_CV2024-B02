@@ -19,8 +19,8 @@ import Pom.My_Preferences;
 public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Viewer_Zoom.class);
-	
-	//@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -28,10 +28,10 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS User is logged in successfully...");
 
 	}
@@ -40,13 +40,14 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 	public void Verify_Viewer_Zoom_Fit_To_Width() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
 		Thread.sleep(4000);
 		pojo.getSelect_Dropdown_Fit_To_Width();
+		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_Search_Option());
@@ -56,11 +57,11 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(5000);
 		pojo.getSelect_Document();
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.alertIsPresent());
-
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
+		Thread.sleep(5000);
 		Reporter.log("Verify Viewer Zoom Fit To Width successfully", true);
 		log.info("Verify Viewer Zoom Fit To Width successfully");
 	}
@@ -69,12 +70,14 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 	public void Verify_Viewer_Zoom_Fit_To_Height() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(5000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
 		Thread.sleep(4000);
 		pojo.getSelect_Dropdown_Fit_To_Height();
+		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_Search_Option());
@@ -84,6 +87,11 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(5000);
 		pojo.getSelect_Document();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		Thread.sleep(5000);
 		Reporter.log("Verify Viewer Zoom Fit To Height successfully", true);
 		log.info("Verify Viewer Zoom Fit To Height successfully");
 
@@ -93,12 +101,14 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 	public void Verify_Viewer_Zoom_Fit_Entire_Image() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(5000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
 		Thread.sleep(4000);
 		pojo.getSelect_Dropdown_Fit_Entire_Image();
+		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_Search_Option());
@@ -108,7 +118,11 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(5000);
 		pojo.getSelect_Document();
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		Thread.sleep(5000);
 		Reporter.log("Verify Viewer Zoom Fit To Entire Image successfully", true);
 		log.info("Verify Viewer Zoom Fit To Entire Image successfully");
 
@@ -118,12 +132,14 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 	public void Verify_Viewer_Zoom_Actual_Size() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(5000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
 		Thread.sleep(4000);
 		pojo.getSelect_Dropdown_Actual_Size();
+		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_Search_Option());
@@ -133,13 +149,14 @@ public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 		jsclick(pojo.getFind_Button());
 		Thread.sleep(5000);
 		pojo.getSelect_Document();
-		WebDriverWait wait = new WebDriverWait(driver,10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		Thread.sleep(5000);
 		Reporter.log("Verify Viewer Zoom Actual Size successfully", true);
 		log.info("Verify Viewer Zoom Actual Size successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
-
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
 }
-
-

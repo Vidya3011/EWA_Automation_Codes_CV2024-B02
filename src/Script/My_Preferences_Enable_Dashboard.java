@@ -13,8 +13,8 @@ import Pom.My_Preferences;
 public class My_Preferences_Enable_Dashboard extends BaseClass {
 
 	private static final Logger log = LogManager.getLogger(My_Preferences_Add_signature.class);
-	
-	//@BeforeClass
+
+	// @BeforeClass
 
 	public void LandBrowser() {
 		loadBrowser("Chrome");
@@ -22,10 +22,10 @@ public class My_Preferences_Enable_Dashboard extends BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-	//@Test
+	// @Test
 
 	public void Login_EWA() throws Exception {
-		loginCVS();
+		LogDipakUser();
 		log.info("CVS URL started Successfully...");
 
 	}
@@ -34,7 +34,8 @@ public class My_Preferences_Enable_Dashboard extends BaseClass {
 	public void Verify_Enable_Dashboard() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		jsclick(BaseClass.Refresh_Button(driver));
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -43,11 +44,12 @@ public class My_Preferences_Enable_Dashboard extends BaseClass {
 		pojo.getVerify_EnableDashboard_checkbox();
 		Thread.sleep(4000);
 		jsclick(pojo.getApply_button());
+		Thread.sleep(4000);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
 		jsclick(pojo.getLogout());
 		Thread.sleep(5000);
-		loginCVS();
+		LogDipakUser();
 		Thread.sleep(4000);
 		pojo.getClick_SwitchTo_DefaultView_Option();
 		Thread.sleep(4000);
@@ -61,9 +63,7 @@ public class My_Preferences_Enable_Dashboard extends BaseClass {
 		Thread.sleep(4000);
 		Reporter.log(" Enable Dashboard Functionality Verified Successfully", true);
 		log.info("Enable Dashboard Functionality Verified Successfully");
-		jsclick(BaseClass.Refresh_Button(driver));
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(5000);
 	}
-
-	
 }
-

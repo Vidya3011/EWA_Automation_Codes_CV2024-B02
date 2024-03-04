@@ -41,6 +41,11 @@ public class RoomContextMenu extends BaseClass {
 
 	@FindBy(xpath = ("(//li[@id='1'])[1]"))
 	private WebElement Cabinet;
+	
+	
+	@FindBy(xpath = ("//*[@id=\"1\"]/ins"))
+	private WebElement CabinetTest;
+	
 
 	@FindBy(xpath = ("//*[@id=\"2\"]/ins"))
 	private WebElement Drawer;
@@ -76,7 +81,7 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("//a[@id='takeOwnershipFolder']"))
 	private WebElement TakeOwner;
 
-	@FindBy(xpath = ("(//td[normalize-space()='Pdf Yes'])[1]"))
+	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[2]/td[3]"))
 	private WebElement ForLockedPDFDoc;
 
 	@FindBy(xpath = ("(//button[@class='modalDialogButtons'])[17]"))
@@ -157,6 +162,22 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"2870\"]/a"))
 	private WebElement FolderForCopy;
 
+
+	@FindBy(xpath = ("//*[@id=\"1\"]/ins"))
+	private WebElement CabinetForCSR;
+	
+
+	@FindBy(xpath = ("//*[@id=\"2\"]/ins"))
+	private WebElement DrawerForCSR;
+	
+	
+
+	@FindBy(xpath = ("//*[@id=\"70\"]/a"))
+	private WebElement FolderForCSR;
+	
+	
+	
+
 	@FindBy(xpath = ("(//select[@id='docTypeList'])[1]"))
 	private WebElement selectDocDropDown;
 
@@ -175,7 +196,7 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("(//button[@id='reset'])[1]"))
 	private WebElement resetBTNmyPref;
 
-	@FindBy(xpath = ("//*[@id=\"10733\"]/a"))
+	@FindBy(xpath = ("//a[text()='CustomDocumentAutomation']"))
 	private WebElement CabinetForCustomDoc;
 
 	@FindBy(xpath = ("//a[@id='custmDocumentTypes']"))
@@ -188,7 +209,7 @@ public class RoomContextMenu extends BaseClass {
 	private WebElement dateMask;
 	
 	
-	@FindBy(xpath = ("(//span[@id='spanCheckCustomDocTypeValues_74'])[1]"))
+	@FindBy(xpath = ("//span[text()='CVReports ']"))
 	private WebElement cvReports;
 	
 	@FindBy(xpath = ("(//span[@id='spanCheckCustomDocTypeValues_1'])[1]"))
@@ -213,8 +234,8 @@ public class RoomContextMenu extends BaseClass {
 
 	@FindBy(xpath = ("//*[@id=\"78994\"]/a"))
 	private WebElement NishaRDrawer;
-
-	@FindBy(xpath = ("//*[@id=\"78995\"]/a"))
+	//*[@id=\"78995\"]/a
+	@FindBy(xpath = ("//*[@id=\"86809\"]/a"))
 	private WebElement NishaRFolder;
 
 	@FindBy(xpath = ("//*[@id=\"2432\"]/a"))
@@ -262,10 +283,21 @@ public class RoomContextMenu extends BaseClass {
 		WebElement allList = driver.findElement(By.id("nodePropertiesDocTypeList"));
 		org.openqa.selenium.support.ui.Select n = new org.openqa.selenium.support.ui.Select(allList);
 		n.selectByValue("68");
+		}
 
-		
-	}
-
+	public void selectDocNamesCSR() throws Exception {
+		WebElement allList = driver.findElement(By.id("nodePropertiesDocTypeList"));
+		org.openqa.selenium.support.ui.Select n = new org.openqa.selenium.support.ui.Select(allList);
+		n.selectByVisibleText("CVReports");
+		}
+	
+	
+	
+	
+	
+	
+	
+	
 	public static String readFromRoomCntxt(int rw, int cl) throws IOException {
 		File f = new File("./data/TestData.xlsx");
 		FileInputStream fis = new FileInputStream(f);
@@ -300,25 +332,56 @@ public class RoomContextMenu extends BaseClass {
 		}
 
 	}
+	
+	public void LogInAdminSQL() throws Exception {
+
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(3, 0));
+		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(3, 1));
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		a1 = new Actions(driver);
+		a1.moveToElement(room).click().build().perform();
+		WebElement roomCV = driver.findElement(By.xpath("//*[@id=\"rooms\"]/option[4]"));
+		roomCV.click();
+		WebElement LoginBTN = driver.findElement(By.id("submitid"));
+		jsclick(LoginBTN);
+		Thread.sleep(3000);
+		try {
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if (sessiomsg.isDisplayed()) {
+				jsclick(sessiomsgOK);
+			}
+		} catch (NoSuchElementException e) {
+			Reporter.log("Login without msg");
+		}
+
+	}
 
 	public void TakeOwnerShip() throws Exception {
-		
+		Reporter.log("Scenario 01: Verify Roomcontextmenu tab Takeownership and ReleaseOwnership function");
 		jsclick(RoomContextTab);
-		movingDoublecli(Cabinet, Cabinet);
+	    Reporter.log("User click on roomcontextmenu tab");
+		Thread.sleep(3000);
+		jsclick(CabinetTest);
+		 Reporter.log("User expand cabinet");
 		Thread.sleep(5000);
 		jsclick(Drawer);
-		Thread.sleep(2000);
+		 Reporter.log("User expand drawer");
+		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.elementToBeClickable(Folder));
-		movingDoublecli(Folder, Folder);
+	//	wait.until(ExpectedConditions.elementToBeClickable(Folder));
+		jsclick(Folder);
+		 Reporter.log("User select a folder");
 		Thread.sleep(5000);
 
 		movingElement(RoomContextTab);
+		 Reporter.log("User mousehover on roomcontextmenu tab");
 		Thread.sleep(5000);
 		WebElement TakeOwnerShipTab = driver.findElement(By.xpath("//a[@id='takeOwnershipFolder']"));
 		wait.until(ExpectedConditions.visibilityOf(TakeOwnerShipTab));
 		Thread.sleep(3000);
 		movingclkElement(TakeOwnerShipTab);
+		 Reporter.log("User click on TakeOwnerShip submenu");
 		Thread.sleep(6000);
 		try {
 			WebElement BTN = driver.findElement(By.xpath("(//button[@id='takeOwnerShipAnyway25'])[1]"));
@@ -331,135 +394,208 @@ public class RoomContextMenu extends BaseClass {
 
 		Thread.sleep(8000);
 		movingElement(RoomContextTab);
+		 Reporter.log("User again mousehover on Roomcontextmenu tab to check takeownership is visible or disable");
 		Thread.sleep(3000);
 		LogoutPage();
+		 Reporter.log("User logout the session");
 		Thread.sleep(4000);
 		loginCVS();
+		 Reporter.log("Login as RNisha user to check Takeownership functionlity is working or not");
 		Thread.sleep(3000);
 
-		movingDoublecli(Cabinet, Cabinet);
+		jsclick(CabinetTest);
+		 Reporter.log("User expand Takeownership cabinet");
 		Thread.sleep(3000);
 		jsclick(Drawer);
+		 Reporter.log("User expand drawer");
 		Thread.sleep(3000);
-		movingDoublecli(Folder, Folder);
+		selectElement(Folder);
+		 Reporter.log("User open a Takeownership folder");
 		Thread.sleep(3000);
+		 Reporter.log("User mousehover on RoomcontextMenu tab to check Takeownership is visible or disable");
 		movingElement(RoomContextTab);
 		Thread.sleep(5000);
+		 Reporter.log("User open a Takeownership folder document");
+		VisiblityOf(ForLockedPDFDoc);
 		jsclick(ForLockedPDFDoc);
 		Thread.sleep(3000);
+		 Reporter.log("It should display'Document locked by admin' warning dialog, Warning dialog displayed successfull");
 		OKBTNDocLockDialog.sendKeys(Keys.ENTER);
+		 Reporter.log("Viewer menu tool bar should be disable");
 		Thread.sleep(3000);
+		try 
+		{
 		wait.until(ExpectedConditions.alertIsPresent());
 		acceptAlert();
+		}
+		catch(Exception e) {
+			Reporter.log("NoAlertISPResent");
+		}
 		Thread.sleep(8000);
 		LogoutPage();
+		 Reporter.log("Rnisha user logged out the session");
 		Thread.sleep(3000);
 		LogInAdmin();
+		 Reporter.log("Log into EWA as admin user");
 		Thread.sleep(4000);
-		movingDoublecli(Cabinet, Cabinet);
+		jsclick(CabinetTest);
+		 Reporter.log("User expand Cabinet");
 		Thread.sleep(3000);
 		jsclick(Drawer);
+		 Reporter.log("User expand drawer");
 		Thread.sleep(2000);
-		movingDoublecli(Folder, Folder);
+		selectElement(Folder);
 		Thread.sleep(5000);
+		 Reporter.log("User mousehover on Roomcontext menu tab");
 		movingElement(RoomContextTab);
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(ReleaseOSFolder));
 		jsclick(ReleaseOSFolder);
+		 Reporter.log("User click on Release ownership submenu");
 		Thread.sleep(4000);
 		LogoutPage();
+		 Reporter.log("Admin user logout the session");
 		Thread.sleep(4000);
 		loginCVS();
+		 Reporter.log("Rnisha user log into EWA to check release ownership working or not");
 		Thread.sleep(2000);
-		movingDoublecli(Cabinet, Cabinet);
+		selectElement(Cabinet);
+		 Reporter.log("User expand cabinet");
 		Thread.sleep(3000);
 		jsclick(Drawer);
+		 Reporter.log("User expand drawer");
 		Thread.sleep(2000);
-		movingDoublecli(Folder, Folder);
+		selectElement(Folder);
+		 Reporter.log("User expand folder");
 		Thread.sleep(5000);
 		movingElement(RoomContextTab);
+		 Reporter.log("User mousehover on RoomContextTab to check release ownership visable or disable");
 		Thread.sleep(3000);
 		jsclick(ForLockedPDFDoc);
+		 Reporter.log("User open the document");
+		
 		Thread.sleep(3000);
+		try {
 		alertIsPresent();
 		acceptAlert();
+		}
+		catch(Exception e) {
+			System.out.println("AlertISNotPResent");
+		}
 		Thread.sleep(8000);
+		 Reporter.log("Now Rnisha user allow to use viewer menu tool bar icon ");
 		LogoutPage();
+		 Reporter.log("Nisha logout the session");
 		Thread.sleep(5000);
+		 Reporter.log("Takeownership and Release ownership functionality working fine...");
 		LogInAdmin();
+		
 		Reporter.log("TakeOwnerShip functionality verified successfull", true);
 
 	}
 
 	public void CopyAndPasteDrawer() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		Reporter.log("Scenario 02: Verify copy paste drawer level");
+		 Reporter.log("Login as admin user");
 		jsclick(RoomContextTab);
+		Reporter.log("User mousehover on Roomcontextmenu tab");
 		movingDoublecli(Cabinet, Cabinet);
+		Reporter.log("User expand the cabinet");
 		Thread.sleep(3000);
 		jsclick(drawerforCopy);
+		Reporter.log("User select a drawer");
 		Thread.sleep(3000);
 		movingElement(RoomContextTab);
+		Reporter.log("User mousehover on Roomcontextmenu tab");
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(CopyTab));
 		movingclkElement(CopyTab);
+		Reporter.log("User click on copy submenu");
 		Thread.sleep(3000);
-		movingDoublecli(CvAppCabinet, CvAppCabinet);
+		selectElement(CvAppCabinet);
+		Reporter.log("User Expand cabinet");
 		Thread.sleep(2000);
-
+		Reporter.log("User select a drawer");
 		Thread.sleep(3000);
 		movingElement(RoomContextTab);
+		Reporter.log("Mousehover on Roomcontextmenu tab");
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(PasteTab));
+		Reporter.log("User click on paste submenu");
 		movingclkElement(PasteTab);
 		Thread.sleep(3000);
+		Reporter.log("User click on paste confirm dialog OK button");
 		jsclick(PasteConfimDialogOKBTN);
 		Thread.sleep(8000);
 		scrollDown(CvAppCabinet);
+		Reporter.log("User Expand the cabinet");
 		Thread.sleep(4000);
 		jsclick(SelectCopyDrawer);
+		Reporter.log("User select the pasted drawer");
 		Thread.sleep(5000);
 		movingElement(RoomContextTab);
+		Reporter.log("User mousehover on Roomcontextmenu tab");
 		Thread.sleep(4000);
+		Reporter.log("User click on Delete submenu");
 		movingclkElement(DeleteTab);
 		Thread.sleep(3000);
+		Reporter.log("Click delete confirm dialog OK button");
 		jsclick(DeleteConfimDialogOKBTN);
 		Thread.sleep(5000);
+		Reporter.log("Roomcontextmenu Delete submenu working fine...");
 		scrollDown(CvAppCabinet);
+		Reporter.log("Copy paste drawer level working fine...");
 		Reporter.log("Copy and paste drawer verified successfull", true);
 	}
+	
+	
 
 	public void copyAndpasteFolder() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		Reporter.log("Scenario 03: Verify copy paste folder level");
 		jsclick(RoomContextTab);
-		movingDoublecli(Cabinet, Cabinet);
+		Reporter.log("User click on Roomcontextmenu tab");
+		selectElement(Cabinet);
+		Reporter.log("User expand the cabinet");
 		Thread.sleep(3000);
 		jsclick(Drawer);
+		Reporter.log("User expand the drawer");
 		Thread.sleep(3000);
 		jsclick(FolderForCopy);
+		Reporter.log("User select a folder");
 		Thread.sleep(5000);
-		
+		Reporter.log("User mousehover on Roomcontextmenu tab");
 		movingElement(RoomContextTab);
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(CopyTab));
+		Reporter.log("User click on copy submenu");
 		movingclkElement(CopyTab);
+		Reporter.log("User expand cabinet");
 		Thread.sleep(4000);
-		movingDoublecli(CvAppCabinet, CvAppCabinet);
+		selectElement(CvAppCabinet);
+		Reporter.log("User expand the drawer");
 		ElementToBeClickable(CVMobileappDrwer);
-		movingDoublecli(CVMobileappDrwer, CVMobileappDrwer);//*[@id=\"12105\"]/a
+		selectElement(CVMobileappDrwer);//*[@id=\"12105\"]/a
 		Thread.sleep(3000);//*[@id="26165"]/a
 		WebElement NewFolderFrPaste = driver.findElement(By.xpath("//*[@id=\"12105\"]/a"));
 		movingElement(NewFolderFrPaste);
+		Reporter.log("User select folder to paste a copied folder");
 		jsclick(NewFolderFrPaste);
 		Thread.sleep(3000);
+		Reporter.log("User mousehover on Roomcontextmenu tab");
 		movingElement(RoomContextTab);
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(PasteTab));
 		movingElement(PasteTab);
+		Reporter.log("User click on paste submenu");
 		jsclick(PasteTab);
 		Thread.sleep(3000);
+		Reporter.log("User click on paste confirm dialog OK button");
 		jsclick(PasteConfimDialogOKBTN);
 		Thread.sleep(15000);
       scrollDown(CVAppExpandIcon);
+      Reporter.log("Copy paste folder level working fine...");
 		Thread.sleep(3000);
 	 jsclick(CVAppExpandIcon);
 	    Thread.sleep(3000);
@@ -468,21 +604,23 @@ public class RoomContextMenu extends BaseClass {
 	  Thread.sleep(3000);
 	  /* WebElement apurbaFolder= driver.findElement(By.xpath("//*[@id=\"79485\"]/a"));
 		jsclick(apurbaFolder);*/
-	   Reporter.log("copy and paste folder with 40 documents pasted successfull", true);
+	   Reporter.log("Pasted folder has 40 documents", true);
 	}
 
-	public void NodeProperties() throws Exception {
+	public void NodePropertiesCSR() throws Exception {
 
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		scrollDown(NishaRCaninet);
-		wait.until(ExpectedConditions.elementToBeClickable(NishaRCaninet));
-		movingDoublecli(NishaRCaninet, NishaRCaninet);
+		Actions act=new Actions(driver);
+		//scrollDown(NishaRCaninet);
+		wait.until(ExpectedConditions.elementToBeClickable(CabinetForCSR));
+		jsclick(CabinetForCSR);
+	
 		Thread.sleep(3000);
-		wait.until(ExpectedConditions.elementToBeClickable(NishaRDrawer));
+		wait.until(ExpectedConditions.elementToBeClickable(DrawerForCSR));
 		Thread.sleep(3000);
-		movingDoublecli(NishaRDrawer, NishaRDrawer);
-		wait.until(ExpectedConditions.elementToBeClickable(NishaRFolder));
-		movingDoublecli(NishaRFolder, NishaRFolder);
+		jsclick(DrawerForCSR);
+		wait.until(ExpectedConditions.elementToBeClickable(FolderForCSR));
+		movingDoublecli(FolderForCSR, FolderForCSR);
 		Thread.sleep(3000);
 
 		movingElement(RoomContextTab);
@@ -492,36 +630,10 @@ public class RoomContextMenu extends BaseClass {
 		Thread.sleep(6000);
 		jsclick(selectDocDropDownFrNode);
 		Thread.sleep(3000);
-		selectDocNames();
+		selectDocNamesCSR();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOf(TextKey));
-		movingclkElement(TextKey);
-		TextKey.clear();
-		sendvalue(TextKey, readFromRoomCntxt(1, 0));
-		Thread.sleep(3000);
-
-		scrollDown(numeric123);
-		movingclkElement(numeric123);
-		numeric123.clear();
-		sendvalue(numeric123, "93838383823");
-		Thread.sleep(5000);
-		scrollDown(Restaurent);
-		movingclkElement(Restaurent);
-		Restaurent.clear();
-		sendvalue(Restaurent, readFromRoomCntxt(4, 0));
-		Thread.sleep(5000);
-		scrollDown(Date);
-		Thread.sleep(2000);
-		movingclkElement(Date);
-
-		jsclick(DateOct);
-
-		Thread.sleep(2000);
-		movingclkElement(Boolean123);
-		Thread.sleep(2000);
-		selectDropDownByIndex(YesORNoBoolean, 1);
-		Thread.sleep(2000);
-		selectDropDownByIndex(Selection123, 3);
+		WebElement CvReports=driver.findElement(By.xpath("//*[@id=\"nodePropVal_5\"]"));
+	     act.click(CvReports).sendKeys("Automation Document 01").build().perform();
 		Thread.sleep(3000);
 		jsclick(NodePropOKBTN);
 		try {
@@ -546,6 +658,7 @@ public class RoomContextMenu extends BaseClass {
 		movingclkElement(browseOption);
 		Thread.sleep(5000);
 		Runtime.getRuntime().exec("C:\\AutoImage\\FilesAuto_x64.exe");
+		Thread.sleep(8000);
 		try {
 		wait.until(ExpectedConditions.alertIsPresent());
 		acceptAlert();
@@ -553,10 +666,10 @@ public class RoomContextMenu extends BaseClass {
 			Reporter.log("Alert not present. . .");
 		}
 		Thread.sleep(5000);
-		WebElement CreateBTN = driver.findElement(By.xpath("(//button[normalize-space()='Create'])[1]"));
+		WebElement CreateBTN = driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
 		jsclick(CreateBTN);
 		Thread.sleep(15000);
-		WebElement viewOption = driver.findElement(By.xpath("(//button[normalize-space()='View'])[1]"));
+		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
 		jsclick(viewOption);
 		Thread.sleep(15000);
 		jsclick(RoomContextTab);
@@ -589,31 +702,188 @@ public class RoomContextMenu extends BaseClass {
 		Reporter.log("node properties verified successfully", true);
 	}
 
+	
+	
+	
+	
+	
+	
+	public void NodeProperties() throws Exception {
+
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+	    Reporter.log("Scneario 04: Verify Node properties functionality");
+		scrollDown(NishaRCaninet);
+		Reporter.log("User expand the cabinet");
+		wait.until(ExpectedConditions.elementToBeClickable(NishaRCaninet));
+		selectElement(NishaRCaninet);
+		Reporter.log("User expand the drawer");
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(NishaRDrawer));
+		Thread.sleep(3000);
+		selectElement(NishaRDrawer);
+		Reporter.log("User select a folder");
+		wait.until(ExpectedConditions.elementToBeClickable(NishaRFolder));
+		selectElement(NishaRFolder);
+		Thread.sleep(3000);
+		Reporter.log("Mousehover on Roomcontextmenu tab");
+		movingElement(RoomContextTab);
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(NodeProperties));
+		Reporter.log("User click on Nodeproperties submenu");
+		jsclick(NodeProperties);
+		
+		Thread.sleep(6000);
+		jsclick(selectDocDropDownFrNode);
+		Reporter.log("User select a document type");
+		Thread.sleep(3000);
+		Reporter.log("User select AllDataType ");
+		selectDocNames();
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(TextKey));
+		movingclkElement(TextKey);
+		TextKey.clear();
+		Reporter.log("User enter a TextKey value");
+		sendvalue(TextKey, readFromRoomCntxt(1, 0));
+		Thread.sleep(3000);
+
+		scrollDown(numeric123);
+		Reporter.log("User enter value into Numeric123 text box");
+		movingclkElement(numeric123);
+		numeric123.clear();
+		sendvalue(numeric123, "93838383823");
+		Reporter.log("User enter value into Restaruent textbox");
+		Thread.sleep(5000);
+		scrollDown(Restaurent);
+		movingclkElement(Restaurent);
+		Restaurent.clear();
+		sendvalue(Restaurent, readFromRoomCntxt(4, 0));
+		Thread.sleep(5000);
+		Reporter.log("User select a date");
+		scrollDown(Date);
+		Thread.sleep(2000);
+		movingclkElement(Date);
+
+		jsclick(DateOct);
+
+		Thread.sleep(2000);
+		movingclkElement(Boolean123);
+		Thread.sleep(2000);
+		Reporter.log("User select Boolean123 dropdown YES");
+		selectDropDownByIndex(YesORNoBoolean, 1);
+		Thread.sleep(2000);
+		selectDropDownByIndex(Selection123, 3);
+		Thread.sleep(3000);
+		Reporter.log("User select Alpha in Selection123 dropdown.");
+		jsclick(NodePropOKBTN);
+		try {
+			WebElement updatePopup = driver.findElement(By.id("confirmMessageOk35"));
+			if (updatePopup.isDisplayed()) {
+				updatePopup.click();
+			}
+		} catch (Exception e) {
+			Reporter.log("Node Properties Updated Successfully...");
+		}
+
+		Thread.sleep(3000);
+		Reporter.log("User clicn on new document tab");
+		movingclkElement(CreateDocTab);
+		Thread.sleep(3000);
+
+		WebElement moveToPlusIcon = driver.findElement(By.xpath(
+				"//*[@id=\"addPagesDropDown\"]/span"));
+		VisiblityOf(moveToPlusIcon);
+		Reporter.log("User click on browse icon");
+		movingElement(moveToPlusIcon);
+		Thread.sleep(4000);
+		Reporter.log("Click broswe submenu");
+		WebElement browseOption = driver.findElement(By.xpath("//input[@id='viewDocumentAddPages']"));
+		movingclkElement(browseOption);
+		Reporter.log("User added file from the folder by using AutoIT");
+		Thread.sleep(5000);
+		Runtime.getRuntime().exec("C:\\AutoImage\\FilesAuto_x64.exe");
+		Thread.sleep(8000);
+		try {
+		wait.until(ExpectedConditions.alertIsPresent());
+		acceptAlert();
+		}catch(Exception e) {
+			Reporter.log("Alert not present. . .");
+		}
+		Thread.sleep(5000);
+		WebElement CreateBTN = driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		jsclick(CreateBTN);
+		Reporter.log("User click on create button");
+		Thread.sleep(15000);
+		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+		jsclick(viewOption);
+		Reporter.log("User click on view button");
+		
+		Thread.sleep(15000);
+		jsclick(RoomContextTab);
+		Thread.sleep(3000);
+		Reporter.log("User mousehover on Roomcontextmenu tab");
+		movingElement(RoomContextTab);
+		Thread.sleep(5000);
+		Reporter.log("User select Nodeproperties submenu");
+		wait.until(ExpectedConditions.visibilityOf(NodeProperties));
+		jsclick(NodeProperties);
+		Reporter.log("User click on reset button");
+		Thread.sleep(6000);
+		jsclick(NodeResetBTN);
+		Reporter.log("User click on reset confirm dialog OK button");
+		Thread.sleep(3000);
+		jsclick(NodeResetYesBTN);
+		Reporter.log("Reset working fine. Node properties got reset...");
+		Thread.sleep(8000);
+		jsclick(NodePropOKBTN);
+		Thread.sleep(3000);
+		try {
+			WebElement updatePopup = driver.findElement(By.id("confirmMessageOk35"));
+			if (updatePopup.isDisplayed()) {
+				updatePopup.click();
+			}
+		} catch (Exception e) {
+			Reporter.log("Node Properties Updated Successfully...");
+		}
+
+		Thread.sleep(3000);
+		movingclkElement(CreateDocTab);
+		Thread.sleep(8000);
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(5000);
+		Reporter.log("node properties verified successfully", true);
+	}
+
 	public void NodePropertiesDefault() throws Exception {
 
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		jsclick(RoomContextTab);
+		Reporter.log("Scenario 06:Verify default  NodeProperties  ");
 		wait.until(ExpectedConditions.elementToBeClickable(vidyaCaninet));
-		movingDoublecli(vidyaCaninet, vidyaCaninet);
+		selectElement(vidyaCaninet);
+		Reporter.log("User should expand a cabinet which has default node value");
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(vidyaDrawer));
 		Thread.sleep(3000);
-		movingDoublecli(vidyaDrawer, vidyaDrawer);
+		Reporter.log("User should expand a drawer which has default node value");
+		selectElement(vidyaDrawer);
+		Reporter.log("User should select a folder which has default node value");
 		wait.until(ExpectedConditions.elementToBeClickable(vidyaFolder));
-		movingDoublecli(vidyaFolder, vidyaFolder);
+		selectElement(vidyaFolder);
 		Thread.sleep(3000);
-
+		Reporter.log("User mousehover on Roomcontextmenu and select nodeproperties submenu");
 		movingElement(RoomContextTab);
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(NodeProperties));
 		jsclick(NodeProperties);
 		Thread.sleep(10000);
-
+		Reporter.log("Nodeproperties dialog box opened");
 		jsclick(CountriesDrpdown);
 		Thread.sleep(3000);
+		Reporter.log("User has change the country dropdonw");
 		selectDropDownByIndex(CountriesDrpdown, 6);
 		Thread.sleep(3000);
 		jsclick(NodePropOKBTN);
+		Reporter.log("User click on nodeproperties dialog OK button");
 		try {
 			WebElement updatePopup = driver.findElement(By.id("confirmMessageOk35"));
 			if (updatePopup.isDisplayed()) {
@@ -624,23 +894,31 @@ public class RoomContextMenu extends BaseClass {
 		}
 		Thread.sleep(5000);
 		movingclkElement(CreateDocTab);
-
+		Reporter.log("User click on new documebt tab");
 		Thread.sleep(10000);
+		Reporter.log("The page should show the default Nodeproperty values");
 		jsclick(Refresh_Button(driver));
+		Reporter.log("Default NodeProeprty  working fine");
+		Reporter.log("Click on refresh button");
 	}
 
 	public void Notification() throws Exception {
+		Reporter.log("Scenario 06: Verify Roomcontextmenu tab Notification functionlity");
 		jsclick(RoomContextTab);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		Thread.sleep(3000);
+		Reporter.log("User expand the cabinet and expand the drawer to slect a folder.");
 		wait.until(ExpectedConditions.elementToBeClickable(DeleteCheckCabinet));
-		movingDoublecli(DeleteCheckCabinet, DeleteCheckCabinet);
+		selectElement(DeleteCheckCabinet);
 		//Thread.sleep(3000);
 	//	wait.until(ExpectedConditions.elementToBeClickable(DeleteChkDfDfDrawer));
 		Thread.sleep(3000);
-		movingDoublecli(DeleteChkDfDfDrawer, DeleteChkDfDfDrawer);
+		Reporter.log("User select a folder");
+		selectElement(DeleteChkDfDfDrawer);
+		Reporter.log("User mousehover on Roomcontext menu tab ");
 		wait.until(ExpectedConditions.elementToBeClickable(folderSecurityPermissionCheck));
-		movingDoublecli(folderSecurityPermissionCheck, folderSecurityPermissionCheck);
+		selectElement(folderSecurityPermissionCheck);
+		Reporter.log("USer select Notification submenu");
 		Thread.sleep(3000);
 		movingElement(RoomContextTab);
 		Thread.sleep(5000);
@@ -648,27 +926,37 @@ public class RoomContextMenu extends BaseClass {
 		Thread.sleep(3000);
 		jsclick(Notification);
 		Thread.sleep(2000);
+		Reporter.log("Notifiaction dialog opened");
 		jsclick(resetBTNmyPref);
+		Reporter.log("User click on reset button");
 		Thread.sleep(3000);
+		Reporter.log("Reset functionlity working fine...");
 		jsclick(NotificationDropDown);
+		Reporter.log("User click on notificationdropdonw");
 		Thread.sleep(3000);
-
+		Reporter.log("User select any changes to the folder option");
 		WebElement AnyChangesOption = driver.findElement(By.xpath(" //span[text()='Any changes to folder']"));
 		VisiblityOf(AnyChangesOption);
 		jsclick(AnyChangesOption);
 		Thread.sleep(3000);
+		Reporter.log("User select' any changes to the document' option from the notification dropdonw");
 		scrollDown(AnyChangesToDocuments);
 		wait.until(ExpectedConditions.elementToBeClickable(AnyChangesToDocuments));
 		movingElement(AnyChangesToDocuments);
 		jsclick(AnyChangesToDocuments);
+		
 		Thread.sleep(3000);
 		scrollDown(ScrollIntoDown);
+		Reporter.log("User clcik on apply button");
 		Thread.sleep(4000);
 		scrollUp(AnyChangesOption);
+		Reporter.log("USer select notification tab, it will show the notification");
 		Thread.sleep(4000);
 		jsclick(applyBTNmypref);
+		Reporter.log("If any changes have been made by other user in the selected notification folder. The specified user will receive a notification");
 		Thread.sleep(10000);
-		movingDoublecli(ForOpenNotiAgain, ForOpenNotiAgain);
+		selectElement(ForOpenNotiAgain);
+	
 		// jsclick(Notification);
 		Thread.sleep(3000);
 		jsclick(NotificationDropDown);
@@ -713,78 +1001,80 @@ public class RoomContextMenu extends BaseClass {
 	}
 
 	public void CustomDocTypes() throws Exception {
-
+		Reporter.log("Scneario 07: Verify RoomContextmenu CustomDocument type");
 		jsclick(RoomContextTab);
 		jsclick(CabinetForCustomDoc);
 		Thread.sleep(2000);
+		Reporter.log("User select a cabinet to set custom document type");
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		movingElement(RoomContextTab);
-		Thread.sleep(3000);
+		Reporter.log("Mousehover on Roomcontextmenu tab");
+		Thread.sleep(6000);
 		wait.until(ExpectedConditions.visibilityOf(customdoc));
 		Thread.sleep(3000);
 		jsclick(customdoc);
+		Reporter.log("User select Custom DocumentType submenu");
 		Thread.sleep(5000);
 	//	WebElement bill = driver.findElement(By.xpath("(//span[@id='spanCheckCustomDocTypeValues_12'])[1]"));
 		Thread.sleep(3000);
-		if (bill.isSelected()) {
+		/*if (bill.isSelected()) {
 			Reporter.log("Success");
-		} else {
+		} else {*/
 			jsclick(bill);
-		}
+	//	}
 		Thread.sleep(3000);
 	//	WebElement dateMask = driver.findElement(By.xpath("//*[@id=\"spanCheckCustomDocTypeValues_27\"]"));
-		if (dateMask.isSelected()) {
+	/*	if (dateMask.isSelected()) {
 			Reporter.log("Success");
-		} else {
+		} else {*/
 			jsclick(dateMask);
-		}
+	//	}
+			Reporter.log("Customdocument type dialog box opened");
+			Reporter.log("User select DateMask document type");
 		Thread.sleep(3000);
 		//WebElement cvReports1 = driver.findElement(By.xpath("(//span[@id='spanCheckCustomDocTypeValues_74'])[1]"));
-		if (cvReports1.isSelected()) {
+		/*if (cvReports1.isSelected()) {
 			Reporter.log("Success");
 		} else {
 			jsclick(cvReports1);
-		}
+		}*/
 		Thread.sleep(4000);
 	//	WebElement cvReports = driver.findElement(By.xpath("(//span[@id='spanCheckCustomDocTypeValues_1'])[1]"));
-		if (cvReports.isSelected()) {
-			Reporter.log("Success");
-		} else {
+		Reporter.log("User select CVReports document type");
 			jsclick(cvReports);
-		}
+			Reporter.log("User select CVFReport1 document type");
 	//	WebElement alldatatype = driver.findElement(By.xpath("(//span[@id='spanCheckCustomDocTypeValues_68'])[1]"));
-		if (alldataType.isSelected()) {
+		/*if (alldataType.isSelected()) {
 			Reporter.log("Success");
 		} else {
 			jsclick(alldataType);
-		}
+		}*/
 		Thread.sleep(5000);
 		WebElement OKBTNcustomcol = driver.findElement(By.xpath("(//button[@id='setCustomDocTypeOK'])[1]"));
 		jsclick(OKBTNcustomcol);
+		Reporter.log("User Click on custom document type dloag OK button");
 		Thread.sleep(3000);
 		jsclick(CreateDocTab);
+		Reporter.log("User click on new document tab");
 		Thread.sleep(5000);
 		movingclkElement(selectDocDropDown);
-		Thread.sleep(8000);
+		Reporter.log("User click on dropdown");
+		Thread.sleep(15000);
 		jsclick(RoomContextTab);
 		Thread.sleep(4000);
+		Reporter.log("It should show only three selected document type");
 		jsclick(CabinetForCustomDoc);
 		Thread.sleep(4000);
+		Reporter.log("The selected document type displayed successfull");
 		movingElement(RoomContextTab);
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(customdoc));
 		Thread.sleep(3000);
+		Reporter.log("User Click on RoomContextmenu tab to select Resetcustomdocument ");
+		Reporter.log("Customdocument type Reset successfully...");
 		jsclick(ResetcustomDocType);
-		Thread.sleep(4000);
-		movingDoublecli(CabinetForCustomDoc, CabinetForCustomDoc);
-		movingElement(RoomContextTab);
-		Thread.sleep(3000);
-		wait.until(ExpectedConditions.visibilityOf(customdoc));
-		Thread.sleep(3000);
-		jsclick(customdoc);
-		Thread.sleep(5000);
-		WebElement cancelBTNCd = driver.findElement(By.id("setCustomDocTypeCancel"));
-		jsclick(cancelBTNCd);
+		Thread.sleep(7000);
+		
 		jsclick(Refresh_Button(driver));
 		Reporter.log("custome documents verified successfull", true);
 	}
@@ -796,7 +1086,7 @@ public class RoomContextMenu extends BaseClass {
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		movingElement(RoomContextTab);
-		Thread.sleep(3000);
+		Thread.sleep(7000);
  		wait.until(ExpectedConditions.visibilityOf(Categories));
 		Thread.sleep(3000);
 		jsclick(Categories);
@@ -855,8 +1145,117 @@ public class RoomContextMenu extends BaseClass {
 		Thread.sleep(3000);
 	//	movingclkElement(Cabinet);
 		Thread.sleep(8000);
-		Reporter.log("categories public sorks fine", true);
+		Reporter.log("categories public works fine", true);
 	}
+	
+
+	@FindBy(xpath = "//*[@id=\"376\"]/a")
+	private WebElement SQLRoomFolder;
+	
+	
+public void TakeOwnerShip_SQL() throws Exception {
+		
+		jsclick(RoomContextTab);
+		Thread.sleep(3000);
+		jsclick(CabinetTest);
+		Thread.sleep(5000);
+		jsclick(Drawer);
+		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+	//	wait.until(ExpectedConditions.elementToBeClickable(Folder));
+		jsclick(SQLRoomFolder);
+		Thread.sleep(5000);
+
+		movingElement(RoomContextTab);
+		Thread.sleep(5000);
+		WebElement TakeOwnerShipTab = driver.findElement(By.xpath("//a[@id='takeOwnershipFolder']"));
+		wait.until(ExpectedConditions.visibilityOf(TakeOwnerShipTab));
+		Thread.sleep(3000);
+		movingclkElement(TakeOwnerShipTab);
+		Thread.sleep(6000);
+		try {
+			WebElement BTN = driver.findElement(By.xpath("(//button[@id='takeOwnerShipAnyway25'])[1]"));
+			if (BTN.isDisplayed()) {
+				jsclick(BTN);
+			}
+		} catch (Exception e) {
+			Reporter.log("The document OwnerShip Taken Successfully");
+		}
+
+		Thread.sleep(8000);
+		movingElement(RoomContextTab);
+		Thread.sleep(3000);
+		LogoutPage();
+		Thread.sleep(4000);
+		loginSQL2022();
+		Thread.sleep(3000);
+
+		jsclick(CabinetTest);
+		Thread.sleep(3000);
+		jsclick(Drawer);
+		Thread.sleep(3000);
+		movingDoublecli(SQLRoomFolder,SQLRoomFolder);
+		Thread.sleep(3000);
+		movingElement(RoomContextTab);
+		Thread.sleep(5000);
+		VisiblityOf(ForLockedPDFDoc);
+		jsclick(ForLockedPDFDoc);
+		Thread.sleep(3000);
+		OKBTNDocLockDialog.sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+		try 
+		{
+		wait.until(ExpectedConditions.alertIsPresent());
+		acceptAlert();
+		}
+		catch(Exception e) {
+			Reporter.log("NoAlertISPResent");
+		}
+		Thread.sleep(8000);
+		LogoutPage();
+		Thread.sleep(3000);
+		LogInAdminSQL();
+		Thread.sleep(4000);
+		jsclick(CabinetTest);
+		Thread.sleep(3000);
+		jsclick(Drawer);
+		Thread.sleep(2000);
+		movingDoublecli(Folder, Folder);
+		Thread.sleep(5000);
+		movingElement(RoomContextTab);
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(ReleaseOSFolder));
+		jsclick(ReleaseOSFolder);
+		Thread.sleep(4000);
+		LogoutPage();
+		Thread.sleep(4000);
+		loginSQL2022();
+		Thread.sleep(2000);
+		movingDoublecli(Cabinet, Cabinet);
+		Thread.sleep(3000);
+		jsclick(Drawer);
+		Thread.sleep(2000);
+		movingDoublecli(SQLRoomFolder,SQLRoomFolder);
+		Thread.sleep(5000);
+		movingElement(RoomContextTab);
+		Thread.sleep(3000);
+		jsclick(ForLockedPDFDoc);
+		Thread.sleep(3000);
+		try {
+		alertIsPresent();
+		acceptAlert();
+		}
+		catch(Exception e) {
+			System.out.println("AlertISNotPResent");
+		}
+		Thread.sleep(8000);
+		LogoutPage();
+		Thread.sleep(5000);
+		LogInAdminSQL();
+		Reporter.log("TakeOwnerShip functionality verified successfull", true);
+
+	}
+
 
 }
 

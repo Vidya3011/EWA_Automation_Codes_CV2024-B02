@@ -80,7 +80,7 @@ public class Print extends Generic.BaseClass {
 	@FindBy(xpath = ("(//button[@id='saveSendToDocument'])[1]"))
 	private WebElement EmailSendOk;				
 			                                                                         //(//input[@id='zipPasswordInputpdf'])[1]
-	@FindBy(xpath = ("//input[@id='ccEmail'])[1]"))
+	@FindBy(xpath = ("//*[@id=\"ccEmail\"]"))
 	private WebElement ForCCmail;
 	
 	@FindBy(xpath = ("(//input[@id='subjectid'])[1]"))
@@ -131,9 +131,17 @@ public class Print extends Generic.BaseClass {
     @FindBy(xpath=("//select[@id='convertToPdfExportQuality']"))
     private WebElement ExpQualitydropdwn;
   
-    public WebElement getForCCmail() {
-		return ForCCmail;
+    
+  
+    
+    @FindBy(xpath=("//*[@id=\"messageContent\"]"))
+    private WebElement WithoutEmailID;
+  
+    public WebElement getWithoutEmailID() {
+		return WithoutEmailID;
 	}
+    
+    
 
 	public WebElement getForSubject() {
 		return ForSubject;
@@ -265,6 +273,26 @@ public class Print extends Generic.BaseClass {
 		return EmailSendOk;
 	}
 
+	
+	@FindBy(xpath=("//*[@id=\"messageButtonOK\"]"))
+    private WebElement InvalidDialogBoxOKBTN;
+	
+	public WebElement getInvalidDialogBoxOKBTN() {
+		return InvalidDialogBoxOKBTN;
+	}
+	
+	@FindBy(xpath=("//*[@id=\"messageContent\"]"))
+    private WebElement InvalidEmailMessageValidation;
+	
+	public WebElement getInvalidEmailMessageValidation() {
+		return InvalidEmailMessageValidation;
+	}
+	
+	
+	
+	
+	
+	
 	public WebElement getForincludewrkflowcheckbx() {
 		return forincludewrkflowcheckbx;
 	}
@@ -297,7 +325,7 @@ public class Print extends Generic.BaseClass {
 	@FindBy(xpath = ("//a[text()='CVMobile App 2022']"))
 	private WebElement Drawer;
 
-	@FindBy(xpath = ("//a[text()='Test apk']"))
+	@FindBy(xpath = ("/html/body/div[58]/div[64]/div[1]/div/div[2]/div[2]/ul/li[13]/ul/li[1]/ul/li[2]/a"))
 	private WebElement Folder;
 
 	//
@@ -305,6 +333,19 @@ public class Print extends Generic.BaseClass {
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[8]/td[3]"))
 	private WebElement Document;
 
+	
+	
+	
+	@FindBy(xpath = ("/html/body/div[58]/div[64]/div[4]/div[2]/div[1]/div/div[2]/div[2]/table/tbody/tr[1]/td[3]"))
+	private WebElement OpenCaseCabDocument;
+	
+public WebElement getOpenCaseCabDocument() {
+
+		
+		return OpenCaseCabDocument;
+
+	}
+	
 	public WebElement getCabinet() {
 
 		
@@ -468,6 +509,34 @@ public class Print extends Generic.BaseClass {
 		return secLinkReceipientMailAgain;
 	}
 	
+	@FindBy(xpath = ("//*[@id=\"messageContent\"]"))
+	private WebElement secLinkBlankMail_ID;
+
+	public WebElement getsecLinkBlankMail_ID() {
+		return secLinkBlankMail_ID;
+	}
+	
+	
+	
+	@FindBy(xpath = ("//*[@id=\"messageButtonOK\"]"))
+	private WebElement EmailIDMismatchDialogOKBTN;
+
+	public WebElement getEmailIDMismatchDialogOKBTN() {
+		return EmailIDMismatchDialogOKBTN;
+	}
+	
+	@FindBy(xpath = ("//*[@id=\"messageContent\"]"))
+	private WebElement EmailIDMismatchMessage;
+
+	public WebElement getEmailIDMismatchMessage() {
+		return EmailIDMismatchMessage;
+	}
+	
+	
+	
+	
+	
+	
 	
 	@FindBy(xpath = ("//*[@id=\"confirmEmailIdSecureSecond\"]"))
 	private WebElement secLinkConfirmMailAgain;
@@ -528,6 +597,65 @@ public class Print extends Generic.BaseClass {
 		return secureLink;
 	}
 
+	@FindBy(xpath=("//*[@id=\"1\"]/ins"))
+	private WebElement TestCabExpIcon;
+	
+	public WebElement getTestCabExpIcon() {
+		return TestCabExpIcon;
+	}
+
+	@FindBy(xpath=("//*[@id=\"30\"]/ins"))
+	private WebElement CaseRoomNishRCab;
+	
+	public WebElement getCaseRoomNishRCab() {
+		return CaseRoomNishRCab;
+	}
+	
+	@FindBy(xpath=("//*[@id=\"31\"]/ins"))
+	private WebElement CAseRoomNishDrawerIcon;
+	
+	public WebElement getCAseRoomNishDrawerIcon() {
+		return CAseRoomNishDrawerIcon;
+	}
+	@FindBy(xpath=("//*[@id=\"32\"]/a/ins"))
+	private WebElement CAseRoomNishRExpIcon;
+	
+	public WebElement getCAseRoomNishRExpIcon() {
+		return CAseRoomNishRExpIcon;
+	}
+
+	 @FindBy(xpath = ("//button[@id='ownershipMessageModelOk']"))
+		private WebElement Lockeddoc;
+	 
+	 public WebElement getLockeddoc() {
+			return Lockeddoc;
+		}
+
+	@FindBy(xpath=("//*[@id=\"2\"]/ins"))
+	private WebElement TesttestDrawerExpIcon;
+
+	public WebElement getTesttestDrawerExpIcon() {
+		return TesttestDrawerExpIcon;
+	}
+
+
+	@FindBy(xpath=("//*[@id=\"1002\"]/a"))
+	private WebElement VidyaTestFolder;
+	
+	public WebElement getVidyaTestFolder() {
+		return VidyaTestFolder;
+	}
+
+	@FindBy(xpath = "//*[@id=\"376\"]/a")
+	private WebElement SQLRoomFolder;
+	
+	
+	
+	public WebElement getSQLRoomFolder() {
+	
+		return SQLRoomFolder;
+	}
+	
 	
 	
 }

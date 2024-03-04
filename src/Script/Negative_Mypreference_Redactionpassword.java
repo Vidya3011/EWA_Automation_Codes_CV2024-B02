@@ -1,0 +1,129 @@
+package Script;
+
+import java.time.Duration;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import Generic.BaseClass;
+import Pom.My_Preferences;
+
+public class Negative_Mypreference_Redactionpassword extends BaseClass {
+
+	private static final Logger log = LogManager.getLogger(Negative_Mypreference_Redactionpassword.class);
+
+	// @BeforeClass
+
+	public void LandBrowser() {
+		loadBrowser("Chrome");
+		launchUrl();
+		log.info("CVS URL started Successfully...");
+	}
+
+	// @Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		log.info("CVS User is logged in successfully...");
+
+	}
+
+	@Test(priority = 1)
+	public void Verify_Redaction_View_Password() throws Exception {
+
+		My_Preferences pojo = new My_Preferences();
+		Thread.sleep(4000);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(4000);
+		jsclick(pojo.getClick_New_Document());
+		Thread.sleep(4000);
+		jsclick(pojo.getDestination_Folder_Textbox());
+		Thread.sleep(4000);
+		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
+		Thread.sleep(4000);
+		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
+		Thread.sleep(4000);
+		movingDoublecli(pojo.getFolder(), pojo.getFolder());
+		Thread.sleep(4000);
+		jsclick(pojo.getOK_Button_BrowseforFolder());
+		Thread.sleep(4000);
+		pojo.getSelect_Document_Type_Dropdown();
+		Thread.sleep(4000);
+		pojo.getEnter_ReportName_RedactionPassword();
+		Thread.sleep(4000);
+		pojo.getMove_To_PlusIcon();
+		pojo.getBrowse_Option();
+		Thread.sleep(3000);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		Reporter.log("Page is uploaded successfully", true);
+		Thread.sleep(6000);
+		pojo.getMove_to_Annotation_Option_inViewer();
+		Thread.sleep(6000);
+		pojo.getRedaction_Option();
+		Thread.sleep(6000);
+		pojo.getvalidate_Redaction_Emptypassword();
+		Thread.sleep(3000);
+		pojo.getmessagevalidation1();
+		Thread.sleep(4000);
+		pojo.getenter_Password();
+		Thread.sleep(3000);
+		pojo.getmessagevalidate2();
+		Thread.sleep(3000);
+		pojo.getenter_Confirmpassword();
+		Thread.sleep(3000);
+		pojo.getmessagevalidate2();
+		Thread.sleep(3000);
+		pojo.getenter_validpassword();
+		Thread.sleep(6000);
+		jsclick(pojo.getCreate_button());
+		Thread.sleep(6000);
+		jsclick(pojo.getNavigate_button());
+		Thread.sleep(6000);
+		log.info("Redaction view password validation Verified");
+	}
+
+	@Test(priority = 2)
+	public void Verify_InvalidRedaction_View_Password() throws Exception {
+
+		My_Preferences pojo = new My_Preferences();
+		Thread.sleep(3000);
+		jsclick(pojo.getSetting_Icon());
+		Thread.sleep(3000);
+		jsclick(pojo.getMy_Preferencesetting());
+		Thread.sleep(3000);
+		pojo.getEnter_InvalidRedactionPassword_MyPreferences();
+		Thread.sleep(3000);
+		jsclick(pojo.getApply_button());
+		Thread.sleep(6000);
+		jsclick(pojo.getOpen_Document());
+		Thread.sleep(9000);
+		log.info("Invalid Redaction verified in My preferences.");
+	}
+
+	@Test(priority = 3)
+	public void Verify_ResetInvalidPassword_My_Preferences() throws Exception {
+
+		My_Preferences pojo = new My_Preferences();
+		jsclick(pojo.getSetting_Icon());
+		Thread.sleep(4000);
+		jsclick(pojo.getMy_Preferencesetting());
+		Thread.sleep(4000);
+		pojo.getReset_InvalidRedactionPassword_MyPreferences();
+		Thread.sleep(4000);
+		jsclick(pojo.getApply_button());
+		Reporter.log("Password Reset Successfully", true);
+		log.info("Reset Invalid Reset Password Successfully");
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(4000);
+	}
+}

@@ -46,11 +46,15 @@
   </dependencies>
   <dependencyManagement>
   	<dependencies>
-  		<dependency>
-  			<groupId>org.seleniumhq.selenium</groupId>
-  			<artifactId>selenium-java</artifactId>
-  			<version>3.141.59</version>
-  		</dependency>
+  		
+  		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.17.0</version>
+</dependency>
+
+  		
   		<dependency>
   			<groupId>org.apache.poi</groupId>
   			<artifactId>poi</artifactId>
@@ -79,12 +83,7 @@
     <artifactId>commons-io</artifactId>
     <version>2.4</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>3.141.59</version>
-</dependency>
+
 <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
@@ -119,15 +118,15 @@
     <version>1.72</version>
 </dependency>
 <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-api</artifactId>
-    <version>2.11.1</version>
-  </dependency>
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.11.1</version>
-  </dependency>
+<groupId>org.apache.logging.log4j</groupId>
+<artifactId>log4j-api</artifactId>
+<version>2.20.0</version>
+</dependency>
+<dependency>
+<groupId>org.apache.logging.log4j</groupId>
+<artifactId>log4j-core</artifactId>
+<version>2.20.0</version>
+</dependency>
  <dependency>
   <groupId>org.apache.maven.surefire</groupId>
   <artifactId>surefire</artifactId>
@@ -137,33 +136,5 @@
 	</dependencies>
   </dependencyManagement>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 </project>
