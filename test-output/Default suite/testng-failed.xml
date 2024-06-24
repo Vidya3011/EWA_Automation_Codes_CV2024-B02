@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
+      <class name="Script.ManualWorkflow">
         <methods>
+          <include name="TC_3_SendAndNewItemsMetaDataAgree"/>
           <include name="ladBrowser"/>
-          <include name="Login"/>
-          <include name="Createdocumentagain"/>
         </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+      </class> <!-- Script.ManualWorkflow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,6 +6,7 @@
 </listeners> 
    <test name="Test1">
    <classes>
+   
       <class name="SQL2022_DB.RamACCreateDocINEdge"/>
     </classes>
   </test>  
@@ -44,5 +45,5 @@
       <class name="SQL2022_DB.RamACCreateDocINEdge"/>
     </classes>
   </test>     
-  
+ 
 </suite> <!-- Suite -->

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 28 01:16:36 CST 2024</td>
+<td>Started on:</td><td>Mon Jun 24 08:54:00 CDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>178 seconds (178478 ms)</td>
+<tr><td>Total time:</td><td>173 seconds (173133 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,32 +75,83 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.SecureLink_Negative_Scenerio.SecLinkReceipientDailogBoxInvalid_Email_ID()'><b>SecLinkReceipientDailogBoxInvalid_Email_ID</b><br>Test class: Script.SecureLink_Negative_Scenerio</td>
-<td></td>
-<td>38</td>
-<td>Script.SecureLink_Negative_Scenerio@1987356</td></tr>
-<tr>
-<td title='Script.SecureLink_Negative_Scenerio.SecLinkReceipientMailBlank()'><b>SecLinkReceipientMailBlank</b><br>Test class: Script.SecureLink_Negative_Scenerio</td>
-<td></td>
-<td>24</td>
-<td>Script.SecureLink_Negative_Scenerio@1987356</td></tr>
-<tr>
-<td title='Script.SecureLink_Negative_Scenerio.SecureLinkInvalidRecepient_Mail_ID_ValidConfirm_Mail()'><b>SecureLinkInvalidRecepient_Mail_ID_ValidConfirm_Mail</b><br>Test class: Script.SecureLink_Negative_Scenerio<br/>
-<a href="#Output-2917922" onClick='toggleBox("Output-2917922", this, "Show output", "Hide output");'>Show output</a>
+<td title='Script.SecureLink_Negative_Scenerio.TC_1_SecureLinkInvalidRecepient_Mail_ID_ValidConfirm_Mail()'><b>TC_1_SecureLinkInvalidRecepient_Mail_ID_ValidConfirm_Mail</b><br>Test class: Script.SecureLink_Negative_Scenerio<br/>
+<a href="#Output-24833871" onClick='toggleBox("Output-24833871", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2917922" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2917922">
+<a href="#Output-24833871" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-24833871">
+Negative Scenario 01: Check Securelink with Invalid Email ID <br/>
+Expand a cabinet<br/>
+Expand a drawer<br/>
+Open a folder<br/>
+Open a document<br/>
 No Alert is present<br/>
+Click on check box<br/>
+Click on sendto icon<br/>
+Select secure link submenu<br/>
+User should enter invalid email into email textbox<br/>
+Click on securelink dialog OK button<br/>
+It should displayed 'Please enter valid recipient email id' dialog on the page  <br/>
+Secure link - invalid email id scenario verified successfully<br/>
 </div>
 </td>
 <td></td>
-<td>93</td>
-<td>Script.SecureLink_Negative_Scenerio@1987356</td></tr>
+<td>87</td>
+<td>Script.SecureLink_Negative_Scenerio@1b3ee4e</td></tr>
 <tr>
-<td title='Script.SecureLink_Negative_Scenerio.SendToSecureLinkwithout_Email_ID_BlankTest()'><b>SendToSecureLinkwithout_Email_ID_BlankTest</b><br>Test class: Script.SecureLink_Negative_Scenerio</td>
+<td title='Script.SecureLink_Negative_Scenerio.TC_2_SendToSecureLinkwithout_Email_ID_BlankTest()'><b>TC_2_SendToSecureLinkwithout_Email_ID_BlankTest</b><br>Test class: Script.SecureLink_Negative_Scenerio<br/>
+<a href="#Output-29990717" onClick='toggleBox("Output-29990717", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-29990717" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-29990717">
+Scenario 2: Securelink with blank email ID<br/>
+Email id should be blank<br/>
+Click on securelink dialog OK button<br/>
+User should get 'Please enter recipient email id' Warning dialog box<br/>
+Warning dialog displayed successfull,Blank mail Scenario verified successfully<br/>
+</div>
+</td>
 <td></td>
 <td>21</td>
-<td>Script.SecureLink_Negative_Scenerio@1987356</td></tr>
+<td>Script.SecureLink_Negative_Scenerio@1b3ee4e</td></tr>
+<tr>
+<td title='Script.SecureLink_Negative_Scenerio.TC_3_SecLinkReceipientDailogBoxInvalid_Email_ID()'><b>TC_3_SecLinkReceipientDailogBoxInvalid_Email_ID</b><br>Test class: Script.SecureLink_Negative_Scenerio<br/>
+<a href="#Output-6877422" onClick='toggleBox("Output-6877422", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-6877422" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-6877422">
+Negative Scenario 3: Securelink with valid email and invalid confirm mail <br/>
+Enter a valid email id into email field<br/>
+Click on modify check box<br/>
+User should enter invalid email id into cofirm mail text box<br/>
+Click on securelink dialog OK button<br/>
+Sending secure link mail from viewer page,select the document from page List the Selected Page was sent Successfully...Mail has received.<br/>
+USer should get 'Email id mismatch' warning dialog<br/>
+ Warning dialog displayed...Valid email - invalid confirm mail scenario verified successfully...<br/>
+</div>
+</td>
+<td></td>
+<td>38</td>
+<td>Script.SecureLink_Negative_Scenerio@1b3ee4e</td></tr>
+<tr>
+<td title='Script.SecureLink_Negative_Scenerio.TC_4_SecLinkReceipientMailBlank()'><b>TC_4_SecLinkReceipientMailBlank</b><br>Test class: Script.SecureLink_Negative_Scenerio<br/>
+<a href="#Output-30748146" onClick='toggleBox("Output-30748146", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-30748146" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-30748146">
+Negative Scenario 4:Securelink first dialog box has Valid email and Valid confirm email ID/ Securelink  Second dialog box should be blank <br/>
+Enter valid email<br/>
+Enter valid confirm email<br/>
+Blank mail id:Unable to send the document into secure link<br/>
+Click on first securelink dialog box OK button<br/>
+Should not enter email id,just click on second securelink dilaog box OK button<br/>
+User should get'Email id Mismatch' warning alert<br/>
+ Warning alert displayed...<br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>Script.SecureLink_Negative_Scenerio@1b3ee4e</td></tr>
 </table><p>
 </body>
 </html>

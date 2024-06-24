@@ -18,7 +18,7 @@ public class LogoutPage {
 	}
 	
 	public void testLogout() throws Exception  {
-		Logout logout1 = new Logout(driver);
+		Logout logout1 = new Logout();
 		logout1.SetLogout();
 }
 }

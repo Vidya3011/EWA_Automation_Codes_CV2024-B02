@@ -1,72 +1,80 @@
 package Script;
 
 import java.time.Duration;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import Generic.BaseClass;
-import Pom.Logout;
 import Pom.My_Preferences;
 
 public class My_Preferences_Download_Allfiles extends BaseClass {
 
-	private static final Logger log = LogManager.getLogger(My_Preferences_Download_Allfiles.class);
+	@BeforeClass
 
-	// @BeforeClass
-
-	public void LandBrowser() {
+	public void Launch_Browser() throws Exception {
 		loadBrowser("Chrome");
 		launchUrl();
-		log.info("CVS URL started Successfully...");
+		Reporter.log("CVS URL started Successfully", true);
 	}
 
-	// @Test
+	@Test
 
 	public void Login_EWA() throws Exception {
 		LogDipakUser();
-		log.info("CVS User is logged in successfully...");
+		Reporter.log("User has logged in successfully", true);
 
 	}
 
 	@Test(priority = 1)
-	public void Verify_Download_All_Files() throws Exception {
+	public void TC_01_Verify_Download_All_Files() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		Thread.sleep(4000);
+
+		Reporter.log("Test Scenario 1 : Verifying Download All Files ", true);
+		Thread.sleep(7000);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Setting Icon", true);
 		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on My Preferences Option", true);
 		pojo.getVerify_DownloadAllFiles_checkbox();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Check Download all file checkbox", true);
 		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Apply button", true);
 		jsclick(pojo.getClick_Search_Option());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Search Tab", true);
 		pojo.getEnter_Document_Name();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Enter Document Name", true);
 		jsclick(pojo.getFind_Button());
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Find button", true);
 		pojo.getSelect_Document();
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.alertIsPresent());
-		Alert alt = driver.switchTo().alert();
-		alt.accept();
+		Reporter.log("Select and Open Document page", true);
+		try {
+			WebDriverWait wait2 = new WebDriverWait(driver, 20);
+			wait2.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Thread.sleep(7000);
 		pojo.getDownload_File();
-		Thread.sleep(5000);
-		pojo.getDownload_File_OK_button();
-		Reporter.log(" All files should be Downloaded successfully", true);
-		log.info("All files should be Downloaded successfully");
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(5000);
+		Thread.sleep(6000);
+		Reporter.log("Click on Download Menu Option", true);
+		Reporter.log("All files should be Downloaded successfully", true);
+		driver.close();
+		Reporter.log("Close the browser", true);
 	}
 }

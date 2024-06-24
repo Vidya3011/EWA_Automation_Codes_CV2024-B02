@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - Test3</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>Test3</h1>
+<p>
+  Test duration: 876.324s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">Script.SearchSelectDocumentLocation</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  B_ExactSearchInIndexWithLoadMoreCount
+      </td>
+  <td class="duration">
+    31.329s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 02: Search - load more count<br />
+                                User click on Search tab<br />
+                                Enter value into Index contains textbox<br />
+                                Click on find button<br />
+                                Scroll down the searched list,now user can able to see the &apos;loadmore&apos; button<br />
+                                Click on load more button<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//td[@class=&apos; details-control&apos;])[66]&quot;}<br/>
+&nbsp; (Session info: chrome=122.0.6261.112)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;<br/>
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.112, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53537}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: bf320213eeb19faff7479b9ed7c37e8f<br/>
+*** Element info: {Using=xpath, value=(//td[@class=&apos; details-control&apos;])[66]}</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)<br />
+              java.lang.reflect.Constructor.newInstance(Unknown Source)<br />
+              org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+              org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+              org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+              org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)<br />
+              org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)<br />
+              com.sun.proxy.$Proxy25.getWrappedElement(Unknown Source)<br />
+              org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)<br />
+              java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)<br />
+              java.util.Spliterators$ArraySpliterator.forEachRemaining(Unknown Source)<br />
+              java.util.stream.AbstractPipeline.copyInto(Unknown Source)<br />
+              java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)<br />
+              java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)<br />
+              java.util.stream.AbstractPipeline.evaluate(Unknown Source)<br />
+              java.util.stream.ReferencePipeline.collect(Unknown Source)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)<br />
+              Generic.BaseClass.scrollDown(BaseClass.java:621)<br />
+              Script.SearchSelectDocumentLocation.B_ExactSearchInIndexWithLoadMoreCount(SearchSelectDocumentLocation.java:107)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:364)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1137)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1049)<br />
+              org.testng.TestNG.run(TestNG.java:1017)<br />
+              org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable" width="100%">
+    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">Script.SearchSelectDocumentLocation</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  B_ExactSearchInIndexWithLoadMoreCount
+      </td>
+  <td class="duration">
+    31.289s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Scenario 02: Search - load more count<br />
+                                User click on Search tab<br />
+                                Enter value into Index contains textbox<br />
+                                Click on find button<br />
+                                Scroll down the searched list,now user can able to see the &apos;loadmore&apos; button<br />
+                                Click on load more button<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  B_ExactSearchInIndexWithLoadMoreCount
+      </td>
+  <td class="duration">
+    32.761s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Scenario 02: Search - load more count<br />
+                                User click on Search tab<br />
+                                Enter value into Index contains textbox<br />
+                                Click on find button<br />
+                                Scroll down the searched list,now user can able to see the &apos;loadmore&apos; button<br />
+                                Click on load more button<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  B_ExactSearchInIndexWithLoadMoreCount
+      </td>
+  <td class="duration">
+    31.387s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Scenario 02: Search - load more count<br />
+                                User click on Search tab<br />
+                                Enter value into Index contains textbox<br />
+                                Click on find button<br />
+                                Scroll down the searched list,now user can able to see the &apos;loadmore&apos; button<br />
+                                Click on load more button<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">Script.SearchSelectDocumentLocation</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  A_BlankSearch
+      </td>
+  <td class="duration">
+    24.987s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 01: Search tab - blank search<br />
+                                User click on Search tab<br />
+                                Click on find button<br />
+                                It should list all the document successfully...<br />
+                                Click on clear button<br />
+                                Searched document list cleared successfull<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  C_ExactSearchInIndex
+      </td>
+  <td class="duration">
+    30.715s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 03: Search tab - Index search contains &apos;Exact Phrase&apos;<br />
+                                User click on search tab<br />
+                                Enter value on index search contains textbox<br />
+                                Click on find button<br />
+                                It should list the document on the page, document displayed successfull...<br />
+                                User click on Clear button<br />
+                                It should clear the searched document list successfully<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  D_AtLeastOneWordSeachIndex
+      </td>
+  <td class="duration">
+    14.810s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 04: Search tab- Index contains &apos;AtleastOneOfTheWord&apos;<br />
+                                User click on Search tab<br />
+                                User click on atleastoneofthe word submenu<br />
+                                User enter the value into&nbsp; index contains text box<br />
+                                User click on find button<br />
+                                It should display document on the page<br />
+                                Searchfunctionality with exact phrase index contains search working fine<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  E_AllOfTheWordSearchIndex
+      </td>
+  <td class="duration">
+    26.324s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 05:Search tab Index contains &apos;AtleastOneOfTheWord&apos;<br />
+                                User click on Index contains search &apos;all of th word&apos; submenu<br />
+                                User enter value in index contains search textbox<br />
+                                User click on find button<br />
+                                It should display the document on the page, Document dislpayed successsfull...<br />
+                                Index contains search &apos;all of the word&apos; working fine...<br />
+                                User click on clear button<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  F_AllVrsn_Incldcmnt_FindInHit_AppendToHit
+      </td>
+  <td class="duration">
+    93.920s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 06:Search tab - AppendToHitlist checkbox<br />
+                                Note: User search some document first...<br />
+                                Enter the value into index contains search text box<br />
+                                Click on find button<br />
+                                It should list the document on document page<br />
+                                Clear the index contains search text box<br />
+                                Click on append to hit list check box<br />
+                                Enter the value into index contains search text box <br />
+                                User click on find button<br />
+                                Its append the search document in the listed document<br />
+                                ===========================================================================<br />
+                                scenario 07: Verify search tab - FindInHitlist checkbox<br />
+                                Enter the value in index contains search textbox<br />
+                                Click on find in hitlist check box<br />
+                                Click on find button<br />
+                                It should&nbsp; display only the&nbsp; searched document on the document page<br />
+                                ===========================================================================<br />
+                                Scneario 08: Search tab - Include comment checkbox<br />
+                                Enter the value in text contains search text box<br />
+                                Click on Inclue_comment check box<br />
+                                Click on find button<br />
+                                It should display the document which is containing the comment..<br />
+                                Click&nbsp; on clear button<br />
+                                It should clear the searched list successfully<br />
+                                ===========================================================================<br />
+                                Scneario 09: Search tab - all version check box<br />
+                                User enter the value in index contains search text box<br />
+                                Click on all version check box<br />
+                                Click on find button<br />
+                                It should display the document which in containing version<br />
+                                Click on Clear button<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  G_FolderLevelSearch
+      </td>
+  <td class="duration">
+    24.539s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 10: Verify &apos;Select document location&apos; - folder<br />
+                                Click on search tab<br />
+                                Click on &apos;Select search location&apos; textbox<br />
+                                Expand a cabinet<br />
+                                Expand a drawer<br />
+                                Select a folder<br />
+                                Click on &apos;Select search location&apos; dialog OK button<br />
+                                Click on find button<br />
+                                It should display the particular selected folder documents on the page<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  H_DrawerLevelSearch
+      </td>
+  <td class="duration">
+    24.021s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scneario 11: Verify &apos;Select Document location&apos; - drawer<br />
+                                Click on search tab<br />
+                                Click on &apos;Select Document location&apos; textbox<br />
+                                Expand a cabinet<br />
+                                Select a drawer<br />
+                                Click on &apos;Select Document location&apos; dialog OK button<br />
+                                Click on find button<br />
+                                It should display the particular drawer document on the page<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  I_CabinetLevel
+      </td>
+  <td class="duration">
+    20.241s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 12: Verify &apos;Select Document location&apos;- cabinet <br />
+                                Click on search tab<br />
+                                Click on &apos;Select Document location&apos; textbox<br />
+                                Expand a cabinet<br />
+                                Click on &apos;Select Document location&apos; dialog OK button<br />
+                                Click on find button<br />
+                                It should display the searched cabinet document on the page<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  J_DocumentDropDown
+      </td>
+  <td class="duration">
+    14.080s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 13: Verify search tab (&apos;Document Type&apos;)<br />
+                                Click on document type dropdown<br />
+                                User should select a document type<br />
+                                Click on find button<br />
+                                It should display the searched document type documents on the page<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  K_DocumentCreatorDropDown
+      </td>
+  <td class="duration">
+    19.976s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 14:Verify Search tab&nbsp; (&apos;document creator&apos;)<br />
+                                Click on search tab<br />
+                                Select a document creator from the dropdown<br />
+                                Click on find button<br />
+                                It should display the searched creator documents on the page<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  L_WorkflowStatusDropdown
+      </td>
+  <td class="duration">
+    175.103s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 14:Verify Search tab-Workflow status(Reject option)<br />
+                                Click on workflow status dropdown<br />
+                                Select Reject option<br />
+                                Click on find button<br />
+                                It should display the rejected workflow documents on the page<br />
+                                Click on clear button<br />
+                                Listed document cleared successfully...<br />
+                                =================================================================<br />
+                                Scenario 15:&nbsp; Verify Search tab-Workflow status(Pending option)<br />
+                                Select the workflow dropdown pending Option<br />
+                                Click on find button<br />
+                                It should display the wrokflow status pending documents on the page<br />
+                                Click on clear button<br />
+                                Listed document cleared successfully...<br />
+                                ===============================================================================<br />
+                                Scenario 16: erify Search tab-Workflow status(Workflow completed option)<br />
+                                Select a workflow dropdown &apos;workflow completed&apos; option<br />
+                                USer click on find button<br />
+                                It should display the wrokflow completed documents on the page<br />
+                                Click on clear button<br />
+                                Listed document cleared successfully...<br />
+                                ===============================================================================<br />
+                                Scenario 17: Verify Search tab-Workflow status(Endworkflow option)<br />
+                                Select a workflow dropdown&nbsp; &apos;endworkflow&apos; option<br />
+                                Click on find button<br />
+                                It should display the workflow ended documents on the page<br />
+                                Click on clear button<br />
+                                Listed document cleared successfully...<br />
+                                ===============================================================================<br />
+                                Scenario 18: Verify Search tab-Workflow status(TaskCompleted option)<br />
+                                Select a workflow dropdown&nbsp; Task completed Option<br />
+                                Click on find button<br />
+                                It should display the Task completed documents on the page<br />
+                                Click on clear button<br />
+                                Listed document cleared successfully...<br />
+                                ===============================================================================<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  M_SavingTheSearchDoc
+      </td>
+  <td class="duration">
+    31.191s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 18:Verify Select saved search functionality<br />
+                                Select search tab<br />
+                                Click on new search<br />
+                                Enter value into new search textbox<br />
+                                Enter value in index contains search textbox<br />
+                                Select a document data type<br />
+                                Selecct a document creator<br />
+                                Click on &apos;select saved search&apos; save icon<br />
+                                Mouse hover on saved select search dropdown <br />
+                                Click on find<br />
+                                It should display the searched document on the page<br />
+                                Search tab: searched documents saved functionality working fine<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  N_TextSearchWithSQLData
+      </td>
+  <td class="duration">
+    51.128s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 19:Search tab- TextContains search &apos;alloftheword&apos; option<br />
+                                NOTE:Start the indexer server then execute the mentioned SQL statement &apos;ALTER FULLTEXT INDEX ON Indexer START FULL POPULATION<br/>
+Select * from Indexer<br />
+                                Click on search tab<br />
+                                Select text contains &apos;alloftheword&apos; option<br />
+                                Start the&nbsp; indexer by using sql statement<br />
+                                Click on find button<br />
+                                It will automatically&nbsp; list all the indexed document relate to the search<br />
+                                Click on find button<br />
+                                open the document from the list, verify the thumbnail it will be highlihted for the particular search.<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  O_TextSearchWithAllOftheWords
+      </td>
+  <td class="duration">
+    45.555s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 20:Search tab- TextContains search &apos;AtLeasetOneOFTheWord&apos; option<br />
+                                NOTE:Start the indexer server then execute the mentioned SQL statement &apos;ALTER FULLTEXT INDEX ON Indexer START FULL POPULATION<br/>
+Select * from Indexer<br />
+                                Click on search tab<br />
+                                Select text contains &apos;AtLeastOneOFTheWord&apos; option<br />
+                                Start the&nbsp; indexer by using sql statement<br />
+                                It will automatically&nbsp; list all the indexed document relate to the search<br />
+                                open the document from the list, verify the thumbnail it will be highlihted for the particular search.<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  P_TextSearchWithAtpartOftheWord
+      </td>
+  <td class="duration">
+    49.377s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 21:Search tab- TextContains search &apos;AtPartOFTheWord&apos; option<br />
+                                NOTE:Start the indexer server then execute the mentioned SQL statement &apos;ALTER FULLTEXT INDEX ON Indexer START FULL POPULATION<br/>
+Select * from Indexer<br />
+                                Click on search tab<br />
+                                Click on &apos;AtpartOFtheWord&apos; word submenu<br />
+                                It will automatically&nbsp; list all the indexed document relate to the search<br />
+                                User click on Find button<br />
+                                open the document from the list, verify the thumbnail it will be highlihted for the particular search.<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  Q_FolderSerchIcon
+      </td>
+  <td class="duration">
+    22.859s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 22: Navigation folder icon search<br />
+                                Click on navigation folder search icon<br />
+                                Enter value into navigation folder search textbox<br />
+                                Click on Keyboard ENTER key<br />
+                                Folder search dialog should be opened<br />
+                                Searched folder documents display on the dialog box successfully<br />
+                                Click on folder document close icon<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  R_QuickSearch
+      </td>
+  <td class="duration">
+    19.009s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 23: Search tab - Quick search<br />
+                                Enter value in quick search textbox<br />
+                                Click on Keyboard ENTER key<br />
+                                It should display searched document on the page successfully...<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  S_DocumentSearch
+      </td>
+  <td class="duration">
+    61.723s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Scenario 24:Folder document search<br />
+                                Open a folder<br />
+                                Enter document name in folder search text box<br />
+                                It should display the particular document on the page<br />
+                                The documents Search from folder completed, working fine<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

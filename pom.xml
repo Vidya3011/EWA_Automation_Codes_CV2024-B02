@@ -88,7 +88,7 @@
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
-    <version>5.3.1</version>
+    <version>5.8.0</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/junit/junit-dep -->
 <dependency>
@@ -117,6 +117,14 @@
     <artifactId>jcommander</artifactId>
     <version>1.72</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+<dependency>
+    <groupId>org.uncommons</groupId>
+    <artifactId>reportng</artifactId>
+    <version>1.1.4</version>
+    <scope>test</scope>
+</dependency>
+
 <dependency>
 <groupId>org.apache.logging.log4j</groupId>
 <artifactId>log4j-api</artifactId>

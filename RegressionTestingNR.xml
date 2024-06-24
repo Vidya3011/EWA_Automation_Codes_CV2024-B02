@@ -4,7 +4,7 @@
   <suite-files>
   
  <suite-file path="NishaRautomationFile.xml"></suite-file> 
-   <suite-file path="DipakAutomationTesting.xml"></suite-file>
+   <suite-file path="Dipak_AutomationEWA.xml"></suite-file>
   
   </suite-files>
 </suite> <!-- Suite -->

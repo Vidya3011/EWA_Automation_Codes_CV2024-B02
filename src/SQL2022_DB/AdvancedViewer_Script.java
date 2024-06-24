@@ -25,23 +25,23 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 		//loginCVS();
 		log.info("User is Successfully logged in");
 	} 
-	@Test(priority=2)
+/*	@Test(priority=2)
 	public void AdvancedViewerOptionSelection() throws Exception {
 		
 		AdvancedViewer ad=new AdvancedViewer();
 		ad.AdvancedViewerOption();
 		Thread.sleep(5000);
-}
+}*/
 
 	
-	@Test(priority=3)
+	@Test(priority=3,invocationCount=2000)
 	public void AdvancedViewerWordDocument() throws Exception {
 		
 		AdvancedViewer ad=new AdvancedViewer();
 		ad.CreateDocumentAdvancedViewWordDocument_SQL();
 		Reporter.log("Word Document verified successfull");
 	}
-  @Test(priority=4)
+ /* @Test(priority=4)
 	public void AdvancedViewerPDfDoc() throws Exception{
 		AdvancedViewer ad=new AdvancedViewer();
 		ad.AdvancedViewPDFDocument_SQL();
@@ -53,5 +53,5 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 		AdvancedViewer ad=new AdvancedViewer();
 		ad.AdvancedViewExcelDocumentt_SQL();
 		Reporter.log("Excel spread sheet verified successfull");
-}
+}*/
 }

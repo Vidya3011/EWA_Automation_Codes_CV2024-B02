@@ -1,7 +1,6 @@
 package Script;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -9,129 +8,176 @@ import Pom.Language;
 
 public class Language_Test extends Generic.BaseClass {
 
-	private static final Logger log = LogManager.getLogger(Language_Test.class);
-
-	 @BeforeClass
-	public void LandBrowser() {
+	@BeforeClass
+	public void Launch_Browser() throws Exception {
 
 		loadBrowser("Chrome");
 		launchUrl();
-		log.info("CVS URL started Successfully...");
+		Reporter.log("CVS URL started Successfully", true);
 	}
 
-	 @Test
+	@Test
 	public void Login_EWA() throws Exception {
 		LogDipakUser();
-		log.info("CVS User is logged in successfully...");
+		Reporter.log("User has logged in successfully", true);
 
 	}
 
 	@Test(priority = 1)
-	public void verify_Spanish_Language() throws Exception {
+	public void TC_01_verify_Spanish_Language() throws Exception {
 
 		Language pojo = new Language();
-		Thread.sleep(6000);
+
+		Reporter.log("Test Scenario 1 : Verifying Spanish Language ", true);
+		jsclick(pojo.getRefreshbutton());
+		Thread.sleep(8000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
+		Reporter.log("Click on Setting Icon", true);
 		jsclick(pojo.getMy_Preferencesetting());
 		Thread.sleep(4000);
+		Reporter.log("Click on My Preferences option", true);
 		pojo.getSelect_Office_document_Defaultviewing();
 		Thread.sleep(4000);
+		Reporter.log("Select Office document and set as Default View", true);
 		pojo.getPdf_document_Defaultviewing();
 		Thread.sleep(4000);
+		Reporter.log("Select Pdf Document and set as Default view", true);
 		jsclick(pojo.getApply_button());
 		Thread.sleep(4000);
+		Reporter.log("Click on Apply button", true);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
+		Reporter.log("Click on Username", true);
 		jsclick(pojo.getLogout());
 		Thread.sleep(4000);
+		Reporter.log("Click on Logout Option", true);
 		jsclick(pojo.getSpanish_Language());
 		Thread.sleep(4000);
+		Reporter.log("Click on Spanish Language", true);
 		LogDipakUser();
 		Thread.sleep(4000);
+		Reporter.log("Login EWA With User credential", true);
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
-		pojo.Spanish_Myaccount_Text_Laguage(driver);
+		Reporter.log("Click on Username", true);
+		pojo.Spanish_Myaccount_Text_Laguage();
 		Thread.sleep(4000);
-		jsclick(pojo.getspanishLogout());
+		Reporter.log("Verified My Account name in Spanish laguage", true);
+		jsclick(pojo.getLogout());
 		Thread.sleep(4000);
-		log.info("Spanish Language verified Successfully");
+		Reporter.log("Click on Logout Option", true);
+		Reporter.log("Spanish Language verified Successfully", true);
 	}
 
 	@Test(priority = 2)
-	public void verify_French_Language() throws Exception {
+	public void TC_02_verify_French_Language() throws Exception {
 
 		Language pojo = new Language();
+
+		Reporter.log("Test Scenario 2 : Verifying French Language ", true);
 		jsclick(pojo.getFrench_Language());
 		Thread.sleep(4000);
+		Reporter.log("Click on French Language", true);
 		LogDipakUser();
 		Thread.sleep(4000);
+		Reporter.log("Login EWA with User credential ", true);
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
-		pojo.French_Myaccount_Text_Laguage(driver);
+		Reporter.log("Click on Username", true);
+		pojo.French_Myaccount_Text_Laguage();
 		Thread.sleep(4000);
-		jsclick(pojo.getFrenchLogout());
+		Reporter.log("Verified My Account text in French Language", true);
+		jsclick(pojo.getLogout());
 		Thread.sleep(4000);
-		log.info("French Language verified Successfully");
+		Reporter.log("Click on Logout Option", true);
+		Reporter.log("French Language verified Successfully", true);
 	}
 
 	@Test(priority = 3)
-	public void verify_Dutch_Language() throws Exception {
+	public void TC_03_verify_Dutch_Language() throws Exception {
 
 		Language pojo = new Language();
+
+		Reporter.log("Test Scenario 3 : Verifying Dutch Language ", true);
 		jsclick(pojo.getDutch_Language());
 		Thread.sleep(4000);
+		Reporter.log("Click on Dutch Language", true);
 		LogDipakUser();
 		Thread.sleep(4000);
+		Reporter.log("Login EWA with User credential ", true);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
+		Thread.sleep(4000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
-		pojo.Dutch_Myaccount_Text_Laguage(driver);
+		Reporter.log("Click on Username", true);
+		pojo.Dutch_Myaccount_Text_Laguage();
 		Thread.sleep(4000);
-		jsclick(pojo.getDutchLogout());
+		Reporter.log("Verified My Account text in Dutch language", true);
+		jsclick(pojo.getLogout());
 		Thread.sleep(4000);
-		log.info("Dutch Language verified Successfully");
+		Reporter.log("Click on Logout Option", true);
+		Reporter.log("Dutch Language verified Successfully", true);
 	}
 
 	@Test(priority = 4)
-	public void verify_Hindi_Language() throws Exception {
+	public void TC_04_verify_Hindi_Language() throws Exception {
 
 		Language pojo = new Language();
+
+		Reporter.log("Test Scenario 4 : Verifying Hindi Language ", true);
 		jsclick(pojo.getHindi_Language());
 		Thread.sleep(4000);
+		Reporter.log("Click on Hindi Language", true);
 		LogDipakUser();
 		Thread.sleep(4000);
+		Reporter.log("Login EWA with User credential", true);
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
-		pojo.Hindi_Myaccount_Text_Laguage(driver);
+		Reporter.log("Click on Username", true);
+		pojo.Hindi_Myaccount_Text_Laguage();
 		Thread.sleep(4000);
-		jsclick(pojo.getHindiLogout());
+		Reporter.log("Verified My Account Text in Hindi Language", true);
+		jsclick(pojo.getLogout());
 		Thread.sleep(4000);
-		log.info("Hindi Language verified Successfully");
+		Reporter.log("Click on Logout Option", true);
+		Reporter.log("Hindi Language verified Successfully", true);
 	}
 
 	@Test(priority = 5)
-	public void verify_English_Language() throws Exception {
+	public void TC_05_verify_English_Language() throws Exception {
 
 		Language pojo = new Language();
+
+		Reporter.log("Test Scenario 5 : Verifying English Language ", true);
 		jsclick(pojo.getEnglish_Language());
 		Thread.sleep(4000);
+		Reporter.log("Click on English Language Option", true);
 		LogDipakUser();
 		Thread.sleep(4000);
+		Reporter.log("Login EWA with User credential", true);
 		jsclick(pojo.getUsername());
 		Thread.sleep(4000);
-		pojo.English_Myaccount_Text_Laguage(driver);
-		Thread.sleep(6000);
+		Reporter.log("Click on Username", true);
+		pojo.English_Myaccount_Text_Laguage();
+		Thread.sleep(4000);
+		Reporter.log("Verified My Account in English Language", true);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		log.info("English Language verified Successfully");
-
+		Thread.sleep(4000);
+		Reporter.log("Click on Refresh button", true);
+		Reporter.log("English Language verified Successfully", true);
+		driver.close();
+		Reporter.log("Close the browser", true);
 	}
 }

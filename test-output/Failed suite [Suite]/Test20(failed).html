@@ -1,0 +1,309 @@
+<html>
+<head>
+<title>TestNG:  Test20(failed)</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test20(failed)</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Jun 23 02:30:10 CDT 2024</td>
+</tr>
+<tr><td>Total time:</td><td>549 seconds (549786 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.UnsupportedFiles.TC_1_Login()'><b>TC_1_Login</b><br>Test class: Script.UnsupportedFiles<br/>
+<a href="#Output-28193200" onClick='toggleBox("Output-28193200", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-28193200" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-28193200">
+Enter valid user name into user name field<br/>
+Enter valid password into password field<br/>
+Selects Local server NishaRoom<br/>
+Click on Login button<br/>
+User logged into EWA successfully...<br/>
+Login without Session message<br/>
+</div>
+</td>
+<td></td>
+<td>14</td>
+<td>Script.UnsupportedFiles@1aab8c6</td></tr>
+<tr>
+<td title='Script.UnsupportedFiles.TC_2_CreateDocumentWithUnsupportedFiles()'><b>TC_2_CreateDocumentWithUnsupportedFiles</b><br>Test class: Script.UnsupportedFiles<br/>
+<a href="#Output-23775795" onClick='toggleBox("Output-23775795", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-23775795" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-23775795">
+Scenario 01: Verifying Unsupporter Files<br/>
+Click on New Document tab<br/>
+Open Desitination folder dialog<br/>
+Select Folder<br/>
+Click on Destination folder dialog OK button<br/>
+Select Document type<br/>
+Enter Document name<br/>
+Click on Create button<br/>
+Click on View button<br/>
+Select Browse icon<br/>
+Add Unsupported files by using AutoIT script<br/>
+ Unsupported File names With Extention : D:\RNishaAutoIt\FileuploadForFolder.exe "D:\UnsupporterFiles\Doctod.dot" "D:\UnsupporterFiles\Document.mdb" "D:\UnsupporterFiles\LatestBuildIssue.avi" "D:\UnsupporterFiles\MAC-301.inf" "D:\UnsupporterFiles\MAC-304.dwg" "D:\UnsupporterFiles\nisha.log" "D:\UnsupporterFiles\print.vw4" "D:\UnsupporterFiles\SecureLinkIssue.inv" "D:\UnsupporterFiles\SIDBI Test Data.zip" "D:\UnsupporterFiles\TemplatePage.emf" "D:\UnsupporterFiles\testng - Copy.ods" "D:\UnsupporterFiles\testng.inv" "D:\UnsupporterFiles\Testsql - Copy.fax" "D:\UnsupporterFiles\Testsql.bif" "D:\UnsupporterFiles\Users - Copy.odt" "D:\UnsupporterFiles\Users.jmx"<br/>
+All Unsupported files are uploaded successful<br/>
+Click on save button<br/>
+Added Unsupported files are saved successfully...<br/>
+</div>
+</td>
+<td></td>
+<td>97</td>
+<td>Script.UnsupportedFiles@1aab8c6</td></tr>
+<tr>
+<td title='Script.UnsupportedFiles.TC_3_Verify_UnsupportedFiles_Download_Offline()'><b>TC_3_Verify_UnsupportedFiles_Download_Offline</b><br>Test class: Script.UnsupportedFiles<br/>
+<a href="#Output-8353809" onClick='toggleBox("Output-8353809", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-8353809" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-8353809">
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :Doctod.dot<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :Document.mdb<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :LatestBuildIssue.avi<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :MAC-301.inf<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :MAC-304.dwg<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :nisha.log<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :print.vw4<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :SecureLinkIssue.inv<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :SIDBI Test Data.zip<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :TemplatePage.emf<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :testng - Copy.ods<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :testng.inv<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :Testsql - Copy.fax<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :Testsql.bif<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :Users - Copy.odt<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+Scenario 02: Verify Unsupported files Download & Offine functionality<br/>
+Select thumbnail page<br/>
+Here I have added Uploaded Files detail :Users.jmx<br/>
+Some times we will get unable to load dialog for Unsuported files<br/>
+Click on unable to load dialog OK button<br/>
+Click on download button<br/>
+It should download the document<br/>
+Sometimes after click on download dialog it will popup offline dialog<br/>
+Click on offline dialog OK button<br/>
+Click on Document pages offline confimation dialog OK button<br/>
+Document move to offline successful<br/>
+</div>
+</td>
+<td></td>
+<td>424</td>
+<td>Script.UnsupportedFiles@1aab8c6</td></tr>
+</table><p>
+</body>
+</html>

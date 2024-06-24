@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import Pom.AdvancedViewer;
 import Pom.AnnotaionsPom;
+import Pom.LanguageHindiFrench;
 import Pom.My_Preferences;
 import Pom.RoomContextMenu;
 
@@ -17,7 +18,7 @@ public class AnnotationFunctionality  extends Generic.BaseClass {
 	 private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AnnotationFunctionality.class);
 	
 
-	/*@BeforeClass
+	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser started Successfully...");
@@ -30,15 +31,16 @@ public class AnnotationFunctionality  extends Generic.BaseClass {
 
 	@Test(priority=1)
 	public void CVSLogin() throws Exception {
+		LanguageHindiFrench ln=new LanguageHindiFrench();
+		ln.HindiLanguageScript();
 		
-		
-		LogDipakUser();
+		loginCVS();
 		
 		Thread.sleep(3000);
 	    log.info("CVS is logged in successfully...");
 	}
 	
-	 */
+	 
 	 @Test(priority=2)
 		public void DefaultView() throws Exception {
 		 My_Preferences pojo = new My_Preferences();

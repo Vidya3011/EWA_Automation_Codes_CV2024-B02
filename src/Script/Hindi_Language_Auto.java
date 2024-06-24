@@ -9,7 +9,8 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import Pom.Language;
+import Pom.Language1;
+import Pom.LanguageHindiFrench;
 import Pom.LanguageHindiFrench;
 
 public class Hindi_Language_Auto extends Generic.BaseClass {
@@ -32,13 +33,13 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 
 	}
 
-	// Verify Dutch Language
+	// Verify Dutch Language1
 	// Create Document with annotation in Dutch laguage
 
 	@Test(priority = 1)
-	public void TC_1_CreateandOpen_NewDocument_Hindi_Language() throws Exception {
+	public void TC_1_CreateandOpen_NewDocument_Hindi_Language1() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getSetting_Icon());
 		Reporter.log("User click on setting icon");
 		Thread.sleep(4000);
@@ -110,7 +111,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 		Thread.sleep(4000);
 		pojo.getClick_FileInfo_OkButton_withFileName();
 		Thread.sleep(4000);
-		Reporter.log("New Document Create and open in hindi language", true);
+		Reporter.log("New Document Create and open in hindi Language1", true);
 		Reporter.log("OCR Functionality verified Sucessfully", true);
 
 	}
@@ -118,7 +119,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 2)
 	public void Verify_OCR_afterCreatingDocument() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
@@ -158,9 +159,9 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	}
 
 	@Test(priority = 3)
-	public void Addsignature_Hindi_Language() throws Exception {
+	public void Addsignature_Hindi_Language1() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(6000);
 		jsclick(pojo.getClick_signature_Menuoption());
 		Thread.sleep(4000);
@@ -177,9 +178,9 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	}
 
 	@Test(priority = 4)
-	public void AddRedaction_Dutch_Language() throws Exception {
+	public void AddRedaction_Dutch_Language1() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(4000);
 		pojo.getMove_to_Annotation_Option_inViewer();
 		Thread.sleep(6000);
@@ -195,9 +196,9 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	}
 
 	@Test(priority = 5)
-	public void ShowHideThumbnail_Hindi_Language() throws Exception {
+	public void ShowHideThumbnail_Hindi_Language1() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(4000);
 		jsclick(pojo.getshowHideThumbnail());
 		Thread.sleep(8000);
@@ -213,7 +214,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 6)
 	public void verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
 		jsclick(pojo.getMy_Preferencesetting());
@@ -287,7 +288,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 7)
 	public void Verify_to_Edit_and_Delete_DefaultTemplate() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getMoveto_Templates_Option();
 		Thread.sleep(3000);
 		jsclick(pojo.getSelect_Created_Template());
@@ -320,7 +321,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 8)
 	public void verify_to_CreateorBrowse_Template_Advancedviewing_OfficeDoc() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(6000);
 		jsclick(pojo.getSetting_Icon());
@@ -383,7 +384,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 9)
 	public void Verify_to_Edit_and_Delete_AdvancedTemplate_OfficeDoc() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getMoveto_Templates_Option();
 		Thread.sleep(3000);
 		jsclick(pojo.getSelect_Created_Template());
@@ -415,7 +416,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 10)
 	public void verify_to_Create_Formmapping_PDFTemplate_Advancedviewing() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(6000);
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -484,7 +485,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 11)
 	public void Verify_to_Edit_and_Delete_FormFiled() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getMoveto_Templates_Option();
 		Thread.sleep(8000);
 		jsclick(pojo.getSelect_Created_Template());
@@ -516,7 +517,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 12)
 	public void Set_Defaultview() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(6000);
 		jsclick(pojo.getSetting_Icon());
@@ -536,7 +537,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 13)
 	public void Verify_Load_MoreCount_On_Search() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 
 		jsclick(pojo.getSetting_Icon());
 		Thread.sleep(4000);
@@ -565,7 +566,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 14)
 	public void Verify_Load_MoreCount_On_Folder() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
 		Thread.sleep(4000);
 		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
@@ -584,14 +585,14 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 
 	}
 
-	// Verify Custom Columns in Spanish Language
+	// Verify Custom Columns in Spanish Language1
 
 	// Custom columns for Room
 
 	@Test(priority = 15)
 	public void Open_Custom_List_Dialog_And_Verify_Title_Roomcolumn() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(5000);
 		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
 		Thread.sleep(4000);
@@ -611,7 +612,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 16)
 	public void Verify_The_Text_of_Custom_List_Dialog_Roomcolumn() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(5000);
 		pojo.getextvalidation();
 		Reporter.log("Custom List Dialog Text verified", true);
@@ -621,7 +622,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 17)
 	public void Set_And_Verify_Custom_Columns_NodeLevel() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(6000);
 		pojo.getSearchBoxIndices1();
 		Thread.sleep(4000);
@@ -664,7 +665,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 18)
 	public void Verify_Default_Custom_Columns() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(5000);
 		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
@@ -691,7 +692,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 19)
 	public void Verify_Cancel_Button_of_CustomList() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getMoveTo_Menu_RoomName();
 		jsclick(pojo.getCustomColumnOption());
 		Thread.sleep(4000);
@@ -703,7 +704,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 20)
 	public void Verify_Custom_Columns_RoomLevel() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getMoveTo_Menu_RoomName();
 		jsclick(pojo.getCustomColumnOption());
 		Thread.sleep(4000);
@@ -721,7 +722,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 21)
 	public void Verify_Reset_Columns_Functionality() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getMoveTo_Menu_RoomName();
 		jsclick(pojo.getReset_Column_option());
 		Thread.sleep(4000);
@@ -736,7 +737,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 22)
 	public void Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.MoveTo_Search_Option();
 		Thread.sleep(4000);
 		jsclick(pojo.getSearch_Custom_Columns_option());
@@ -749,7 +750,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 23)
 	public void Verify_The_Text_of_Custom_List_Dialog_Searchcolumn() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(5000);
 		pojo.getSearch_textvalidation();
 		Reporter.log("Search Custom List Dialog Text verified", true);
@@ -759,7 +760,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 24)
 	public void Verify_Set_Custom_Columns_for_Search() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(8000);
 		pojo.getSearchBoxIndices4();
 		Thread.sleep(3000);
@@ -803,7 +804,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 25)
 	public void Verify_Reset_Columns_for_Search() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.MoveTo_Search_Option();
 		Thread.sleep(4000);
 		jsclick(pojo.getClick_ResetColumn());
@@ -822,7 +823,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 26)
 	public void Open_Custom_List_Dialog_And_Verify_Title_ToDoList() throws InterruptedException {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(4000);
 		pojo.getMoveTo_ToDoList_Option();
@@ -837,7 +838,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 27)
 	public void Verify_The_Text_of_Custom_List_Dialog_ToDoList() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(5000);
 		pojo.ToDoList_textvalidation(driver);
 		Thread.sleep(9000);
@@ -848,11 +849,11 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 28)
 	public void Verify_Set_Custom_Columns_for_ToDoList() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 
 		jsclick(pojo.getToDoList_Select_Indices01());
 		Thread.sleep(4000);
-		Language.ToDoList_Ok_Button_CustomList(driver);
+		Language1.ToDoList_Ok_Button_CustomList(driver);
 		Reporter.log("Indices Selected Successfully", true);
 		Thread.sleep(4000);
 		jsclick(pojo.getRefreshbutton());
@@ -890,7 +891,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 
 	@Test(priority = 29)
 	public void Reset_Custom_Columns_for_ToDoList() throws InterruptedException {
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(4000);
 		pojo.getMoveTo_ToDoList_Option();
 		Thread.sleep(4000);
@@ -907,7 +908,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 30)
 	public void Verify_Refresh_Option() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(6000);
 		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
@@ -928,7 +929,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 31)
 	public void Verify_Categories_Option() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getSelect_Document());
 		Thread.sleep(3000);
 		pojo.getMoveTo_Menu_Documents();
@@ -940,7 +941,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 32)
 	public void Verify_copy_and_paste_Option() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(6000);
 		pojo.getMoveTo_Menu_Documents();
 		pojo.getVerify_CopyandPaste_Document();
@@ -951,7 +952,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 33)
 	public void Verify_cut_and_paste_Option() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getSelect_Document());
 		Thread.sleep(6000);
 		pojo.getMoveTo_Menu_Documents();
@@ -964,7 +965,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 34)
 	public void Verify_Delete_Option() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getVerify_Delete_Document();
 		Thread.sleep(8000);
 		log.info("Document Delete Functionality verified Successfully");
@@ -973,7 +974,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 35)
 	public void Verify_CreateFavorites_Document() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getVerify_CreateFavorites_Document();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(6000);
@@ -984,7 +985,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 36)
 	public void Verify_Notification_on_Document() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(7000);
 		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
@@ -1026,7 +1027,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 37)
 	public void Verify_SendTo_Mail() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(3000);
 		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
@@ -1054,7 +1055,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 38)
 	public void Verify_SendTo_Print() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getSentTo_Print();
 		log.info("SendTo Print Functionality verified Successfully");
 
@@ -1063,7 +1064,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 39)
 	public void Verify_SendTo_Export() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		pojo.getSentTo_Export();
 		log.info("SendTo Export Functionality verified Successfully");
 
@@ -1072,7 +1073,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 	@Test(priority = 40)
 	public void Verify_SendTo_GenerateDocumentLink() throws Exception {
 
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		jsclick(pojo.getRefreshbutton());
 		Thread.sleep(3000);
 		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
@@ -1089,7 +1090,7 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 
 	@Test(priority = 41)
 	public void Verify_SendTo_SecureLink() throws Exception {
-		Language pojo = new Language();
+		Language1 pojo = new Language1();
 		Thread.sleep(6000);
 		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
 		Thread.sleep(4000);

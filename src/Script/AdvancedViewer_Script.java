@@ -10,13 +10,14 @@ import Pom.AdvancedViewer;
 public class AdvancedViewer_Script extends Generic.BaseClass {
 	
     private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
-	@BeforeClass
+	/*@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 		
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
 		launchUrl();
+		//launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
@@ -26,9 +27,11 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 		//LogDipakUser();
 		//LogRamUser();
 		loginCVS();
-		Reporter.log("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+		//loginLocalCVS();
+		//loginSQL2022();
+		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-	} 
+	} */
 	@Test(priority=2)
 	public void TestCase_1_AdvancedViewerOptionSelection() throws Exception {
 		

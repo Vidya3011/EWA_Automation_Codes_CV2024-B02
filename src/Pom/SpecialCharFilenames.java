@@ -3,7 +3,6 @@ package Pom;
 //Dipak Automation script
 import java.io.File;
 import java.io.FileInputStream;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -30,77 +29,71 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = ("//a[@id='createDocument']"))
+	@FindBy(xpath = ("//*[@id=\"createDocument\"]"))
 	private WebElement NewDocuments_MenuOption;
 
 	public WebElement getNewDocuments_MenuOption() {
 		return NewDocuments_MenuOption;
 	}
 
-	@FindBy(xpath = ("//input[@id='createDocuemtnLocation']"))
+	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
 	private WebElement Destination_Folder_Textbox;
 
 	public WebElement getDestination_Folder_Textbox() {
 		return Destination_Folder_Textbox;
 	}
 
-	@FindBy(xpath = ("(//a[text()='CVApp Test'])[1]"))
-	private WebElement Select_Cabinet;
+	// Select from Destination folder Location
 
-	public WebElement getSelect_Cabinet() {
-		return Select_Cabinet;
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Cabinet1;
+
+	public WebElement getSelect_Cabinet1() {
+		return Select_Cabinet1;
+
 	}
 
-	@FindBy(xpath = ("//a[text()='CVMobile App 2022']"))
-	private WebElement Select_Drawer;
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Drawer1;
 
-	public WebElement getSelect_Drawer() {
-		return Select_Drawer;
+	public WebElement getSelect_Drawer1() {
+		return Select_Drawer1;
+
 	}
 
-	@FindBy(xpath = ("//a[text()='Test apk']"))
-	private WebElement Select_Folder;
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Folder1;
 
-	public WebElement getSelect_Folder() {
-		return Select_Folder;
+	public WebElement getSelect_Folder1() {
+		return Select_Folder1;
+
 	}
 
-	
-	
-	@FindBy(xpath = "//*[@id=\"78608\"]/a")
-	private WebElement NewDrawerFolder;
-	
-	
-	public WebElement getNewDrawerFolder() {
-		return NewDrawerFolder;
-	}
-	
-	
-	
-	@FindBy(xpath = "//button[@id='navigatorTreeOk']")
+	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
 
 	public WebElement getOK_Button_BrowseforFolder() {
 		return OK_Button_BrowseforFolder;
 	}
 
-	@FindBy(id = "docTypeList")
+	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
 	private WebElement Click_Document_Type_Dropdown;
 
 	public WebElement getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
 		drop.selectByVisibleText("CVReports");
 		return Click_Document_Type_Dropdown;
+
 	}
 
-	@FindBy(id = "indices_33")
+	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
 	private WebElement Enter_Report_Name_Text;
 
 	public WebElement getEnter_Report_Name_Text() {
 		return Enter_Report_Name_Text;
 	}
 
-	@FindBy(xpath = "//div[@id='addPagesDropDown']//span[1]")
+	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
 	private WebElement Move_To_PlusIcon;
 
 	public WebElement getMove_To_PlusIcon() {
@@ -110,7 +103,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return ele;
 	}
 
-	@FindBy(id = "viewDocumentAddPages")
+	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
 	private WebElement Browse_Option;
 
 	public WebElement getBrowse_Option() {
@@ -120,44 +113,20 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return ele;
 	}
 
-	@FindBy(xpath = "//button[@id='createDocumentSubmit']")
+	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
 	private WebElement Create_Button;
 
 	public WebElement getCreate_Button() {
 		return Create_Button;
 
 	}
-	
-	@FindBy(xpath= "//*[@id=\"docTypeIndicesTable\"]/tbody/tr/td[2]")
-	private WebElement DocumentCVRep;
-	
-	public WebElement getDocumentCVRep() {
-		return DocumentCVRep;
-		
-	}
 
-	@FindBy(xpath = "//button[@id='viewCreatedDocument']")
+	@FindBy(xpath = "//*[@id=\"viewCreatedDocument\"]")
 	private WebElement View_Button;
 
 	public WebElement getView_Button() {
 		return View_Button;
 
-	}
-
-	@FindBy(xpath = "//span[@id='messageContent']")
-	private WebElement Verify_File_upload_error_Message;
-
-	public WebElement getVerify_File_upload_error_Message() {
-		WebElement error = Verify_File_upload_error_Message;
-		System.out.println(error.getText());
-		return error;
-	}
-
-	@FindBy(xpath = "//button[@id='messageButtonOK']")
-	private WebElement Message_Ok_button;
-
-	public WebElement getMessage_Ok_button() {
-		return Message_Ok_button;
 	}
 
 	@FindBy(xpath = "//*[@id=\"saveAddedPages\"]/span")
@@ -167,7 +136,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Save_button;
 	}
 
-	@FindBy(id = "messageButtonOK42")
+	@FindBy(xpath = "//*[@id=\"messageButtonOK42\"]")
 	private WebElement DocumentSave_Ok_button;
 
 	public WebElement getDocumentSave_Ok_button() {
@@ -175,11 +144,11 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//img[@src='images/newRe.png']")
-	private WebElement Refresh_button;
+	@FindBy(xpath = "//*[@id=\"homeMenuBtn\"]")
+	private WebElement Refreshbutton;
 
 	public WebElement getRefresh_button() {
-		return Refresh_button;
+		return Refreshbutton;
 
 	}
 
@@ -189,12 +158,13 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 
 		File src = new File("./data/TestData.xlsx");
 		FileInputStream fis = new FileInputStream(src);
-		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet s = wb.getSheet("SpecialCharFiles");
-		XSSFRow row = s.getRow(rowNo);
-		XSSFCell cll = row.getCell(cellNo);
-		String cellType = cll.getStringCellValue();
-		return cellType;
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("SpecialCharFiles");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
 	}
 
 	@FindBy(xpath = "(//a[normalize-space()='Update'])[1]")
@@ -204,7 +174,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Update_Button;
 	}
 
-	@FindBy(xpath = "//input[@id='Val_33']")
+	@FindBy(xpath = "/html[1]/body[1]/div[58]/div[64]/div[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/input[1]")
 	private WebElement Update_ReportName;
 
 	public WebElement getUpdate_ReportName() {
@@ -225,7 +195,7 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Update_Ok_button;
 	}
 
-	@FindBy(xpath = "//div[@class='elementHeader']//span[contains(text(),'Properties')]")
+	@FindBy(xpath = "//*[@id=\"properties\"]/div/div[1]")
 	private WebElement Properties_option;
 
 	public WebElement getProperties_option() {
@@ -281,45 +251,24 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 		return Open_SemiColon_page;
 	}
 
-	@FindBy(xpath = "//div[@id='fileInfoButton']//span[contains(@class,'fileinformationBtn')]")
+	@FindBy(xpath = "//*[@id=\"fileInfoButton\"]/span")
 	private WebElement Click_FileInfo_Option;
 
-	public WebElement getClick_FileInfo_Option() {
-		WebElement ele = Click_FileInfo_Option;
-		ele.click();
-		return Click_FileInfo_Option;
+	public void getClick_FileInfo_Option() {
+		Click_FileInfo_Option.click();
+
 	}
 
-	public WebElement getClick_FileInfo_Option1() {
-		
-		return Click_FileInfo_Option;
-	}
-	
-	
-	
-	
-	@FindBy(xpath = "//span[@id='fileNameLabel']")
+	@FindBy(xpath = "//*[@id=\"fileNameLabel\"]")
 	private WebElement Click_FileInfo_OkButton_withFileName;
-	@FindBy(xpath = "//button[@id='fileRenameOK']")
+	@FindBy(xpath = "//*[@id=\"fileRenameOK\"]")
 	private WebElement RemarkOk;
 
-	
-	
-	
-	
-	
-	
-	
-	
-	public WebElement getClick_FileInfo_OkButton_withFileName() {
+	public void getClick_FileInfo_OkButton_withFileName() {
 		WebElement Filename = Click_FileInfo_OkButton_withFileName;
-		System.out.println("File name is:" + Filename.getText());
+		Reporter.log("File name is:" + Filename.getText() + "this message should show", true);
 		WebElement ele = RemarkOk;
-	//	ele.click();
-		
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click()", ele);
-		return Click_FileInfo_OkButton_withFileName;
+		ele.click();
 
 	}
 
@@ -406,14 +355,14 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
 	private WebElement CommentOK;
 
-	public WebElement getFolderSelectMessage() {
+	public void getFolderSelectMessage() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please select a folder to create document";
 		String actualtext = FolderSelectMessage.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(FolderSelectMessage.getText());
+		Reporter.log(FolderSelectMessage.getText() + "this validation message should show", true);
 		jsclick(CommentOK);
-		return FolderSelectMessage;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
@@ -421,14 +370,14 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement CommentOKbutton;
 
-	public WebElement getReportvaluevalidationerror() {
+	public void getReportvaluevalidationerror() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "ReportName*  	field is required";
 		String actualtext = Reportvaluevalidationerror.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
-		System.out.println(Reportvaluevalidationerror.getText());
+		Reporter.log(Reportvaluevalidationerror.getText() + "this validation message should show", true);
 		jsclick(CommentOKbutton);
-		return Reportvaluevalidationerror;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"createDocumentMessage\"]")
@@ -436,13 +385,13 @@ public class SpecialCharFilenames extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"modelHome\"]")
 	private WebElement NavigateButton;
 
-	public WebElement getNavigateDoc() {
+	public void getNavigateDoc() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Document created successfully";
 		String actualtext = NavigateDoc.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
-		System.out.println(NavigateDoc.getText());
+		Reporter.log(NavigateDoc.getText() + "this message should show", true);
 		jsclick(NavigateButton);
-		return Reportvaluevalidationerror;
+
 	}
 }

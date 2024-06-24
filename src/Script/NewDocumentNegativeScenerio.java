@@ -16,13 +16,14 @@ private static org.apache.logging.log4j.Logger log = LogManager.getLogger(NewDoc
     @BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
-        launchUrl();
+        launchLocalUrl();
+        
         log.info("CVS URL started Successfully...");
     }
 
 	@Test(priority=1)
 	public void LogVCS() throws Exception {
-		loginCVS();
+		loginLocalCVS();
 		Reporter.log("RNisha User logged in successfully...");
 		log.info("CVS User is logged in successfully...");
 	}

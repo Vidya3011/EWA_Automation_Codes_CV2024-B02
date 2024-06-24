@@ -1,168 +1,212 @@
 package Script;
 
 import java.time.Duration;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import Generic.BaseClass;
-import Pom.Logout;
 import Pom.My_Preferences;
 
 //Dipak Automation script
 public class My_Preferences_Office_documents extends Generic.BaseClass {
 
-	private static final Logger log = LogManager.getLogger(My_Preferences_Office_documents.class);
+	@BeforeClass
 
-	// @BeforeClass
-
-	public void LandBrowser() {
+	public void Launch_Browser() throws Exception {
 		loadBrowser("Chrome");
 		launchUrl();
-		log.info("CVS URL started Successfully...");
+		Reporter.log("CVS URL started Successfully.", true);
 	}
 
-	// @Test
+	@Test
 
 	public void Login_EWA() throws Exception {
 		LogDipakUser();
-		log.info("CVS User is logged in successfully...");
+		Reporter.log("User has logged in successfully.", true);
 
 	}
 
 	@Test(priority = 1)
-	public void Verify_Browse_Office_documents_Advancedviewing() throws Exception {
+	public void TC_01_Verify_Browse_Office_documents_Advancedviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		Thread.sleep(4000);
+
+		Reporter.log("Test Scenario 1 : Verifying Browse Office Documents Advanced viewing ", true);
+		Thread.sleep(7000);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Setting Icon", true);
 		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on My Preferences", true);
 		pojo.getSelect_Office_document_Advancedviewing();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Select Office Document and set as Advanced View", true);
 		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Apply button", true);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getClick_New_Document());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on New Document Tab", true);
 		jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Destination Folder", true);
+		selectElement(pojo.getSelect_Cabinet1());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(pojo.getSelect_Drawer1());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(pojo.getSelect_Folder1());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Folder", true);
 		jsclick(pojo.getOK_Button_BrowseforFolder());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Ok button", true);
 		pojo.getSelect_Document_Type_Dropdown();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Select Document type Dropdown", true);
 		pojo.getEnter_ReportName();
-		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
+		Reporter.log("Enter value into Report Name field", true);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
+		movingclkElement(pojo.getMove_To_PlusIcon());
 		pojo.getBrowse_Option();
-		Thread.sleep(3000);
+		Reporter.log("Browse Document Page", true);
+		Thread.sleep(2000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficedoc.exe");
-		Thread.sleep(6000);
-		Reporter.log("Browse document and Page is uploaded successfully", true);
-		log.info("Browse document and Page is uploaded successfully");
+		Thread.sleep(7000);
+		Reporter.log("By using AutoIT add file from external folder", true);
 
 	}
 
 	@Test(priority = 2)
-	public void Verify_NewWordDocuments_Office_documents_Advancedviewing() throws Exception {
+	public void TC_02_Verify_NewWordDocuments_Office_documents_Advancedviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
-		Thread.sleep(6000);
+
+		Reporter.log("Test Scenario 2 : Verifying New Word Documents Office documents Advanced viewing ", true);
+		Thread.sleep(7000);
 		pojo.getMove_To_PlusIcon();
+		Reporter.log("Click on  Plus button", true);
 		pojo.getNew_Word_Document_Option();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Create New Word document", true);
 		pojo.getEnter_Word_File_Name();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Enter word Filename", true);
 		jsclick(pojo.getOpen_Word_page());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 		Reporter.log("Advanced Viewing New Word Document Created", true);
-		log.info("Advanced Viewing New Word Document Created");
+
 	}
 
 	@Test(priority = 3)
-	public void Verify_NewExcelSpreadsheet_Office_documents_Advancedviewing() throws Exception {
+	public void TC_03_Verify_NewExcelSpreadsheet_Office_documents_Advancedviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+
+		Reporter.log("Test Scenario 3 : Verifying New Excel Spreadsheet Office documents Advancedviewing", true);
 		pojo.getMove_To_PlusIcon();
+		Reporter.log("Click on Plus Icon", true);
 		pojo.getNew_Excel_Spreadsheet_Option();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Create Excel Sheet", true);
 		pojo.getEnter_Excel_File_Name();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Enter Excel sheet name", true);
 		jsclick(pojo.getOpen_Excel_page());
-		Thread.sleep(6000);
+		Thread.sleep(7000);
+		Reporter.log("Open Excel page", true);
 		jsclick(pojo.getCreate_button());
+		Reporter.log("Click on Create button", true);
 		jsclick(pojo.getNavigate_button());
+		Reporter.log("Click on  Navigate button", true);
 		Reporter.log("Advanced Viewing New Excel Document Created", true);
-		log.info("Advanced Viewing New Excel Document Created");
 
 	}
 
 	@Test(priority = 4)
-	public void Verify_Browse_Office_documents_Defaultviewing() throws Exception {
+	public void TC_04_Verify_Browse_Office_documents_Defaultviewing() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+
+		Reporter.log("Test Scenario 4 : Verifying Browse Office documents Defaultviewing ", true);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Setting Icon", true);
 		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on My Preferences", true);
 		pojo.getSelect_Office_document_Defaultviewing();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Select Office document and set as Default view", true);
 		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Apply button", true);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Refresh button", true);
 		jsclick(pojo.getClick_New_Document());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on New Document", true);
 		jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Destination Folder", true);
+		selectElement(pojo.getSelect_Cabinet1());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(pojo.getSelect_Drawer1());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(pojo.getSelect_Folder1());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Folder", true);
 		jsclick(pojo.getOK_Button_BrowseforFolder());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Ok button", true);
 		pojo.getSelect_Document_Type_Dropdown();
 		Thread.sleep(4000);
+		Reporter.log("Select document Type dropdown ", true);
 		pojo.getEnter_ReportNameDefaultview();
-		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
+		Thread.sleep(2000);
+		Reporter.log("Enter Report Name", true);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
+		movingclkElement(pojo.getMove_To_PlusIcon());
 		pojo.getBrowse_Option();
-		Thread.sleep(3000);
+		Reporter.log("Browse Document Page", true);
+		Thread.sleep(2000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
-		Reporter.log("Office document Defaultviewing Page is uploaded successfully", true);
-		log.info("Office document Defaultviewing Page is uploaded successfully");
-		Thread.sleep(6000);
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.alertIsPresent());
-		Alert alt = driver.switchTo().alert();
-		alt.accept();
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(7000);
+		try {
+			WebDriverWait wait2 = new WebDriverWait(driver, 20);
+			wait2.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
 		jsclick(pojo.getCreate_button());
-		Thread.sleep(6000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Create button", true);
 		jsclick(pojo.getNavigate_button());
-		Thread.sleep(4000);
-		Reporter.log("New Office Document Created successfully", true);
-		log.info("New Office Document Created successfully");
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Navigate button", true);
+		Reporter.log("Verifying Browse Office documents Defaultviewing", true);
+		driver.close();
+		Reporter.log("Close the browser", true);
 	}
 }

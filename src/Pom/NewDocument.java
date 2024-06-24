@@ -30,6 +30,10 @@ import Generic.BaseClass;
 import Script.Viewer;
 
 public class NewDocument extends BaseClass {
+	public NewDocument() {
+		PageFactory.initElements(driver, this);
+
+	}
 
 	@FindBy(xpath = ("//a[@id='createDocument']"))
 	private WebElement NewDocumentID;
@@ -40,13 +44,13 @@ public class NewDocument extends BaseClass {
 	@FindBy(xpath = ("//*[@id='addPagesDropDown']/span"))
 	private WebElement AddFileicon;
 
-	@FindBy(xpath = ("//*[@id=\"78992\"]/ins"))
+	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ins"))
 	private WebElement NishaCabinet;
 
-	@FindBy(xpath = ("//*[@id=\"78994\"]/ins"))
+	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[5]/ins"))
 	private WebElement NishaDrawer;
 
-	@FindBy(xpath = ("//*[@id=\"78995\"]/a"))
+	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[5]/ul/li/a"))
 	private WebElement NishFolder;
 	
 
@@ -105,24 +109,24 @@ public class NewDocument extends BaseClass {
 		Reporter.log("Scneario 01: Create newdocument without folder");
 
 		Thread.sleep(4000);
-		Reporter.log("User Click on Newdocument tab");
+		Reporter.log("Click on Newdocument tab");
 		jsclick(NewDocumentID);
 		Thread.sleep(4000);
-		Reporter.log("User Click on create button");
+		Reporter.log("Click on create button");
 		jsclick(CreateButton);
 		Thread.sleep(3000);
-		Reporter.log("User Click on destination location textbox");
+		Reporter.log("Click on destination location textbox");
 		jsclick(DestinationLocationOKBTN);
-		Reporter.log("User Click on destination location OK button without selecting a folder");
+		Reporter.log("Click on destination location OK button without selecting a folder");
 		Thread.sleep(3000);
 		System.out.println("Validation Message :"+DestinationFolderMessage.getText());
 		Reporter.log("User should get 'Please select a folder to create document' warning message, Warning message displayed successfull");
 		SoftAssertEqalValidation(DestinationFolderMessage, "Please select a folder to create document");
 		Thread.sleep(3000);
-		Reporter.log("User Click on warning alert OK button");
+		Reporter.log("Click on warning alert OK button");
 		jsclick(ValidationMessageBoxOKBTN);
 		Thread.sleep(3000);
-		Reporter.log("Negative scenario passed");
+		Reporter.log("Unable to create document without folder");
 
 		jsclick(CancelBTNDestination);
 	}
@@ -133,30 +137,31 @@ public class NewDocument extends BaseClass {
 		Thread.sleep(4000);
 		
 		jsclick(DestinationFolder);
-		Reporter.log("User Click on destination location textbox");
+		Reporter.log("Click on destination location textbox");
 
 		Thread.sleep(4000);
-		Reporter.log("User expand the cabinet");
+		Reporter.log("Expand the cabinet");
 
 		jsclick(NishaCabinet);
-		Thread.sleep(2000);
-		Reporter.log("User expand the drawer");
+		Thread.sleep(4000);
+		Reporter.log("Expand the drawer");
+		ElementToBeClickable(NishaDrawer);
 		jsclick(NishaDrawer);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		jsclick(NishFolder);
-		Reporter.log("User select a folder");
+		Reporter.log("Select a folder");
 		Thread.sleep(2000);
 		jsclick(DestinationLocationOKBTN);
-		Reporter.log("User click on destination location OK button");
+		Reporter.log("Click on destination location OK button");
 		Thread.sleep(3000);
 		jsclick(CreateButton);
-		Reporter.log("User click on create button without selecting document type");
+		Reporter.log("Click on create button without selecting document type");
 		Thread.sleep(2000);
 		System.out.println("Validation Message :"+DocTypeMessage.getText());
 		Reporter.log("User should get 'Select document type' warning dialog");
 		SoftAssertEqalValidation(DocTypeMessage, "Select document type");
 		Thread.sleep(3000);
-		Reporter.log("Negative scenario passed successfull");
+		Reporter.log("Unable to create document without document type");
 		jsclick(DocTypeOKBTN);
 	}
 	
@@ -166,14 +171,17 @@ public class NewDocument extends BaseClass {
 		Reporter.log("Scenario 03: New document without file name");
 		jsclick(pojo.getSelect_Document_Type_Dropdown());
 	Thread.sleep(3000);
-	Reporter.log("User click on create ");
+	Reporter.log("Click on create ");
 	jsclick(CreateButton);
 	Thread.sleep(3000);
 	System.out.println("Validation message:"+FileNameMessage.getText());
 	Thread.sleep(2000);
+	Reporter.log("User should get'ReportName*  	field is required' warning message");
+	Reporter.log("Unable to create a document without file name");
 	SoftAssertEqalValidation(FileNameMessage, "ReportName*  	field is required");
 	jsclick(DocTypeOKBTN);
-	Thread.sleep(6000);
+	
+	Thread.sleep(5000);
 	}
 	
 	

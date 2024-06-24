@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -23,7 +24,7 @@ public class Search_SQL_ROOm extends BaseClass{
 	
 	 private static org.apache.logging.log4j.Logger log = LogManager.getLogger(Search_SQL_ROOm.class);
 
-	/*@BeforeClass
+	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser started Successfully...");
@@ -39,7 +40,7 @@ public class Search_SQL_ROOm extends BaseClass{
 		loginCVS();
 		
 		 log.info("CVS User is logged in successfully...");
-	}*/
+	}
 
    @Test(priority=3) 
 	public void ExactSearchInIndexWithLoadMoreCount() throws InterruptedException, IOException {

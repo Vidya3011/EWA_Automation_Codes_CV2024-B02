@@ -28,8 +28,8 @@ public class DashBoardScript  extends Generic.BaseClass {
 		loginCVS();
 		//loginLocalCVS();
 		log.info("User is Successfully logged in");
-	}*/
-	
+	}
+	*/
 	@Test(priority=2)
 	public void  TC_1_SearchIconDashBoardFunctionality() throws Exception {
 		
@@ -44,7 +44,7 @@ public class DashBoardScript  extends Generic.BaseClass {
 		db.NotificationIcon();
 	}
 	
-	//@Test(priority=4)
+	@Test(priority=4)
 	public void TodoListWFDetailsDashBoardFunctionality() throws Exception {
 		
 		DashBoardPom db=new DashBoardPom();

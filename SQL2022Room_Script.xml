@@ -4,27 +4,33 @@
 <listeners>
 <listener class-name="Generic.ListenersRetry"></listener>
 </listeners> 
+
+<listeners>
+  <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+  
+</listeners>
  <!-- <test name="Test1"> 
    <classes>
       <class name="SQL2022_DB.AnnotationFunctionality"/>
     </classes>
-  </test> 
+  </test>  -->
    <test name="Test2">
     <classes>
-      <class name="SQL2022_DB.Search_SQL_ROOm"/>
+      <class name="SQL2022_DB.AnnotationFunctionality"/>
        </classes>
        </test>  
-        <test name="Test3">
+       <!--  <test name="Test3">
     <classes>
       <class name="SQL2022_DB.AdvancedViewer_Script"/>
        </classes>
-       </test>   -->
+       </test>   
         <test thread-count="5" name="Test4">
     <classes>
       <class name="SQL2022_DB.LargeFiles_AutomationTesting"/>
        </classes>
        </test>  
-       <!--  <test name="Test5">
+        <test name="Test5">
     <classes>
       <class name="Script.DashBoardScript"/>
        </classes>
@@ -33,12 +39,12 @@
        <classes>
       <class name="SQL2022_DB.SecureLink"/>
     </classes>
-  </test> -->
-  <test name="Test 7">
+  </test> 
+ <test name="Test 7">
        <classes>
       <class name="SQL2022_DB.RamACCreateDocINEdge"/>
     </classes>
-  </test>
+  </test> -->
   
   
     

@@ -14,13 +14,13 @@ public class NegativeScenarioAdvancedView extends Generic.BaseClass {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser");
 		
-		launchUrl();
+		launchLocalUrl();
 		log.info("ContentVerseURL");
 	}
 
 	@Test (priority=1)
 	public void Login() throws Exception {
-		loginCVS();
+		loginLocalCVS();
 		
 		log.info("User is Successfully logged in");
 	} 

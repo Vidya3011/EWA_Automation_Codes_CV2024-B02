@@ -37,81 +37,76 @@ public class Documents_ContextMenu extends BaseClass {
 
 	}
 
-	@FindBy(xpath = ("(//a[text()='CVApp Test'])[1]"))
-	private WebElement Cabinet;
+	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
+	private WebElement Select_Cabinet;
 
-	public WebElement getCabinet() {
-		return Cabinet;
+	public WebElement getSelect_Cabinet() {
+		return Select_Cabinet;
 	}
 
-	@FindBy(xpath = ("//a[text()='CVMobile App 2022']"))
-	private WebElement Drawer;
+	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/a[1]")
+	private WebElement Select_Drawer;
 
-	public WebElement getDrawer() {
-		return Drawer;
-	}
-
-	@FindBy(xpath = ("//a[text()='Test apk']"))
-	private WebElement Folder;
-
-	public WebElement getFolder() {
-		return Folder;
+	public WebElement getSelect_Drawer() {
+		return Select_Drawer;
 	}
 	
-	@FindBy(xpath = ("//*[@id=\"78895\"]/a"))
-	private WebElement DocEmailFolder;
+	@FindBy(xpath = (".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Folder;
 
-	public WebElement getDocEmailFolder() {
-		return DocEmailFolder;
+	public WebElement getSelect_Folder() {
+		return Select_Folder;
+
 	}
-	@FindBy(xpath = ("//*[@id=\"selectall\"]"))
-	private WebElement SelectAlldoc;
 
-	public WebElement getSelectAlldoc() {
-		return SelectAlldoc;
+	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]")
+	private WebElement Select_subFolder;
+
+	public WebElement getSelect_subFolder() {
+		return Select_subFolder;
 	}
-	
-	
-	
 
-	@FindBy(xpath = ("//tbody/tr[1]/td[1]/label[1]/span[1]"))
+	@FindBy(xpath = "//*[@id=\"documentListTable\"]/tbody/tr[1]/td[1]/label/span")
 	private WebElement Select_Document;
 
 	public WebElement getSelect_Document() {
 		return Select_Document;
 	}
 
-	@FindBy(xpath = "//a[@id='documentListSubMenu']")
+	@FindBy(xpath = "//*[@id=\"documentListSubMenu\"]")
 	private WebElement MoveTo_Menu_Documents;
 
-	public WebElement getMoveTo_Menu_Documents() {
-		element = MoveTo_Menu_Documents;
-		Actions action = new Actions(driver);
-		action.moveToElement(element).perform();
+	public WebElement MoveTo_Menu_Documents() {
 		return MoveTo_Menu_Documents;
+	}
+
+	public void getMoveTo_Menu_Documents() {
+		Actions action = new Actions(driver);
+		action.moveToElement(MoveTo_Menu_Documents).build().perform();
+
 	}
 
 	// Take and Release Ownership
 
-	@FindBy(id = "takeOwnership")
+	@FindBy(xpath = "//*[@id=\"takeOwnership\"]")
 	private WebElement Select_Option_TakeOwnership;
 
-	public WebElement getSelect_Option_TakeOwnership() {
+	public void getSelect_Option_TakeOwnership() {
 		element = Select_Option_TakeOwnership;
 		WebElement ele1 = Select_Option_TakeOwnership;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele1);
-		return Select_Option_TakeOwnership;
+
 	}
 
-	@FindBy(id = "logedinusername")
+	@FindBy(xpath = "//*[@id=\"logoutElement\"]")
 	private WebElement Click_Username;
 
 	public WebElement getClick_Username() {
 		return Click_Username;
 	}
 
-	@FindBy(linkText = "Logout")
+	@FindBy(xpath = "//*[@id=\"idSidenav\"]/ul/li[1]/a")
 	private WebElement Click_LogoutOption;
 
 	public WebElement getClick_LogoutOption() {
@@ -121,21 +116,45 @@ public class Documents_ContextMenu extends BaseClass {
 	//
 	public void login_New_User() throws Exception {
 
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(DocumentsContext_excelRead(9, 0));
-		driver.findElement(By.id("loginPassword")).sendKeys(DocumentsContext_excelRead(1, 1));
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()= 'CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
-		driver.findElement(By.id("submitid")).click();
-		Reporter.log("Login button clicked successfully", true);
+		driver.findElement(LoginUsername).sendKeys(DocumentsContext_excelRead(1, 0));
+		Reporter.log("Enter valid New username into username field", true);
+		driver.findElement(Password).sendKeys(DocumentsContext_excelRead(1, 1));
+		Reporter.log("Enter valid new user password into password field", true);
+		WebElement room = driver.findElement(Room);
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Reporter.log("Select a Room", true);
+		Thread.sleep(2000);
 		try {
-			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
-			sessionmsgYes.click();
-			Thread.sleep(6000);
+			Thread.sleep(2000);
+			WebElement Captch = driver.findElement(Captch_Image);
+			WebElement enterCaptch = driver.findElement(Enter_Captch_textbox);
+			enterCaptch.sendKeys(Captch.getText());
+			Reporter.log("Enter a valid captch under textbox", true);
 		} catch (Exception e) {
+			// captch is not displayed
+		}
+		driver.findElement(Login_button).click();
+		Reporter.log("Click on the Login button", true);
+		Thread.sleep(2000);
+		try {
+			WebElement sessionmsg = driver.findElement(session_message);
+			WebElement sessionmsgYes = driver.findElement(session_message_Yes);
+			Reporter.log(sessionmsg.getText() +  "this message is displayed", true);
+			Thread.sleep(2000);
+			sessionmsgYes.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the Yes button", true);
+
+		} catch (Exception e1) {
 			// Session message is not displayed
+		}
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.alertIsPresent());
+			acceptAlert();
+		} catch (Exception e) {
+			// Database alert is not present
 		}
 	}
 
@@ -144,12 +163,13 @@ public class Documents_ContextMenu extends BaseClass {
 	public static String DocumentsContext_excelRead(int rowNo, int cellNo) throws Exception {
 		File src = new File("./data/TestData.xlsx");
 		FileInputStream fis = new FileInputStream(src);
-		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet s = wb.getSheet("DocumentsContext");
-		XSSFRow row = s.getRow(rowNo);
-		XSSFCell cll = row.getCell(cellNo);
-		String cellType = cll.getStringCellValue();
-		return cellType;
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("DocumentsContext");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
 
 	}
 
@@ -160,250 +180,264 @@ public class Documents_ContextMenu extends BaseClass {
 		return Open_Document;
 	}
 
-	@FindBy(xpath = "//span[@id='docOwnerName']")
+	@FindBy(xpath = "//*[@id=\"docOwnerName\"]")
 	private WebElement Docownername;
-	@FindBy(xpath = "//span[contains(text(),'Open in view only mode?')]")
+	@FindBy(xpath = "//*[@id=\"detailsBlock\"]/p[2]/span")
 	private WebElement openviewonly;
-	@FindBy(id = "ownershipMessageModelOk")
+	@FindBy(xpath = "//*[@id=\"ownershipMessageModelOk\"]")
 	private WebElement ownershipmessageok;
 
-	public WebElement getVerify_Ownership_Message() throws InterruptedException {
+	public void getVerify_Ownership_Message() throws InterruptedException {
 		WebElement Message1 = Docownername;
-		System.out.println("Take Ownership Message " + Message1.getText());
+		Reporter.log("Take Ownership Message " + Message1.getText() + " this message should show", true);
 		WebElement Message2 = openviewonly;
-		System.out.println("Take Ownership Message " + Message2.getText());
+		Reporter.log("Take Ownership Message " + Message2.getText() + " this message should show", true);
 		jsclick(ownershipmessageok);
-		return Docownername;
+
 	}
 
-	@FindBy(id = "releaseOwnership")
+	@FindBy(xpath = "//*[@id=\"releaseOwnership\"]")
 	private WebElement Select_Option_ReleaseOwnership;
 
-	public WebElement getSelect_Option_ReleaseOwnership() {
+	public void getSelect_Option_ReleaseOwnership() {
 		WebElement ele1 = Select_Option_ReleaseOwnership;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele1);
-		return Select_Option_ReleaseOwnership;
+
 	}
 
-	@FindBy(id = "refreshDocuments")
+	@FindBy(xpath = "//*[@id=\"refreshDocuments\"]")
 	private WebElement Select_Option_Refresh;
 
-	public WebElement getSelect_Option_Refresh() {
+	public void getSelect_Option_Refresh() {
 		WebElement ele1 = Select_Option_Refresh;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele1);
-		return Select_Option_Refresh;
+
 	}
 
-	@FindBy(id = "documentSetcolour")
+	@FindBy(xpath = "//*[@id=\"documentSetcolour\"]")
 	private WebElement Select_Option_Catagories_andSet_Colors;
-	@FindBy(id = "CustomColourid_5")
+	@FindBy(xpath = "//*[@id=\"CustomColourid_5\"]")
 	private WebElement Select_Colors;
 
-	public WebElement getSelect_Option_Catagories_andSet_Colors() throws InterruptedException {
+	public void getSelect_Option_Catagories_andSet_Colors() throws InterruptedException {
 		Thread.sleep(2000);
 		jsclick(Select_Option_Catagories_andSet_Colors);
 		Thread.sleep(4000);
 		jsclick(Select_Colors);
-		return Select_Option_Catagories_andSet_Colors;
+
 	}
 
-	@FindBy(id = "copyId")
+	@FindBy(xpath = "//*[@id=\"copyId\"]")
 	private WebElement Copy_ID;
-	@FindBy(id = "pasteid")
+	@FindBy(xpath = "//*[@id=\"copyId\"]")
 	private WebElement Paste_ID;
 
-	public WebElement getVerify_CopyandPaste_Document() throws InterruptedException {
+	public void getVerify_CopyandPaste_Document() throws InterruptedException {
 		jsclick(Copy_ID);
 		Thread.sleep(4000);
+		Reporter.log("Click on the Copy Option", true);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
 		Thread.sleep(3000);
+		Reporter.log("Move to the Menu Documents Tab", true);
 		jsclick(Paste_ID);
-		return Paste_ID;
+		Reporter.log("Click on the Paste Option", true);
 	}
 
-	@FindBy(id = "cutid")
+	@FindBy(xpath = "//*[@id=\"cutid\"]")
 	private WebElement Cut_ID;
-	@FindBy(linkText = "subfolder")
-	private WebElement subfolder;
 
-	public WebElement getVerify_CutandPaste_Document() throws InterruptedException {
+	public void getVerify_CutandPaste_Document() throws InterruptedException {
 
 		jsclick(Cut_ID);
+		Thread.sleep(8000);
+		Reporter.log("Click on the Cut Option", true);
+		jsclick(Select_subFolder);
 		Thread.sleep(6000);
-		jsclick(subfolder);
-		Thread.sleep(6000);
+		Reporter.log("Select Subfolder", true);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
 		Thread.sleep(6000);
+		Reporter.log("Move to the Mennu Documents", true);
 		jsclick(Paste_ID);
-		return Paste_ID;
+		Reporter.log("Click on the Paste ID", true);
 	}
 
-	@FindBy(css = ".odd .checkmark")
-	private WebElement check;
-	@FindBy(id = "delDocument")
+	@FindBy(xpath = "//*[@id=\"delDocument\"]")
 	private WebElement deletedoc;
-	@FindBy(id = "deleteMessageOk")
+	@FindBy(xpath = "//*[@id=\"deleteMessageOk\"]")
 	private WebElement deleteOK;
 
-	public WebElement getVerify_Delete_Document() throws InterruptedException {
-		jsclick(check);
-		Thread.sleep(6000);
+	public void getVerify_Delete_Document() throws InterruptedException {
+		
+		Reporter.log("Check the Document ", true);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
 		Thread.sleep(6000);
+		Reporter.log("Move to the menu Document Tab", true);
 		jsclick(deletedoc);
 		Thread.sleep(6000);
+		Reporter.log("Click on the Delete Document", true);
 		jsclick(deleteOK);
-		return deleteOK;
+		Reporter.log("Click on the Ok Button and document deleted successfully", true);
 	}
 
-	@FindBy(css = ".odd:nth-child(1) .checkmark")
+	@FindBy(xpath = "//*[@id=\"documentListTable\"]/tbody/tr[1]/td[1]/label/span")
 	private WebElement checkdoc;
-	@FindBy(id = "documentcreatefav")
+	@FindBy(xpath = "//*[@id=\"documentcreatefav\"]")
 	private WebElement createFavorite;
-	@FindBy(id = "createFavText")
+	@FindBy(xpath = "//*[@id=\"createFavText\"]")
 	private WebElement createFavoriteText;
-	@FindBy(id = "createFavModelOk")
+	@FindBy(xpath = "//*[@id=\"createFavModelOk\"]")
 	private WebElement createFavoriteOK;
 
-	public WebElement getVerify_CreateFavorites_Document() throws Exception {
+	public void getVerify_CreateFavorites_Document() throws Exception {
 
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		jsclick(checkdoc);
 		Thread.sleep(4000);
+		Reporter.log("Check the Document", true);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
+		Reporter.log("Move to the Document page", true);
 		jsclick(createFavorite);
 		Thread.sleep(4000);
+		Reporter.log("Click on the create Favorite Option", true);
 		createFavoriteText.clear();
 		Thread.sleep(4000);
-		createFavoriteText.sendKeys(DocumentsContext_excelRead(2, 1));
+		Reporter.log("Enter the Favorite document name", true);
+		createFavoriteText.sendKeys(DocumentsContext_excelRead(1, 2));
 		Thread.sleep(6000);
 		jsclick(createFavoriteOK);
-		return createFavoriteOK;
+		Reporter.log("Click on the Ok Button", true);
 	}
 
-	@FindBy(css = "#bookmarkid > img")
+	@FindBy(xpath = "//*[@id=\"bookmarkid\"]/img")
 	private WebElement bookmark;
-	@FindBy(id = "loadAllfavrites")
+	@FindBy(xpath = "//*[@id=\"loadAllfavrites\"]")
 	private WebElement loadfav;
-	@FindBy(id = "searchFav")
+	@FindBy(xpath = "//*[@id=\"searchFav\"]")
 	private WebElement Searchfav;
-	@FindBy(css = "#createfavshowAllModelTabel td:nth-child(1)")
+	@FindBy(xpath = "//*[@id=\"createfavshowAllModelTabel\"]/tbody/tr[1]/td[1]")
 	private WebElement doc;
 
-	public WebElement getOpen_CreateFavorites_Document() throws Exception {
+	public void getOpen_CreateFavorites_Document() throws Exception {
 		Thread.sleep(6000);
-		element = bookmark;
 		Actions action = new Actions(driver);
-		action.moveToElement(element).perform();
+		action.moveToElement(bookmark).perform();
 		Thread.sleep(4000);
 		jsclick(loadfav);
 		Thread.sleep(8000);
 		jsclick(Searchfav);
 		Thread.sleep(8000);
-		Searchfav.sendKeys(DocumentsContext_excelRead(2, 1));
+		Reporter.log("Search Favorite document", true);
+		Searchfav.sendKeys(DocumentsContext_excelRead(1, 2));
 		Thread.sleep(8000);
 		jsclick(doc);
-		return doc;
+
 	}
 
-	@FindBy(id = "sendtoworkflow")
+	@FindBy(xpath = "//*[@id=\"sendtoworkflow\"]")
 	private WebElement Workflow;
 	@FindBy(css = "#assignedWfTable .odd:nth-child(13) > td")
 	private WebElement AutoWorkflow;
 	@FindBy(css = ".odd:nth-child(1) > .customDocName")
 	private WebElement customdoc;
-	@FindBy(id = "ownershipMessageModelOk")
+	@FindBy(xpath = "//*[@id=\"ownershipMessageModelOk\"]")
 	private WebElement ownershipok;
-	@FindBy(css = "#cvDocumentClose > .icon")
+
+	@FindBy(xpath = "//*[@id=\"cvDocumentClose\"]/span")
 	private WebElement closedoc;
 
-	public WebElement getCreate_SendToWorkflow_Document() throws Exception {
+	public WebElement getclosedoc() {
+		return closedoc;
+	}
+
+	public void getCreate_SendToWorkflow_Document() throws Exception {
 
 		jsclick(Workflow);
 		Thread.sleep(4000);
+		Reporter.log("Click on the Send To Workflow Option", true);
 		jsclick(AutoWorkflow);
-		Thread.sleep(4000);
+		Thread.sleep(8000);
+		Reporter.log("Select Workflow", true);
 		jsclick(customdoc);
 		Thread.sleep(6000);
+		Reporter.log("Select document", true);
 		WebElement Message1 = Docownername;
-		System.out.println("Take Ownership Message " + Message1.getText());
+		Reporter.log("Take Ownership Message " + Message1.getText() + " this message should show", true);
 		Thread.sleep(4000);
 		WebElement Message2 = openviewonly;
-		System.out.println("Take Ownership Message " + Message2.getText());
+		Reporter.log("Take Ownership Message " + Message2.getText() + " this message should show", true);
 		Thread.sleep(4000);
 		jsclick(ownershipok);
+		Reporter.log("Document in Ownership", true);
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
 		wait1.until(ExpectedConditions.alertIsPresent());
 		Alert alt1 = driver.switchTo().alert();
 		alt1.accept();
 		Thread.sleep(4000);
 		jsclick(closedoc);
-		return closedoc;
-
+		Reporter.log("Close the Document", true);
 	}
 
-	@FindBy(xpath = "//button[@id='btnSignatureAdd']//span[@class='icon icon-sm signatureIcon']")
+	@FindBy(xpath = "//*[@id=\"btnSignatureAdd\"]/span[1]")
 	private WebElement Click_signature_Menuoption;
 
-	public WebElement getClick_signature_Menuoption() throws Exception {
-		WebElement ele = Click_signature_Menuoption;
-		ele.click();
-		return ele;
+	public void getClick_signature_Menuoption() throws Exception {
+		Click_signature_Menuoption.click();
 	}
 
-	@FindBy(css = "#imageViewerDiv .lt-imageviewer-eventcanvas")
+	@FindBy(xpath = "//*[@id=\\\"imageViewerDiv\\\"]/div[2]/canvas")
 	private WebElement Add_Signature_Onpage;
 
-	public WebElement getAdd_Signature_Onpage() throws Exception {
+	public void getAdd_Signature_Onpage() throws Exception {
 		Actions action = new Actions(driver);
 		WebElement element = Add_Signature_Onpage;
 		action.dragAndDropBy(element, 200, 100).build().perform();
-		return Add_Signature_Onpage;
+
 	}
 
-	@FindBy(id = "notificationSettings")
+	@FindBy(xpath = "//*[@id=\"notificationSettings\"]")
 	private WebElement notification;
-	@FindBy(id = "contentverseRef")
+	@FindBy(xpath = "//*[@id=\"contentverseRef\"]")
 	private WebElement contref;
-	@FindBy(id = "documentHistory")
+	@FindBy(xpath = "//*[@id=\"documentHistory\"]")
 	private WebElement dochistory;
-	@FindBy(css = "#dropdownNotifylist a")
+	@FindBy(css = "//*[@id=\"dropdownNotifylist\"]")
 	private WebElement notifylist;
-	@FindBy(id = "spanCheckNotifications_1")
+	@FindBy(xpath = "//*[@id=\"spanCheckNotifications_1\"]")
 	private WebElement checknotification;
-	@FindBy(id = "notifySaveBtn")
+	@FindBy(xpath = "//*[@id=\"notifySaveBtn\"]")
 	private WebElement savenotify;
-	@FindBy(linkText = "Test apk")
-	private WebElement Testapk;
 	@FindBy(css = ".odd:nth-child(1) > .customDocName")
 	private WebElement customdocname;
 	@FindBy(xpath = "//*[@id=\"general\"]/div/div[1]/span")
 	private WebElement general;
 
-	public WebElement getCreate_Notification_Document() throws Exception {
-		Thread.sleep(6000);
+	public void getCreate_Notification_Document() throws Exception {
+
 		jsclick(notification);
-		Thread.sleep(6000);
+		Thread.sleep(130000);
+		Reporter.log("Click on the Notification Option", true);
 		jsclick(contref);
+		Thread.sleep(4000);
+		Reporter.log("set references notifications", true);
 		jsclick(dochistory);
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		jsclick(notifylist);
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		jsclick(checknotification);
 		jsclick(savenotify);
-		Thread.sleep(6000);
-		jsclick(Testapk);
-		Thread.sleep(7000);
+		Thread.sleep(4000);
+		jsclick(Select_Folder);
+		Thread.sleep(4000);
 		jsclick(customdocname);
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
 		wait1.until(ExpectedConditions.alertIsPresent());
@@ -412,154 +446,171 @@ public class Documents_ContextMenu extends BaseClass {
 		Thread.sleep(4000);
 		jsclick(general);
 		Thread.sleep(8000);
-		return general;
-
+		Reporter.log("Click on the General Option", true);
 	}
 
-	@FindBy(css = "#saveAddedPages > .icon")
+	@FindBy(xpath = "//*[@id=\"saveAddedPages\"]/span")
 	private WebElement saveaddpage;
-	@FindBy(id = "messageButtonOK42")
+	@FindBy(xpath = "//*[@id=\"messageButtonOK42\"]")
 	private WebElement okbutton;
 
-	public WebElement getSave_Signature_Document() throws Exception {
+	public void getSave_Signature_Document() throws Exception {
 		jsclick(saveaddpage);
 		Thread.sleep(8000);
 		jsclick(okbutton);
-		return okbutton;
+
 	}
 
-	public WebElement getClose_Document() throws Exception {
-		element = closedoc;
-		return element;
-	}
-
-	@FindBy(id = "documentSendTo")
+	@FindBy(xpath = "//*[@id=\"documentSendTo\"]")
 	private WebElement sendTo;
-	@FindBy(id = "sendToMail")
+	@FindBy(xpath = "//*[@id=\"sendToMail\"]")
 	private WebElement sendToMail;
-	@FindBy(id = "convertToPdfChk")
+	@FindBy(xpath = "//*[@id=\"convertToPdfChk\"]")
 	private WebElement converttopdf;
-	@FindBy(id = "retainPdfColorExport1")
+	@FindBy(xpath = "//*[@id=\"retainPdfColorExport1\"]")
 	private WebElement colorexport;
-	@FindBy(id = "convertToPdfQuality")
+	@FindBy(xpath = "//*[@id=\"convertToPdfQuality\"]")
 	private WebElement pdfquality;
-	@FindBy(id = "certifiedCoverPage")
+	@FindBy(xpath = "//*[@id=\"certifiedCoverPage\"]")
 	private WebElement coverpage;
-	@FindBy(id = "compressToZip")
+	@FindBy(xpath = "//*[@id=\"compressToZip\"]")
 	private WebElement compresszip;
-	@FindBy(id = "sendToPassword")
+	@FindBy(xpath = "//*[@id=\"sendToPassword\"]")
 	private WebElement sendtopassword;
-	@FindBy(id = "zipPasswordInputpdf")
+	@FindBy(xpath = "//*[@id=\"zipPasswordInputpdf\"]")
 	private WebElement zippassinput;
-	@FindBy(id = "runAnnotations")
+	@FindBy(xpath = "//*[@id=\"runAnnotations\"]")
 	private WebElement Runannotation;
-	@FindBy(id = "toEmial")
+	@FindBy(xpath = "//*[@id=\"toEmial\"]")
 	private WebElement toemail;
-	@FindBy(id = "subjectid")
+	@FindBy(xpath = "//*[@id=\"subjectid\"]")
 	private WebElement subid;
-	@FindBy(id = "saveSendToDocument")
+	@FindBy(xpath = "//*[@id=\"saveSendToDocument\"]")
 	private WebElement savesendto;
-	@FindBy(xpath = "(//button[@id='messageButtonOK'])[1]")
+	@FindBy(xpath = "(//*[@id=\"messageButtonOK\"]")
 	private WebElement sentmailOK;
 	@FindBy(xpath = ("(//button[@class='modalDialogButtons'])[1]"))
 	private WebElement EmailsuccessMessageDialogboxOK;
 
-	public WebElement getSentTo_Mail_asCopy() throws Exception {
+	public void getSentTo_Mail_asCopy() throws Exception {
 
 		jsclick(sendTo);
 		Thread.sleep(2000);
+		Reporter.log("Click on the Sent To Option", true);
 		jsclick(sendToMail);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To then Mail Option", true);
 		jsclick(converttopdf);
 		Thread.sleep(3000);
+		Reporter.log("Select Convert to pdf Radio button", true);
 		jsclick(colorexport);
 		Thread.sleep(2000);
+		Reporter.log("Set Export ", true);
 		jsclick(pdfquality);
+		Reporter.log("selct Pdf Quality", true);
 		Thread.sleep(2000);
 		Select sel = new Select(pdfquality);
 		sel.selectByVisibleText("Best Quality");
 		Thread.sleep(2000);
+		Reporter.log("set Best Quality dropdown Option", true);
 		jsclick(coverpage);
 		Thread.sleep(2000);
+		Reporter.log("Check Cover page", true);
 		jsclick(compresszip);
 		Thread.sleep(2000);
+		Reporter.log("Check Compress zip", true);
 		jsclick(sendtopassword);
 		Thread.sleep(2000);
+		Reporter.log("click on the Send to password Textbox", true);
 		jsclick(zippassinput);
 		Thread.sleep(2000);
-		zippassinput.sendKeys(DocumentsContext_excelRead(3, 1));
+		zippassinput.sendKeys(DocumentsContext_excelRead(2, 1));
 		Thread.sleep(2000);
+		Reporter.log("Enter password for mail document", true);
 		jsclick(Runannotation);
 		Thread.sleep(2000);
+		Reporter.log("Check the Annotation checkbox", true);
 		jsclick(toemail);
 		Thread.sleep(2000);
-		toemail.sendKeys(DocumentsContext_excelRead(4, 1));
+		Reporter.log("Click on the To Email Textbox", true);
+		toemail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(2000);
 		jsclick(subid);
 		Thread.sleep(2000);
-		subid.sendKeys(DocumentsContext_excelRead(5, 1));
+		subid.sendKeys(DocumentsContext_excelRead(1, 4));
 		Thread.sleep(4000);
+		Reporter.log("enter the Subject", true);
 		jsclick(savesendto);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Ok Button", true);
 		WebDriverWait wait = new WebDriverWait(driver, 150);
 		wait.until(ExpectedConditions.elementToBeClickable(EmailsuccessMessageDialogboxOK));
 		jsclick(EmailsuccessMessageDialogboxOK);
-		return sendTo;
-
+		Reporter.log("Mail sent successfully and click on the Ok Button", true);
 	}
 
-	@FindBy(id = "sendDocAsReference")
+	@FindBy(xpath = "//*[@id=\"sendDocAsReference\"]")
 	private WebElement Referencemail;
 
-	public WebElement getSentTo_Mail_asReference() throws Exception {
+	public void getSentTo_Mail_asReference() throws Exception {
 
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Option", true);
 		jsclick(sendToMail);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Mail Option", true);
 		jsclick(Referencemail);
 		Thread.sleep(3000);
+		Reporter.log("select Reference Email Radio button", true);
 		Select sel = new Select(pdfquality);
-	//	sel.selectByVisibleText("Best Quality");
+		sel.selectByVisibleText("Best Quality");
+		Reporter.log("Select and set pdf quality Best Quality", true);
 		jsclick(toemail);
 		Thread.sleep(3000);
-		toemail.sendKeys(DocumentsContext_excelRead(4, 1));
+		toemail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
+		Reporter.log("enter the To Email id", true);
 		jsclick(subid);
 		Thread.sleep(3000);
-		subid.sendKeys(DocumentsContext_excelRead(5, 1));
+		subid.sendKeys(DocumentsContext_excelRead(1, 4));
 		Thread.sleep(4000);
+		Reporter.log("Enter the Mail subject", true);
 		jsclick(savesendto);
 		WebDriverWait wait = new WebDriverWait(driver, 150);
 		wait.until(ExpectedConditions.elementToBeClickable(EmailsuccessMessageDialogboxOK));
 		jsclick(EmailsuccessMessageDialogboxOK);
-		return Referencemail;
+
 	}
 
-	@FindBy(id = "sendToPrint")
+	@FindBy(xpath = "//*[@id=\"sendToPrint\"]")
 	private WebElement sendtoPrint;
-	@FindBy(id = "certifiedCoverPagePrint")
+	@FindBy(xpath = "//*[@id=\"certifiedCoverPagePrint\"]")
 	private WebElement pageprint;
-	@FindBy(id = "includeRouteSummaryPrint")
+	@FindBy(xpath = "//*[@id=\"includeRouteSummaryPrint\"]")
 	private WebElement summaryprint;
-	@FindBy(id = "unlockRedactionsWithPrint")
+	@FindBy(xpath = "//*[@id=\"unlockRedactionsWithPrint\"]")
 	private WebElement withunlockredaction;
-	@FindBy(id = "unlockRedactionsPwdPrint")
+	@FindBy(xpath = "//*[@id=\"unlockRedactionsPwdPrint\"]")
 	private WebElement pwdunlockredaction;
-	@FindBy(id = "printDocumentOnView")
+	@FindBy(xpath = "//*[@id=\"printDocumentOnView\"]")
 	private WebElement printview;
 
-	public WebElement getSentTo_Print() throws Exception {
+	public void getSentTo_Print() throws Exception {
 		Thread.sleep(6000);
 		jsclick(checkdoc);
 		Thread.sleep(6000);
+		Reporter.log("Check the Document", true);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
+		Reporter.log("Move to the menu Documents Tab", true);
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Option", true);
 		jsclick(sendtoPrint);
 		Thread.sleep(4000);
+		Reporter.log("Click on the Print Option", true);
 		jsclick(pageprint);
 		Thread.sleep(4000);
 		jsclick(summaryprint);
@@ -567,300 +618,235 @@ public class Documents_ContextMenu extends BaseClass {
 		jsclick(withunlockredaction);
 		Thread.sleep(4000);
 		jsclick(pwdunlockredaction);
-		pwdunlockredaction.sendKeys(DocumentsContext_excelRead(3, 1));
+		pwdunlockredaction.sendKeys(DocumentsContext_excelRead(2, 1));
 		Thread.sleep(4000);
 		jsclick(printview);
-		return printview;
-	}
-	public WebElement SentTo_Print_Folder() throws Exception {
-		Reporter.log("Scneario 02: A folder containing ten documents will be printed");
-		Documents_ContextMenu Doc = new Documents_ContextMenu();
-		
-		jsclick(Doc.getRefreshbutton());
-		Reporter.log("User click on refresh icon");
-		Thread.sleep(3000);
-		selectElement(Cabinet);
-		Reporter.log("User expand the cabinet");
-		Thread.sleep(4000);
-		selectElement(Drawer);
-		Reporter.log("User expand the drawer");
-		Thread.sleep(4000);
-		Reporter.log("User Open the folder, document is listed on the document page");
-		selectElement(DocEmailFolder);
-		Thread.sleep(6000);
-		Reporter.log("User click the Select all check box");
-		jsclick(Doc.getSelectAlldoc());
-		Thread.sleep(9000);
-		Reporter.log("User mouse hover on the document tab");
-		Actions action = new Actions(driver);
-		action.moveToElement(MoveTo_Menu_Documents).perform();
-		Reporter.log("User mouse hover on the send to submenu");
-		jsclick(sendTo);
-		Thread.sleep(3000);
-		Reporter.log("User select print from the send to dropdown");
-		jsclick(sendtoPrint);
-		Thread.sleep(4000);
-		jsclick(pageprint);
-		Thread.sleep(4000);
-		jsclick(summaryprint);
-		Thread.sleep(4000);
-		jsclick(withunlockredaction);
-		Thread.sleep(4000);
-		jsclick(pwdunlockredaction);
-		pwdunlockredaction.sendKeys(DocumentsContext_excelRead(3, 1));
-		Thread.sleep(4000);
-		jsclick(printview);
-		Reporter.log("In print tray it shows the document pages successfully");
-		Thread.sleep(5000);
-		return printview;
+		Reporter.log("Set Parameter and Printview then click on the Ok Button", true);
 	}
 
-	
-	
-	
-	@FindBy(id = "sendToExport")
+	@FindBy(xpath = "//*[@id=\"sendToExport\"]")
 	private WebElement sendexport;
-	@FindBy(id = "retainFormatChkExport")
+	@FindBy(xpath = "//*[@id=\"retainFormatChkExport\"]")
 	private WebElement retainchkexport;
-	@FindBy(id = "includeRouteSummary")
+	@FindBy(xpath = "//*[@id=\"includeRouteSummary\"]")
 	private WebElement Routesummary;
-	@FindBy(id = "zipPasswordInput")
+	@FindBy(xpath = "//*[@id=\"zipPasswordInput\"]")
 	private WebElement Zippassword;
-	@FindBy(id = "convertToPdfChkExport")
+	@FindBy(xpath = "//*[@id=\"convertToPdfChkExport\"]")
 	private WebElement convertpdfexport;
-	@FindBy(id = "exportAnnotations")
+	@FindBy(xpath = "//*[@id=\"exportAnnotations\"]")
 	private WebElement exportannotation;
-	@FindBy(id = "unlockRedactionsWithExport")
+	@FindBy(xpath = "//*[@id=\"unlockRedactionsWithExport\"]")
 	private WebElement exportwith;
-	@FindBy(id = "unlockRedactionsPwdExport")
+	@FindBy(xpath = "//*[@id=\"unlockRedactionsPwdExport\"]")
 	private WebElement exportPwd;
-	@FindBy(id = "zipPasswordInput")
+	@FindBy(xpath = "//*[@id=\"zipPasswordInput\"]")
 	private WebElement Zippasswordinput;
-	@FindBy(id = "pdfPasswordInput")
+	@FindBy(xpath = "//*[@id=\"pdfPasswordInput\"]")
 	private WebElement Pdfpasswordinput;
 
-	public WebElement getSentTo_Export() throws Exception {
+	public void getSentTo_Export() throws Exception {
 		Thread.sleep(6000);
 		jsclick(checkdoc);
 		Thread.sleep(6000);
+		Reporter.log("Check the document", true);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
+		Reporter.log("Move to the Menu Document tab", true);
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Move to the Documents tab", true);
 		jsclick(sendexport);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Export Option", true);
 		jsclick(retainchkexport);
 		jsclick(Routesummary);
+		Thread.sleep(4000);
 		jsclick(Zippassword);
-		Thread.sleep(3000);
-		Zippassword.sendKeys(DocumentsContext_excelRead(3, 1));
-		Thread.sleep(3000);
+		Thread.sleep(4000);
+		Zippassword.sendKeys(DocumentsContext_excelRead(2, 1));
+		Thread.sleep(4000);
+		Reporter.log("enter Zip password", true);
 		jsclick(savesendto);
 		Thread.sleep(19000);
+		Reporter.log("Click on the Ok Button", true);
 		jsclick(checkdoc);
 		Thread.sleep(3000);
+		Reporter.log("Check the document", true);
 		element = MoveTo_Menu_Documents;
 		Actions action2 = new Actions(driver);
 		action2.moveToElement(element).perform();
+		Reporter.log("Move to the Documents Tab", true);
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Option", true);
 		jsclick(sendexport);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Export Option", true);
 		jsclick(convertpdfexport);
 		jsclick(exportannotation);
 		jsclick(exportwith);
 		jsclick(exportPwd);
 		Thread.sleep(3000);
-		exportPwd.sendKeys(DocumentsContext_excelRead(3, 1));
+		exportPwd.sendKeys(DocumentsContext_excelRead(2, 1));
 		Thread.sleep(3000);
+		Reporter.log("Export document with entering password", true);
 		jsclick(Zippasswordinput);
 		Thread.sleep(3000);
-		Zippasswordinput.sendKeys(DocumentsContext_excelRead(3, 1));
+		Zippasswordinput.sendKeys(DocumentsContext_excelRead(2, 1));
 		Thread.sleep(3000);
 		jsclick(Pdfpasswordinput);
 		Thread.sleep(3000);
-		Pdfpasswordinput.sendKeys(DocumentsContext_excelRead(3, 1));
+		Pdfpasswordinput.sendKeys(DocumentsContext_excelRead(2, 1));
 		Thread.sleep(3000);
 		jsclick(savesendto);
 		Thread.sleep(6000);
-		return element;
-	}
-	
-	
-	public WebElement getSentTo_Export_Folder() throws Exception {
-		Thread.sleep(6000);
-		Reporter.log("Scneario 04: A folder containing ten documents will be exported");
-		Documents_ContextMenu Doc = new Documents_ContextMenu();
-		jsclick(Doc.getRefreshbutton());
-		Reporter.log("User click on refresh icon");
-		Thread.sleep(3000);
-		selectElement(Cabinet);
-		Reporter.log("User expand the cabinet");
-		Thread.sleep(4000);
-		selectElement(Drawer);
-		Reporter.log("User expand the drawer ");
-		Thread.sleep(4000);
-		selectElement(DocEmailFolder);
-		Reporter.log("User Open the folder, document is listed on the document page");
-		Thread.sleep(6000);
-		jsclick(Doc.getSelectAlldoc());
-		Thread.sleep(9000);
-		Reporter.log("User click the Select all check box");
-		
-		Actions action = new Actions(driver);
-		action.moveToElement(MoveTo_Menu_Documents).perform();
-		jsclick(sendTo);
-		Reporter.log("User mouse hover on the document tab");
-		Thread.sleep(3000);
-		jsclick(sendexport);
-		Reporter.log("User mouse hover on the sendto submenu");
-		Thread.sleep(3000);
-		jsclick(retainchkexport);
-		
-		jsclick(Routesummary);
-		jsclick(Zippassword);
-		Thread.sleep(3000);
-		Zippassword.sendKeys(DocumentsContext_excelRead(3, 1));
-		Thread.sleep(3000);
-		jsclick(savesendto);
-		
-		Thread.sleep(19000);
-		jsclick(checkdoc);
-		Thread.sleep(3000);
-		
-		Actions action2 = new Actions(driver);
-		action2.moveToElement(MoveTo_Menu_Documents).perform();
-		jsclick(sendTo);
-		Thread.sleep(3000);
-		jsclick(sendexport);
-		Thread.sleep(3000);
-		jsclick(convertpdfexport);
-		Reporter.log("User select export from the send to dropdown");
-		jsclick(exportannotation);
-		jsclick(exportwith);
-		jsclick(exportPwd);
-		Reporter.log("The export dialog box opened, user click on the retain radio button.");
-		Thread.sleep(3000);
-		exportPwd.sendKeys(DocumentsContext_excelRead(3, 1));
-		Thread.sleep(3000);
-		jsclick(Zippasswordinput);
-		Thread.sleep(3000);
-		Zippasswordinput.sendKeys(DocumentsContext_excelRead(3, 1));
-		Thread.sleep(3000);
-		jsclick(Pdfpasswordinput);
-		Thread.sleep(3000);
-		Pdfpasswordinput.sendKeys(DocumentsContext_excelRead(3, 1));
-		Reporter.log("The folder  has been exported successfully");
-		Thread.sleep(3000);
-		jsclick(savesendto);
-		Thread.sleep(6000);
-		return element;
+		Reporter.log("Click on the Ok Button", true);
 	}
 
-
-	@FindBy(id = "sendToSecureMail")
+	@FindBy(xpath = "//*[@id=\"sendToSecureMail\"]")
 	private WebElement SecureMail;
-	@FindBy(id = "recepientEmailId")
+	@FindBy(xpath = "//*[@id=\"recepientEmailId\"]")
 	private WebElement recpmail;
-	@FindBy(id = "confirmEmailIdSecure")
+	@FindBy(xpath = "//*[@id=\"confirmEmailIdSecure\"]")
 	private WebElement Confirmemail;
-	@FindBy(id = "modifyPermissionCheckbox")
+	@FindBy(xpath = "//*[@id=\"modifyPermissionCheckbox\"]")
 	private WebElement modifychk;
-	@FindBy(id = "navigatorTreeOk32")
+	@FindBy(xpath = "//*[@id=\"navigatorTreeOk32\"]")
 	private WebElement navigateOK;
-	@FindBy(id = "recipientMailIdSecond")
+	@FindBy(xpath = "//*[@id=\"recipientMailIdSecond\"]")
 	private WebElement recpmailsec;
-	@FindBy(id = "confirmEmailIdSecureSecond")
+	@FindBy(xpath = "//*[@id=\"confirmEmailIdSecureSecond\"]")
 	private WebElement confirmemailsec;
-	@FindBy(id = "navigatorTreeOk33")
+	@FindBy(xpath = "//*[@id=\"navigatorTreeOk33\"]")
 	private WebElement navigateOK2;
 
-	public WebElement getSentTo_SecureLink() throws Exception {
+	public void getSentTo_SecureLink() throws Exception {
 		Thread.sleep(6000);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
+		Reporter.log("Move to the Documents Tab", true);
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Option", true);
 		jsclick(SecureMail);
 		Thread.sleep(4000);
+		Reporter.log("Click on the Secure Mail Option", true);
 		jsclick(recpmail);
 		Thread.sleep(3000);
-		recpmail.sendKeys(DocumentsContext_excelRead(4, 1));
+		Reporter.log("Enter Recepient mail ID", true);
+		recpmail.sendKeys(DocumentsContext_excelRead(1, 4));
 		Thread.sleep(3000);
 		jsclick(Confirmemail);
 		Thread.sleep(3000);
-		Confirmemail.sendKeys(DocumentsContext_excelRead(4, 1));
+		Confirmemail.sendKeys(DocumentsContext_excelRead(1, 4));
+		Reporter.log("enter the Confirm mail ID", true);
 		Thread.sleep(3000);
 		jsclick(modifychk);
+		Reporter.log("check the Modify check ", true);
 		jsclick(navigateOK);
 		Thread.sleep(3000);
-		recpmailsec.sendKeys(DocumentsContext_excelRead(4, 1));
+		Reporter.log("Click on the Ok Button", true);
+		recpmailsec.sendKeys(DocumentsContext_excelRead(1, 3));
 		jsclick(confirmemailsec);
 		Thread.sleep(3000);
-		confirmemailsec.sendKeys(DocumentsContext_excelRead(4, 1));
+		Reporter.log("Enter again Confirmation Mail Id", true);
+		confirmemailsec.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(navigateOK2);
 		Thread.sleep(6000);
-		return SecureMail;
+		Reporter.log("click on the Ok Button", true);
 	}
 
-	@FindBy(id = "generateDocumentLink")
+	@FindBy(xpath = "//*[@id=\"generateDocumentLink\"]")
 	private WebElement generatedoc;
-	@FindBy(id = "documentLinkOk")
+	@FindBy(xpath = "//*[@id=\"documentLinkOk\"]")
 	private WebElement doclinkok;
+	@FindBy(xpath = "//*[@id=\"messageContentLink\"]")
+	private WebElement CopyDoclink;
 
-	public WebElement getSentTo_GenerateDocumentLink() throws Exception {
+	public void getSentTo_GenerateDocumentLink() throws Exception {
 		Thread.sleep(3000);
-		//jsclick(checkdoc);
+		jsclick(checkdoc);
+		Reporter.log("Check the Document", true);
 		Thread.sleep(6000);
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
+		Reporter.log("Move to the Documents Tab", true);
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Option", true);
 		jsclick(generatedoc);
 		Thread.sleep(4000);
-		jsclick(doclinkok);
+		Reporter.log("Click on the Generate document link Option", true);
+		Reporter.log("Generated Document link is " + CopyDoclink.getText(), true);
 		Thread.sleep(6000);
-		return doclinkok;
+		jsclick(doclinkok);
+		Reporter.log("Click on the Ok Button", true);
 	}
 
 	public void login_Verify_Workflow_User() throws Exception {
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(DocumentsContext_excelRead(7, 0));
-		driver.findElement(By.id("loginPassword")).sendKeys(DocumentsContext_excelRead(7, 1));
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()= 'CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
-		driver.findElement(By.id("submitid")).click();
-		Reporter.log("Login button clicked successfully", true);
+		driver.findElement(LoginUsername).sendKeys(DocumentsContext_excelRead(2, 0));
+		Reporter.log("Enter valid workflow assign username into username field", true);
+		driver.findElement(Password).sendKeys(DocumentsContext_excelRead(1, 1));
+		Reporter.log("Enter valid workflow assign user password into password field", true);
+		WebElement room = driver.findElement(Room);
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Reporter.log("Select a room", true);
+		Thread.sleep(2000);
 		try {
-			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
-			sessionmsgYes.click();
-			Thread.sleep(6000);
+			Thread.sleep(2000);
+			WebElement Captch = driver.findElement(Captch_Image);
+			WebElement enterCaptch = driver.findElement(Enter_Captch_textbox);
+			enterCaptch.sendKeys(Captch.getText());
+			Reporter.log("Enter a valid captch under textbox", true);
 		} catch (Exception e) {
+			// captch is not displayed
+		}
+		driver.findElement(Login_button).click();
+		Reporter.log("Click on the Login button", true);
+		Thread.sleep(2000);
+		try {
+			WebElement sessionmsg = driver.findElement(session_message);
+			WebElement sessionmsgYes = driver.findElement(session_message_Yes);
+			Reporter.log(sessionmsg.getText() +  "this message is displayed", true);
+			Thread.sleep(2000);
+			sessionmsgYes.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the Yes button", true);
+
+		} catch (Exception e1) {
 			// Session message is not displayed
+		}
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.alertIsPresent());
+			acceptAlert();
+		} catch (Exception e) {
+			// Database alert is not present
 		}
 	}
 
-	@FindBy(id = "accept")
+	@FindBy(xpath = "//*[@id=\"accept\"]")
 	private WebElement accept;
-	@FindBy(id = "wfactionOk")
+	@FindBy(xpath = "//*[@id=\"wfactionOk\"]")
 	private WebElement action;
-	@FindBy(id = "messageButtonOK")
+	@FindBy(xpath = "//*[@id=\"wfactionOk\"]")
 	private WebElement messageOK;
-	@FindBy(id = "wfcomments")
+	@FindBy(xpath = "//*[@id=\"wfcomments\"]")
 	private WebElement WFComment;
-	@FindBy(id = "wfactionOk")
+	@FindBy(xpath = "//*[@id=\"wfactionOk\"]")
 	private WebElement actionOK;
 
-	public WebElement getVerifyWF() throws Exception {
+	public void getVerifyWF() throws Exception {
 
 		Thread.sleep(6000);
 		jsclick(accept);
+		Reporter.log("Click on the Accept Option", true);
 		Thread.sleep(6000);
 		jsclick(action);
 		Thread.sleep(6000);
@@ -868,14 +854,13 @@ public class Documents_ContextMenu extends BaseClass {
 		Thread.sleep(6000);
 		jsclick(WFComment);
 		Thread.sleep(6000);
-		WFComment.sendKeys(DocumentsContext_excelRead(8, 1));
+		WFComment.sendKeys(DocumentsContext_excelRead(2, 4));
 		Thread.sleep(6000);
 		jsclick(actionOK);
-		return actionOK;
-
+		Reporter.log("Enter the Comment and Accept the Workflow", true);
 	}
 
-	@FindBy(xpath = "//a[@id='myTaskMenu']")
+	@FindBy(xpath = "//*[@id=\"myTaskMenu\"]")
 	private WebElement MoveTo_ToDoList_Option;
 
 	public WebElement MoveTo_ToDoList_Option() {
@@ -884,7 +869,7 @@ public class Documents_ContextMenu extends BaseClass {
 		return MoveTo_ToDoList_Option;
 	}
 
-	@FindBy(id = "todoAll")
+	@FindBy(xpath = "//*[@id=\"todoAll\"]")
 	private WebElement Select_All_Item;
 
 	public WebElement getSelect_All_Item() {
@@ -898,50 +883,50 @@ public class Documents_ContextMenu extends BaseClass {
 		return Open_ToDoDocument;
 	}
 
-	@FindBy(xpath = "//img[@src='images/newRe.png']")
+	@FindBy(xpath = "//*[@id=\"homeMenuBtn\"]")
 	private WebElement Refreshbutton;
 
 	public WebElement getRefreshbutton() {
 		return Refreshbutton;
 	}
 
-	@FindBy(id = "imgSettings")
+	@FindBy(xpath = "//*[@id=\"imgSettings\"]")
 	private WebElement Setting_Icon;
 
 	public WebElement getSetting_Icon() {
 		return Setting_Icon;
 	}
 
-	@FindBy(css = "#myPreferencesSettingsNav > p")
+	@FindBy(xpath = "//*[@id=\"myPreferencesSettingsNav\"]")
 	private WebElement My_Preferencesetting;
 
 	public WebElement getMy_Preferencesetting() {
 		return My_Preferencesetting;
 	}
 
-	@FindBy(xpath = "//button[@id='myPreferencesSubmit']")
+	@FindBy(xpath = "//*[@id=\"myPreferencesSubmit\"]")
 	private WebElement Apply_button;
 
 	public WebElement getApply_button() {
 		return Apply_button;
 	}
 
-	@FindBy(xpath = "//select[@id='defaultOfficeDocViewListNo']")
+	@FindBy(xpath = "//*[@id=\"defaultOfficeDocViewListNo\"]")
 	private WebElement Select_Office_document_Defaultviewing;
 
-	public WebElement getSelect_Office_document_Defaultviewing() {
+	public void getSelect_Office_document_Defaultviewing() {
 		Select sel = new Select(Select_Office_document_Defaultviewing);
 		sel.selectByVisibleText("Default viewing");
-		return Select_Office_document_Defaultviewing;
+
 	}
 
-	@FindBy(xpath = "//select[@id='defaultPdfDocViewListNo']")
+	@FindBy(xpath = "//*[@id=\"defaultPdfDocViewListNo\"]")
 	private WebElement Pdf_document_Defaultviewing;
 
-	public WebElement getPdf_document_Defaultviewing() {
+	public void getPdf_document_Defaultviewing() {
 		Select drop = new Select(Pdf_document_Defaultviewing);
 		drop.selectByVisibleText("Default viewing");
-		return Pdf_document_Defaultviewing;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"signInputPasswordL\"]")
@@ -949,26 +934,28 @@ public class Documents_ContextMenu extends BaseClass {
 	@FindBy(xpath = "//*[@id=\"verifySignaturePasswordL\"]")
 	private WebElement verifypassok;
 
-	public WebElement getinputpassword() throws Exception {
+	public void getinputpassword() throws Exception {
 		jsclick(signinputpassword);
-		signinputpassword.sendKeys("vw");
+		signinputpassword.sendKeys("DocumentsContext_excelRead(3, 1)");
 		jsclick(verifypassok);
-		return verifypassok;
+
 	}
 
-	public WebElement getVerify_SendTo_Blankemailid() throws Exception {
+	public void getVerify_SendTo_Blankemailid() throws Exception {
 
 		jsclick(sendTo);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Send To Option", true);
 		jsclick(sendToMail);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Mail Option ", true);
 		jsclick(Referencemail);
 		Thread.sleep(3000);
 		Select sel = new Select(pdfquality);
-		sel.selectByVisibleText("Best Quality");
+		sel.selectByIndex(2);
 		Thread.sleep(3000);
 		jsclick(savesendto);
-		return savesendto;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
@@ -976,66 +963,70 @@ public class Documents_ContextMenu extends BaseClass {
 	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement messageok;
 
-	public WebElement getmessagevalidation() {
+	public void getmessagevalidation() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Email id should not  be Blank.";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
-	public WebElement getVerify_SendTo_InvalidEmail() throws Exception {
-		Thread.sleep(3000);
-		toemail.sendKeys(DocumentsContext_excelRead(9, 1));
+	public void getVerify_SendTo_InvalidEmail() throws Exception {
+		Thread.sleep(4000);
+		toemail.sendKeys(DocumentsContext_excelRead(3, 4));
 		Thread.sleep(3000);
 		jsclick(subid);
 		subid.clear();
 		Thread.sleep(3000);
-		subid.sendKeys(DocumentsContext_excelRead(5, 1));
+		subid.sendKeys(DocumentsContext_excelRead(1, 4));
 		Thread.sleep(4000);
 		jsclick(savesendto);
-		return savesendto;
+
 	}
 
-	public WebElement getmessagevalidationInvalid() {
+	public void getmessagevalidationInvalid() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please enter a valid 'To E-mail id'";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"ccEmail\"]")
 	private WebElement CCEmailID;
 
-	public WebElement getVerify_SendTo_InvalidCCEmail() throws Exception {
+	public void getVerify_SendTo_InvalidCCEmail() throws Exception {
+		Thread.sleep(4000);
 		toemail.clear();
 		Thread.sleep(3000);
-		toemail.sendKeys(DocumentsContext_excelRead(4, 1));
+		toemail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
-		CCEmailID.sendKeys(DocumentsContext_excelRead(9, 1));
+		Reporter.log("enter the TO Email ID", true);
+		CCEmailID.sendKeys(DocumentsContext_excelRead(3, 4));
 		Thread.sleep(3000);
+		Reporter.log("enter the CC Email ID", true);
 		jsclick(subid);
 		subid.clear();
+		Reporter.log("Enter the Mail subject", true);
 		Thread.sleep(3000);
-		subid.sendKeys(DocumentsContext_excelRead(5, 1));
+		subid.sendKeys(DocumentsContext_excelRead(1, 4));
 		Thread.sleep(4000);
 		jsclick(savesendto);
-		return savesendto;
+		Reporter.log("click on the OK Button", true);
 	}
 
-	public WebElement getmessagevalidationCCEmailInvalid() {
+	public void getmessagevalidationCCEmailInvalid() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please enter a valid 'Cc E-mail id'";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"cancelSendToDocument\"]")
@@ -1045,13 +1036,13 @@ public class Documents_ContextMenu extends BaseClass {
 		return DialogCancel;
 	}
 
-	public WebElement getSentTo_PrintValidation() throws Exception {
+	public void getSentTo_PrintValidation() throws Exception {
 
 		jsclick(sendTo);
 		Thread.sleep(3000);
 		jsclick(sendtoPrint);
 		Thread.sleep(4000);
-		return sendtoPrint;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"cancelPrintBtn\"]")
@@ -1061,17 +1052,17 @@ public class Documents_ContextMenu extends BaseClass {
 		return PrintDialogCancel;
 	}
 
-	public WebElement getSentTo_ExportCancel() throws Exception {
+	public void getSentTo_ExportCancel() throws Exception {
 
 		Thread.sleep(6000);
 		jsclick(sendTo);
 		Thread.sleep(3000);
 		jsclick(sendexport);
 		Thread.sleep(3000);
-		return element;
+
 	}
 
-	public WebElement get_SecureLinkblankmail_Validation() throws Exception {
+	public void get_SecureLinkblankmail_Validation() throws Exception {
 
 		Thread.sleep(6000);
 		jsclick(sendTo);
@@ -1080,113 +1071,112 @@ public class Documents_ContextMenu extends BaseClass {
 		Thread.sleep(4000);
 		jsclick(navigateOK);
 		Thread.sleep(3000);
-		return element;
+
 	}
 
-	public WebElement getmessagevalidationBlankmail() {
+	public void getmessagevalidationBlankmail() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please enter recipient email id";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
-	public WebElement getenter_SecureLinkRecipientaddress() throws Exception {
+	public void getenter_SecureLinkRecipientaddress() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(recpmail);
 		Thread.sleep(3000);
-		recpmail.sendKeys(DocumentsContext_excelRead(4, 1));
+		recpmail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(modifychk);
 		jsclick(navigateOK);
 		Thread.sleep(3000);
-		return element;
+
 	}
 
-	public WebElement getmessagevalidationConfirmmail() {
+	public void getmessagevalidationConfirmmail() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please enter confirmation email id";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
-	public WebElement getClearRecipientmail() throws Exception {
+	public void getClearRecipientmail() throws Exception {
 
 		Thread.sleep(4000);
 		jsclick(recpmail);
 		Thread.sleep(3000);
 		recpmail.clear();
 		Thread.sleep(3000);
-		return element;
+
 	}
 
-	public WebElement getVerifyMismatch_SecureLink_Confirmmail() throws Exception {
+	public void getVerifyMismatch_SecureLink_Confirmmail() throws Exception {
 
 		jsclick(Confirmemail);
 		Thread.sleep(3000);
-		Confirmemail.sendKeys(DocumentsContext_excelRead(4, 1));
+		Confirmemail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(modifychk);
 		jsclick(navigateOK);
 		Thread.sleep(3000);
-		return element;
 
 	}
 
-	public WebElement getenter_validemailmessage() {
+	public void getenter_validemailmessage() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please enter a valid  E-mail id";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
-	public WebElement get_Mismatch_validation() {
+	public void get_Mismatch_validation() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Email id Mismatch ";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
-	public WebElement get_Confirmmail_Invalid() throws Exception {
+	public void get_Confirmmail_Invalid() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(recpmail);
 		Thread.sleep(3000);
-		recpmail.sendKeys(DocumentsContext_excelRead(4, 1));
+		recpmail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(Confirmemail);
 		Thread.sleep(3000);
-		Confirmemail.sendKeys(DocumentsContext_excelRead(9, 1));
+		Confirmemail.sendKeys(DocumentsContext_excelRead(3, 4));
 		Thread.sleep(3000);
 		jsclick(modifychk);
 		jsclick(navigateOK);
 		Thread.sleep(3000);
-		return element;
+
 	}
 
-	public WebElement get_EnterConfirmmail() throws Exception {
+	public void get_EnterConfirmmail() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(Confirmemail);
 		Thread.sleep(3000);
-		Confirmemail.sendKeys(DocumentsContext_excelRead(4, 1));
+		Confirmemail.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(modifychk);
 		jsclick(navigateOK);
 		Thread.sleep(3000);
-		return element;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"navigatorTreeOk33\"]")
@@ -1196,54 +1186,54 @@ public class Documents_ContextMenu extends BaseClass {
 		return SecureOK;
 	}
 
-	public WebElement getRecepientEmail_SecureLink() throws Exception {
+	public void getRecepientEmail_SecureLink() throws Exception {
 
 		Thread.sleep(3000);
-		recpmailsec.sendKeys(DocumentsContext_excelRead(4, 1));
+		recpmailsec.sendKeys(DocumentsContext_excelRead(1, 3));
 		jsclick(confirmemailsec);
 		Thread.sleep(3000);
 		jsclick(navigateOK2);
 		Thread.sleep(6000);
-		return element;
+
 	}
 
-	public WebElement getRecepietConfirmEmail_SecureLink() throws Exception {
+	public void getRecepietConfirmEmail_SecureLink() throws Exception {
 
 		Thread.sleep(3000);
 		recpmailsec.clear();
 		jsclick(confirmemailsec);
 		Thread.sleep(3000);
-		confirmemailsec.sendKeys(DocumentsContext_excelRead(4, 1));
+		confirmemailsec.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(navigateOK2);
 		Thread.sleep(6000);
-		return element;
+
 	}
 
-	public WebElement getRecepietConfirmEmailInvalid_SecureLink() throws Exception {
+	public void getRecepietConfirmEmailInvalid_SecureLink() throws Exception {
 
 		Thread.sleep(3000);
-		recpmailsec.sendKeys(DocumentsContext_excelRead(4, 1));
+		recpmailsec.sendKeys(DocumentsContext_excelRead(1, 3));
 		jsclick(confirmemailsec);
 		Thread.sleep(3000);
 		confirmemailsec.clear();
 		Thread.sleep(3000);
-		confirmemailsec.sendKeys(DocumentsContext_excelRead(9, 1));
+		confirmemailsec.sendKeys(DocumentsContext_excelRead(3, 4));
 		Thread.sleep(3000);
 		jsclick(navigateOK2);
 		Thread.sleep(6000);
-		return element;
+
 	}
 
-	public WebElement getenterConfirmRecepietEmail_SecureLink() throws Exception {
+	public void getenterConfirmRecepietEmail_SecureLink() throws Exception {
 
 		confirmemailsec.clear();
 		Thread.sleep(3000);
-		confirmemailsec.sendKeys(DocumentsContext_excelRead(4, 1));
+		confirmemailsec.sendKeys(DocumentsContext_excelRead(1, 3));
 		Thread.sleep(3000);
 		jsclick(navigateOK2);
 		Thread.sleep(6000);
-		return element;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle33\"]")
@@ -1261,7 +1251,7 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	@FindBy(xpath = "//*[@id=\"wfactionCancel\"]")
-	private WebElement wfactionCancel; 
+	private WebElement wfactionCancel;
 
 	public WebElement getwfactionCancel() throws Exception {
 		return wfactionCancel;
@@ -1274,95 +1264,180 @@ public class Documents_ContextMenu extends BaseClass {
 	@FindBy(xpath = "//*[@id=\"wfactionOk\"]")
 	private WebElement wfaction;
 
-	public WebElement getVerifyAccept() throws Exception {
+	public void getVerifyAccept() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(accept);
+		Reporter.log("Click on the Accept Option", true);
 		Thread.sleep(3000);
 		jsclick(Workflowtask);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Workflow Task Button", true);
 		jsclick(CancelWorkflowtask);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Workflow task Cancel Button", true);
 		jsclick(wfaction);
-		return element;
-
+		Reporter.log("Click on the Workflow action", true);
 	}
 
-	public WebElement get_comment_Validation() {
+	public void get_comment_Validation() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please enter the comments.";
 		String actualtext = messageContent.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(messageContent.getText());
+		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
-		return messageok;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"reject\"]")
 	private WebElement Reject;
 
-	public WebElement getVerifyReject() throws Exception {
+	public void getVerifyReject() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(Reject);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Reject Option", true);
 		jsclick(Workflowtask);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Workflwo Task", true);
 		jsclick(CancelWorkflowtask);
+		Reporter.log("Click on the Cancel Workflow task Button", true);
 		Thread.sleep(3000);
 		jsclick(wfaction);
-		return element;
+		Reporter.log("Click on the Workflow action", true);
 	}
 
 	@FindBy(xpath = "//*[@id=\"endwf\"]")
 	private WebElement EndWorkflow;
 
-	public WebElement getVerifyEndWorkflow() throws Exception {
+	public void getVerifyEndWorkflow() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(EndWorkflow);
 		Thread.sleep(3000);
+		Reporter.log("Click on the End Workflow Option", true);
 		jsclick(Workflowtask);
 		Thread.sleep(3000);
+		Reporter.log("click on the Workflow Task Button", true);
 		jsclick(CancelWorkflowtask);
 		Thread.sleep(3000);
+		Reporter.log("click on the Cancel Workflow task Button", true);
 		jsclick(wfaction);
-		return element;
-
+		Reporter.log("click on the Workflow action", true);
 	}
 
 	@FindBy(xpath = "//*[@id=\"summary1\"]")
 	private WebElement Summary;
 
-	public WebElement getverifySummary() throws Exception {
+	public void getverifySummary() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(Summary);
-		return element;
 
 	}
 
 	@FindBy(xpath = "//*[@id=\"commentswf\"]")
 	private WebElement Comment;
 
-	public WebElement getverifyComment() throws Exception {
+	public void getverifyComment() throws Exception {
 
 		Thread.sleep(3000);
 		jsclick(Comment);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Comment box", true);
 		jsclick(Workflowtask);
 		Thread.sleep(3000);
+		Reporter.log("Click on theWorkflow Task Button", true);
 		jsclick(CancelWorkflowtask);
 		Thread.sleep(3000);
+		Reporter.log("Click on the Workflow task Cancel Button", true);
 		jsclick(wfaction);
-		return element;
-
+		Reporter.log("Click on the Workflow action", true);
 	}
-	
+
 	@FindBy(xpath = "//button[@class='btn btn-danger summaryActionClass btn-default']")
-	private WebElement SummaryCancel; 
+	private WebElement SummaryCancel;
 
 	public WebElement getSummaryCancel() throws Exception {
 		return SummaryCancel;
 	}
+
+	// Offlline document
+
+	@FindBy(xpath = "//input[@class='thumbnailOptionSelected']")
+	private WebElement SelectCheckbox;
+
+	public WebElement getSelectCheckbox() {
+		return SelectCheckbox;
+	}
+
+	@FindBy(xpath = ".//div[@id='toolbarId']/div[8]/div[1]/span[1]")
+	private WebElement pageofflinemenu;
+
+	public WebElement getpageofflinemenu() {
+		return pageofflinemenu;
+	}
+
+	@FindBy(xpath = "//button[@id='messageButtonOK']")
+	private WebElement clickokbutton;
+
+	public WebElement getclickokbutton() {
+		return clickokbutton;
+	}
+
+	@FindBy(xpath = "//*[@id=\"logoutElement\"]")
+	private WebElement Username;
+
+	public WebElement getUsername() {
+		return Username;
+	}
+
+	@FindBy(xpath = "//a[@id='syncDocuments']")
+	private WebElement offlinedoc;
+
+	public WebElement getofflinedoc() {
+		return offlinedoc;
+	}
+
+	@FindBy(className = "document-sync")
+	private WebElement checkofflinedoc;
+
+	public WebElement getcheckofflinedoc() {
+		return checkofflinedoc;
+	}
+
+	@FindBy(xpath = "//*[@id=\"releasesyncbtn\"]")
+	private WebElement ReleaseDoc;
+
+	public WebElement getReleaseDoc() {
+		return ReleaseDoc;
+	}
+
+	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
+	private WebElement MoveTo_Menu_Recent;
+
+	public void getMoveTo_Menu_Recent() {
+		Actions action = new Actions(driver);
+		action.moveToElement(MoveTo_Menu_Recent).perform();
+
+	}
+
+	@FindBy(xpath = "//*[@id=\"recentFolders\"]/tbody/tr[1]/td")
+	private WebElement Recent_Folder;
+
+	public WebElement get_clickRecent_Folder() {
+		return Recent_Folder;
+	}
+	
+	static By LoginUsername = By.xpath("//*[@id=\"userName\"]");
+	static By Password = By.xpath("//*[@id=\"loginPassword\"]");
+	static By Room = By.xpath("//*[@id=\"rooms\"]");
+	static By Captch_Image = By.xpath("//*[@id=\"image\"]");
+	static By Enter_Captch_textbox = By.xpath("//*[@id=\"captchaInput\"]");
+	static By Login_button = By.xpath("//*[@id=\"submitid\"]");
+	static By session_message = By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]");
+	static By session_message_Yes = By.xpath("//*[@id=\"cvModelLoginValidationOk\"]");
+	static By session_message_No = By.xpath("//*[@id=\"cvModelLoginValidationCancel\"]");
 }

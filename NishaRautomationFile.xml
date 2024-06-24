@@ -3,15 +3,17 @@
 <suite name="Suite">
  <listeners>
 <listener class-name="Generic.ListenersRetry"></listener>
-</listeners> 
+
+ 
+ </listeners>
       <test name="Test1">
    <classes>
-      <class name="Script.AdvancedViewer_Script"/>
+      <class name="Script.AnnotationFunctionality"/>
     </classes>
-  </test>  
+  </test>   
   <test name="Test2"> 
    <classes>
-      <class name="Script.AnnotationFunctionality"/>
+      <class name="Script.AdvancedViewer_Script"/>
     </classes>
   </test> 
    <test name="Test3">
@@ -20,21 +22,17 @@
        </classes>
        </test>  
      
-    <!--  <test name="Test 5">
+    <!-- <test name="Test 5">
        <classes>
-       <class name="Script.ToDoListFunctionality"/> 
+       <class name="Script.ManualWorkflow"/> 
     </classes>
   </test>  
   <test name="Test 6">
        <classes>
-      <class name="Script.TodoListDynamicWorkFlowWithRejectCondition"/>
+      <class name="Script.DynamicWorkflow"/>
     </classes>
-  </test>    
-     <test name="Test 7"> 
-       <classes>
-      <class name="Script.TodoListAnnotationAddedPageTestedByWfUsers_AndAllUsersAcceptDocScript"/>
-    </classes> 
-  </test>   -->
+  </test>     -->
+   
    
   <test name="Test 9">
        <classes>
@@ -49,7 +47,7 @@
   <test name="Test 11">
        <classes>
       <class name="Script.SecureLink"/>
-    </classes>
+    </classes> 
   </test> 
   <test name="Test 12">
        <classes>
@@ -77,19 +75,20 @@
       <class name="Script.Thumbnail_MicroSoft_FabBTN"/>
     </classes>
   </test>
-   <test name="Test 17">
-       <classes>
-      <class name="Script.DocumentContextSingleFolderDocSendTo"/>
-    </classes>
-  </test>
+   
    <test name="Test 18">
        <classes>
       <class name="Script.DocuSignScript"/>
     </classes>
   </test>
-    <test name="Test19">
+     <test name="Test19">
        <classes>
       <class name="Script.RoomContextFunction"/>
     </classes>
-  </test>     
+  </test>   
+    <test name="Test20">
+       <classes>
+      <class name="Script.UnsupportedFiles"/>
+    </classes>
+  </test>    
  </suite> 

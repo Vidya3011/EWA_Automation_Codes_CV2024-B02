@@ -3,6 +3,7 @@ package Pom;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -11,6 +12,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -43,10 +45,10 @@ public class AdvancedViewer  extends BaseClass {
 	@FindBy(xpath = "//select[@id='defaultOfficeDocViewListNo']")
 	private WebElement Select_Office_document_Advancedviewing;
 
-	public WebElement getSelect_Office_document_Advancedviewing() {
+	public void getSelect_Office_document_Advancedviewing() {
 		Select sel = new Select(Select_Office_document_Advancedviewing);
 		sel.selectByVisibleText("Advanced viewing");
-		return Select_Office_document_Advancedviewing;
+		
 	}
 	
 	
@@ -60,18 +62,44 @@ public class AdvancedViewer  extends BaseClass {
 	@FindBy(id = "defaultPdfDocViewListNo")
 	private WebElement Select_PDF_document_Advancedviewing;
 	
-	public WebElement getSelect_PDF_document_Advancedviewing() {
+	public void getSelect_PDF_document_Advancedviewing() {
 		Select sel = new Select(Select_PDF_document_Advancedviewing);
 		sel.selectByVisibleText("Advanced viewing");
-		return Select_PDF_document_Advancedviewing;
+		
 	}
 	
 	
-	public WebElement getSelect_PDF_document_Defviewing() {
+	public void getSelect_PDF_document_Defviewing() {
 		Select sel = new Select(Select_PDF_document_Advancedviewing);
 		sel.selectByVisibleText("Default viewing");
-		return Select_PDF_document_Advancedviewing;
+		
 	}
+	
+	
+	public void DefaultView() throws Exception {
+		
+		jsclick(Refresh_Button(driver));
+
+		Thread.sleep(5000);
+		jsclick(Setting_Icon);
+		Reporter.log("User click on setting icon");
+		Thread.sleep(5000);
+		jsclick(My_Preferencesetting);
+		Reporter.log("User click on the my preference tab");
+		Thread.sleep(5000);
+		getSelect_PDF_document_Defviewing();
+		Reporter.log("User changes pdf document as default viewing");
+		Thread.sleep(4000);
+		jsclick(Apply_button);
+		Reporter.log("User click on Apply button and the default view successfully applied...");
+		Thread.sleep(5000);
+		
+
+	}
+	
+	
+	
+	
 	
 	@FindBy(xpath = "//a[@id='createDocument']")
 	private WebElement Click_New_Document;
@@ -79,14 +107,14 @@ public class AdvancedViewer  extends BaseClass {
 	@FindBy(xpath = "//input[@id='createDocuemtnLocation']")
 	private WebElement Destination_Folder_Textbox;
 	
-	@FindBy(xpath = ("//*[@id=\"1\"]/ins"))
+	@FindBy(xpath = ("//div[@id='createDocuemntNavigator']/ul/li[2]/a"))
 	private WebElement Cabinet;
 	
-	@FindBy(xpath = ("//*[@id=\"2\"]/ins"))
+	@FindBy(xpath = ("//div[@id='createDocuemntNavigator']/ul/li[2]/ul/li[1]/a"))
 	private WebElement Drawer;
 	
 	
-	@FindBy(xpath = ("//*[@id=\"1002\"]/a"))
+	@FindBy(xpath = ("//div[@id='createDocuemntNavigator']/ul/li[2]/ul/li[1]/ul/li[1]/a"))
 	private WebElement Folder;
 	
 	@FindBy(xpath = "//*[@id=\"3\"]/a")
@@ -94,50 +122,31 @@ public class AdvancedViewer  extends BaseClass {
 	
 	
 	
-	public WebElement getCaseSensitiveRoomFolder() {
 	
-		return CaseSensitiveRoomFolder;
-	}
 	
 	
 	@FindBy(xpath="//*[@id=\"sendToDocuSign\"]/span")
 	private WebElement DocuSign;
 	
 	
-	@FindBy(xpath="/html/body/div[58]/div[64]/div[1]/div/div[2]/div[2]/ul/li[2]/ins")
+	@FindBy(xpath="//div[@id='viewDocumentnavigator']/ul/li[1]/ins")//cabinet bill
 	private WebElement FirstCabinet;
 	
-	@FindBy(xpath="/html/body/div[58]/div[64]/div[1]/div/div[2]/div[2]/ul/li[2]/ul/li/ins")
+	@FindBy(xpath="//div[@id='viewDocumentnavigator']/ul/li[1]/ul/li/ins")//drawer bill
 	private WebElement FirstDrawer;
 	
-	@FindBy(xpath="/html/body/div[58]/div[64]/div[1]/div/div[2]/div[2]/ul/li[2]/ul/li/ul/li[1]/a")
+	@FindBy(xpath="//div[@id='viewDocumentnavigator']/ul/li[1]/ul/li[1]/ul/li[1]/a")//folderbill
 	private WebElement FirstFolder;
 	
 	@FindBy(xpath="//*[@id=\"documentListTable\"]//tr[1]/td[3]")//change tr number to select 2 or 4 docs tr[5]
     private WebElement FirstDocument;
 
-	public WebElement getFirstCabinet() {
-		return FirstCabinet;
-	}
 
-	public WebElement getFirstDrawer() {
-		return FirstDrawer;
-	}
-
-	public WebElement getFirstFolder() {
-		return FirstFolder;
-	}
-
-	public WebElement getFirstDocument() {
-		return FirstDocument;
-	}
 	
 	@FindBy(xpath="//*[@id=\"createDocument\"]")
     private static WebElement NewDocument;
 
-	public WebElement getNewDocument() {
-		return NewDocument;
-	}
+	
 	
 	
 	@FindBy(xpath = "//*[@id=\"376\"]/a")
@@ -145,11 +154,7 @@ public class AdvancedViewer  extends BaseClass {
 	
 	
 	
-	public WebElement getSQLRoomFolder() {
-	
-		return SQLRoomFolder;
-	}
-	
+
 	
 	
 	
@@ -173,29 +178,26 @@ public class AdvancedViewer  extends BaseClass {
 	@FindBy(id = "docTypeList")
 	private WebElement Click_Document_Type_Dropdown;
 	
-	public WebElement getSelect_Document_Type_Dropdown() {
+	public void getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
 		drop.selectByVisibleText("CVReports");
-		return Click_Document_Type_Dropdown;
+		
 	}
 	
 	@FindBy(xpath= "//*[@id=\"docTypeIndicesTable\"]/tbody/tr/td[2]")
 	private WebElement DocumentCVRep;
 	
-	public WebElement getDocumentCVRep() {
-		return DocumentCVRep;
-		
-	}
 	
 	
 	
-	@FindBy(id = "indices_33")
+	
+	@FindBy(xpath = "//*[@id=\"docTypeIndicesTable_wrapper\"]/table/tbody/tr/td[2]/input")
 	private WebElement Enter_ReportName;
 	
 	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
 	private WebElement Move_To_PlusIcon;
 	
-	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
+	@FindBy(xpath = "//*[@id='viewDocumentAddPages']")
 	private WebElement Browse_Option;
 	
 	@FindBy(xpath = "//*[@id=\"djvuViewerDiv_toolbar_image\"]")
@@ -291,7 +293,7 @@ public class AdvancedViewer  extends BaseClass {
 		private WebElement WordDocument; 
   
 
-  @FindBy(xpath = ("//*[@id=\"djvuViewerDiv_main_content\"]/div[1]/table/tbody/tr[1]/td[1]"))
+  @FindBy(xpath = ("//*[@id=\"djvuViewerDiv_main_content\"]/div[1]/table/tbody/tr[6]/td[7]"))
 	private WebElement ExcelSheetFirstRow; 
   
 
@@ -349,11 +351,19 @@ public class AdvancedViewer  extends BaseClass {
   
   @FindBy(xpath = ("//*[@id=\"docViewerMetaData\"]/div[2]/div/input"))
 	private WebElement SecondPageCheckBox;  
+  
 
+  @FindBy(xpath = ("//*[@id='progressUploaModal']"))
+	private WebElement FileDetailsDialog; 
 
   @FindBy(xpath = ("//*[@id=\"deleteMessageOk19\"]"))
  	private WebElement DeleteDialogYes;  
 
+  @FindBy(xpath = ("//*[@id=\"createDocumentSubmit\"]"))
+	private WebElement CreateBTN;  
+  
+  @FindBy(xpath = ("//*[@id=\"viewCreatedDocument\"]"))
+	private WebElement viewOption;  
   
   
   @FindBy(xpath = ("//*[@id=\"docCreatorSpan1\"]"))
@@ -374,6 +384,7 @@ public class AdvancedViewer  extends BaseClass {
 
   public void CreateDocumentAndShowThumbnail() throws Exception {
 	  Thread.sleep(3000);
+	  Reporter.log("Scenario 01: Document Thumbnail view");
 Reporter.log("Expand the cabinet");
 	  jsclick(FirstCabinet);
 	  Reporter.log("Expand the drawer");
@@ -381,7 +392,7 @@ Reporter.log("Expand the cabinet");
 	  jsclick(FirstDrawer);
 	  Reporter.log("Select the folder");
 	  Thread.sleep(2000);
-	  jsclick(FirstFolder);
+	  selectElement(FirstFolder);
 	  Thread.sleep(3000);
 	//  jsclick(FirstDocument);
 	  Reporter.log("Click on new document");
@@ -396,17 +407,17 @@ Reporter.log("Expand the cabinet");
 		//jsclick(OK_Button_BrowseforFolder);
 		Thread.sleep(3000);
 		getSelect_Document_Type_Dropdown();
-		Reporter.log("User select document type as CVReports");
+		Reporter.log("Select document type");
 		Thread.sleep(3000);
 		Actions act=new Actions(driver);
-		act.click(DocumentCVRep).sendKeys("Thumbnail Word Document").build().perform();
+		act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(6, 0)).build().perform();
 		Reporter.log("Enter document name");
 		Thread.sleep(5000);
-		 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		
 		 jsclick(CreateBTN);
 		 Reporter.log("Click on create document");
 		 Thread.sleep(10000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	
 		 jsclick(viewOption);
 		 Reporter.log("Click on view button");
 		movingElement(Move_To_PlusIcon);
@@ -422,7 +433,7 @@ Reporter.log("Expand the cabinet");
 		Reporter.log("User click on Show/Hide thumbnail view");
 	  jsclick(ShowThumbnail);
 	  Thread.sleep(8000);
-	  Reporter.log("It will hide the thumbnail page, workinf fine...");
+	  Reporter.log("It will hide the thumbnail page, verified successfully...");
 	  jsclick(ShowThumbnail);
 	 
 	  
@@ -430,43 +441,46 @@ Reporter.log("Expand the cabinet");
   
   
   public void DocuSignCreateDoc() throws Exception {
-	  Thread.sleep(3000);
-	  Reporter.log("User expand the cabinet");
-	  jsclick(FirstCabinet);
-	  Thread.sleep(2000);
-	  Reporter.log("User expand the drawer");
-	  jsclick(FirstDrawer);
 	  Thread.sleep(5000);
+		Reporter.log("Scenario 01: Verify 'Docusign' Option");
+	  Reporter.log("Expand the cabinet");
+	  jsclick(FirstCabinet);
+	  Thread.sleep(5000);
+	  Reporter.log("Expand the drawer");
+	  
+	  jsclick(FirstDrawer);
+	  Thread.sleep(4000);
+	  ElementToBeClickable(FirstFolder);
 	  jsclick(FirstFolder);
-	  Reporter.log("User click on the folder");
+	  Reporter.log("Click on the folder");
 	  Thread.sleep(3000);
 	//  jsclick(FirstDocument);
 	  Thread.sleep(3000);
 		jsclick(Click_New_Document);
-		Reporter.log("User click on new document tab");
+		Reporter.log("Click on new document tab");
 		
-		Thread.sleep(2000);
+	
 	//	jsclick(Destination_Folder_Textbox);
 		
 		
-			Thread.sleep(5000);
+			Thread.sleep(8000);
 		
 		//jsclick(OK_Button_BrowseforFolder);
-		Thread.sleep(3000);
+		
 		getSelect_Document_Type_Dropdown();
-		Reporter.log("User select a document type named as CVReports");
+		Reporter.log("Select a document type");
 		Thread.sleep(3000);
 		Actions act=new Actions(driver);
 		act.click(DocumentCVRep).sendKeys("Docu sign Document").build().perform();
-		Reporter.log("User enter the document name");
+		Reporter.log("Enter the document name");
 		Thread.sleep(5000);
-		 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		
 		 jsclick(CreateBTN);
-		 Reporter.log("User click on create button");
+		 Reporter.log("Click on create button");
 		 Thread.sleep(10000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	
 		 jsclick(viewOption);
-		 Reporter.log("User click on view button");
+		 Reporter.log("Click on view button");
 		movingElement(Move_To_PlusIcon);
 		Thread.sleep(2000);
 		Reporter.log("Mouse hover on browse icon");
@@ -474,7 +488,7 @@ Reporter.log("Expand the cabinet");
 		Reporter.log("Select a word document from the dropdown");
 		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
 		Thread.sleep(8000);
-		Reporter.log("User enter a file name");
+		Reporter.log("Enter a file name");
 		jsclick(EnterFileNameOKBTN);
 		Reporter.log("Click enter file name dialog OK BUTTON");
 		Thread.sleep(3000);
@@ -490,41 +504,42 @@ Reporter.log("Expand the cabinet");
 		
 		
 		 Thread.sleep(8000);
-		 Reporter.log("User click on save button");
+		 Reporter.log("Click on save button");
 		    jsclick(SaveTab);
 		    Thread.sleep(8000);
 		    VisiblityOf(SaveTabOKBTN);
-		    Reporter.log("User click on save dialog OK button");
+		    Reporter.log("Click on save dialog OK button");
 		    jsclick(SaveTabOKBTN);
 	    Thread.sleep(3000);
 		jsclick(DocuSign);
 		Reporter.log("Click on viewer menu docusign tool icon");
 		Thread.sleep(4000);
 	   jsclick(EmailTextBox);
-	   Reporter.log("User enter valid mail in text box");
+	   Reporter.log("Enter valid mail in text box");
 	   EmailTextBox.sendKeys(readFromExMail(2, 0));
 	   Thread.sleep(3000);
 		jsclick(EmailTextBoxOKBTN);
 		Reporter.log("Click on docusign dialog OK button");
 		Thread.sleep(4000);
 		jsclick(DocSignOKBTN);
-		Reporter.log("User click on 'Document sent for signing successsfully' message dialog OK button");
+		Reporter.log("Click on 'Document sent for signing successsfully' message dialog OK button");
 		Thread.sleep(3000);
-		Reporter.log("User click on refresh button");
+		Reporter.log("Document sent to docusign successfully...");
+		Reporter.log("Click on refresh button");
 		jsclick(Refresh_Button(driver));
 		
   }
 		
   public void CreateDocumentAnd_SaveFromDocument_Fabbtn() throws Exception {
-	  Thread.sleep(7000);
+	  Thread.sleep(6000);
 	Actions act=new Actions(driver);
-	Reporter.log("User create document and save document by using floating button Save icon");
+	Reporter.log("Scenario 02: Create document and save document by using floating button Save icon");
 	act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(0, 0)).build().perform();
 	 Thread.sleep(8000);
-	 Reporter.log("USer enter file name and click on Floating button Save icon");
+	 Reporter.log("Enter file name and click on Floating button");
 	    jsclick(FAbBTN);
 	    Thread.sleep(3000);
-	    Reporter.log("User click on Save icon");
+	    Reporter.log("Click on Save icon");
 	    VisiblityOf(FabSaveBTN);
 	    jsclick(FabSaveBTN);
 	    Thread.sleep(7000);
@@ -540,13 +555,15 @@ Reporter.log("Expand the cabinet");
     ElementToBeClickable(UploadeFabBTN);
     jsclick(UploadeFabBTN);*/
     Actions act=new Actions(driver);
-    Reporter.log("User add file by using floating button Browse icon");
+    Reporter.log("Scenario 03: Floating tab 'browse button'");
+    
+    Reporter.log("Add file by using floating button Browse icon");
     act.moveToElement(UploadeFabBTN).click().build().perform();
   //  Thread.sleep(3000);
     Reporter.log("Mousehover on floating button");
     Thread.sleep(10000);
     Reporter.log("Click browse icon");
-    Reporter.log("User add file by using AutoIT script");
+    Reporter.log("Add file by using AutoIT script");
 	Runtime.getRuntime().exec(
 			"D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Flower or Curly bracket .exe");
 	Thread.sleep(8000);
@@ -562,7 +579,7 @@ Reporter.log("Expand the cabinet");
 	    Thread.sleep(3000);
 	    VisiblityOf(FabSaveBTN);
 	    jsclick(FabSaveBTN);
-	    Reporter.log("User click on floating button save icon...");
+	    Reporter.log("Click on floating button save icon...");
 	    Thread.sleep(7000);
 	    Reporter.log("Document updated successfull");
 	    jsclick(SaveTabOKBTN);
@@ -570,17 +587,20 @@ Reporter.log("Expand the cabinet");
   
   public void CreateDocumentAnd_ViewFullScreen() throws Exception {
 	    jsclick(FAbBTN);
-	    Reporter.log("User mouse hover on floating button");
+	    Reporter.log("Scenario 04: Floating button - view full screen");
+	    Reporter.log("Mouse hover on floating button");
 	    Thread.sleep(3000);
-	    Reporter.log("User click on full screen view icon");
+	    Reporter.log("Click on full screen view icon");
 	    jsclick(viewFullScrnBTN);
 	    Thread.sleep(7000);
-	    Reporter.log("It shows the document full screen view");
+	    Reporter.log("It display the document full screen mode");
 	    jsclick(viewFullScrnBTN);
 	    Thread.sleep(3000);
   }
   public void CreateDocumentAnd_DeleteFabBTN_option() throws Exception {
+	  Thread.sleep(3000);
 	    jsclick(FAbBTN);
+	    Reporter.log("Scenario 05: Floating button - delete icon");
 	    Reporter.log("Mouse hover on floating button");
 	    Thread.sleep(3000);
 	    Reporter.log("Select thumbnail page check box");
@@ -596,7 +616,7 @@ Reporter.log("Expand the cabinet");
         ElementToBeClickable(DeleteOKBTN);
         jsclick(DeleteOKBTN);
         Thread.sleep(3000);
-        Reporter.log("USer click on floating button save icon");
+        Reporter.log("Click on floating button save icon");
         jsclick(Refresh_Button(driver));
         Thread.sleep(5000);
         jsclick(SaveChange);
@@ -628,10 +648,10 @@ Reporter.log("Expand the cabinet");
 		movingclkElement(Enter_ReportName);
 		sendvalue(Enter_ReportName, readFromExAdvancedView(3, 1));
 		Thread.sleep(5000);
-		 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+	
 		 jsclick(CreateBTN);
-		 Thread.sleep(10000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+		 Thread.sleep(8000);
+
 		 jsclick(viewOption);
 		movingElement(Move_To_PlusIcon);
 		Thread.sleep(2000);
@@ -684,6 +704,53 @@ Reporter.log("Expand the cabinet");
 	}
   
 
+  public void CreateDocumentScriptDynamicWFType() throws Exception {
+	   
+	  Thread.sleep(4000);
+	  jsclick(Click_New_Document);
+		Thread.sleep(2000);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(3000);
+		 jsclick(Cabinet);
+			Thread.sleep(3000);
+			 jsclick(Drawer);
+			Thread.sleep(3000);
+			jsclick(Folder);
+			Thread.sleep(3000);
+		
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(3000);
+    Actions act=new Actions(driver);
+    Reporter.log("Create document and add files");
+    
+    
+    
+    Reporter.log("Add file by using floating button Browse icon");
+    act.moveToElement(UploadeFabBTN).click().build().perform();
+  //  Thread.sleep(3000);
+    Reporter.log("Mousehover on floating button");
+    Thread.sleep(7000);
+    Reporter.log("Click browse icon");
+    Reporter.log("Add file by using AutoIT script");
+	Runtime.getRuntime().exec("D:\\RNishaAutoIt\\NishaRScript.exe");
+	Thread.sleep(8000);
+	try {
+  alertIsPresent();
+  acceptAlert();
+	}
+	catch(Exception e) {
+		System.out.println("Alert is not present");
+	}
+	Thread.sleep(3000);
+	//  jsclick(FAbBTN);
+	    Thread.sleep(3000);
+	    VisiblityOf(FabSaveBTN);
+	    jsclick(FabSaveBTN);
+	    Reporter.log("Click on floating button save icon...");
+	    Thread.sleep(7000);
+	    Reporter.log("Document updated successfull");
+	    jsclick(SaveTabOKBTN);
+  }
   
   
   
@@ -710,52 +777,29 @@ Reporter.log("Expand the cabinet");
   
   
   
-  public static String readFromExAdvancedView(int rw,int cl) throws IOException{
-		File f= new File("./data/TestData.xlsx");
-		FileInputStream fis=new FileInputStream(f);
-		Workbook wb=new XSSFWorkbook(fis);
-		Sheet mySht = wb.getSheet("AdvancedView");
-		Row row = mySht.getRow(rw);
-		Cell cell = row.getCell(cl);
-		String name = cell.getStringCellValue();
-		return name;
-		}
+ 
 	
   
 	
 	public void AdvancedViewerOption() throws Exception{
-		Reporter.log("Test Scenario 1: Verify Advanced viewing functionality");
+		Reporter.log("Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer");
 		jsclick(Setting_Icon);
-		Reporter.log("User click on the setting icon");
+		Reporter.log("Click on Setting icon");
 		jsclick(My_Preferencesetting);
-		Reporter.log("User click on the my preference option");
+		Reporter.log("Go to Mypreference");
 		getSelect_Office_document_Advancedviewing();
-		Reporter.log("User changes the office document into advanced viewing");
+		Reporter.log("Set the office document to advanced viewing");
 		Thread.sleep(3000);
 		getSelect_PDF_document_Advancedviewing();
-		Reporter.log("User changes the PDF document into advanced viewing");
+		Reporter.log("Set the PDF document to advanced viewing");
 		Thread.sleep(6000);
 		jsclick(Apply_button);
-		Reporter.log("User clicked apply button");
+		Reporter.log("Click on Apply button");
+		Reporter.log("Advanced viewer mode has been set successfully...");
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 		
@@ -790,21 +834,21 @@ public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 		ElementToBeClickable(EnterFileNameOKBTN);
 		jsclick(EnterFileNameOKBTN);
 		Thread.sleep(8000);
-		 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		
 		 jsclick(CreateBTN);
-		 Thread.sleep(10000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+		 Thread.sleep(8000);
+		
 		 jsclick(viewOption);
-		 Thread.sleep(15000);
+		 Thread.sleep(10000);
 	//	Actions act=new Actions(driver);
 		ElementToBeClickable(WordDocPage);
 		act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(0, 0)).build().perform();
-		 Thread.sleep(10000);
+		 Thread.sleep(8000);
 		    jsclick(SaveTab);
 		    Thread.sleep(8000);
 		    VisiblityOf(SaveTabOKBTN);
 		    jsclick(SaveTabOKBTN);
-		    Thread.sleep(10000);
+		    Thread.sleep(8000);
 		jsclick(WordDocImageOpt);
 		 Thread.sleep(2000);
 		 movingclkElement(UploadFromCmpOpt);
@@ -835,122 +879,18 @@ public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 		    Thread.sleep(10000);
 		    jsclick(Refresh_Button(driver));
 	}
-	 
-	    
-	public void CreateDocumentAdvancedViewWordDocument() throws Exception {
-		Reporter.log("Scenario 2: Create new word document ");
-		jsclick(Click_New_Document);
-		Reporter.log("User click on the new document option");
-		Thread.sleep(2000);
-		jsclick(Destination_Folder_Textbox);
-		Reporter.log("User click on the Destination folder text box");
-		Thread.sleep(3000);
-		 jsclick(Cabinet);
-		 Reporter.log("User expand the cabinet");
-			Thread.sleep(3000);
-			 jsclick(Drawer);
-			 Reporter.log("User expand drawer");
-			Thread.sleep(5000);
-			jsclick(Folder);
-			 Reporter.log("User select the folder");
-			Thread.sleep(5000);
-			
-		jsclick(OK_Button_BrowseforFolder);
-		 Reporter.log("User selected the folder successfully...");
-		Thread.sleep(3000);
-		getSelect_Document_Type_Dropdown();
-		 Reporter.log("User click on the document type dropdown and select the document type successfully.");
-		Thread.sleep(3000);
-		movingclkElement(Enter_ReportName);
-		 Reporter.log("User enter the report name");
-		sendvalue(Enter_ReportName, readFromExAdvancedView(3, 1));
-		Thread.sleep(5000);
-		
-		movingElement(Move_To_PlusIcon);
-		 Reporter.log("User mouse hover on the browse icon");
-		Thread.sleep(5000);
-		
-		jsclick(WordDocument);
-		 Reporter.log("User select the word new document");
-		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
-		Thread.sleep(5000);
-		 Reporter.log("User enter the file name");
-		ElementToBeClickable(EnterFileNameOKBTN);
-		jsclick(EnterFileNameOKBTN);
-		 Reporter.log("click on the enter file name OK button");
-		Thread.sleep(8000);
-		 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
-		 jsclick(CreateBTN);
-		 Reporter.log("User click on the create button");
-		 Thread.sleep(10000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
-		 jsclick(viewOption);
-		 Reporter.log("User click on the view option");
-		 Thread.sleep(15000);
-		Actions act=new Actions(driver);
-		ElementToBeClickable(WordDocPage);
-		act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(0, 0)).build().perform();
-		 Reporter.log("Enter the data in the created sheet");
-		Thread.sleep(10000);
-		    jsclick(SaveTab);
-		    Reporter.log("click on the save button");
-		    Thread.sleep(8000);
-		    VisiblityOf(SaveTabOKBTN);
-		    jsclick(SaveTabOKBTN);
-		    Reporter.log("click on save successfull dialog ok button");
-		    Thread.sleep(10000);
-		jsclick(WordDocImageOpt);
-		 Reporter.log("click on image option");
-		 Thread.sleep(2000);
-		 movingclkElement(UploadFromCmpOpt);
-		 Reporter.log("select the upload from computer option");
-		 Thread.sleep(5000);
-			Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Flower or Curly bracket .exe");
-			Thread.sleep(10000);
-			 Reporter.log("Using Auto IT successfully added the image from folder");
-			jsclick(CreateTableopt);
-			 Reporter.log("Click on table option");
-			Thread.sleep(5000);
-		jsclick(TableDialogOKBTN);
-		 Reporter.log("Added the two table box into the page, successfully");
-		 Thread.sleep(5000);
-		/* jsclick(LinkOpt);
-		LinkAddress.sendKeys("https://github.com/Vidya3011/CV_Automation.git");
-		Thread.sleep(3000);
-		jsclick(TableDialogOKBTN);	*/
-		Thread.sleep(3000);
-		act.click(WordDocPage).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
-		 Reporter.log("given the data inside the table");
-		 Thread.sleep(5000);
-		    jsclick(SaveTab);
-		    Reporter.log("Click on the save button");
-		    Thread.sleep(3000);
-		    VisiblityOf(SaveTabOKBTN);
-		    jsclick(SaveTabOKBTN);
-		    Reporter.log("The data which are added has been updated successfully...");
-		    Thread.sleep(8000);
-		    jsclick(CloseIcon);
-		    Reporter.log("user click on the close icon");
-		    Thread.sleep(3000);
-		    VisiblityOf(ReopenTheDocument);
-		    Reporter.log("User reopen the saved word document...");
-		    jsclick(ReopenTheDocument);
-		    Thread.sleep(10000);
-		    Reporter.log("All saved datas are visible on the page there is no issues...");
-		    jsclick(Refresh_Button(driver));
-	}
-	 
-	public void AdvancedViewPDFDocumentCaseSensitive() throws Exception {
+
+		public void AdvancedViewPDFDocumentCaseSensitive() throws Exception {
 		
 		jsclick(Click_New_Document);
 		Thread.sleep(2000);
 		jsclick(Destination_Folder_Textbox);
 		Thread.sleep(3000);
-		 jsclick(Cabinet);
+		selectElement(Cabinet);
 			Thread.sleep(3000);
-			 jsclick(Drawer);
+			selectElement(Drawer);
 			Thread.sleep(5000);
-			jsclick(CaseSensitiveRoomFolder);
+			selectElement(CaseSensitiveRoomFolder);
 			Thread.sleep(5000);
 		jsclick(OK_Button_BrowseforFolder);
 		Thread.sleep(3000);
@@ -970,10 +910,8 @@ public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 		jsclick(EnterFileNameOKBTN);
 		Thread.sleep(5000);
 		//jsclick(PDFDocumentPage);
-		 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
 		 jsclick(CreateBTN);
-		 Thread.sleep(15000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+		 Thread.sleep(8000);
 		 jsclick(viewOption);
 		Thread.sleep(8000);
 		jsclick(AdvancedTool);
@@ -1012,7 +950,7 @@ public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 		    Thread.sleep(3000);
 		    VisiblityOf(ReopenTheDocument);
 		    jsclick(ReopenTheDocument);
-		    Thread.sleep(10000);
+		    Thread.sleep(8000);
 		    jsclick(Refresh_Button(driver));
 		    Thread.sleep(4000);
 	}
@@ -1038,10 +976,10 @@ public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 		act.click(DocumentCVRep).sendKeys("CaseSenstiveWordDocument").build().perform();
 		
 		Thread.sleep(5000);
-		WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		
 		 jsclick(CreateBTN);
 		 Thread.sleep(10000);
-		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	
 		 jsclick(viewOption);
 		 Thread.sleep(10000);
 		movingElement(Move_To_PlusIcon);
@@ -1069,35 +1007,39 @@ public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 	    jsclick(ReopenTheDocument);
 	    Thread.sleep(8000);
 	    jsclick(Refresh_Button(driver));
-	    Thread.sleep(3000);
+	    Thread.sleep(7000);
 	}
 
-public void AdvancedViewPDFDocument() throws Exception {
-	Reporter.log("Scenario 3: Create new PDF document ");
+/*public void AdvancedViewPDFDocument() throws Exception {
+	Reporter.log("Scenario 4: Create new PDF document ");
 	jsclick(Click_New_Document);
-	Reporter.log("User click on the new document option");
+	Reporter.log("Click on New Document tab");
 	Thread.sleep(2000);
 	jsclick(Destination_Folder_Textbox);
-	Reporter.log("User click on the Destination folder text box");
+	Reporter.log("Click the 'Select destination folder location' text box.");
 	Thread.sleep(3000);
-	 jsclick(Cabinet);
-	 Reporter.log("User expand the cabinet");
-		Thread.sleep(3000);
-		 jsclick(Drawer);
-		 Reporter.log("User expand drawer");
+	 Reporter.log("'Brower for folder' dialog should be open.");
+	selectElement(Cabinet);
+	 Reporter.log("Expand the cabinet");
+		Thread.sleep(4000);
+		ElementToBeClickable(Drawer);
+		selectElement(Drawer);
+		 Reporter.log("Expand drawer");
 		Thread.sleep(5000);
-		jsclick(Folder);
-		 Reporter.log("User select the folder");
+		selectElement(Folder);
+		 Reporter.log("Select a folder");
+		
+		 Reporter.log("Select a folder");
 		Thread.sleep(5000);
 		
 	jsclick(OK_Button_BrowseforFolder);
-	 Reporter.log("User selected the folder successfully...");
+	 Reporter.log("Folder selected successfully...");
 	Thread.sleep(3000);
-	getSelect_Document_Type_Dropdown();
-	 Reporter.log("User click on the document type dropdown and select the document type successfully.");
+	jsclick(getSelect_Document_Type_Dropdown());
+	 Reporter.log("Click the 'Select document type' dropdown and select the document type.");
 	Thread.sleep(3000);
 	movingclkElement(Enter_ReportName);
-	 Reporter.log("User enter the report name");
+	 Reporter.log("Enter the value into index field");
 	sendvalue(Enter_ReportName, readFromExAdvancedView(2, 1));
 	Thread.sleep(5000);
 	
@@ -1105,48 +1047,47 @@ public void AdvancedViewPDFDocument() throws Exception {
 	Reporter.log("Mouse hover on the browse icon");
 	Thread.sleep(4000);
 	jsclick(NewPDfDoc);
-	Reporter.log("Add new pdf document");
+	Reporter.log("Select New PDF document");
 	Thread.sleep(4000);
 	EnterFileNAmePDF.sendKeys(readFromExAdvancedView(2, 1));
 	Thread.sleep(6000);
 	
 	jsclick(EnterFileNameOKBTN);
-	 Reporter.log("User click on the file name ok button");
+	 Reporter.log("Enter the file name");
 	Thread.sleep(5000);
-	//jsclick(PDFDocumentPage);
-	 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
 	 jsclick(CreateBTN);
-	 Reporter.log("User click on the create button");
-	 Thread.sleep(15000);
-	WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	 Reporter.log("Click on the create button");
+	 Thread.sleep(10000);
 	 jsclick(viewOption); Reporter.log("click on the view option");
 	Thread.sleep(8000);
 	jsclick(AdvancedTool);
-	Reporter.log("Click on advanced tool");
+	Reporter.log("Click on advanced tool icon");
 	Thread.sleep(4000);
 	Actions act=new Actions(driver);
 	//act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeam").sendKeys(Keys.ENTER).sendKeys("Nisha").build().perform();
 	act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(1, 0)).build().perform();
 	    Thread.sleep(8000);
-	    Reporter.log("Click on the advanced tool free text icon, enter the data");
-	
-	 Thread.sleep(15000);
+	    Reporter.log("Click on free text icon.");
+	    Reporter.log("Enter data into -free text box");
+	 Thread.sleep(10000);
 	    act.click(AddComment).moveToElement(Page).click().build().perform();
-	    Reporter.log("Click on the comment icon, add the comment");
+	    Reporter.log("Click on comment icon, add a comment");
+	    
 	    Thread.sleep(5000);
 	    jsclick(SaveTab);
+	    Reporter.log("Comment added successfully");
 	    Thread.sleep(7000);
 	    VisiblityOf(SaveTabOKBTN);
-	    Reporter.log("Click on save icon");
+	    Reporter.log("Click on save icon from viewer menu tab");
 	    jsclick(SaveTabOKBTN);
-	    Reporter.log("document saved successfully");
+	    Reporter.log("Document saved successfully");
 	    Thread.sleep(8000);
-	   /* jsclick(CloseIcon);
+	    jsclick(CloseIcon);
 	    Thread.sleep(3000);
 	    VisiblityOf(ReopenTheDocument);
 	    jsclick(ReopenTheDocument);
 	   
-	    Thread.sleep(8000);*/
+	    Thread.sleep(8000);
 	    ElementToBeClickable(AdvancedToolTextIcon);
 	    act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(0, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
 	    //act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeamPDFDocument").build().perform();
@@ -1159,123 +1100,126 @@ public void AdvancedViewPDFDocument() throws Exception {
 	    jsclick(SaveTabOKBTN);
 	    Thread.sleep(8000);
 	    jsclick(CloseIcon);
-	    Reporter.log("Click on the close icon");
+	    Reporter.log("Click on the Close icon");
 	    Thread.sleep(3000);
 	    VisiblityOf(ReopenTheDocument);
-	    Reporter.log("Reopen the document again");
+	    Reporter.log("Reopen the Created pdf file document");
 	    jsclick(ReopenTheDocument);
 	    Thread.sleep(10000);
 	  
 	    jsclick(Refresh_Button(driver));
-	    Reporter.log("  All saved datas are visible on the page there is no data loss...");
+	    Reporter.log("All saved data should be display successfully...");
 	    Thread.sleep(4000);
 }
 	
-
 public void AdvancedViewExcelDocumentt() throws Exception {
 	
-	Reporter.log("Scenario 4: Create new Excel document ");
+	Reporter.log("Scenario 3: Create New Excel Document ");
+	Thread.sleep(3000);
 	jsclick(Click_New_Document);
-	Reporter.log("User click on the new document option");
+	Reporter.log("Click the New Document tab");
 	Thread.sleep(2000);
 	jsclick(Destination_Folder_Textbox);
-	Reporter.log("User click on the Destination folder text box");
+	Reporter.log("Click the 'Select destination folder location' text box.");
 	Thread.sleep(3000);
-	 jsclick(Cabinet);
-	 Reporter.log("User expand the cabinet");
+	selectElement(Cabinet);
+	 Reporter.log("Expand the cabinet");
 		Thread.sleep(3000);
-		 jsclick(Drawer);
-		 Reporter.log("User expand drawer");
+		selectElement(Drawer);
+		 Reporter.log("Expand the drawer");
 		Thread.sleep(5000);
-		jsclick(Folder);
-		 Reporter.log("User select the folder");
+		selectElement(Folder);
+		 Reporter.log("Select a folder");
 		Thread.sleep(5000);
 		
 	jsclick(OK_Button_BrowseforFolder);
-	 Reporter.log("User selected the folder successfully...");
+	 Reporter.log("Folder selected successfully...");
 	Thread.sleep(3000);
-	getSelect_Document_Type_Dropdown();
-	 Reporter.log("User click on the document type dropdown and select the document type successfully.");
+	jsclick(getSelect_Document_Type_Dropdown());
+	 Reporter.log("Click the 'Select document type' dropdown and select the document type.");
 	Thread.sleep(3000);
 	movingclkElement(Enter_ReportName);
-	 Reporter.log("User enter the report name");
+	 Reporter.log("Enter the value into index field");
 	sendvalue(Enter_ReportName, readFromExAdvancedView(4, 1));
 	Thread.sleep(5000);
 	
 	
-	WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
 	 jsclick(CreateBTN);
 	 Reporter.log("Click on the create button");
 	 Thread.sleep(10000);
-	WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	
 	 jsclick(viewOption);
-	 Reporter.log("Click on view option");
+	 Reporter.log("Click on View option");
 	 Thread.sleep(10000);
 	movingElement(Move_To_PlusIcon);
-	 Reporter.log("Move to browse icon");
+	 Reporter.log("Mouse hover on browse icon");
 	Thread.sleep(2000);
 	jsclick(ExcelSheet);
-	Reporter.log("Select new excel spread sheet");
+	Reporter.log("Select New ExcelSpread sheet");
 	Thread.sleep(3000);
 	EnterFileNAmePDF.sendKeys(readFromExAdvancedView(4, 1));
-	 Reporter.log("Enter the file name");
+	 Reporter.log("Enter file name dialog should be open");
 	Thread.sleep(4000);
 	
 	jsclick(EnterFileNameOKBTN);
-	 Reporter.log("Click file name OK button");
+	 Reporter.log("Enter file name and click OK button");
 	Actions act=new Actions(driver);
 	Thread.sleep(3000);
+	 Reporter.log("'Enter file name' dialog should be closed successfully...");
 	act.click(ExcelSheetFirstRow).sendKeys(readFromExAdvancedView(2, 0)).build().perform();
 	Thread.sleep(3000);
-	Reporter.log("Enter data in the first row");
+	Reporter.log("Enter data into the first row");
 	act.click(ExcelSheetFourthRow).sendKeys(readFromExAdvancedView(3, 0)).build().perform();
-	 Reporter.log("Enter data in the second row");
+	 Reporter.log("Enter data into the second row");
 	Thread.sleep(5000);
     jsclick(SaveTab);
-    Reporter.log("Click on the save button");
+    Reporter.log("Click on save icon from viewer tool bar");
     Thread.sleep(7000);
     VisiblityOf(SaveTabOKBTN);
     jsclick(SaveTabOKBTN); 
-    Reporter.log("Click on save successfull dialog box ok button");
+    Reporter.log("Click on save successfull dialog box OK button");
     Thread.sleep(8000);
     jsclick(CloseIcon);
-    Reporter.log("Click on close icon");
+    Reporter.log("Click on Close icon");
     Thread.sleep(3000);
     VisiblityOf(ReopenTheDocument);
     jsclick(ReopenTheDocument);
-    Reporter.log("Reopen the document again");
+    Reporter.log("Document closed successfully...");
+    Reporter.log("Reopen the created document");
     Thread.sleep(8000);
-    Reporter.log("The document shows all saved data there is no data loss...");
+    Reporter.log("All saved data should be displayed successfully...");
     jsclick(Refresh_Button(driver));
     Thread.sleep(3000);
-}
+}*/
 
 public void AdvancedViewPDFDocument_WithSpcialCharacterFileName() throws Exception {
-	
+	Thread.sleep(2000);
 	jsclick(Click_New_Document);
-	Reporter.log("User click on new document tab");
+	Reporter.log("Scenario : Advanced viewer negative script");
+	Reporter.log("Click on new document tab");
 	Thread.sleep(2000);
 	jsclick(Destination_Folder_Textbox);
-	Reporter.log("User click on destination folder text box");
+	Reporter.log("Click on destination folder text box");
 	Thread.sleep(3000);
-	 jsclick(Cabinet);
-	 Reporter.log("User expand the cabinet");
-		Thread.sleep(3000);
-		 jsclick(Drawer);
-		 Reporter.log("User expand the drawer");
+	 selectElement(Cabinet);
+	 Reporter.log("Expand the cabinet");
+		Thread.sleep(5000);
+		ElementToBeClickable(Drawer);
+		 selectElement(Drawer);
+		 Reporter.log("Expand the drawer");
 		Thread.sleep(5000);
 		selectElement(Folder);
-		Reporter.log("User click select the folder");
+		Reporter.log("Click select the folder");
 		Thread.sleep(5000);
-		Reporter.log("User click on Browse folder OK button");
+		Reporter.log("Click on Browse folder OK button");
 	jsclick(OK_Button_BrowseforFolder);
 	Thread.sleep(3000);
-	Reporter.log("User select a document type as CVReports");
+	Reporter.log("Select a document type");
 	getSelect_Document_Type_Dropdown();
 	Thread.sleep(3000);
 	movingclkElement(Enter_ReportName);
-	Reporter.log("User enter document name");
-	sendvalue(Enter_ReportName, "!@PDF document Negative Script");
+	Reporter.log("Enter document name");
+	sendvalue(Enter_ReportName, readFrmXLNEgative(2, 1));
 	Thread.sleep(5000);
 	movingElement(Move_To_PlusIcon);
 	Reporter.log("Mouse hover on browse icon");
@@ -1291,9 +1235,9 @@ public void AdvancedViewPDFDocument_WithSpcialCharacterFileName() throws Excepti
 	Thread.sleep(3000);
 	System.out.println("Validation message:"+FileMessage.getText());
 	jsclick(InvalidDilogOKBTN);
-	Reporter.log("User click on invalid dialog OK button");
+	Reporter.log("Click on invalid dialog OK button");
 	Thread.sleep(4000);
-	EnterFileNAmePDF.sendKeys("<?Pdf Document");
+	EnterFileNAmePDF.sendKeys(readFrmXLNEgative(3, 1));
 	Thread.sleep(6000);
 	
 	jsclick(EnterFileNameOKBTN);
@@ -1305,50 +1249,78 @@ public void AdvancedViewPDFDocument_WithSpcialCharacterFileName() throws Excepti
 	 Thread.sleep(7000);
 	 jsclick(Refresh_Button(driver));*/
      jsclick(NavigateBTN);
-     Thread.sleep(18000);
+     Thread.sleep(12000);
      jsclick(NavigateDocOpen);
 	
 }
 
 
 public void CreateDocumentAdvancedViewWordDocument_SQL() throws Exception {
-	
+	Thread.sleep(3000);
 	jsclick(Click_New_Document);
 	Thread.sleep(2000);
 	jsclick(Destination_Folder_Textbox);
-	Thread.sleep(3000);
-	 jsclick(Cabinet);
+	Thread.sleep(4000);
+	/* jsclick(Cabinet);
 		Thread.sleep(3000);
 		 jsclick(Drawer);
 		Thread.sleep(5000);
 		jsclick(SQLRoomFolder);
-		Thread.sleep(5000);
+		Thread.sleep(5000);*/
+	Thread.sleep(8000);
 	
+	WebElement AutomationCab = driver.findElement(By.xpath("//*[@id=\"createDocuemntNavigator\"]/ul/li[1]/ins"));
+	jsclick(AutomationCab);
+	Thread.sleep(5000);
+	WebElement AutomationDrawer = driver.findElement(By.xpath("//*[@id=\"createDocuemntNavigator\"]/ul/li[1]/ul/li/ins"));
+	jsclick(AutomationDrawer);
+	Thread.sleep(4000);
+	WebElement AutomationFolder = driver.findElement(By.xpath("//*[@id=\"createDocuemntNavigator\"]/ul/li[1]/ul/li/ul/li[3]/a"));
+	jsclick(AutomationFolder);
+	
+
+	
+	
+	Thread.sleep(4000);
 	jsclick(OK_Button_BrowseforFolder);
-	Thread.sleep(3000);
+	Thread.sleep(4000);
 	getSelect_Document_Type_Dropdown();
 	Thread.sleep(3000);
 	Actions act=new Actions(driver);
-	act.click(DocumentCVRep).sendKeys("New word document").build().perform();
-	Thread.sleep(5000);
+	act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(4, 1)).build().perform();
+	Thread.sleep(2000);
 	
 	movingElement(Move_To_PlusIcon);
-	Thread.sleep(5000);
+	Thread.sleep(3000);
 	
 	jsclick(WordDocument);
 	EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
-	Thread.sleep(5000);
+	Thread.sleep(3000);
 	ElementToBeClickable(EnterFileNameOKBTN);
 	jsclick(EnterFileNameOKBTN);
-	Thread.sleep(8000);
-	 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
-	 jsclick(CreateBTN);
-	 Thread.sleep(10000);
-	WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
-	 jsclick(viewOption);
-	 Thread.sleep(15000);
+	Thread.sleep(2000);
+	
+	 movingElement(Move_To_PlusIcon);
+		Thread.sleep(3000);
+		
+		jsclick(WordDocument);
+		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
+		Thread.sleep(3000);
+		ElementToBeClickable(EnterFileNameOKBTN);
+		jsclick(EnterFileNameOKBTN);
+		Thread.sleep(3000);
+		movingElement(Move_To_PlusIcon);
+		Thread.sleep(2000);
+		
+		jsclick(WordDocument);
+		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
+		Thread.sleep(2000);
+		ElementToBeClickable(EnterFileNameOKBTN);
+		jsclick(EnterFileNameOKBTN);
+		Thread.sleep(3000);
+	// Thread.sleep(15000);
 	//Actions act=new Actions(driver);
-	ElementToBeClickable(WordDocPage);
+	/*ElementToBeClickable(WordDocPage);
 	act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(0, 0)).build().perform();
 	 Thread.sleep(10000);
 	    jsclick(SaveTab);
@@ -1366,10 +1338,10 @@ public void CreateDocumentAdvancedViewWordDocument_SQL() throws Exception {
 		Thread.sleep(5000);
 	jsclick(TableDialogOKBTN);	
 	 Thread.sleep(5000);
-	/* jsclick(LinkOpt);
+	 jsclick(LinkOpt);
 	LinkAddress.sendKeys("https://github.com/Vidya3011/CV_Automation.git");
 	Thread.sleep(3000);
-	jsclick(TableDialogOKBTN);	*/
+	jsclick(TableDialogOKBTN);	
 	Thread.sleep(3000);
 	act.click(WordDocPage).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
 	
@@ -1383,33 +1355,42 @@ public void CreateDocumentAdvancedViewWordDocument_SQL() throws Exception {
 	    Thread.sleep(3000);
 	    VisiblityOf(ReopenTheDocument);
 	    jsclick(ReopenTheDocument);
-	    Thread.sleep(10000);
-	    jsclick(Refresh_Button(driver));
+		jsclick(SaveTab);
+	    Thread.sleep(3000);
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);*/
+	    WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		 jsclick(CreateBTN);
+		 Thread.sleep(5000);
+		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"modelHome\"]"));
+		 jsclick(viewOption);
+	    Thread.sleep(3000);
+	  //  jsclick(Refresh_Button(driver));
 }
  
 public void AdvancedViewPDFDocument_SQL() throws Exception {
-	
+	Thread.sleep(2000);
 	jsclick(Click_New_Document);
 	Thread.sleep(2000);
 	jsclick(Destination_Folder_Textbox);
-	Thread.sleep(2000);
+	
 	Thread.sleep(3000);
-	WebElement AutomationCab = driver.findElement(By.xpath("//*[@id=\"144\"]/ins"));
-	jsclick(AutomationCab);
-	Thread.sleep(2000);
-	WebElement AutomationDrawer = driver.findElement(By.xpath("//*[@id=\"145\"]/ins"));
-	jsclick(AutomationDrawer);
-	Thread.sleep(2000);
-	WebElement AutomationFolder = driver.findElement(By.xpath("//*[@id=\"434\"]/a"));
-	jsclick(AutomationFolder);
-	Thread.sleep(2000);
+	WebElement AutomationCab = driver.findElement(By.xpath("//*[@id='createDocuemntNavigator']/ul/li[1]/a"));
+	selectElement(AutomationCab);
+	Thread.sleep(3000);
+	WebElement AutomationDrawer = driver.findElement(By.xpath("//*[@id='createDocuemntNavigator']/ul/li[1]/ul/li/a"));
+	selectElement(AutomationDrawer);
+	Thread.sleep(3000);
+	WebElement AutomationFolder = driver.findElement(By.xpath("//*[@id='createDocuemntNavigator']/ul/li[1]/ul/li/ul/li[1]/a"));
+	selectElement(AutomationFolder);
+	Thread.sleep(3000);
 
 	jsclick(OK_Button_BrowseforFolder);
 	Thread.sleep(3000);
 	getSelect_Document_Type_Dropdown();
 	Thread.sleep(3000);
 	Actions act=new Actions(driver);
-	act.click(DocumentCVRep).sendKeys("New pdf document").build().perform();
+	act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(5, 1)).build().perform();
 	
 	Thread.sleep(3000);
 	movingElement(Move_To_PlusIcon);
@@ -1421,6 +1402,15 @@ public void AdvancedViewPDFDocument_SQL() throws Exception {
 	
 	jsclick(EnterFileNameOKBTN);
 	Thread.sleep(3000);
+	 try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+			}
+			catch(Exception e) {
+				System.out.println("Alert not present");
+			}
 	//jsclick(PDFDocumentPage);
 	 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
 	 jsclick(CreateBTN);
@@ -1436,46 +1426,44 @@ public void AdvancedViewPDFDocument_SQL() throws Exception {
 			catch(Exception e) {
 				System.out.println("Alert not present");
 			}
-	//Thread.sleep(8000);
-	/*jsclick(AdvancedTool);
-	Thread.sleep(4000);
-	//Actions act=new Actions(driver);
-	//act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeam").sendKeys(Keys.ENTER).sendKeys("Nisha").build().perform();
-	act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(1, 0)).build().perform();
-	    Thread.sleep(8000);
+	 Thread.sleep(5000);
+	 driver.findElement(By.xpath("//*[@id=\"general\"]/div/div[1]/span")).click();
+		movingElement(Move_To_PlusIcon);
+		Thread.sleep(4000);
+		jsclick(Browse_Option);
+		Thread.sleep(3000);
 	
-	 Thread.sleep(15000);
-	    act.click(AddComment).moveToElement(Page).click().build().perform();
-	    Thread.sleep(5000);
-	    jsclick(SaveTab);
-	    Thread.sleep(7000);
-	    VisiblityOf(SaveTabOKBTN);
-	    jsclick(SaveTabOKBTN);
-	    Thread.sleep(8000);*/
-	   /* jsclick(CloseIcon);
-	    Thread.sleep(3000);
-	    VisiblityOf(ReopenTheDocument);
-	    jsclick(ReopenTheDocument);
-	   
-	    Thread.sleep(8000);*/
-	  /*  ElementToBeClickable(AdvancedToolTextIcon);
-	    act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(0, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
-	    //act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeamPDFDocument").build().perform();
-		Thread.sleep(8000);
-		 act.click(AddComment).moveToElement(Page).click().build().perform();
-	    Thread.sleep(5000);
-	    jsclick(SaveTab);
-	    Thread.sleep(3000);
-	    VisiblityOf(SaveTabOKBTN);
-	    jsclick(SaveTabOKBTN);
-	    Thread.sleep(8000);
-	    jsclick(CloseIcon);
-	    Thread.sleep(3000);
-	    VisiblityOf(ReopenTheDocument);
-	    jsclick(ReopenTheDocument);
-	    Thread.sleep(10000);
-	    jsclick(Refresh_Button(driver));
-	    Thread.sleep(4000);*/
+		Thread.sleep(3000);
+		Process proc=Runtime.getRuntime().exec("D:\\RNishaAutoIt\\NishaRScript.exe");
+		 InputStream is= proc.getInputStream();
+			
+			int ret=0;
+			while(ret != -1)
+			{
+				ret=is.read();
+				
+			}
+			
+		
+		 try {
+				WebDriverWait wait1 = new WebDriverWait(driver, 20);
+				wait1.until(ExpectedConditions.alertIsPresent());
+				Alert alt = driver.switchTo().alert();
+				alt.accept();
+				}
+				catch(Exception e) {
+					System.out.println("Alert not present");
+				}
+		 Thread.sleep(2000);
+			SpecialCharFilenames pojo = new SpecialCharFilenames();
+		
+		movingElement(pojo.getSave_button());
+			jsclick(pojo.getSave_button());
+			Thread.sleep(5000);
+			jsclick(pojo.getDocumentSave_Ok_button());
+			jsclick(Refresh_Button(driver));
+			Thread.sleep(4000);
+		
 }
 	  
 
@@ -1496,15 +1484,15 @@ public void AdvancedViewExcelDocumentt_SQL() throws Exception {
 	getSelect_Document_Type_Dropdown();
 	Thread.sleep(3000);
 	Actions act=new Actions(driver);
-	act.click(DocumentCVRep).sendKeys("New excel document").build().perform();
+	act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(3, 1)).build().perform();
 	
 	Thread.sleep(5000);
-	WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+
 	 jsclick(CreateBTN);
-	 Thread.sleep(10000);
-	WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	 Thread.sleep(8000);
+
 	 jsclick(viewOption);
-	 Thread.sleep(10000);
+	 Thread.sleep(8000);
 	movingElement(Move_To_PlusIcon);
 	Thread.sleep(2000);
 	jsclick(ExcelSheet);
@@ -1534,6 +1522,28 @@ public void AdvancedViewExcelDocumentt_SQL() throws Exception {
 }
 
 
+public void  ExpandNodes() throws Exception{
+	Thread.sleep(1000);
+	// jsclick(Refresh_Button(driver));
+	/*Thread.sleep(2000);
+	jsclick(Click_New_Document);
+	Thread.sleep(2000);
+	jsclick(Destination_Folder_Textbox);*/
+	
+	Thread.sleep(3000);
+	WebElement AutomationCab = driver.findElement(By.xpath("//*[@id='viewDocumentnavigator']/ul/li[4]/a"));
+	selectElement(AutomationCab);
+	Thread.sleep(4000);
+	WebElement AutomationDrawer = driver.findElement(By.xpath("//*[@id='viewDocumentnavigator']/ul/li[4]/ul/li/a"));
+	selectElement(AutomationDrawer);
+	Thread.sleep(2000);
+	WebElement AutomationFolder = driver.findElement(By.xpath("//*[@id='viewDocumentnavigator']/ul/li[4]/ul/li/ul/li/a"));
+	selectElement(AutomationFolder);
+	Thread.sleep(2000);
+
+	
+	
+}
 
 
 
@@ -1542,7 +1552,538 @@ public void AdvancedViewExcelDocumentt_SQL() throws Exception {
 
 
 
+public void  CerateDocPDF() throws Exception{
+	/*Thread.sleep(1000);
+	 jsclick(Refresh_Button(driver));
+	Thread.sleep(2000);
+	jsclick(Click_New_Document);
+	Thread.sleep(2000);
+	jsclick(Destination_Folder_Textbox);
+	
+	Thread.sleep(3000);
+	WebElement AutomationCab = driver.findElement(By.xpath("//*[@id='createDocuemntNavigator']/ul/li[1]/a"));
+	selectElement(AutomationCab);
+	Thread.sleep(2000);
+	WebElement AutomationDrawer = driver.findElement(By.xpath("//*[@id='createDocuemntNavigator']/ul/li[1]/ul/li/a"));
+	selectElement(AutomationDrawer);
+	Thread.sleep(2000);
+	WebElement AutomationFolder = driver.findElement(By.xpath("//*[@id='createDocuemntNavigator']/ul/li[1]/ul/li/ul/li[1]/a"));
+	selectElement(AutomationFolder);
+	Thread.sleep(2000);
 
+	jsclick(OK_Button_BrowseforFolder);*/
+	Thread.sleep(2000);
+	jsclick(Click_New_Document);
+	Thread.sleep(2000);
+	
+	 Thread.sleep(3000);
+	getSelect_Document_Type_Dropdown();
+	Thread.sleep(3000);
+	Actions act=new Actions(driver);
+	try {
+		
+	
+	act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(5, 1)).build().perform();
+	}
+	catch(Exception e) {
+		System.out.println("Document name not enter failed");
+	}
+	Thread.sleep(3000);
+	//driver.findElement(By.xpath("//*[@id=\"general\"]/div/div[1]/span")).click();
+//	movingElement(Move_To_PlusIcon);
+	movingElement(Move_To_PlusIcon);
+	Thread.sleep(4000);
+	jsclick(NewPDfDoc);
+	Thread.sleep(5000);
+	EnterFileNAmePDF.sendKeys(readFromExAdvancedView(2, 1));
+	Thread.sleep(3000);
+	
+	jsclick(EnterFileNameOKBTN);
+	Thread.sleep(3000);
+	 try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+			}
+			catch(Exception e) {
+				System.out.println("Alert not present");
+			}
+	/*Thread.sleep(2000);
+	movingElement(Move_To_PlusIcon);
+	
+	try {
+		
+		act.moveToElement(Browse_Option).click().build().perform();
+	}
+	catch(JavascriptException e) {
+		System.out.println("Exception there");
+	}
+	
+	
+	Thread.sleep(5000);
+	try {
+	Process proc=Runtime.getRuntime().exec("D:\\RNishaAutoIt\\SIDBIAuto.exe");
+	 InputStream is= proc.getInputStream();
+	 int ret=0;
+		while(ret != -1)
+		{
+			ret=is.read();
+			
+		}
+	}
+	catch(Exception e) {
+		System.out.println("Creating document without page");
+	}
+		
+		
+	
+	 try {
+			alertIsPresent();
+			acceptAlert();
+			}
+			catch(Exception e) {
+				System.out.println("Alert not present");
+			}*/
+	 Thread.sleep(2000);
+	 WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+	 jsclick(CreateBTN);
+	 try {
+		
+		//*[@id='messageContent']
+	WebElement Repname= driver.findElement(By.xpath("//*[@id='messageButtonOK']"));
+	 WebElement Repnamedialog= driver.findElement(By.xpath("//*[@id='messageContent']"));
+	if(Repnamedialog.isDisplayed()) {
+		jsclick(Repname);
+	}
+	 }
+	catch(Exception e) {
+		System.out.println("Document created successfully...");
+	}
+	 
+	 Thread.sleep(2000);
+	WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+	 jsclick(viewOption);
+	 try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+			}
+			catch(Exception e) {
+				System.out.println("Alert not present");
+			}
+	
+	
+}
+
+
+public void UpdateDocument() throws Exception  {
+	Actions act=new Actions(driver);
+	driver.findElement(By.xpath("//*[@id=\"general\"]/div/div[1]/span")).click();
+	Thread.sleep(2000);
+	
+	movingElement(Move_To_PlusIcon);
+	
+	try {
+		
+		act.moveToElement(Browse_Option).click().build().perform();
+	}
+	catch(JavascriptException e) {
+		System.out.println("Exception there");
+	}
+	
+	
+	Thread.sleep(5000);
+	try {
+	Process proc=Runtime.getRuntime().exec("D:\\RNishaAutoIt\\SIDBIAuto.exe");
+	 InputStream is= proc.getInputStream();
+	 int ret=0;
+		while(ret != -1)
+		{
+			ret=is.read();
+			
+		}
+	}
+	catch(Exception e) {
+		System.out.println("Creating document without page");
+	}
+		
+		
+	
+	 try {
+			alertIsPresent();
+			acceptAlert();
+			}
+			catch(Exception e) {
+				System.out.println("Alert not present");
+			}
+	 Thread.sleep(4000);
+	 jsclick(SaveTab);
+	    Thread.sleep(5000);
+	    try {
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);
+	    }
+	    catch(Exception e) {
+	    	System.out.println("Save OK Button Clicked");
+	    }
+	    Thread.sleep(8000);
+}
+
+
+
+public void create_document_Auto() throws Exception {
+
+	Thread.sleep(2000);
+	jsclick(Click_New_Document);
+	Thread.sleep(2000);
+	
+	 Thread.sleep(3000);
+	getSelect_Document_Type_Dropdown();
+	Thread.sleep(3000);
+	Actions act=new Actions(driver);
+	try {
+		
+	
+	act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(5, 1)).build().perform();
+	}
+	catch(Exception e) {
+		System.out.println("Document name not enter failed");
+	}
+	Thread.sleep(3000);
+movingElement(Move_To_PlusIcon);
+
+try {
+	
+	act.moveToElement(Browse_Option).click().build().perform();
+}
+catch(JavascriptException e) {
+	System.out.println("Exception there");
+}
+
+
+Thread.sleep(25000);
+try {
+Process proc=Runtime.getRuntime().exec("D:\\RNishaAutoIt\\NishaRScript.exe");
+ InputStream is= proc.getInputStream();
+ int ret=0;
+	while(ret != -1)
+	{
+		ret=is.read();
+		
+	}
+}
+catch(Exception e) {
+	System.out.println("Creating document without page");
+}
+	
+Thread.sleep(3000);
+ try {
+		alertIsPresent();
+		acceptAlert();
+		}
+		catch(Exception e) {
+			System.out.println("Alert not present");
+		}
+ Thread.sleep(5000);
+ WebElement CreateBTN= driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+ jsclick(CreateBTN);
+ try {
+	
+	//*[@id='messageContent']
+WebElement Repname= driver.findElement(By.xpath("//*[@id='messageButtonOK']"));
+ WebElement Repnamedialog= driver.findElement(By.xpath("//*[@id='messageContent']"));
+if(Repnamedialog.isDisplayed()) {
+	jsclick(Repname);
+}
+ }
+catch(Exception e) {
+	System.out.println("Document created successfully...");
+}
+ 
+ Thread.sleep(2000);
+WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+ jsclick(viewOption);
+ try {
+		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+		wait1.until(ExpectedConditions.alertIsPresent());
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+		}
+		catch(Exception e) {
+			System.out.println("Alert not present");
+		}
 
 
 }
+
+
+
+public void CreateDocumentAdvancedViewWordDocument() throws Exception {
+	Reporter.log("Scenario 2: Create a document with Advanced viewer -  new word document.");
+	jsclick(Click_New_Document);
+	Reporter.log("Click the New Document tab.");
+	Thread.sleep(2000);
+	jsclick(Destination_Folder_Textbox);
+	
+	Reporter.log("Click the 'Select destination folder location' text box.");
+	Thread.sleep(3000);
+	 Reporter.log("'Brower for folder' dialog should be open.");
+	selectElement(Cabinet);
+	 Reporter.log("Expand the cabinet");
+		Thread.sleep(4000);
+		VisiblityOf(Drawer);
+		selectElement(Drawer);
+		 Reporter.log("Expand drawer");
+		Thread.sleep(5000);
+		selectElement(Folder);
+		 Reporter.log("Select a folder");
+		Thread.sleep(5000);
+		
+	jsclick(OK_Button_BrowseforFolder);
+	 Reporter.log("Folder selected successful...");
+	Thread.sleep(3000);
+	getSelect_Document_Type_Dropdown();
+	 Reporter.log("Click on 'Select document type' dropdown and select the document type.");
+	 Reporter.log("Document type selected successful...");
+	Thread.sleep(3000);
+	movingclkElement(Enter_ReportName);
+	 Reporter.log("Enter the value into index field");
+	sendvalue(Enter_ReportName, readFromExAdvancedView(3, 1));
+	Thread.sleep(5000);
+	
+	movingElement(Move_To_PlusIcon);
+	 Reporter.log("Mouse hover on the browse icon");
+	Thread.sleep(5000);
+	jsclick(WordDocument);
+	 Reporter.log("Select a 'New Word Document'");
+	EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
+	Thread.sleep(5000);
+	 Reporter.log("Enter file name dialog should be open.");
+	ElementToBeClickable(EnterFileNameOKBTN);
+	 Reporter.log("Enter the file name.");
+	jsclick(EnterFileNameOKBTN);
+	 Reporter.log("Click on OK button.");
+	 Reporter.log("'Enter file name' dialog should be closed successful...");
+	Thread.sleep(8000);
+	
+	 jsclick(CreateBTN);
+	 Reporter.log("Click on Create button");
+	 Thread.sleep(10000);
+	
+	 jsclick(viewOption);
+	 Reporter.log("'Document Created Successfully' dialog should be displayed");
+	 Reporter.log("Click on View option");
+	 Thread.sleep(15000);
+	Actions act=new Actions(driver);
+	ElementToBeClickable(WordDocPage);
+	act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(0, 0)).build().perform();
+	 Reporter.log("Enter data into the page");
+	Thread.sleep(10000);
+	    jsclick(SaveTab);
+	   
+	    Reporter.log("Click on the Save icon from viewer tool bar.");
+	    Thread.sleep(8000);
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);
+	    Reporter.log("Click on save successfull dialog OK button.");
+	    Thread.sleep(10000);
+	jsclick(WordDocImageOpt);
+	 Reporter.log("Click on image icon,it will show 'upload from computer' option.");
+	 Thread.sleep(2000);
+	 movingclkElement(UploadFromCmpOpt);
+	 Reporter.log("Select the 'upload from computer' option.");
+	 Thread.sleep(5000);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Flower or Curly bracket .exe");
+		Thread.sleep(10000);
+		 Reporter.log("Using Auto IT add the image from folder successful.");
+		jsclick(CreateTableopt);
+		 Reporter.log("Click on Table icon.");
+		Thread.sleep(5000);
+	jsclick(TableDialogOKBTN);
+	 Reporter.log("Add the table into the page.");
+	 Thread.sleep(5000);
+	/* jsclick(LinkOpt);
+	LinkAddress.sendKeys("https://github.com/Vidya3011/CV_Automation.git");
+	Thread.sleep(3000);
+	jsclick(TableDialogOKBTN);	*/
+	Thread.sleep(3000);
+	act.click(WordDocPage).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
+	 Reporter.log("Enter the data inside the table");
+	 Thread.sleep(5000);
+	    jsclick(SaveTab);
+	    Reporter.log("Click on the save icon from viewer tool bar");
+	    Thread.sleep(3000);
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);
+	    Reporter.log("The added data has been saved successfully...");
+	    Thread.sleep(8000);
+	    jsclick(CloseIcon);
+	    Reporter.log("Click on the close icon");
+	    Thread.sleep(3000);
+	    
+	    VisiblityOf(ReopenTheDocument);
+	    Reporter.log("Document closed successfully...");
+	    jsclick(ReopenTheDocument);
+	    Reporter.log("Reopen the created word file document...");
+	    Thread.sleep(10000);
+	    Reporter.log("All saved data should be display successfully...");
+	  //  jsclick(Refresh_Button(driver));
+}
+ 
+
+public void AdvancedViewPDFDocument() throws Exception {
+Reporter.log("Scenario 4:Create a document with Advanced viewer -  new PDF document ");
+jsclick(Click_New_Document);
+Reporter.log("Click on New Document tab");
+
+
+Thread.sleep(3000);
+getSelect_Document_Type_Dropdown();
+ Reporter.log("Click the 'Select document type' dropdown and select the document type.");
+Thread.sleep(3000);
+movingclkElement(Enter_ReportName);
+ Reporter.log("Enter the value into index field");
+sendvalue(Enter_ReportName, readFromExAdvancedView(2, 1));
+Thread.sleep(5000);
+
+movingElement(Move_To_PlusIcon);
+Reporter.log("Mouse hover on the browse icon");
+Thread.sleep(4000);
+jsclick(NewPDfDoc);
+Reporter.log("Select New PDF document");
+Thread.sleep(4000);
+EnterFileNAmePDF.sendKeys(readFromExAdvancedView(2, 1));
+Thread.sleep(6000);
+
+jsclick(EnterFileNameOKBTN);
+ Reporter.log("Enter the file name");
+Thread.sleep(5000);
+ jsclick(CreateBTN);
+ Reporter.log("Click on the create button");
+ Thread.sleep(10000);
+ jsclick(viewOption); Reporter.log("click on the view option");
+Thread.sleep(8000);
+jsclick(AdvancedTool);
+Reporter.log("Click on advanced tool icon");
+Thread.sleep(4000);
+Actions act=new Actions(driver);
+//act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeam").sendKeys(Keys.ENTER).sendKeys("Nisha").build().perform();
+act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(1, 0)).build().perform();
+    Thread.sleep(8000);
+    Reporter.log("Click on free text icon.");
+    Reporter.log("Enter data into -free text box");
+ Thread.sleep(10000);
+    act.click(AddComment).moveToElement(Page).click().build().perform();
+    Reporter.log("Click on comment icon, add a comment");
+    
+    Thread.sleep(5000);
+    jsclick(SaveTab);
+    Reporter.log("Comment added successfully");
+    Thread.sleep(7000);
+    VisiblityOf(SaveTabOKBTN);
+    Reporter.log("Click on save icon from viewer menu tab");
+    jsclick(SaveTabOKBTN);
+    Reporter.log("Document saved successfully");
+    Thread.sleep(8000);
+   /* jsclick(CloseIcon);
+    Thread.sleep(3000);
+    VisiblityOf(ReopenTheDocument);
+    jsclick(ReopenTheDocument);
+   
+    Thread.sleep(8000);*/
+    ElementToBeClickable(AdvancedToolTextIcon);
+    act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(0, 1)).sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
+    //act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeamPDFDocument").build().perform();
+	Thread.sleep(8000);
+	 act.click(AddComment).moveToElement(Page).click().build().perform();
+    Thread.sleep(5000);
+    jsclick(SaveTab);
+    Thread.sleep(3000);
+    VisiblityOf(SaveTabOKBTN);
+    jsclick(SaveTabOKBTN);
+    Thread.sleep(8000);
+    jsclick(CloseIcon);
+    Reporter.log("Click on the Close icon");
+    Thread.sleep(3000);
+    VisiblityOf(ReopenTheDocument);
+    Reporter.log("Reopen the Created pdf file document");
+    jsclick(ReopenTheDocument);
+    Thread.sleep(10000);
+  
+   // jsclick(Refresh_Button(driver));
+    Reporter.log("All saved data should be display successfully...");
+    Thread.sleep(4000);
+}
+
+public void AdvancedViewExcelDocumentt() throws Exception {
+
+Reporter.log("Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ");
+Thread.sleep(3000);
+jsclick(Click_New_Document);
+Reporter.log("Click on the New Document tab");
+
+
+Thread.sleep(3000);
+getSelect_Document_Type_Dropdown();
+ Reporter.log("Click on the 'Select document type' dropdown and select the document type.");
+Thread.sleep(3000);
+movingclkElement(Enter_ReportName);
+ Reporter.log("Enter the value into index field");
+sendvalue(Enter_ReportName, readFromExAdvancedView(4, 1));
+Thread.sleep(5000);
+
+
+ jsclick(CreateBTN);
+ Reporter.log("Click on the create button");
+ Thread.sleep(10000);
+
+ jsclick(viewOption);
+ Reporter.log("Click on View option");
+ Thread.sleep(10000);
+movingElement(Move_To_PlusIcon);
+ Reporter.log("Mouse hover on browse icon");
+Thread.sleep(2000);
+jsclick(ExcelSheet);
+Reporter.log("Select New Excel sheet");
+Thread.sleep(3000);
+EnterFileNAmePDF.sendKeys(readFromExAdvancedView(4, 1));
+ Reporter.log("Enter file name dialog should be open");
+Thread.sleep(4000);
+
+jsclick(EnterFileNameOKBTN);
+ Reporter.log("Enter file name and click OK button");
+Actions act=new Actions(driver);
+Thread.sleep(8000);
+ Reporter.log("'Enter file name' dialog should be closed successfully...");
+act.click(ExcelSheetFirstRow).sendKeys(readFromExAdvancedView(2, 0)).build().perform();
+Thread.sleep(3000);
+Reporter.log("Enter data into the first row");
+act.click(ExcelSheetFourthRow).sendKeys(readFromExAdvancedView(3, 0)).build().perform();
+ Reporter.log("Enter data into the second row");
+Thread.sleep(5000);
+jsclick(SaveTab);
+Reporter.log("Click on save icon from viewer tool bar");
+Thread.sleep(7000);
+VisiblityOf(SaveTabOKBTN);
+jsclick(SaveTabOKBTN); 
+Reporter.log("Click on 'Save successful' dialog box OK button");
+Thread.sleep(8000);
+jsclick(CloseIcon);
+Reporter.log("Click on Close icon");
+Thread.sleep(3000);
+VisiblityOf(ReopenTheDocument);
+jsclick(ReopenTheDocument);
+Reporter.log("Document closed successfully...");
+Reporter.log("Reopen the created document");
+Thread.sleep(8000);
+Reporter.log("All saved data should be displayed successfully...");
+jsclick(Refresh_Button(driver));
+Thread.sleep(3000);
+}
+
+}
+
+
+

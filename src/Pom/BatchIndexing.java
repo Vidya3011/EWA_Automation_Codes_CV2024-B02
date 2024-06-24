@@ -2,6 +2,7 @@ package Pom;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.Duration;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -13,13 +14,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 public class BatchIndexing extends Generic.BaseClass {
-
-	public static WebElement element = null;
 
 	public BatchIndexing() {
 		PageFactory.initElements(driver, this);
@@ -32,19 +33,21 @@ public class BatchIndexing extends Generic.BaseClass {
 
 		File src = new File("./data/TestData.xlsx");
 		FileInputStream fis = new FileInputStream(src);
-		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet s = wb.getSheet("BatchIndexing");
-		XSSFRow row = s.getRow(rowNo);
-		XSSFCell cll = row.getCell(cellNo);
-		String cellType = cll.getStringCellValue();
-		return cellType;
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("BatchIndexing");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
 	}
 
-	@FindBy(xpath = ("//*[@id=\"createReposFabButton\"]"))
+	@FindBy(xpath = "//*[@id=\"createReposFabButton\"]/img")
 	private WebElement BatchIndexing_MenuOption;
 
 	public WebElement getBatchIndexing_MenuOption() {
 		return BatchIndexing_MenuOption;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"addNewReposFileAndFolderSpan\"]")
@@ -54,49 +57,49 @@ public class BatchIndexing extends Generic.BaseClass {
 		return Add;
 	}
 
-	@FindBy(xpath = ("//*[@id=\"addReposFolderAnchor\"]"))
+	@FindBy(xpath = "//*[@id=\"addReposFolderAnchor\"]")
 	private WebElement AddFolder;
 
 	public WebElement getAddFolder() {
 		return AddFolder;
 	}
 
-	@FindBy(id = ("repositoryCreateFoldLabelTxt"))
+	@FindBy(xpath = "//*[@id=\"repositoryCreateFoldLabelTxt\"]")
 	private WebElement FolderText;
 
 	public WebElement getFolderText() {
 		return FolderText;
 	}
 
-	@FindBy(id = ("newFolderDescription"))
+	@FindBy(xpath = "//*[@id=\"newFolderDescription\"]")
 	private WebElement FolderDescription;
 
 	public WebElement getFolderDescription() {
 		return FolderDescription;
 	}
 
-	@FindBy(id = ("allowDeleteAtSourceFoldLevel"))
+	@FindBy(xpath = "//*[@id=\"allowDeleteAtSourceFoldLevel\"]")
 	private WebElement check1;
 
 	public WebElement getcheck1() {
 		return check1;
 	}
 
-	@FindBy(id = ("allowDeleteOnIndexFoldLevel"))
+	@FindBy(xpath = "//*[@id=\"allowDeleteOnIndexFoldLevel\"]")
 	private WebElement check2;
 
 	public WebElement getcheck2() {
 		return check2;
 	}
 
-	@FindBy(id = ("repostCreateModalOk"))
+	@FindBy(xpath = "//*[@id=\"repostCreateModalOk\"]")
 	private WebElement OkbuttonFolder;
 
 	public WebElement getOkbuttonFolder() {
 		return OkbuttonFolder;
 	}
 
-	@FindBy(css = ("#userBasedDropDownRepositoryFolders > dt"))
+	@FindBy(xpath = "//*[@id=\"userBasedDropDownRepositoryFolders\"]")
 	private WebElement clickFolderDropdown;
 
 	public WebElement getclickFolderDropdown() {
@@ -110,109 +113,113 @@ public class BatchIndexing extends Generic.BaseClass {
 		return SelectFolder;
 	}
 
-	@FindBy(xpath = "//input[@id='files']")
+	@FindBy(xpath = "//*[@id=\"files\"]")
 	private WebElement ChooseFile;
 
 	public WebElement getChooseFile() {
 		return ChooseFile;
 	}
 
-	@FindBy(xpath = ("(//input[@id='showThumbnailSelectToggle'])[1]"))
+	@FindBy(xpath = "//*[@id=\"showThumbnailSelectToggle\"]")
 	private WebElement ClickShowThumbnails;
 
 	public WebElement getClickShowThumbnails() {
 		return ClickShowThumbnails;
 	}
 
-	@FindBy(xpath = ("//tbody/tr[1]/td[1]/label[1]/input[1]"))
+	@FindBy(xpath = "//*[@id=\"repositoryFileListTable\"]/tbody/tr[1]/td[1]/label/input")
 	private WebElement SelectDoc1;
 
 	public WebElement getSelectDoc1() {
 		return SelectDoc1;
 	}
 
-	@FindBy(xpath = ("//tbody/tr[2]/td[1]/label[1]/input[1]"))
+	@FindBy(xpath = "//*[@id=\"repositoryFileListTable\"]/tbody/tr[2]/td[1]/label/input")
 	private WebElement SelectDoc2;
 
 	public WebElement getSelectDoc2() {
 		return SelectDoc2;
 	}
 
-	@FindBy(xpath = "(//span[@id='folderDescriptionSpan'])[1]")
+	@FindBy(xpath = "(//*[@id='folderDescriptionSpan'])[1]")
 	private WebElement VerifyFolderDescription;
 
-	public WebElement getVerifyFolderDescription() {
+	public void getVerifyFolderDescription() {
 		WebElement Description = VerifyFolderDescription;
-		System.out.println("File Description is:" + Description.getText());
-		return VerifyFolderDescription;
+		Reporter.log("File Description is:" + Description.getText() + "this message should show", true);
+
 	}
 
-	@FindBy(xpath = ("(//input[@id='createAsSingleRepo'])[1]"))
+	@FindBy(xpath = "//*[@id=\"createAsSingleRepo\"]")
 	private WebElement SingleDoc;
 
 	public WebElement getSingleDoc() {
 		return SingleDoc;
 	}
 
-	@FindBy(xpath = ("(//button[normalize-space()='Index'])[1]"))
+	@FindBy(xpath = "//*[@id=\"repostModalIndex\"]")
 	private WebElement Indexbutton;
 
 	public WebElement getIndexbutton() {
 		return Indexbutton;
 	}
 
-	@FindBy(xpath = ("//input[@id='createDocuemtnLocation']"))
+	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
 	private WebElement Destination_Folder_Textbox;
 
 	public WebElement getDestination_Folder_Textbox() {
 		return Destination_Folder_Textbox;
 	}
 
-	@FindBy(xpath = ("(//a[text()='CVApp Test'])[1]"))
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]"))
 	private WebElement Select_Cabinet;
 
 	public WebElement getSelect_Cabinet() {
 		return Select_Cabinet;
+
 	}
 
-	@FindBy(xpath = ("//a[text()='CVMobile App 2022']"))
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 	private WebElement Select_Drawer;
 
 	public WebElement getSelect_Drawer() {
 		return Select_Drawer;
+
 	}
 
-	@FindBy(xpath = ("//a[text()='Test apk']"))
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 	private WebElement Select_Folder;
 
 	public WebElement getSelect_Folder() {
 		return Select_Folder;
+
 	}
 
-	@FindBy(xpath = "//button[@id='navigatorTreeOk']")
+	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
 
 	public WebElement getOK_Button_BrowseforFolder() {
 		return OK_Button_BrowseforFolder;
 	}
 
-	@FindBy(id = "docTypeList")
+	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
 	private WebElement Click_Document_Type_Dropdown;
 
 	public WebElement getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
 		drop.selectByVisibleText("CVReports");
 		return Click_Document_Type_Dropdown;
+
 	}
 
-	@FindBy(id = "indices_33")
+	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
 	private WebElement Enter_Report_Name_Text;
 
 	public WebElement getEnter_Report_Name_Text() {
 		return Enter_Report_Name_Text;
 	}
 
-	@FindBy(xpath = "//button[@id='createDocumentSubmit']")
+	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
 	private WebElement Create_Button;
 
 	public WebElement getCreate_Button() {
@@ -220,7 +227,7 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//button[@id='viewCreatedDocument']")
+	@FindBy(xpath = "//*[@id=\"viewCreatedDocument\"]")
 	private WebElement View_Button;
 
 	public WebElement getView_Button() {
@@ -228,7 +235,7 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(linkText = "Show Thumbnails")
+	@FindBy(xpath = "//*[@id=\"settingsBtnShowThumbnail\"]/a")
 	private WebElement showThumbnailoption;
 
 	public WebElement getshowThumbnailoption() {
@@ -236,7 +243,7 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(linkText = "Delete")
+	@FindBy(xpath = "//*[@id=\"deleteBtnReposFolder\"]")
 	private WebElement DeleteDoc;
 
 	public WebElement getDeleteDoc() {
@@ -244,7 +251,7 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(linkText = "Settings")
+	@FindBy(xpath = "//*[@id=\"settingsBtnReposFolder\"]")
 	private WebElement settingoption;
 
 	public WebElement getsettingoption() {
@@ -252,27 +259,27 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(id = "allowDeleteAtSource")
+	@FindBy(xpath = "//*[@id=\"allowDeleteAtSource\"]")
 	private WebElement Deletesourceoption;
 
-	public WebElement getDeletesource_Option(WebDriver driver) {
+	public WebElement getDeletesource_Option() {
 		if (Deletesourceoption.isSelected() == true) {
 			jsclick(Deletesourceoption);
 		}
 		return Deletesourceoption;
 	}
 
-	@FindBy(id = "allowDeleteOnIndex")
+	@FindBy(xpath = "//*[@id=\"allowDeleteOnIndex\"]")
 	private WebElement allowDeleteOnIndex;
 
-	public WebElement getallowDeleteOnIndex_Option(WebDriver driver) {
+	public void getallowDeleteOnIndex_Option() {
 		if (allowDeleteOnIndex.isSelected() == false) {
 			jsclick(allowDeleteOnIndex);
 		}
-		return allowDeleteOnIndex;
+
 	}
 
-	@FindBy(id = "repostSettingsModalOk")
+	@FindBy(xpath = "//*[@id=\"repostSettingsModalOk\"]")
 	private WebElement repostSettingsModalOk;
 
 	public WebElement getrepostSettingsModalOk() {
@@ -280,7 +287,7 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "(//button[@id='repostModalCancel'])[1]")
+	@FindBy(xpath = "//*[@id=\"repostSettingsModalCancel\"]")
 	private WebElement CloseButton;
 
 	public WebElement getCloseButton() {
@@ -288,24 +295,11 @@ public class BatchIndexing extends Generic.BaseClass {
 
 	}
 
-	@FindBy(linkText = "Share Permission")
+	@FindBy(xpath = "//*[@id=\"shareBtnReposFolder\"]/a")
 	private WebElement sharePermission;
 
 	public WebElement getsharePermission() {
 		return sharePermission;
-	}
-
-	@FindBy(xpath = "//*[contains(text(),'ram')]")
-	private WebElement SelectUser;
-
-	public WebElement getSelectUser() {
-		WebElement user = SelectUser;
-		if (user.isSelected()) {
-			Reporter.log("user already selected");
-		} else {
-			jsclick(user);
-		}
-		return SelectUser;
 	}
 
 	@FindBy(xpath = "//*[@id=\"assignSharePermission\"]")
@@ -316,39 +310,64 @@ public class BatchIndexing extends Generic.BaseClass {
 	}
 
 	public void login_Assign_User() throws Exception {
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(BatchIndexing_excelRead(4, 1));
-		driver.findElement(By.id("loginPassword")).sendKeys(BatchIndexing_excelRead(5, 1));
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()= 'CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
-		driver.findElement(By.id("submitid")).click();
-		Reporter.log("Login button clicked successfully", true);
+
+		driver.findElement(LoginUsername).sendKeys(BatchIndexing_excelRead(1, 0));
+		Reporter.log("Enter valid batch Indexing permission assign username into username field", true);
+		driver.findElement(Password).sendKeys(BatchIndexing_excelRead(1, 1));
+		Reporter.log("Enter valid batch Indexing permission assign User password into password field", true);
+		WebElement room = driver.findElement(Room);
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Reporter.log("Select a room", true);
+		Thread.sleep(2000);
 		try {
-			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
-			sessionmsgYes.click();
-			Thread.sleep(6000);
+			Thread.sleep(2000);
+			WebElement Captch = driver.findElement(Captch_Image);
+			WebElement enterCaptch = driver.findElement(Enter_Captch_textbox);
+			enterCaptch.sendKeys(Captch.getText());
+			Reporter.log("Enter a valid captch under textbox", true);
 		} catch (Exception e) {
+			// captch is not displayed
+		}
+		driver.findElement(Login_button).click();
+		Reporter.log("Click on the Login button", true);
+		Thread.sleep(2000);
+		try {
+			WebElement sessionmsg = driver.findElement(session_message);
+			WebElement sessionmsgYes = driver.findElement(session_message_Yes);
+			Reporter.log(sessionmsg.getText() +  "this message is displayed", true);
+			Thread.sleep(2000);
+			sessionmsgYes.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the Yes button", true);
+
+		} catch (Exception e1) {
 			// Session message is not displayed
+		}
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.alertIsPresent());
+			acceptAlert();
+		} catch (Exception e) {
+			// Database alert is not present
 		}
 	}
 
-	@FindBy(id = "logedinusername")
+	@FindBy(xpath = "//*[@id=\"logoutElement\"]")
 	private WebElement Username;
 
 	public WebElement getUsername() {
 		return Username;
 	}
 
-	@FindBy(linkText = "Logout")
+	@FindBy(xpath = "//*[@id=\"idSidenav\"]/ul/li[1]/a")
 	private WebElement Logout;
 
 	public WebElement getLogout() {
 		return Logout;
 	}
 
-	@FindBy(id = "revokeSharePermission")
+	@FindBy(xpath = "//*[@id=\"revokeSharePermission\"]")
 	private WebElement Revoke;
 
 	public WebElement getRevoke() {
@@ -362,35 +381,18 @@ public class BatchIndexing extends Generic.BaseClass {
 		return Refreshbutton;
 	}
 
-	@FindBy(xpath = "//button[@id='repostCreateModalCancel']")
+	@FindBy(xpath = "//*[@id=\"repostCreateModalCancel\"]")
 	private WebElement Cancelbutton;
 
 	public WebElement getCancelbutton() {
 		return Cancelbutton;
 	}
 
-	@FindBy(xpath = "//button[@id='messageButtonOK']")
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement FolderOK;
 
 	public WebElement getFolderOK() {
 		return FolderOK;
-	}
-
-	@FindBy(xpath = "//a[@id='documentListSubMenu']")
-	private WebElement MoveTo_Cross;
-
-	public WebElement getMoveTo_Cross() {
-		element = MoveTo_Cross;
-		Actions action = new Actions(driver);
-		action.moveToElement(element).perform();
-		return MoveTo_Cross;
-	}
-
-	@FindBy(xpath = "//span[@class='e-input-group-icon e-ddl-icon']")
-	private WebElement clickdropdown;
-
-	public WebElement getclickdropdown() {
-		return clickdropdown;
 	}
 
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
@@ -398,24 +400,24 @@ public class BatchIndexing extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement Ok;
 
-	public WebElement getFoldernamevalidation() {
+	public void getFoldernamevalidation() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Failed to authenticate user";
 		String actualtext = Foldernamevalidation.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(Foldernamevalidation.getText());
+		Reporter.log(Foldernamevalidation.getText() + " this validation message should show", true);
 		jsclick(Ok);
-		return Foldernamevalidation;
+
 	}
 
-	@FindBy(css = ".e-multi-select-wrapper")
+	@FindBy(xpath = "//*[@id=\"reposAllUsersDiv\"]/div/div")
 	private WebElement Alluser;
 
 	public WebElement getAlluser() {
 		return Alluser;
 	}
 
-	@FindBy(css = (".e-selectall-parent .e-frame"))
+	@FindBy(xpath = ("//*[@id=\"reposAllUsersDiv\"]/div"))
 	private WebElement Selectcheckbox;
 
 	public WebElement getSelectcheckbox() {
@@ -425,26 +427,46 @@ public class BatchIndexing extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
 	private WebElement Uservalidation;
 
-	public WebElement getUservalidation() {
+	public void getUservalidation() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Please select a user to assign permission";
 		String actualtext = Uservalidation.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(Uservalidation.getText());
+		Reporter.log(Uservalidation.getText() + " this validation message should show", true);
 		jsclick(Ok);
-		return Uservalidation;
+
 	}
 
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
 	private WebElement Revokeuservalidation;
 
-	public WebElement getRevokeuservalidation() {
+	public void getRevokeuservalidation() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "Selected folder is not shared to any user";
 		String actualtext = Revokeuservalidation.getAttribute("value");
 		softassert.assertEquals(actualtext, expectedtext, "Text verified");
-		System.out.println(Revokeuservalidation.getText());
+		Reporter.log(Revokeuservalidation.getText() + " this validation message should show", true);
 		jsclick(Ok);
-		return Revokeuservalidation;
+
 	}
+
+	// Here Select User for Assign Permission.
+
+	@FindBy(xpath = "//*[@class=\"e-content e-dropdownbase\"]/ul/li[4]")
+	private WebElement AssignUser;
+
+	public WebElement getSelectrAssignUser() {
+		return AssignUser;
+
+	}
+
+	static By LoginUsername = By.xpath("//*[@id=\"userName\"]");
+	static By Password = By.xpath("//*[@id=\"loginPassword\"]");
+	static By Room = By.xpath("//*[@id=\"rooms\"]");
+	static By Captch_Image = By.xpath("//*[@id=\"image\"]");
+	static By Enter_Captch_textbox = By.xpath("//*[@id=\"captchaInput\"]");
+	static By Login_button = By.xpath("//*[@id=\"submitid\"]");
+	static By session_message = By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]");
+	static By session_message_Yes = By.xpath("//*[@id=\"cvModelLoginValidationOk\"]");
+	static By session_message_No = By.xpath("//*[@id=\"cvModelLoginValidationCancel\"]");
 }

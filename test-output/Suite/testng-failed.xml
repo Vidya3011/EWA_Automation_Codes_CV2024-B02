@@ -4,64 +4,38 @@
   <listeners>
     <listener class-name="Generic.ListenersRetry"/>
   </listeners>
-  <test thread-count="5" name="Test3(failed)">
+  <test thread-count="5" name="Test 12(failed)">
     <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
+      <class name="Script.PrintFunctionality">
         <methods>
           <include name="ladBrowser"/>
-          <include name="Createdocumentagain"/>
+          <include name="TC_A_Email_Reference"/>
+          <include name="TC_C_Email_ConvertPDF_WithAll_Annotations"/>
         </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+      </class> <!-- Script.PrintFunctionality -->
     </classes>
-  </test> <!-- Test3(failed) -->
-  <test thread-count="5" name="Test4(failed)">
+  </test> <!-- Test 12(failed) -->
+  <test thread-count="5" name="Test 15(failed)">
     <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
+      <class name="Script.LargeFiles_AutomationTesting">
         <methods>
-          <include name="ladBrowser"/>
-          <include name="Createdocumentagain"/>
+          <include name="TC_4_Upload_and_verify_Large_XLSX_file"/>
+          <include name="TC_2_Upload_and_verify_Large_TIFF_file"/>
+          <include name="TC_3_Upload_and_verify_Large_DOCX_file"/>
+          <include name="LandBrowser"/>
         </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+      </class> <!-- Script.LargeFiles_AutomationTesting -->
     </classes>
-  </test> <!-- Test4(failed) -->
-  <test thread-count="5" name="Test5(failed)">
+  </test> <!-- Test 15(failed) -->
+  <test thread-count="5" name="Test20(failed)">
     <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
+      <class name="Script.UnsupportedFiles">
         <methods>
-          <include name="ladBrowser"/>
-          <include name="Createdocumentagain"/>
+          <include name="loadBrowser"/>
+          <include name="TC_2_CreateDocumentWithUnsupportedFiles"/>
+          <include name="TC_3_Verify_UnsupportedFiles_Download_Offline"/>
         </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
+      </class> <!-- Script.UnsupportedFiles -->
     </classes>
-  </test> <!-- Test5(failed) -->
-  <test thread-count="5" name="Test6(failed)">
-    <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
-        <methods>
-          <include name="ladBrowser"/>
-          <include name="Createdocumentagain"/>
-        </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
-    </classes>
-  </test> <!-- Test6(failed) -->
-  <test thread-count="5" name="Test7(failed)">
-    <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
-        <methods>
-          <include name="ladBrowser"/>
-          <include name="Createdocumentagain"/>
-        </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
-    </classes>
-  </test> <!-- Test7(failed) -->
-  <test thread-count="5" name="Test8(failed)">
-    <classes>
-      <class name="SQL2022_DB.RamACCreateDocINEdge">
-        <methods>
-          <include name="ladBrowser"/>
-          <include name="Createdocumentagain"/>
-        </methods>
-      </class> <!-- SQL2022_DB.RamACCreateDocINEdge -->
-    </classes>
-  </test> <!-- Test8(failed) -->
+  </test> <!-- Test20(failed) -->
 </suite> <!-- Failed suite [Suite] -->

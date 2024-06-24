@@ -11,7 +11,7 @@ public class Thumbnail_MicroSoft_FabBTN extends BaseClass {
 	
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(DocumentContextSingleFolderDocSendTo.class);
 	 
-	/*@BeforeClass
+	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 		
@@ -24,12 +24,13 @@ public class Thumbnail_MicroSoft_FabBTN extends BaseClass {
 
 	@Test(priority=1)
 	public void LogVCS() throws Exception {
-		 loginSQL2022();
+		// loginSQL2022();
+		 loginCVS();
 		 log.info("CVS User is logged in successfully...");
 	}
-*/
+
 @Test(priority=2)
-public void ShowThumbnail() throws Exception{
+public void TC_1_ShowThumbnail() throws Exception{
 	
 	AdvancedViewer adv= new AdvancedViewer();
 	adv.CreateDocumentAndShowThumbnail();
@@ -37,7 +38,7 @@ public void ShowThumbnail() throws Exception{
 }
 	
 @Test(priority=3)
-public void Create_document_saveDoc() throws Exception{
+public void TC_2_Create_document_saveDoc() throws Exception{
 	
 	AdvancedViewer adv= new AdvancedViewer();
 	adv.CreateDocumentAnd_SaveFromDocument_Fabbtn();
@@ -45,7 +46,7 @@ public void Create_document_saveDoc() throws Exception{
 }
 	
 @Test(priority=4)
-public void Upload_Document_fabBTN() throws Exception{
+public void TC_3_Upload_Document_fabBTN() throws Exception{
 	
 	AdvancedViewer adv= new AdvancedViewer();
 	adv.CreateDocumentAnd_Upload_NewDocument_From_FabBrowseOption();
@@ -53,7 +54,7 @@ public void Upload_Document_fabBTN() throws Exception{
 }
 	
 @Test(priority=5)
-public void View_Document_fullScreen() throws Exception{
+public void TC_4_View_Document_fullScreen() throws Exception{
 	
 	AdvancedViewer adv= new AdvancedViewer();
 	adv.CreateDocumentAnd_ViewFullScreen();
@@ -61,7 +62,7 @@ public void View_Document_fullScreen() throws Exception{
 }
 	
 @Test(priority=6)
-public void View_Document_Delete() throws Exception{
+public void TC_5_View_Document_Delete() throws Exception{
 	
 	AdvancedViewer adv= new AdvancedViewer();
 	adv.CreateDocumentAnd_DeleteFabBTN_option();

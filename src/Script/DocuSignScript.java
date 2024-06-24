@@ -9,11 +9,11 @@ import Pom.AdvancedViewer;
 
 public class DocuSignScript  extends BaseClass{
 	  private static org.apache.logging.log4j.Logger log = LogManager.getLogger(DocuSignScript.class);
-	/*@BeforeClass
+	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
-		
-         launchUrl();
+	//launchLocalUrlRnisha();
+       launchUrl();
          log.info("CVS URL started Successfully...");
    
          
@@ -23,15 +23,16 @@ public class DocuSignScript  extends BaseClass{
 	@Test(priority=1)
 	public void LogVCS() throws Exception {
 		 loginCVS();
+	//	 loginLocalCVS();
 		 log.info("CVS User is logged in successfully...");
-	}*/
+	}
 	@Test(priority=2)
-	public void DocusignDocument() throws Exception {
+	public void TC_1_DocusignDocument() throws Exception {
 		AdvancedViewer ad=new AdvancedViewer();
 
        ad.DocuSignCreateDoc();
 		
 		 log.info("CVS User is logged in successfully...");
 	}
-
+	
 }

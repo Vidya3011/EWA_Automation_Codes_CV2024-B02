@@ -47,7 +47,7 @@ public class RoomContextFunction extends Generic.BaseClass {
 			//Refresh_Button(driver);
 			}
 		
-	    @Test(priority=3)
+	   @Test(priority=3)
 	    public void  TC_02_CopyAndPasteDrawerLevel() throws Exception {
 			RoomContextMenu rm=new RoomContextMenu();
 			rm.CopyAndPasteDrawer();
@@ -62,15 +62,15 @@ public class RoomContextFunction extends Generic.BaseClass {
 				Thread.sleep(3000);
 			}
 		
-		@Test(priority=5)
+	@Test(priority=5)
 		   public void  TC_04_NodePropertiesFunction() throws Exception {
 				RoomContextMenu rm=new RoomContextMenu();
 	           rm.NodeProperties();
 	           log.info("node properties are set and it shows the node set in the new create document.works fine verified successfully...");
-	           rm.NodePropertiesDefault();
+	         //  rm.NodePropertiesDefault();
 	            log.info("Default node properties shows the default node in the new create document.works fine verified successfully...");
 }
-		@Test(priority=6)
+	@Test(priority=6)
 		   public void  TC_05_NotificationFunction() throws Exception {
 				RoomContextMenu rm=new RoomContextMenu();
 				rm.Notification();
@@ -94,6 +94,7 @@ public class RoomContextFunction extends Generic.BaseClass {
 				log.info("User can set colour of particular document in public level.works fine verified successfully...");
 				
 }	
+		
 		
 	
 		

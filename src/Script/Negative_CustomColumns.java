@@ -1,7 +1,6 @@
 package Script;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -10,121 +9,148 @@ import Pom.Customcolumns;
 // Dipak Automation script
 
 public class Negative_CustomColumns extends Generic.BaseClass {
-	private static final Logger log = LogManager.getLogger(Negative_CustomColumns.class);
 
-	// @BeforeClass
+	@BeforeClass
 
-	public void LandBrowser() {
+	public void Launch_Browser() throws Exception {
 		loadBrowser("Chrome");
 		launchUrl();
-		log.info("CVS URL started Successfully...");
+		Reporter.log("CVS URL started Successfully", true);
 	}
 
-	// @Test
+	@Test
 
 	public void Login_EWA() throws Exception {
 		LogDipakUser();
-		log.info("CVS User is logged in successfully...");
+		Reporter.log("User has logged in successfully.", true);
 
 	}
 
 	// Custom columns for Room
 
 	@Test(priority = 1)
-	public void Verify_Default_Custom_Columns_RoomLevel() throws InterruptedException {
+	public void TC_01_Verify_Default_Custom_Columns_RoomLevel() throws InterruptedException {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 1: Verifying Default Custom Columns RoomLevel", true);
+		Thread.sleep(7000);
 		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(5000);
-		jsclick(pojo.getSelect_Cabinet());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Drawer());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Folder());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Refresh button", true);
+		selectElement(pojo.getSelect_Cabinet());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(pojo.getSelect_Drawer());
+		Thread.sleep(7000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(pojo.getSelect_Folder());
+		Thread.sleep(7000);
+		Reporter.log("select a Folder", true);
 		pojo.getMoveTo_Menu_RoomName();
-		Thread.sleep(3000);
+		Thread.sleep(7000);
+		Reporter.log("Mousehover to Roomname Tab", true);
 		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on  Custom Column Option", true);
 		jsclick(pojo.getDefault_Button_CustomList());
-		log.info("Default Custom Columns Roomlevel Verified");
+		Reporter.log("Default Custom Columns Roomlevel Verified");
 	}
 
 	@Test(priority = 2)
-	public void Verify_CrossCancelButton_RoomCustomColumns() throws Exception {
+	public void TC_02_Verify_CrossCancelButton_RoomCustomColumns() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 2: Verifying Cross Cancel button Room Custom Columns", true);
+		Thread.sleep(7000);
 		jsclick(pojo.getCrosscancel());
-		log.info("Cross Cancel button Roomlevel Verified");
+		Reporter.log("Click on  Cross button and Close Custom Column dialog", true);
+		Reporter.log("Cross Cancel button Roomlevel Verified");
 	}
 
 	@Test(priority = 3)
-	public void Verify_CancelButton_RoomCustomColumns() throws Exception {
+	public void TC_03_Verify_CancelButton_RoomCustomColumns() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 3 : Verifying Cancel button Room Custom Columns ", true);
+		Thread.sleep(7000);
 		pojo.getMoveTo_Menu_RoomName();
-		Thread.sleep(3000);
+		Thread.sleep(7000);
+		Reporter.log("Mousehover to Roomname Tab", true);
 		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Click on  Custom Column Option", true);
 		jsclick(pojo.getcancelbutton());
-		log.info("Cancel button Room level Custom columns Verified");
+		Reporter.log("Cancel button Room level Custom columns Verified");
 	}
 
 	@Test(priority = 4)
-	public void Verify_CrossCancelButton_SearchCustomColumns() throws Exception {
+	public void TC_04_Verify_CrossCancelButton_SearchCustomColumns() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 4 : Verifying Cross Cancel button Search Custom Columns", true);
+		Thread.sleep(7000);
 		pojo.MoveTo_Search_Option();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Search Tab", true);
 		jsclick(pojo.getSearch_Custom_Columns_option());
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Search Custom Column Option", true);
 		jsclick(pojo.getCrosscancel());
-		log.info("Cross cancel button Search custom columns Verified");
+		Reporter.log("Click on Cross cancel button", true);
+		Reporter.log("Cross cancel button Search custom columns Verified");
 	}
 
 	@Test(priority = 5)
-	public void Verify_CancelButton_SearchCustomColumns() throws Exception {
+	public void TC_05_Verify_CancelButton_SearchCustomColumns() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 5: Verifying Cancel button Search Custom Columns", true);
+		Thread.sleep(7000);
 		pojo.MoveTo_Search_Option();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Mousehover to Search Tab", true);
 		jsclick(pojo.getSearch_Custom_Columns_option());
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Custom Column Option", true);
 		jsclick(pojo.getcancelbutton());
-		log.info("Cancel button Search Custom Columns Verified");
+		Reporter.log("Click on  Cancel button", true);
+		Reporter.log("Cancel button Search Custom Columns Verified");
 	}
 
 	@Test(priority = 6)
-	public void Verify_CrossCancelButton_TODOCustomColumns() throws Exception {
+	public void TC_06_Verify_CrossCancelButton_TODOCustomColumns() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 6: Verifying Cross Cancel button TO DOCustom Columns", true);
+		Thread.sleep(7000);
 		pojo.getMoveTo_ToDoList_Option();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Moushover to ToDoList Tab", true);
 		jsclick(pojo.getToDoList_Custom_Columns_option());
-		Thread.sleep(6000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Custom Column Option", true);
 		jsclick(pojo.getCrosscancelTODObutton());
-		log.info("Cross cancel button TODO List Custom columns Verified");
+		Reporter.log("Click on Cross cancel button", true);
+		Reporter.log("Cross cancel button TODO List Custom columns Verified");
 	}
 
 	@Test(priority = 7)
-	public void Verify_CancelButton_TODOCustomColumns() throws Exception {
+	public void TC_07_Verify_CancelButton_TODOCustomColumns() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
-		Thread.sleep(4000);
+		Reporter.log("Test Scenario 7 : Verifying Cancel button TO DOCustom Columns", true);
+		Thread.sleep(7000);
 		pojo.getMoveTo_ToDoList_Option();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
+		Reporter.log("Mousehover to ToDoList Tab", true);
 		jsclick(pojo.getToDoList_Custom_Columns_option());
-		Thread.sleep(6000);
+		Thread.sleep(7000);
+		Reporter.log("Click on To Do List Custom column Option", true);
 		jsclick(pojo.getcancelTODObutton());
-		Thread.sleep(5000);
-		log.info("TODO list Custom columns Cancel button Verified");
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+		Reporter.log("Click on Cancel  button ToDo List Dialog ", true);
+		Reporter.log("TODO list Custom columns Cancel button Verified");
+		driver.close();
+		Reporter.log("Close the browser", true);
 	}
 }

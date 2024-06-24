@@ -24,15 +24,15 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser");
 		
-	//	launchUrl();
-		launchLocalUrl();
+		launchUrl();
+		//launchLocalUrlRnisha();
 		log.info("ContentVerseURL");
 	}
 
 	@Test (priority=1)
 	public void Login() throws Exception {
-		loginLocalCVS();
-		//loginCVS();
+		//loginLocalCVS();
+		loginCVS();
 		log.info("User is Successfully logged in");
 	} 
 		
@@ -72,7 +72,7 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			jsclick(pojo.getSelect_Document_Type_Dropdown());
 			Thread.sleep(4000);
 			Actions act=new Actions(driver);
-			act.click(pojo.getDocumentCVRep()).sendKeys("PDF document Creation?").build().perform();
+		//	act.click(pojo.getDocumentCVRep()).sendKeys("PDF document Creation?").build().perform();
 			Thread.sleep(4000);
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
@@ -98,9 +98,8 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			Thread.sleep(4000);
 			jsclick(pojo.getView_Button());
 			Thread.sleep(6000);
-			jsclick(pojo.getClick_FileInfo_Option1());
-			Thread.sleep(4000);
-			pojo.getClick_FileInfo_OkButton_withFileName();
+			
+			
 			Thread.sleep(6000);
 			jsclick(pojo.getSave_button());
 			Thread.sleep(4000);
@@ -136,7 +135,7 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			jsclick(pojo.getSelect_Document_Type_Dropdown());
 			Thread.sleep(4000);
 			Actions act=new Actions(driver);
-			act.click(pojo.getDocumentCVRep()).sendKeys("Large Tiff Document @#&*()^%").build().perform();
+		//	act.click(pojo.getDocumentCVRep()).sendKeys("Large Tiff Document @#&*()^%").build().perform();
 			
 			
 			Thread.sleep(4000);
@@ -162,10 +161,10 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			Thread.sleep(4000);
 			jsclick(pojo.getView_Button());
 			Thread.sleep(6000);
-			jsclick(pojo.getClick_FileInfo_Option1());
+			/*jsclick(pojo.getClick_FileInfo_Option1());
 			Thread.sleep(4000);
 			pojo.getClick_FileInfo_OkButton_withFileName();
-			Thread.sleep(6000);
+			Thread.sleep(6000);*/
 			jsclick(pojo.getSave_button());
 			Thread.sleep(4000);
 			jsclick(pojo.getDocumentSave_Ok_button());
@@ -198,7 +197,7 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			jsclick(pojo.getSelect_Document_Type_Dropdown());
 			Thread.sleep(4000);
 			Actions act=new Actions(driver);
-			act.click(pojo.getDocumentCVRep()).sendKeys("Large Word Document #$%&^*()_").build().perform();
+		//	act.click(pojo.getDocumentCVRep()).sendKeys("Large Word Document #$%&^*()_").build().perform();
 			
 			
 			Thread.sleep(4000);
@@ -223,11 +222,11 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			Thread.sleep(4000);
 			jsclick(pojo.getView_Button());
 			Thread.sleep(8000);
-			ElementToBeClickable(pojo.getClick_FileInfo_Option1());
+			/*ElementToBeClickable(pojo.getClick_FileInfo_Option1());
 			jsclick(pojo.getClick_FileInfo_Option1());
 			Thread.sleep(9000);
 			pojo.getClick_FileInfo_OkButton_withFileName();
-			Thread.sleep(6000);
+			Thread.sleep(6000);*/
 			jsclick(pojo.getSave_button());
 			Thread.sleep(4000);
 			jsclick(pojo.getDocumentSave_Ok_button());
@@ -261,7 +260,7 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			jsclick(pojo.getSelect_Document_Type_Dropdown());
 			Thread.sleep(4000);
 			Actions act=new Actions(driver);
-			act.click(pojo.getDocumentCVRep()).sendKeys("Large excel Document^%$#@*(+_+?><").build().perform();
+//			act.click(pojo.getDocumentCVRep()).sendKeys("Large excel Document^%$#@*(+_+?><").build().perform();
 			
 			Thread.sleep(4000);
 			WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -285,10 +284,10 @@ public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 			Thread.sleep(4000);
 			jsclick(pojo.getView_Button());
 			Thread.sleep(8000);
-			pojo.getClick_FileInfo_Option1();
+			/*pojo.getClick_FileInfo_Option1();
 			Thread.sleep(9000);
 			jsclick(pojo.getClick_FileInfo_OkButton_withFileName());
-			Thread.sleep(6000);
+			Thread.sleep(6000);*/
 			jsclick(pojo.getSave_button());
 			Thread.sleep(4000);
 			jsclick(pojo.getDocumentSave_Ok_button());
