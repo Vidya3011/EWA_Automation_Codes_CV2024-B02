@@ -26,6 +26,9 @@ import org.testng.Reporter;
 
 import Generic.BaseClass;
 
+//NishaR codes
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 public class AnnotaionsPom extends BaseClass {
 
 	public static WebElement element = null;
@@ -33,30 +36,23 @@ public class AnnotaionsPom extends BaseClass {
 	public AnnotaionsPom() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	
+
 	@FindBy(xpath = "//*[@id=\"imgSettings\"]")
 	private WebElement Setting_Icon;
-	
+
 	@FindBy(xpath = "//*[@id=\"myPreferencesSettingsNav\"]")
 	private WebElement My_Preferencesetting;
-
-	
 
 	@FindBy(xpath = "//*[@id=\"myPreferencesSubmit\"]")
 	private WebElement Apply_button;
 
-	
-
 	@FindBy(xpath = "//*[@id=\"defaultViewListNo\"]")
 	private WebElement Click_Dropdown_DefaultViewing;
-	
 
-	public void getClick_Dropdown_DefaultViewing() {//void method
+	public void getClick_Dropdown_DefaultViewing() {// void method
 		Click_Dropdown_DefaultViewing.click();
-		
-	}
 
+	}
 
 	@FindBy(xpath = ("(//a[@id='navigationMenuBtn'])[1]"))
 	private WebElement RoomContextTab;
@@ -78,8 +74,6 @@ public class AnnotaionsPom extends BaseClass {
 
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[1]/td[3]"))
 	private WebElement OpenDocumentSQL;
-
-	
 
 	@FindBy(xpath = ("(//span[@class='icon annotationRoot'])[1]"))
 	private WebElement AnnotationTab;
@@ -194,9 +188,7 @@ public class AnnotaionsPom extends BaseClass {
 
 	@FindBy(xpath = ("(//button[@id='messageButtonOK42'])[1]"))
 	private WebElement SaveTabOKBTN;
-	
-	
-	
+
 	@FindBy(xpath = ("//*[@id=\"messageButtonOK27\"]"))
 	private WebElement SaveConfirmYes;
 
@@ -211,30 +203,15 @@ public class AnnotaionsPom extends BaseClass {
 
 	}
 
-	public static String readFromRoomCntxt(int rw, int cl) throws IOException {
-		File f = new File("./data/TestData.xlsx");
-		FileInputStream fis = new FileInputStream(f);
-		Workbook wb = new XSSFWorkbook(fis);
-		Sheet mySht = wb.getSheet("RoomContext");
-		Row row = mySht.getRow(rw);
-		Cell cell = row.getCell(cl);
-		String name = cell.getStringCellValue();
-		return name;
-	}
-
 	@FindBy(xpath = "//*[@id=\"editproperties_79407\"]")
 	private WebElement Update_Button;
 
-	
 	@FindBy(linkText = "ReportName")
 	private WebElement ReportName;
-
-	
 
 	@FindBy(xpath = "//*[@id=\"rubberBandInteractiveMode_shortcut\"]/span")
 	private WebElement ClickOCR;
 
-	
 	@FindBy(xpath = "//*[@id=\"imageViewerDiv\"]/div[2]/canvas")
 	private WebElement setOCR;
 
@@ -291,141 +268,43 @@ public class AnnotaionsPom extends BaseClass {
 		VisiblityOf(SaveTabOKBTN);
 		jsclick(SaveTabOKBTN);
 		Thread.sleep(8000);
-		
-
-	}
-
-	public void RedactionAnnotationSQL() throws Exception {
-		Language pojo = new Language();
-
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		jsclick(RoomContextTab);
-		Thread.sleep(4000);
-		Thread.sleep(3000);
-		WebElement AutomationCab = driver.findElement(By.xpath("//*[@id=\"144\"]/ins"));
-		jsclick(AutomationCab);
-		Thread.sleep(4000);
-		WebElement AutomationDrawer = driver.findElement(By.xpath("//*[@id=\"145\"]/ins"));
-		jsclick(AutomationDrawer);
-		Thread.sleep(4000);
-		WebElement AutomationFolder = driver.findElement(By.xpath("//*[@id=\"146\"]/a"));
-		jsclick(AutomationFolder);
-
-		Thread.sleep(6000);
-
-		jsclick(pojo.getNewDocuments_MenuOption());
-		Thread.sleep(4000);
-		// jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		jsclick(pojo.getOK_Button_BrowseforFolder());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Document_Type_Dropdown());
-		Thread.sleep(4000);
-		pojo.getEnter_Report_Name_Text().sendKeys("Default viewing annotation");
-		Thread.sleep(4000);
-
-		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
-		movingclkElement(pojo.getMove_To_PlusIcon());
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime()
-				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Percentage .exe");
-		Thread.sleep(5000);
-
-		try {
-			wait.until(ExpectedConditions.alertIsPresent());
-			acceptAlert();
-		} catch (Exception e) {
-			System.out.println("Alert is not present");
-		}
-
-		Thread.sleep(8000);
-		movingclkElement(pojo.getMove_To_PlusIcon());
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Hyphen.exe");
-		Thread.sleep(9000);
-		Thread.sleep(4000);
-		jsclick(pojo.getCreate_Button());
-		Thread.sleep(4000);
-		jsclick(pojo.getNavigate_Button());
-		Thread.sleep(9000);
-		movingElement(AnnotationTab);
-
-		VisiblityOf(Redaction);
-
-		Thread.sleep(2000);
-		// WebElement fabbtn = driver.findElement(By.xpath("//*[@id=\"fabButton\"]"));
-		Actions act = new Actions(driver);
-		act.click(Redaction).clickAndHold(Page).moveToElement(fabbtn).release().build().perform();
-		Thread.sleep(3000);
-		sendvalue(RedName, readFromRoomCntxt(1, 2));
-		Thread.sleep(2000);
-		sendvalue(RedactionPassword, readFromRoomCntxt(2, 2));
-		Thread.sleep(3000);
-		sendvalue(RedactionCnfrmPassword, readFromRoomCntxt(2, 2));
-		Thread.sleep(3000);
-		jsclick(RedactionOKBTN);
-		Thread.sleep(8000);
-
-		movingElement(AnnotationTab);
-		Thread.sleep(3000);
-		VisiblityOf(UnLockRedaction);
-		jsclick(UnLockRedaction);
-		Thread.sleep(3000);
-		sendvalue(unRedactionPassword, readFromRoomCntxt(2, 2));
-		Thread.sleep(3000);
-		jsclick(unRedactionPwdOKBTN);
-		Thread.sleep(6000);
-		act.click(showstickynote).sendKeys(Keys.DELETE).build().perform();
-		Thread.sleep(10000);
-		jsclick(SaveTab);
-		Thread.sleep(3000);
-		VisiblityOf(SaveTabOKBTN);
-		jsclick(SaveTabOKBTN);
-		Thread.sleep(8000);
 
 	}
 
 	public void RedactionAnnotation() throws Exception {
 		Language pojo = new Language();
-		
-		
-		
-		
+
 		Reporter.log("Scenario 2:Open the document and Add Redaction Annotation on the page");
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		jsclick(RoomContextTab);
+		Thread.sleep(4000);
 		Reporter.log("Click on room context menu tab");
 		jsclick(Cabinet);
-	//	Reporter.log("Click on the cabinet");
+		// Reporter.log("Click on the cabinet");
 		Thread.sleep(3000);
 		ElementToBeClickable(Drawer);
 		selectElement(Drawer);
-	//	Reporter.log("Click on the drawer");
-		Thread.sleep(2000);
+		// Reporter.log("Click on the drawer");
+		Thread.sleep(4000);
 		wait.until(ExpectedConditions.elementToBeClickable(Folder));
 		selectElement(Folder);
-		//Reporter.log("Open the folder");
+		// Reporter.log("Open the folder");
 		Thread.sleep(8000);
-		AdvancedViewer an=new AdvancedViewer();
+		AdvancedViewer an = new AdvancedViewer();
 		an.create_document_Auto();
-		
-		
-		
+
 		Thread.sleep(4000);
 		try {
-			WebElement CreateAsNew=driver.findElement(By.xpath("//*[@id=\"messageButtonCreate_as_New29\"]"));
+			WebElement CreateAsNew = driver.findElement(By.xpath("//*[@id=\"messageButtonCreate_as_New29\"]"));
 			jsclick(CreateAsNew);
-			
+
 		} catch (Exception e) {
 			System.out.println("Overwrite dialog not present");
 		}
 		try {
 			jsclick(SaveConfirmYes);
-			
-		}
-		catch (Exception e) {
+
+		} catch (Exception e) {
 			System.out.println("Save Confirm Dialog Not Displayed");
 		}
 		Thread.sleep(7000);
@@ -469,7 +348,8 @@ public class AnnotaionsPom extends BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("The Redaction got unlocked successfully...");
 		act.click(showstickynote).sendKeys(Keys.DELETE).build().perform();
-	//	Reporter.log("Delete the Redaction, the Redaction got deleted successfully...");
+		// Reporter.log("Delete the Redaction, the Redaction got deleted
+		// successfully...");
 		Thread.sleep(10000);
 		jsclick(SaveTab);
 		Reporter.log("Create Redation and Unlock Redaction Verified successfully...");
@@ -509,9 +389,13 @@ public class AnnotaionsPom extends BaseClass {
 		VisiblityOf(StickyNote);
 		Reporter.log("Click on Sticky Note tool button");
 		Thread.sleep(3000);
-		Actions act = new Actions(driver);
-		act.click(StickyNote).moveToElement(Page).click().build().perform();
-		Reporter.log("Click on the page and add stickynote");
+		try {
+			Actions act = new Actions(driver);
+			act.click(StickyNote).moveToElement(Page).click().build().perform();
+			Reporter.log("Click on the page and add stickynote");
+		} catch (JavascriptException e) {
+			System.out.println("JAvaScript Exception handled...");
+		}
 		Thread.sleep(5000);
 		sendvalue(stickyNoteTextbOX, "automationNishaR");
 		Reporter.log("Sticky note tool dialog opened, Place comments on the stickynote dialog box");
@@ -549,8 +433,7 @@ public class AnnotaionsPom extends BaseClass {
 		 */
 		Thread.sleep(5000);
 		jsclick(stickyNoteTextbOXokBTN);
-		Reporter.log(
-				"Choose Rubber stamp from the dropdown list and click on annotation properties dialog OK button");
+		Reporter.log("Choose Rubber stamp from the dropdown list and click on annotation properties dialog OK button");
 		// act.click(showstickynote).sendKeys(Keys.DELETE).build().perform();
 		ElementToBeClickable(SaveTab);
 		jsclick(SaveTab);
@@ -580,8 +463,7 @@ public class AnnotaionsPom extends BaseClass {
 		movingclkElement(openfileStamp);
 		Thread.sleep(8000);
 		Reporter.log("Click on choose file");
-		Runtime.getRuntime().exec(
-				"D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Flower or Curly bracket .exe");
+		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\FlowerOrCurlyBracket.exe");
 		// Runtime.getRuntime().exec("C:\\AutoImage\\NishaDoc.exe");
 		Thread.sleep(15000);
 		Reporter.log("Add the image from folder by using Auto IT");
@@ -602,24 +484,25 @@ public class AnnotaionsPom extends BaseClass {
 		Reporter.log("Scenario 11: Verify polygon annotation ");
 		// jsclick(polygon);
 		// Thread.sleep(8000);
-	Thread.sleep(2000);
-		Actions act=new Actions(driver);
+		Thread.sleep(2000);
+		Actions act = new Actions(driver);
 		try {
-		driver.manage().timeouts().setScriptTimeout(2000, TimeUnit.MILLISECONDS);
-		act.moveToElement(AnnotationTab).perform();
-		
-		}
-		catch(JavascriptException e) {
+			driver.manage().timeouts().setScriptTimeout(2000, TimeUnit.MILLISECONDS);
+			act.moveToElement(AnnotationTab).perform();
+
+		} catch (JavascriptException e) {
 			Reporter.log("Exception Handled");
 		}
 		Reporter.log("Mouse hover on annotation tool icon");
 		VisiblityOf(polygon);
 		Thread.sleep(5000);
 		Reporter.log("Click on polygon tool button");
-		
+
 		act.click(polygon).clickAndHold(Page).moveToElement(rectanglerelease).click(Page).build().perform();
-		Reporter.log("Draw the polygon on the page.The Polygon annotation  has been updated on the document page successfully");
-		Reporter.log("========================================================================================================");
+		Reporter.log(
+				"Draw the polygon on the page.The Polygon annotation  has been updated on the document page successfully");
+		Reporter.log(
+				"========================================================================================================");
 	}
 
 	public void LineAnnotation() throws Exception {
@@ -677,9 +560,13 @@ public class AnnotaionsPom extends BaseClass {
 		Thread.sleep(3000);
 		// WebElement rele = driver.findElement(By.xpath("(//div[@class='gutter
 		// gutter-vertical'])[1]"));
-		Actions act = new Actions(driver);
-		act.click(ellipse).clickAndHold(Page).moveToElement(fabbtn).release().build().perform();
-		Thread.sleep(8000);
+		try {
+			Actions act = new Actions(driver);
+			act.click(ellipse).clickAndHold(Page).moveToElement(fabbtn).release().build().perform();
+			Thread.sleep(8000);
+		} catch (Exception e) {
+			System.out.println("exception handled");
+		}
 		// act.click(showstickynote).sendKeys(Keys.DELETE).build().perform();
 		Reporter.log("Draw the ellipse on the page");
 		// Thread.sleep(8000);

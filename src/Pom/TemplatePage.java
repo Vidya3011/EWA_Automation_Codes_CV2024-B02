@@ -1,6 +1,7 @@
 package Pom;
 
-//Dipak Automation Pom
+//Dipak Automation Coading
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.time.Duration;
@@ -9,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -18,7 +20,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TemplatePage extends Generic.BaseClass {
@@ -30,262 +34,260 @@ public class TemplatePage extends Generic.BaseClass {
 
 	}
 
+	// Select From Document Navigator
+
+	@FindBy(xpath = "//*[@id=\"logoutElement\"]")
+	private WebElement Username;
+
+	@FindBy(xpath = "//*[@id=\"idSidenav\"]/ul/li[1]/a")
+	private WebElement Logout;
+
+	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
+	private WebElement Select_Cabinet;
+
+	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/a[1]")
+	private WebElement Select_Drawer;
+
+	@FindBy(xpath = (".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Folder;
+
+	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]")
+	private WebElement Select_subFolder;
+
+	// Select from Destination folder Location
+
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Cabinet1;
+
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Drawer1;
+
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Folder1;
+
+	@FindBy(xpath = "//*[@id=\"templateDocumentPermissions\"]/a")
+	private WebElement Select_Document_Template;
+
+	@FindBy(xpath = "//*[@id=\"templatePrefs\"]/div[2]/div[3]/div/div/div")
+	private WebElement Select_Userlist;
+
+	@FindBy(css = ".e-selectall-parent .e-frame")
+	private WebElement Select_AllUser;
+
+	@FindBy(xpath = "//*[@id=\"templatePermissionApply\"]")
+	private WebElement TemplateApply;
+
 	@FindBy(xpath = "//*[@id=\"documentTemplates\"]")
 	private WebElement Templates_MenuOption;
-
-	public WebElement getTemplates_MenuOption() {
-		return Templates_MenuOption;
-	}
 
 	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
 	private WebElement Destination_Folder_Textbox;
 
-	public WebElement getDestination_Folder_Textbox() {
-		return Destination_Folder_Textbox;
-	}
-
-	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle\"]")
-	private WebElement Cancel_Button_BrowseforFolder;
-
-	public WebElement getCancel_Button_BrowseforFolder() {
-		return Cancel_Button_BrowseforFolder;
-	}
-
 	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
-
-	public WebElement getOK_Button_BrowseforFolder() {
-		return OK_Button_BrowseforFolder;
-	}
 
 	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
 	private WebElement Click_Document_Type_Dropdown;
 
-	public WebElement getSelect_Document_Type_Dropdown() {
-		Select drop = new Select(Click_Document_Type_Dropdown);
-		drop.selectByVisibleText("CVReports");
-		return Click_Document_Type_Dropdown;
-
-	}
+	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
+	private WebElement Browse_Option;
 
 	@FindBy(xpath = "//*[@id=\"createTemplateBtn\"]")
 	private WebElement Save_Template_Button;
 
-	public WebElement getSave_Template_Button() {
-		return Save_Template_Button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
 	private WebElement Move_To_PlusIcon;
-
-	public WebElement getMove_To_PlusIcon() {
-		return Move_To_PlusIcon;
-	}
-
-	public WebElement getMove_To_PlusIcon1() {
-		WebElement ele = Move_To_PlusIcon;
-		Actions action = new Actions(driver);
-		action.moveToElement(ele).perform();
-		return ele;
-	}
-
-	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
-	private WebElement Browse_Option;
-
-	public WebElement getBrowse_Option() {
-		WebElement ele = Browse_Option;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click()", ele);
-		return ele;
-	}
 
 	@FindBy(xpath = "//*[@id=\"createTemplateCancel\"]")
 	private WebElement Template_Description_No_button;
 
-	public WebElement getTemplate_Description_No_button() {
-		return Template_Description_No_button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"templateName\"]")
 	private WebElement Template_NameTextbox;
-
-	public WebElement getTemplate_NameTextbox() {
-		return Template_NameTextbox;
-	}
 
 	@FindBy(xpath = "//*[@id=\"templateDescription\"]")
 	private WebElement Template_Description_Messagebox;
 
-	public WebElement getTemplate_Description_Messagebox() {
-		return Template_Description_Messagebox;
-	}
-
 	@FindBy(xpath = "//*[@id=\"createTemplateOk\"]")
 	private WebElement Template_Description_OK_button;
-
-	public WebElement getTemplate_Description_OK_button() {
-		return Template_Description_OK_button;
-	}
 
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
 	private WebElement Template_Created_Message_Verify;
 
-	public void getTemplate_Created_Message_Verify() {
-		SoftAssert softassert = new SoftAssert();
-		String expectedtext = "Template Created Successfully!";
-		String actualtext = Template_Created_Message_Verify.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
-
-	}
-
 	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement Template_Created_OK_button;
-
-	public WebElement getTemplate_Created_OK_button() {
-		return Template_Created_OK_button;
-	}
 
 	@FindBy(xpath = "//*[@id=\"documentTemplates\"]")
 	private WebElement Moveto_Templates_Option;
 
-	public void getMoveto_Templates_Option() {
-		WebElement ele = Moveto_Templates_Option;
-		Actions action = new Actions(driver);
-		action.moveToElement(ele).perform();
-
-	}
-
 	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
 	private WebElement Select_ReportName_Test;
 
-	public WebElement getSelect_ReportName_Test() {
-		return Select_ReportName_Test;
-	}
-
-	@FindBy(id = "Template_Automation1")
+	@FindBy(xpath = "//a[contains(text(),'Template_Automation1')]")
 	private WebElement Select_Created_Template;
-
-	public WebElement getSelect_Created_Template() {
-		return Select_Created_Template;
-	}
 
 	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
 	private WebElement Created_button;
 
-	public WebElement getCreated_button() {
-		return Created_button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"modelHome\"]")
 	private WebElement Navigate_button;
-
-	public WebElement getNavigate_button() {
-		return Navigate_button;
-	}
 
 	@FindBy(xpath = "//*[@id=\"editTemplate1\"]")
 	private WebElement Click_Edit_Template_Button;
 
-	public WebElement getClick_Edit_Template_Button() {
-		return Click_Edit_Template_Button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"editTemplateDescription\"]")
 	private WebElement EditTemplate_Description_Messagebox;
-
-	public WebElement getEditTemplate_Description_Messagebox() {
-		return EditTemplate_Description_Messagebox;
-	}
 
 	@FindBy(xpath = "//*[@id=\"editTemplateOk\"]")
 	private WebElement EditTemplate_Description_OK_button;
 
-	public WebElement getEditTemplate_Description_OK_button() {
-		return EditTemplate_Description_OK_button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"messageContent\"]")
 	private WebElement EditTemplate_Created_Message_Verify;
-
-	public void getEditTemplate_Created_Message_Verify() {
-		SoftAssert softassert = new SoftAssert();
-		String expectedtext = "Template Edited Successfully!";
-		String actualtext = EditTemplate_Created_Message_Verify.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
-
-	}
 
 	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement EditTemplate_Created_OK_button;
 
-	public WebElement getEditTemplate_Created_OK_button() {
-		return EditTemplate_Created_OK_button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"delTemp\"]")
 	private WebElement Delete_Template_Button;
-
-	public WebElement getDelete_Template_Button() {
-		return Delete_Template_Button;
-	}
 
 	@FindBy(xpath = "//*[@id=\"deleteTemplateOk\"]")
 	private WebElement Delete_Template_OK_Button;
 
-	public WebElement getDelete_Template_OK_Button() {
-		return Delete_Template_OK_Button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"editTemplateCancel\"]")
 	private WebElement EditTemplate_Description_No_button;
-
-	public WebElement getEditTemplate_Description_No_button() {
-		return EditTemplate_Description_No_button;
-	}
 
 	@FindBy(xpath = "//*[@id=\"imgSettings\"]")
 	private WebElement Setting_Icon;
 
-	public WebElement getSetting_Icon() {
-		return Setting_Icon;
-	}
-
 	@FindBy(xpath = "//*[@id=\"myPreferencesSettingsNav\"]")
 	private WebElement My_Preferencesetting;
-
-	public WebElement getMy_Preferencesetting() {
-		return My_Preferencesetting;
-	}
 
 	@FindBy(xpath = "//*[@id=\"myPreferencesSubmit\"]")
 	private WebElement Apply_button;
 
-	public WebElement getApply_button() {
-		return Apply_button;
-	}
-
 	@FindBy(xpath = "//*[@id=\"defaultOfficeDocViewListNo\"]")
 	private WebElement Select_Office_document_Defaultviewing;
-
-	public void getSelect_Office_document_Defaultviewing() {
-		Select sel = new Select(Select_Office_document_Defaultviewing);
-		sel.selectByVisibleText("Default viewing");
-
-	}
 
 	@FindBy(xpath = "//select[@id='defaultOfficeDocViewListNo']")
 	private WebElement Select_Office_document_Advancedviewing;
 
-	public void getSelect_Office_document_Advancedviewing() {
-		Select sel = new Select(Select_Office_document_Advancedviewing);
-		sel.selectByVisibleText("Advanced viewing");
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement addpagesMessage;
 
-	}
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
+	private WebElement CommentOKbutton;
 
-	// New Word Document
+	@FindBy(xpath = "//*[@id=\"saveTemplate\"]")
+	private WebElement savetemp;
+
+	@FindBy(xpath = "//*[@id=\"createDocumentClear\"]")
+	private WebElement ClearButton;
+
+	@FindBy(xpath = "//*[@id=\"templateErr\"]")
+	private WebElement validationerror;
+
+	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
+	private WebElement Createdoc;
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Reportvaluevalidationerror;
+
+	@FindBy(xpath = "//*[@id=\"Word document automation.docx\"]/div/img")
+	private WebElement Open_Word_page;
+
+	@FindBy(xpath = "//*[@id=\"Excel document automation.xlsx\"]/div/img")
+	private WebElement Open_Excel_page;
+
+	@FindBy(xpath = "//*[@id=\"templateOK\"]")
+	private WebElement OKButton;
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Filenamevalidation;
+
+	@FindBy(xpath = "//*[@id=\"createDocumentMessage\"]")
+	private WebElement NavigateDoc;
+
+	@FindBy(xpath = "//*[@id=\"modelHome\"]")
+	private WebElement NavigateButton;
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement Formmappingvalidation;
+
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
+	private WebElement FormOKbutton;
+
+	@FindBy(xpath = "//*[@id=\"newTemplateFileName\"]")
+	private WebElement Enter_Word_File_Name;
+
+	@FindBy(xpath = "//*[@id=\"templateOK\"]")
+	private WebElement TemplateOK;
+
+	@FindBy(xpath = "//*[@id=\"addExcelFile\"]")
+	private WebElement New_Excel_Spreadsheet_Option;
+
+	@FindBy(xpath = "//*[@id=\"newTemplateFileName\"]")
+	private WebElement Enter_Excel_File_Name;
+
+	@FindBy(xpath = "//select[@id='defaultPdfDocViewListNo']")
+	private WebElement Pdf_document_Advancedviewing;
+
+	@FindBy(xpath = "//*[@id=\"addPdfFile\"]")
+	private WebElement New_pdf_Document_Option;
+
+	@FindBy(xpath = "//*[@id=\"newTemplateFileName\"]")
+	private WebElement Enter_pdf_File_Name;
+
+	@FindBy(xpath = "//*[@id=\"templateOK\"]")
+	private WebElement TempOK;
+
+	@FindBy(xpath = "//span[@id='pdfViewerDiv_formdesignerIcon']")
+	private WebElement pdfViewer;
+
+	@FindBy(xpath = "//*[@id=\"pdfViewerDiv_formdesigner_textbox\"]")
+	private WebElement Textbox;
+
+	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle\"]")
+	private WebElement Cancel_Button_BrowseforFolder;
+
+	@FindBy(xpath = "//*[@id=\"formMapper\"]")
+	private WebElement Click_Formmapper;
+
+	@FindBy(xpath = "//select[@id='formField1']")
+	private WebElement Select_Formfield;
 
 	@FindBy(xpath = ("//*[@id=\"addWordFile\"]"))
 	private WebElement New_Word_Document_Option;
+
+	@FindBy(xpath = " //*[@id=\"pdfViewerDiv_annotationCanvas_0\"]")
+	private WebElement Add_Textbox_Onpage;
+
+	@FindBy(xpath = "//button[@id='setFormMapping']")
+	private WebElement FormOK;
+
+	@FindBy(xpath = "//*[@id=\"defaultPdfDocViewListNo\"]")
+	private WebElement Pdf_document_Defaultviewing;
+
+	@FindBy(xpath = "//span[@id='messageContent']")
+	private WebElement Verify_DuplicateTemp_Message;
+
+	@FindBy(xpath = "//button[@id='messageButtonOK']")
+	private WebElement Okbutton;
+
+	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
+	private WebElement Nobutton;
+
+	@FindBy(xpath = "//*[@id=\"commentMessage\"]")
+	private WebElement FolderSelectMessage;
+
+	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
+	private WebElement CommentOK;
+
+	@FindBy(xpath = "//*[@id=\"messageContent\"]")
+	private WebElement TemplateDeniedmessage;
+
+	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
+	private WebElement TemplateDeniedmessageok;
+
+	// New Word Document
 
 	public void getNew_Word_Document_Option() {
 		WebElement ele1 = New_Word_Document_Option;
@@ -293,11 +295,6 @@ public class TemplatePage extends Generic.BaseClass {
 		js.executeScript("arguments[0].click()", ele1);
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"newTemplateFileName\"]")
-	private WebElement Enter_Word_File_Name;
-	@FindBy(xpath = "//*[@id=\"templateOK\"]")
-	private WebElement TemplateOK;
 
 	public void getEnter_Word_File_Name() throws Exception {
 		WebElement ele = Enter_Word_File_Name;
@@ -308,18 +305,12 @@ public class TemplatePage extends Generic.BaseClass {
 
 	// New Excel Spreadsheet
 
-	@FindBy(xpath = "//*[@id=\"addExcelFile\"]")
-	private WebElement New_Excel_Spreadsheet_Option;
-
 	public void getNew_Excel_Spreadsheet_Option() {
 		WebElement ele1 = New_Excel_Spreadsheet_Option;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele1);
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"newTemplateFileName\"]")
-	private WebElement Enter_Excel_File_Name;
 
 	public void getEnter_Excel_File_Name() throws Exception {
 		WebElement ele1 = Enter_Excel_File_Name;
@@ -328,32 +319,11 @@ public class TemplatePage extends Generic.BaseClass {
 
 	}
 
-	// Special characters datadriven
-
-	public String Templates_excelRead(int rowNo, int cellNo) throws Exception {
-
-		File src = new File("./data/TestData.xlsx");
-		FileInputStream fis = new FileInputStream(src);
-		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
-			XSSFSheet s = wb.getSheet("Templates");
-			XSSFRow row = s.getRow(rowNo);
-			XSSFCell cll = row.getCell(cellNo);
-			String cellType = cll.getStringCellValue();
-			return cellType;
-		}
-	}
-
-	@FindBy(xpath = "//select[@id='defaultPdfDocViewListNo']")
-	private WebElement Pdf_document_Advancedviewing;
-
 	public void getPdf_document_Advancedviewing() {
 		Select drop = new Select(Pdf_document_Advancedviewing);
 		drop.selectByVisibleText("Advanced viewing");
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"addPdfFile\"]")
-	private WebElement New_pdf_Document_Option;
 
 	public void getNew_pdf_Document_Option() {
 		WebElement ele1 = New_pdf_Document_Option;
@@ -361,11 +331,6 @@ public class TemplatePage extends Generic.BaseClass {
 		js.executeScript("arguments[0].click()", ele1);
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"newTemplateFileName\"]")
-	private WebElement Enter_pdf_File_Name;
-	@FindBy(xpath = "//*[@id=\"templateOK\"]")
-	private WebElement TempOK;
 
 	public void getEnter_pdf_File_Name() throws Exception {
 		WebElement ele1 = Enter_pdf_File_Name;
@@ -375,30 +340,6 @@ public class TemplatePage extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"homeMenuBtn\"]")
-	private WebElement Refreshbutton;
-
-	public WebElement getRefreshbutton() {
-		return Refreshbutton;
-	}
-
-	@FindBy(xpath = "//span[@id='pdfViewerDiv_formdesignerIcon']")
-	private WebElement pdfViewer;
-
-	public WebElement getpdfViewer() {
-		return pdfViewer;
-	}
-
-	@FindBy(xpath = "//*[@id=\"pdfViewerDiv_formdesigner_textbox\"]")
-	private WebElement Textbox;
-
-	public WebElement getTextbox() {
-		return Textbox;
-	}
-
-	@FindBy(css = "#pdfViewerDiv_textLayer_0")
-	private WebElement Add_Textbox_Onpage;
-
 	public WebElement getAdd_Textbox_Onpage() throws Exception {
 		Actions action = new Actions(driver);
 		WebElement element = Add_Textbox_Onpage;
@@ -406,31 +347,10 @@ public class TemplatePage extends Generic.BaseClass {
 		return Add_Textbox_Onpage;
 	}
 
-	@FindBy(xpath = "//*[@id=\"formMapper\"]")
-	private WebElement Click_Formmapper;
-
-	public WebElement getClick_Formmapper() throws Exception {
-		return Click_Formmapper;
-	}
-
-	@FindBy(xpath = "//select[@id='formField1']")
-	private WebElement Select_Formfield;
-
 	public void getSelect_Formfield() {
 		Select sel = new Select(Select_Formfield);
 		sel.selectByVisibleText("Textbox1");
-
 	}
-
-	@FindBy(xpath = "//button[@id='setFormMapping']")
-	private WebElement FormOK;
-
-	public WebElement getFormOK() {
-		return FormOK;
-	}
-
-	@FindBy(xpath = "//*[@id=\"defaultPdfDocViewListNo\"]")
-	private WebElement Pdf_document_Defaultviewing;
 
 	public void getPdf_document_Defaultviewing() {
 		Select drop = new Select(Pdf_document_Defaultviewing);
@@ -438,286 +358,1721 @@ public class TemplatePage extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//span[@id='messageContent']")
-	private WebElement Verify_DuplicateTemp_Message;
-
 	public void getVerify_DuplicateTemp_Message() {
 		WebElement Message = Verify_DuplicateTemp_Message;
 		Reporter.log(Message.getText() + " this popup message should show", true);
 
 	}
 
-	@FindBy(xpath = "//button[@id='messageButtonOK']")
-	private WebElement Okbutton;
+	public WebElement getSelect_Document_Type_Dropdown() {
+		Select drop = new Select(Click_Document_Type_Dropdown);
+		drop.selectByVisibleText("CVReports");
+		return Click_Document_Type_Dropdown;
 
-	public WebElement getOkbutton() {
-		return Okbutton;
 	}
 
-	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
-	private WebElement Nobutton;
-
-	public WebElement getNobutton() {
-		return Nobutton;
+	public WebElement getMove_To_PlusIcon() {
+		WebElement ele = Move_To_PlusIcon;
+		Actions action = new Actions(driver);
+		action.moveToElement(ele).build().perform();
+		return ele;
 	}
 
-	@FindBy(xpath = "//*[@id=\"commentMessage\"]")
-	private WebElement FolderSelectMessage;
-	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
-	private WebElement CommentOK;
+	public WebElement getBrowse_Option() {
+		WebElement ele = Browse_Option;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", ele);
+		return ele;
+	}
+
+	public void getTemplate_Created_Message_Verify() {
+
+		String expectedtext = "Template Created Successfully!";
+		String actualtext = Template_Created_Message_Verify.getText();
+		Assert.assertEquals(actualtext, expectedtext);
+		Reporter.log(Template_Created_Message_Verify.getText(), true);
+
+	}
+
+	public void getMoveto_Templates_Option() {
+
+		Actions action = new Actions(driver);
+		action.moveToElement(Moveto_Templates_Option).build().perform();
+
+	}
+
+	public void getEditTemplate_Created_Message_Verify() {
+
+		String expectedtext = "Template Edited Successfully!";
+		String actualtext = EditTemplate_Created_Message_Verify.getText();
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+
+	}
+
+	public void getSelect_Office_document_Defaultviewing() {
+		Select sel = new Select(Select_Office_document_Defaultviewing);
+		sel.selectByVisibleText("Default viewing");
+
+	}
+
+	public void getSelect_Office_document_Advancedviewing() {
+		Select sel = new Select(Select_Office_document_Advancedviewing);
+		sel.selectByVisibleText("Advanced viewing");
+
+	}
 
 	public void getFolderSelectMessage() {
-		SoftAssert softassert = new SoftAssert();
+
 		String expectedtext = "Please select a folder to create document";
-		String actualtext = FolderSelectMessage.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+		String actualtext = FolderSelectMessage.getText();
+		Assert.assertEquals(actualtext, expectedtext);
 		Reporter.log(FolderSelectMessage.getText() + " this validation message should show", true);
-		jsclick(CommentOK);
+		movingclkElement(CommentOK);
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"messageContent\"]")
-	private WebElement addpagesMessage;
-	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
-	private WebElement CommentOKbutton;
 
 	public void getFolder_ErrorMessage() {
-		SoftAssert softassert = new SoftAssert();
+
 		String expectedtext = "Please add pages to the template before creating!";
-		String actualtext = addpagesMessage.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		String actualtext = addpagesMessage.getText();
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(addpagesMessage.getText() + " this validation message should show", true);
-		jsclick(CommentOKbutton);
+		movingclkElement(CommentOKbutton);
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"saveTemplate\"]")
-	private WebElement savetemp;
-
-	public WebElement getsavetemp() {
-		return savetemp;
-	}
-
-	@FindBy(xpath = "//*[@id=\"createDocumentClear\"]")
-	private WebElement ClearButton;
-
-	public WebElement getClearButton() {
-		return ClearButton;
-	}
-
-	@FindBy(xpath = "//*[@id=\"templateErr\"]")
-	private WebElement validationerror;
 
 	public void getvalidationerror() {
-		SoftAssert softassert = new SoftAssert();
+
 		String expectedtext = "*Template name should be specified.";
-		String actualtext = validationerror.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		String actualtext = validationerror.getText();
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(validationerror.getText() + " this validation message should show", true);
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
-	private WebElement Createdoc;
-
-	public WebElement getCreatedoc() {
-		return Createdoc;
-	}
-
-	@FindBy(xpath = "//*[@id=\"messageContent\"]")
-	private WebElement Reportvaluevalidationerror;
-
 	public void getReportvaluevalidationerror() {
-		SoftAssert softassert = new SoftAssert();
-		String expectedtext = "ReportName*  	field is required";
-		String actualtext = Reportvaluevalidationerror.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+
+		String expectedtext = "ReportName*   field is required";
+		String actualtext = Reportvaluevalidationerror.getText();
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(Reportvaluevalidationerror.getText() + " this validation message should show", true);
 		jsclick(CommentOKbutton);
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"Word document automation.docx\"]/div/img")
-	private WebElement Open_Word_page;
-
-	public WebElement getOpen_Word_page() throws Exception {
-		return Open_Word_page;
-	}
-
-	@FindBy(xpath = "//*[@id=\"Excel document automation.xlsx\"]/div/img")
-	private WebElement Open_Excel_page;
-
-	public WebElement getOpen_Excel_page() throws Exception {
-		return Open_Excel_page;
-	}
-
-	@FindBy(xpath = "//*[@id=\"templateOK\"]")
-	private WebElement OKButton;
-
-	public WebElement getOKButton() {
-		return OKButton;
-	}
-
-	@FindBy(xpath = "//*[@id=\"messageContent\"]")
-	private WebElement Filenamevalidation;
-
 	public void getFilenamevalidation() {
-		SoftAssert softassert = new SoftAssert();
-		String expectedtext = "Please enter file name ";
-		String actualtext = Filenamevalidation.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+
+		String expectedtext = "Please enter file name";
+		String actualtext = Filenamevalidation.getText();
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(Filenamevalidation.getText() + " this validation message should show", true);
 		jsclick(CommentOKbutton);
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"createDocumentMessage\"]")
-	private WebElement NavigateDoc;
-	@FindBy(xpath = "//*[@id=\"modelHome\"]")
-	private WebElement NavigateButton;
-
 	public void getNavigateDoc() {
-		SoftAssert softassert = new SoftAssert();
+
 		String expectedtext = "Document created successfully";
-		String actualtext = NavigateDoc.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		String actualtext = NavigateDoc.getText();
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(NavigateDoc.getText() + " this message should show", true);
 		jsclick(NavigateButton);
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"messageContent\"]")
-	private WebElement Formmappingvalidation;
-	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
-	private WebElement FormOKbutton;
-
 	public void getFormmappingvalidation() {
-		SoftAssert softassert = new SoftAssert();
+
 		String expectedtext = "Please add form fields before mapping.";
-		String actualtext = Formmappingvalidation.getAttribute("value");
-		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+		String actualtext = Formmappingvalidation.getText();
+		Assert.assertEquals(actualtext, expectedtext);
 		Reporter.log(Formmappingvalidation.getText() + " this validation message should show", true);
 		jsclick(FormOKbutton);
-
-	}
-	// Select From Document Navigator
-
-	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
-	private WebElement Select_Cabinet;
-
-	public WebElement getSelect_Cabinet() {
-		return Select_Cabinet;
 	}
 
-	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/a[1]")
-	private WebElement Select_Drawer;
+	public void verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {
 
-	public WebElement getSelect_Drawer() {
-		return Select_Drawer;
-	}
+		Reporter.log("Test Scenario 1 :Verifying to Create or Browse Template Default Viewing", true);
 
-	@FindBy(xpath = (".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Folder;
-
-	public WebElement getSelect_Folder() {
-		return Select_Folder;
-
-	}
-
-	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]")
-	private WebElement Select_subFolder;
-
-	public WebElement getSelect_subFolder() {
-		return Select_subFolder;
-	}
-
-	// Select from Destination folder Location
-
-	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Cabinet1;
-
-	public WebElement getSelect_Cabinet1() {
-		return Select_Cabinet1;
-
-	}
-
-	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Drawer1;
-
-	public WebElement getSelect_Drawer1() {
-		return Select_Drawer1;
-
-	}
-
-	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Folder1;
-
-	public WebElement getSelect_Folder1() {
-		return Select_Folder1;
-
-	}
-
-	@FindBy(xpath = "//*[@id=\"templateDocumentPermissions\"]/a")
-	private WebElement Select_Document_Template;
-
-	public WebElement getSelect_Document_Template() {
-		return Select_Document_Template;
-	}
-
-	@FindBy(xpath = "//*[@id=\"templatePrefs\"]/div[2]/div[3]/div/div/div")
-	private WebElement Select_Userlist;
-
-	public WebElement getSelect_Userlist() {
-		return Select_Userlist;
-	}
-
-	@FindBy(css = ".e-selectall-parent .e-frame")
-	private WebElement Select_AllUser;
-
-	public WebElement getSelect_AllUser() {
-		return Select_AllUser;
-	}
-
-	public void Select_AllUser() {
 		try {
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
-			boolean isReady = wait1.until(ExpectedConditions.and(ExpectedConditions.visibilityOf(Select_AllUser),
-					ExpectedConditions.elementToBeClickable(Select_AllUser)));
-
-			if (isReady) {
-				Reporter.log("Checkbox is visible and clickable", true);
-
-				if (Select_AllUser.isSelected()) {
-					Reporter.log("Checkbox is already selected", true);
-				} else {
-					Select_AllUser.click();
-					Reporter.log("Checkbox was not selected, and has now been clicked", true);
-				}
-			}
+			LogDipakUser();
+			Thread.sleep(6000);
 		} catch (Exception e) {
-			Reporter.log("not working", true);
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Thread.sleep(6000);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My preferences option", true);
+		getSelect_Office_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Office Document and set Default View Option", true);
+		getPdf_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Pdf Document and set Default View Option", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		// Assign Permission
+		if (TemplateDeniedmessageok.isDisplayed() == true) {
+			jsclick(TemplateDeniedmessageok);
+			LogoutPage();
+			LoginAdminUser();
+			movingclkElement(Setting_Icon);
+			Thread.sleep(3000);
+			Reporter.log("Click on Setting Icon", true);
+			jsclick(Select_Document_Template);
+			Thread.sleep(3000);
+			Reporter.log("Click on Document Template", true);
+			movingclkElement(Select_Userlist);
+			Thread.sleep(3000);
+			Reporter.log("Click on User List dropdown", true);
+			movingclkElement(Select_AllUser);
+			Thread.sleep(3000);
+			Reporter.log("Select all Users from Dropdown", true);
+			movingclkElement(TemplateApply);
+			Thread.sleep(3000);
+			Reporter.log("Click on Apply button", true);
+			LogoutPage();
+			LogDipakUser();
+			movingclkElement(Templates_MenuOption);
+		} else {
+			System.out.println("user have Template document permission");
+		}
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("select a Folder", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(9000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Value from Document type Dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(6000);
+		Reporter.log("Select Report Name Textbox", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Reporter.log("Enter value into Report Name field", true);
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse Document page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
+		Thread.sleep(6000);
+		try {
+			WebDriverWait wait2 = new WebDriverWait(driver, 20);
+			wait2.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(6000);
+		jsclick(Save_Template_Button);
+		Reporter.log("Click on Save Template button", true);
+		Reporter.log("Save Template button clicked successfully", true);
+		jsclick(Template_Description_No_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description dialog No button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click again on Save Template button", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Name Textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter value into Template Name field ", true);
+		jsclick(Template_Description_Messagebox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description Textbox", true);
+		Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Template Description message", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description Yes button", true);
+
+		if (driver.getPageSource()
+				.contains("Template already exists with the same name.Please try creating with a different name.")) {
+			System.out.println("Same name Template alreday exist we need to Create another name Template");
+
+			// Delete Existing Template and create new
+
+			jsclick(Template_Created_OK_button);
+			Thread.sleep(4000);
+			getMoveto_Templates_Option();
+			Thread.sleep(4000);
+			Reporter.log("Mousehover to Template Tab", true);
+			movingclkElement(Select_Created_Template);
+			Reporter.log("Select Created Template Page", true);
+			try {
+				WebDriverWait wait2 = new WebDriverWait(driver, 20);
+				wait2.until(ExpectedConditions.alertIsPresent());
+				Alert alt = driver.switchTo().alert();
+				alt.accept();
+			} catch (Exception e) {
+				System.out.println("Alert is not present...");
+			}
+			Thread.sleep(6000);
+			Reporter.log("Created Template page open successfully", true);
+			jsclick(Delete_Template_Button);
+			Thread.sleep(6000);
+			Reporter.log("Click on Delete Template Fab Option", true);
+			jsclick(Delete_Template_OK_Button);
+			Thread.sleep(6000);
+			Reporter.log("Click on Delete Template Dialog Ok button", true);
+			Reporter.log("Template Deleted Successfully", true);
+			Refresh_Button();
+			Thread.sleep(6000);
+			Reporter.log("Click on Refresh button", true);
+			movingclkElement(Templates_MenuOption);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Tab", true);
+			jsclick(Destination_Folder_Textbox);
+			Thread.sleep(6000);
+			Reporter.log("Click on Destination Folder Textbox", true);
+			selectElement(Select_Cabinet1);
+			Thread.sleep(6000);
+			Reporter.log("Expand a Cabinet", true);
+			selectElement(Select_Drawer1);
+			Thread.sleep(6000);
+			Reporter.log("Expand a Drawer", true);
+			selectElement(Select_Folder1);
+			Thread.sleep(6000);
+			Reporter.log("select a Folder", true);
+			jsclick(OK_Button_BrowseforFolder);
+			Thread.sleep(9000);
+			Reporter.log("Click on Ok button", true);
+			jsclick(getSelect_Document_Type_Dropdown());
+			Thread.sleep(6000);
+			Reporter.log("Select Value from Document type Dropdown", true);
+			jsclick(Select_ReportName_Test);
+			Thread.sleep(6000);
+			Reporter.log("Select Report Name Textbox", true);
+			Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+			Reporter.log("Enter value into Report Name field", true);
+			movingclkElement(Move_To_PlusIcon);
+			getBrowse_Option();
+			Thread.sleep(3000);
+			Reporter.log("Browse Document page", true);
+			Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
+			Thread.sleep(6000);
+			try {
+				WebDriverWait wait2 = new WebDriverWait(driver, 20);
+				wait2.until(ExpectedConditions.alertIsPresent());
+				Alert alt = driver.switchTo().alert();
+				alt.accept();
+			} catch (Exception e) {
+				System.out.println("Alert is not present...");
+			}
+			Reporter.log("By using AutoIT add file from external folder", true);
+			Thread.sleep(6000);
+			movingclkElement(Move_To_PlusIcon);
+			getBrowse_Option();
+			Thread.sleep(2000);
+			Reporter.log("Browse Document page", true);
+			Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+			Thread.sleep(6000);
+			jsclick(Save_Template_Button);
+			Reporter.log("Click on Save Template button", true);
+			Reporter.log("Save Template button clicked successfully", true);
+			Thread.sleep(6000);
+			jsclick(Template_NameTextbox);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Name Textbox", true);
+			Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+			Thread.sleep(6000);
+			Reporter.log("Enter value into Template Name field ", true);
+			jsclick(Template_Description_Messagebox);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Description Textbox", true);
+			Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+			Thread.sleep(6000);
+			Reporter.log("Enter Template Description message", true);
+			jsclick(Template_Description_OK_button);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Description Yes button", true);
+
+		} else {
+			System.out.println("Template Created succesfully");
 		}
 
+		getTemplate_Created_Message_Verify();
+		Thread.sleep(4000);
+		Reporter.log("Verifying Template Created succesfully Message", true);
+		jsclick(Template_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		Reporter.log("Verifying to CreateorBrowse Template Defaultviewing", true);
+		Reporter.log("Click on Refresh button", true);
 	}
 
-	@FindBy(xpath = "//*[@id=\"templatePermissionApply\"]")
-	private WebElement TemplateApply;
+	public void Verify_to_Edit_and_Delete_DefaultTemplate() throws Exception {
 
-	public WebElement getTemplateApply() {
-		return TemplateApply;
+		Reporter.log("Test Scenario 2: Verifying to  Edit and Delete Default Template", true);
+
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Reporter.log("Select Created Template Page", true);
+		try {
+			WebDriverWait wait2 = new WebDriverWait(driver, 20);
+			wait2.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Thread.sleep(6000);
+		Reporter.log("Created Template page open successfully", true);
+		jsclick(Click_Edit_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Edit Template Fab Option", true);
+		EditTemplate_Description_Messagebox.clear();
+		Thread.sleep(6000);
+		Reporter.log("Click on Edit Template Description Textbox", true);
+		EditTemplate_Description_Messagebox.sendKeys(Templates_excelRead(6, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Message under Description Box", true);
+		jsclick(EditTemplate_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Edit Template Dialog Ok button", true);
+		getEditTemplate_Created_Message_Verify();
+		Reporter.log("Template edited successfully", true);
+		jsclick(EditTemplate_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Edited Succesfully Ok button", true);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template Page", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Delete_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Template Fab Option", true);
+		jsclick(Delete_Template_OK_Button);
+		Reporter.log("Click on Delete Template Dialog Ok button", true);
+		Reporter.log("Template Deleted Successfully", true);
+
 	}
 
-	@FindBy(xpath = "//*[@id=\"logoutElement\"]")
-	private WebElement Username;
+	public void verify_CreateorBrowse_Template_Advancedviewing_Officedoc() throws Exception {
 
-	public WebElement getUsername() {
-		return Username;
+		Reporter.log("Test Scenario 3: Verifying to  Create or Browse Template In Advanced Viewing", true);
+
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences Option", true);
+		getSelect_Office_document_Advancedviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Office Document and set Advanced View Option", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("selecta  Folder", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button of Browse for folder Dialog", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Value from Document Type Dropdown ", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(6000);
+		Reporter.log("Click on Report Name Textbox", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Reporter.log("Enter value into Report Name field", true);
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse Document page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficedoc.exe");
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(6000);
+		jsclick(Save_Template_Button);
+		Reporter.log("Click on Save Template button", true);
+		jsclick(Template_Description_No_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description Dialog No button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click again on Save Template button", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Name Textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Name under Template Name Textbox", true);
+		jsclick(Template_Description_Messagebox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description Messagebox", true);
+		Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Template Description Message Under Description box", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description box Ok button", true);
+		getTemplate_Created_Message_Verify();
+		Thread.sleep(4000);
+		Reporter.log("Verifying Template created successfully Message", true);
+		jsclick(Template_Created_OK_button);
+		Reporter.log("Click on Template Created Ok button", true);
+		Reporter.log("Verifying to CreateorBrowse Officedoc Template advancedviewing", true);
+
 	}
 
-	@FindBy(xpath = "//*[@id=\"idSidenav\"]/ul/li[1]/a")
-	private WebElement Logout;
+	public void Verify_to_Edit_and_Delete_AdvancedTemplate_Officedoc() throws Exception {
 
-	public WebElement getLogout() {
-		return Logout;
+		Reporter.log("Test Scenario 4: Verifying to  Edit and Delete Advanced View Officedocument", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template page", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Click_Edit_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Edit Template Fab button", true);
+		EditTemplate_Description_Messagebox.clear();
+		Thread.sleep(6000);
+		Reporter.log("Click on Edit Template Description Messagebox ", true);
+		EditTemplate_Description_Messagebox.sendKeys(Templates_excelRead(6, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Message under Edit Template Description Messagebox", true);
+		jsclick(EditTemplate_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getEditTemplate_Created_Message_Verify();
+		Reporter.log("Template edited successfully", true);
+		jsclick(EditTemplate_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Edited successfully dialog Ok button", true);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template page", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Delete_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Template Fab button", true);
+		jsclick(Delete_Template_OK_Button);
+		Reporter.log("Template Deleted Successfully", true);
+
+	}
+
+	public void verify_to_Create_Formmapping_PDFTemplate_Advancedviewing() throws Exception {
+
+		Reporter.log("Test Scenario 5: Verifying to  Create Form mapping in Advanced viewing", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences Option", true);
+		getPdf_document_Advancedviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Pdf Document and set Advanced view Option", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("Folder is selected for Templates", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select value from Document type dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(2000);
+		Reporter.log("Click on Report Name Textbox", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Thread.sleep(2000);
+		Reporter.log("Enter value into Report Name field", true);
+		movingclkElement(Move_To_PlusIcon);
+		getNew_pdf_Document_Option();
+		Thread.sleep(6000);
+		Reporter.log("Browse Document Page", true);
+		getEnter_pdf_File_Name();
+		Thread.sleep(6000);
+		Reporter.log("Enter Pdf file Name", true);
+		jsclick(pdfViewer);
+		Thread.sleep(6000);
+		Reporter.log("Click on PdfViewer menu option", true);
+
+		Actions act = new Actions(driver);
+		act.click(Textbox).moveToElement(Add_Textbox_Onpage).click().build().perform();
+
+		Thread.sleep(4000);
+		Reporter.log("Select and Add Textbox on  Page", true);
+		jsclick(Click_Formmapper);
+		Thread.sleep(6000);
+		Reporter.log("Click on Form mapping Option", true);
+		getSelect_Formfield();
+		Thread.sleep(8000);
+		Reporter.log("Select Form field", true);
+		jsclick(FormOK);
+		Thread.sleep(6000);
+		Reporter.log("Click on  Ok button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Name Textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter value into Template Name field", true);
+		jsclick(Template_Description_Messagebox);
+		Thread.sleep(6000);
+		Reporter.log("Click on  Template Description Messagebox", true);
+		Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Description Message into Description field", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getTemplate_Created_Message_Verify();
+		Thread.sleep(4000);
+		Reporter.log("Template Created Successfully", true);
+		jsclick(Template_Created_OK_button);
+		Reporter.log("Verifying to CreateorBrowse Formmapping Template advancedviewing", true);
+		Thread.sleep(4000);
+	}
+
+	public void Verify_to_Edit_and_Delete_Formfield() throws Exception {
+
+		Reporter.log("Test Scenario 6: Verifying to  Edit and Delete Form field", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Thread.sleep(4000);
+		getMoveto_Templates_Option();
+		Thread.sleep(4000);
+		Reporter.log("Click on Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template Document page", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Click_Edit_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Edit Template Fab button", true);
+		EditTemplate_Description_Messagebox.clear();
+		Thread.sleep(6000);
+		Reporter.log("Clik on Edit Template Description Messagebox", true);
+		EditTemplate_Description_Messagebox.sendKeys(Templates_excelRead(6, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Description Message into Description field", true);
+		jsclick(EditTemplate_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getEditTemplate_Created_Message_Verify();
+		Reporter.log("Template edited successfully", true);
+		jsclick(EditTemplate_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template page", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Delete_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Template Fab button", true);
+		jsclick(Delete_Template_OK_Button);
+		Reporter.log("Formmapping Template Deleted Successfully", true);
+
+	}
+
+	public void Set_Defaultview() throws Exception {
+
+		Reporter.log("Test Scenario 7: Set Office and Pdf document option in Default view", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences Option", true);
+		getSelect_Office_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Office Documentand set Default View Option", true);
+		getPdf_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select PdfDocument and set Default View Option", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		Refresh_Button();
+		Thread.sleep(4000);
+		Reporter.log("Click on Refresh button", true);
+	}
+
+	public void Login_Template_permissionassign_User_and_verify_message_Select_Folder_ToCreateDoc() throws Exception {
+
+		Reporter.log("Test Scenario 1 : Verifying message Select Folder To Create Document ", true);
+
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			Reporter.log(" user alreday Logged", true);
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences Option", true);
+		getSelect_Office_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Office Documnet and set as Default view", true);
+		getPdf_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Pdf Documnet and set as Default view", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(3000);
+		Reporter.log("Click on Template Tab", true);
+
+		if (TemplateDeniedmessageok.isDisplayed() == true) {
+			jsclick(TemplateDeniedmessageok);
+			LogoutPage();
+			LoginAdminUser();
+			movingclkElement(Setting_Icon);
+			Thread.sleep(3000);
+			Reporter.log("Click on Setting Icon", true);
+			jsclick(Select_Document_Template);
+			Thread.sleep(3000);
+			Reporter.log("Click on Document Template", true);
+			movingclkElement(Select_Userlist);
+			Thread.sleep(3000);
+			Reporter.log("Click on User List dropdown", true);
+			movingclkElement(Select_AllUser);
+			Thread.sleep(3000);
+			Reporter.log("Select all Users from Dropdown", true);
+			movingclkElement(TemplateApply);
+			Thread.sleep(3000);
+			Reporter.log("Click on Apply button", true);
+			LogoutPage();
+			LogDipakUser();
+			movingclkElement(Templates_MenuOption);
+		} else {
+			System.out.println("user have Template document permission");
+		}
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder TextBox", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getFolderSelectMessage();
+		Thread.sleep(6000);
+		Reporter.log("Verified Select Folder Validation message", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getFolderSelectMessage();
+		Thread.sleep(6000);
+		Reporter.log("Verified Select Folder Validation message", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getFolderSelectMessage();
+		Thread.sleep(6000);
+		Reporter.log("Verified Select Folder validation message", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log(" select a Folder", true);
+		Reporter.log("Folder is selected for Templates", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Reporter.log("Click on Ok button", true);
+		Thread.sleep(6000);
+	}
+
+	public void verify_message_addPages_Using_SaveandClearButton() throws Exception {
+
+		Reporter.log("Test Scenario 2 : Verifying message add Pages Using Save and Clear button ", true);
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		Thread.sleep(6000);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		getFolder_ErrorMessage();
+		Thread.sleep(6000);
+		Reporter.log("Verified Error message", true);
+		jsclick(savetemp);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		getFolder_ErrorMessage();
+		Thread.sleep(6000);
+		Reporter.log("Verified Error message", true);
+		jsclick(ClearButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Clear button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		getFolder_ErrorMessage();
+		Thread.sleep(6000);
+		Reporter.log("Verified Error message", true);
+		jsclick(savetemp);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		getFolder_ErrorMessage();
+		Thread.sleep(4000);
+		Reporter.log("Verified Error message", true);
+		Reporter.log("Add pages message verified", true);
+	}
+
+	public void Verify_TextboxName_and_Templatename_validation() throws Exception {
+
+		Reporter.log("Test Scenario 3 : Verifying Textbox Name and Templatename validation ", true);
+
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		Thread.sleep(6000);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Value from Document type Dropdown", true);
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
+		Thread.sleep(6000);
+		try {
+			WebDriverWait wait2 = new WebDriverWait(driver, 20);
+			wait2.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Thread.sleep(6000);
+		Reporter.log("By using AutoIT add file from external folder", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description Ok button", true);
+		getvalidationerror();
+		Thread.sleep(6000);
+		Reporter.log("Verified Validation error message", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Name Textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Value Template Name Name Textbox", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+
+		if (driver.getPageSource()
+				.contains("Template already exists with the same name.Please try creating with a different name.")) {
+			System.out.println("Same name Template alreday exist we need to Create another name Template");
+
+			// Delete Existing Template and create new
+
+			jsclick(Template_Created_OK_button);
+			Thread.sleep(4000);
+			getMoveto_Templates_Option();
+			Thread.sleep(4000);
+			Reporter.log("Mousehover to Template Tab", true);
+			movingclkElement(Select_Created_Template);
+			Reporter.log("Select Created Template Page", true);
+			try {
+				WebDriverWait wait2 = new WebDriverWait(driver, 20);
+				wait2.until(ExpectedConditions.alertIsPresent());
+				Alert alt = driver.switchTo().alert();
+				alt.accept();
+			} catch (Exception e) {
+				System.out.println("Alert is not present...");
+			}
+			Thread.sleep(6000);
+			Reporter.log("Created Template page open successfully", true);
+			jsclick(Delete_Template_Button);
+			Thread.sleep(6000);
+			Reporter.log("Click on Delete Template Fab Option", true);
+			jsclick(Delete_Template_OK_Button);
+			Thread.sleep(6000);
+			Reporter.log("Click on Delete Template Dialog Ok button", true);
+			Reporter.log("Template Deleted Successfully", true);
+			Refresh_Button();
+			Thread.sleep(6000);
+			Reporter.log("Click on Refresh button", true);
+			movingclkElement(Templates_MenuOption);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Tab", true);
+			jsclick(Destination_Folder_Textbox);
+			Thread.sleep(6000);
+			Reporter.log("Click on Destination Folder Textbox", true);
+			selectElement(Select_Cabinet1);
+			Thread.sleep(6000);
+			Reporter.log("Expand a Cabinet", true);
+			selectElement(Select_Drawer1);
+			Thread.sleep(6000);
+			Reporter.log("Expand a Drawer", true);
+			selectElement(Select_Folder1);
+			Thread.sleep(6000);
+			Reporter.log("select a Folder", true);
+			jsclick(OK_Button_BrowseforFolder);
+			Thread.sleep(9000);
+			Reporter.log("Click on Ok button", true);
+			jsclick(getSelect_Document_Type_Dropdown());
+			Thread.sleep(3000);
+			Reporter.log("Select Value from Document type Dropdown", true);
+			movingclkElement(Move_To_PlusIcon);
+			getBrowse_Option();
+			Thread.sleep(3000);
+			Reporter.log("Browse Document page", true);
+			Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
+			Thread.sleep(6000);
+			try {
+				WebDriverWait wait2 = new WebDriverWait(driver, 20);
+				wait2.until(ExpectedConditions.alertIsPresent());
+				Alert alt = driver.switchTo().alert();
+				alt.accept();
+			} catch (Exception e) {
+				System.out.println("Alert is not present...");
+			}
+			Reporter.log("By using AutoIT add file from external folder", true);
+			Thread.sleep(6000);
+			movingclkElement(Move_To_PlusIcon);
+			getBrowse_Option();
+			Thread.sleep(2000);
+			Reporter.log("Browse Document page", true);
+			Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+			Thread.sleep(6000);
+			jsclick(Save_Template_Button);
+			Reporter.log("Click on Save Template button", true);
+			Reporter.log("Save Template button clicked successfully", true);
+			Thread.sleep(6000);
+			jsclick(Template_NameTextbox);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Name Textbox", true);
+			Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+			Thread.sleep(6000);
+			Reporter.log("Enter value into Template Name field ", true);
+			jsclick(Template_Description_Messagebox);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Description Textbox", true);
+			Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+			Thread.sleep(6000);
+			Reporter.log("Enter Template Description message", true);
+			jsclick(Template_Description_OK_button);
+			Thread.sleep(6000);
+			Reporter.log("Click on Template Description Yes button", true);
+
+		} else {
+			System.out.println("Template Created succesfully");
+		}
+
+		getTemplate_Created_Message_Verify();
+		Thread.sleep(4000);
+		Reporter.log("Verified Template created successfully", true);
+		jsclick(Template_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template from Template Tab", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Createdoc);
+		Thread.sleep(6000);
+		Reporter.log("Click on Create button", true);
+		getReportvaluevalidationerror();
+		Thread.sleep(6000);
+		Reporter.log("Verified validation Error", true);
+		jsclick(Delete_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Template Fab button", true);
+		jsclick(Delete_Template_OK_Button);
+		Reporter.log("Template Deleted Successfully", true);
+		Reporter.log("Texbox and Template name validate", true);
+	}
+
+	public void Verify_validation_Duplicate_Template_Created() throws Exception {
+
+		Reporter.log("Test Scenario 4 : Verifying validation Duplicate Template Created ", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Thread.sleep(6000);
+		Refresh_Button();
+		Thread.sleep(6000);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences Option", true);
+		getSelect_Office_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Office Document and set as Default View", true);
+		getPdf_document_Defaultviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select PdfC Document and set as Default View", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("Folder is selected for Templates", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(4000);
+		Reporter.log("Select Document type dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(3000);
+		Reporter.log("Click on Report Name textbox", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Reporter.log("Enter Report value into ReportName textbox", true);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse a Document Page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
+		Thread.sleep(6000);
+		try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(3000);
+		WebDriverWait wait2 = new WebDriverWait(driver, 20);
+		wait2.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse a Document Page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+		Thread.sleep(6000);
+		jsclick(Save_Template_Button);
+		Reporter.log("By using AutoIT add file from external folder", true);
+		jsclick(Template_Description_No_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description No button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Name textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Template Name", true);
+		jsclick(Template_Description_Messagebox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description messagebox", true);
+		Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter message under Template Description", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description dialog OK button", true);
+		getTemplate_Created_Message_Verify();
+		Thread.sleep(4000);
+		Reporter.log("Verified Template created successfully", true);
+		jsclick(Template_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		Reporter.log("Verifying to CreateorBrowse Template Defaultviewing", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("Folder is selected for Templates", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Document type dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Reporter.log("Select Report name textbox", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Thread.sleep(2000);
+		Reporter.log("Enter value into Report Name field");
+		WebDriverWait wait3 = new WebDriverWait(driver, 20);
+		wait3.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(6000);
+		Reporter.log("Browse a Document Page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
+		Thread.sleep(6000);
+		WebDriverWait wait4 = new WebDriverWait(driver, 20);
+		wait4.until(ExpectedConditions.alertIsPresent());
+		Alert alt1 = driver.switchTo().alert();
+		alt1.accept();
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(3000);
+		WebDriverWait wait5 = new WebDriverWait(driver, 20);
+		wait5.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse a Document Page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+		Thread.sleep(6000);
+		jsclick(Save_Template_Button);
+		Reporter.log("By using AutoIT add file from external folder", true);
+		jsclick(Template_Description_No_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description No button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(2000);
+		Reporter.log("Click on Template Name textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Template Name", true);
+		jsclick(Template_Description_Messagebox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Decription messagebox", true);
+		Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter message in Template description textbox", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getVerify_DuplicateTemp_Message();
+		Thread.sleep(6000);
+		Reporter.log("Verified Template already exist validation message", true);
+		movingclkElement(Okbutton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Nobutton);
+		Thread.sleep(6000);
+		Reporter.log("Click on No button", true);
+		Reporter.log("Duplicate Template not creating validate", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on  Refresh button", true);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		movingclkElement(Select_Created_Template);
+		try {
+			WebDriverWait wait6 = new WebDriverWait(driver, 20);
+			wait6.until(ExpectedConditions.alertIsPresent());
+			Alert alt2 = driver.switchTo().alert();
+			alt2.accept();
+		} catch (Exception e) {
+			Reporter.log("Alert not present", true);
+		}
+		Thread.sleep(6000);
+		Reporter.log("Select created Template from Template Tab", true);
+		jsclick(Delete_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Template Fab button", true);
+		jsclick(Delete_Template_OK_Button);
+		Reporter.log("Template Deleted Successfully", true);
+
+	}
+
+	public void verify_to_CreateorBrowse_Template_Advancedviewing_Officedoc() throws Exception {
+
+		Reporter.log("Test Scenario 5 : Verifying to Create or Browse Template Advancedviewing Officedoc", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Thread.sleep(6000);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences Option", true);
+		getSelect_Office_document_Advancedviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Office document and set as Advanced view", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Templates Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("Folder is selected for Templates", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Document type dropdown value", true);
+		jsclick(Select_ReportName_Test);
+		Reporter.log("Click on Report Name", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Thread.sleep(2000);
+		Reporter.log("Enter value into Report Name field", true);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getNew_Word_Document_Option();
+		Thread.sleep(2000);
+		Reporter.log("Browse Word document", true);
+		jsclick(OKButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getFilenamevalidation();
+		Thread.sleep(6000);
+		Reporter.log("Verified Validation error", true);
+		getEnter_Word_File_Name();
+		Thread.sleep(2000);
+		Reporter.log("Enter Word file name", true);
+		jsclick(Open_Word_page);
+		Thread.sleep(2000);
+		Reporter.log("Select word page", true);
+		Reporter.log("Advanced Viewing New Word Document Created", true);
+		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+		wait1.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getNew_Excel_Spreadsheet_Option();
+		Thread.sleep(6000);
+		Reporter.log("Browse Excel document", true);
+		jsclick(OKButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getFilenamevalidation();
+		Thread.sleep(6000);
+		Reporter.log("Verified Validation error message", true);
+		getEnter_Excel_File_Name();
+		Thread.sleep(6000);
+		Reporter.log("Enter Excel file name", true);
+		jsclick(Open_Excel_page);
+		Thread.sleep(4000);
+		WebDriverWait wait2 = new WebDriverWait(driver, 20);
+		wait2.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse  Document Page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficedoc.exe");
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(6000);
+		Reporter.log("Advanced Viewing New Excel Document Created", true);
+		jsclick(Save_Template_Button);
+		Reporter.log("Save Template button clicked successfully", true);
+		jsclick(Template_Description_No_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template description No button", true);
+		jsclick(Save_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Template button", true);
+		jsclick(Template_NameTextbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template name Textbox", true);
+		Template_NameTextbox.sendKeys(Templates_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Template Name", true);
+		jsclick(Template_Description_Messagebox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Description messagebox", true);
+		Template_Description_Messagebox.sendKeys(Templates_excelRead(5, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter message under Template Description", true);
+		jsclick(Template_Description_OK_button);
+		Thread.sleep(8000);
+		Reporter.log("Click on Ok button", true);
+		getTemplate_Created_Message_Verify();
+		Thread.sleep(4000);
+		Reporter.log("Verified Template created successfully", true);
+		jsclick(Template_Created_OK_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		Reporter.log("Verifying to CreateorBrowse Officedoc Template advancedviewing", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select created Template", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		jsclick(Createdoc);
+		Thread.sleep(6000);
+		Reporter.log("Click on Create button", true);
+		getNavigateDoc();
+		Thread.sleep(6000);
+		Reporter.log("Click on Navigate button", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		getMoveto_Templates_Option();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to Template Tab", true);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Select_Created_Template);
+		Thread.sleep(6000);
+		Reporter.log("Select Created Template", true);
+		try {
+			WebDriverWait wait3 = new WebDriverWait(driver, 20);
+			wait3.until(ExpectedConditions.alertIsPresent());
+			Alert alt1 = driver.switchTo().alert();
+			alt1.accept();
+		} catch (Exception e) {
+			// Alert not present
+		}
+		Thread.sleep(6000);
+		jsclick(Delete_Template_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Template Fab button", true);
+		jsclick(Delete_Template_OK_Button);
+		Reporter.log("Click on Ok button", true);
+		Reporter.log("Template Deleted Successfully", true);
+	}
+
+	public void verify_Validation_Formmapping_PDFTemplate_Advancedviewing() throws Exception {
+
+		Reporter.log("Test Scenario 6 : Verifying Validation Formmapping PDF Template Advancedviewing ", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("user alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		movingclkElement(Setting_Icon);
+		Thread.sleep(6000);
+		Reporter.log("Click on Setting Icon", true);
+		jsclick(My_Preferencesetting);
+		Thread.sleep(6000);
+		Reporter.log("Click on My Preferences", true);
+		getPdf_document_Advancedviewing();
+		Thread.sleep(6000);
+		Reporter.log("Select Pdf document and set as Advanced view", true);
+		movingclkElement(Apply_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Apply button", true);
+		jsclick(Templates_MenuOption);
+		Thread.sleep(6000);
+		Reporter.log("Click on Template Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("Folder is selected for Templates", true);
+		OK_Button_BrowseforFolder.click();
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Document type dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(4000);
+		Reporter.log("Click on Report Name", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Reporter.log("Enter value Report Name Textbox", true);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
+		movingclkElement(Move_To_PlusIcon);
+		getNew_pdf_Document_Option();
+		Thread.sleep(6000);
+		Reporter.log("Browse New Pdf document", true);
+		jsclick(OKButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on  Ok button", true);
+		getFilenamevalidation();
+		Thread.sleep(6000);
+		Reporter.log("Verified Validation error message ", true);
+		getEnter_pdf_File_Name();
+		Thread.sleep(6000);
+		Reporter.log("Enter value Pdf file name field", true);
+		jsclick(Click_Formmapper);
+		Thread.sleep(6000);
+		Reporter.log("Click on Form mapping", true);
+		getFormmappingvalidation();
+		Reporter.log("Verified Form mapping validation message", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		jsclick(Nobutton);
+		Thread.sleep(6000);
+		Reporter.log("Click on No button", true);
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+		Reporter.log("Form mapping validation verified", true);
 	}
 }

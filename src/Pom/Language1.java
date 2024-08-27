@@ -24,6 +24,7 @@ import org.testng.asserts.SoftAssert;
 
 import Generic.BaseClass;
 
+//Dipak codes 
 public class Language1 extends BaseClass {
 
 	public static WebElement element = null;
@@ -122,12 +123,6 @@ public class Language1 extends BaseClass {
 		return Pdf_document_Defaultviewing;
 	}
 
-	
-	
-	
-	
-	
-	
 	@FindBy(xpath = "//img[@src='images/newRe.png']")
 	private WebElement Refreshbutton;
 
@@ -198,18 +193,18 @@ public class Language1 extends BaseClass {
 		ro.click();
 		driver.findElement(By.id("submitid")).click();
 	}
-	
-	//1. LoginCVS
-	
-		public static String ExcelLogin ( int rowNo, int cellNo) throws Exception {
-			File src=new File("./data/TestData.xlsx"); 
-			FileInputStream	fis = new FileInputStream(src); 
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-			XSSFSheet s = wb.getSheet("Login");
-			XSSFRow row =s.getRow(rowNo);
-			XSSFCell cll = row.getCell(cellNo);
-			String cellType = cll.getStringCellValue();
-			return cellType;
+
+	// 1. LoginCVS
+
+	public static String ExcelLogin(int rowNo, int cellNo) throws Exception {
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		XSSFSheet s = wb.getSheet("Login");
+		XSSFRow row = s.getRow(rowNo);
+		XSSFCell cll = row.getCell(cellNo);
+		String cellType = cll.getStringCellValue();
+		return cellType;
 	}
 
 	@FindBy(xpath = "//*[@id=\"loginForm\"]/div[1]/div[1]/div[2]")
@@ -325,12 +320,6 @@ public class Language1 extends BaseClass {
 		return element;
 	}
 
-	
-	
-	
-	
-	
-	
 	@FindBy(id = "viewerZoomId")
 	private WebElement SelectViewerr;
 
@@ -340,12 +329,6 @@ public class Language1 extends BaseClass {
 		return SelectViewerr;
 	}
 
-	
-	
-
-	
-	
-	
 	public WebElement Hindi_Myaccount_Text_Laguage(WebDriver driver) throws InterruptedException {
 
 		SoftAssert softassert = new SoftAssert();
@@ -439,16 +422,13 @@ public class Language1 extends BaseClass {
 		return Enter_Report_Name_Text;
 	}
 
-	@FindBy(xpath= "//*[@id=\"indices_5\"]")
+	@FindBy(xpath = "//*[@id=\"indices_5\"]")
 	private WebElement Enter_Report_Name_Text_SQL;
 
 	public WebElement getEnter_Report_Name_Text_SQL() {
 		return Enter_Report_Name_Text_SQL;
 	}
-	
-	
-	
-	
+
 	@FindBy(xpath = "//div[@id='addPagesDropDown']//span[1]")
 	private WebElement Move_To_PlusIcon;
 
@@ -673,14 +653,14 @@ public class Language1 extends BaseClass {
 	public WebElement getSpanishProperties_option() {
 		return SpanishProperties_option;
 	}
-	
+
 	@FindBy(linkText = "ReportName")
 	private WebElement ReportName;
 
 	public WebElement getReportName() {
 		return ReportName;
 
-	}  
+	}
 
 	@FindBy(xpath = "//*[@id=\"showHideThumbnail\"]/span")
 	private WebElement showHideThumbnail;
@@ -2538,22 +2518,23 @@ public class Language1 extends BaseClass {
 	public WebElement getocrpopup() {
 		return ocrpopup;
 
-	}  
-	
+	}
+
 	@FindBy(xpath = "//*[@id=\"33\"]")
 	private WebElement ReportID;
 
 	public WebElement getReportID() {
 		return ReportID;
 
-	}  
+	}
+
 	@FindBy(xpath = "//*[@id=\"Underscore _.pdf\"]/div/img")
 	private WebElement Open_Underscore_page;
 
 	public WebElement getOpen_Underscore_page() {
 		return Open_Underscore_page;
 	}
-	
+
 	@FindBy(linkText = "bijwerken")
 	private WebElement UpdateDutch_Button;
 
@@ -2581,13 +2562,14 @@ public class Language1 extends BaseClass {
 	public WebElement getDutchProperties_option() {
 		return DutchProperties_option;
 	}
-	
+
 	@FindBy(xpath = "//td[contains(text(),'MORTHWEST MEDICAT')]")
 	private static WebElement ReportNameValueBeforeDoc;
+
 	public WebElement getReportNameValueBeforeDoc() {
 		return ReportNameValueBeforeDoc;
 	}
-	
+
 	public WebElement getOCRReportnamevalidation_BeforeCreateDOC() {
 		SoftAssert softassert = new SoftAssert();
 		String expectedtext = "MORTHWEST MEDICAT";
@@ -2596,9 +2578,10 @@ public class Language1 extends BaseClass {
 		System.out.println("Report Name is " + ReportNameValueBeforeDoc.getText());
 		return element;
 	}
-	
+
 	@FindBy(xpath = "//td[contains(text(),'Export Documentaryv Credit (DC) Bill Ne¢')]")
 	private static WebElement ReportNameValueAfterDoc;
+
 	public WebElement getReportNameValueAfterDoc() {
 		return ReportNameValueAfterDoc;
 	}
@@ -2611,6 +2594,7 @@ public class Language1 extends BaseClass {
 		System.out.println("Report Name is " + ReportNameValueAfterDoc.getText());
 		return element;
 	}
+
 	@FindBy(xpath = "//*[@id=\"modelHome\"]")
 	private WebElement Navigate_Button;
 
@@ -2618,6 +2602,7 @@ public class Language1 extends BaseClass {
 		return Navigate_Button;
 
 	}
+
 	@FindBy(xpath = "//*[@id=\"viewCreatedDocument\"]")
 	private WebElement Navigate_Button_view;
 
@@ -2625,7 +2610,7 @@ public class Language1 extends BaseClass {
 		return Navigate_Button_view;
 
 	}
-	
+
 	@FindBy(xpath = "//span[@title='Document Close']")
 	private WebElement Close_Document;
 
@@ -2633,7 +2618,7 @@ public class Language1 extends BaseClass {
 		return Close_Document;
 
 	}
-	
+
 	@FindBy(xpath = "//*[@id=\"Hyphen -.tif\"]/div/img")
 	private WebElement Open_Hyphen_page;
 

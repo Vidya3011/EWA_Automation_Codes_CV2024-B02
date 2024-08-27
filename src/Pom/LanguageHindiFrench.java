@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import Generic.BaseClass;
 
-public class LanguageHindiFrench extends BaseClass {
+//NishaR codes
 
-	
-	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+public class LanguageHindiFrench extends BaseClass {
 
 	public LanguageHindiFrench() {
 		PageFactory.initElements(driver, this);
@@ -34,18 +34,11 @@ public class LanguageHindiFrench extends BaseClass {
 	@FindBy(xpath = "//a[normalize-space()='English']")
 	private WebElement English_Language;
 
-	
-
 	@FindBy(xpath = "//a[normalize-space()='Spanish']")
 	private WebElement Spanish_Language;
 
-	
-
 	@FindBy(xpath = "//*[@id=\"locale\"]/a[3]")
 	private WebElement French_Language_Click;
-
-	
-
 
 	@FindBy(xpath = "//*[@id=\"locale\"]/a[5]")
 	private WebElement Hindi_Language;
@@ -57,17 +50,11 @@ public class LanguageHindiFrench extends BaseClass {
 	@FindBy(id = "imgSettings")
 	private WebElement Setting_Icon;
 
-	
-
 	@FindBy(css = "#myPreferencesSettingsNav > p")
 	private WebElement My_Preferencesetting;
 
-	
-
 	@FindBy(xpath = "//button[@id='myPreferencesSubmit']")
 	private WebElement Apply_button;
-
-	
 
 	@FindBy(xpath = "//select[@id='defaultOfficeDocViewListNo']")
 	private WebElement Select_Office_document_Defaultviewing;
@@ -90,42 +77,27 @@ public class LanguageHindiFrench extends BaseClass {
 	@FindBy(xpath = "//img[@src='images/newRe.png']")
 	private WebElement Refreshbutton;
 
-
-
 	@FindBy(xpath = "//a[normalize-space()='Cerrar sesión']")
 	private WebElement spanishLogout;
-
-	
 
 	@FindBy(xpath = "//a[normalize-space()='Connectez - Out']")
 	private WebElement FrenchLogout;
 
-	
 	@FindBy(xpath = "//*[@id=\"idSidenav\"]/ul/li[1]/a")
 	private WebElement HindiLogout;
 
 	public void HindiLanguageScript() throws Exception {
-		
+
 		Thread.sleep(3000);
 		jsclick(Hindi_Language);
-		
+
 	}
-	
-	
-public void frenchLanguageScript() throws Exception {
-		
+
+	public void frenchLanguageScript() throws Exception {
+
 		Thread.sleep(3000);
 		jsclick(French_Language_Click);
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
 
+	}
+
+}

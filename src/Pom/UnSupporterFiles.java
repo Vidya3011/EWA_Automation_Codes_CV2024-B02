@@ -20,6 +20,9 @@ import org.testng.Reporter;
 import Generic.BaseClass;
 import Script.Viewer;
 
+//NishaR codes
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 public class UnSupporterFiles extends BaseClass {
 	public UnSupporterFiles() {
 		PageFactory.initElements(driver, this);
@@ -115,47 +118,47 @@ public class UnSupporterFiles extends BaseClass {
 	}
 
 	public void create_document_Auto() throws Exception {
-		Reporter.log("Scenario 01: Verifying Unsupporter Files",true);
+		Reporter.log("Scenario 01: Verifying Unsupported Files", true);
 		Thread.sleep(2000);
 		jsclick(NewDocumentID);
-		Reporter.log("Click on New Document tab",true);
+		Reporter.log("Click on New Document tab", true);
 		Thread.sleep(2000);
 
 		jsclick(DestinationFolder);
-		Reporter.log("Open Desitination folder dialog",true);
+		Reporter.log("Open Desitination folder dialog", true);
 		Thread.sleep(3000);
 		selectElement(NishaCabinet);
-		Reporter.log("Select Folder",true);
+		Reporter.log("Select Folder", true);
 		Thread.sleep(3000);
 		selectElement(NishaDrawer);
-		
+
 		Thread.sleep(3000);
 		selectElement(NishFolder);
 		Thread.sleep(3000);
 		jsclick(DestinationLocationOKBTN);
 		Thread.sleep(3000);
-		Reporter.log("Click on Destination folder dialog OK button",true);
+		Reporter.log("Click on Destination folder dialog OK button", true);
 		getSelect_Document_Type_Dropdown();
-		Reporter.log("Select a Document type",true);
+		Reporter.log("Select a Document type", true);
 		Thread.sleep(3000);
 		Actions act = new Actions(driver);
 		try {
 
 			act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(5, 1)).build().perform();
-			Reporter.log("Enter indices value",true);
+			Reporter.log("Enter indices value", true);
 		} catch (Exception e) {
 			System.out.println("Document name not enter failed");
 		}
 
 		jsclick(CreateBTN);
-		Reporter.log("Click on Create button",true);
+		Reporter.log("Click on Create button", true);
 		Thread.sleep(4000);
 
 		jsclick(ViewOption);
-		Reporter.log("Click on View button",true);
+		Reporter.log("Click on View button", true);
 		Thread.sleep(3000);
 		movingElement(Move_To_PlusIcon);
-		Reporter.log("Select Browse icon",true);
+		Reporter.log("Select Browse icon", true);
 		try {
 
 			act.moveToElement(Browse_Option).click().build().perform();
@@ -164,7 +167,7 @@ public class UnSupporterFiles extends BaseClass {
 		}
 
 		Thread.sleep(25000);
-		Reporter.log("Add Unsupported files by using AutoIT script",true);
+		Reporter.log("Add Unsupported files by using AutoIT script", true);
 		String path1 = "D:\\UnsupporterFiles";
 		File directory = new File(path1);
 
@@ -189,10 +192,11 @@ public class UnSupporterFiles extends BaseClass {
 					try {
 						// Execute the AutoIt script with the full file paths as argument
 						String command = "D:\\RNishaAutoIt\\FileuploadForFolder.exe " + filePaths.toString();
-						Reporter.log(" Unsupported File names With Extention : " + command, true); // Log the command for verification
+						Reporter.log(" Unsupported File names With Extention : " + command, true); // Log the command
+																									// for verification
 						Process process = Runtime.getRuntime().exec(command);
 						process.waitFor();
-						Reporter.log("All Unsupported files are uploaded successful",true);
+						Reporter.log("All Unsupported files are uploaded successful", true);
 					} catch (IOException | InterruptedException e) {
 						System.out.println("Upload Failed");
 						e.printStackTrace();
@@ -209,36 +213,34 @@ public class UnSupporterFiles extends BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		Alert myAlert = wait.until(ExpectedConditions.alertIsPresent());
 
-		
-
 		Thread.sleep(2000);
 		myAlert.accept();
 		Thread.sleep(4000);
-		Reporter.log("Click on save button",true);
+		Reporter.log("Click on save button", true);
 		jsclick(SaveTab);
 		Thread.sleep(3000);
 		VisiblityOf(SaveTabOKBTN);
-		Reporter.log("Added Unsupported files are saved successfully...",true);
+		Reporter.log("Added Unsupported files are saved successfully...", true);
 		jsclick(SaveTabOKBTN);
 		Thread.sleep(4000);
 
 	}
 
 	public void FirstDocView() throws Exception {
-		Reporter.log("Scenario 02: Verify Unsupported files Download & Offine functionality",true);
+		Reporter.log("Scenario 02: Verify Unsupported files Download & Offine functionality", true);
 		Thread.sleep(3000);
 		jsclick(FirstFileThumbnail);
-		Reporter.log("Select unsupported file",true);
+		Reporter.log("Select unsupported file", true);
 		Thread.sleep(5000);
 		jsclick(DownloadBTN);
-		Reporter.log(" it will show 'Unable to View dialog' with Offline, Download and Cancel button",true);
+		Reporter.log(" it will show 'Unable to View dialog' with Offline, Download and Cancel button", true);
 		try {
 			jsclick(OfflineBTN);
-			Reporter.log("Click on Offline button",true);
+			Reporter.log("Click on Offline button", true);
 			Thread.sleep(5000);
-			Reporter.log("Click on offline confirmation dialog OK button",true);
+			Reporter.log("Click on offline confirmation dialog OK button", true);
 			jsclick(DownloadConfirmOKBTN);
-			Reporter.log("Document move to offline successful",true);
+			Reporter.log("Document move to offline successful", true);
 		} catch (Exception e) {
 			System.out.println("OFfline dialog not visible");
 		}
@@ -247,48 +249,46 @@ public class UnSupporterFiles extends BaseClass {
 
 	public void viewAndDownloadDocs(int numberOfDocs) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		Reporter.log("Scenario 02:Verify Unsupported files Download & Offine functionality",true);
+		Reporter.log("Scenario 02:Verify Unsupported files Download & Offine functionality", true);
 		for (int i = 1; i <= numberOfDocs; i++) {
 			// Construct the XPath with the current index
 			String xpath = "//*[@id='docViewerMetaData']/div[" + i + "]";
-			
+
 			System.out.println("print the downloaded xpath details" + xpath);
-			
 
 			WebElement element = driver.findElement(By.xpath(xpath));
 			jsclick(element);
-			Reporter.log("Select unsupported file",true);
+			Reporter.log("Select unsupported file", true);
 			String Uploaded = element.getAttribute("title");
-			Reporter.log("Unsupported file name with file type :"+Uploaded);
-			
+			Reporter.log("Unsupported file name with file type :" + Uploaded);
+
 			try {
 				Thread.sleep(3000);
 				jsclick(UnableToLoad);
-				System.out.println("Some times we will get unable to load dialog for Unsuported files");
+				System.out.println("we will get unable to load dialog for Unsuported files");
 				System.out.println("Click on unable to load dialog OK button");
-			}
-			catch(Exception e) {
+			} catch (Exception e) {
 				System.out.println(" Unable to dialog is not displayed");
 			}
-			
 
 			Thread.sleep(5000);
 
 			jsclick(DownloadBTN);
-			Reporter.log(" It will show 'Unable to View dialog' with Offline, Download and Cancel button",true);
+			Reporter.log(" It will show 'Unable to View dialog' with Offline, Download and Cancel button", true);
 			Thread.sleep(5000);
-			
 
 			try {
 				jsclick(OfflineBTN);
-				Reporter.log("Select Offline button from the dialog",true);
+				Reporter.log("Select Offline button from the dialog", true);
 				Thread.sleep(5000);
-				Reporter.log(" It will show 'page(s) taken offline' dialog on the viewer ",true);
+				Reporter.log(" It will show 'page(s) taken offline' dialog on the viewer ", true);
 				jsclick(DownloadConfirmOKBTN);
-				Reporter.log("Click on Document pages offline confimation dialog OK button",true);
-				Reporter.log("Document move to offline successfully",true);
+				Reporter.log("Click on Document pages offline confimation dialog OK button", true);
+				Reporter.log("Document move to offline successfully", true);
 				Thread.sleep(8000);
-				Reporter.log("==============================================================================================================================",true);
+				Reporter.log(
+						"==============================================================================================================================",
+						true);
 			} catch (Exception e) {
 				System.out.println("Offline dialog not visible for document " + i);
 			}

@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+//NDipak codes 
 public class LoginPage {
 	@FindBy(xpath = ("//input[@name='userName']"))
 	private WebElement userNameTextBox;

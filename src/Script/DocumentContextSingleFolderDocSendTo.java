@@ -1,5 +1,9 @@
 package Script;
 
-public class DocumentContextSingleFolderDocSendTo {
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DocumentContextSingleFolderDocSendTo {
 
 }

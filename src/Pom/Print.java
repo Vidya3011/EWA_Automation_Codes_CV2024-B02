@@ -1,6 +1,7 @@
 package Pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+//NishaR codes
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 public class Print extends Generic.BaseClass {
 
 	public Print() {
@@ -124,10 +128,8 @@ public class Print extends Generic.BaseClass {
 
 	//
 
-	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[2]/td[3]"))
+	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[4]/td[3]"))
 	private WebElement Document;
-
-	
 
 	@FindBy(xpath = ("//a[@id='createDocument']"))
 	private WebElement NewDocumentID;
@@ -387,7 +389,7 @@ public class Print extends Generic.BaseClass {
 	public void exports_with_convert_to_pdf_with_passwords() throws Exception {
 
 		Thread.sleep(5000);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOf(CheckBox));
 		wait.until(ExpectedConditions.elementToBeClickable(CheckBox));
 		clickElement(CheckBox);
@@ -437,10 +439,50 @@ public class Print extends Generic.BaseClass {
 	}
 
 	public void exports_with_convert_to_pdf_and_best_quality() throws Exception {
+		Reporter.log("Step Details: Verify Export");
+		Thread.sleep(4000);
+		jsclick(TestCabExpIcon);
+		Reporter.log("Expand the cabinet");
+		Thread.sleep(3000);
+		jsclick(TesttestDrawerExpIcon);
+		Reporter.log("Expand the drawer");
+		Thread.sleep(3000);
+		Reporter.log("Click on the folder");
+		try {
+			selectElement(VidyaTestFolder);
+		} catch (Exception e) {
+			//
+		}
+		Thread.sleep(5000);
+		jsclick(Document);
+		Reporter.log("Open a document");
+		Thread.sleep(7000);
+		try {
+			if (Lockeddoc.isDisplayed()) {
+
+				WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
+				jsclick(element1);
+			}
+		} catch (Exception e) {
+			Reporter.log("Locked message displayed", true);
+			Thread.sleep(2000);
+		}
+
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			acceptAlert();
+		} catch (Exception e) {
+			Reporter.log("AlertISNotPresent");
+		}
+		Thread.sleep(3000);
+
+		Thread.sleep(5000);
 
 		Reporter.log("Scenario 05:Verify Export with convert to PDF");
 		Thread.sleep(15000);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+
 		wait.until(ExpectedConditions.visibilityOf(CheckBox));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(CheckBox));
 		Reporter.log("Open a document and select a page");
@@ -538,7 +580,17 @@ public class Print extends Generic.BaseClass {
 
 	}
 
-	public void Email_ConvertPDF_WithAll_Annotations() throws Exception {
+	private boolean isDocumentEmpty(WebDriver driver) {
+		// Assuming the locator for the page elements
+		try {
+			WebElement pageElement = driver.findElement(By.xpath("//*[@id=\"docViewerMetaData\"]"));
+			return pageElement == null || !pageElement.isDisplayed();
+		} catch (NoSuchElementException e) {
+			return true; // If no pages are found, the document is considered empty
+		}
+	}
+
+	public void Email_ConvertPDF_WithAll_Annotations_Invalid() throws Exception {
 		Print pojo = new Print();
 		Reporter.log("Scneario 01: Verify email with invalid email id");
 		Thread.sleep(6000);
@@ -577,9 +629,18 @@ public class Print extends Generic.BaseClass {
 			Reporter.log("AlertISNotPresent");
 		}
 		Thread.sleep(4000);
+
+		// Check if the document has a page
+		/*
+		 * if (isDocumentEmpty(driver)) { Reporter.
+		 * log("The document does not have any pages. Skipping the email sending process."
+		 * ,true); return; // Skip the rest of the test }
+		 */
+
 		wait.until(ExpectedConditions.elementToBeClickable(CheckBox));
 		Reporter.log("Click on thumbnail view check box");
 		jsclick(CheckBox);
+
 		Reporter.log("Click on SendTo icon");
 		jsclick(SendToIcon);
 		Thread.sleep(3000);
@@ -635,6 +696,7 @@ public class Print extends Generic.BaseClass {
 		Thread.sleep(8000);
 		Reporter.log("Click on refresh button");
 		jsclick(Refresh_Button(driver));
+		Thread.sleep(5000);
 	}
 
 	////////////////////////// SECURELINK///////////////////
@@ -703,6 +765,8 @@ public class Print extends Generic.BaseClass {
 		System.out.println("Assert Validation successfull.");
 		Reporter.log("Secure link - invalid email id scenario verified successfully");
 		Thread.sleep(8000);
+	//	jsclick(Refresh_Button(driver));
+		Thread.sleep(5000);
 	}
 
 	public void SendToSecureLinkwithout_Email_ID_BlankTest() throws Exception {

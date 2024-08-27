@@ -1,18 +1,24 @@
 package Pom;
 
+//Dipak Automation Coading
+
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.Duration;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 public class Document_Version extends Generic.BaseClass {
@@ -23,90 +29,41 @@ public class Document_Version extends Generic.BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//*[@id=\"homeMenuBtn\"]")
-	private WebElement Refreshbutton;
-
-	public WebElement getRefreshbutton() {
-		return Refreshbutton;
-	}
-
 	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
 	private WebElement Select_Cabinet;
-
-	public WebElement getSelect_Cabinet() {
-		return Select_Cabinet;
-	}
 
 	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/a[1]")
 	private WebElement Select_Drawer;
 
-	public WebElement getSelect_Drawer() {
-		return Select_Drawer;
-	}
-
 	@FindBy(xpath = (".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 	private WebElement Select_Folder;
-
-	public WebElement getSelect_Folder() {
-		return Select_Folder;
-
-	}
 
 	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]")
 	private WebElement Select_subFolder;
 
-	public WebElement getSelect_subFolder() {
-		return Select_subFolder;
-	}
-
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[1]/td[3]"))
 	private WebElement Select_Document;
 
-	public WebElement getSelect_Document() {
-		return Select_Document;
-	}
+	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
+	private WebElement Nobutton;
 
 	@FindBy(xpath = "//*[@id=\"version\"]/div/div[1]/span")
 	private WebElement Version_Option;
 
-	public WebElement getVersion_Option() {
-		return Version_Option;
-	}
-
 	@FindBy(xpath = "//*[@id=\"fabButton\"]")
 	private WebElement Fab;
-
-	public WebElement getFab() {
-		return Fab;
-	}
 
 	@FindBy(xpath = "//*[@id=\"uploadFabButton\"]")
 	private WebElement FloatingButton;
 
-	public WebElement getFloatingButton() {
-		return FloatingButton;
-	}
-
 	@FindBy(xpath = "//*[@id=\"uploadFabButton\"]")
 	private WebElement UploadFab;
-
-	public WebElement getUploadFab() {
-		return UploadFab;
-	}
 
 	@FindBy(xpath = "//*[@id=\"saveFabButton\"]")
 	private WebElement SaveFab;
 
-	public WebElement getSaveFab() {
-		return SaveFab;
-	}
-
 	@FindBy(xpath = "//*[@id=\"messageButtonOK42\"]")
 	private WebElement SaveOkButton;
-
-	public WebElement getSaveOkButton() {
-		return SaveOkButton;
-	}
 
 	@FindBy(xpath = "//*[@id=\"versionRow_1.0\"]")
 	private WebElement Verify_Message;
@@ -120,115 +77,142 @@ public class Document_Version extends Generic.BaseClass {
 	@FindBy(xpath = "//td[normalize-space()='Pages Updated']")
 	private WebElement Click_Message;
 
-	public WebElement getClick_Message() {
-		return Click_Message;
-	}
-
 	@FindBy(xpath = "(//a[normalize-space()='Comments'])[1]")
 	private WebElement Comments_Option;
-
-	public WebElement getComments_Option() {
-		return Comments_Option;
-	}
 
 	@FindBy(xpath = "//*[@id=\"vesioncomments\"]")
 	private WebElement Comments_Box;
 
-	public WebElement getComments_Box() {
-		return Comments_Box;
-	}
-
-	// Document version datadriven
-
-	public String DocumentVersion_excelRead(int rowNo, int cellNo) throws Exception {
-
-		File src = new File("./data/TestData.xlsx");
-		FileInputStream fis = new FileInputStream(src);
-		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
-			XSSFSheet s = wb.getSheet("DocumentVersion");
-			XSSFRow row = s.getRow(rowNo);
-			XSSFCell cll = row.getCell(cellNo);
-			String cellType = cll.getStringCellValue();
-			return cellType;
-		}
-	}
-
 	@FindBy(xpath = "//*[@id=\"VersionCommentOk\"]")
 	private WebElement Save_Comments;
 
-	public WebElement getSave_Comments() {
-		return Save_Comments;
-	}
-
-	@FindBy(xpath = "//body[1]/div[58]/div[65]/div[7]/div[4]/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[@class='class2']//input[@type='checkbox']")
 	private WebElement Select_ThumbnailPage;
-
-	public WebElement getSelect_ThumbnailPage() {
-		return Select_ThumbnailPage;
-	}
 
 	@FindBy(xpath = "//*[@id=\"deleteFabButton\"]")
 	private WebElement Delete_FabButton;
 
-	public WebElement getDelete_FabButton() {
-		return Delete_FabButton;
-	}
-
 	@FindBy(xpath = "//*[@id=\"deleteMessageOk19\"]")
 	private WebElement Delete_Yes;
-
-	public WebElement getDelete_Yes() {
-		return Delete_Yes;
-	}
 
 	@FindBy(xpath = "//*[@id=\"messageButtonOKDEl\"]")
 	private WebElement Delete_Ok;
 
-	public WebElement getDelete_Ok() {
-		return Delete_Ok;
-	}
-
 	@FindBy(xpath = "(//a[normalize-space()='Delete all versions'])[1]")
 	private WebElement Delete_AllVersions;
-
-	public WebElement getDelete_AllVersions() {
-		return Delete_AllVersions;
-	}
 
 	@FindBy(xpath = "(//button[@id='deleteVersionMessageOk'])[1]")
 	private WebElement Delete_VersionmessageOk;
 
-	public WebElement getyDelete_VersionmessageOk() {
-		return Delete_VersionmessageOk;
-	}
-
 	@FindBy(xpath = "//*[@id=\"fullScreenFabButton\"]")
 	private WebElement FullScreen_Fabbutton;
-
-	public WebElement getFullScreen_Fabbutton() {
-		return FullScreen_Fabbutton;
-	}
 
 	@FindBy(xpath = "//*[@id=\"cvDocumentClose\"]/span")
 	private WebElement CloseDoc;
 
-	public WebElement getCloseDoc() {
-		return CloseDoc;
-	}
-
 	@FindBy(xpath = "//tbody/tr[1]/td[1]/label[1]/span[1]")
 	private WebElement CheckDoc;
 
-	public WebElement getCheckDoc() {
-		return CheckDoc;
-	}
-
 	@FindBy(xpath = "//*[@id=\"copyId\"]")
 	private WebElement Copy_ID;
+
 	@FindBy(xpath = "//*[@id=\"pasteid\"]")
 	private WebElement Paste_ID;
+
 	@FindBy(xpath = "//*[@id=\"documentListSubMenu\"]")
 	private WebElement MoveTo_Menu_Documents;
+
+	@FindBy(xpath = "//*[@id=\"delDocument\"]")
+	private WebElement deletedoc;
+
+	@FindBy(xpath = "//*[@id=\"deleteMessageOk\"]")
+	private WebElement deleteOK;
+
+	@FindBy(xpath = "//*[@id=\"createDocument\"]")
+	private WebElement Click_New_Document;
+
+	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
+	private WebElement Destination_Folder_Textbox;
+
+	// Select from Destination folder Location
+
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Cabinet1;
+
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Drawer1;
+
+	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+	private WebElement Select_Folder1;
+
+	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
+	private WebElement OK_Button_BrowseforFolder;
+
+	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
+	private WebElement Click_Document_Type_Dropdown;
+
+	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
+	private WebElement Enter_ReportName;
+
+	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
+	private WebElement Move_To_PlusIcon;
+
+	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
+	private WebElement Browse_Option;
+
+	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
+	private WebElement Create_button;
+
+	@FindBy(xpath = "//*[@id=\"viewCreatedDocument\"]")
+	private WebElement ViewDocument_Button;
+
+	@FindBy(xpath = "//*[@id=\"btnSignatureAdd\"]/span[1]")
+	private WebElement Click_signature_Menuoption;
+
+	@FindBy(xpath = ("//*[@id=\"imageViewerDiv\"]/div[2]/canvas"))
+	private WebElement Add_Signature_Onpage;
+
+	@FindBy(xpath = "//*[@id=\"signInputPasswordL\"]")
+	private WebElement signinputpassword;
+
+	@FindBy(xpath = "//*[@id=\"verifySignaturePasswordL\"]")
+	private WebElement verifypassok;
+
+	@FindBy(xpath = "//*[@id=\"saveAddedPages\"]/span")
+	private WebElement Save_button;
+
+	@FindBy(xpath = "//*[@id=\"messageButtonOK42\"]")
+	private WebElement DocumentSave_Ok_button;
+
+	@FindBy(xpath = "//*[@id=\"versionRow_1.0\"]")
+	private WebElement Set_active_version;
+
+	@FindBy(xpath = "(//a[normalize-space()='Set active version'])[1]")
+	private WebElement Set_active_version_button;
+
+	@FindBy(xpath = "//*[@id=\"documentListTable\"]/tbody/tr[1]/td[2]")
+	private WebElement Load_Metadata;
+
+	@FindBy(xpath = "//tbody//span[contains(text(),'Versions')]")
+	private WebElement Click_Metadata_Version_Option;
+
+	@FindBy(xpath = "(//a[normalize-space()='Update'])[1]")
+	private WebElement Update_Button;
+
+	@FindBy(xpath = "//*[@id=\"Val_33\"]")
+	private WebElement Update_ReportName;
+
+	@FindBy(xpath = "(//a[normalize-space()='Save'])[1]")
+	private WebElement Save_UpdateButton;
+
+	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
+	private WebElement Update_Ok_button;
+
+	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
+	private WebElement MoveTo_Menu_Recent;
+
+	@FindBy(xpath = "//*[@id=\"recentFolders\"]/tbody/tr[1]/td")
+	private WebElement Recent_Folder;
 
 	public void get_CopyandPaste_Document() throws InterruptedException {
 
@@ -240,15 +224,10 @@ public class Document_Version extends Generic.BaseClass {
 		element = MoveTo_Menu_Documents;
 		Actions action1 = new Actions(driver);
 		action1.moveToElement(element).perform();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		jsclick(Paste_ID);
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"delDocument\"]")
-	private WebElement deletedoc;
-	@FindBy(xpath = "//*[@id=\"deleteMessageOk\"]")
-	private WebElement deleteOK;
 
 	public void getVerify_Delete_Document() throws InterruptedException {
 
@@ -262,72 +241,16 @@ public class Document_Version extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"createDocument\"]")
-	private WebElement Click_New_Document;
-
-	public WebElement getClick_New_Document() {
-		return Click_New_Document;
-	}
-
-	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
-	private WebElement Destination_Folder_Textbox;
-
-	public WebElement getDestination_Folder_Textbox() {
-		return Destination_Folder_Textbox;
-	}
-
-	// Select from Destination folder Location
-
-	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Cabinet1;
-
-	public WebElement getSelect_Cabinet1() {
-		return Select_Cabinet1;
-
-	}
-
-	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Drawer1;
-
-	public WebElement getSelect_Drawer1() {
-		return Select_Drawer1;
-
-	}
-
-	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-	private WebElement Select_Folder1;
-
-	public WebElement getSelect_Folder1() {
-		return Select_Folder1;
-
-	}
-
-	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
-	private WebElement OK_Button_BrowseforFolder;
-
-	public WebElement getOK_Button_BrowseforFolder() {
-		return OK_Button_BrowseforFolder;
-	}
-
-	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
-	private WebElement Click_Document_Type_Dropdown;
-
 	public void getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
 		drop.selectByVisibleText("CVReports");
 	}
 
-	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
-	private WebElement Enter_ReportName;
-
 	public void getEnter_ReportName() throws Exception {
-		Enter_ReportName.click();
+		jsclick(Enter_ReportName);
 		Enter_ReportName.sendKeys(DocumentVersion_excelRead(2, 0));
 
 	}
-
-	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
-	private WebElement Move_To_PlusIcon;
 
 	public WebElement getMove_To_PlusIcon() {
 		WebElement ele = Move_To_PlusIcon;
@@ -336,40 +259,12 @@ public class Document_Version extends Generic.BaseClass {
 		return ele;
 	}
 
-	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
-	private WebElement Browse_Option;
-
 	public WebElement getBrowse_Option() {
 		WebElement ele = Browse_Option;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele);
 		return ele;
 	}
-
-	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
-	private WebElement Create_button;
-
-	public WebElement getCreate_button() {
-		return Create_button;
-	}
-
-	@FindBy(xpath = "//*[@id=\"viewCreatedDocument\"]")
-	private WebElement ViewDocument_Button;
-
-	public WebElement getViewDocument_Button() {
-		return ViewDocument_Button;
-	}
-
-	@FindBy(xpath = "//*[@id=\"btnSignatureAdd\"]/span[1]")
-	private WebElement Click_signature_Menuoption;
-
-	public void getClick_signature_Menuoption() throws Exception {
-		jsclick(Click_signature_Menuoption);
-
-	}
-
-	@FindBy(xpath = ("//*[@id=\"imageViewerDiv\"]/div[2]/canvas"))
-	private WebElement Add_Signature_Onpage;
 
 	public void getAdd_Signature_Onpage() throws Exception {
 		Actions action = new Actions(driver);
@@ -378,11 +273,6 @@ public class Document_Version extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"signInputPasswordL\"]")
-	private WebElement signinputpassword;
-	@FindBy(xpath = "//*[@id=\"verifySignaturePasswordL\"]")
-	private WebElement verifypassok;
-
 	public void getinputpassword() throws Exception {
 		jsclick(signinputpassword);
 		signinputpassword.sendKeys(DocumentVersion_excelRead(3, 0));
@@ -390,94 +280,340 @@ public class Document_Version extends Generic.BaseClass {
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"saveAddedPages\"]/span")
-	private WebElement Save_button;
-
-	public WebElement getSave_button() {
-		return Save_button;
-	}
-
-	@FindBy(xpath = "//*[@id=\"messageButtonOK42\"]")
-	private WebElement DocumentSave_Ok_button;
-
-	public WebElement getDocumentSave_Ok_button() {
-		return DocumentSave_Ok_button;
-
-	}
-
-	@FindBy(xpath = "//*[@id=\"versionRow_1.0\"]")
-	private WebElement Set_active_version;
-
-	public WebElement getSet_active_version() {
-		return Set_active_version;
-
-	}
-
-	@FindBy(xpath = "(//a[normalize-space()='Set active version'])[1]")
-	private WebElement Set_active_version_button;
-
-	public WebElement getSet_active_version_button() {
-		return Set_active_version_button;
-
-	}
-
-	@FindBy(xpath = "//*[@id=\"documentListTable\"]/tbody/tr[1]/td[2]")
-	private WebElement Load_Metadata;
-
-	public WebElement getLoad_Metadata() {
-		return Load_Metadata;
-
-	}
-
-	@FindBy(xpath = "//tbody//span[contains(text(),'Versions')]")
-	private WebElement Click_Metadata_Version_Option;
-
-	public WebElement getClick_Metadata_Version_Option() {
-		return Click_Metadata_Version_Option;
-
-	}
-
-	@FindBy(xpath = "(//a[normalize-space()='Update'])[1]")
-	private WebElement Update_Button;
-
-	public WebElement getUpdate_Button() {
-		return Update_Button;
-	}
-
-	@FindBy(xpath = "//body[1]/div[58]/div[65]/div[4]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/input[1]")
-	private WebElement Update_ReportName;
-
-	public WebElement getUpdate_ReportName() {
-		return Update_ReportName;
-	}
-
-	@FindBy(xpath = "(//a[normalize-space()='Save'])[1]")
-	private WebElement Save_UpdateButton;
-
-	public WebElement getSave_UpdateButton() {
-		return Save_UpdateButton;
-	}
-
-	@FindBy(xpath = "//*[@id=\"CommentsMessageModelOk\"]")
-	private WebElement Update_Ok_button;
-
-	public WebElement getUpdate_Ok_button() {
-		return Update_Ok_button;
-	}
-
-	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
-	private WebElement MoveTo_Menu_Recent;
-
 	public void getMoveTo_Menu_Recent() {
 		Actions action = new Actions(driver);
 		action.moveToElement(MoveTo_Menu_Recent).perform();
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"recentFolders\"]/tbody/tr[1]/td")
-	private WebElement Recent_Folder;
+	public void Create_Document_Verify_Version() throws Exception {
 
-	public WebElement get_clickRecent_Folder() {
-		return Recent_Folder;
+		Reporter.log("Test Scenario 1 : Create New Document and Verifying Document Versions ", true);
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			System.out.println("User is already logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		jsclick(Click_New_Document);
+		Thread.sleep(6000);
+		Reporter.log("Click on New Document Tab", true);
+		jsclick(Destination_Folder_Textbox);
+		Thread.sleep(6000);
+		Reporter.log("Click on Destination Folder Textbox", true);
+		selectElement(Select_Cabinet1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer1);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder1);
+		Thread.sleep(6000);
+		Reporter.log("select a Folder", true);
+		jsclick(OK_Button_BrowseforFolder);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		getSelect_Document_Type_Dropdown();
+		Thread.sleep(6000);
+		Reporter.log("Select Document type dropdown", true);
+		getEnter_ReportName();
+		Thread.sleep(2000);
+		Reporter.log("Enter value into Report Name field", true);
+		movingElement(getMove_To_PlusIcon());
+		getBrowse_Option();
+		Reporter.log("Browse Document Page", true);
+		Thread.sleep(2000);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+		Thread.sleep(6000);
+		Reporter.log("By using AutoIT add file from external folder", true);
+		try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Thread.sleep(6000);
+		Reporter.log("PDF Page is uploaded successfully", true);
+		movingclkElement(Create_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Create button", true);
+		jsclick(ViewDocument_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on View document option", true);
+		Reporter.log("PDF is created successfully", true);
+		Reporter.log("Verified Current Document Version Successfully");
+	}
+
+	public void Add_Page_with_Comment() throws Exception {
+
+		Reporter.log("Test Scenario 2 : Upload and Save New page and Verifying Version with new Comments ", true);
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		Thread.sleep(6000);
+		jsclick(Version_Option);
+		Thread.sleep(4000);
+		Reporter.log("Click on Version Option", true);
+		jsclick(Fab);
+		Thread.sleep(6000);
+		movingclkElement(FloatingButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Floating button", true);
+		jsclick(UploadFab);
+		Thread.sleep(2000);
+		Reporter.log("Click on Upload Fab button", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Tile.exe");
+		Reporter.log("By using AutoIT add file from external folder", true);
+		Thread.sleep(6000);
+		jsclick(SaveFab);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Fab button", true);
+		jsclick(SaveOkButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save button", true);
+		jsclick(Version_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Version Option", true);
+		getVerify_Message();
+		Thread.sleep(6000);
+		Reporter.log("Message Verified", true);
+		jsclick(Click_Message);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Comments_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Comment Option", true);
+		jsclick(Comments_Box);
+		Reporter.log("Click on Comment Textbox", true);
+		Comments_Box.clear();
+		Comments_Box.sendKeys(DocumentVersion_excelRead(1, 0));
+		Thread.sleep(6000);
+		Reporter.log("Enter Comment into Comment field", true);
+		jsclick(Save_Comments);
+		Thread.sleep(6000);
+		jsclick(Select_ThumbnailPage);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save button", true);
+		Reporter.log("Document Version Update with Comments", true);
+	}
+
+	public void Delete_Page() throws Exception {
+
+		Reporter.log("Test Scenario 3 : Delete Page and Verifying Version ", true);
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		Reporter.log("Check Thumbnail page", true);
+		jsclick(Delete_FabButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Delete Fab button", true);
+		jsclick(Delete_Yes);
+		Thread.sleep(6000);
+		Reporter.log("Click on Yes button", true);
+		jsclick(Delete_Ok);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(SaveFab);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save Fab button", true);
+		jsclick(SaveOkButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		movingclkElement(Version_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Version Option", true);
+		Reporter.log("Document Page delete and Verified versions", true);
+	}
+
+	public void Delete_All_version_with_Fullscreen() throws Exception {
+
+		Reporter.log("Test Scenario 4 : Verifying Delete All versions and Full Screen Option ", true);
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		jsclick(Delete_AllVersions);
+		Thread.sleep(6000);
+		Reporter.log("Click on All Version", true);
+		jsclick(Delete_VersionmessageOk);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Version_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Version Option", true);
+		jsclick(FullScreen_Fabbutton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Full Screen Fab button", true);
+		jsclick(CloseDoc);
+		Thread.sleep(6000);
+		Reporter.log("Click on the Close button", true);
+		Reporter.log("Verified Delete All versions and Full screen Document from Floating button", true);
+	}
+
+	public void Add_Annotations() throws Exception {
+
+		Reporter.log("Test Scenario 5 : Verifying set Active version ", true);
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("click on Refresh button ", true);
+		selectElement(Select_Cabinet);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Cabinet", true);
+		selectElement(Select_Drawer);
+		Thread.sleep(6000);
+		Reporter.log("Expand a Drawer", true);
+		selectElement(Select_Folder);
+		Thread.sleep(6000);
+		jsclick(Select_Document);
+		Thread.sleep(6000);
+		try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+		Reporter.log("open document from Document List", true);
+		movingElement(FloatingButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Floating button", true);
+		jsclick(UploadFab);
+		Thread.sleep(2000);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
+		Thread.sleep(6000);
+		Reporter.log("By using AutoIT add file from external folder", true);
+		jsclick(Save_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save button menu Option", true);
+		jsclick(DocumentSave_Ok_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Version_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Version Option", true);
+		movingclkElement(Click_signature_Menuoption);
+		Thread.sleep(6000);
+		Reporter.log("Click on signature menu Option", true);
+		try {
+			getinputpassword();
+			Thread.sleep(6000);
+			Reporter.log("Enter a Password", true);
+		} catch (Exception e) {
+			System.out.println("signature is not password protected...");
+		}
+		getAdd_Signature_Onpage();
+		Thread.sleep(6000);
+		Reporter.log("New signature added Successfully on  Document", true);
+		jsclick(Save_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save button menu Option", true);
+		jsclick(DocumentSave_Ok_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Version_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Version Option", true);
+		Reporter.log("Verifying version Page annotated/modified ", true);
+	}
+
+	public void Set_ActiveVersion() throws Exception {
+
+		Reporter.log("Test Scenario 6 : Verifying set Active version ", true);
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		try {
+			LogDipakUser();
+			Thread.sleep(6000);
+			getMoveTo_Menu_Recent();
+			Thread.sleep(4000);
+			Reporter.log("Move to Recent Tab", true);
+			jsclick(Recent_Folder);
+			Thread.sleep(6000);
+			Reporter.log("Click on Recent Folder", true);
+			Thread.sleep(6000);
+			jsclick(Select_Document);
+			Thread.sleep(6000);
+			Reporter.log("Open document from Document List", true);
+			jsclick(Version_Option);
+			Thread.sleep(6000);
+			Reporter.log("Click on Version Option", true);
+
+			try {
+				WebDriverWait wait1 = new WebDriverWait(driver, 20);
+				wait1.until(ExpectedConditions.alertIsPresent());
+				Alert alt = driver.switchTo().alert();
+				alt.accept();
+			} catch (Exception e) {
+				System.out.println("Alert is not present...");
+			}
+
+		} catch (Exception e) {
+			System.out.println("User is already logged");
+		}
+
+		jsclick(Set_active_version);
+		Thread.sleep(6000);
+		Reporter.log("select version to set active version", true);
+		jsclick(Set_active_version_button);
+		Reporter.log("Click on Set active Version button", true);
+		Thread.sleep(6000);
+		jsclick(Version_Option);
+		Thread.sleep(6000);
+		Reporter.log("Click on Version Option", true);
+		Reporter.log("Active version set and verified successfully", true);
+		Thread.sleep(6000);
+	}
+
+	public void Update_Doc_Properties() throws Exception {
+
+		Reporter.log("Test Scenario 7 : Update document properties ", true);
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
+		jsclick(Update_Button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Update button", true);
+		Update_ReportName.clear();
+		Reporter.log("Clear Report Name value from Reportname field", true);
+		Update_ReportName.sendKeys(DocumentVersion_excelRead(4, 0));
+		Thread.sleep(6000);
+		Reporter.log("Update Report Name value ", true);
+		jsclick(Save_UpdateButton);
+		Thread.sleep(6000);
+		Reporter.log("Click on Update Save button", true);
+		jsclick(Update_Ok_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(CloseDoc);
+		Thread.sleep(6000);
+		Reporter.log("Click on Close button", true);
+		Reporter.log("verified and updated Document properties", true);
+		Refresh_Button();
+		Reporter.log("Click on Refresh button", true);
 	}
 }

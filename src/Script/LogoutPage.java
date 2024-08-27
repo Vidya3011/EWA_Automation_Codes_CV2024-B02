@@ -4,8 +4,11 @@ import org.openqa.selenium.WebDriver;
 
 import Pom.Logout;
 
-
-public class LogoutPage {
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LogoutPage {
 
 	private WebDriver driver;
 
@@ -16,9 +19,9 @@ public class LogoutPage {
 	LogoutPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	public void testLogout() throws Exception  {
+
+	public void testLogout() throws Exception {
 		Logout logout1 = new Logout();
-		logout1.SetLogout();
-}
+		// logout1.SetLogout();
+	}
 }

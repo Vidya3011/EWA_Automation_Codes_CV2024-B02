@@ -12,14 +12,15 @@ import Pom.LoginPage;
 
 import Pom.NewDocument;
 
+//Vidya codes
 public class AdminLogin extends BaseTest {
 	@Test(priority = 1)
 	public void testValidLogin() throws Exception {
 		int rc = Lib.getRowCount(xlpath, "AdminLogin");
-		Reporter.log("Excel Row Count: "+rc);
+		Reporter.log("Excel Row Count: " + rc);
 		for (int i = 1; i < rc; i++) {
 			String un = Lib.getCellValue(xlpath, "AdminLogin", i, 0);
-			Reporter.log("Username:" + un, true);			
+			Reporter.log("Username:" + un, true);
 			String pw = Lib.getCellValue(xlpath, "AdminLogin", i, 1);
 			Reporter.log("Password:" + pw, true);
 			String roomname = Lib.getCellValue(xlpath, "AdminLogin", i, 2);
@@ -32,8 +33,6 @@ public class AdminLogin extends BaseTest {
 			login.CheckRememberMe(un, pw);
 			Thread.sleep(2000);
 			login.ClickLoginButton(un, pw, roomname);
-			
-		
 
 		}
 	}

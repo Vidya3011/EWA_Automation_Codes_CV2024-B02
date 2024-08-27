@@ -6,27 +6,32 @@ import org.testng.annotations.Test;
 
 import Pom.LanguageHindiFrench;
 
-public class Language_Hindi  extends Generic.BaseClass {
-	
-    private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Language_Hindi extends Generic.BaseClass {
+
+	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
+
 	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser");
-		
+
 		launchUrl();
 		log.info("ContentVerseURL");
 	}
 
-	@Test (priority=1)
+	@Test(priority = 1)
 	public void Login() throws Exception {
-		
-		LanguageHindiFrench ln=new LanguageHindiFrench();
+
+		LanguageHindiFrench ln = new LanguageHindiFrench();
 		ln.HindiLanguageScript();
 		Thread.sleep(3000);
 		loginCVS();
-		
+
 		log.info("User is Successfully logged in");
-	} 
+	}
 
 }

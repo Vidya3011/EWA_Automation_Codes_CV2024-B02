@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Chrome driver launched successfull]]>
     </line>
     <line>
+      <![CDATA[Chrome Browser launched Successfully...]]>
+    </line>
+    <line>
       <![CDATA[EWA URL launched successfull]]>
+    </line>
+    <line>
+      <![CDATA[Contentverse URL launched successfully...]]>
     </line>
     <line>
       <![CDATA[Scenario 01: Log into EWA]]>
@@ -17,7 +23,7 @@
       <![CDATA[Enter valid password into password field]]>
     </line>
     <line>
-      <![CDATA[Selects a room]]>
+      <![CDATA[Select a Room]]>
     </line>
     <line>
       <![CDATA[Click Login button]]>
@@ -26,220 +32,280 @@
       <![CDATA[Session message not appeared]]>
     </line>
     <line>
-      <![CDATA[User Logged in successfull...]]>
+      <![CDATA[User logged in successfully... ]]>
     </line>
     <line>
-      <![CDATA[Scenario 01: Document send to manual workflow]]>
+      <![CDATA[Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer]]>
+    </line>
+    <line>
+      <![CDATA[Click on Setting icon]]>
+    </line>
+    <line>
+      <![CDATA[Go to Mypreference]]>
+    </line>
+    <line>
+      <![CDATA[Set the office document to advanced viewing]]>
+    </line>
+    <line>
+      <![CDATA[Set the PDF document to advanced viewing]]>
+    </line>
+    <line>
+      <![CDATA[Click on Apply button]]>
+    </line>
+    <line>
+      <![CDATA[Advanced viewer mode has been set successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Scenario 2: Create a document with Advanced viewer -  new word document.]]>
+    </line>
+    <line>
+      <![CDATA[Click the New Document tab.]]>
+    </line>
+    <line>
+      <![CDATA[Click the 'Select destination folder location' text box.]]>
+    </line>
+    <line>
+      <![CDATA['Brower for folder' dialog should be open.]]>
     </line>
     <line>
       <![CDATA[Expand the cabinet]]>
     </line>
     <line>
-      <![CDATA[Expand the drawer]]>
+      <![CDATA[Expand drawer]]>
     </line>
     <line>
-      <![CDATA[Open any folder]]>
+      <![CDATA[Select a folder]]>
     </line>
     <line>
-      <![CDATA[Select any document from the document list]]>
+      <![CDATA[Folder selected successful...]]>
     </line>
     <line>
-      <![CDATA[Mousehover on document tab]]>
+      <![CDATA[Click on 'Select document type' dropdown and select the document type.]]>
     </line>
     <line>
-      <![CDATA[Select sendto workflow option]]>
+      <![CDATA[Document type selected successful...]]>
     </line>
     <line>
-      <![CDATA[Select any workflow]]>
+      <![CDATA[Enter the value into index field]]>
     </line>
     <line>
-      <![CDATA[Document send to workflow successfully dialog will be appeared...]]>
+      <![CDATA[Mouse hover on the browse icon]]>
     </line>
     <line>
-      <![CDATA[Click confirmation dialog OK button]]>
+      <![CDATA[Select a 'New Word Document']]>
     </line>
     <line>
-      <![CDATA[Document send to manual workflow successfully]]>
+      <![CDATA[Enter file name dialog should be open.]]>
     </line>
     <line>
-      <![CDATA[Logout the current session]]>
+      <![CDATA[Enter the file name.]]>
     </line>
     <line>
-      <![CDATA[Alert not present!!!]]>
+      <![CDATA[Click on OK button.]]>
     </line>
     <line>
-      <![CDATA[Scenario 02: Task User Log into EWA]]>
+      <![CDATA['Enter file name' dialog should be closed successful...]]>
     </line>
     <line>
-      <![CDATA[Enter task user name into user name field ]]>
+      <![CDATA[Click on Create button]]>
     </line>
     <line>
-      <![CDATA[Enter valid password into password field]]>
+      <![CDATA['Document Created Successfully' dialog should be displayed]]>
     </line>
     <line>
-      <![CDATA[Selects a room]]>
+      <![CDATA[Click on View option]]>
     </line>
     <line>
-      <![CDATA[Click on Login Button]]>
+      <![CDATA[Enter data into the page]]>
     </line>
     <line>
-      <![CDATA[Login without session message...]]>
+      <![CDATA[Click on the Save icon from viewer tool bar.]]>
     </line>
     <line>
-      <![CDATA[Task user logged into EWA successfully...]]>
+      <![CDATA[Click on save successfull dialog OK button.]]>
     </line>
     <line>
-      <![CDATA[Scenario 03:Task User1 Accept the workflow document]]>
+      <![CDATA[Click on image icon,it will show 'upload from computer' option.]]>
     </line>
     <line>
-      <![CDATA[Click on Todolist tab]]>
+      <![CDATA[Select the 'upload from computer' option.]]>
     </line>
     <line>
-      <![CDATA[Select Newitems option]]>
+      <![CDATA[Using Auto IT add the image from folder successful.]]>
     </line>
     <line>
-      <![CDATA[Expand a document metadata option]]>
+      <![CDATA[Click on Table icon.]]>
     </line>
     <line>
-      <![CDATA[Click on Accept button]]>
+      <![CDATA[Add the table into the page.]]>
     </line>
     <line>
-      <![CDATA[Add comment in Accept dialog]]>
+      <![CDATA[Enter the data inside the table]]>
     </line>
     <line>
-      <![CDATA[Click on Accept dialog OK button]]>
+      <![CDATA[Click on the save icon from viewer tool bar]]>
     </line>
     <line>
-      <![CDATA[Task user1 Accept the document successfully...]]>
+      <![CDATA[The added data has been saved successfully...]]>
     </line>
     <line>
-      <![CDATA[Task user1 Logout the Session...]]>
+      <![CDATA[Click on the close icon]]>
     </line>
     <line>
-      <![CDATA[Successfully Document  Move to Task User2]]>
+      <![CDATA[Document closed successfully...]]>
     </line>
     <line>
-      <![CDATA[Task user1 Logout the Session...]]>
+      <![CDATA[Reopen the created word file document...]]>
     </line>
     <line>
-      <![CDATA[Alert not present!!!]]>
+      <![CDATA[All saved data should be display successfully...]]>
     </line>
     <line>
-      <![CDATA[Scenario 4: Task user Log into EWA ]]>
+      <![CDATA[Word Document verified successfull]]>
     </line>
     <line>
-      <![CDATA[Enter valid task name into user name field]]>
+      <![CDATA[Scenario 4:Create a document with Advanced viewer -  new PDF document ]]>
     </line>
     <line>
-      <![CDATA[Enter valid password into password field ]]>
+      <![CDATA[Click on New Document tab]]>
     </line>
     <line>
-      <![CDATA[Selects a Room]]>
+      <![CDATA[Click the 'Select document type' dropdown and select the document type.]]>
     </line>
     <line>
-      <![CDATA[Click Login button]]>
+      <![CDATA[Enter the value into index field]]>
     </line>
     <line>
-      <![CDATA[Login without session message]]>
+      <![CDATA[Mouse hover on the browse icon]]>
     </line>
     <line>
-      <![CDATA[Task user Logged into EWA successfully...]]>
+      <![CDATA[Select New PDF document]]>
     </line>
     <line>
-      <![CDATA[Scenario 05: Task user2 Reject the workflow document]]>
+      <![CDATA[Enter the file name]]>
     </line>
     <line>
-      <![CDATA[Click on Todolist tab ]]>
+      <![CDATA[Click on the create button]]>
     </line>
     <line>
-      <![CDATA[Cick on New items Option]]>
+      <![CDATA[click on the view option]]>
     </line>
     <line>
-      <![CDATA[Expand workflow document metadata option]]>
+      <![CDATA[Click on advanced tool icon]]>
     </line>
     <line>
-      <![CDATA[Click Reject button]]>
+      <![CDATA[Click on free text icon.]]>
     </line>
     <line>
-      <![CDATA[Add comment in Reject dialog box]]>
+      <![CDATA[Enter data into -free text box]]>
     </line>
     <line>
-      <![CDATA[Click on Reject dialog OK button]]>
+      <![CDATA[Click on comment icon, add a comment]]>
     </line>
     <line>
-      <![CDATA[Rejected Document  Move to Task User3 successfully...]]>
+      <![CDATA[Comment added successfully]]>
     </line>
     <line>
-      <![CDATA[Click on Reject dialog OK button]]>
+      <![CDATA[Click on save icon from viewer menu tab]]>
     </line>
     <line>
-      <![CDATA[Task user 2 logout the session successfully...]]>
+      <![CDATA[Document saved successfully]]>
     </line>
     <line>
-      <![CDATA[Alert not present!!!]]>
+      <![CDATA[Click on the Close icon]]>
     </line>
     <line>
-      <![CDATA[Scenario 06: Task user log into EWA]]>
+      <![CDATA[Reopen the Created pdf file document]]>
     </line>
     <line>
-      <![CDATA[Enter valid task user name into user name field]]>
+      <![CDATA[All saved data should be display successfully...]]>
     </line>
     <line>
-      <![CDATA[Enter valid password into password field]]>
+      <![CDATA[PDF Document verified successfull]]>
     </line>
     <line>
-      <![CDATA[Selects a Room]]>
+      <![CDATA[Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ]]>
     </line>
     <line>
-      <![CDATA[Click login button]]>
+      <![CDATA[Click on the New Document tab]]>
     </line>
     <line>
-      <![CDATA[Task user log into EWA successfully...]]>
+      <![CDATA[Click on the 'Select document type' dropdown and select the document type.]]>
     </line>
     <line>
-      <![CDATA[TaskUser3 Dipak Logged in successful]]>
+      <![CDATA[Enter the value into index field]]>
     </line>
     <line>
-      <![CDATA[Scenario 07: Task user3 will do End workflow]]>
+      <![CDATA[Click on the create button]]>
     </line>
     <line>
-      <![CDATA[Click Todo list tab]]>
+      <![CDATA[Click on View option]]>
     </line>
     <line>
-      <![CDATA[Select New items]]>
+      <![CDATA[Mouse hover on browse icon]]>
     </line>
     <line>
-      <![CDATA[Expand New items document metadata]]>
+      <![CDATA[Select New Excel sheet]]>
     </line>
     <line>
-      <![CDATA[Click on Endworkflow button]]>
+      <![CDATA[Enter file name dialog should be open]]>
     </line>
     <line>
-      <![CDATA[Enter comment in Endworkflow dialog]]>
+      <![CDATA[Enter file name and click OK button]]>
     </line>
     <line>
-      <![CDATA[Click Endworkflow dialog OK button]]>
+      <![CDATA['Enter file name' dialog should be closed successfully...]]>
     </line>
     <line>
-      <![CDATA[Task user 3 successfully completed the workflow...]]>
+      <![CDATA[Enter data into the first row]]>
+    </line>
+    <line>
+      <![CDATA[Enter data into the second row]]>
+    </line>
+    <line>
+      <![CDATA[Click on save icon from viewer tool bar]]>
+    </line>
+    <line>
+      <![CDATA[Click on 'Save successful' dialog box OK button]]>
+    </line>
+    <line>
+      <![CDATA[Click on Close icon]]>
+    </line>
+    <line>
+      <![CDATA[Document closed successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Reopen the created document]]>
+    </line>
+    <line>
+      <![CDATA[All saved data should be displayed successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Excel spread sheet verified successfull]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="280516" started-at="2024-06-24T12:28:19Z" finished-at="2024-06-24T12:33:00Z">
+  <suite started-at="2024-08-27T05:36:26 GMT-05:00" name="Default suite" finished-at="2024-08-27T05:44:18 GMT-05:00" duration-ms="471864">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="280516" started-at="2024-06-24T12:28:19Z" finished-at="2024-06-24T12:33:00Z">
-      <class name="Script.ManualWorkflow">
-        <test-method status="PASS" signature="ladBrowser()[pri:0, instance:Script.ManualWorkflow@1e4b452]" name="ladBrowser" is-config="true" duration-ms="12299" started-at="2024-06-24T12:28:19Z" finished-at="2024-06-24T12:28:32Z">
+    <test started-at="2024-08-27T05:36:26 GMT-05:00" name="Default test" finished-at="2024-08-27T05:44:18 GMT-05:00" duration-ms="471864">
+      <class name="Script.AdvancedViewer_Script">
+        <test-method is-config="true" signature="ladBrowser()[pri:0, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:36:26 GMT-05:00" name="ladBrowser" finished-at="2024-08-27T05:36:29 GMT-05:00" duration-ms="2224" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Chrome driver launched successfull]]>
             </line>
             <line>
+              <![CDATA[Chrome Browser launched Successfully...]]>
+            </line>
+            <line>
               <![CDATA[EWA URL launched successfull]]>
+            </line>
+            <line>
+              <![CDATA[Contentverse URL launched successfully...]]>
             </line>
           </reporter-output>
         </test-method> <!-- ladBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:Script.ManualWorkflow@1e4b452]" name="Login" duration-ms="15352" started-at="2024-06-24T12:28:32Z" finished-at="2024-06-24T12:28:47Z">
+        <test-method signature="Login()[pri:1, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:36:29 GMT-05:00" name="Login" finished-at="2024-08-27T05:37:08 GMT-05:00" duration-ms="39236" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Scenario 01: Log into EWA]]>
@@ -251,7 +317,7 @@
               <![CDATA[Enter valid password into password field]]>
             </line>
             <line>
-              <![CDATA[Selects a room]]>
+              <![CDATA[Select a Room]]>
             </line>
             <line>
               <![CDATA[Click Login button]]>
@@ -260,234 +326,276 @@
               <![CDATA[Session message not appeared]]>
             </line>
             <line>
-              <![CDATA[User Logged in successfull...]]>
+              <![CDATA[User logged in successfully... ]]>
             </line>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="TC_1_SendDoc()[pri:2, instance:Script.ManualWorkflow@1e4b452]" name="TC_1_SendDoc" duration-ms="39455" started-at="2024-06-24T12:28:47Z" finished-at="2024-06-24T12:29:27Z">
+        <test-method signature="TestCase_1_AdvancedViewerOptionSelection()[pri:2, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:37:08 GMT-05:00" name="TestCase_1_AdvancedViewerOptionSelection" finished-at="2024-08-27T05:37:23 GMT-05:00" duration-ms="14806" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 01: Document send to manual workflow]]>
+              <![CDATA[Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer]]>
+            </line>
+            <line>
+              <![CDATA[Click on Setting icon]]>
+            </line>
+            <line>
+              <![CDATA[Go to Mypreference]]>
+            </line>
+            <line>
+              <![CDATA[Set the office document to advanced viewing]]>
+            </line>
+            <line>
+              <![CDATA[Set the PDF document to advanced viewing]]>
+            </line>
+            <line>
+              <![CDATA[Click on Apply button]]>
+            </line>
+            <line>
+              <![CDATA[Advanced viewer mode has been set successfully...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TestCase_1_AdvancedViewerOptionSelection -->
+        <test-method signature="TestCase_2_AdvancedViewerWordDocument()[pri:3, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:37:23 GMT-05:00" name="TestCase_2_AdvancedViewerWordDocument" finished-at="2024-08-27T05:40:23 GMT-05:00" duration-ms="179873" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 2: Create a document with Advanced viewer -  new word document.]]>
+            </line>
+            <line>
+              <![CDATA[Click the New Document tab.]]>
+            </line>
+            <line>
+              <![CDATA[Click the 'Select destination folder location' text box.]]>
+            </line>
+            <line>
+              <![CDATA['Brower for folder' dialog should be open.]]>
             </line>
             <line>
               <![CDATA[Expand the cabinet]]>
             </line>
             <line>
-              <![CDATA[Expand the drawer]]>
+              <![CDATA[Expand drawer]]>
             </line>
             <line>
-              <![CDATA[Open any folder]]>
+              <![CDATA[Select a folder]]>
             </line>
             <line>
-              <![CDATA[Select any document from the document list]]>
+              <![CDATA[Folder selected successful...]]>
             </line>
             <line>
-              <![CDATA[Mousehover on document tab]]>
+              <![CDATA[Click on 'Select document type' dropdown and select the document type.]]>
             </line>
             <line>
-              <![CDATA[Select sendto workflow option]]>
+              <![CDATA[Document type selected successful...]]>
             </line>
             <line>
-              <![CDATA[Select any workflow]]>
+              <![CDATA[Enter the value into index field]]>
             </line>
             <line>
-              <![CDATA[Document send to workflow successfully dialog will be appeared...]]>
+              <![CDATA[Mouse hover on the browse icon]]>
             </line>
             <line>
-              <![CDATA[Click confirmation dialog OK button]]>
+              <![CDATA[Select a 'New Word Document']]>
             </line>
             <line>
-              <![CDATA[Document send to manual workflow successfully]]>
+              <![CDATA[Enter file name dialog should be open.]]>
             </line>
             <line>
-              <![CDATA[Logout the current session]]>
+              <![CDATA[Enter the file name.]]>
+            </line>
+            <line>
+              <![CDATA[Click on OK button.]]>
+            </line>
+            <line>
+              <![CDATA['Enter file name' dialog should be closed successful...]]>
+            </line>
+            <line>
+              <![CDATA[Click on Create button]]>
+            </line>
+            <line>
+              <![CDATA['Document Created Successfully' dialog should be displayed]]>
+            </line>
+            <line>
+              <![CDATA[Click on View option]]>
+            </line>
+            <line>
+              <![CDATA[Enter data into the page]]>
+            </line>
+            <line>
+              <![CDATA[Click on the Save icon from viewer tool bar.]]>
+            </line>
+            <line>
+              <![CDATA[Click on save successfull dialog OK button.]]>
+            </line>
+            <line>
+              <![CDATA[Click on image icon,it will show 'upload from computer' option.]]>
+            </line>
+            <line>
+              <![CDATA[Select the 'upload from computer' option.]]>
+            </line>
+            <line>
+              <![CDATA[Using Auto IT add the image from folder successful.]]>
+            </line>
+            <line>
+              <![CDATA[Click on Table icon.]]>
+            </line>
+            <line>
+              <![CDATA[Add the table into the page.]]>
+            </line>
+            <line>
+              <![CDATA[Enter the data inside the table]]>
+            </line>
+            <line>
+              <![CDATA[Click on the save icon from viewer tool bar]]>
+            </line>
+            <line>
+              <![CDATA[The added data has been saved successfully...]]>
+            </line>
+            <line>
+              <![CDATA[Click on the close icon]]>
+            </line>
+            <line>
+              <![CDATA[Document closed successfully...]]>
+            </line>
+            <line>
+              <![CDATA[Reopen the created word file document...]]>
+            </line>
+            <line>
+              <![CDATA[All saved data should be display successfully...]]>
+            </line>
+            <line>
+              <![CDATA[Word Document verified successfull]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_1_SendDoc -->
-        <test-method status="PASS" signature="TC_2_refrshAndLogVidyaUser()[pri:3, instance:Script.ManualWorkflow@1e4b452]" name="TC_2_refrshAndLogVidyaUser" duration-ms="42943" started-at="2024-06-24T12:29:27Z" finished-at="2024-06-24T12:30:09Z">
+        </test-method> <!-- TestCase_2_AdvancedViewerWordDocument -->
+        <test-method signature="TestCase_3_AdvancedViewerPDfDoc()[pri:4, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:40:23 GMT-05:00" name="TestCase_3_AdvancedViewerPDfDoc" finished-at="2024-08-27T05:42:41 GMT-05:00" duration-ms="138837" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Alert not present!!!]]>
+              <![CDATA[Scenario 4:Create a document with Advanced viewer -  new PDF document ]]>
             </line>
             <line>
-              <![CDATA[Scenario 02: Task User Log into EWA]]>
+              <![CDATA[Click on New Document tab]]>
             </line>
             <line>
-              <![CDATA[Enter task user name into user name field ]]>
+              <![CDATA[Click the 'Select document type' dropdown and select the document type.]]>
             </line>
             <line>
-              <![CDATA[Enter valid password into password field]]>
+              <![CDATA[Enter the value into index field]]>
             </line>
             <line>
-              <![CDATA[Selects a room]]>
+              <![CDATA[Mouse hover on the browse icon]]>
             </line>
             <line>
-              <![CDATA[Click on Login Button]]>
+              <![CDATA[Select New PDF document]]>
             </line>
             <line>
-              <![CDATA[Login without session message...]]>
+              <![CDATA[Enter the file name]]>
             </line>
             <line>
-              <![CDATA[Task user logged into EWA successfully...]]>
+              <![CDATA[Click on the create button]]>
+            </line>
+            <line>
+              <![CDATA[click on the view option]]>
+            </line>
+            <line>
+              <![CDATA[Click on advanced tool icon]]>
+            </line>
+            <line>
+              <![CDATA[Click on free text icon.]]>
+            </line>
+            <line>
+              <![CDATA[Enter data into -free text box]]>
+            </line>
+            <line>
+              <![CDATA[Click on comment icon, add a comment]]>
+            </line>
+            <line>
+              <![CDATA[Comment added successfully]]>
+            </line>
+            <line>
+              <![CDATA[Click on save icon from viewer menu tab]]>
+            </line>
+            <line>
+              <![CDATA[Document saved successfully]]>
+            </line>
+            <line>
+              <![CDATA[Click on the Close icon]]>
+            </line>
+            <line>
+              <![CDATA[Reopen the Created pdf file document]]>
+            </line>
+            <line>
+              <![CDATA[All saved data should be display successfully...]]>
+            </line>
+            <line>
+              <![CDATA[PDF Document verified successfull]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_2_refrshAndLogVidyaUser -->
-        <test-method status="PASS" signature="TC_3_SendAndNewItemsMetaDataAgree()[pri:4, instance:Script.ManualWorkflow@1e4b452]" name="TC_3_SendAndNewItemsMetaDataAgree" duration-ms="28280" started-at="2024-06-24T12:30:09Z" finished-at="2024-06-24T12:30:38Z">
+        </test-method> <!-- TestCase_3_AdvancedViewerPDfDoc -->
+        <test-method signature="TestCase_4_AdvancedViewerExcelFile()[pri:5, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:42:41 GMT-05:00" name="TestCase_4_AdvancedViewerExcelFile" finished-at="2024-08-27T05:44:18 GMT-05:00" duration-ms="96840" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 03:Task User1 Accept the workflow document]]>
+              <![CDATA[Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ]]>
             </line>
             <line>
-              <![CDATA[Click on Todolist tab]]>
+              <![CDATA[Click on the New Document tab]]>
             </line>
             <line>
-              <![CDATA[Select Newitems option]]>
+              <![CDATA[Click on the 'Select document type' dropdown and select the document type.]]>
             </line>
             <line>
-              <![CDATA[Expand a document metadata option]]>
+              <![CDATA[Enter the value into index field]]>
             </line>
             <line>
-              <![CDATA[Click on Accept button]]>
+              <![CDATA[Click on the create button]]>
             </line>
             <line>
-              <![CDATA[Add comment in Accept dialog]]>
+              <![CDATA[Click on View option]]>
             </line>
             <line>
-              <![CDATA[Click on Accept dialog OK button]]>
+              <![CDATA[Mouse hover on browse icon]]>
             </line>
             <line>
-              <![CDATA[Task user1 Accept the document successfully...]]>
+              <![CDATA[Select New Excel sheet]]>
             </line>
             <line>
-              <![CDATA[Task user1 Logout the Session...]]>
+              <![CDATA[Enter file name dialog should be open]]>
             </line>
             <line>
-              <![CDATA[Successfully Document  Move to Task User2]]>
+              <![CDATA[Enter file name and click OK button]]>
             </line>
             <line>
-              <![CDATA[Task user1 Logout the Session...]]>
+              <![CDATA['Enter file name' dialog should be closed successfully...]]>
+            </line>
+            <line>
+              <![CDATA[Enter data into the first row]]>
+            </line>
+            <line>
+              <![CDATA[Enter data into the second row]]>
+            </line>
+            <line>
+              <![CDATA[Click on save icon from viewer tool bar]]>
+            </line>
+            <line>
+              <![CDATA[Click on 'Save successful' dialog box OK button]]>
+            </line>
+            <line>
+              <![CDATA[Click on Close icon]]>
+            </line>
+            <line>
+              <![CDATA[Document closed successfully...]]>
+            </line>
+            <line>
+              <![CDATA[Reopen the created document]]>
+            </line>
+            <line>
+              <![CDATA[All saved data should be displayed successfully...]]>
+            </line>
+            <line>
+              <![CDATA[Excel spread sheet verified successfull]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_3_SendAndNewItemsMetaDataAgree -->
-        <test-method status="PASS" signature="TC_4_Task2UserNishaAccept()[pri:5, instance:Script.ManualWorkflow@1e4b452]" name="TC_4_Task2UserNishaAccept" duration-ms="40124" started-at="2024-06-24T12:30:38Z" finished-at="2024-06-24T12:31:18Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Alert not present!!!]]>
-            </line>
-            <line>
-              <![CDATA[Scenario 4: Task user Log into EWA ]]>
-            </line>
-            <line>
-              <![CDATA[Enter valid task name into user name field]]>
-            </line>
-            <line>
-              <![CDATA[Enter valid password into password field ]]>
-            </line>
-            <line>
-              <![CDATA[Selects a Room]]>
-            </line>
-            <line>
-              <![CDATA[Click Login button]]>
-            </line>
-            <line>
-              <![CDATA[Login without session message]]>
-            </line>
-            <line>
-              <![CDATA[Task user Logged into EWA successfully...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_4_Task2UserNishaAccept -->
-        <test-method status="PASS" signature="TC_5_TaskUser2RNishaRejectTheDocument()[pri:6, instance:Script.ManualWorkflow@1e4b452]" name="TC_5_TaskUser2RNishaRejectTheDocument" duration-ms="30082" started-at="2024-06-24T12:31:18Z" finished-at="2024-06-24T12:31:48Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 05: Task user2 Reject the workflow document]]>
-            </line>
-            <line>
-              <![CDATA[Click on Todolist tab ]]>
-            </line>
-            <line>
-              <![CDATA[Cick on New items Option]]>
-            </line>
-            <line>
-              <![CDATA[Expand workflow document metadata option]]>
-            </line>
-            <line>
-              <![CDATA[Click Reject button]]>
-            </line>
-            <line>
-              <![CDATA[Add comment in Reject dialog box]]>
-            </line>
-            <line>
-              <![CDATA[Click on Reject dialog OK button]]>
-            </line>
-            <line>
-              <![CDATA[Rejected Document  Move to Task User3 successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Click on Reject dialog OK button]]>
-            </line>
-            <line>
-              <![CDATA[Task user 2 logout the session successfully...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_5_TaskUser2RNishaRejectTheDocument -->
-        <test-method status="PASS" signature="TC_6_refrshAndLogDipak()[pri:7, instance:Script.ManualWorkflow@1e4b452]" name="TC_6_refrshAndLogDipak" duration-ms="34374" started-at="2024-06-24T12:31:48Z" finished-at="2024-06-24T12:32:22Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Alert not present!!!]]>
-            </line>
-            <line>
-              <![CDATA[Scenario 06: Task user log into EWA]]>
-            </line>
-            <line>
-              <![CDATA[Enter valid task user name into user name field]]>
-            </line>
-            <line>
-              <![CDATA[Enter valid password into password field]]>
-            </line>
-            <line>
-              <![CDATA[Selects a Room]]>
-            </line>
-            <line>
-              <![CDATA[Click login button]]>
-            </line>
-            <line>
-              <![CDATA[Task user log into EWA successfully...]]>
-            </line>
-            <line>
-              <![CDATA[TaskUser3 Dipak Logged in successful]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_6_refrshAndLogDipak -->
-        <test-method status="PASS" signature="TC_8_DocEndedFromTask3DipakUser()[pri:9, instance:Script.ManualWorkflow@1e4b452]" name="TC_8_DocEndedFromTask3DipakUser" duration-ms="37562" started-at="2024-06-24T12:32:22Z" finished-at="2024-06-24T12:33:00Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 07: Task user3 will do End workflow]]>
-            </line>
-            <line>
-              <![CDATA[Click Todo list tab]]>
-            </line>
-            <line>
-              <![CDATA[Select New items]]>
-            </line>
-            <line>
-              <![CDATA[Expand New items document metadata]]>
-            </line>
-            <line>
-              <![CDATA[Click on Endworkflow button]]>
-            </line>
-            <line>
-              <![CDATA[Enter comment in Endworkflow dialog]]>
-            </line>
-            <line>
-              <![CDATA[Click Endworkflow dialog OK button]]>
-            </line>
-            <line>
-              <![CDATA[Task user 3 successfully completed the workflow...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_8_DocEndedFromTask3DipakUser -->
-      </class> <!-- Script.ManualWorkflow -->
+        </test-method> <!-- TestCase_4_AdvancedViewerExcelFile -->
+      </class> <!-- Script.AdvancedViewer_Script -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

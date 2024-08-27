@@ -19,11 +19,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public abstract class BaseTest implements IAutoConst {
 	public WebDriver driver;
-	/*static {
-		System.setProperty(CHROME_KEY, CHROME_VALUE);
-		System.setProperty(GECKO_KEY, GECKO_VALUE);
-		System.setProperty(EDGE_KEY, EDGE_VALUE);
-	}*/
+	/*
+	 * static { System.setProperty(CHROME_KEY, CHROME_VALUE);
+	 * System.setProperty(GECKO_KEY, GECKO_VALUE); System.setProperty(EDGE_KEY,
+	 * EDGE_VALUE); }
+	 */
 
 	@Parameters("browser")
 	@BeforeClass
@@ -45,36 +45,33 @@ public abstract class BaseTest implements IAutoConst {
 		driver.manage().window().maximize();
 
 	}
-	
-	@AfterMethod //AfterMethod annotation - This method executes after every test execution
-	public void screenShot(ITestResult result){
-	//using ITestResult.FAILURE is equals to result.getStatus then it enter into if condition
-	if(ITestResult.FAILURE==result.getStatus()){
-	try{
-	// To create reference of TakesScreenshot
-	TakesScreenshot screenshot=(TakesScreenshot)driver;
-	// Call method to capture screenshot
-	File src=screenshot.getScreenshotAs(OutputType.FILE);
-	// Copy files to specific location
-	// result.getName() will return name of test case so that screenshot name will be same as test case name
-	//File destFile=new File("D:\\"+result.getName()+".png");
-	File destFile=new File("D://Screenshot/"+result.getName()+".png");
-	FileUtils.copyFile(src,destFile );
-	System.out.println("Successfully captured a screenshot");
-	}catch (Exception e){
-	System.out.println("Exception while taking screenshot "+e.getMessage());
-	}
-	}
-	//driver.quit();
-	}
 
-	
+	@AfterMethod // AfterMethod annotation - This method executes after every test execution
+	public void screenShot(ITestResult result) {
+		// using ITestResult.FAILURE is equals to result.getStatus then it enter into if
+		// condition
+		if (ITestResult.FAILURE == result.getStatus()) {
+			try {
+				// To create reference of TakesScreenshot
+				TakesScreenshot screenshot = (TakesScreenshot) driver;
+				// Call method to capture screenshot
+				File src = screenshot.getScreenshotAs(OutputType.FILE);
+				// Copy files to specific location
+				// result.getName() will return name of test case so that screenshot name will
+				// be same as test case name
+				// File destFile=new File("D:\\"+result.getName()+".png");
+				File destFile = new File("D://Screenshot/" + result.getName() + ".png");
+				FileUtils.copyFile(src, destFile);
+				System.out.println("Successfully captured a screenshot");
+			} catch (Exception e) {
+				System.out.println("Exception while taking screenshot " + e.getMessage());
+			}
+		}
+		// driver.quit();
+	}
 
 	/*
-	 * @AfterMethod 
-	 * public void CloseApplication(){ 
-	 * driver.close(); 
-	 * }
+	 * @AfterMethod public void CloseApplication(){ driver.close(); }
 	 */
 
 }

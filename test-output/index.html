@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,21 +24,22 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
               <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\nisha.r\AppData\Local\Temp\testng-eclipse--1165299313\testng-customsuite.xml</span>
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\nisha.r\AppData\Local\Temp\testng-eclipse-1691264718\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,43 +103,28 @@
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="Login">Login</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Script.AdvancedViewer_Script" class="method navigator-link" hash-for-method="Login">Login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_1_SendDoc">TC_1_SendDoc</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Script.AdvancedViewer_Script" class="method navigator-link" hash-for-method="TestCase_1_AdvancedViewerOptionSelection">TestCase_1_AdvancedViewerOptionSelection</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_2_refrshAndLogVidyaUser">TC_2_refrshAndLogVidyaUser</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Script.AdvancedViewer_Script" class="method navigator-link" hash-for-method="TestCase_2_AdvancedViewerWordDocument">TestCase_2_AdvancedViewerWordDocument</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_3_SendAndNewItemsMetaDataAgree">TC_3_SendAndNewItemsMetaDataAgree</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Script.AdvancedViewer_Script" class="method navigator-link" hash-for-method="TestCase_3_AdvancedViewerPDfDoc">TestCase_3_AdvancedViewerPDfDoc</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_4_Task2UserNishaAccept">TC_4_Task2UserNishaAccept</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_5_TaskUser2RNishaRejectTheDocument">TC_5_TaskUser2RNishaRejectTheDocument</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_6_refrshAndLogDipak">TC_6_refrshAndLogDipak</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Script.ManualWorkflow" hash-for-method="TC_8_DocEndedFromTask3DipakUser">TC_8_DocEndedFromTask3DipakUser</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Script.AdvancedViewer_Script" class="method navigator-link" hash-for-method="TestCase_4_AdvancedViewerExcelFile">TestCase_4_AdvancedViewerExcelFile</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -155,7 +142,7 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Script.ManualWorkflow</span>
+              <span class="class-name">Script.AdvancedViewer_Script</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -167,51 +154,30 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TC_1_SendDoc">
-                  </a> <!-- TC_1_SendDoc -->
-                  <span class="method-name">TC_1_SendDoc</span>
+                  <a name="TestCase_1_AdvancedViewerOptionSelection">
+                  </a> <!-- TestCase_1_AdvancedViewerOptionSelection -->
+                  <span class="method-name">TestCase_1_AdvancedViewerOptionSelection</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TC_2_refrshAndLogVidyaUser">
-                  </a> <!-- TC_2_refrshAndLogVidyaUser -->
-                  <span class="method-name">TC_2_refrshAndLogVidyaUser</span>
+                  <a name="TestCase_2_AdvancedViewerWordDocument">
+                  </a> <!-- TestCase_2_AdvancedViewerWordDocument -->
+                  <span class="method-name">TestCase_2_AdvancedViewerWordDocument</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TC_3_SendAndNewItemsMetaDataAgree">
-                  </a> <!-- TC_3_SendAndNewItemsMetaDataAgree -->
-                  <span class="method-name">TC_3_SendAndNewItemsMetaDataAgree</span>
+                  <a name="TestCase_3_AdvancedViewerPDfDoc">
+                  </a> <!-- TestCase_3_AdvancedViewerPDfDoc -->
+                  <span class="method-name">TestCase_3_AdvancedViewerPDfDoc</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TC_4_Task2UserNishaAccept">
-                  </a> <!-- TC_4_Task2UserNishaAccept -->
-                  <span class="method-name">TC_4_Task2UserNishaAccept</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_5_TaskUser2RNishaRejectTheDocument">
-                  </a> <!-- TC_5_TaskUser2RNishaRejectTheDocument -->
-                  <span class="method-name">TC_5_TaskUser2RNishaRejectTheDocument</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_6_refrshAndLogDipak">
-                  </a> <!-- TC_6_refrshAndLogDipak -->
-                  <span class="method-name">TC_6_refrshAndLogDipak</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_8_DocEndedFromTask3DipakUser">
-                  </a> <!-- TC_8_DocEndedFromTask3DipakUser -->
-                  <span class="method-name">TC_8_DocEndedFromTask3DipakUser</span>
+                  <a name="TestCase_4_AdvancedViewerExcelFile">
+                  </a> <!-- TestCase_4_AdvancedViewerExcelFile -->
+                  <span class="method-name">TestCase_4_AdvancedViewerExcelFile</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -219,16 +185,16 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\nisha.r\AppData\Local\Temp\testng-eclipse--1165299313\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\nisha.r\AppData\Local\Temp\testng-eclipse-1691264718\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Script.ManualWorkflow&quot;/&gt;
+      &lt;class name=&quot;Script.AdvancedViewer_Script&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -268,44 +234,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC_2_refrshAndLogVidyaUser')
-data.setCell(0, 2, 'Script.ManualWorkflow')
-data.setCell(0, 3, 42943);
+data.setCell(0, 1, 'TestCase_2_AdvancedViewerWordDocument')
+data.setCell(0, 2, 'Script.AdvancedViewer_Script')
+data.setCell(0, 3, 179873);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC_4_Task2UserNishaAccept')
-data.setCell(1, 2, 'Script.ManualWorkflow')
-data.setCell(1, 3, 40124);
+data.setCell(1, 1, 'TestCase_3_AdvancedViewerPDfDoc')
+data.setCell(1, 2, 'Script.AdvancedViewer_Script')
+data.setCell(1, 3, 138837);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TC_1_SendDoc')
-data.setCell(2, 2, 'Script.ManualWorkflow')
-data.setCell(2, 3, 39455);
+data.setCell(2, 1, 'TestCase_4_AdvancedViewerExcelFile')
+data.setCell(2, 2, 'Script.AdvancedViewer_Script')
+data.setCell(2, 3, 96840);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'TC_8_DocEndedFromTask3DipakUser')
-data.setCell(3, 2, 'Script.ManualWorkflow')
-data.setCell(3, 3, 37562);
+data.setCell(3, 1, 'Login')
+data.setCell(3, 2, 'Script.AdvancedViewer_Script')
+data.setCell(3, 3, 39236);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TC_6_refrshAndLogDipak')
-data.setCell(4, 2, 'Script.ManualWorkflow')
-data.setCell(4, 3, 34374);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'TC_5_TaskUser2RNishaRejectTheDocument')
-data.setCell(5, 2, 'Script.ManualWorkflow')
-data.setCell(5, 3, 30082);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'TC_3_SendAndNewItemsMetaDataAgree')
-data.setCell(6, 2, 'Script.ManualWorkflow')
-data.setCell(6, 3, 28280);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'Login')
-data.setCell(7, 2, 'Script.ManualWorkflow')
-data.setCell(7, 3, 15352);
+data.setCell(4, 1, 'TestCase_1_AdvancedViewerOptionSelection')
+data.setCell(4, 2, 'Script.AdvancedViewer_Script')
+data.setCell(4, 3, 14806);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -317,16 +271,94 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_8_DocEndedFromTask3DipakUser</span>
+              <span class="reporter-method-name">TestCase_3_AdvancedViewerPDfDoc</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Scenario 07: Task user3 will do End workflow</span>
-                <span class="reporter-method-output">Click Todo list tab</span>
-                <span class="reporter-method-output">Select New items</span>
-                <span class="reporter-method-output">Expand New items document metadata</span>
-                <span class="reporter-method-output">Click on Endworkflow button</span>
-                <span class="reporter-method-output">Enter comment in Endworkflow dialog</span>
-                <span class="reporter-method-output">Click Endworkflow dialog OK button</span>
-                <span class="reporter-method-output">Task user 3 successfully completed the workflow...</span>
+                <span class="reporter-method-output">Scenario 4:Create a document with Advanced viewer -  new PDF document </span>
+                <span class="reporter-method-output">Click on New Document tab</span>
+                <span class="reporter-method-output">Click the 'Select document type' dropdown and select the document type.</span>
+                <span class="reporter-method-output">Enter the value into index field</span>
+                <span class="reporter-method-output">Mouse hover on the browse icon</span>
+                <span class="reporter-method-output">Select New PDF document</span>
+                <span class="reporter-method-output">Enter the file name</span>
+                <span class="reporter-method-output">Click on the create button</span>
+                <span class="reporter-method-output">click on the view option</span>
+                <span class="reporter-method-output">Click on advanced tool icon</span>
+                <span class="reporter-method-output">Click on free text icon.</span>
+                <span class="reporter-method-output">Enter data into -free text box</span>
+                <span class="reporter-method-output">Click on comment icon, add a comment</span>
+                <span class="reporter-method-output">Comment added successfully</span>
+                <span class="reporter-method-output">Click on save icon from viewer menu tab</span>
+                <span class="reporter-method-output">Document saved successfully</span>
+                <span class="reporter-method-output">Click on the Close icon</span>
+                <span class="reporter-method-output">Reopen the Created pdf file document</span>
+                <span class="reporter-method-output">All saved data should be display successfully...</span>
+                <span class="reporter-method-output">PDF Document verified successfull</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TestCase_2_AdvancedViewerWordDocument</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Scenario 2: Create a document with Advanced viewer -  new word document.</span>
+                <span class="reporter-method-output">Click the New Document tab.</span>
+                <span class="reporter-method-output">Click the 'Select destination folder location' text box.</span>
+                <span class="reporter-method-output">'Brower for folder' dialog should be open.</span>
+                <span class="reporter-method-output">Expand the cabinet</span>
+                <span class="reporter-method-output">Expand drawer</span>
+                <span class="reporter-method-output">Select a folder</span>
+                <span class="reporter-method-output">Folder selected successful...</span>
+                <span class="reporter-method-output">Click on 'Select document type' dropdown and select the document type.</span>
+                <span class="reporter-method-output">Document type selected successful...</span>
+                <span class="reporter-method-output">Enter the value into index field</span>
+                <span class="reporter-method-output">Mouse hover on the browse icon</span>
+                <span class="reporter-method-output">Select a 'New Word Document'</span>
+                <span class="reporter-method-output">Enter file name dialog should be open.</span>
+                <span class="reporter-method-output">Enter the file name.</span>
+                <span class="reporter-method-output">Click on OK button.</span>
+                <span class="reporter-method-output">'Enter file name' dialog should be closed successful...</span>
+                <span class="reporter-method-output">Click on Create button</span>
+                <span class="reporter-method-output">'Document Created Successfully' dialog should be displayed</span>
+                <span class="reporter-method-output">Click on View option</span>
+                <span class="reporter-method-output">Enter data into the page</span>
+                <span class="reporter-method-output">Click on the Save icon from viewer tool bar.</span>
+                <span class="reporter-method-output">Click on save successfull dialog OK button.</span>
+                <span class="reporter-method-output">Click on image icon,it will show 'upload from computer' option.</span>
+                <span class="reporter-method-output">Select the 'upload from computer' option.</span>
+                <span class="reporter-method-output">Using Auto IT add the image from folder successful.</span>
+                <span class="reporter-method-output">Click on Table icon.</span>
+                <span class="reporter-method-output">Add the table into the page.</span>
+                <span class="reporter-method-output">Enter the data inside the table</span>
+                <span class="reporter-method-output">Click on the save icon from viewer tool bar</span>
+                <span class="reporter-method-output">The added data has been saved successfully...</span>
+                <span class="reporter-method-output">Click on the close icon</span>
+                <span class="reporter-method-output">Document closed successfully...</span>
+                <span class="reporter-method-output">Reopen the created word file document...</span>
+                <span class="reporter-method-output">All saved data should be display successfully...</span>
+                <span class="reporter-method-output">Word Document verified successfull</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TestCase_4_AdvancedViewerExcelFile</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Scenario 3: Create a document with Advanced viewer - 'New Excel Document' </span>
+                <span class="reporter-method-output">Click on the New Document tab</span>
+                <span class="reporter-method-output">Click on the 'Select document type' dropdown and select the document type.</span>
+                <span class="reporter-method-output">Enter the value into index field</span>
+                <span class="reporter-method-output">Click on the create button</span>
+                <span class="reporter-method-output">Click on View option</span>
+                <span class="reporter-method-output">Mouse hover on browse icon</span>
+                <span class="reporter-method-output">Select New Excel sheet</span>
+                <span class="reporter-method-output">Enter file name dialog should be open</span>
+                <span class="reporter-method-output">Enter file name and click OK button</span>
+                <span class="reporter-method-output">'Enter file name' dialog should be closed successfully...</span>
+                <span class="reporter-method-output">Enter data into the first row</span>
+                <span class="reporter-method-output">Enter data into the second row</span>
+                <span class="reporter-method-output">Click on save icon from viewer tool bar</span>
+                <span class="reporter-method-output">Click on 'Save successful' dialog box OK button</span>
+                <span class="reporter-method-output">Click on Close icon</span>
+                <span class="reporter-method-output">Document closed successfully...</span>
+                <span class="reporter-method-output">Reopen the created document</span>
+                <span class="reporter-method-output">All saved data should be displayed successfully...</span>
+                <span class="reporter-method-output">Excel spread sheet verified successfull</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
@@ -335,97 +367,22 @@ return data;
                 <span class="reporter-method-output">Scenario 01: Log into EWA</span>
                 <span class="reporter-method-output">Enter valid user name into username field</span>
                 <span class="reporter-method-output">Enter valid password into password field</span>
-                <span class="reporter-method-output">Selects a room</span>
+                <span class="reporter-method-output">Select a Room</span>
                 <span class="reporter-method-output">Click Login button</span>
                 <span class="reporter-method-output">Session message not appeared</span>
-                <span class="reporter-method-output">User Logged in successfull...</span>
+                <span class="reporter-method-output">User logged in successfully... </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_5_TaskUser2RNishaRejectTheDocument</span>
+              <span class="reporter-method-name">TestCase_1_AdvancedViewerOptionSelection</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Scenario 05: Task user2 Reject the workflow document</span>
-                <span class="reporter-method-output">Click on Todolist tab </span>
-                <span class="reporter-method-output">Cick on New items Option</span>
-                <span class="reporter-method-output">Expand workflow document metadata option</span>
-                <span class="reporter-method-output">Click Reject button</span>
-                <span class="reporter-method-output">Add comment in Reject dialog box</span>
-                <span class="reporter-method-output">Click on Reject dialog OK button</span>
-                <span class="reporter-method-output">Rejected Document  Move to Task User3 successfully...</span>
-                <span class="reporter-method-output">Click on Reject dialog OK button</span>
-                <span class="reporter-method-output">Task user 2 logout the session successfully...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_4_Task2UserNishaAccept</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Alert not present!!!</span>
-                <span class="reporter-method-output">Scenario 4: Task user Log into EWA </span>
-                <span class="reporter-method-output">Enter valid task name into user name field</span>
-                <span class="reporter-method-output">Enter valid password into password field </span>
-                <span class="reporter-method-output">Selects a Room</span>
-                <span class="reporter-method-output">Click Login button</span>
-                <span class="reporter-method-output">Login without session message</span>
-                <span class="reporter-method-output">Task user Logged into EWA successfully...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_2_refrshAndLogVidyaUser</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Alert not present!!!</span>
-                <span class="reporter-method-output">Scenario 02: Task User Log into EWA</span>
-                <span class="reporter-method-output">Enter task user name into user name field </span>
-                <span class="reporter-method-output">Enter valid password into password field</span>
-                <span class="reporter-method-output">Selects a room</span>
-                <span class="reporter-method-output">Click on Login Button</span>
-                <span class="reporter-method-output">Login without session message...</span>
-                <span class="reporter-method-output">Task user logged into EWA successfully...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_6_refrshAndLogDipak</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Alert not present!!!</span>
-                <span class="reporter-method-output">Scenario 06: Task user log into EWA</span>
-                <span class="reporter-method-output">Enter valid task user name into user name field</span>
-                <span class="reporter-method-output">Enter valid password into password field</span>
-                <span class="reporter-method-output">Selects a Room</span>
-                <span class="reporter-method-output">Click login button</span>
-                <span class="reporter-method-output">Task user log into EWA successfully...</span>
-                <span class="reporter-method-output">TaskUser3 Dipak Logged in successful</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_1_SendDoc</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Scenario 01: Document send to manual workflow</span>
-                <span class="reporter-method-output">Expand the cabinet</span>
-                <span class="reporter-method-output">Expand the drawer</span>
-                <span class="reporter-method-output">Open any folder</span>
-                <span class="reporter-method-output">Select any document from the document list</span>
-                <span class="reporter-method-output">Mousehover on document tab</span>
-                <span class="reporter-method-output">Select sendto workflow option</span>
-                <span class="reporter-method-output">Select any workflow</span>
-                <span class="reporter-method-output">Document send to workflow successfully dialog will be appeared...</span>
-                <span class="reporter-method-output">Click confirmation dialog OK button</span>
-                <span class="reporter-method-output">Document send to manual workflow successfully</span>
-                <span class="reporter-method-output">Logout the current session</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">TC_3_SendAndNewItemsMetaDataAgree</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Scenario 03:Task User1 Accept the workflow document</span>
-                <span class="reporter-method-output">Click on Todolist tab</span>
-                <span class="reporter-method-output">Select Newitems option</span>
-                <span class="reporter-method-output">Expand a document metadata option</span>
-                <span class="reporter-method-output">Click on Accept button</span>
-                <span class="reporter-method-output">Add comment in Accept dialog</span>
-                <span class="reporter-method-output">Click on Accept dialog OK button</span>
-                <span class="reporter-method-output">Task user1 Accept the document successfully...</span>
-                <span class="reporter-method-output">Task user1 Logout the Session...</span>
-                <span class="reporter-method-output">Successfully Document  Move to Task User2</span>
-                <span class="reporter-method-output">Task user1 Logout the Session...</span>
+                <span class="reporter-method-output">Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer</span>
+                <span class="reporter-method-output">Click on Setting icon</span>
+                <span class="reporter-method-output">Go to Mypreference</span>
+                <span class="reporter-method-output">Set the office document to advanced viewing</span>
+                <span class="reporter-method-output">Set the PDF document to advanced viewing</span>
+                <span class="reporter-method-output">Click on Apply button</span>
+                <span class="reporter-method-output">Advanced viewer mode has been set successfully...</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -443,46 +400,35 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Script.ManualWorkflow</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Script.AdvancedViewer_Script</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">ladBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Login</span>
-                <span class="method-start">12314 ms</span>
+                <span class="method-start">2234 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TC_1_SendDoc</span>
-                <span class="method-start">27671 ms</span>
+                <span class="method-name">TestCase_1_AdvancedViewerOptionSelection</span>
+                <span class="method-start">41474 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TC_2_refrshAndLogVidyaUser</span>
-                <span class="method-start">67127 ms</span>
+                <span class="method-name">TestCase_2_AdvancedViewerWordDocument</span>
+                <span class="method-start">56281 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TC_3_SendAndNewItemsMetaDataAgree</span>
-                <span class="method-start">110072 ms</span>
+                <span class="method-name">TestCase_3_AdvancedViewerPDfDoc</span>
+                <span class="method-start">236158 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TC_4_Task2UserNishaAccept</span>
-                <span class="method-start">138352 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TC_5_TaskUser2RNishaRejectTheDocument</span>
-                <span class="method-start">178488 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TC_6_refrshAndLogDipak</span>
-                <span class="method-start">208571 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TC_8_DocEndedFromTask3DipakUser</span>
-                <span class="method-start">242945 ms</span>
+                <span class="method-name">TestCase_4_AdvancedViewerExcelFile</span>
+                <span class="method-start">375001 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

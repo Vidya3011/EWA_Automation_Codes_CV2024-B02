@@ -13,38 +13,41 @@ import Pom.AnnotaionsPom;
 import Pom.My_Preferences;
 import Pom.RoomContextMenu;
 
+//NishaR codes
 
-public class AnnotationFunctionality  extends Generic.BaseClass {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+public class AnnotationFunctionality extends Generic.BaseClass {
 	public static Actions act;
-	
-	 private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AnnotationFunctionality.class);
-	
 
-	    @BeforeClass
-		public void loadBrowser() {
-			loadBrowser("Chrome");
-			
-			log.info("Chrome Browser Launched");
-			Reporter.log("Chrome Browser launched Successfully...");
-		launchUrl();
-		//	launchLocalUrl();
-			Reporter.log("Contentverse URL launched successfully...");
-			log.info("Contentverse URL launched successfully...");
-		}
+	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AnnotationFunctionality.class);
 
-		@Test (priority=1)
-		public void TC_1_Login() throws Exception {
-			
-			loginCVS();
-			
-			//Reporter.log("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-			log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-		} 
-	
-	 
+	@BeforeClass
+	public void ladBrowser() {
+		loadBrowser("Chrome");
+
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
+	}
+
+	@Test(priority = 1)
+	public void Login() throws Exception {
+		// LogDipakUser();
+		// LogRamUser();
+		//LogoutPage();
+		loginRNISHA47();
+		// loginLocalCVS();
+		// loginSQL2022();
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
+
 	@Test(priority = 2)
 	public void TC_A_DefaultView() throws Exception {
-		
+
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.DefaultView();
 
@@ -100,7 +103,7 @@ public class AnnotationFunctionality  extends Generic.BaseClass {
 	public void TC_I_LineAnnotation_Ellipse_Annotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.LineAnnotation();
-		
+
 		an.ellipseAnnotation();
 
 		log.info("Line and ellipse added successfull");
@@ -128,11 +131,3 @@ public class AnnotationFunctionality  extends Generic.BaseClass {
 	}
 
 }
-	
-	
-	
-	
-	
-	
-
-

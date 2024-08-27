@@ -32,29 +32,28 @@ import org.testng.asserts.SoftAssert;
 import Generic.FailedRetry;
 import Pom.ToDoListTab;
 
-public class ManualWorkflow extends Generic.BaseClass {
-	
-    public static SoftAssert so;
-    private static org.apache.logging.log4j.Logger log = LogManager.getLogger(ManualWorkflow.class);
-	@BeforeClass
-	public void ladBrowser() {
-		loadBrowser("Chrome");
-		log.info("Chrome Browser started Successfully...");
-		driver.manage().deleteAllCookies();
-		launchUrl();
-		
-		log.info("CVS URL started Successfully...");
-	}
-	
- 
-   
-	@Test (priority=1)
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ManualWorkflow extends Generic.BaseClass {
+
+	public static SoftAssert so;
+	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(ManualWorkflow.class);
+	/*
+	 * @BeforeClass public void ladBrowser() { loadBrowser("Chrome");
+	 * log.info("Chrome Browser started Successfully...");
+	 * driver.manage().deleteAllCookies(); launchUrl();
+	 * 
+	 * log.info("CVS URL started Successfully..."); }
+	 */
+
+	@Test(priority = 1)
 	public void Login() throws Exception {
-		  loginCVS();
-		  Reporter.log("User Logged in successfull...");
-		  log.info("EWA User is logged in successfully...");
+		loginCVS();
+		Reporter.log("User Logged in successfull...");
+		log.info("EWA User is logged in successfully...");
 	}
-    
 
 	@Test(priority = 2)
 	public void TC_1_SendDoc() throws InterruptedException {
@@ -77,11 +76,10 @@ public class ManualWorkflow extends Generic.BaseClass {
 
 	@Test(priority = 4)
 	public void TC_3_SendAndNewItemsMetaDataAgree() throws Exception {
-		
+
 		ToDoListTab todo = new ToDoListTab();
 		todo.SendAndNewItemsMetaDataAgree();
-		Reporter.log(
-				"Successfully Document  Move to Task User2");
+		Reporter.log("Successfully Document  Move to Task User2");
 		Reporter.log("Task user1 Logout the Session...");
 	}
 
@@ -97,7 +95,7 @@ public class ManualWorkflow extends Generic.BaseClass {
 	public void TC_5_TaskUser2RNishaRejectTheDocument() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		todo.TaskUser2RNishaRejectTheDocument();
-		
+
 	}
 
 	@Test(priority = 7)
@@ -108,10 +106,10 @@ public class ManualWorkflow extends Generic.BaseClass {
 		Reporter.log("TaskUser3 Dipak Logged in successful");
 	}
 
-	//@Test(priority = 8)
+	// @Test(priority = 8)
 	public void TC_7_SummaryStatusDialogBoxFucntions() throws InterruptedException {
 		ToDoListTab todo = new ToDoListTab();
-	todo.SummaryStatusDialogBoxFucntions();	
+		todo.SummaryStatusDialogBoxFucntions();
 	}
 
 	@Test(priority = 9)
@@ -119,8 +117,5 @@ public class ManualWorkflow extends Generic.BaseClass {
 		ToDoListTab todo = new ToDoListTab();
 		todo.DocEndedFromTask3DipakUser();
 	}
-	
-	
-	
+
 }
-		

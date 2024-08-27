@@ -24,11 +24,12 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import com.sun.javafx.tk.Toolkit;
+
 
 import Generic.BaseClass;
 import Script.Viewer;
 
+//Dipak codes 
 public class NewDocument extends BaseClass {
 	public NewDocument() {
 		PageFactory.initElements(driver, this);
@@ -52,9 +53,7 @@ public class NewDocument extends BaseClass {
 
 	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[5]/ul/li/a"))
 	private WebElement NishFolder;
-	
 
-	
 	@FindBy(xpath = ("//input[@id='viewDocumentAddPages']"))
 	private WebElement Browse;
 
@@ -70,41 +69,33 @@ public class NewDocument extends BaseClass {
 	@FindBy(xpath = ("//div[@id='addDocdropdwn']"))
 	private WebElement menuitem;
 
-	 @FindBy(xpath = ("//*[@id=\"navigatorTreeOk\"]"))
-	 private WebElement DestinationLocationOKBTN;
+	@FindBy(xpath = ("//*[@id=\"navigatorTreeOk\"]"))
+	private WebElement DestinationLocationOKBTN;
 
 	@FindBy(xpath = ("//div[@id='locationDiv']"))
 	private WebElement Docfolderdiv;
-	
+
 	@FindBy(xpath = ("//*[@id=\"commentMessage\"]"))
 	private WebElement DestinationFolderMessage;
-	
-	
-	
+
 	@FindBy(xpath = ("//*[@id=\"CommentsMessageModelOk\"]"))
 	private WebElement ValidationMessageBoxOKBTN;
-	
-	
+
 	@FindBy(xpath = ("//*[@id=\"navigatorTreeCancle\"]"))
 	private WebElement CancelBTNDestination;
-	
-	
-	
+
 	@FindBy(xpath = ("//*[@id=\"messageButtonOK\"]"))
 	private WebElement DocTypeOKBTN;
-	
+
 	@FindBy(xpath = ("//*[@id=\"messageContent\"]"))
 	private WebElement DocTypeMessage;
-	
-	
+
 	@FindBy(xpath = ("//*[@id=\"docTypeList\"]/option[13]"))
 	private WebElement CVReportIndice;
-	
+
 	@FindBy(xpath = ("//*[@id=\"messageContent\"]"))
 	private WebElement FileNameMessage;
-	
-	
-	
+
 	public void CreateNewDocumentWithoutFolder() throws Exception {
 		Reporter.log("Scneario 01: Create newdocument without folder");
 
@@ -119,8 +110,9 @@ public class NewDocument extends BaseClass {
 		jsclick(DestinationLocationOKBTN);
 		Reporter.log("Click on destination location OK button without selecting a folder");
 		Thread.sleep(3000);
-		System.out.println("Validation Message :"+DestinationFolderMessage.getText());
-		Reporter.log("User should get 'Please select a folder to create document' warning message, Warning message displayed successfull");
+		System.out.println("Validation Message :" + DestinationFolderMessage.getText());
+		Reporter.log(
+				"User should get 'Please select a folder to create document' warning message, Warning message displayed successfull");
 		SoftAssertEqalValidation(DestinationFolderMessage, "Please select a folder to create document");
 		Thread.sleep(3000);
 		Reporter.log("Click on warning alert OK button");
@@ -130,12 +122,12 @@ public class NewDocument extends BaseClass {
 
 		jsclick(CancelBTNDestination);
 	}
-	
+
 	public void CreateNewDocumentWithoutDocumentType() throws Exception {
 		Reporter.log("Scenario 02:Create newdocument without document type");
 
 		Thread.sleep(4000);
-		
+
 		jsclick(DestinationFolder);
 		Reporter.log("Click on destination location textbox");
 
@@ -157,40 +149,32 @@ public class NewDocument extends BaseClass {
 		jsclick(CreateButton);
 		Reporter.log("Click on create button without selecting document type");
 		Thread.sleep(2000);
-		System.out.println("Validation Message :"+DocTypeMessage.getText());
+		System.out.println("Validation Message :" + DocTypeMessage.getText());
 		Reporter.log("User should get 'Select document type' warning dialog");
 		SoftAssertEqalValidation(DocTypeMessage, "Select document type");
 		Thread.sleep(3000);
 		Reporter.log("Unable to create document without document type");
 		jsclick(DocTypeOKBTN);
 	}
-	
+
 	public void CreateNewDocumentWithoutFileName() throws Exception {
 		Thread.sleep(4000);
 		SpecialCharFilenames pojo = new SpecialCharFilenames();
 		Reporter.log("Scenario 03: New document without file name");
 		jsclick(pojo.getSelect_Document_Type_Dropdown());
-	Thread.sleep(3000);
-	Reporter.log("Click on create ");
-	jsclick(CreateButton);
-	Thread.sleep(3000);
-	System.out.println("Validation message:"+FileNameMessage.getText());
-	Thread.sleep(2000);
-	Reporter.log("User should get'ReportName*  	field is required' warning message");
-	Reporter.log("Unable to create a document without file name");
-	SoftAssertEqalValidation(FileNameMessage, "ReportName*  	field is required");
-	jsclick(DocTypeOKBTN);
-	
-	Thread.sleep(5000);
+		Thread.sleep(3000);
+		Reporter.log("Click on create ");
+		jsclick(CreateButton);
+		Thread.sleep(3000);
+		System.out.println("Validation message:" + FileNameMessage.getText());
+		Thread.sleep(2000);
+		Reporter.log("User should get'ReportName*  	field is required' warning message");
+		Reporter.log("Unable to create a document without file name");
+		SoftAssertEqalValidation(FileNameMessage, "ReportName*  	field is required");
+		jsclick(DocTypeOKBTN);
+
+		Thread.sleep(5000);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 	/*
 	 * @FindBy(id="createDocuemtnLocation") private WebElement
@@ -261,20 +245,6 @@ public class NewDocument extends BaseClass {
 
 	@FindBy(id = "cvDocumentClose")
 	private WebElement CloseVeiwerIcon;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	// @FindBy(id="cvDocumentClose")
 	// private WebElement CloseVeiwer;
@@ -317,16 +287,16 @@ public class NewDocument extends BaseClass {
 		Thread.sleep(5000);
 		// Runtime.getRuntime().exec("D:\\Autoit\\Fileupload.exe");
 		// Thread.sleep(5000);
-		
+
 		File directory = new File(path);
 		String allimages = "";
 		File[] flist = directory.listFiles();
 		String fileNames[] = new String[flist.length];
-		for (int i=0 ; i<flist.length ; i++) {
+		for (int i = 0; i < flist.length; i++) {
 			File file = flist[i];
 			if (file.isFile()) {
 				allimages = allimages + "\"" + file.getName() + "\"" + " ";
-				System.out.println("FileName: "+file.getName());
+				System.out.println("FileName: " + file.getName());
 				fileNames[i] = file.getName();
 			}
 		}
@@ -362,10 +332,12 @@ public class NewDocument extends BaseClass {
 		element.sendKeys(Documenttypename);
 
 		Reporter.log("document type is selected", true);
-		
-//		WebElement element1 = driver.findElement(By.xpath("//input[@id='indices_33']"));
-//		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('style')", element);
-//		element1.sendKeys(IndexVal);
+
+		// WebElement element1 =
+		// driver.findElement(By.xpath("//input[@id='indices_33']"));
+		// ((JavascriptExecutor)
+		// driver).executeScript("arguments[0].removeAttribute('style')", element);
+		// element1.sendKeys(IndexVal);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='indices_33']")));
 		IndexValuetextbox.sendKeys(IndexVal);

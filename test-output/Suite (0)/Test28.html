@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test28</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>40/2/8</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/3</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jan 17 20:23:53 CST 2024</td>
+<td>Started on:</td><td>Wed Jul 03 11:24:41 CDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>2371 seconds (2371458 ms)</td>
+<tr><td>Total time:</td><td>286 seconds (286643 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,24 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language()'><b>CreateandOpen_NewDocument_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;Logout&apos;]&quot;}
-  (Session info: chrome=120.0.6099.217)
+<td title='Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission()'><b>TC_02_Verify_Without_adding_ShareandRevoke_Permission</b><br>Test class: Script.Negative_Batchindexing<br/>
+<a href="#Output-13676353" onClick='toggleBox("Output-13676353", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-13676353" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-13676353">
+Test Scenario 2 :Verifying Without adding  Share and Revoke Permission <br/>
+Click on Folder Dropdown<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;Logout&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -107,19 +115,20 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 	at java.util.stream.ReferencePipeline.collect(Unknown Source)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Generic.BaseClass.jsclick(BaseClass.java:506)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:54)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7914457", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace7914457'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;Logout&apos;]&quot;}
-  (Session info: chrome=120.0.6099.217)
+	at Generic.BaseClass.jsclick(BaseClass.java:1157)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:709)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace13676353", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace13676353'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;Logout&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]}
+	at sun.reflect.GeneratedConstructorAccessor88.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -144,8 +153,9 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 	at java.util.stream.ReferencePipeline.collect(Unknown Source)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Generic.BaseClass.jsclick(BaseClass.java:506)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:54)
+	at Generic.BaseClass.jsclick(BaseClass.java:1157)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:709)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -173,79 +183,8 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>28</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument()'><b>Verify_OCR_afterCreatingDocument</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLSpanElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at Pom.Language.getMove_To_PlusIcon(Language.java:421)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:118)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace8863909", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace8863909'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLSpanElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at sun.reflect.GeneratedConstructorAccessor94.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at Pom.Language.getMove_To_PlusIcon(Language.java:421)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:118)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>4</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
+<td>24</td>
+<td>Script.Negative_Batchindexing@144a157</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -255,397 +194,43 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.Dutch_Language_Test.AddRedaction_Dutch_Language()'><b>AddRedaction_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-16371568" onClick='toggleBox("Output-16371568", this, "Show output", "Hide output");'>Show output</a>
+<td title='Script.Negative_Batchindexing.Login_EWA()'><b>Login_EWA</b><br>Test class: Script.Negative_Batchindexing<br/>
+<a href="#Output-3008137" onClick='toggleBox("Output-3008137", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-16371568" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-16371568">
-Redaction added Successfully on the Document<br/>
+<a href="#Output-3008137" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-3008137">
+Enter valid username into username field<br/>
+Enter valid password into password field<br/>
+Select a room<br/>
+Click on the Login button<br/>
+Session for Dipak is already active.Do you want to create new session?this message is displayed<br/>
+Click on the Yes button<br/>
+User has logged in successfully.<br/>
+</div>
+</td>
+<td></td>
+<td>63</td>
+<td>Script.Negative_Batchindexing@144a157</td></tr>
+<tr>
+<td title='Script.Negative_Batchindexing.TC_01_Verify_Emptyname_Indexing_folder()'><b>TC_01_Verify_Emptyname_Indexing_folder</b><br>Test class: Script.Negative_Batchindexing<br/>
+<a href="#Output-19185820" onClick='toggleBox("Output-19185820", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-19185820" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-19185820">
+Test Scenario 1 : Verifying Empty name Indexing folder<br/>
+Click on Refresh button<br/>
+Click on Batch Indexing Icon<br/>
+Click on Add Icon on Batch Indexing dialog<br/>
+Click on Add Folder Option<br/>
+Click on Folder dialog Ok button<br/>
+Please enter folder name! this validation message should show<br/>
+Verified Folder Name Validation<br/>
+Empty name Indexing folder not Created verified<br/>
 </div>
 </td>
 <td></td>
 <td>50</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Addsignature_Dutch_Language()'><b>Addsignature_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-16002899" onClick='toggleBox("Output-16002899", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-16002899" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-16002899">
-signature added Successfully on the Document<br/>
-</div>
-</td>
-<td></td>
-<td>21</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Login_EWA()'><b>Login_EWA</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>15</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Open_Custom_List_Dialog_And_Verify_Title_Roomcolumn()'><b>Open_Custom_List_Dialog_And_Verify_Title_Roomcolumn</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-29127040" onClick='toggleBox("Output-29127040", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-29127040" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-29127040">
-Custom List title validate<br/>
-</div>
-</td>
-<td></td>
-<td>34</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn()'><b>Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-15545739" onClick='toggleBox("Output-15545739", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-15545739" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-15545739">
-Search Custom List title validate<br/>
-</div>
-</td>
-<td></td>
-<td>9</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Open_Custom_List_Dialog_And_Verify_Title_ToDoList()'><b>Open_Custom_List_Dialog_And_Verify_Title_ToDoList</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-24137697" onClick='toggleBox("Output-24137697", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-24137697" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-24137697">
-ToDoList Custom List title validate<br/>
-</div>
-</td>
-<td></td>
-<td>13</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Reset_Custom_Columns_for_ToDoList()'><b>Reset_Custom_Columns_for_ToDoList</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-5666969" onClick='toggleBox("Output-5666969", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-5666969" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-5666969">
-ToDoList Custom column Reset Successfully<br/>
-</div>
-</td>
-<td></td>
-<td>12</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Set_And_Verify_Custom_Columns_NodeLevel()'><b>Set_And_Verify_Custom_Columns_NodeLevel</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-21627295" onClick='toggleBox("Output-21627295", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-21627295" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-21627295">
-Indices Selected Successfully<br/>
-Custom Columns is set Node Level successfully<br/>
-</div>
-</td>
-<td></td>
-<td>95</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Set_Defaultview()'><b>Set_Defaultview</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>30</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.ShowHideThumbnail_Dutch_Language()'><b>ShowHideThumbnail_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-32187773" onClick='toggleBox("Output-32187773", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-32187773" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-32187773">
-Show Hide Thumbnail options verified<br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Cancel_Button_of_CustomList()'><b>Verify_Cancel_Button_of_CustomList</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-31465737" onClick='toggleBox("Output-31465737", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-31465737" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-31465737">
-Cancle button is clicked<br/>
-</div>
-</td>
-<td></td>
-<td>12</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Categories_Option()'><b>Verify_Categories_Option</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>10</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_CreateFavorites_Document()'><b>Verify_CreateFavorites_Document</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>69</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Custom_Columns_RoomLevel()'><b>Verify_Custom_Columns_RoomLevel</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-29557302" onClick='toggleBox("Output-29557302", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-29557302" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-29557302">
-Indices is Selected Successfully for RoomLevel<br/>
-</div>
-</td>
-<td></td>
-<td>18</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Default_Custom_Columns()'><b>Verify_Default_Custom_Columns</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-5154745" onClick='toggleBox("Output-5154745", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-5154745" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-5154745">
-Set and Verify Default Custom columns successfully<br/>
-</div>
-</td>
-<td></td>
-<td>52</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Delete_Option()'><b>Verify_Delete_Option</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>26</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Load_MoreCount_On_Folder()'><b>Verify_Load_MoreCount_On_Folder</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-31484778" onClick='toggleBox("Output-31484778", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-31484778" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-31484778">
-Minumum number of Load More count on Folder Verified successfully<br/>
-</div>
-</td>
-<td></td>
-<td>25</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Load_MoreCount_On_Search()'><b>Verify_Load_MoreCount_On_Search</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-10580056" onClick='toggleBox("Output-10580056", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-10580056" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-10580056">
-Minumum number of Load More count on Search Verified successfully<br/>
-</div>
-</td>
-<td></td>
-<td>47</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Notification_on_Document()'><b>Verify_Notification_on_Document</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>181</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Refresh_Option()'><b>Verify_Refresh_Option</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>40</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Reset_Columns_Functionality()'><b>Verify_Reset_Columns_Functionality</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-4519301" onClick='toggleBox("Output-4519301", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-4519301" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-4519301">
-Custom columns Reset Successfully<br/>
-</div>
-</td>
-<td></td>
-<td>7</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Reset_Columns_for_Search()'><b>Verify_Reset_Columns_for_Search</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-29400394" onClick='toggleBox("Output-29400394", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-29400394" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-29400394">
-Reset Custom Columns Successfully for Search<br/>
-</div>
-</td>
-<td></td>
-<td>19</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_SendTo_Export()'><b>Verify_SendTo_Export</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>99</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_SendTo_GenerateDocumentLink()'><b>Verify_SendTo_GenerateDocumentLink</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>46</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_SendTo_Mail()'><b>Verify_SendTo_Mail</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>165</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_SendTo_Print()'><b>Verify_SendTo_Print</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>36</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_SendTo_SecureLink()'><b>Verify_SendTo_SecureLink</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>78</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Set_Custom_Columns_for_Search()'><b>Verify_Set_Custom_Columns_for_Search</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-5768785" onClick='toggleBox("Output-5768785", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-5768785" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-5768785">
-Indices Selected Successfully<br/>
-Custom column is set successfully for Search Functionality<br/>
-</div>
-</td>
-<td></td>
-<td>97</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_Set_Custom_Columns_for_ToDoList()'><b>Verify_Set_Custom_Columns_for_ToDoList</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-23289174" onClick='toggleBox("Output-23289174", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-23289174" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-23289174">
-Indices Selected Successfully<br/>
-Custom column is set successfully for ToDoList Functionality<br/>
-</div>
-</td>
-<td></td>
-<td>92</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_The_Text_of_Custom_List_Dialog_Roomcolumn()'><b>Verify_The_Text_of_Custom_List_Dialog_Roomcolumn</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-19547625" onClick='toggleBox("Output-19547625", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-19547625" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-19547625">
-Custom List Dialog Text verified<br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_The_Text_of_Custom_List_Dialog_Searchcolumn()'><b>Verify_The_Text_of_Custom_List_Dialog_Searchcolumn</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-32213303" onClick='toggleBox("Output-32213303", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-32213303" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-32213303">
-Search Custom List Dialog Text verified<br/>
-</div>
-</td>
-<td></td>
-<td>5</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_The_Text_of_Custom_List_Dialog_ToDoList()'><b>Verify_The_Text_of_Custom_List_Dialog_ToDoList</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-5211565" onClick='toggleBox("Output-5211565", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-5211565" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-5211565">
-Custom List Dialog Text verified<br/>
-</div>
-</td>
-<td></td>
-<td>14</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_copy_and_paste_Option()'><b>Verify_copy_and_paste_Option</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>22</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_cut_and_paste_Option()'><b>Verify_cut_and_paste_Option</b><br>Test class: Script.Dutch_Language_Test</td>
-<td></td>
-<td>37</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_to_Edit_and_Delete_AdvancedTemplate_OfficeDoc()'><b>Verify_to_Edit_and_Delete_AdvancedTemplate_OfficeDoc</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-19348436" onClick='toggleBox("Output-19348436", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-19348436" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-19348436">
-Template edited successfully<br/>
-Template Deleted Successfully<br/>
-</div>
-</td>
-<td></td>
-<td>56</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_to_Edit_and_Delete_DefaultTemplate()'><b>Verify_to_Edit_and_Delete_DefaultTemplate</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-12790833" onClick='toggleBox("Output-12790833", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-12790833" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-12790833">
-Template edited successfully<br/>
-Template Deleted Successfully<br/>
-</div>
-</td>
-<td></td>
-<td>52</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_to_Edit_and_Delete_FormFiled()'><b>Verify_to_Edit_and_Delete_FormFiled</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-28941839" onClick='toggleBox("Output-28941839", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-28941839" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-28941839">
-Template edited successfully<br/>
-Formmapping Template Deleted Successfully<br/>
-</div>
-</td>
-<td></td>
-<td>50</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.verify_to_Create_Formmapping_PDFTemplate_Advancedviewing()'><b>verify_to_Create_Formmapping_PDFTemplate_Advancedviewing</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-25639020" onClick='toggleBox("Output-25639020", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-25639020" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-25639020">
-Folder is selected for Templates<br/>
-</div>
-</td>
-<td></td>
-<td>146</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.verify_to_CreateorBrowse_Template_Advancedviewing_OfficeDoc()'><b>verify_to_CreateorBrowse_Template_Advancedviewing_OfficeDoc</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-11529148" onClick='toggleBox("Output-11529148", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-11529148" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-11529148">
-Folder is selected for Templates<br/>
-file is uploaded successfully and Verify Browse Templates Advancedviewing<br/>
-Save Template button clicked successfully<br/>
-</div>
-</td>
-<td></td>
-<td>123</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.verify_to_CreateorBrowse_Template_Defaultviewing()'><b>verify_to_CreateorBrowse_Template_Defaultviewing</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-28336577" onClick='toggleBox("Output-28336577", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-28336577" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-28336577">
-Folder is selected for Templates<br/>
-file is uploaded successfully and Verify Browse Templates Defaultviewing<br/>
-Save Template button clicked successfully<br/>
-</div>
-</td>
-<td></td>
-<td>119</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
+<td>Script.Negative_Batchindexing@144a157</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -655,162 +240,62 @@ Save Template button clicked successfully<br/>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.Dutch_Language_Test.Addsignature_Dutch_Language()'><b>Addsignature_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLCanvasElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at Pom.Language.getAdd_Signature_Onpage(Language.java:500)
-	at Script.Dutch_Language_Test.Addsignature_Dutch_Language(Dutch_Language_Test.java:163)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace29428236", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace29428236'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLCanvasElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at sun.reflect.GeneratedConstructorAccessor94.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at Pom.Language.getAdd_Signature_Onpage(Language.java:500)
-	at Script.Dutch_Language_Test.Addsignature_Dutch_Language(Dutch_Language_Test.java:163)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>14</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Addsignature_Dutch_Language()'><b>Addsignature_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLCanvasElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at Pom.Language.getAdd_Signature_Onpage(Language.java:500)
-	at Script.Dutch_Language_Test.Addsignature_Dutch_Language(Dutch_Language_Test.java:163)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace28480263", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace28480263'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLCanvasElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at sun.reflect.GeneratedConstructorAccessor94.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at Pom.Language.getAdd_Signature_Onpage(Language.java:500)
-	at Script.Dutch_Language_Test.Addsignature_Dutch_Language(Dutch_Language_Test.java:163)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>14</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language()'><b>CreateandOpen_NewDocument_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test<br/>
-<a href="#Output-30849995" onClick='toggleBox("Output-30849995", this, "Show output", "Hide output");'>Show output</a>
+<td title='Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission()'><b>TC_02_Verify_Without_adding_ShareandRevoke_Permission</b><br>Test class: Script.Negative_Batchindexing<br/>
+<a href="#Output-20209473" onClick='toggleBox("Output-20209473", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-30849995" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-30849995">
-Login without msg<br/>
-Folder is selected for Create New Documents<br/>
+<a href="#Output-20209473" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-20209473">
+Test Scenario 2 :Verifying Without adding  Share and Revoke Permission <br/>
+Click on Folder Dropdown<br/>
+Select a Folder<br/>
+Click on  Add button Batch Indexing dialog<br/>
+Click on Share Permission button<br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;ReportName&quot;}
-  (Session info: chrome=120.0.6099.217)
+<td><div><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+	at java.util.LinkedHashMap$LinkedValues.forEach(Unknown Source)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:719)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+		at org.openqa.selenium.json.Json.toJson(Json.java:44)
+		... 35 more
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+	... 47 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;reposAllUsersDiv&quot;]/div/div&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=link text, value=ReportName}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;reposAllUsersDiv&quot;]/div/div}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -818,40 +303,44 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.click(Unknown Source)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:93)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace30849995", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace30849995'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;ReportName&quot;}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+	at com.sun.proxy.$Proxy25.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+	... 51 more
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace20209473", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace20209473'><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=link text, value=ReportName}
-	at sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+	at java.util.LinkedHashMap$LinkedValues.forEach(Unknown Source)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.click(Unknown Source)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:93)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:719)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -878,20 +367,71 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>121</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language()'><b>CreateandOpen_NewDocument_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;Logout&apos;]&quot;}
-  (Session info: chrome=120.0.6099.217)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+		at org.openqa.selenium.json.Json.toJson(Json.java:44)
+		... 35 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+	... 47 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;reposAllUsersDiv&quot;]/div/div&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;Logout&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;reposAllUsersDiv&quot;]/div/div}
+	at sun.reflect.GeneratedConstructorAccessor88.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy25.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+	... 51 more
+</pre></div></td>
+<td>45</td>
+<td>Script.Negative_Batchindexing@144a157</td></tr>
+<tr>
+<td title='Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission()'><b>TC_02_Verify_Without_adding_ShareandRevoke_Permission</b><br>Test class: Script.Negative_Batchindexing<br/>
+<a href="#Output-29650564" onClick='toggleBox("Output-29650564", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-29650564" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-29650564">
+Test Scenario 2 :Verifying Without adding  Share and Revoke Permission <br/>
+Click on Folder Dropdown<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -914,19 +454,20 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 	at java.util.stream.ReferencePipeline.collect(Unknown Source)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Generic.BaseClass.jsclick(BaseClass.java:506)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:54)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace33336546", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace33336546'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;Logout&apos;]&quot;}
-  (Session info: chrome=120.0.6099.217)
+	at Generic.BaseClass.jsclick(BaseClass.java:1157)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:709)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace29650564", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace29650564'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;Logout&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]}
+	at sun.reflect.GeneratedConstructorAccessor88.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -951,8 +492,9 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 	at java.util.stream.ReferencePipeline.collect(Unknown Source)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Generic.BaseClass.jsclick(BaseClass.java:506)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:54)
+	at Generic.BaseClass.jsclick(BaseClass.java:1157)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:709)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -980,19 +522,27 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>29</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
+<td>24</td>
+<td>Script.Negative_Batchindexing@144a157</td></tr>
 <tr>
-<td title='Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language()'><b>CreateandOpen_NewDocument_Dutch_Language</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;Logout&apos;]&quot;}
-  (Session info: chrome=120.0.6099.217)
+<td title='Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission()'><b>TC_02_Verify_Without_adding_ShareandRevoke_Permission</b><br>Test class: Script.Negative_Batchindexing<br/>
+<a href="#Output-17547686" onClick='toggleBox("Output-17547686", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-17547686" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-17547686">
+Test Scenario 2 :Verifying Without adding  Share and Revoke Permission <br/>
+Click on Folder Dropdown<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;Logout&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -1015,19 +565,20 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 	at java.util.stream.ReferencePipeline.collect(Unknown Source)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Generic.BaseClass.jsclick(BaseClass.java:506)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:54)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace21968575", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace21968575'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;Logout&apos;]&quot;}
-  (Session info: chrome=120.0.6099.217)
+	at Generic.BaseClass.jsclick(BaseClass.java:1157)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:709)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace17547686", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace17547686'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]&quot;}
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;Logout&apos;]}
-	at sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61207}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b34afea0f34e56d00f0efc4de5e701e0
+*** Element info: {Using=xpath, value=//*[@id=&quot;spanRepositoryCheck_Batch Indexing&quot;]}
+	at sun.reflect.GeneratedConstructorAccessor88.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -1052,8 +603,9 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 	at java.util.stream.ReferencePipeline.collect(Unknown Source)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at Generic.BaseClass.jsclick(BaseClass.java:506)
-	at Script.Dutch_Language_Test.CreateandOpen_NewDocument_Dutch_Language(Dutch_Language_Test.java:54)
+	at Generic.BaseClass.jsclick(BaseClass.java:1157)
+	at Pom.BatchIndexing.Without_BatchIndex_permissions(BatchIndexing.java:709)
+	at Script.Negative_Batchindexing.TC_02_Verify_Without_adding_ShareandRevoke_Permission(Negative_Batchindexing.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1081,241 +633,8 @@ Session ID: d18fb721795e21547bd305a9ccbb0961
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>29</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument()'><b>Verify_OCR_afterCreatingDocument</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;bijwerken&quot;}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=link text, value=bijwerken}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.click(Unknown Source)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:127)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7134904", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace7134904'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;bijwerken&quot;}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=link text, value=bijwerken}
-	at sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.click(Unknown Source)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:127)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>25</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument()'><b>Verify_OCR_afterCreatingDocument</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;bijwerken&quot;}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=link text, value=bijwerken}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.click(Unknown Source)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:127)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace16353175", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace16353175'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;bijwerken&quot;}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-*** Element info: {Using=link text, value=bijwerken}
-	at sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy25.click(Unknown Source)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:127)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>25</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
-<tr>
-<td title='Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument()'><b>Verify_OCR_afterCreatingDocument</b><br>Test class: Script.Dutch_Language_Test</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLSpanElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at Pom.Language.getMove_To_PlusIcon(Language.java:421)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:118)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace14941799", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace14941799'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLSpanElement] has no size and location
-  (Session info: chrome=120.0.6099.217)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53763}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d18fb721795e21547bd305a9ccbb0961
-	at sun.reflect.GeneratedConstructorAccessor94.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
-	at Pom.Language.getMove_To_PlusIcon(Language.java:421)
-	at Script.Dutch_Language_Test.Verify_OCR_afterCreatingDocument(Dutch_Language_Test.java:118)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>4</td>
-<td>Script.Dutch_Language_Test@19cba5a</td></tr>
+<td>24</td>
+<td>Script.Negative_Batchindexing@144a157</td></tr>
 </table><p>
 </body>
 </html>

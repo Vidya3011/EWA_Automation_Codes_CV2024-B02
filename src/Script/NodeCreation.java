@@ -11,12 +11,14 @@ import Generic.IAutoConst;
 import Generic.Lib;
 import Pom.CreateNode;
 
+//vidya codes 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~vidya codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 public class NodeCreation {
 	private WebDriver driver;
 
-//	NodeCreation() {
-//
-//	}
+	// NodeCreation() {
+	//
+	// }
 
 	NodeCreation(WebDriver driver) {
 		this.driver = driver;
@@ -40,15 +42,15 @@ public class NodeCreation {
 
 			CreateNode node = new CreateNode(driver);
 			node.CreateDrawerFolderforNameduser(CabinetName, DrawerName, FolderName);
-			
+
 			CreateDocument doc1 = new CreateDocument(driver);
 			doc1.testCreateDocument();
-			
-//	CreateNavigateDocument doc2 = new CreateNavigateDocument(driver);
-//			doc2.testCreateNaviagateDocument();
-			
-//			CreateNewDocument doc3=new CreateNewDocument(driver);
-//			doc3.testCreateNewDocument();
+
+			// CreateNavigateDocument doc2 = new CreateNavigateDocument(driver);
+			// doc2.testCreateNaviagateDocument();
+
+			// CreateNewDocument doc3=new CreateNewDocument(driver);
+			// doc3.testCreateNewDocument();
 		}
 	}
 }

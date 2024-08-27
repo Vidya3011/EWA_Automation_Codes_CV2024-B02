@@ -9,15 +9,20 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import Pom.Language;
 import Pom.Language1;
 import Pom.LanguageHindiFrench;
 import Pom.LanguageHindiFrench;
 
-public class Hindi_Language_Auto extends Generic.BaseClass {
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hindi_Language_Auto extends Generic.BaseClass {
 
 	private static final Logger log = LogManager.getLogger(Hindi_Language_Auto.class);
 
-//	@BeforeClass
+	// @BeforeClass
 	public void LandBrowser() {
 
 		loadBrowser("Chrome");
@@ -25,1085 +30,310 @@ public class Hindi_Language_Auto extends Generic.BaseClass {
 		log.info("CVS URL started Successfully...");
 	}
 
-//	@Test
+	// @Test
 	public void Login_EWA() throws Exception {
 		loginCVS();
-		
+
 		log.info("CVS User is logged in successfully...");
 
 	}
 
-	// Verify Dutch Language1
-	// Create Document with annotation in Dutch laguage
-
 	@Test(priority = 1)
-	public void TC_1_CreateandOpen_NewDocument_Hindi_Language1() throws Exception {
+	public void TC_01_CreateandOpen_NewDocument_Dutch_Language() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getSetting_Icon());
-		Reporter.log("User click on setting icon");
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Reporter.log("User click on mypreferences menu");
-		Thread.sleep(4000);
-		pojo.getSelect_Office_document_Defaultviewing();
-		Reporter.log("Mouse hover on favorite icon");
-		Thread.sleep(4000);
-		pojo.getPdf_document_Defaultviewing();
-		Thread.sleep(4000);
-		pojo.selectViewer();
-		Thread.sleep(3000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(6000);
-		jsclick(pojo.getUsername());
-		Thread.sleep(6000);
-		jsclick(pojo.getLogout());
-		Thread.sleep(4000);
-		LanguageHindiFrench ln=new LanguageHindiFrench();
-		ln.HindiLanguageScript();
-		Thread.sleep(4000);
-		loginCVS();
-		Thread.sleep(6000);
-		jsclick(pojo.getNewDocuments_MenuOption());
-		Thread.sleep(4000);
-		jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Drawer(), pojo.getSelect_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
-		Thread.sleep(6000);
-		Reporter.log("Folder is selected for Create New Documents", true);
-		pojo.getOK_Button_BrowseforFolder().click();
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Document_Type_Dropdown());
-		Thread.sleep(4000);
-		pojo.getEnter_Report_Name_Text().sendKeys("Hindi lang document");
-		Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
-		movingclkElement(pojo.getMove_To_PlusIcon());
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Hyphen.exe");
-		Thread.sleep(5000);
-		WebDriverWait wait1 = new WebDriverWait(driver, 20);
-		wait1.until(ExpectedConditions.alertIsPresent());
-		Alert alt = driver.switchTo().alert();
-		alt.accept();
-		Thread.sleep(6000);
-		pojo.getClickOCR().click();
-		Thread.sleep(4000);
-		pojo.getSet_OCR_ToDocumentPDF();
-		Thread.sleep(8000);
-		pojo.getReportName().click();
-		Thread.sleep(4000);
-		jsclick(pojo.getCreate_Button());
-		Thread.sleep(4000);
-		jsclick(pojo.getNavigate_Button());
-		Thread.sleep(6000);
-		pojo.getOCRReportnamevalidation_BeforeCreateDOC();
-		Thread.sleep(4000);
-		jsclick(pojo.getReportNameValueBeforeDoc());
-		Thread.sleep(6000);
-		pojo.getClick_FileInfo_Option();
-		Thread.sleep(4000);
-		pojo.getClick_FileInfo_OkButton_withFileName();
-		Thread.sleep(4000);
-		Reporter.log("New Document Create and open in hindi Language1", true);
-		Reporter.log("OCR Functionality verified Sucessfully", true);
-
+		Language pojo = new Language();
+		pojo.CreateandOpen_NewDocument_Dutch_Language();
 	}
 
 	@Test(priority = 2)
-	public void Verify_OCR_afterCreatingDocument() throws Exception {
+	public void TC_02_Verify_OCR_afterCreatingDocument() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(pojo.getMove_To_PlusIcon()));
-		movingclkElement(pojo.getMove_To_PlusIcon());
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime()
-				.exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Underscore.exe");
-		Thread.sleep(8000);
-		jsclick(pojo.getOpen_Underscore_page());
-		Thread.sleep(8000);
-		pojo.getUpdateDutch_Button().click();
-		Thread.sleep(4000);
-		pojo.getClickOCR().click();
-		Thread.sleep(4000);
-		pojo.getSet_OCR_ToDocument();
-		Thread.sleep(6000);
-		pojo.getReportName().click();
-		Thread.sleep(4000);
-		jsclick(pojo.getDutchSave_UpdateButton());
-		Thread.sleep(3000);
-		jsclick(pojo.getDutchUpdate_Ok_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getSave_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getDocumentSave_Ok_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getDutchProperties_option());
-		Thread.sleep(4000);
-		jsclick(pojo.getClose_Documentpage());
-		Thread.sleep(4000);
-		pojo.getOCRReportnamevalidation_AfterCreateDOC();
-		Thread.sleep(8000);
-		jsclick(pojo.getReportNameValueAfterDoc());
-		Reporter.log("After Creating Document OCR Functionality verified Sucessfully", true);
-
+		Language pojo = new Language();
+		pojo.Verify_OCR_afterCreatingDocument();
 	}
 
 	@Test(priority = 3)
-	public void Addsignature_Hindi_Language1() throws Exception {
+	public void TC_03_Addsignature_Dutch_Language() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(6000);
-		jsclick(pojo.getClick_signature_Menuoption());
-		Thread.sleep(4000);
-		try {
-		pojo.getinputpassword();
-		Thread.sleep(4000);
-		}
-		catch(Exception e) {
-		System.out.println("password dialog not prompting");
-		}
-		pojo.getAdd_Signature_Onpage();
-		Thread.sleep(6000);
-		Reporter.log("signature added Successfully on the Document", true);
+		Language pojo = new Language();
+		pojo.Addsignature_Dutch_Language();
 	}
 
 	@Test(priority = 4)
-	public void AddRedaction_Dutch_Language1() throws Exception {
+	public void TC_04_AddRedaction_Dutch_Language() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(4000);
-		pojo.getMove_to_Annotation_Option_inViewer();
-		Thread.sleep(6000);
-		pojo.getRedaction_Option();
-		Thread.sleep(6000);
-		pojo.getSet_Redaction_ToDocument();
-		Thread.sleep(6000);
-		jsclick(pojo.getSave_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getDocumentSave_Ok_button());
-		Thread.sleep(4000);
-		Reporter.log("Redaction added Successfully on the Document", true);
+		Language pojo = new Language();
+		pojo.getAddRedaction_Dutch_Language();
 	}
 
 	@Test(priority = 5)
-	public void ShowHideThumbnail_Hindi_Language1() throws Exception {
+	public void TC_05_ShowHideThumbnail_Dutch_Language() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(4000);
-		jsclick(pojo.getshowHideThumbnail());
-		Thread.sleep(8000);
-		jsclick(pojo.getshowHideThumbnail());
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		Reporter.log("Show Hide Thumbnail options verified", true);
+		Language pojo = new Language();
+		pojo.getShowHideThumbnail_Dutch_Language();
 	}
 
-	// Create Template in Spanish laguage
+	// Create Template in Dutch laguage
 
 	@Test(priority = 6)
-	public void verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {
+	public void TC_06_verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
-		pojo.getSelect_Office_document_Defaultviewing();
-		Thread.sleep(4000);
-		pojo.getPdf_document_Defaultviewing();
-		Thread.sleep(4000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplates_MenuOption());
-		Thread.sleep(3000);
-		jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Test_Cabinet(), pojo.getTemplate_Test_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Test_Drawer(), pojo.getTemplate_Test_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Folder(), pojo.getTemplate_Folder());
-		Thread.sleep(4000);
-		Reporter.log("Folder is selected for Templates", true);
-		jsclick(pojo.getOK_Button_BrowseforFolder());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Document_Type_Dropdown());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_ReportName_Test());
-		Thread.sleep(4000);
-		pojo.getSelect_ReportName_Testvalue();
-		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.alertIsPresent());
-		Alert alt = driver.switchTo().alert();
-		alt.accept();
-		Reporter.log("file is uploaded successfully and Verify Browse Templates Defaultviewing", true);
-		log.info("verify to CreateorBrowse Template Defaultviewing");
-		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
-		jsclick(pojo.getSave_Template_Button());
-		Reporter.log("Save Template button clicked successfully", true);
-		jsclick(pojo.getTemplate_Description_No_button());
-		Thread.sleep(3000);
-		jsclick(pojo.getSave_Template_Button());
-		Thread.sleep(3000);
-		jsclick(pojo.getTemplate_NameTextbox());
-		Thread.sleep(4000);
-		pojo.getTemplate_NameTextboxvalue();
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplate_Description_Messagebox());
-		Thread.sleep(4000);
-		pojo.getTemplate_Description_Messageboxvalue();
-		Thread.sleep(3000);
-		jsclick(pojo.getTemplate_Description_OK_button());
-		Thread.sleep(4000);
-		pojo.getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplate_Created_OK_button());
-		Thread.sleep(4000);
-		log.info("verify to CreateorBrowse Template Defaultviewing");
-
+		Language pojo = new Language();
+		pojo.getverify_to_CreateorBrowse_Template_Defaultviewing();
 	}
 
 	@Test(priority = 7)
-	public void Verify_to_Edit_and_Delete_DefaultTemplate() throws Exception {
+	public void TC_07_Verify_to_Edit_and_Delete_DefaultTemplate() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getMoveto_Templates_Option();
-		Thread.sleep(3000);
-		jsclick(pojo.getSelect_Created_Template());
-		Thread.sleep(6000);
-		jsclick(pojo.getClick_Edit_Template_Button());
-		Thread.sleep(7000);
-		pojo.getEditTemplate_Description_Messagebox().clear();
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Description_Messageboxvalue();
-		Thread.sleep(4000);
-		jsclick(pojo.getEditTemplate_Description_OK_button());
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Created_Message_Verify();
-		Reporter.log("Template edited successfully", true);
-		log.info("verify Template edited successfully");
-		jsclick(pojo.getEditTemplate_Created_OK_button());
-		Thread.sleep(4000);
-		pojo.getMoveto_Templates_Option();
-		Thread.sleep(3000);
-		jsclick(pojo.getSelect_Created_Template());
-		Thread.sleep(8000);
-		jsclick(pojo.getDelete_Template_Button());
-		Thread.sleep(4000);
-		jsclick(pojo.getDelete_Template_OK_Button());
-		Reporter.log("Template Deleted Successfully", true);
-		log.info("verify Template Deleted Successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_to_Edit_and_Delete_DefaultTemplate();
 	}
 
 	@Test(priority = 8)
-	public void verify_to_CreateorBrowse_Template_Advancedviewing_OfficeDoc() throws Exception {
+	public void TC_08_verify_to_CreateorBrowse_Template_Advancedviewing_OfficeDoc() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
-		pojo.getSelect_Office_document_Advancedviewing();
-		Thread.sleep(4000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplates_MenuOption());
-		Thread.sleep(3000);
-		jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Test_Cabinet(), pojo.getTemplate_Test_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Test_Drawer(), pojo.getTemplate_Test_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Folder(), pojo.getTemplate_Folder());
-		Thread.sleep(4000);
-		Reporter.log("Folder is selected for Templates", true);
-		jsclick(pojo.getOK_Button_BrowseforFolder());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Document_Type_Dropdown());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_ReportName_Test());
-		Thread.sleep(4000);
-		pojo.getSelect_ReportName_Testvalue();
-		Thread.sleep(4000);
-		pojo.getMove_To_PlusIcon();
-		pojo.getBrowse_Option();
-		Thread.sleep(4000);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficeDoc.exe");
-		Reporter.log("file is uploaded successfully and Verify Browse Templates Advancedviewing", true);
-		log.info("verify to CreateorBrowse Template Advancedviewing");
-		Thread.sleep(8000);
-		jsclick(pojo.getSave_Template_Button());
-		Reporter.log("Save Template button clicked successfully", true);
-		jsclick(pojo.getTemplate_Description_No_button());
-		Thread.sleep(3000);
-		jsclick(pojo.getSave_Template_Button());
-		Thread.sleep(3000);
-		jsclick(pojo.getTemplate_NameTextbox());
-		Thread.sleep(4000);
-		pojo.getTemplate_NameTextboxvalue();
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplate_Description_Messagebox());
-		Thread.sleep(4000);
-		pojo.getTemplate_Description_Messageboxvalue();
-		Thread.sleep(3000);
-		jsclick(pojo.getTemplate_Description_OK_button());
-		Thread.sleep(4000);
-		pojo.getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplate_Created_OK_button());
-		log.info("verify to CreateorBrowse OfficeDoc Template advancedviewing");
-
+		Language pojo = new Language();
+		pojo.getverify_to_CreateorBrowse_Template_Advancedviewing_OfficeDoc();
 	}
 
 	@Test(priority = 9)
-	public void Verify_to_Edit_and_Delete_AdvancedTemplate_OfficeDoc() throws Exception {
+	public void TC_09_Verify_to_Edit_and_Delete_AdvancedTemplate_OfficeDoc() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getMoveto_Templates_Option();
-		Thread.sleep(3000);
-		jsclick(pojo.getSelect_Created_Template());
-		Thread.sleep(8000);
-		jsclick(pojo.getClick_Edit_Template_Button());
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Description_Messagebox().clear();
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Description_Messageboxvalue();
-		Thread.sleep(4000);
-		jsclick(pojo.getEditTemplate_Description_OK_button());
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Created_Message_Verify();
-		Reporter.log("Template edited successfully", true);
-		log.info("verify Template edited successfully");
-		jsclick(pojo.getEditTemplate_Created_OK_button());
-		Thread.sleep(4000);
-		pojo.getMoveto_Templates_Option();
-		Thread.sleep(3000);
-		jsclick(pojo.getSelect_Created_Template());
-		Thread.sleep(8000);
-		jsclick(pojo.getDelete_Template_Button());
-		Thread.sleep(4000);
-		jsclick(pojo.getDelete_Template_OK_Button());
-		Reporter.log("Template Deleted Successfully", true);
-		log.info("verify Template Deleted Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_to_Edit_and_Delete_AdvancedTemplate_OfficeDoc();
 	}
 
 	@Test(priority = 10)
-	public void verify_to_Create_Formmapping_PDFTemplate_Advancedviewing() throws Exception {
+	public void TC_10_verify_to_Create_Formmapping_PDFTemplate_Advancedviewing() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(6000);
-		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
-		pojo.getPdf_document_Advancedviewing();
-		Thread.sleep(4000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		jsclick(pojo.getTemplates_MenuOption());
-		Thread.sleep(3000);
-		jsclick(pojo.getDestination_Folder_Textbox());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Test_Cabinet(), pojo.getTemplate_Test_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Test_Drawer(), pojo.getTemplate_Test_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getTemplate_Folder(), pojo.getTemplate_Folder());
-		Thread.sleep(4000);
-		Reporter.log("Folder is selected for Templates", true);
-		pojo.getOK_Button_BrowseforFolder().click();
-		Thread.sleep(6000);
-		jsclick(pojo.getSelect_Document_Type_Dropdown());
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_ReportName_Test());
-		Thread.sleep(4000);
-		pojo.getSelect_ReportName_Testvalue();
-		Thread.sleep(6000);
-		pojo.getMove_To_PlusIcon();
-		pojo.getNew_pdf_Document_Option();
-		Thread.sleep(4000);
-		pojo.getEnter_pdf_File_Name();
-		Thread.sleep(4000);
-		jsclick(pojo.getpdfViewer());
-		Thread.sleep(4000);
-		jsclick(pojo.getTextbox());
-		Thread.sleep(4000);
-		jsclick(pojo.getAdd_Textbox_Onpage());
-		Thread.sleep(4000);
-		jsclick(pojo.getClick_Formmapper());
-		pojo.getSelect_FormFiled();
-		Thread.sleep(3000);
-		jsclick(pojo.getFormOK());
-		Thread.sleep(4000);
-		jsclick(pojo.getSave_Template_Button());
-		Thread.sleep(3000);
-		jsclick(pojo.getTemplate_NameTextbox());
-		Thread.sleep(4000);
-		pojo.getTemplate_NameTextboxvalue();
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplate_Description_Messagebox());
-		Thread.sleep(4000);
-		pojo.getTemplate_Description_Messageboxvalue();
-		Thread.sleep(3000);
-		jsclick(pojo.getTemplate_Description_OK_button());
-		Thread.sleep(4000);
-		pojo.getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
-		jsclick(pojo.getTemplate_Created_OK_button());
-		log.info("verify to CreateorBrowse Formmapping Template advancedviewing");
-
+		Language pojo = new Language();
+		pojo.getverify_to_Create_Formmapping_PDFTemplate_Advancedviewing();
 	}
 
 	@Test(priority = 11)
-	public void Verify_to_Edit_and_Delete_FormFiled() throws Exception {
+	public void TC_11_Verify_to_Edit_and_Delete_Formfield() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getMoveto_Templates_Option();
-		Thread.sleep(8000);
-		jsclick(pojo.getSelect_Created_Template());
-		Thread.sleep(8000);
-		jsclick(pojo.getClick_Edit_Template_Button());
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Description_Messagebox().clear();
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Description_Messageboxvalue();
-		Thread.sleep(4000);
-		jsclick(pojo.getEditTemplate_Description_OK_button());
-		Thread.sleep(4000);
-		pojo.getEditTemplate_Created_Message_Verify();
-		Reporter.log("Template edited successfully", true);
-		log.info("verify Template edited successfully");
-		jsclick(pojo.getEditTemplate_Created_OK_button());
-		Thread.sleep(4000);
-		pojo.getMoveto_Templates_Option();
-		Thread.sleep(3000);
-		jsclick(pojo.getSelect_Created_Template());
-		Thread.sleep(8000);
-		jsclick(pojo.getDelete_Template_Button());
-		Thread.sleep(4000);
-		jsclick(pojo.getDelete_Template_OK_Button());
-		Reporter.log("Formmapping Template Deleted Successfully", true);
-		log.info("verified Formmapping Template Deleted Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_to_Edit_and_Delete_Formfield();
 	}
 
 	@Test(priority = 12)
-	public void Set_Defaultview() throws Exception {
+	public void TC_12_Set_Defaultview() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
-		pojo.getSelect_Office_document_Defaultviewing();
-		Thread.sleep(4000);
-		pojo.getPdf_document_Defaultviewing();
-		Thread.sleep(4000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
+		Language pojo = new Language();
+		pojo.getSet_Defaultview();
 	}
 
-	// Verify Load more in Search and Folder in Spanish laguage
+	// Verifying Load more in Search and Folder in Spanish laguage
 
 	@Test(priority = 13)
-	public void Verify_Load_MoreCount_On_Search() throws Exception {
+	public void TC_13_Verify_Load_MoreCount_On_Search() throws Exception {
 
-		Language1 pojo = new Language1();
-
-		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(6000);
-		pojo.getEnter_Loadmorecount();
-		Thread.sleep(4000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getClick_Search_Option());
-		Thread.sleep(4000);
-		jsclick(pojo.getFind_Button());
-		Thread.sleep(5000);
-		pojo.getVerify_Loadmorecount_Searchresult();
-		Thread.sleep(5000);
-		jsclick(pojo.getLoadmorebutton());
-		Thread.sleep(4000);
-		pojo.getVerify_Loadmorecount_Searchresult();
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		Reporter.log("Minumum number of Load More count on Search Verified successfully", true);
-		log.info("Minumum number of Load More count on Search Verified successfully");
+		Language pojo = new Language();
+		pojo.getVerify_Load_MoreCount_On_Search();
 	}
 
 	@Test(priority = 14)
-	public void Verify_Load_MoreCount_On_Folder() throws Exception {
+	public void TC_14_Verify_Load_MoreCount_On_Folder() throws Exception {
 
-		Language1 pojo = new Language1();
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(4000);
-		pojo.getVerify_Loadmorecount_Document_Folder();
-		Thread.sleep(4000);
-		jsclick(pojo.getLoadmorebutton());
-		Thread.sleep(4000);
-		pojo.getVerify_Loadmorecount_Document_Folder();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		Reporter.log("Minumum number of Load More count on Folder Verified successfully", true);
-		log.info("Minumum number of Load More count on Folder Verified successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_Load_MoreCount_On_Folder();
 	}
 
-	// Verify Custom Columns in Spanish Language1
+	// Verifying Custom Columns in Spanish Language
 
 	// Custom columns for Room
 
 	@Test(priority = 15)
-	public void Open_Custom_List_Dialog_And_Verify_Title_Roomcolumn() throws InterruptedException {
+	public void TC_15_Open_Custom_List_Dialog_And_Verify_Title_Roomcolumn() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(5000);
-		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Drawer(), pojo.getSelect_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
-		Thread.sleep(4000);
-		pojo.getMoveTo_Menu_RoomName();
-		Thread.sleep(3000);
-		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
-		pojo.gettitelvalidation();
-		Reporter.log("Custom List title validate", true);
-		log.info("Custom List dialog Title verified");
+		Language pojo = new Language();
+		pojo.getOpen_Custom_List_Dialog_And_Verify_Title_Roomcolumn();
 	}
 
 	@Test(priority = 16)
-	public void Verify_The_Text_of_Custom_List_Dialog_Roomcolumn() throws InterruptedException {
+	public void TC_16_Verify__Text_of_Custom_List_Dialog_Roomcolumn() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(5000);
-		pojo.getextvalidation();
-		Reporter.log("Custom List Dialog Text verified", true);
-		log.info("Custom List dialog Text verified");
+		Language pojo = new Language();
+		pojo.getVerify__Text_of_Custom_List_Dialog_Roomcolumn();
 	}
 
 	@Test(priority = 17)
-	public void Set_And_Verify_Custom_Columns_NodeLevel() throws Exception {
+	public void TC_17_Set_And_Verify_Custom_Columns_NodeLevel() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(6000);
-		pojo.getSearchBoxIndices1();
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Indices01());
-		Thread.sleep(4000);
-		pojo.getSearchBoxIndices2();
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Indices02());
-		Thread.sleep(4000);
-		pojo.getSearchBoxIndices3();
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_Indices03());
-		Thread.sleep(4000);
-		pojo.Ok_Button_CustomList(driver);
-		Reporter.log("Indices Selected Successfully", true);
-		Thread.sleep(4000);
-		jsclick(pojo.getSetting_Icon());
-		Thread.sleep(4000);
-		jsclick(pojo.getMy_Preferencesetting());
-		Thread.sleep(4000);
-		pojo.Verify_CompactView_checkbox(driver);
-		Thread.sleep(6000);
-		jsclick(pojo.getApply_button());
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Drawer(), pojo.getSelect_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
-		Thread.sleep(5000);
-		pojo.Verify_Indicess_Value(driver);
-		Thread.sleep(5000);
-		Reporter.log("Custom Columns is set Node Level successfully", true);
-		log.info("Custom Columns is set Node Level successfully");
-
+		Language pojo = new Language();
+		pojo.getSet_And_Verify_Custom_Columns_NodeLevel();
 	}
 
 	@Test(priority = 18)
-	public void Verify_Default_Custom_Columns() throws InterruptedException {
+	public void TC_18_Verify_Default_Custom_Columns() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(5000);
-		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Drawer(), pojo.getSelect_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
-		Thread.sleep(5000);
-		pojo.getMoveTo_Menu_RoomName();
-		Thread.sleep(3000);
-		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
-		pojo.getMoveTo_Menu_RoomName();
-		Thread.sleep(4000);
-		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
-		pojo.getDefault_Button_CustomList();
-		Thread.sleep(4000);
-		pojo.Ok_Button_CustomList(driver);
-		Reporter.log("Set and Verify Default Custom columns successfully", true);
-		log.info("Set and Verify Default Custom columns successfully");
+		Language pojo = new Language();
+		pojo.getVerify_Default_Custom_Columns();
 	}
 
 	@Test(priority = 19)
-	public void Verify_Cancel_Button_of_CustomList() throws InterruptedException {
+	public void TC_19_Verify_Cancel_Button_of_CustomList() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		pojo.getMoveTo_Menu_RoomName();
-		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
-		pojo.getCancel_Button_CustomList();
-		Reporter.log("Cancle button is clicked", true);
-		log.info("Cancle button is clicked successfully");
+		Language pojo = new Language();
+		pojo.getVerify_Cancel_Button_of_CustomList();
 	}
 
 	@Test(priority = 20)
-	public void Verify_Custom_Columns_RoomLevel() throws InterruptedException {
+	public void TC_20_Verify_Custom_Columns_RoomLevel() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		pojo.getMoveTo_Menu_RoomName();
-		jsclick(pojo.getCustomColumnOption());
-		Thread.sleep(4000);
-		jsclick(pojo.getClick_DropdownOption());
-		pojo.Select_DropdownValue(driver);
-		Thread.sleep(4000);
-		jsclick(pojo.getSet_RoomLevel_Indices());
-		Thread.sleep(4000);
-		pojo.Ok_Button_CustomList(driver);
-		Reporter.log("Indices is Selected Successfully for RoomLevel", true);
-		log.info("Indices is Selected Successfully for RoomLevel");
-
+		Language pojo = new Language();
+		pojo.getVerify_Custom_Columns_RoomLevel();
 	}
 
 	@Test(priority = 21)
-	public void Verify_Reset_Columns_Functionality() throws InterruptedException {
+	public void TC_21_Verify_Reset_Columns_Functionality() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		pojo.getMoveTo_Menu_RoomName();
-		jsclick(pojo.getReset_Column_option());
-		Thread.sleep(4000);
-		jsclick(pojo.getResetColumn_popup_OK_button());
-		Reporter.log("Custom columns Reset Successfully", true);
-		log.info("Custom columns Reset Successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_Reset_Columns_Functionality();
 	}
 
 	// Custom columns for Search
 
 	@Test(priority = 22)
-	public void Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn() throws InterruptedException {
+	public void TC_22_Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		pojo.MoveTo_Search_Option();
-		Thread.sleep(4000);
-		jsclick(pojo.getSearch_Custom_Columns_option());
-		Thread.sleep(5000);
-		pojo.getSearch_titelvalidation();
-		Reporter.log("Search Custom List title validate", true);
-		log.info("Search Custom List title validate");
+		Language pojo = new Language();
+		pojo.getOpen_Custom_List_Dialog_And_Verify_Title_Searchcolumn();
 	}
 
 	@Test(priority = 23)
-	public void Verify_The_Text_of_Custom_List_Dialog_Searchcolumn() throws InterruptedException {
+	public void TC_23_Verify__Text_of_Custom_List_Dialog_Searchcolumn() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(5000);
-		pojo.getSearch_textvalidation();
-		Reporter.log("Search Custom List Dialog Text verified", true);
-		log.info("Search Custom List Dialog Text verified");
+		Language pojo = new Language();
+		pojo.getVerify__Text_of_Custom_List_Dialog_Searchcolumn();
 	}
 
 	@Test(priority = 24)
-	public void Verify_Set_Custom_Columns_for_Search() throws Exception {
+	public void TC_24_Verify_Set_Custom_Columns_for_Search() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(8000);
-		pojo.getSearchBoxIndices4();
-		Thread.sleep(3000);
-		jsclick(pojo.getSearch_Select_Indices01());
-		Thread.sleep(4000);
-		pojo.getSearchBoxIndices5();
-		Thread.sleep(3000);
-		jsclick(pojo.getSearch_Select_Indices02());
-		Thread.sleep(4000);
-		pojo.getSearchBoxIndices6();
-		Thread.sleep(3000);
-		jsclick(pojo.getSearch_Select_Indices03());
-		Thread.sleep(4000);
-		jsclick(pojo.getSearch_Ok_Button_CustomList());
-		Reporter.log("Indices Selected Successfully", true);
-		Thread.sleep(5000);
-		jsclick(pojo.getClick_Search_Option());
-		Thread.sleep(4000);
-		jsclick(pojo.getDocument_Location(driver));
-		Thread.sleep(4000);
-		jsclick(pojo.getCabinetPlus(driver));
-		Thread.sleep(4000);
-		jsclick(pojo.getDrawerPlus(driver));
-		Thread.sleep(4000);
-		jsclick(pojo.getFolder1(driver));
-		Thread.sleep(4000);
-		jsclick(pojo.getOk_button(driver));
-		Thread.sleep(8000);
-		jsclick(pojo.getFind_Button());
-		Thread.sleep(6000);
-		pojo.Search_Verify_Indicess_Value4(driver);
-		Thread.sleep(3000);
-		pojo.Search_Verify_Indicess_Value5(driver);
-		Thread.sleep(3000);
-		pojo.Search_Verify_Indicess_Value6(driver);
-		Thread.sleep(6000);
-		Reporter.log("Custom column is set successfully for Search Functionality", true);
-		log.info("Custom column is set successfully for Search Functionality");
+		Language pojo = new Language();
+		pojo.getVerify_Set_Custom_Columns_for_Search();
 	}
 
 	@Test(priority = 25)
-	public void Verify_Reset_Columns_for_Search() throws InterruptedException {
+	public void TC_25_Verify_Reset_Columns_for_Search() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		pojo.MoveTo_Search_Option();
-		Thread.sleep(4000);
-		jsclick(pojo.getClick_ResetColumn());
-		Thread.sleep(4000);
-		jsclick(pojo.getOk_Button_ResetColumn());
-		Thread.sleep(4000);
-		jsclick(pojo.getFind_Button());
-		Thread.sleep(6000);
-		Reporter.log("Reset Custom Columns Successfully for Search", true);
-		log.info("Reset Custom Columns Successfully for Search");
-
+		Language pojo = new Language();
+		pojo.getVerify_Reset_Columns_for_Search();
 	}
 
 	// Custom column for ToDolist
 
 	@Test(priority = 26)
-	public void Open_Custom_List_Dialog_And_Verify_Title_ToDoList() throws InterruptedException {
+	public void TC_26_Open_Custom_List_Dialog_And_Verify_Title_ToDoList() throws InterruptedException {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		pojo.getMoveTo_ToDoList_Option();
-		Thread.sleep(4000);
-		jsclick(pojo.getToDoList_Custom_Columns_option());
-		Thread.sleep(5000);
-		pojo.ToDoList_titelvalidation(driver);
-		Reporter.log("ToDoList Custom List title validate", true);
-		log.info("ToDoList Custom List title validate");
+		Language pojo = new Language();
+		pojo.getOpen_Custom_List_Dialog_And_Verify_Title_ToDoList();
 	}
 
 	@Test(priority = 27)
-	public void Verify_The_Text_of_Custom_List_Dialog_ToDoList() throws Exception {
+	public void TC_27_Verify__Text_of_Custom_List_Dialog_ToDoList() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(5000);
-		pojo.ToDoList_textvalidation(driver);
-		Thread.sleep(9000);
-		Reporter.log("Custom List Dialog Text verified", true);
-		log.info("Custom List Dialog Text verified");
+		Language pojo = new Language();
+		pojo.getVerify__Text_of_Custom_List_Dialog_ToDoList();
 	}
 
 	@Test(priority = 28)
-	public void Verify_Set_Custom_Columns_for_ToDoList() throws Exception {
+	public void TC_28_Verify_Set_Custom_Columns_for_ToDoList() throws Exception {
 
-		Language1 pojo = new Language1();
-
-		jsclick(pojo.getToDoList_Select_Indices01());
-		Thread.sleep(4000);
-		Language1.ToDoList_Ok_Button_CustomList(driver);
-		Reporter.log("Indices Selected Successfully", true);
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Cabinet(), pojo.getSelect_Cabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Drawer(), pojo.getSelect_Drawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getSelect_Folder(), pojo.getSelect_Folder());
-		Thread.sleep(5000);
-		jsclick(pojo.getSelectDoc(driver));
-		Thread.sleep(4000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(4000);
-		jsclick(pojo.getsendWorkflow(driver));
-		Thread.sleep(3000);
-		jsclick(pojo.getWFAssign(driver));
-		Thread.sleep(5000);
-		pojo.getSelectDoc(driver);
-		Thread.sleep(8000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(4000);
-		pojo.getVerify_CopyandPaste_Document();
-		Thread.sleep(4000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(4000);
-		pojo.getMoveTo_ToDoList_Option();
-		Thread.sleep(4000);
-		jsclick(pojo.getSelect_All_Item());
-		Thread.sleep(6000);
-		pojo.ToDoList_Verify_Indicess_Value(driver);
-		Reporter.log("Custom column is set successfully for ToDoList Functionality", true);
-		log.info("Custom column is set successfully for ToDoList Functionality");
+		Language pojo = new Language();
+		pojo.getVerify_Set_Custom_Columns_for_ToDoList();
 	}
 
 	@Test(priority = 29)
-	public void Reset_Custom_Columns_for_ToDoList() throws InterruptedException {
-		Language1 pojo = new Language1();
-		Thread.sleep(4000);
-		pojo.getMoveTo_ToDoList_Option();
-		Thread.sleep(4000);
-		jsclick(pojo.getTo_Do_Resetcolumn_Option());
-		Thread.sleep(4000);
-		jsclick(pojo.getToDoList_Reset_Column_OK_Button());
-		Reporter.log("ToDoList Custom column Reset Successfully", true);
-		log.info("ToDoList Custom column Reset Successfully");
-		jsclick(pojo.getRefreshbutton());
+	public void TC_29_Reset_Custom_Columns_for_ToDoList() throws InterruptedException {
+		Language pojo = new Language();
+		pojo.getReset_Custom_Columns_for_ToDoList();
 	}
 
 	// Document Context Menu
 
 	@Test(priority = 30)
-	public void Verify_Refresh_Option() throws Exception {
+	public void TC_30_Verify_Refresh_Option() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(5000);
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(6000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(6000);
-		pojo.getSelect_Option_Refresh();
-		Thread.sleep(6000);
-		log.info("Refresh Functionality verified Successfully on Documents");
+		Language pojo = new Language();
+		pojo.getVerify_Refresh_Option();
 	}
 
 	@Test(priority = 31)
-	public void Verify_Categories_Option() throws Exception {
+	public void TC_31_Verify_Categories_Option() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(3000);
-		pojo.getMoveTo_Menu_Documents();
-		pojo.getSelect_Option_Catagories_andSet_Colors();
-		log.info("Categories on Documents Functionality verified Successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_Categories_Option();
 	}
 
 	@Test(priority = 32)
-	public void Verify_copy_and_paste_Option() throws Exception {
+	public void TC_32_Verify_copy_and_paste_Option() throws Exception {
 
-		Language1 pojo = new Language1();
-		Thread.sleep(6000);
-		pojo.getMoveTo_Menu_Documents();
-		pojo.getVerify_CopyandPaste_Document();
-		Thread.sleep(8000);
-		log.info("copy and paste Documents Functionality verified Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_copy_and_paste_Option();
 	}
 
 	@Test(priority = 33)
-	public void Verify_cut_and_paste_Option() throws Exception {
+	public void TC_33_Verify_cut_and_paste_Option() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(6000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(6000);
-		pojo.getVerify_CutandPaste_Document();
-		Thread.sleep(6000);
-		log.info("cut and paste Document Functionality verified Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_cut_and_paste_Option();
 	}
 
 	@Test(priority = 34)
-	public void Verify_Delete_Option() throws Exception {
+	public void TC_34_Verify_Delete_Option() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getVerify_Delete_Document();
-		Thread.sleep(8000);
-		log.info("Document Delete Functionality verified Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_Delete_Option();
 	}
 
 	@Test(priority = 35)
-	public void Verify_CreateFavorites_Document() throws Exception {
+	public void TC_35_Verify_CreateFavorites_Document() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getVerify_CreateFavorites_Document();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		pojo.getOpen_CreateFavorites_Document();
-		log.info("CreateFavorites Document Functionality verified Successfully");
+		Language pojo = new Language();
+		pojo.Verify_CreateFavorites_Documents();
 	}
 
 	@Test(priority = 36)
-	public void Verify_Notification_on_Document() throws Exception {
+	public void TC_36_Verify_Notification_on_Document() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(7000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(6000);
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(6000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(4000);
-		pojo.getVerify_CopyandPaste_Document();
-		Thread.sleep(8000);
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(6000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(6000);
-		pojo.getCreate_Notification_Document();
-		Thread.sleep(9000);
-		jsclick(pojo.getClick_signature_Menuoption());
-		Thread.sleep(4000);
-		try {
-		pojo.getinputpassword();
-		Thread.sleep(4000);
-		}
-		catch(Exception e) {
-			System.out.println("password dialog not present");
-		}
-		pojo.getAdd_Signature_Onpage();
-		Thread.sleep(6000);
-		pojo.getSave_Signature_Document();
-		Thread.sleep(4000);
-		jsclick(pojo.getClose_Document());
-		log.info("Notification_on_Document Functionality verified Successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_Notification_on_Document();
 	}
 
 	@Test(priority = 37)
-	public void Verify_SendTo_Mail() throws Exception {
+	public void TC_37_Verify_SendTo_Mail() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(3000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(6000);
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(3000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(4000);
-		pojo.getSentTo_Mail_asReference();
-		Thread.sleep(3000);
-		log.info("SendTo Mail asReference Functionality verified Successfully");
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(3000);
-		pojo.getMoveTo_Menu_Documents();
-		Thread.sleep(3000);
-		pojo.getSentTo_Mail_asCopy();
-		Thread.sleep(4000);
-		log.info("SendTo Mail asCopy Functionality verified Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_SendTo_Mail();
 	}
 
 	@Test(priority = 38)
-	public void Verify_SendTo_Print() throws Exception {
+	public void TC_38_Verify_SendTo_Print() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getSentTo_Print();
-		log.info("SendTo Print Functionality verified Successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_SendTo_Print();
 	}
 
 	@Test(priority = 39)
-	public void Verify_SendTo_Export() throws Exception {
+	public void TC_39_Verify_SendTo_Export() throws Exception {
 
-		Language1 pojo = new Language1();
-		pojo.getSentTo_Export();
-		log.info("SendTo Export Functionality verified Successfully");
-
+		Language pojo = new Language();
+		pojo.getVerify_SendTo_Export();
 	}
 
 	@Test(priority = 40)
-	public void Verify_SendTo_GenerateDocumentLink() throws Exception {
+	public void TC_40_Verify_SendTo_GenerateDocumentLink() throws Exception {
 
-		Language1 pojo = new Language1();
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(3000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(4000);
-		pojo.getSentTo_GenerateDocumentLink();
-		Thread.sleep(3000);
-		jsclick(pojo.getRefreshbutton());
-		log.info("SendTo GenerateDocumentLink Functionality verified Successfully");
+		Language pojo = new Language();
+		pojo.getVerify_SendTo_GenerateDocumentLink();
 	}
 
 	@Test(priority = 41)
-	public void Verify_SendTo_SecureLink() throws Exception {
-		Language1 pojo = new Language1();
-		Thread.sleep(6000);
-		movingDoublecli(pojo.getCabinet(), pojo.getCabinet());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getDrawer(), pojo.getDrawer());
-		Thread.sleep(4000);
-		movingDoublecli(pojo.getFolder(), pojo.getFolder());
-		Thread.sleep(6000);
-		jsclick(pojo.getSelect_Document());
-		Thread.sleep(3000);
-		pojo.getSentTo_SecureLink();
-		Thread.sleep(3000);
-		jsclick(pojo.getRefreshbutton());
-		Thread.sleep(6000);
-		log.info("SendTo SecureLink Functionality verified Successfully");
+	public void TC_41_Verify_SendTo_SecureLink() throws Exception {
+		Language pojo = new Language();
+		pojo.getVerify_SendTo_SecureLink();
 	}
 }

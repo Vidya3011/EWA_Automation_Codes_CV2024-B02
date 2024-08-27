@@ -64,7 +64,7 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 	public WebElement getSelect_Folder() {
 		return Select_Folder;
 	}
-	
+
 	@FindBy(xpath = ("//div[@id='createDocuemntNavigator']/ul/li[2]/a"))
 	private WebElement Select_CabinetDest;
 
@@ -85,21 +85,14 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 	public WebElement getSelect_FolderDest() {
 		return Select_FolderDest;
 	}
-	
-	
 
-	
-	
 	@FindBy(xpath = "//*[@id=\"78608\"]/a")
 	private WebElement NewDrawerFolder;
-	
-	
+
 	public WebElement getNewDrawerFolder() {
 		return NewDrawerFolder;
 	}
-	
-	
-	
+
 	@FindBy(xpath = "//button[@id='navigatorTreeOk']")
 	private WebElement OK_Button_BrowseforFolder;
 
@@ -147,13 +140,13 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 		return Create_Button;
 
 	}
-	
-	@FindBy(xpath= "//*[@id=\"docTypeIndicesTable\"]/tbody/tr/td[2]")
+
+	@FindBy(xpath = "//*[@id=\"docTypeIndicesTable\"]/tbody/tr/td[2]")
 	private WebElement DocumentCVRep;
-	
+
 	public WebElement getDocumentCVRep() {
 		return DocumentCVRep;
-		
+
 	}
 
 	@FindBy(xpath = "//button[@id='viewCreatedDocument']")
@@ -163,32 +156,23 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 		return View_Button;
 
 	}
-	
-	
-	
-	
+
 	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
 	private WebElement Move_To_PlusIconNish;
-	
+
 	@FindBy(xpath = "//*[@id='viewDocumentAddPages']")
 	private WebElement Browse_OptionNish;
-	
-	
-	
-	
+
 	public WebElement getMove_To_PlusIconNish() {
 		return Move_To_PlusIconNish;
 
 	}
-	
+
 	public WebElement getBrowse_OptionNish() {
 		return Browse_OptionNish;
 
 	}
-	
-	
-	
-	
+
 	@FindBy(xpath = "//*[@id=\"modelHome\"]")
 	private WebElement Navigate_Button;
 
@@ -196,7 +180,7 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 		return Navigate_Button;
 
 	}
-	
+
 	@FindBy(xpath = "//*[@id=\"createDocuemntNavigator\"]/ul/li[1]/ins")
 	private WebElement AutomationCab;
 
@@ -204,7 +188,7 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 		return AutomationCab;
 
 	}
-	
+
 	@FindBy(xpath = "//*[@id=\"createDocuemntNavigator\"]/ul/li[1]/ul/li/ins")
 	private WebElement AutomationDrawer;
 
@@ -212,7 +196,7 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 		return AutomationDrawer;
 
 	}
-	
+
 	@FindBy(xpath = "//*[@id=\"createDocuemntNavigator\"]/ul/li[1]/ul/li/ul/li[3]/a")
 	private WebElement AutomationFolder;
 
@@ -220,21 +204,6 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 		return AutomationFolder;
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	@FindBy(xpath = "//span[@id='messageContent']")
 	private WebElement Verify_File_upload_error_Message;
@@ -377,38 +346,27 @@ public class SpecialCharFilenames1 extends Generic.BaseClass {
 	private WebElement Click_FileInfo_Option;
 
 	public WebElement getClick_FileInfo_Option() {
-		
+
 		return Click_FileInfo_Option;
 	}
 
 	public WebElement getClick_FileInfo_Option1() {
-		
+
 		return Click_FileInfo_Option;
 	}
-	
-	
-	
-	
+
 	@FindBy(xpath = "//span[@id='fileNameLabel']")
 	private WebElement Click_FileInfo_OkButton_withFileName;
 	@FindBy(xpath = "//button[@id='fileRenameOK']")
 	private WebElement RemarkOk;
 
-	
-	
-	
-	
-	
-	
-	
-	
 	public WebElement getClick_FileInfo_OkButton_withFileName() {
 		WebElement Filename = Click_FileInfo_OkButton_withFileName;
 		System.out.println("File name is:" + Filename.getText());
 		WebElement ele = RemarkOk;
-	//	ele.click();
-		
-		JavascriptExecutor js= (JavascriptExecutor)driver;
+		// ele.click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele);
 		return Click_FileInfo_OkButton_withFileName;
 

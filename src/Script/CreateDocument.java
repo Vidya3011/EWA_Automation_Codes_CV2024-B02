@@ -1,6 +1,5 @@
 package Script;
 
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
@@ -14,12 +13,14 @@ public class CreateDocument {
 	CreateDocument() {
 
 	}
-	String path="D:\\Automationimages";
+
+	String path = "D:\\Automationimages";
+
 	CreateDocument(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public void testCreateDocument() throws Exception  {
+	public void testCreateDocument() throws Exception {
 		String xlpath = IAutoConst.xlpath;
 		int rc = Lib.getRowCount(xlpath, "DocumentType");
 		for (int i = 1; i <= rc; i++) {
@@ -29,14 +30,14 @@ public class CreateDocument {
 			Reporter.log("IndexValue is:" + IndexVal, true);
 
 			NewDocument newdoc = new NewDocument(driver);
-			newdoc.SetCreateNewDocument();			
-			Viewer view1=new Viewer(driver);
-			newdoc.SetFileuploadmenu(path, view1);			
+			newdoc.SetCreateNewDocument();
+			Viewer view1 = new Viewer(driver);
+			newdoc.SetFileuploadmenu(path, view1);
 			newdoc.SetDestinationfolder();
 			newdoc.SetDocType(Documenttypename, IndexVal);
 			newdoc.SetClickCreateButton();
 			Thread.sleep(5000);
-//			Viewer view1=new Viewer(driver);
+			// Viewer view1=new Viewer(driver);
 			view1.testViewerToolbar();
 
 		}

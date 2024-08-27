@@ -15,36 +15,34 @@ import org.testng.annotations.Test;
 import Pom.AdvancedViewer;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+//NishaR codes
+
 public class CrossBrowserTesting extends BaseClass {
-	
+
 	@Parameters("browser")
-	@Test(priority=1)
+	@Test(priority = 1)
 	private void LaunchCVSBrow(String brow) throws Exception {
-		
-		
-		
+
 		if (brow.equals("chromebrowser")) {
-			 System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe");
-				driver = new ChromeDriver();
-			
-				
-			}
-			
-		else if (brow.equals("edgebrowser")) {
-			
-			WebDriverManager.edgedriver().setup();
-			driver=new EdgeDriver();
-			
-		
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe");
+			driver = new ChromeDriver();
+
 		}
-		else {
+
+		else if (brow.equals("edgebrowser")) {
+
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+
+		} else {
 			WebDriverManager.firefoxdriver().setup();
-			driver= new FirefoxDriver();
+			driver = new FirefoxDriver();
 		}
 		driver.get("http://10.4.10.60:8080/CVWeb/cvLgn");
 		driver.manage().window().maximize();
-		
-		WebElement UserName=driver.findElement(By.xpath("//input[@id='userName']"));
+
+		WebElement UserName = driver.findElement(By.xpath("//input[@id='userName']"));
 		Thread.sleep(3000);
 		UserName.sendKeys(readFromExLogin(2, 0));
 		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(2, 1));
@@ -53,39 +51,29 @@ public class CrossBrowserTesting extends BaseClass {
 		a1.moveToElement(room).click().build().perform();
 		WebElement roomCV = driver.findElement(By.xpath("//*[@id=\"rooms\"]/option[4]"));
 		roomCV.click();
-		WebElement LoginBTN=driver.findElement(By.id("submitid"));
+		WebElement LoginBTN = driver.findElement(By.id("submitid"));
 		jsclick(LoginBTN);
 		Thread.sleep(3000);
 		try {
 			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
 			WebElement sessiomsgOK = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationCancel\"]"));
-			if(sessiomsg.isDisplayed()) {
-		    jsclick(sessiomsgOK);
-		    loginSQL2022RAM();
-		   }
-		}
-			catch(Exception e) {
-				System.out.println("Noaletrt");
+			if (sessiomsg.isDisplayed()) {
+				jsclick(sessiomsgOK);
+				loginSQL2022RAM();
 			}
-		
+		} catch (Exception e) {
+			System.out.println("Noaletrt");
 		}
-			
-	@Test(priority=2,invocationCount=1000)
-	public void CrossBrw() throws Exception{
-	
-	AdvancedViewer ad=new AdvancedViewer();
-	ad.AdvancedViewPDFDocument_SQL();
-	Reporter.log("PDF Document verified successfull");
-	
-	}
-	
+
 	}
 
+	@Test(priority = 2, invocationCount = 1000)
+	public void CrossBrw() throws Exception {
 
-		
+		AdvancedViewer ad = new AdvancedViewer();
+		ad.AdvancedViewPDFDocument_SQL();
+		Reporter.log("PDF Document verified successfull");
 
-	
-	
-	
+	}
 
-
+}

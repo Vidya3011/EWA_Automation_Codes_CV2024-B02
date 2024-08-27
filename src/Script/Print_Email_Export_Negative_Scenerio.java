@@ -13,30 +13,27 @@ import org.testng.annotations.Test;
 import Generic.BaseClass;
 import Pom.Print;
 
-public class Print_Email_Export_Negative_Scenerio extends BaseClass{
-	
-	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(Print_Email_Export_Negative_Scenerio.class);
-	
-  /* @BeforeClass
-	public void ladBrowser() {
-		loadBrowser("Chrome");
-        launchUrl();
-        log.info("CVS URL started Successfully...");
-    }
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Print_Email_Export_Negative_Scenerio extends BaseClass {
 
-	@Test(priority=1)
-	public void LogVCS() throws Exception {
-		loginCVS();
-		log.info("CVS User is logged in successfully...");
-	}
-*/
+	private static org.apache.logging.log4j.Logger log = LogManager
+			.getLogger(Print_Email_Export_Negative_Scenerio.class);
 
-    @Test(priority=2)
+	/*
+	 * @BeforeClass public void ladBrowser() { loadBrowser("Chrome"); launchUrl();
+	 * log.info("CVS URL started Successfully..."); }
+	 * 
+	 * @Test(priority=1) public void LogVCS() throws Exception { loginCVS();
+	 * log.info("CVS User is logged in successfully..."); }
+	 */
+
+	@Test(priority = 2)
 	private void TC_1_Email_Print_Export_Negative_Script() throws Exception {
 		Print pojo = new Print();
-		pojo.Email_ConvertPDF_WithAll_Annotations();
+		pojo.Email_ConvertPDF_WithAll_Annotations_Invalid();
 	}
-     
-    
 
 }

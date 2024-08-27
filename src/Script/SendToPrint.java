@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 
 import Pom.ViewerToolbar;
 
-public class SendToPrint {
-	
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SendToPrint {
+
 	private WebDriver driver;
 
 	SendToPrint() {
@@ -15,7 +19,7 @@ public class SendToPrint {
 	SendToPrint(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void testSendToPrint() throws Exception {
 		ViewerToolbar print = new ViewerToolbar(driver);
 		print.SetPrint();

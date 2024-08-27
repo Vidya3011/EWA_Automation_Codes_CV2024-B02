@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+//Dipak codes 
 public class CreateNode {
 
 	@FindBy(id = "navigationMenuBtn")
@@ -41,8 +42,6 @@ public class CreateNode {
 	@FindBy(xpath = ("//button[@id='createNewNodeOk']"))
 	private WebElement CreateNodeOK;
 
-	
-
 	public WebDriver driver;
 	Actions action;
 
@@ -56,41 +55,38 @@ public class CreateNode {
 	public void CreateDrawerFolderforNameduser(String CabinetName, String DrawerName, String FolderName)
 			throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(ExistingCabinet)); 
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-		
-		//action.click(ExistingCabinet).build().perform();
-		Reporter.log("ExistingCabinet::" + ExistingCabinet.getText(),true);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(ExistingCabinet));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
+		// action.click(ExistingCabinet).build().perform();
+		Reporter.log("ExistingCabinet::" + ExistingCabinet.getText(), true);
 		ExistingCabinet.click();
-		Reporter.log("Existing cabinet is selected",true);
+		Reporter.log("Existing cabinet is selected", true);
 		Thread.sleep(2000);
 		action.moveToElement(RoomName).build().perform();
 		Thread.sleep(3000);
 		action.click(CreateDrawerFolder).build().perform();
 		driver.switchTo().activeElement().sendKeys(DrawerName);
 		CreateNodeOK.click();
-		Reporter.log("Drawer is selected",true);
+		Reporter.log("Drawer is selected", true);
 		Thread.sleep(2000);
 		action.moveToElement(RoomName).build().perform();
 		action.click(CreateDrawerFolder).build().perform();
 		driver.switchTo().activeElement().sendKeys(FolderName);
 		CreateNodeOK.click();
-		Reporter.log("Folder is selected",true);
+		Reporter.log("Folder is selected", true);
 
 	}
 
-	/*public void CreateCabinetforAdmin(String CabinetName, String DrawerName, String FolderName) throws InterruptedException {
-		action.moveToElement(RoomName).build().perform();
-		if (CreateCabinet.isEnabled()) {
-			System.out.println("Create cabinet permission is there");
-			action.moveToElement(CreateCabinet).build().perform();
-			CreateCabinet.click();
-			CreateCabinetText.sendKeys(CabinetName);
-			CreateCabinetOK.click();
-			
-		}
-		else {
-			System.out.println("Create cabinet permission denied");
-		}*/
-	}
-
+	/*
+	 * public void CreateCabinetforAdmin(String CabinetName, String DrawerName,
+	 * String FolderName) throws InterruptedException {
+	 * action.moveToElement(RoomName).build().perform(); if
+	 * (CreateCabinet.isEnabled()) {
+	 * System.out.println("Create cabinet permission is there");
+	 * action.moveToElement(CreateCabinet).build().perform(); CreateCabinet.click();
+	 * CreateCabinetText.sendKeys(CabinetName); CreateCabinetOK.click();
+	 * 
+	 * } else { System.out.println("Create cabinet permission denied"); }
+	 */
+}

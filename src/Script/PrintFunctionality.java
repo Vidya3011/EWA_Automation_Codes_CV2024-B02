@@ -12,17 +12,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -31,7 +21,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.sun.corba.se.spi.orbutil.fsm.ActionBase;
+
 
 import Generic.FailedRetry;
 import Pom.Print;
@@ -39,7 +29,12 @@ import Pom.TemplatePage;
 import Pom.ToDoListTab;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class PrintFunctionality extends Generic.BaseClass {
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PrintFunctionality extends Generic.BaseClass {
 
 	public static SoftAssert so;
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(PrintFunctionality.class);
@@ -48,29 +43,36 @@ public class PrintFunctionality extends Generic.BaseClass {
 	public void ladBrowser() {
 		loadBrowser("Chrome");
 
-		launchUrl();
-		log.info("CVS URL started Successfully...");
-
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
 	}
 
 	@Test(priority = 1)
-	public void LogVCS() throws Exception {
-		loginCVS();
-		//loginSQL2022();
-		log.info("CVS User is logged in successfully...");
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
+
 
 	@Test(priority = 4)
 	public void TC_C_Email_ConvertPDF_WithAll_Annotations() throws Exception {
 		Print pojo = new Print();
-		pojo.Email_ConvertPDF_WithAll_Annotations();
+		pojo.Email_ConvertPDF_With_Annotation();
 	}
 
 	@Test(priority = 2)
 	public void TC_A_Email_Reference() throws Exception {
 		Print pojo = new Print();
-        pojo.Email_Reference();
-        log.info("Reference Email sent successfull");
+		pojo.Email_Reference();
+		log.info("Reference Email sent successfull");
 	}
 
 	@Test(priority = 3, retryAnalyzer = FailedRetry.class)
@@ -115,17 +117,17 @@ public class PrintFunctionality extends Generic.BaseClass {
 	// @Test(priority=9)
 	public void PrintWithcertifiedCoverPageUnlockRedaction() throws Exception {
 		Print pojo = new Print();
-pojo.PrintWithcertifiedCoverPageUnlockRedaction();
-		
+		pojo.PrintWithcertifiedCoverPageUnlockRedaction();
+
 	}
 
 }
 
-
-/*Robot r=new Robot(); String fol="nisha"; for (char c:fol.toCharArray()) { int
-keyCode=KeyEvent.getExtendedKeyCodeForChar(c); r.keyPress(keyCode);
-r.keyRelease(keyCode); } r.keyPress(KeyEvent.VK_ENTER);
-r.keyRelease(KeyEvent.VK_ENTER);
-
-r.keyPress(KeyEvent.VK_ENTER); r.keyRelease(KeyEvent.VK_ENTER);
-*/
+/*
+ * Robot r=new Robot(); String fol="nisha"; for (char c:fol.toCharArray()) { int
+ * keyCode=KeyEvent.getExtendedKeyCodeForChar(c); r.keyPress(keyCode);
+ * r.keyRelease(keyCode); } r.keyPress(KeyEvent.VK_ENTER);
+ * r.keyRelease(KeyEvent.VK_ENTER);
+ * 
+ * r.keyPress(KeyEvent.VK_ENTER); r.keyRelease(KeyEvent.VK_ENTER);
+ */

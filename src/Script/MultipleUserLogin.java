@@ -11,12 +11,16 @@ import Generic.Lib;
 import Pom.LoginPage;
 import Pom.NewDocument;
 
-public class MultipleUserLogin extends BaseTest {
+//NishaR codes
+public class
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
+// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MultipleUserLogin extends BaseTest {
 	@Test(priority = 1)
 	public void testValidLogin() throws Exception {
 		int rc = Lib.getRowCount(xlpath, "ValidLogin");
 		Reporter.log("Excel Row Count: " + rc, true);
-		for (int i = 1; i < rc-1; i++) {
+		for (int i = 1; i < rc - 1; i++) {
 			String un = Lib.getCellValue(xlpath, "ValidLogin", i, 0);
 			Reporter.log("Username:" + un, true);
 			String pw = Lib.getCellValue(xlpath, "ValidLogin", i, 1);
@@ -31,7 +35,7 @@ public class MultipleUserLogin extends BaseTest {
 			// login.CheckRememberMe(un,pw);
 			Thread.sleep(2000);
 			login.ClickLoginButton(un, pw, roomname);
-			
+
 			NodeCreation create1 = new NodeCreation(driver);
 			create1.testCreateNode();
 

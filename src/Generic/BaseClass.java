@@ -33,6 +33,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -45,6 +46,8 @@ import org.testng.asserts.SoftAssert;
 
 import Pom.ToDoListTab;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+//NishaR codes
 
 public class BaseClass {
 
@@ -72,12 +75,22 @@ public class BaseClass {
 			// WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\nisha.r\\Downloads\\chromedriver-win64\\chromedriver.exe");
-			driver = new ChromeDriver();
+			// driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			// options.addArguments("--headless");
+			// options.addArguments("--disable-extensions");
+			options.addArguments("--disable-extensions");
+			options.addArguments("--disable-popup-blocking");
+			options.addArguments("--disable-infobars");
+			options.setExperimentalOption("useAutomationExtension", false);
+
+			driver = new ChromeDriver(options);
 			Reporter.log("Chrome driver launched successfull");
 
 		} else if (browserName.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
+
 			Reporter.log("Edge driver launched successfull");
 
 		} else if (browserName.equals("Firefox")) {
@@ -89,6 +102,7 @@ public class BaseClass {
 		}
 
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 	}
 
@@ -97,6 +111,12 @@ public class BaseClass {
 		driver.get("http://10.4.10.60:8080/CVWeb/cvLgn");
 		Reporter.log("EWA URL launched successfull");
 	}
+	
+	public static void launch47Url() {
+		driver.get("http://10.4.10.47:8080/CVWeb/cvLgn");
+		Reporter.log("EWA URL launched successfull");
+	}
+	
 
 	// 3.
 	public static void launchLocalUrl() {
@@ -115,21 +135,68 @@ public class BaseClass {
 		Reporter.log("Browser launch with Testing Create document URL", true);
 	}
 
-	public static void loginCVS() throws Exception {
+	//////////////////////////////////// ====================================================NishaR
+	
+	public static void loginRNISHA47() throws Exception {
+		Thread.sleep(4000);
 
 		WebElement UserName = driver.findElement(By.xpath("//input[@id='userName']"));
 		Reporter.log("Scenario 01: Log into EWA");
 		Reporter.log("Enter valid user name into username field");
-		Thread.sleep(3000);
+
 		UserName.sendKeys(readFromExLogin(2, 0));
-		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(2, 1));
-		Reporter.log("Enter valid password into password field");
+		Thread.sleep(3000);
+		driver.findElement(By.id("loginPassword")).sendKeys("vw");
+		Reporter.log("Enter valid password into password field", true);
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		Reporter.log("Selects a room");
-		a1.moveToElement(room).click().build().perform();
-		WebElement roomCV = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		roomCV.click();
+		Select sel = new Select(room);
+		sel.selectByIndex(0);
+		
+		//sel.selectByVisibleText(ExcelLogin(1, 2));
+		Thread.sleep(4000);
+		Reporter.log("Select a Room", true);
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id='image']"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id='captchaInput']"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
+		}
+		Reporter.log("Click Login button");
+		WebElement LoginBTN = driver.findElement(By.id("submitid"));
+		jsclick(LoginBTN);
+		Thread.sleep(3000);
+		try {
+
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if (sessiomsg.isDisplayed()) {
+				Reporter.log(
+						"Session for user is already active.Do you want to create new session? dialog box displayed User click on OK button,");
+				jsclick(sessiomsgOK);
+			}
+		} catch (NoSuchElementException e) {
+			Reporter.log("Session message not appeared");
+		}
+	}
+	
+
+	public static void loginCVS() throws Exception {
+		Thread.sleep(4000);
+
+		WebElement UserName = driver.findElement(By.xpath("//input[@id='userName']"));
+		Reporter.log("Scenario 01: Log into EWA");
+		Reporter.log("Enter valid user name into username field");
+
+		UserName.sendKeys(readFromExLogin(2, 0));
+		Thread.sleep(3000);
+		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(2, 1));
+		Reporter.log("Enter valid password into password field", true);
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Thread.sleep(4000);
+		Reporter.log("Select a Room", true);
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id='image']"));
 			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id='captchaInput']"));
@@ -221,6 +288,8 @@ public class BaseClass {
 		a1.moveToElement(room).click().build().perform();
 		WebElement roomCV = driver.findElement(By.xpath("//*[@id=\"rooms\"]/option[5]"));
 		roomCV.click();
+		Thread.sleep(4000);
+		Reporter.log("Select a Room", true);
 		WebElement LoginBTN = driver.findElement(By.id("submitid"));
 		jsclick(LoginBTN);
 		Thread.sleep(3000);
@@ -243,13 +312,14 @@ public class BaseClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("ram");
 		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
+		Reporter.log("Enter valid password into password field", true);
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
-		WebElement ele = driver.findElement(By.id("submitid"));
-		jsclick(ele);
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Thread.sleep(4000);
+		Reporter.log("Select a Room", true);
+		WebElement Login = driver.findElement(By.id("submitid"));
+		jsclick(Login);
 		Thread.sleep(3000);
 		try {
 			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
@@ -262,83 +332,33 @@ public class BaseClass {
 		}
 	}
 
-	// Dipak EWA Baseclass *************//
-
-	// 2.
-	/*public static void launchUrl() throws Exception {
-		driver.get(ExcelLogin(1, 3));
-		Reporter.log("Browser launch with Testing URL", true);
-	}*/
-
-	// 3.
-	public static void LogDipakUser() throws Exception {
-
-		driver.findElement(By.xpath("//input[@id='userName']")).clear();
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(ExcelLogin(1, 0));
-		driver.findElement(By.id("loginPassword")).clear();
-		Reporter.log("Enter valid username into username field", true);
-		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
-		Reporter.log("Enter valid password into password field", true);
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage Room name from Excel sheet
-		Reporter.log("Select a room", true);
-		try {
-			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
-			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
-			enterCaptch.sendKeys(Captch.getText());
-		} catch (Exception e) {
-			// Session message is not displayed
-		}
-		driver.findElement(By.id("submitid")).click();
-		Reporter.log("Click on the Login button", true);
-		try {
-			WebElement session_message = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]"));
-			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
-			Reporter.log(session_message.getText() + "this message is displayed", true);
-			sessionmsgYes.click();
-			Thread.sleep(4000);
-			Reporter.log("Click on the Yes button", true);
-
-		} catch (Exception e1) {
-			// Session message is not displayed
-		}
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.alertIsPresent());
-			acceptAlert();
-		} catch (Exception e) {
-			// Database alert is not present
-		}
-	}
-	
-	
 	public static void LogInAdmin() throws Exception {
 		Reporter.log("Log into EWA");
-
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(3, 0));
 		Reporter.log("Enter valid username into username text box");
+		Thread.sleep(3000);
 		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(3, 1));
 		Reporter.log("Enter valid password into password text box");
+		Thread.sleep(2000);
+
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		Reporter.log("Select a Room");
-		a1.moveToElement(room).click().build().perform();
-		WebElement roomCV = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		roomCV.click();
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Thread.sleep(4000);
+		Reporter.log("Select a Room", true);
+
 		Reporter.log("Click on Login button");
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
 			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
 			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
 		}
-			catch(Exception e) {
-				System.out.println("Captcha is not there");
-			}
 		Thread.sleep(3000);
 		WebElement LoginBTN = driver.findElement(By.id("submitid"));
 		jsclick(LoginBTN);
-		
 
 		Thread.sleep(3000);
 		try {
@@ -353,6 +373,380 @@ public class BaseClass {
 			Reporter.log("Session already activate message not appeared");
 		}
 		Reporter.log("User logged in successfully...");
+	}
+
+	public static void loginLocalCVS() throws Exception {
+		Reporter.log("Enter valid user name into user name field");
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(4, 0));
+		Reporter.log("Enter valid password into password field");
+		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(4, 1));
+		Reporter.log("Selects Local server NishaRoom");
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		a1 = new Actions(driver);
+		Reporter.log("Click on Login button");
+		a1.moveToElement(room).click().build().perform();
+		// WebElement roomCV =
+		// driver.findElement(By.xpath("//option[text()='NishaRoom.NishaRoom']"));
+		WebElement roomCV = driver.findElement(By.xpath("//option[text()='NishaRoom.NishaRoom']"));
+		roomCV.click();
+		Reporter.log("User logged into EWA successfully...");
+		WebElement LoginBTN = driver.findElement(By.id("submitid"));
+		jsclick(LoginBTN);
+		Thread.sleep(3000);
+		try {
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if (sessiomsg.isDisplayed()) {
+				jsclick(sessiomsgOK);
+			}
+		} catch (NoSuchElementException e) {
+			Reporter.log("Login without Session message");
+		}
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////// NishaR//////////////////////////////
+
+	// Dipak EWA Baseclass *************//
+
+	// 2.
+	/*
+	 * public static void launchUrl() throws Exception { driver.get(ExcelLogin(1,
+	 * 3)); Reporter.log("Browser launch with Testing URL", true); }
+	 */
+
+	// 3.
+	// Dipak EWA Baseclass *************//
+
+	// 3. User Login Credential
+
+	public static void LogDipakUser() throws Exception {
+
+		driver.findElement(By.xpath("//input[@id='userName']")).clear();
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(ExcelLogin(1, 0));
+		Thread.sleep(1000);
+		driver.findElement(By.id("loginPassword")).clear();
+		Reporter.log("Enter valid username into username field", true);
+		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
+		Thread.sleep(1000);
+		Reporter.log("Enter valid password into password field", true);
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage
+													// driver.findElement(By.xpath("//select[@id='rooms']")) name from
+													// Excel sheet
+		Reporter.log("Select a room", true);
+		Thread.sleep(1000);
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			// Session message is not displayed
+		}
+		driver.findElement(By.id("submitid")).click();
+		Reporter.log("Click on the Login button", true);
+		try {
+			WebElement sessionmsg = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]"));
+			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
+			Reporter.log(sessionmsg.getText() + "this message is displayed", true);
+			sessionmsgYes.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the Yes button", true);
+
+		} catch (Exception e1) {
+			// Session message is not displayed
+		}
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.alertIsPresent());
+			acceptAlert();
+		} catch (Exception e) {
+			// Database alert is not present
+		}
+	}
+
+	public static void Already_Logged_User() throws Exception {
+
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(ExcelLogin(1, 0));
+		Reporter.log("Enter valid username into username field", true);
+		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
+		Reporter.log("Enter valid password into password field", true);
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));
+		Reporter.log("Select a room", true);
+		Thread.sleep(2000);
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			// Session message is not displayed
+		}
+		driver.findElement(By.id("submitid")).click();
+		Reporter.log("Click on the Login button", true);
+		try {
+			WebElement sessionmsg = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]"));
+			WebElement sessionmsgNO = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationCancel\"]"));
+			Reporter.log(sessionmsg.getText() + "this message is displayed", true);
+			sessionmsgNO.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the No button", true);
+
+		} catch (Exception e1) {
+			// Session message is not displayed
+		}
+	}
+
+	public static void LoginAdminUser() throws Exception {
+
+		driver.findElement(By.xpath("//input[@id='userName']")).clear();
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(ExcelLogin(3, 0));
+		driver.findElement(By.id("loginPassword")).clear();
+		Reporter.log("Enter valid username into username field", true);
+		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
+		Reporter.log("Enter valid password into password field", true);
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage
+													// driver.findElement(By.xpath("//select[@id='rooms']")) name from
+													// Excel sheet
+		Reporter.log("Select a room", true);
+		Thread.sleep(2000);
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			// Session message is not displayed
+		}
+		driver.findElement(By.id("submitid")).click();
+		Reporter.log("Click on the Login button", true);
+		try {
+			WebElement sessionmsg = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]"));
+			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
+			Reporter.log(sessionmsg.getText() + "this message is displayed", true);
+			sessionmsgYes.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the Yes button", true);
+
+		} catch (Exception e1) {
+			// Session message is not displayed
+		}
+	}
+
+	public static void Login_Workflow_User() throws Exception {
+
+		driver.findElement(By.xpath("//input[@id='userName']")).clear();
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(ExcelLogin(2, 0));
+		driver.findElement(By.id("loginPassword")).clear();
+		Reporter.log("Enter valid username into username field", true);
+		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
+		Reporter.log("Enter valid password into password field", true);
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage
+													// driver.findElement(By.xpath("//select[@id='rooms']")) name from
+													// Excel sheet
+		Reporter.log("Select a room", true);
+		Thread.sleep(2000);
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			// Session message is not displayed
+		}
+		driver.findElement(By.id("submitid")).click();
+		Reporter.log("Click on the Login button", true);
+		try {
+			WebElement sessionmsg = driver.findElement(By.xpath("//*[@id=\"cvModelLoginValidationMessage\"]"));
+			WebElement sessionmsgYes = driver.findElement(By.xpath(" //button[@id='cvModelLoginValidationOk']"));
+			Reporter.log(sessionmsg.getText() + "this message is displayed", true);
+			sessionmsgYes.click();
+			Thread.sleep(2000);
+			Reporter.log("Click on the Yes button", true);
+
+		} catch (Exception e1) {
+			// Session message is not displayed
+		}
+	}
+
+	// 4. All POM datadriven
+
+	public static String ExcelLogin(int rowNo, int cellNo) throws Exception {
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("Login");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	public static String CountexcelRead(int rowNo, int cellNo) throws IOException {
+		File f = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(f);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet mySht = wb.getSheet("Login");
+			XSSFRow row = mySht.getRow(rowNo);
+			XSSFCell cell = row.getCell(cellNo);
+			CellType cellType = cell.getCellType();
+			String text = "";
+			double d = cell.getNumericCellValue();
+			long l = (long) d;
+			return text = String.valueOf(l);
+		}
+	}
+
+	// BatchIndexing datadriven
+
+	public static String BatchIndexing_excelRead(int rowNo, int cellNo) throws Exception {
+
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("BatchIndexing");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	// Datadriven CustomColumns
+
+	public static String CustomColumns_excelRead(int rowNo, int cellNo) throws Exception {
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("Custom Columns");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+
+	}
+
+	// Datadriven Document Context
+
+	public static String DocumentsContext_excelRead(int rowNo, int cellNo) throws Exception {
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("DocumentsContext");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+
+	}
+
+	// Language datadriven
+
+	public String Language_excelRead(int rowNo, int cellNo) throws Exception {
+
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("Language");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	// Datadriven My preference
+
+	public static String MyPreferences_excelRead(int rowNo, int cellNo) throws Exception {
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("MyPreferences");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	// Datadriven Security
+	public static String Security_excelRead(int rowNo, int cellNo) throws Exception {
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("Security");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	// Special characters datadriven
+
+	public String Specialchar_excelRead(int rowNo, int cellNo) throws Exception {
+
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("SpecialCharFiles");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	// Template characters datadriven
+
+	public String Templates_excelRead(int rowNo, int cellNo) throws Exception {
+
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("Templates");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+	// Document version datadriven
+
+	public String DocumentVersion_excelRead(int rowNo, int cellNo) throws Exception {
+
+		File src = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(src);
+		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+			XSSFSheet s = wb.getSheet("DocumentVersion");
+			XSSFRow row = s.getRow(rowNo);
+			XSSFCell cll = row.getCell(cellNo);
+			String cellType = cll.getStringCellValue();
+			return cellType;
+		}
+	}
+
+	// 5. Main Short Element
+
+	// 1.
+
+	public static void Refresh_Button() throws InterruptedException {
+		Thread.sleep(4000);
+		WebElement element = driver.findElement(By.xpath("//*[@id=\"homeMenuBtn\"]/img"));
+		movingclkElement(element);
+		try {
+			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"messageButtonNo27\"]"));
+			movingclkElement(element1);
+		} catch (Exception e) {
+			// Error not present
+		}
 	}
 
 	public static void LogInAdminSQL() throws Exception {
@@ -378,19 +772,6 @@ public class BaseClass {
 		}
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	// 4.
 	public static void VerifyloginCVS() throws Exception {
@@ -493,66 +874,6 @@ public class BaseClass {
 		}
 	}
 
-	// 7. datadriven
-	// 1. LoginCVS
-
-	public static String ExcelLogin(int rowNo, int cellNo) throws Exception {
-		File src = new File("./data/TestData.xlsx");
-		FileInputStream fis = new FileInputStream(src);
-		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
-			XSSFSheet s = wb.getSheet("Login");
-			XSSFRow row = s.getRow(rowNo);
-			XSSFCell cll = row.getCell(cellNo);
-			String cellType = cll.getStringCellValue();
-			return cellType;
-		}
-	}
-
-	public static String CountexcelRead(int rowNo, int cellNo) throws IOException {
-		File f = new File("./data/TestData.xlsx");
-		FileInputStream fis = new FileInputStream(f);
-		try (XSSFWorkbook wb = new XSSFWorkbook(fis)) {
-			XSSFSheet mySht = wb.getSheet("Login");
-			XSSFRow row = mySht.getRow(rowNo);
-			XSSFCell cell = row.getCell(cellNo);
-			CellType cellType = cell.getCellType();
-			String text = "";
-			double d = cell.getNumericCellValue();
-			long l = (long) d;
-			return text = String.valueOf(l);
-		}
-
-	}
-
-	public static void loginLocalCVS() throws Exception {
-		Reporter.log("Enter valid user name into user name field");
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(4, 0));
-		Reporter.log("Enter valid password into password field");
-		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(4, 1));
-		Reporter.log("Selects Local server NishaRoom");
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		Reporter.log("Click on Login button");
-		a1.moveToElement(room).click().build().perform();
-		// WebElement roomCV =
-		// driver.findElement(By.xpath("//option[text()='NishaRoom.NishaRoom']"));
-		WebElement roomCV = driver.findElement(By.xpath("//option[text()='NishaRoom.NishaRoom']"));
-		roomCV.click();
-		Reporter.log("User logged into EWA successfully...");
-		WebElement LoginBTN = driver.findElement(By.id("submitid"));
-		jsclick(LoginBTN);
-		Thread.sleep(3000);
-		try {
-			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
-			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
-			if (sessiomsg.isDisplayed()) {
-				jsclick(sessiomsgOK);
-			}
-		} catch (NoSuchElementException e) {
-			Reporter.log("Login without Session message");
-		}
-	}
-
 	public static void DiffrentUser() {
 
 		String credential = getCreddential().get("Nisha.r");
@@ -635,6 +956,7 @@ public class BaseClass {
 		String name = cell.getStringCellValue();
 		return name;
 	}
+
 	public static String readFromRoomCntxt(int rw, int cl) throws IOException {
 		File f = new File("./data/TestData.xlsx");
 		FileInputStream fis = new FileInputStream(f);
@@ -645,39 +967,43 @@ public class BaseClass {
 		String name = cell.getStringCellValue();
 		return name;
 	}
-	
-	 public static String readFromExAdvancedView(int rw,int cl) throws IOException{
-			File f= new File("./data/TestData.xlsx");
-			FileInputStream fis=new FileInputStream(f);
-			Workbook wb=new XSSFWorkbook(fis);
-			Sheet mySht = wb.getSheet("AdvancedView");
-			Row row = mySht.getRow(rw);
-			Cell cell = row.getCell(cl);
-			String name = cell.getStringCellValue();
-			return name;
-			}
 
-	public static WebElement Refresh_Button(WebDriver driver) { 
+	public static String readFromExAdvancedView(int rw, int cl) throws IOException {
+		File f = new File("./data/TestData.xlsx");
+		FileInputStream fis = new FileInputStream(f);
+		Workbook wb = new XSSFWorkbook(fis);
+		Sheet mySht = wb.getSheet("AdvancedView");
+		Row row = mySht.getRow(rw);
+		Cell cell = row.getCell(cl);
+		String name = cell.getStringCellValue();
+		return name;
+	}
+
+	public static WebElement Refresh_Button(WebDriver driver) {
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"homeMenuBtn\"]/img"));
 		return element;
 	}
 
-	public static void LogoutPage() throws Exception {
-		WebElement logout = driver.findElement(By.xpath("(//span[@id='logedinusername'])[1]"));
-		Thread.sleep(2000);
-		jsclick(logout);
-		Thread.sleep(5000);
+	// 2.
 
+	public static void LogoutPage() throws Exception {
+
+		WebElement logout = driver.findElement(By.xpath("(//span[@id='logedinusername'])[1]"));
+		Thread.sleep(1000);
+		Reporter.log("Click on Username option", true);
+		jsclick(logout);
+		Thread.sleep(2000);
 		WebElement logoutOKBTN = driver.findElement(By.xpath("//*[@id=\"idSidenav\"]/ul/li[1]/a"));
 		jsclick(logoutOKBTN);
-
-		Thread.sleep(3000);
+		Reporter.log("Click on Logout option", true);
 
 		try {
-			alertIsPresent();
-			acceptAlert();
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
 		} catch (Exception e) {
-			Reporter.log("Alert not present!!!");
+			System.out.println("Alert is not present...");
 		}
 	}
 
@@ -698,6 +1024,12 @@ public class BaseClass {
 	 * 
 	 * }
 	 * 
+	 */
+
+	/*
+	 * ChromeOptions options = new ChromeOptions();
+	 * options.setPageLoadStrategy(PageLoadStrategy.EAGER); // Options: NONE, EAGER,
+	 * NORMAL WebDriver driver = new ChromeDriver(options);
 	 */
 
 	// 3.
@@ -748,7 +1080,6 @@ public class BaseClass {
 
 	// 11.
 	public static void closeBrowser() {
-		driver.quit();
 		driver.close();
 	}
 
@@ -968,6 +1299,61 @@ public class BaseClass {
 		List<String> l = new ArrayList<String>();
 		l.addAll(allId);
 		driver.switchTo().window(l.get(index));
+	}
+
+	public static void expandCabinets() throws Exception {
+		Actions actions = new Actions(driver);
+
+		// Loop through each cabinet and double-click to expand
+		int cabinetCount = driver.findElements(By.xpath("//div[@id='viewDocumentnavigator']/ul/li")).size();
+		for (int i = 1; i <= cabinetCount; i++) {
+
+			WebElement cabinet = driver.findElement(By.xpath("//div[@id='viewDocumentnavigator']/ul/li[" + i + "]/a"));
+			Thread.sleep(3000);
+			actions.doubleClick(cabinet).perform();
+			Reporter.log("Expand a cabinet " + i, true);
+
+			// Check if the current cabinet is the one we want to fully expand
+			if (i == 2) {
+				// Find the list of drawer elements within the current cabinet
+				int drawerCount = driver
+						.findElements(By.xpath("//div[@id='viewDocumentnavigator']/ul/li[" + i + "]/ul/li")).size();
+
+				// Loop through each drawer and double-click to expand
+				for (int j = 1; j <= drawerCount; j++) {
+					WebElement drawer = driver.findElement(
+							By.xpath("//div[@id='viewDocumentnavigator']/ul/li[" + i + "]/ul/li[" + j + "]/a"));
+					Thread.sleep(3000);
+					actions.doubleClick(drawer).perform();
+					Reporter.log("Expand a drawer " + j, true);
+
+					// Check if the current drawer is the one we want to fully expand
+					if (j == 1) {
+						// Find the list of folder elements within the current drawer
+						int folderCount = driver
+								.findElements(By.xpath(
+										"//div[@id='viewDocumentnavigator']/ul/li[" + i + "]/ul/li[" + j + "]/ul/li"))
+								.size();
+
+						// Double-click on the first folder only
+						if (folderCount > 0) {
+							WebElement folder = driver.findElement(By.xpath(
+									"//div[@id='viewDocumentnavigator']/ul/li[" + i + "]/ul/li[" + j + "]/ul/li[1]/a"));
+							Thread.sleep(3000);
+							actions.doubleClick(folder).perform();
+							Reporter.log("Expand a folder " + folder, true);
+
+							// Perform any additional actions on the expanded folder here
+
+							// Break after expanding the first folder
+							break;
+						}
+					}
+				}
+				// Break after expanding the specific cabinet and drawer
+				break;
+			}
+		}
 	}
 
 	// 40.

@@ -4,82 +4,153 @@
   <listeners>
     <listener class-name="Generic.ListenersRetry"/>
   </listeners>
-  <test thread-count="5" name="Test3(failed)">
-    <classes>
-      <class name="French_Language.AnnotationFunctionality">
-        <methods>
-          <include name="Polygon"/>
-          <include name="StampAnnotation"/>
-          <include name="LineAnnotation_Ellipse_Annotation"/>
-          <include name="Signature_Annotation"/>
-        </methods>
-      </class> <!-- French_Language.AnnotationFunctionality -->
-    </classes>
-  </test> <!-- Test3(failed) -->
   <test thread-count="5" name="Test4(failed)">
     <classes>
-      <class name="French_Language.SearchSelectDocumentLocation">
+      <class name="Script.Negative_Securitydialog">
         <methods>
-          <include name="ExactSearchInIndexWithLoadMoreCount"/>
-          <include name="AllVrsn_Incldcmnt_FindInHit_AppendToHit"/>
+          <include name="Launch_Browser"/>
+          <include name="Login_EWA"/>
+          <include name="TC_01_Open_Security_Dialog_And_Verify_Title_and_Cancel_Button"/>
+          <include name="TC_03_Verify_Already_addedGroup_showing_Validation"/>
+          <include name="TC_02_Verify_Already_added_showing_Validation"/>
         </methods>
-      </class> <!-- French_Language.SearchSelectDocumentLocation -->
+      </class> <!-- Script.Negative_Securitydialog -->
     </classes>
   </test> <!-- Test4(failed) -->
   <test thread-count="5" name="Test5(failed)">
     <classes>
-      <class name="French_Language.RoomContextFunction">
+      <class name="Script.Document_Version_Test">
         <methods>
-          <include name="ladBrowser"/>
-          <include name="CategoriesFunction"/>
+          <include name="TC_02_Upload_and_Save_New_page_and_Verify_Version_with_New_Comments"/>
+          <include name="Launch_Browser"/>
+          <include name="TC_05_Add_Annotation"/>
+          <include name="TC_06_Set_active_version"/>
+          <include name="TC_07_Update_Document_Properties"/>
         </methods>
-      </class> <!-- French_Language.RoomContextFunction -->
+      </class> <!-- Script.Document_Version_Test -->
     </classes>
   </test> <!-- Test5(failed) -->
-  <test thread-count="5" name="Test 9(failed)">
+  <test thread-count="5" name="Test6(failed)">
     <classes>
-      <class name="French_Language.DashBoardScript">
+      <class name="Script.My_Preferences_Viewer_Zoom">
         <methods>
-          <include name="logoutFromDB"/>
-          <include name="CreateNewDocumentFromDB"/>
+          <include name="TC_02_Verify_Viewer_Zoom_Fit_To_Height"/>
+          <include name="Launch_Browser"/>
         </methods>
-      </class> <!-- French_Language.DashBoardScript -->
+      </class> <!-- Script.My_Preferences_Viewer_Zoom -->
     </classes>
-  </test> <!-- Test 9(failed) -->
-  <test thread-count="5" name="Test 10(failed)">
+  </test> <!-- Test6(failed) -->
+  <test thread-count="5" name="Test10(failed)">
     <classes>
-      <class name="French_Language.Favorites">
+      <class name="Script.My_Preferences_Annotation">
         <methods>
-          <include name="FavoriteInUserLevel"/>
-          <include name="CVSLogin"/>
-          <include name="FavoriteInSystemLevel"/>
+          <include name="TC_02_Verify_set_Annotation1"/>
+          <include name="Launch_Browser"/>
         </methods>
-      </class> <!-- French_Language.Favorites -->
+      </class> <!-- Script.My_Preferences_Annotation -->
     </classes>
-  </test> <!-- Test 10(failed) -->
-  <test thread-count="5" name="Test 11(failed)">
+  </test> <!-- Test10(failed) -->
+  <test thread-count="5" name="Test14(failed)">
     <classes>
-      <class name="French_Language.SecureLink">
+      <class name="Script.My_Preferences_QuickFind">
         <methods>
-          <include name="SecureLinkFromSearchTab"/>
-          <include name="DocumentSendToSecureLink"/>
-          <include name="SecureLinkFromDocumentList"/>
-          <include name="SentDocumentToView"/>
+          <include name="Launch_Browser"/>
+          <include name="TC_01_Verify_QuickFind_DocIdSearch"/>
         </methods>
-      </class> <!-- French_Language.SecureLink -->
+      </class> <!-- Script.My_Preferences_QuickFind -->
     </classes>
-  </test> <!-- Test 11(failed) -->
-  <test thread-count="5" name="Test 12(failed)">
+  </test> <!-- Test14(failed) -->
+  <test thread-count="5" name="Test16(failed)">
     <classes>
-      <class name="French_Language.PrintFunctionality">
+      <class name="Script.Templates_Test">
         <methods>
-          <include name="exports_with_Retain"/>
-          <include name="exports_with_convert_to_pdf_with_passwords"/>
-          <include name="exports_with_convert_to_pdf_and_include_workflow_summary"/>
-          <include name="ladBrowser"/>
-          <include name="exports_with_convert_to_pdf_and_best_quality"/>
+          <include name="TC_05_verify_to_Create_Formmapping_PDFTemplate_Advancedviewing"/>
+          <include name="TC_01_verify_to_CreateorBrowse_Template_Defaultviewing"/>
+          <include name="TC_04_Verify_to_Edit_and_Delete_AdvancedTemplate_Officedoc"/>
+          <include name="TC_06_Verify_to_Edit_and_Delete_Formfield"/>
+          <include name="Launch_Browser"/>
         </methods>
-      </class> <!-- French_Language.PrintFunctionality -->
+      </class> <!-- Script.Templates_Test -->
     </classes>
-  </test> <!-- Test 12(failed) -->
+  </test> <!-- Test16(failed) -->
+  <test thread-count="5" name="Test19(failed)">
+    <classes>
+      <class name="Script.Negative_Templates">
+        <methods>
+          <include name="TC_03_Verify_TextboxName_and_Templatename_validation"/>
+          <include name="Launch_Browser"/>
+          <include name="TC_01_Login_Template_permissionassign_User_and_verify_message_Select_Folder_ToCreateDoc"/>
+          <include name="TC_04_Verify_validation_Duplicate_Template_Created"/>
+        </methods>
+      </class> <!-- Script.Negative_Templates -->
+    </classes>
+  </test> <!-- Test19(failed) -->
+  <test thread-count="5" name="Test23(failed)">
+    <classes>
+      <class name="Script.DocumentContextMenu_Function">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="TC_05_Verify_cut_and_paste_Option"/>
+        </methods>
+      </class> <!-- Script.DocumentContextMenu_Function -->
+    </classes>
+  </test> <!-- Test23(failed) -->
+  <test thread-count="5" name="Test25(failed)">
+    <classes>
+      <class name="Script.Security_dialog_Test">
+        <methods>
+          <include name="TC_10_Verify_Respective_permission_To_Group_for_AllNodes"/>
+          <include name="TC_05_Verify_Delete_permission_Denied_for_Drawer"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- Script.Security_dialog_Test -->
+    </classes>
+  </test> <!-- Test25(failed) -->
+  <test thread-count="5" name="Test26(failed)">
+    <classes>
+      <class name="Script.BatchIndexing_Test">
+        <methods>
+          <include name="TC_01_Verify_Create_Folder_and_Create_Indexing_Document_with_show_Thumbnails"/>
+          <include name="TC_05_Verify_Give_Assign_Share_Permission_To_User"/>
+          <include name="Launch_Browser"/>
+          <include name="TC_02_Verify_Create_As_Single_Document"/>
+          <include name="TC_03_Verify_Delete_Indexing_Document"/>
+          <include name="TC_07_Verify_Revoke_Share_Permission_Of_User"/>
+          <include name="TC_04_Verify_Setting_Delete_on_Index_on_Document"/>
+          <include name="TC_06_Verify_Assign_Share_Permission_Respective_User"/>
+        </methods>
+      </class> <!-- Script.BatchIndexing_Test -->
+    </classes>
+  </test> <!-- Test26(failed) -->
+  <test thread-count="5" name="Test27(failed)">
+    <classes>
+      <class name="Script.My_Preferences_Redaction_View_Password">
+        <methods>
+          <include name="TC_01_Verify_Redaction_View_Password"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_Redaction_View_Password -->
+    </classes>
+  </test> <!-- Test27(failed) -->
+  <test thread-count="5" name="Test28(failed)">
+    <classes>
+      <class name="Script.Negative_Batchindexing">
+        <methods>
+          <include name="TC_02_Verify_Without_adding_ShareandRevoke_Permission"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- Script.Negative_Batchindexing -->
+    </classes>
+  </test> <!-- Test28(failed) -->
+  <test thread-count="5" name="Test29(failed)">
+    <classes>
+      <class name="Script.Negative_Mypreference_Redactionpassword">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="TC_02_Verify_InvalidRedaction_View_Password"/>
+          <include name="TC_01_Verify_Redaction_View_Password"/>
+        </methods>
+      </class> <!-- Script.Negative_Mypreference_Redactionpassword -->
+    </classes>
+  </test> <!-- Test29(failed) -->
 </suite> <!-- Failed suite [Suite (0)] -->

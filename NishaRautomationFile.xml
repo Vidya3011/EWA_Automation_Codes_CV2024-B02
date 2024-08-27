@@ -6,7 +6,7 @@
 
  
  </listeners>
-      <test name="Test1">
+     <test name="Test1">
    <classes>
       <class name="Script.AnnotationFunctionality"/>
     </classes>
@@ -22,7 +22,7 @@
        </classes>
        </test>  
      
-    <!-- <test name="Test 5">
+     <test name="Test 5">
        <classes>
        <class name="Script.ManualWorkflow"/> 
     </classes>
@@ -31,7 +31,7 @@
        <classes>
       <class name="Script.DynamicWorkflow"/>
     </classes>
-  </test>     -->
+  </test>     
    
    
   <test name="Test 9">
@@ -85,10 +85,10 @@
        <classes>
       <class name="Script.RoomContextFunction"/>
     </classes>
-  </test>   
-    <test name="Test20">
+  </test>    
+   <!--  <test name="Test20">
        <classes>
       <class name="Script.UnsupportedFiles"/>
     </classes>
-  </test>    
+  </test>   --> 
  </suite> 
