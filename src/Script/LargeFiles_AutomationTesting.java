@@ -23,18 +23,27 @@ import Pom.SpecialCharFilenames1;
 public class LargeFiles_AutomationTesting extends Generic.BaseClass {
 	private static final Logger log = LogManager.getLogger(LargeFiles_AutomationTesting.class);
 
-	/*
-	 * @BeforeClass public void LandBrowser() {
-	 * 
-	 * loadBrowser("edge"); launchUrl(); //launchLocalUrl();
-	 * Reporter.log("CVS URL started Successfully..."); }
-	 * 
-	 * @Test public void Login_EWA() throws Exception { loginCVS();
-	 * //loginLocalCVS(); Reporter.log("CVS User is logged in successfully...");
-	 * 
-	 * }
-	 */
+	@BeforeClass
+	public void loadBrowser() {
+		loadBrowser("Chrome");
 
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
+	}
+
+	@Test(priority = 1)
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
 	@Test(priority = 1)
 	public void TC_1_Upload_and_verify_Large_PDF_file() throws Exception {
 

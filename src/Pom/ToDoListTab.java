@@ -3,6 +3,7 @@ package Pom;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -10,6 +11,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -75,7 +77,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"navigatorTreeCancle5\"]"))
 	private WebElement usergrpOKBtn;
 
-	@FindBy(xpath = ("//*[@id=\"spanCheckDynamicUser_RNisha\"]"))
+	@FindBy(xpath = ("//*[@id='spanCheckDynamicUser_rnisha']"))
 	private WebElement RNishaUser;
 
 	@FindBy(xpath = ("//*[@id=\"docTypeIndicesTable\"]/tbody/tr[2]/td[2]/input"))
@@ -90,7 +92,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"spanCheckDynamicUser_dipak\"]"))
 	private WebElement dipakUser;
 
-	@FindBy(xpath = ("//*[@id=\"docTypeIndicesTable\"]/tbody/tr[5]/td[2]/input")) // doc key indices
+	@FindBy(xpath = ("//*[@id=\"docTypeIndicesTable\"]/tbody/tr[4]/td[2]/input")) // doc key indices
 	private WebElement KeyValue;
 
 	@FindBy(xpath = ("//*[@id=\"addPagesDropDown\"]/span"))
@@ -123,7 +125,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("(//span[@id='viewSendToWrkflw'])[1]"))
 	private WebElement sendToWf;
 
-	@FindBy(xpath = ("(//td[contains(text(),'Dynamic workflow')])[1]"))
+	@FindBy(xpath = ("//*[@id='Ulsidbisendworkflow']//tbody/tr/td[1]"))//Change td to get another
 	private WebElement dynamicwfnew;
 
 	@FindBy(xpath = ("(//button[@id='sidbisendworkflowOk'])[1]"))
@@ -170,7 +172,7 @@ public class ToDoListTab extends BaseClass {
 
 	public void getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
-		drop.selectByVisibleText("Dynamic document type");
+		drop.selectByVisibleText("Dynamic WorkFlow NR");//Dynamic document type
 
 	}
 
@@ -472,19 +474,19 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"todoListTable\"]/tbody/tr[1]/td[2]"))
 	private WebElement TodolistDoc;
 
-	@FindBy(xpath = ("//a[@id='accept']"))
+	@FindBy(xpath = ("//*[@id='todobuttons']/a[1]"))//change the 2
 	private WebElement AcceptButton;;
 
-	@FindBy(xpath = ("//a[@id='reject']"))
+	@FindBy(xpath = ("//*[@id='todobuttons']/a[2]"))
 	private WebElement RejectButton;
 
-	@FindBy(xpath = ("//a[@id='endwf']"))
+	@FindBy(xpath = ("//*[@id='todobuttons']/a[3]"))
 	private WebElement EndWfButton;
 
 	@FindBy(id = ("summary1"))
 	private WebElement SummaryButton;
 
-	@FindBy(xpath = ("(//a[normalize-space()='Comment'])[1]"))
+	@FindBy(xpath = ("//*[@id='todobuttons']/a[5]"))
 	private WebElement CommentButton;
 
 	@FindBy(xpath = ("//*[@id=\"taskMenu\"]/li[3]"))
@@ -523,7 +525,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"sendtoworkflow\"]"))
 	private WebElement SendToWF;
 
-	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[3]/td[1]"))
+	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[1]/td[1]"))
 	private WebElement CheckBox;
 
 	@FindBy(xpath = ("//*[@id=\"pageheader\"]/div[1]/ul/li[5]"))
@@ -532,7 +534,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("(//button[@id='CommentsMessageModelOk'])[1]"))
 	private WebElement docSendDialogbocOKBTN;
 
-	@FindBy(xpath = ("//*[@id=\"assignedWfTable\"]/tbody/tr[14]/td"))
+	@FindBy(xpath = ("//*[@id=\"assignedWfTable\"]/tbody/tr[5]/td"))
 	private WebElement AnyWorkflow;// new manual for automation///Here u can change the number so that it will
 									// change the wf names position
 
@@ -549,15 +551,21 @@ public class ToDoListTab extends BaseClass {
 		Thread.sleep(3000);
 		Reporter.log("Enter task user name into user name field ");
 		Username.sendKeys(TodoListExcel(1, 1));
-		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 1));
-		Reporter.log("Enter valid password into password field");
+		driver.findElement(By.id("loginPassword")).sendKeys("vw");//TodoListExcel(2, 1)
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		a1.moveToElement(room).click().build().perform();
-		Reporter.log("Selects a room");
-		WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
+		Select sel = new Select(room);
+		sel.selectByIndex(3);
+		Thread.sleep(3000);
 		Reporter.log("Click on Login Button");
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
+		}
+		Thread.sleep(3000);
+		
 		WebElement ele = driver.findElement(By.id("submitid"));
 		jsclick(ele);
 		Thread.sleep(2000);
@@ -638,11 +646,17 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Enter valid password into password field");
 		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		Reporter.log("Selects a Room");
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
+		Select sel = new Select(room);
+		sel.selectByIndex(3);
+		Thread.sleep(3000);
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
+		}
+		Thread.sleep(3000);
 		Reporter.log("Click login button");
 		WebElement ele = driver.findElement(By.id("submitid"));
 		jsclick(ele);
@@ -665,15 +679,21 @@ public class ToDoListTab extends BaseClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 2));
 		Reporter.log("Enter valid task name into user name field");
-		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 2));
+		driver.findElement(By.id("loginPassword")).sendKeys("vw");//TodoListExcel(2, 2)
 		Reporter.log("Enter valid password into password field ");
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		Reporter.log("Selects a Room");
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
+		Select sel = new Select(room);
+		sel.selectByIndex(3);
+		Thread.sleep(3000);
 		Reporter.log("Click Login button");
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
+		}
+		Thread.sleep(3000);
 		WebElement ele = driver.findElement(By.id("submitid"));
 		jsclick(ele);
 		Thread.sleep(3000);
@@ -697,12 +717,11 @@ public class ToDoListTab extends BaseClass {
 		WebElement UserNam = driver.findElement(By.xpath("//input[@id='userName']"));
 		Thread.sleep(3000);
 		UserNam.sendKeys(TodoListExcel(5, 0));
-		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 2));
+		driver.findElement(By.id("loginPassword")).sendKeys("vw");//TodoListExcel(2, 2)
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		a1 = new Actions(driver);
-		a1.moveToElement(room).click().build().perform();
-		WebElement ro = driver.findElement(By.xpath("//option[text()='CVWin19Server.Win2019_TestRoom']"));
-		ro.click();
+		Select sel = new Select(room);
+		sel.selectByIndex(3);
+		Thread.sleep(3000);
 		WebElement ele = driver.findElement(By.id("submitid"));
 		jsclick(ele);
 		Thread.sleep(3000);
@@ -729,6 +748,12 @@ public class ToDoListTab extends BaseClass {
 
 	@FindBy(xpath = ("//option[text()='(3) Task_3']"))
 	private WebElement UserSelectionTask3;
+	
+	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
+	private WebElement Move_To_PlusIcon;
+
+	@FindBy(xpath = "//*[@id='viewDocumentAddPages']")
+	private WebElement Browse_Option;
 
 	public void DynamicWorkFlowTodoListFunctionality() throws Exception {
 
@@ -798,15 +823,27 @@ public class ToDoListTab extends BaseClass {
 
 		Thread.sleep(3000);
 		Reporter.log("Mousehover on add icon");
-		movingElement(moveToPlusIcon);
-		Thread.sleep(2000);
-		Reporter.log("Select a browse option");
-		Thread.sleep(3000);
-		jsclick(browseOption);
-		Reporter.log("Add a file by using AutoIT scipt");
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\SIDBIAuto.exe");
-		Thread.sleep(7000);
+		movingElement(Move_To_PlusIcon);
+
+		try {
+            Actions act=new Actions(driver);
+			act.moveToElement(Browse_Option).click().build().perform();
+		} catch (JavascriptException e) {
+			System.out.println("Exception there");
+		}
+
+		Thread.sleep(25000);
+		try {
+			Process proc = Runtime.getRuntime().exec("D:\\RNishaAutoIt\\NishaRScript.exe");
+			InputStream is = proc.getInputStream();
+			int ret = 0;
+			while (ret != -1) {
+				ret = is.read();
+
+			}
+		} catch (Exception e) {
+			System.out.println("Creating document without page");
+		}
 		try {
 
 			wait.until(ExpectedConditions.alertIsPresent());
@@ -844,8 +881,10 @@ public class ToDoListTab extends BaseClass {
 
 		ToDoListTab todo = new ToDoListTab();
 		SoftAssert so = new SoftAssert();
+		jsclick(Refresh_Button(driver));
 		Reporter.log("Scenario 03: Task user1 Accept the dynmaic Workflow document");
 		Reporter.log("Select Todolist tab");
+		Thread.sleep(3000);
 		jsclick(TodolistTab);
 		Thread.sleep(3000);
 		Reporter.log("Select New items");

@@ -13,18 +13,27 @@ import Pom.SpecialCharFilenames;
 
 public class Special_Char_FileNames extends Generic.BaseClass {
 
-	/*
-	 * @BeforeClass public void Launch_Browser() throws Exception {
-	 * 
-	 * loadBrowser("edge"); launchUrl();
-	 * Reporter.log("CVS URL started Successfully", true); }
-	 * 
-	 * @Test public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully.", true);
-	 * 
-	 * }
-	 */
+	@BeforeClass
+	public void loadBrowser() {
+		loadBrowser("Chrome");
 
+		//log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+	//	log.info("Contentverse URL launched successfully...");
+	}
+
+	@Test(priority = 1)
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		//log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
 	@Test(priority = 1)
 	public void TC_01_Upload_and_verify_Allowing_Percentage_Characterfile() throws Exception {
 		SpecialCharFilenames pojo = new SpecialCharFilenames();

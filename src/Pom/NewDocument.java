@@ -48,10 +48,10 @@ public class NewDocument extends BaseClass {
 	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ins"))
 	private WebElement NishaCabinet;
 
-	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[5]/ins"))
+	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[1]/ins"))
 	private WebElement NishaDrawer;
 
-	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[5]/ul/li/a"))
+	@FindBy(xpath = ("//*[@id=\"createDocuemntNavigator\"]/ul/li[5]/ul/li[1]/ul/li/a"))
 	private WebElement NishFolder;
 
 	@FindBy(xpath = ("//input[@id='viewDocumentAddPages']"))

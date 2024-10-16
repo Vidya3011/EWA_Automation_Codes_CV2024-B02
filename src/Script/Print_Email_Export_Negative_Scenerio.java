@@ -22,13 +22,28 @@ Print_Email_Export_Negative_Scenerio extends BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager
 			.getLogger(Print_Email_Export_Negative_Scenerio.class);
 
-	/*
-	 * @BeforeClass public void ladBrowser() { loadBrowser("Chrome"); launchUrl();
-	 * log.info("CVS URL started Successfully..."); }
-	 * 
-	 * @Test(priority=1) public void LogVCS() throws Exception { loginCVS();
-	 * log.info("CVS User is logged in successfully..."); }
-	 */
+	@BeforeClass
+	public void loadBrowser() {
+		loadBrowser("Chrome");
+
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
+	}
+
+	@Test(priority = 1)
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
+
 
 	@Test(priority = 2)
 	private void TC_1_Email_Print_Export_Negative_Script() throws Exception {

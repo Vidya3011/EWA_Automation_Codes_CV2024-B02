@@ -10,17 +10,21 @@ import Pom.BatchIndexing;
 
 public class BatchIndexing_Test extends Generic.BaseClass {
 
-	/*
-	 * @BeforeClass
-	 * 
-	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
-	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
-	 * 
-	 * @Test
-	 * 
-	 * public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully", true); }
-	 */
+	/*@BeforeClass
+
+	public void Launch_Browser() throws Exception {
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully", true);
+	}*/
+
 	@Test(priority = 1)
 	public void TC_01_Verify_Create_Folder_and_Create_Indexing_Document_with_show_Thumbnails() throws Exception {
 

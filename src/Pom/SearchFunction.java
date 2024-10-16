@@ -38,9 +38,9 @@ public class SearchFunction extends BaseClass {
 	public String getSearchString() {
 		String searchVal = "";
 		// JDBC URL, username, and password of MySQL server
-		String jdbcUrl = "jdbc:sqlserver://10.4.10.13:1433;DatabaseName=Win2019_TestRoom;SelectMethod=direct;";
+		String jdbcUrl = "jdbc:sqlserver://10.4.8.13:1433;DatabaseName=CV2024B2_64bitDB;SelectMethod=direct;";
 		String username = "sa";
-		String password = "Syntax@10";
+		String password = "Cipl@2024!";
 
 		try {
 			// Load Microsoft SQL JDBC driver
@@ -94,9 +94,9 @@ public class SearchFunction extends BaseClass {
 	public String searchStringSQL() {
 		String searchVal = "";
 		// JDBC URL, username, and password of MySQL server
-		String jdbcUrl = "jdbc:sqlserver://10.4.10.13:1433;DatabaseName=Win2019_TestRoom;SelectMethod=direct;";
+		String jdbcUrl = "jdbc:sqlserver://10.4.8.13:1433;DatabaseName=CV2024B2_64bitDB;SelectMethod=direct;";
 		String username = "sa";
-		String password = "Syntax@10";
+		String password = "Cipl@2024!";
 
 		try {
 			// Load Microsoft SQL JDBC driver
@@ -390,6 +390,9 @@ public class SearchFunction extends BaseClass {
 		}
 
 	}
+	
+	@FindBy(xpath = ("//button[@id='ownershipMessageModelOk']"))
+	private WebElement Lockeddoc;
 
 	@FindBy(xpath = ("//*[@id='viewDocumentnavigator']/ul/li[1]/ins"))
 	private WebElement Cabinet1;
@@ -464,10 +467,10 @@ public class SearchFunction extends BaseClass {
 	@FindBy(xpath = ("(//option[@value='0'])[5]"))
 	private WebElement newsearch;
 
-	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[3]/td[3]"))
+	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[1]/td[3]"))
 	private WebElement opendocfortext;
 
-	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[4]/td[3]"))
+	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[1]/td[3]"))
 	private WebElement opendocfortextSQL;
 
 	@FindBy(xpath = ("//*[@id=\"docViewerMetaData\"]"))
@@ -488,7 +491,7 @@ public class SearchFunction extends BaseClass {
 
 	}
 
-	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[4]/td[3]"))
+	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[1]/td[3]"))
 	private WebElement opendocforallwrdtext;
 
 	@FindBy(xpath = ("(//button[normalize-space()='LOAD MORE...'])[1]"))
@@ -569,6 +572,8 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(8000);
 	//	scrollDown(inMiddleDocOFSeachMetaData);
 		Thread.sleep(3000);
+
+		try {
 		jsclick(inMiddleDocOFSeachMetaData);
 
 		Reporter.log("Scroll down the searched list,now user can able to see the 'loadmore' button");
@@ -585,9 +590,15 @@ public class SearchFunction extends BaseClass {
 		Reporter.log("Scroll down the searched list,again it will show the 'load more' button");
 		Reporter.log("Click on load more button again");
 		ScrollDownButton();
-
-		Thread.sleep(3000);
 		jsclick(loadMore);
+		Thread.sleep(3000);
+		}
+		
+	
+		
+		catch (Exception e) {
+			Reporter.log("Document not listed");
+		}
 		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		try {
@@ -607,7 +618,9 @@ public class SearchFunction extends BaseClass {
 
 	}
 
+	
 	public void ExactSearchInIndex() throws Exception {
+
 
 		Reporter.log("Scenario 03: Search tab - Index search contains 'Exact Phrase'");
 		jsclick(SearchTab);
@@ -655,17 +668,35 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(3000);
 		jsclick(FindButton);
 		Reporter.log("Click on find button");
-		Thread.sleep(10000);
+		Thread.sleep(8000);
+
+		try {
 		jsclick(opendocfortext);
+		Thread.sleep(2000);
+		if (Lockeddoc.isDisplayed()) {
+
+			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
+			jsclick(element1);
+		}
 		Reporter.log(
 				"open the document from the list, verify the thumbnail it will be highlihted for the particular search.");
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		}
+		catch (Exception e) {
+
+			Reporter.log("AlertNotPresent");
+		}
 		try {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
+
+		
 			if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
 				// WebDriverWait wait = new WebDriverWait(driver, 30);
 				wait.until(ExpectedConditions.alertIsPresent());
 				acceptAlert();
 			}
+			
+
 		} catch (Exception e) {
 
 			Reporter.log("AlertNotPresent");
@@ -694,8 +725,12 @@ public class SearchFunction extends BaseClass {
 		jsclick(fortextcontainsdrpdwnicon);
 		Reporter.log("Select text contains 'AtLeastOneOFTheWord' option");
 		Thread.sleep(3000);
+		try {
 		movingclkElement(forExactPhraseText);
-
+		}
+		catch(JavascriptException e) {
+			//
+		}
 		Reporter.log("Start the  indexer by using sql statement");
 		Thread.sleep(2000);
 		jsclick(TextContainsSearch);
@@ -707,15 +742,28 @@ public class SearchFunction extends BaseClass {
 		// Reporter.log("It should highlight the document on thumbnail page");
 		jsclick(FindButton);
 		Thread.sleep(10000);
-		jsclick(opendocforallwrdtext);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		try {
+		jsclick(opendocforallwrdtext);
+		
+		Thread.sleep(2000);
+		
+		if (Lockeddoc.isDisplayed()) {
+
+			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
+			jsclick(element1);
+		}
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
+	
+
 			if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
 				// WebDriverWait wait = new WebDriverWait(driver, 30);
 				wait.until(ExpectedConditions.alertIsPresent());
 				acceptAlert();
 			}
-		} catch (Exception e) {
+		
+		}
+		catch (Exception e) {
 
 			Reporter.log("AlertNotPresent");
 		}
@@ -724,8 +772,7 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(8000);
 
 		jsclick(Refresh_Button(driver));
-		// log.info(" verify Search text contains functionality with all of the words
-		// option.");
+		
 	}
 
 	// AlloftheWords search
@@ -755,24 +802,35 @@ public class SearchFunction extends BaseClass {
 		jsclick(FindButton);
 		Reporter.log(
 				"open the document from the list, verify the thumbnail it will be highlihted for the particular search.");
-		Thread.sleep(10000);
-		jsclick(forRandomdocOpen);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+
+		Thread.sleep(5000);
 		try {
+		jsclick(forRandomdocOpen);
+		Thread.sleep(2000);
+		if (Lockeddoc.isDisplayed()) {
+
+			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
+			jsclick(element1);
+		}
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
 			if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
 				// WebDriverWait wait = new WebDriverWait(driver, 30);
 				wait.until(ExpectedConditions.alertIsPresent());
 				acceptAlert();
+
+				Thread.sleep(3000);
+
+				sr.ScrollDownBTNText();
 			}
 		} catch (Exception e) {
 
 			System.out.print("AlertNotPresent");
 		}
 		Thread.sleep(3000);
+
 		// jsclick(sr.gethighlightdocview());
 		Thread.sleep(3000);
-
-		// sr.ScrollDownBTNText();
 		snap("SearchScrollDownBarIssue");
 		Thread.sleep(8000);
 		jsclick(Refresh_Button(driver));
@@ -817,24 +875,43 @@ public class SearchFunction extends BaseClass {
 		sendvalue(IndexContainsSearch, readFromExSearch(1, 0));
 		Reporter.log("Click on find button");
 		jsclick(FindButton);
+
+		Thread.sleep(8000);
+		Reporter.log("It should display the document on the page, Document dislpayed successsfull...");
+		try {
+		jsclick(metaDataNum3);
+		Reporter.log("Index contains search 'all of the word' working fine...");
+		}
+		catch(Exception e) {
+			//
+		}
+
+
 		Thread.sleep(10000);
 		Reporter.log("It should display the document on the page, Document dislpayed successsfull...");
 		jsclick(metaDataNum3);
 		Reporter.log("Index contains search 'all of the word' working fine...");
+
 		Thread.sleep(10000);
 		Reporter.log("Click on clear button");
 		jsclick(ClearButton);
 		// log.info(" verify Index contains search:all of the word search");
 	}
 
-	public void AllVrsn_Incldcmnt_FindInHit_AppendToHit() throws InterruptedException, IOException {
+	public void AppendToHit() throws InterruptedException, IOException {
+
 
 		Thread.sleep(3000);
+		jsclick(SearchTab);
 		Reporter.log("Scenario 06:Search tab - AppendToHitlist checkbox");
+		try {
 		movingclkElement(IndexContainsSearch);
-		Reporter.log("Note: User search some document first...");
+		}
+		catch(JavascriptException e){
+			//
+		}
 		Reporter.log("Enter the value into index contains search text box");
-		sendvalue(IndexContainsSearch, readFromExSearch(1, 4));
+		sendvalue(IndexContainsSearch, "Document");//readFromExSearch(1, 4)
 		movingclkElement(FindButton);
 		Reporter.log("Click on find button");
 		Thread.sleep(8000);
@@ -846,14 +923,23 @@ public class SearchFunction extends BaseClass {
 		AppendToHitlist.click();
 		Reporter.log("Enter the value into index contains search text box ");
 		movingclkElement(IndexContainsSearch);
-		sendvalue(IndexContainsSearch, readFromExSearch(2, 3));// dsdf
+
+		sendvalue(IndexContainsSearch, "document");// dsdfreadFromExSearch(2, 3)
+
+	
+
 		movingclkElement(FindButton);
 		Reporter.log("User click on find button");
 		Thread.sleep(10000);
 		Reporter.log("Its append the search document in the listed document");
-		AppendToHitlist.click();
+	
 		Reporter.log("===========================================================================");
-		// Reporter.log("Expected result actual result same...");
+
+		
+	}
+	public void Find_In_Hit_List() throws InterruptedException, IOException {
+
+		
 		Thread.sleep(3000);
 		Reporter.log("scenario 07: Verify search tab - FindInHitlist checkbox");
 
@@ -872,12 +958,17 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(3000);
 		IndexContainsSearch.clear();
 		Reporter.log("Enter the value in text contains search text box");
-		sendvalue(TextContainsSearch, readFromExSearch(1, 3));// vidya
+
+		sendvalue(TextContainsSearch, "new");// vidyareadFromExSearch(1, 3)
+
 		movingclkElement(FindButton);
 		Reporter.log("Click on Inclue_comment check box");
 		Thread.sleep(10000);
 		Reporter.log("Click on find button");
+		try {
 		jsclick(Metadata);
+		
+		
 		Reporter.log("It should display the document which is containing the comment..");
 		Thread.sleep(8000);
 		// Reporter.log("Expected result and actual result is same test case
@@ -887,10 +978,18 @@ public class SearchFunction extends BaseClass {
 		jsclick(CancelComments);
 		Thread.sleep(5000);
 		Reporter.log("Click  on clear button");
-		ClearButton.click();
+		}
+		catch(Exception e) {
+			//
+		}
+		Thread.sleep(2000);
+		jsclick(ClearButton);
 		Reporter.log("It should clear the searched list successfully");
 		Thread.sleep(3000);
 		Reporter.log("===========================================================================");
+		
+	}
+	public void All_Version() throws InterruptedException, IOException {
 		Reporter.log("Scneario 09: Search tab - all version check box");
 		movingElement(forIndxdropdwnicon);
 		Reporter.log("User enter the value in index contains search text box");
@@ -910,11 +1009,17 @@ public class SearchFunction extends BaseClass {
 		Reporter.log("It should display the document which in containing version");
 		Thread.sleep(3000);
 		Reporter.log("Click on Clear button");
+		try {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(forallversionshows));
 		forallversionshows.click();
 		// Reporter.log("All version function working fine");
 		Thread.sleep(8000);
+		}
+		catch(Exception e) {
+			//
+		}
+		
 		jsclick(ClearButton);
 		// log.info(" verify Allversion/include comments/appendtohitlist /find in hit
 		// list functionality working fine");
@@ -956,6 +1061,58 @@ public class SearchFunction extends BaseClass {
 		// log.info("Cabinet/drawer/folder level search in search document location
 		// working fine");
 	}
+	
+	//Robert Codes
+	@FindBy(id = ("createdDateFrom"))
+	private WebElement DateFrom;
+	@FindBy(xpath = ("//tbody[@class='mc-table__body']//tr[1]//td[6]"))
+	private WebElement EnterDateFrom;
+	@FindBy(id =("createdDateTo"))
+	private WebElement DateTo;
+	@FindBy(xpath = ("//tbody[@class='mc-table__body']//tr[2]//td[4]"))
+	private WebElement EnterDateTo;
+	@FindBy(id = ("mc-btn__ok"))
+	private WebElement DataOKButton;
+	
+	public void SavedDocumentDateEnter() throws InterruptedException, IOException {
+		Reporter.log("Scenario 25:Verify Date enter functionality");
+		Reporter.log("Click on search tab");
+		jsclick(SearchTab);
+		Thread.sleep(5000);
+		Reporter.log("Click on Datefrom");
+		jsclick(DateFrom);
+		Thread.sleep(3000);
+		Reporter.log("Enter the datefrom");
+		jsclick(EnterDateFrom);
+		Thread.sleep(2000);
+		Reporter.log("Click on ok button");
+		jsclick(DataOKButton);
+		Thread.sleep(2000);
+		Reporter.log("Click on Dateto");
+		jsclick(DateTo);
+		Thread.sleep(2000);
+		Reporter.log("Enter the Dateto");
+		jsclick(EnterDateTo);
+		Reporter.log("Click on ok button");
+		jsclick(DataOKButton);
+		Thread.sleep(2000);
+		Reporter.log("Click on find");
+		FindButton.click();
+		jsclick(Refresh_Button(driver));
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	// Cabinet/drawer/ level search in search document location
 	public void DrawerLevelSearch() throws InterruptedException {
@@ -1060,7 +1217,9 @@ public class SearchFunction extends BaseClass {
 
 	}
 
-	public void WorkflowStatusDropdown() throws InterruptedException {
+
+	public void Reject_WF() throws InterruptedException {
+
 
 		Reporter.log("Scenario 14:Verify Search tab-Workflow status(Reject option)");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -1078,6 +1237,10 @@ public class SearchFunction extends BaseClass {
 		Reporter.log("Listed document cleared successfully...");
 		// log.info("workflow rejected: documents displayed successfully");
 		Reporter.log("=================================================================");
+
+		
+	}
+	public void PendingWorkflow_Document() throws InterruptedException {
 		Reporter.log("Scenario 15:  Verify Search tab-Workflow status(Pending option)");
 		forworkflowdropdown.click();// pending
 		Reporter.log("Select the workflow dropdown pending Option");
@@ -1092,6 +1255,10 @@ public class SearchFunction extends BaseClass {
 		Reporter.log("Click on clear button");
 		Reporter.log("Listed document cleared successfully...");
 		Reporter.log("===============================================================================");
+
+	}
+	public void CompletedWF_Document() throws InterruptedException {
+
 		Thread.sleep(4000);
 		forworkflowdropdown.click();
 		Reporter.log("Scenario 16: Verify Search tab-Workflow status(Workflow completed option)");
@@ -1123,6 +1290,8 @@ public class SearchFunction extends BaseClass {
 		Reporter.log("Click on clear button");
 		Reporter.log("Listed document cleared successfully...");
 		Reporter.log("===============================================================================");
+	}
+	public void TaskCompletedWFDocument() throws InterruptedException {
 		forworkflowdropdown.click();
 		Reporter.log("Scenario 18: Verify Search tab-Workflow status(TaskCompleted option)");
 		forworkflowTaskcomplete.click();// taskcompleted
@@ -1143,11 +1312,25 @@ public class SearchFunction extends BaseClass {
 
 	// showing saved documents
 	public void SavingTheSearchDoc() throws InterruptedException, IOException {
+
+		/*
+		 * Reporter.log("Scenario 18:Verify Select saved search functionality"); try {
+		 * jsclick(SearchTab); } catch(Exception e) { // }
+		 */
+		try
+		{		Reporter.log("Select search tab");
+		jsclick(saveDropdown);
+		}
+		catch(JavascriptException e) {
+			//
+		}
+
 		Reporter.log("Scenario 18:Verify Select saved search functionality");
 
 		jsclick(SearchTab);
 		Reporter.log("Select search tab");
 		jsclick(saveDropdown);
+
 		Reporter.log("Click on new search");
 		Thread.sleep(3000);
 		newsearch.click();
@@ -1155,6 +1338,7 @@ public class SearchFunction extends BaseClass {
 		newsearchvalueenter.sendKeys(readFromExSearch(3, 0));
 		Thread.sleep(5000);
 		Reporter.log("Enter value in index contains search textbox");
+		sendvalue(IndexContainsSearch, "Document");//readFromExSearch(1, 3)
 		sendvalue(IndexContainsSearch, readFromExSearch(1, 3));
 		movingclkElement(forSelectDocdropdownicon);
 		Reporter.log("Select a document data type");

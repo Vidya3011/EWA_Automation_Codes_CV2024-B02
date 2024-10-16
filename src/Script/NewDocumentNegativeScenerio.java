@@ -14,18 +14,25 @@ public class NewDocumentNegativeScenerio extends BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(NewDocumentNegativeScenerio.class);
 
 	@BeforeClass
-	public void ladBrowser() {
+	public void loadBrowser() {
 		loadBrowser("Chrome");
-		launchLocalUrl();
 
-		log.info("CVS URL started Successfully...");
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
 	}
 
 	@Test(priority = 1)
-	public void LogVCS() throws Exception {
-		loginLocalCVS();
-		Reporter.log("RNisha User logged in successfully...");
-		log.info("CVS User is logged in successfully...");
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
 
 	@Test(priority = 2)

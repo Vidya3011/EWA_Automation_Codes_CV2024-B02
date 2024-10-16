@@ -38,10 +38,7 @@ import Pom.SearchFunction;
 import okhttp3.internal.connection.RouteSelector.Selection;
 
 //NishaR codes
-public class
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR
-// codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SearchSelectDocumentLocation extends Generic.BaseClass {
+public class SearchSelectDocumentLocation extends Generic.BaseClass {
 	public static Actions act;
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(SearchSelectDocumentLocation.class);
@@ -60,16 +57,17 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 
 	@Test(priority = 1)
 	public void Login() throws Exception {
-	
-		//LogoutPage();
+
+		// LogoutPage();
 		loginRNISHA47();
-		
+
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
+	
 
 
-	@Test(priority = 2) // blank search
+/*	@Test(priority = 2) // blank search
 	public void A_BlankSearch() throws InterruptedException {
 		Reporter.log("Scenario 01: Search tab - blank search");
 		SearchFunction sr = new SearchFunction();
@@ -95,32 +93,7 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 
 	}
 
-	@Test(priority = 16) // AlloftheWords search
-	public void N_TextSearchWithSQLData() throws InterruptedException, IOException {
-		SearchFunction sr = new SearchFunction();
-		sr.TextSearchWithSQLData();
-
-		log.info(" verify Search text contains functionality with all of the words option.");
-	}
-
-	@Test(priority = 17) // AlloftheWords search
-	public void O_TextSearchWithAllOftheWords() throws InterruptedException, IOException {
-
-		SearchFunction sr = new SearchFunction();
-		sr.TextSearchWithAllOftheWords();
-
-		log.info(" verify Search text contains functionality with all of the words option.");
-	}
-
-	@Test(priority = 18) // AlloftheWords search
-	public void P_TextSearchWithAtpartOftheWord() throws InterruptedException, IOException {
-
-		SearchFunction sr = new SearchFunction();
-		sr.TextSearchWithAtpartOftheWord();
-
-		log.info(" verify Search text contains functionality with all of the words option.");
-	}
-
+	
 	@Test(priority = 5) // atleast one word
 	public void D_AtLeastOneWordSeachIndex() throws Exception {
 		SearchFunction sr = new SearchFunction();
@@ -132,16 +105,11 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 	public void E_AllOfTheWordSearchIndex() throws Exception {
 
 		SearchFunction sr = new SearchFunction();
-		sr.getForallofthewordsinText();
+		sr.E_AllOfTheWordSearchIndex();
 		log.info(" verify Index contains search:all of the word search");
 	}
 
-	@Test(priority = 7)
-	public void F_AllVrsn_Incldcmnt_FindInHit_AppendToHit() throws InterruptedException, IOException {
-		SearchFunction sr = new SearchFunction();
-		sr.AllVrsn_Incldcmnt_FindInHit_AppendToHit();
-		log.info(" verify Allversion/include comments/appendtohitlist /find in hit list functionality working fine");
-	}
+
 
 	@Test(priority = 8) // Cabinet/drawer/folder level search in search document location
 	public void G_FolderLevelSearch() throws InterruptedException {
@@ -185,19 +153,81 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 	}
 
 	@Test(priority = 13)
-	public void L_WorkflowStatusDropdown() throws InterruptedException {
+	public void L_Reject_WF() throws InterruptedException {
 		SearchFunction sr = new SearchFunction();
-		sr.WorkflowStatusDropdown();
+		sr.Reject_WF();
+	}
+	
+	
+	@Test(priority = 14)
+	public void M_PendingWorkflow() throws InterruptedException {
+		SearchFunction sr = new SearchFunction();
+		sr.PendingWorkflow_Document();
 	}
 
-	@Test(priority = 15) // showing saved documents
-	public void M_SavingTheSearchDoc() throws InterruptedException, IOException {
-
+	
+	
+	@Test(priority = 16)
+	public void N_CompletedWF_Document() throws InterruptedException {
 		SearchFunction sr = new SearchFunction();
-		sr.SavingTheSearchDoc();
+		sr.CompletedWF_Document();
+	}
+	
+	@Test(priority = 17)
+	public void O_TaskCompletedWFDocumentt() throws InterruptedException {
+		SearchFunction sr = new SearchFunction();
+		sr.TaskCompletedWFDocument();
+	}
+	@Test(priority = 18) // AlloftheWords search
+	public void N_TextSearchWithSQLData() throws InterruptedException, IOException {
+		SearchFunction sr = new SearchFunction();
+		sr.TextSearchWithSQLData();
+
+		log.info(" verify Search text contains functionality with all of the words option.");
 	}
 
-	@Test(priority = 19) // TreeIcon search
+	@Test(priority = 19) // AlloftheWords search
+	public void O_TextSearchWithAllOftheWords() throws InterruptedException, IOException {
+
+		SearchFunction sr = new SearchFunction();
+		sr.TextSearchWithAllOftheWords();
+
+		log.info(" verify Search text contains functionality with all of the words option.");
+	}
+
+	@Test(priority = 20) // AlloftheWords search
+	public void P_TextSearchWithAtpartOftheWord() throws InterruptedException, IOException {
+
+		SearchFunction sr = new SearchFunction();
+		sr.TextSearchWithAtpartOftheWord();
+
+		log.info(" verify Search text contains functionality with all of the words option.");
+	}
+*/
+
+	@Test(priority = 21)
+	public void AppendToHit() throws InterruptedException, IOException {
+		SearchFunction sr = new SearchFunction();
+		sr.AppendToHit();
+		log.info(" verify Allversion/include comments/appendtohitlist /find in hit list functionality working fine");
+	}
+
+	@Test(priority = 22)
+	public void Find_In_Hit_List() throws InterruptedException, IOException {
+		SearchFunction sr = new SearchFunction();
+		sr.Find_In_Hit_List();
+		log.info("Find in hit list functionality working fine");
+	}
+
+	@Test(priority = 23)
+	public void All_Version() throws InterruptedException, IOException {
+		SearchFunction sr = new SearchFunction();
+		sr.All_Version();
+		log.info("Allversion functionality working fine");
+	}
+
+	
+	@Test(priority = 24) // TreeIcon search
 	public void Q_FolderSerchIcon() throws Exception {
 		SearchFunction sr = new SearchFunction();
 		sr.FolderSerchIcon();
@@ -205,7 +235,7 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 
 	}
 
-	@Test(priority = 20) // Quick search
+	@Test(priority = 25) // Quick search
 	public void R_QuickSearch() throws Exception {
 		SearchFunction sr = new SearchFunction();
 		sr.QuickSearch();
@@ -214,7 +244,7 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 
 	}
 
-	@Test(priority = 21)
+	@Test(priority = 26)
 	public void S_DocumentSearch() throws Exception {
 		SearchFunction sr = new SearchFunction();
 		Reporter.log("Scenario 24:Folder document search");
@@ -224,5 +254,11 @@ SearchSelectDocumentLocation extends Generic.BaseClass {
 		Thread.sleep(5000);
 		Reporter.log("The documents Search from folder completed, working fine");
 		log.info("The documents Search from folder completed, working fine");
+	}
+	
+	@Test (priority=27)
+	public void CreateAndModifyDate() throws InterruptedException, IOException {
+		SearchFunction sr = new SearchFunction();
+		sr.SavedDocumentDateEnter();
 	}
 }

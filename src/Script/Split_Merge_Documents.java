@@ -14,19 +14,21 @@ import Pom.My_Preferences;
 
 public class Split_Merge_Documents extends BaseClass {
 
-	/*
-	 * @BeforeClass
-	 * 
-	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
-	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
-	 * 
-	 * @Test
-	 * 
-	 * public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully.", true);
-	 * 
-	 * }
-	 */
+	/*@BeforeClass
+
+	public void Launch_Browser() throws Exception {
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully.", true);
+
+	}*/
 
 	@Test(priority = 1)
 	public void Create_PDF_Document() throws Exception {

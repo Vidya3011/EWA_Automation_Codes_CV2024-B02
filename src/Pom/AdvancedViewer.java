@@ -1,10 +1,15 @@
 package Pom;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.channels.AcceptPendingException;
+import java.time.Duration;
 
+import org.apache.batik.apps.svgbrowser.JSVGViewerFrame.AboutAction;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -13,6 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -1830,6 +1836,651 @@ public class AdvancedViewer extends BaseClass {
 		Reporter.log("All saved data should be displayed successfully...");
 		jsclick(Refresh_Button(driver));
 		Thread.sleep(5000);
+	}
+
+	@FindBy(xpath = ("//*[@id=\"djvuViewerDiv_toolbar_link\"]")) // Change 9 to change the value
+	private WebElement Link;
+
+	@FindBy(xpath = ("//*[@id=\"djvuViewerDiv_toolbar_header\"]")) // Change 9 to change the value
+	private WebElement Header;
+
+	@FindBy(xpath = ("(//input[contains(@class, 'e-textbox') and @type='text'])[2]")) // Change 9 to change the value
+	private WebElement LinkdialogAddress;
+
+	@FindBy(xpath = ("//*[@id=\"djvuViewerDiv_toolbar_footer\"]")) // Change 9 to change the value
+	private WebElement Footer;
+
+	@FindBy(xpath = ("//*[@id=\"pdfViewerDiv_annotationText\"]")) // Change 9 to change the value
+	private WebElement pdfEditAnnotation;
+
+	// *[@id="menuitem_87"]
+
+	@FindBy(id = ("pdfViewerDivcontextMenuElement")) // Change
+	private WebElement StampItems;
+
+	// *[@id="menuitem_121"]
+
+	@FindBy(xpath = ("(//ul[@class='e-menu-parent e-ul '])[1]/li[2]")) // Change 9 to change the value
+	private WebElement SignHere;
+
+	// *[@id="menuitem_121-ej2menu-pdfViewerDivcontextMenuElement-popup"]/ul/li["i"]
+	// For all items
+
+	@FindBy(xpath = ("(//ul[@class='e-menu-parent e-ul '])[1]/li[1]")) // Change 9 to change the value
+	private WebElement Dynamic;
+
+	@FindBy(xpath = ("(//ul[@class='e-menu-parent e-ul '])[1]/li[3]")) // Change 9 to change the value
+	private WebElement StandardBusiness;
+
+	@FindBy(xpath = ("(//ul[@class='e-menu-parent e-ul '])[1]/li[5]")) // Change 9 to change the value
+	private WebElement customStamp;
+
+	@FindBy(xpath = ("//*[@id=\"fabButton\"]")) // Change 9 to change the value
+	private WebElement FabBTN;
+
+	////////////////////////// Nisha R Codes///////////////
+	public void SignHereAllStamps(int numberOfDocs) throws Exception {
+
+		jsclick(Click_New_Document);
+		Reporter.log("Click the New Document tab.", true);
+		Thread.sleep(2000);
+		jsclick(Destination_Folder_Textbox);
+		Reporter.log("Click the 'Select destination folder location' text box.", true);
+		Thread.sleep(6000);
+		Reporter.log("'Browse for folder' dialog should be open.", true);
+		selectElement(Cabinet);
+		Reporter.log("Expand the cabinet", true);
+		Thread.sleep(4000);
+		VisiblityOf(Drawer);
+		selectElement(Drawer);
+		Reporter.log("Expand drawer", true);
+		Thread.sleep(5000);
+		selectElement(Folder);
+		Reporter.log("Select a folder", true);
+		Thread.sleep(5000);
+		jsclick(OK_Button_BrowseforFolder);
+		Reporter.log("Folder selected successfully...", true);
+		Thread.sleep(3000);
+		getSelect_Document_Type_Dropdown();
+		Reporter.log("Click on 'Select document type' dropdown and select the document type.", true);
+		Reporter.log("Document type selected successfully...", true);
+		Thread.sleep(3000);
+		movingclkElement(Enter_ReportName);
+		Reporter.log("Enter the value into index field", true);
+		sendvalue(Enter_ReportName, readFromExAdvancedView(5, 1));
+		Thread.sleep(5000);
+		movingElement(Move_To_PlusIcon);
+		Reporter.log("Mouse hover on the browse icon", true);
+		Thread.sleep(5000);
+		// Thread.sleep(4000);
+		jsclick(NewPDfDoc);
+		Reporter.log("Select New PDF document", true);
+		Thread.sleep(4000);
+		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(5, 1));
+		Thread.sleep(6000);
+		jsclick(EnterFileNameOKBTN);
+		Reporter.log("Enter the file name", true);
+		Thread.sleep(5000);
+		jsclick(CreateBTN);
+		Reporter.log("Click on the create button", true);
+		Thread.sleep(10000);
+		jsclick(viewOption);
+		Thread.sleep(5000);
+
+		jsclick(pdfEditAnnotation);
+
+		for (int i = 1; i <= numberOfDocs; i++) {
+			// Construct the XPath with the current index
+			Actions act = new Actions(driver);
+			Thread.sleep(4000);
+			Reporter.log("Scenario 01: Open an existing document and send it to WorkFlow");
+			Thread.sleep(2000);
+
+			act.moveToElement(StampItems).click().build().perform();
+			Thread.sleep(2000);
+
+			act.moveToElement(SignHere).perform();
+			Thread.sleep(3000);
+
+			try {
+				// Dynamically build the XPath with current index
+				String xpath = "(//ul[@class='e-menu-parent e-ul '])[2]/li[" + i + "]";
+				System.out.println("Print the downloaded XPath details: " + xpath);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+
+				// Find the element using XPath
+				WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+				// Calculate dynamic offset for each iteration
+				int yOffset = 40 * i; // Move vertically by 70 pixels for each iteration
+
+				// Move to the element and click it
+				act.moveToElement(element).click().build().perform();
+				Reporter.log("Before Click", true);
+
+				// Get the container element where annotations are added
+				WebElement container = driver.findElement(By.xpath("//*[@id='pdfViewerDiv_viewerContainer']"));
+
+				// Step 1: Scroll the container using JavaScript
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollTop = arguments[1];", container, yOffset);
+
+				// Wait to ensure the scroll is completed
+				Thread.sleep(3000);
+
+				// Step 2: Add the annotation using Actions class
+				// Move the mouse to the container and apply the offset to Y-axis
+				act.moveToElement(container, 10, yOffset) // 10 pixels to the right, yOffset down
+						.click(Page).build().perform();
+
+				Reporter.log("After Click", true);
+				Thread.sleep(3000);
+				Reporter.log("Stamp Added Successfully", true);
+
+			} catch (Exception e) {
+				System.out.println("Error interacting with element: " + e.getMessage());
+			}
+		}
+
+	}
+
+	@FindBy(xpath = "//*[@id='viewDocumentAddPages']")
+	private WebElement Browse_OptionNish;
+
+	public void DynamicAllStamps(int numberOfDocs) throws Exception {
+        jsclick(Refresh_Button(driver));
+        Thread.sleep(3000);
+		jsclick(Click_New_Document);
+		Reporter.log("Click the New Document tab.", true);
+		Thread.sleep(2000);
+		
+		jsclick(Destination_Folder_Textbox);
+		Reporter.log("Click the 'Select destination folder location' text box.", true);
+		Thread.sleep(6000);
+		Reporter.log("'Browse for folder' dialog should be open.", true);
+		selectElement(Cabinet);
+		Reporter.log("Expand the cabinet", true);
+		Thread.sleep(4000);
+		VisiblityOf(Drawer);
+		selectElement(Drawer);
+		Reporter.log("Expand drawer", true);
+		Thread.sleep(5000);
+		selectElement(Folder);
+		Reporter.log("Select a folder", true);
+		Thread.sleep(5000);
+		jsclick(OK_Button_BrowseforFolder);
+		Reporter.log("Folder selected successfully...", true);
+
+		Thread.sleep(3000);
+		getSelect_Document_Type_Dropdown();
+		Reporter.log("Click on 'Select document type' dropdown and select the document type.", true);
+		Reporter.log("Document type selected successfully...", true);
+		Thread.sleep(3000);
+		movingclkElement(Enter_ReportName);
+		Reporter.log("Enter the value into index field", true);
+		sendvalue(Enter_ReportName, readFromExAdvancedView(5, 2));
+		Thread.sleep(5000);
+		movingElement(Move_To_PlusIcon);
+		Reporter.log("Mouse hover on the browse icon", true);
+		Thread.sleep(5000);
+		// Thread.sleep(4000);
+		jsclick(NewPDfDoc);
+		Reporter.log("Select New PDF document", true);
+		Thread.sleep(4000);
+		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(5, 2));
+		Thread.sleep(6000);
+		jsclick(EnterFileNameOKBTN);
+		Reporter.log("Enter the file name", true);
+		Thread.sleep(5000);
+		jsclick(CreateBTN);
+		Reporter.log("Click on the create button", true);
+		Thread.sleep(10000);
+		jsclick(viewOption);
+		Thread.sleep(5000);
+
+		jsclick(pdfEditAnnotation);
+
+		for (int i = 1; i <= numberOfDocs; i++) {
+			// Construct the XPath with the current index
+			Actions act = new Actions(driver);
+			Thread.sleep(4000);
+			Reporter.log("Scenario 01: Open an existing document and send it to WorkFlow");
+			Thread.sleep(2000);
+			try {
+				act.moveToElement(StampItems).click().build().perform();
+
+				Thread.sleep(2000);
+			} catch (JavascriptException e) {
+				//
+			}
+			
+			try {
+			act.moveToElement(Dynamic).perform();
+			}
+			catch (JavascriptException e) {
+				//
+			}
+			Thread.sleep(3000);
+
+			try {
+				// Dynamically build the XPath with current index
+				String xpath = "(//ul[@class='e-menu-parent e-ul '])[2]/li[" + i + "]";
+				System.out.println("Print the downloaded XPath details: " + xpath);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+
+				// Find the element using XPath
+				WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+				// Calculate dynamic offset for each iteration
+				int yOffset = 30 * i; // Move vertically by 70 pixels for each iteration
+
+				// Move to the element and click it
+				act.moveToElement(element).click().build().perform();
+				Reporter.log("Before Click", true);
+
+				// Get the container element where annotations are added
+				WebElement container = driver.findElement(By.xpath("//*[@id='pdfViewerDiv_viewerContainer']"));
+
+				// Step 1: Scroll the container using JavaScript
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollTop = arguments[1];", container, yOffset);
+
+				// Wait to ensure the scroll is completed
+				Thread.sleep(3000);
+
+				// Step 2: Add the annotation using Actions class
+				// Move the mouse to the container and apply the offset to Y-axis
+				act.moveToElement(container, 10, yOffset) // 10 pixels to the right, yOffset down
+						.click(Page).build().perform();
+
+				Reporter.log("After Click", true);
+				Thread.sleep(3000);
+				Reporter.log("Stamp Added Successfully", true);
+
+			} catch (Exception e) {
+				System.out.println("Error interacting with element: " + e.getMessage());
+			}
+		}
+
+	}
+
+	public void StandardAllStamps(int numberOfDocs) throws Exception {
+		 jsclick(Refresh_Button(driver));
+	        Thread.sleep(3000);
+		jsclick(Click_New_Document);
+		Reporter.log("Click the New Document tab.", true);
+		Thread.sleep(2000);
+		
+		jsclick(Destination_Folder_Textbox); // *
+		Reporter.log("Click the 'Select destination folder location' text box.", // *
+				true);
+		Thread.sleep(6000); // *
+		Reporter.log("'Browse for folder' dialog should be open.", true); // *
+		selectElement(Cabinet);
+		Reporter.log("Expand the cabinet", true); // *
+		Thread.sleep(4000);
+		VisiblityOf(Drawer);
+		selectElement(Drawer); // *
+		Reporter.log("Expand drawer", true);
+		Thread.sleep(5000); // *
+		selectElement(Folder);
+		Reporter.log("Select a folder", true); // *
+		Thread.sleep(5000);
+		jsclick(OK_Button_BrowseforFolder);
+		Reporter.log("Folder selected successfully...", true);
+		 
+		Thread.sleep(3000);
+		getSelect_Document_Type_Dropdown();
+		Reporter.log("Click on 'Select document type' dropdown and select the document type.", true);
+		Reporter.log("Document type selected successfully...", true);
+		Thread.sleep(3000);
+		movingclkElement(Enter_ReportName);
+		Reporter.log("Enter the value into index field", true);
+		sendvalue(Enter_ReportName, readFromExAdvancedView(5, 3));
+		Thread.sleep(5000);
+		movingElement(Move_To_PlusIcon);
+
+		try {
+			Actions act = new Actions(driver);
+			act.moveToElement(Browse_OptionNish).click().build().perform();
+		} catch (JavascriptException e) {
+			System.out.println("Exception there");
+		}
+
+		Thread.sleep(15000);
+
+		// Runtime.getRuntime().exec("D:\\RNishaAutoIt\\LArgePDF.exe");
+		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\SinglePDF64.exe");
+		Thread.sleep(8000);
+		Reporter.log("Add a file  by using auto IT");
+		try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert not present");
+		}
+
+		Reporter.log("Mouse hover on the browse icon", true);
+
+		// Thread.sleep(4000);
+		/*
+		 * jsclick(NewPDfDoc); Reporter.log("Select New PDF document", true);
+		 * Thread.sleep(4000); EnterFileNAmePDF.sendKeys(readFromExAdvancedView(2, 1));
+		 * Thread.sleep(6000); jsclick(EnterFileNameOKBTN);
+		 * Reporter.log("Enter the file name", true);
+		 */
+		Thread.sleep(5000);
+		jsclick(CreateBTN);
+		Reporter.log("Click on the create button", true);
+		Thread.sleep(4000);
+		jsclick(viewOption);
+		Thread.sleep(5000);
+
+		jsclick(pdfEditAnnotation);
+
+		for (int i = 1; i <= numberOfDocs; i++) {
+			// Construct the XPath with the current index
+			Actions act = new Actions(driver);
+			Thread.sleep(4000);
+			Reporter.log("Scenario 01: Open an existing document and send it to WorkFlow");
+			Thread.sleep(2000);
+
+			act.moveToElement(StampItems).click().build().perform();
+			Thread.sleep(2000);
+
+			act.moveToElement(StandardBusiness).perform();
+			Thread.sleep(3000);
+
+			try {
+				String xpath = "(//ul[@class='e-menu-parent e-ul '])[2]/li[" + i + "]";
+				System.out.println("Print the downloaded XPath details: " + xpath);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+				// Move to the element and click it
+				act.moveToElement(element).click().build().perform();
+				Reporter.log("Before Click", true);
+
+				// Get the container element where annotations are added
+				WebElement container = driver.findElement(By.xpath("//*[@id='pdfViewerDiv_viewerContainer']"));
+
+				// Step 1: Scroll the container using JavaScript
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+
+				// Get the total scrollable height of the container
+				int containerScrollableHeight = Integer
+						.parseInt(js.executeScript("return arguments[0].scrollHeight;", container).toString());
+
+				// Ensure the yOffset doesn't exceed the container's scrollable height
+				int yOffset = 40 * i;
+				if (yOffset > containerScrollableHeight) {
+					yOffset = containerScrollableHeight - 50; // Ensure it stays within bounds
+				}
+
+				// Scroll to the desired position inside the container
+				js.executeScript("arguments[0].scrollTop = arguments[1];", container, yOffset);
+
+				// Step 2: Wait for scroll to finish (adjust time if needed)
+				Thread.sleep(2000); // Reduced to 2 seconds
+
+				// Add the annotation using Actions class without offsets
+				act.moveToElement(container).click(Page) // Perform click at the center of the container
+						.build().perform();
+
+				Reporter.log("After Click", true);
+				Thread.sleep(3000);
+				Reporter.log("Stamp Added Successfully", true);
+
+			} catch (Exception e) {
+				System.out.println("Error interacting with element: " + e.getMessage());
+			}
+		}
+	}
+
+	public void CustomAllStamps(int numberOfDocs) throws Exception {
+		 jsclick(Refresh_Button(driver));
+	        Thread.sleep(3000);
+		jsclick(Click_New_Document);
+		Reporter.log("Click the New Document tab.", true);
+		Thread.sleep(2000);
+		
+		jsclick(Destination_Folder_Textbox);
+		Reporter.log("Click the 'Select destination folder location' text box.", true);
+		Thread.sleep(6000);
+		Reporter.log("'Browse for folder' dialog should be open.", true);
+		selectElement(Cabinet);
+		Reporter.log("Expand the cabinet", true);
+		Thread.sleep(4000);
+		VisiblityOf(Drawer);
+		selectElement(Drawer);
+		Reporter.log("Expand drawer", true);
+		Thread.sleep(5000);
+		selectElement(Folder);
+		Reporter.log("Select a folder", true);
+		Thread.sleep(5000);
+		jsclick(OK_Button_BrowseforFolder);
+		Reporter.log("Folder selected successfully...", true);
+		Thread.sleep(3000);
+
+		getSelect_Document_Type_Dropdown();
+		Reporter.log("Click on 'Select document type' dropdown and select the document type.", true);
+		Reporter.log("Document type selected successfully...", true);
+		Thread.sleep(3000);
+		movingclkElement(Enter_ReportName);
+		Reporter.log("Enter the value into index field", true);
+		sendvalue(Enter_ReportName, readFromExAdvancedView(5, 4));
+		Thread.sleep(5000);
+		movingElement(Move_To_PlusIcon);
+
+		try {
+			Actions act = new Actions(driver);
+			act.moveToElement(Browse_OptionNish).click().build().perform();
+		} catch (JavascriptException e) {
+			System.out.println("Exception there");
+		}
+
+		Thread.sleep(15000);
+
+		// Runtime.getRuntime().exec("D:\\RNishaAutoIt\\LArgePDF.exe");
+		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\SinglePDF64.exe");
+		Thread.sleep(8000);
+		Reporter.log("Add a file  by using auto IT");
+		try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert not present");
+		}
+
+		Reporter.log("Mouse hover on the browse icon", true);
+
+		Thread.sleep(5000);
+		jsclick(CreateBTN);
+		Reporter.log("Click on the create button", true);
+		Thread.sleep(4000);
+		jsclick(viewOption);
+		Thread.sleep(5000);
+
+		jsclick(pdfEditAnnotation);
+
+		for (int i = 1; i <= numberOfDocs; i++) {
+			// Construct the XPath with the current index
+			Actions act = new Actions(driver);
+			Thread.sleep(4000);
+			Reporter.log("Scenario 01: Open an existing document and send it to WorkFlow");
+			Thread.sleep(2000);
+			try {
+				act.moveToElement(StampItems).click().build().perform();
+				Thread.sleep(2000);
+			} catch (JavascriptException e) {
+				//
+			}
+			
+			try {
+			act.moveToElement(customStamp).perform();
+			}
+			catch (JavascriptException e) {
+				//
+			}
+			Thread.sleep(3000);
+
+			try {
+				String xpath = "(//ul[@class='e-menu-parent e-ul '])[2]/li[" + i + "]";
+				System.out.println("Print the downloaded XPath details: " + xpath);
+
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+				// Move to the element and click it
+				act.moveToElement(element).click().build().perform();
+				Reporter.log("Before Click", true);
+
+				// Get the container element where annotations are added
+				WebElement container = driver.findElement(By.xpath("//*[@id='pdfViewerDiv_viewerContainer']"));
+
+				// Step 1: Scroll the container using JavaScript
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+
+				// Get the total scrollable height of the container
+				int containerScrollableHeight = Integer
+						.parseInt(js.executeScript("return arguments[0].scrollHeight;", container).toString());
+
+				// Ensure the yOffset doesn't exceed the container's scrollable height
+				int yOffset = 40 * i;
+				if (yOffset > containerScrollableHeight) {
+					yOffset = containerScrollableHeight - 50; // Ensure it stays within bounds
+				}
+
+				// Scroll to the desired position inside the container
+				js.executeScript("arguments[0].scrollTop = arguments[1];", container, yOffset);
+
+				// Step 2: Wait for scroll to finish (adjust time if needed)
+				Thread.sleep(2000); // Reduced to 2 seconds
+
+				// Add the annotation using Actions class without offsets
+				act.moveToElement(container).click(Page) // Perform click at the center of the container
+						.build().perform();
+
+				Reporter.log("After Click", true);
+				Thread.sleep(3000);
+				Reporter.log("Stamp Added Successfully", true);
+
+				// After 12 stamps, click the scroll down button
+				if (i >= 9) {
+					WebElement scrollDownButton = driver.findElement(By.xpath("//*[@id=\"vscroll_326_nav_down\"]"));
+					act.moveToElement(scrollDownButton).click().build().perform();
+					// scrollDownButton.click();
+					Reporter.log("Scrolled down to load more stamps", true);
+					Thread.sleep(2000); // Adjust sleep time if needed to ensure scrolling completes
+				}
+
+			} catch (Exception e) {
+				System.out.println("Error interacting with element: " + e.getMessage());
+			}
+		}
+	}
+
+	public void SaveDocumentAndReopen() throws Exception {
+
+		Thread.sleep(3000);
+
+		jsclick(SaveTab);
+		Reporter.log("Click on the save icon from viewer toolbar", true);
+		Thread.sleep(3000);
+		VisiblityOf(SaveTabOKBTN);
+		jsclick(SaveTabOKBTN);
+		Reporter.log("The added data has been saved successfully...", true);
+		Thread.sleep(8000);
+		jsclick(CloseIcon);
+		Reporter.log("Click on the close icon", true);
+		Thread.sleep(3000);
+		VisiblityOf(ReopenTheDocument);
+		Reporter.log("Document closed successfully...", true);
+		jsclick(ReopenTheDocument);
+		Reporter.log("Reopen the created word file document...", true);
+		Thread.sleep(10000);
+		Reporter.log("All saved data should be displayed successfully...", true);
+		// jsclick(Refresh_Button(driver));
+
+	}
+
+	@FindBy(xpath = ("//*[@id=\"dialog_1041136266_1_dialog-content\"]//div[1]/div/input")) // Change 9 to change the
+																							// value
+	private WebElement DisplayedName;
+
+	// *[@id="dialog_1419058361_0"]/div[4]/button[1]
+
+	@FindBy(xpath = ("//div[@class='e-footer-content']//button[contains(@class, 'e-primary') and text()='OK']")) // Change
+																													// 9
+																													// to
+																													// change
+																													// the
+																													// value
+	private WebElement OKBTN;
+
+	public void LinkWord() throws Exception {
+		Thread.sleep(3000);
+		Actions act = new Actions(driver);
+		Reporter.log("Click on link button", true);
+		jsclick(Link);
+		Thread.sleep(6000);
+		ElementToBeClickable(LinkdialogAddress);
+
+		LinkdialogAddress.sendKeys("https://computhink.com/");
+		Thread.sleep(4000);
+		jsclick(OKBTN);
+		Reporter.log("Enter Link into the textbox", true);
+		Thread.sleep(6000);
+		Reporter.log("Link added successfully...", true);
+	}
+
+	public void HeaderWord() throws Exception {
+		Thread.sleep(3000);
+		Actions act = new Actions(driver);
+		Reporter.log("Click on link button", true);
+		jsclick(Header);
+		Thread.sleep(6000);
+
+		ElementToBeClickable(WordDocPage);
+
+		Actions actions = new Actions(driver);
+
+		actions.moveByOffset(200, 300).click().perform();
+
+		actions.sendKeys("Automation Testing: Verifying Header Option").perform();
+		Thread.sleep(4000);
+		// jsclick(OKBTN);
+		Reporter.log("Enter Link into the textbox", true);
+		Thread.sleep(6000);
+		Reporter.log("Link added successfully...", true);
+	}
+
+	public void FooterWord() throws Exception {
+		Thread.sleep(3000);
+		Actions act = new Actions(driver);
+		Reporter.log("Click on link button", true);
+		jsclick(Footer);
+		Thread.sleep(6000);
+
+		ElementToBeClickable(WordDocPage);
+
+		Actions actions = new Actions(driver);
+
+		// actions.moveByOffset(200, 300).click().perform();
+
+		actions.sendKeys("Automation Testing: Verifying Footer Option End Page").perform();
+
+		Reporter.log("Enter Link into the textbox", true);
+		Thread.sleep(6000);
+		Reporter.log("Link added successfully...", true);
+
 	}
 
 }

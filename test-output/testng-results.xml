@@ -1,601 +1,476 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="2" failed="5" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Chrome driver launched successfull]]>
-    </line>
-    <line>
-      <![CDATA[Chrome Browser launched Successfully...]]>
+      <![CDATA[Edge driver launched successfull]]>
     </line>
     <line>
       <![CDATA[EWA URL launched successfull]]>
     </line>
     <line>
-      <![CDATA[Contentverse URL launched successfully...]]>
+      <![CDATA[CVS URL started Successfully]]>
     </line>
     <line>
-      <![CDATA[Scenario 01: Log into EWA]]>
-    </line>
-    <line>
-      <![CDATA[Enter valid user name into username field]]>
+      <![CDATA[Enter valid username into username field]]>
     </line>
     <line>
       <![CDATA[Enter valid password into password field]]>
     </line>
     <line>
-      <![CDATA[Select a Room]]>
+      <![CDATA[Select a room]]>
     </line>
     <line>
-      <![CDATA[Click Login button]]>
+      <![CDATA[Click on the Login button]]>
     </line>
     <line>
-      <![CDATA[Session message not appeared]]>
+      <![CDATA[User has logged in successfully]]>
     </line>
     <line>
-      <![CDATA[User logged in successfully... ]]>
+      <![CDATA[Test Scenario 1 : Verifying No button of Session for user is already active dialog box ]]>
     </line>
     <line>
-      <![CDATA[Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer]]>
+      <![CDATA[Enter valid username into username field]]>
     </line>
     <line>
-      <![CDATA[Click on Setting icon]]>
+      <![CDATA[Enter valid password into password field]]>
     </line>
     <line>
-      <![CDATA[Go to Mypreference]]>
+      <![CDATA[Select a room]]>
     </line>
     <line>
-      <![CDATA[Set the office document to advanced viewing]]>
+      <![CDATA[Click on the Login button]]>
     </line>
     <line>
-      <![CDATA[Set the PDF document to advanced viewing]]>
+      <![CDATA[Verified No button of Session for user is already active dialog box ]]>
     </line>
     <line>
-      <![CDATA[Click on Apply button]]>
+      <![CDATA[Test Scenario 2 : Verifying Login EWA with blank username ]]>
     </line>
     <line>
-      <![CDATA[Advanced viewer mode has been set successfully...]]>
+      <![CDATA[Do not entered username into username field]]>
     </line>
     <line>
-      <![CDATA[Scenario 2: Create a document with Advanced viewer -  new word document.]]>
+      <![CDATA[Test Scenario 3 : Verifying Login EWA with blank password]]>
     </line>
     <line>
-      <![CDATA[Click the New Document tab.]]>
+      <![CDATA[Test Scenario 5 : Verifying Login EWA with invalid username ]]>
     </line>
     <line>
-      <![CDATA[Click the 'Select destination folder location' text box.]]>
+      <![CDATA[Test Scenario 6 : Verifying Login EWA with invalid password ]]>
     </line>
     <line>
-      <![CDATA['Brower for folder' dialog should be open.]]>
-    </line>
-    <line>
-      <![CDATA[Expand the cabinet]]>
-    </line>
-    <line>
-      <![CDATA[Expand drawer]]>
-    </line>
-    <line>
-      <![CDATA[Select a folder]]>
-    </line>
-    <line>
-      <![CDATA[Folder selected successful...]]>
-    </line>
-    <line>
-      <![CDATA[Click on 'Select document type' dropdown and select the document type.]]>
-    </line>
-    <line>
-      <![CDATA[Document type selected successful...]]>
-    </line>
-    <line>
-      <![CDATA[Enter the value into index field]]>
-    </line>
-    <line>
-      <![CDATA[Mouse hover on the browse icon]]>
-    </line>
-    <line>
-      <![CDATA[Select a 'New Word Document']]>
-    </line>
-    <line>
-      <![CDATA[Enter file name dialog should be open.]]>
-    </line>
-    <line>
-      <![CDATA[Enter the file name.]]>
-    </line>
-    <line>
-      <![CDATA[Click on OK button.]]>
-    </line>
-    <line>
-      <![CDATA['Enter file name' dialog should be closed successful...]]>
-    </line>
-    <line>
-      <![CDATA[Click on Create button]]>
-    </line>
-    <line>
-      <![CDATA['Document Created Successfully' dialog should be displayed]]>
-    </line>
-    <line>
-      <![CDATA[Click on View option]]>
-    </line>
-    <line>
-      <![CDATA[Enter data into the page]]>
-    </line>
-    <line>
-      <![CDATA[Click on the Save icon from viewer tool bar.]]>
-    </line>
-    <line>
-      <![CDATA[Click on save successfull dialog OK button.]]>
-    </line>
-    <line>
-      <![CDATA[Click on image icon,it will show 'upload from computer' option.]]>
-    </line>
-    <line>
-      <![CDATA[Select the 'upload from computer' option.]]>
-    </line>
-    <line>
-      <![CDATA[Using Auto IT add the image from folder successful.]]>
-    </line>
-    <line>
-      <![CDATA[Click on Table icon.]]>
-    </line>
-    <line>
-      <![CDATA[Add the table into the page.]]>
-    </line>
-    <line>
-      <![CDATA[Enter the data inside the table]]>
-    </line>
-    <line>
-      <![CDATA[Click on the save icon from viewer tool bar]]>
-    </line>
-    <line>
-      <![CDATA[The added data has been saved successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Click on the close icon]]>
-    </line>
-    <line>
-      <![CDATA[Document closed successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Reopen the created word file document...]]>
-    </line>
-    <line>
-      <![CDATA[All saved data should be display successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Word Document verified successfull]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 4:Create a document with Advanced viewer -  new PDF document ]]>
-    </line>
-    <line>
-      <![CDATA[Click on New Document tab]]>
-    </line>
-    <line>
-      <![CDATA[Click the 'Select document type' dropdown and select the document type.]]>
-    </line>
-    <line>
-      <![CDATA[Enter the value into index field]]>
-    </line>
-    <line>
-      <![CDATA[Mouse hover on the browse icon]]>
-    </line>
-    <line>
-      <![CDATA[Select New PDF document]]>
-    </line>
-    <line>
-      <![CDATA[Enter the file name]]>
-    </line>
-    <line>
-      <![CDATA[Click on the create button]]>
-    </line>
-    <line>
-      <![CDATA[click on the view option]]>
-    </line>
-    <line>
-      <![CDATA[Click on advanced tool icon]]>
-    </line>
-    <line>
-      <![CDATA[Click on free text icon.]]>
-    </line>
-    <line>
-      <![CDATA[Enter data into -free text box]]>
-    </line>
-    <line>
-      <![CDATA[Click on comment icon, add a comment]]>
-    </line>
-    <line>
-      <![CDATA[Comment added successfully]]>
-    </line>
-    <line>
-      <![CDATA[Click on save icon from viewer menu tab]]>
-    </line>
-    <line>
-      <![CDATA[Document saved successfully]]>
-    </line>
-    <line>
-      <![CDATA[Click on the Close icon]]>
-    </line>
-    <line>
-      <![CDATA[Reopen the Created pdf file document]]>
-    </line>
-    <line>
-      <![CDATA[All saved data should be display successfully...]]>
-    </line>
-    <line>
-      <![CDATA[PDF Document verified successfull]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ]]>
-    </line>
-    <line>
-      <![CDATA[Click on the New Document tab]]>
-    </line>
-    <line>
-      <![CDATA[Click on the 'Select document type' dropdown and select the document type.]]>
-    </line>
-    <line>
-      <![CDATA[Enter the value into index field]]>
-    </line>
-    <line>
-      <![CDATA[Click on the create button]]>
-    </line>
-    <line>
-      <![CDATA[Click on View option]]>
-    </line>
-    <line>
-      <![CDATA[Mouse hover on browse icon]]>
-    </line>
-    <line>
-      <![CDATA[Select New Excel sheet]]>
-    </line>
-    <line>
-      <![CDATA[Enter file name dialog should be open]]>
-    </line>
-    <line>
-      <![CDATA[Enter file name and click OK button]]>
-    </line>
-    <line>
-      <![CDATA['Enter file name' dialog should be closed successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Enter data into the first row]]>
-    </line>
-    <line>
-      <![CDATA[Enter data into the second row]]>
-    </line>
-    <line>
-      <![CDATA[Click on save icon from viewer tool bar]]>
-    </line>
-    <line>
-      <![CDATA[Click on 'Save successful' dialog box OK button]]>
-    </line>
-    <line>
-      <![CDATA[Click on Close icon]]>
-    </line>
-    <line>
-      <![CDATA[Document closed successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Reopen the created document]]>
-    </line>
-    <line>
-      <![CDATA[All saved data should be displayed successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Excel spread sheet verified successfull]]>
+      <![CDATA[Test Scenario 7 : Verifying Yes button of Session for user is already active dialog box ]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-08-27T05:36:26 GMT-05:00" name="Default suite" finished-at="2024-08-27T05:44:18 GMT-05:00" duration-ms="471864">
+  <suite started-at="2024-10-16T08:57:13 IST" name="Default suite" finished-at="2024-10-16T08:59:23 IST" duration-ms="129400">
     <groups>
     </groups>
-    <test started-at="2024-08-27T05:36:26 GMT-05:00" name="Default test" finished-at="2024-08-27T05:44:18 GMT-05:00" duration-ms="471864">
-      <class name="Script.AdvancedViewer_Script">
-        <test-method is-config="true" signature="ladBrowser()[pri:0, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:36:26 GMT-05:00" name="ladBrowser" finished-at="2024-08-27T05:36:29 GMT-05:00" duration-ms="2224" status="PASS">
+    <test started-at="2024-10-16T08:57:13 IST" name="Default test" finished-at="2024-10-16T08:59:23 IST" duration-ms="129400">
+      <class name="Script.Login_Validation">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:57:13 IST" name="Launch_Browser" finished-at="2024-10-16T08:57:25 IST" duration-ms="11624" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Chrome driver launched successfull]]>
-            </line>
-            <line>
-              <![CDATA[Chrome Browser launched Successfully...]]>
+              <![CDATA[Edge driver launched successfull]]>
             </line>
             <line>
               <![CDATA[EWA URL launched successfull]]>
             </line>
             <line>
-              <![CDATA[Contentverse URL launched successfully...]]>
+              <![CDATA[CVS URL started Successfully]]>
             </line>
           </reporter-output>
-        </test-method> <!-- ladBrowser -->
-        <test-method signature="Login()[pri:1, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:36:29 GMT-05:00" name="Login" finished-at="2024-08-27T05:37:08 GMT-05:00" duration-ms="39236" status="PASS">
+        </test-method> <!-- Launch_Browser -->
+        <test-method signature="Login_EWA()[pri:0, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:57:25 IST" name="Login_EWA" finished-at="2024-10-16T08:58:15 IST" duration-ms="49915" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 01: Log into EWA]]>
-            </line>
-            <line>
-              <![CDATA[Enter valid user name into username field]]>
+              <![CDATA[Enter valid username into username field]]>
             </line>
             <line>
               <![CDATA[Enter valid password into password field]]>
             </line>
             <line>
-              <![CDATA[Select a Room]]>
+              <![CDATA[Select a room]]>
             </line>
             <line>
-              <![CDATA[Click Login button]]>
+              <![CDATA[Click on the Login button]]>
             </line>
             <line>
-              <![CDATA[Session message not appeared]]>
-            </line>
-            <line>
-              <![CDATA[User logged in successfully... ]]>
+              <![CDATA[User has logged in successfully]]>
             </line>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="TestCase_1_AdvancedViewerOptionSelection()[pri:2, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:37:08 GMT-05:00" name="TestCase_1_AdvancedViewerOptionSelection" finished-at="2024-08-27T05:37:23 GMT-05:00" duration-ms="14806" status="PASS">
+        </test-method> <!-- Login_EWA -->
+        <test-method signature="TC_01_Verifying_No_button_of_Session_for_user_is_already_active_dialog_box()[pri:1, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:58:15 IST" name="TC_01_Verifying_No_button_of_Session_for_user_is_already_active_dialog_box" finished-at="2024-10-16T08:58:48 IST" duration-ms="33072" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer]]>
+              <![CDATA[Test Scenario 1 : Verifying No button of Session for user is already active dialog box ]]>
             </line>
             <line>
-              <![CDATA[Click on Setting icon]]>
+              <![CDATA[Enter valid username into username field]]>
             </line>
             <line>
-              <![CDATA[Go to Mypreference]]>
+              <![CDATA[Enter valid password into password field]]>
             </line>
             <line>
-              <![CDATA[Set the office document to advanced viewing]]>
+              <![CDATA[Select a room]]>
             </line>
             <line>
-              <![CDATA[Set the PDF document to advanced viewing]]>
+              <![CDATA[Click on the Login button]]>
             </line>
             <line>
-              <![CDATA[Click on Apply button]]>
-            </line>
-            <line>
-              <![CDATA[Advanced viewer mode has been set successfully...]]>
+              <![CDATA[Verified No button of Session for user is already active dialog box ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TestCase_1_AdvancedViewerOptionSelection -->
-        <test-method signature="TestCase_2_AdvancedViewerWordDocument()[pri:3, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:37:23 GMT-05:00" name="TestCase_2_AdvancedViewerWordDocument" finished-at="2024-08-27T05:40:23 GMT-05:00" duration-ms="179873" status="PASS">
+        </test-method> <!-- TC_01_Verifying_No_button_of_Session_for_user_is_already_active_dialog_box -->
+        <test-method signature="TC_02_Verifying_Login_EWA_with_blank_Username()[pri:2, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:58:48 IST" name="TC_02_Verifying_Login_EWA_with_blank_Username" finished-at="2024-10-16T08:59:04 IST" duration-ms="16068" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#loginPassword"}
+  (Session info: MicrosoftEdge=126.0.2592.87)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6
+*** Element info: {Using=id, value=loginPassword}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#loginPassword"}
+  (Session info: MicrosoftEdge=126.0.2592.87)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6
+*** Element info: {Using=id, value=loginPassword}
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Pom.Login.loginwithoutUsername(Login.java:49)
+at Pom.Login.Verifying_Login_EWA_with_blank_Username(Login.java:272)
+at Script.Login_Validation.TC_02_Verifying_Login_EWA_with_blank_Username(Login_Validation.java:48)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
             <line>
-              <![CDATA[Scenario 2: Create a document with Advanced viewer -  new word document.]]>
+              <![CDATA[Test Scenario 2 : Verifying Login EWA with blank username ]]>
             </line>
             <line>
-              <![CDATA[Click the New Document tab.]]>
-            </line>
-            <line>
-              <![CDATA[Click the 'Select destination folder location' text box.]]>
-            </line>
-            <line>
-              <![CDATA['Brower for folder' dialog should be open.]]>
-            </line>
-            <line>
-              <![CDATA[Expand the cabinet]]>
-            </line>
-            <line>
-              <![CDATA[Expand drawer]]>
-            </line>
-            <line>
-              <![CDATA[Select a folder]]>
-            </line>
-            <line>
-              <![CDATA[Folder selected successful...]]>
-            </line>
-            <line>
-              <![CDATA[Click on 'Select document type' dropdown and select the document type.]]>
-            </line>
-            <line>
-              <![CDATA[Document type selected successful...]]>
-            </line>
-            <line>
-              <![CDATA[Enter the value into index field]]>
-            </line>
-            <line>
-              <![CDATA[Mouse hover on the browse icon]]>
-            </line>
-            <line>
-              <![CDATA[Select a 'New Word Document']]>
-            </line>
-            <line>
-              <![CDATA[Enter file name dialog should be open.]]>
-            </line>
-            <line>
-              <![CDATA[Enter the file name.]]>
-            </line>
-            <line>
-              <![CDATA[Click on OK button.]]>
-            </line>
-            <line>
-              <![CDATA['Enter file name' dialog should be closed successful...]]>
-            </line>
-            <line>
-              <![CDATA[Click on Create button]]>
-            </line>
-            <line>
-              <![CDATA['Document Created Successfully' dialog should be displayed]]>
-            </line>
-            <line>
-              <![CDATA[Click on View option]]>
-            </line>
-            <line>
-              <![CDATA[Enter data into the page]]>
-            </line>
-            <line>
-              <![CDATA[Click on the Save icon from viewer tool bar.]]>
-            </line>
-            <line>
-              <![CDATA[Click on save successfull dialog OK button.]]>
-            </line>
-            <line>
-              <![CDATA[Click on image icon,it will show 'upload from computer' option.]]>
-            </line>
-            <line>
-              <![CDATA[Select the 'upload from computer' option.]]>
-            </line>
-            <line>
-              <![CDATA[Using Auto IT add the image from folder successful.]]>
-            </line>
-            <line>
-              <![CDATA[Click on Table icon.]]>
-            </line>
-            <line>
-              <![CDATA[Add the table into the page.]]>
-            </line>
-            <line>
-              <![CDATA[Enter the data inside the table]]>
-            </line>
-            <line>
-              <![CDATA[Click on the save icon from viewer tool bar]]>
-            </line>
-            <line>
-              <![CDATA[The added data has been saved successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Click on the close icon]]>
-            </line>
-            <line>
-              <![CDATA[Document closed successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Reopen the created word file document...]]>
-            </line>
-            <line>
-              <![CDATA[All saved data should be display successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Word Document verified successfull]]>
+              <![CDATA[Do not entered username into username field]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TestCase_2_AdvancedViewerWordDocument -->
-        <test-method signature="TestCase_3_AdvancedViewerPDfDoc()[pri:4, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:40:23 GMT-05:00" name="TestCase_3_AdvancedViewerPDfDoc" finished-at="2024-08-27T05:42:41 GMT-05:00" duration-ms="138837" status="PASS">
+        </test-method> <!-- TC_02_Verifying_Login_EWA_with_blank_Username -->
+        <test-method signature="TC_03_Verifying_Login_EWA_with_blank_Password()[pri:3, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:59:04 IST" name="TC_03_Verifying_Login_EWA_with_blank_Password" finished-at="2024-10-16T08:59:16 IST" duration-ms="12314" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+at Pom.Login.loginwithoutPassword(Login.java:80)
+at Pom.Login.Verifying_Login_EWA_with_blank_Password(Login.java:283)
+at Script.Login_Validation.TC_03_Verifying_Login_EWA_with_blank_Password(Login_Validation.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
             <line>
-              <![CDATA[Scenario 4:Create a document with Advanced viewer -  new PDF document ]]>
-            </line>
-            <line>
-              <![CDATA[Click on New Document tab]]>
-            </line>
-            <line>
-              <![CDATA[Click the 'Select document type' dropdown and select the document type.]]>
-            </line>
-            <line>
-              <![CDATA[Enter the value into index field]]>
-            </line>
-            <line>
-              <![CDATA[Mouse hover on the browse icon]]>
-            </line>
-            <line>
-              <![CDATA[Select New PDF document]]>
-            </line>
-            <line>
-              <![CDATA[Enter the file name]]>
-            </line>
-            <line>
-              <![CDATA[Click on the create button]]>
-            </line>
-            <line>
-              <![CDATA[click on the view option]]>
-            </line>
-            <line>
-              <![CDATA[Click on advanced tool icon]]>
-            </line>
-            <line>
-              <![CDATA[Click on free text icon.]]>
-            </line>
-            <line>
-              <![CDATA[Enter data into -free text box]]>
-            </line>
-            <line>
-              <![CDATA[Click on comment icon, add a comment]]>
-            </line>
-            <line>
-              <![CDATA[Comment added successfully]]>
-            </line>
-            <line>
-              <![CDATA[Click on save icon from viewer menu tab]]>
-            </line>
-            <line>
-              <![CDATA[Document saved successfully]]>
-            </line>
-            <line>
-              <![CDATA[Click on the Close icon]]>
-            </line>
-            <line>
-              <![CDATA[Reopen the Created pdf file document]]>
-            </line>
-            <line>
-              <![CDATA[All saved data should be display successfully...]]>
-            </line>
-            <line>
-              <![CDATA[PDF Document verified successfull]]>
+              <![CDATA[Test Scenario 3 : Verifying Login EWA with blank password]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TestCase_3_AdvancedViewerPDfDoc -->
-        <test-method signature="TestCase_4_AdvancedViewerExcelFile()[pri:5, instance:Script.AdvancedViewer_Script@3f792b9b]" started-at="2024-08-27T05:42:41 GMT-05:00" name="TestCase_4_AdvancedViewerExcelFile" finished-at="2024-08-27T05:44:18 GMT-05:00" duration-ms="96840" status="PASS">
+        </test-method> <!-- TC_03_Verifying_Login_EWA_with_blank_Password -->
+        <test-method signature="TC_05_Verifying_Login_EWA_with_Invalid_Username()[pri:5, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:59:16 IST" name="TC_05_Verifying_Login_EWA_with_Invalid_Username" finished-at="2024-10-16T08:59:19 IST" duration-ms="2108" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidElementStateException">
+            <message>
+              <![CDATA[invalid element state
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidElementStateException: invalid element state
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+at Pom.Login.InvalidUsername(Login.java:147)
+at Pom.Login.Verifying_Login_EWA_with_Invalid_Username(Login.java:305)
+at Script.Login_Validation.TC_05_Verifying_Login_EWA_with_Invalid_Username(Login_Validation.java:71)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidElementStateException -->
           <reporter-output>
             <line>
-              <![CDATA[Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ]]>
-            </line>
-            <line>
-              <![CDATA[Click on the New Document tab]]>
-            </line>
-            <line>
-              <![CDATA[Click on the 'Select document type' dropdown and select the document type.]]>
-            </line>
-            <line>
-              <![CDATA[Enter the value into index field]]>
-            </line>
-            <line>
-              <![CDATA[Click on the create button]]>
-            </line>
-            <line>
-              <![CDATA[Click on View option]]>
-            </line>
-            <line>
-              <![CDATA[Mouse hover on browse icon]]>
-            </line>
-            <line>
-              <![CDATA[Select New Excel sheet]]>
-            </line>
-            <line>
-              <![CDATA[Enter file name dialog should be open]]>
-            </line>
-            <line>
-              <![CDATA[Enter file name and click OK button]]>
-            </line>
-            <line>
-              <![CDATA['Enter file name' dialog should be closed successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Enter data into the first row]]>
-            </line>
-            <line>
-              <![CDATA[Enter data into the second row]]>
-            </line>
-            <line>
-              <![CDATA[Click on save icon from viewer tool bar]]>
-            </line>
-            <line>
-              <![CDATA[Click on 'Save successful' dialog box OK button]]>
-            </line>
-            <line>
-              <![CDATA[Click on Close icon]]>
-            </line>
-            <line>
-              <![CDATA[Document closed successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Reopen the created document]]>
-            </line>
-            <line>
-              <![CDATA[All saved data should be displayed successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Excel spread sheet verified successfull]]>
+              <![CDATA[Test Scenario 5 : Verifying Login EWA with invalid username ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TestCase_4_AdvancedViewerExcelFile -->
-      </class> <!-- Script.AdvancedViewer_Script -->
+        </test-method> <!-- TC_05_Verifying_Login_EWA_with_Invalid_Username -->
+        <test-method signature="TC_06_Verifying_Login_EWA_with_Invalid_Password()[pri:6, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:59:19 IST" name="TC_06_Verifying_Login_EWA_with_Invalid_Password" finished-at="2024-10-16T08:59:21 IST" duration-ms="2083" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidElementStateException">
+            <message>
+              <![CDATA[invalid element state
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidElementStateException: invalid element state
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+at Pom.Login.InvalidPassword(Login.java:184)
+at Pom.Login.Verifying_Login_EWA_with_Invalid_Password(Login.java:316)
+at Script.Login_Validation.TC_06_Verifying_Login_EWA_with_Invalid_Password(Login_Validation.java:79)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidElementStateException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Test Scenario 6 : Verifying Login EWA with invalid password ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_06_Verifying_Login_EWA_with_Invalid_Password -->
+        <test-method signature="TC_07_Verifying_Yes_button_of_Session_for_user_is_already_active_dialog_box()[pri:7, instance:Script.Login_Validation@68e5eea7]" started-at="2024-10-16T08:59:21 IST" name="TC_07_Verifying_Yes_button_of_Session_for_user_is_already_active_dialog_box" finished-at="2024-10-16T08:59:23 IST" duration-ms="2140" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidElementStateException">
+            <message>
+              <![CDATA[invalid element state
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidElementStateException: invalid element state
+  (Session info: MicrosoftEdge=126.0.2592.87)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 126.0.2592.87, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:50406}, msedge: {msedgedriverVersion: 126.0.2592.137 (0de2eed29f9..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4cc559d2146d47fc9c5594eb3a90fca6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:124)
+at Generic.BaseClass.LogDipakUser(BaseClass.java:428)
+at Pom.Login.Verifying_Yes_button_of_Session_for_user_is_already_active_dialog_box(Login.java:333)
+at Script.Login_Validation.TC_07_Verifying_Yes_button_of_Session_for_user_is_already_active_dialog_box(Login_Validation.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidElementStateException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Test Scenario 7 : Verifying Yes button of Session for user is already active dialog box ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_07_Verifying_Yes_button_of_Session_for_user_is_already_active_dialog_box -->
+      </class> <!-- Script.Login_Validation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

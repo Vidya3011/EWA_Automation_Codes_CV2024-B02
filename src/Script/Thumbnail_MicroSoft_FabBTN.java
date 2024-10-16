@@ -1,6 +1,7 @@
 package Script;
 
 import org.apache.logging.log4j.LogManager;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -16,18 +17,27 @@ Thumbnail_MicroSoft_FabBTN extends BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager
 			.getLogger(DocumentContextSingleFolderDocSendTo.class);
 
-	/*
-	 * @BeforeClass public void ladBrowser() { loadBrowser("Chrome");
-	 * 
-	 * launchUrl(); log.info("CVS URL started Successfully...");
-	 * 
-	 * 
-	 * 
-	 * }
-	 * 
-	 * @Test(priority=1) public void LogVCS() throws Exception { // loginSQL2022();
-	 * loginCVS(); log.info("CVS User is logged in successfully..."); }
-	 */
+	@BeforeClass
+	public void ladBrowser() {
+		loadBrowser("Chrome");
+
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
+	}
+
+	@Test(priority = 1)
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
 	@Test(priority = 2)
 	public void TC_1_ShowThumbnail() throws Exception {
 

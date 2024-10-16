@@ -3,12 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Script.AnnotationFunctionality">
+      <class name="Script.Login_Validation">
         <methods>
-          <include name="ladBrowser"/>
-          <include name="TC_B_Redaction_UnlockRedaction"/>
+          <include name="TC_05_Verifying_Login_EWA_with_Invalid_Username"/>
+          <include name="TC_03_Verifying_Login_EWA_with_blank_Password"/>
+          <include name="Launch_Browser"/>
+          <include name="TC_02_Verifying_Login_EWA_with_blank_Username"/>
+          <include name="TC_06_Verifying_Login_EWA_with_Invalid_Password"/>
+          <include name="TC_07_Verifying_Yes_button_of_Session_for_user_is_already_active_dialog_box"/>
         </methods>
-      </class> <!-- Script.AnnotationFunctionality -->
+      </class> <!-- Script.Login_Validation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

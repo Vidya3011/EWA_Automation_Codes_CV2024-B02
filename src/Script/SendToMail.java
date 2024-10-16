@@ -3,6 +3,7 @@ package Script;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -21,18 +22,28 @@ SendToMail extends Generic.BaseClass {
 	public static SoftAssert so;
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(PrintFunctionality.class);
 
-	/*
-	 * @BeforeClass public void ladBrowser() { loadBrowser("Chrome");
-	 * 
-	 * launchUrl(); log.info("CVS URL started Successfully...");
-	 * 
-	 * }
-	 * 
-	 * @Test(priority = 1) public void LogCVS() throws Exception {
-	 * 
-	 * launchUrl(); loginCVS(); //loginSQL2022();
-	 * log.info("CVS User is logged in successfully..."); }
-	 */
+	@BeforeClass
+	public void ladBrowser() {
+		loadBrowser("Chrome");
+
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
+	}
+
+	@Test(priority = 1)
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
+
 
 	@Test(priority = 4)
 	public void TC_C_Email_ConvertPDF_WithAll_Annotations() throws Exception {

@@ -35,12 +35,9 @@ public class AnnotationFunctionality extends Generic.BaseClass {
 
 	@Test(priority = 1)
 	public void Login() throws Exception {
-		// LogDipakUser();
-		// LogRamUser();
-		//LogoutPage();
+		
 		loginRNISHA47();
-		// loginLocalCVS();
-		// loginSQL2022();
+		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
@@ -58,14 +55,14 @@ public class AnnotationFunctionality extends Generic.BaseClass {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.RedactionAnnotation();
 
-		log.info("Redaction added and Unlocked redaction successfull");
+		log.info("Redaction added and Unlocked redaction successful");
 	}
 
 	@Test(priority = 4)
 	public void TC_C_HighLight_Annotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.HighLighFunction();
-		log.info("Page HighLighted successfull");
+		log.info("Page HighLighted successful");
 
 	}
 
@@ -73,7 +70,7 @@ public class AnnotationFunctionality extends Generic.BaseClass {
 	public void TC_E_StikyNote_Annotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.StickyNoteAnnotation();
-		log.info("sticky note added successfull");
+		log.info("sticky note added successful");
 		Thread.sleep(3000);
 	}
 
@@ -81,21 +78,21 @@ public class AnnotationFunctionality extends Generic.BaseClass {
 	public void TC_F_RubberStampAnnotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.RubberStampAnnotation();
-		log.info("RubberStampAnnotationAddedSuccessfull");
+		log.info("RubberStampAnnotationAddedSuccessful");
 	}
 
 	@Test(priority = 7)
 	public void TC_G_Rectangle_Annotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.rectangleAnnotation();
-		log.info("Rectangle annotation added successfull");
+		log.info("Rectangle annotation added successful");
 	}
 
 	@Test(priority = 8)
 	public void TC_H_StampAnnotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.StampAnnotation();
-		log.info("Stamp annotation added successfull");
+		log.info("Stamp annotation added successful");
 
 	}
 
@@ -106,7 +103,7 @@ public class AnnotationFunctionality extends Generic.BaseClass {
 
 		an.ellipseAnnotation();
 
-		log.info("Line and ellipse added successfull");
+		log.info("Line and ellipse added successful");
 
 	}
 

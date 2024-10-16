@@ -20,7 +20,7 @@ public class FavoritesPom extends BaseClass {
 	@FindBy(xpath = ("(//a[@id='navigationMenuBtn'])[1]"))
 	private WebElement RoomContextTab;
 
-	@FindBy(xpath = ("//*[@id=\"1119\"]/a"))
+	@FindBy(xpath = ("//*[@id='viewDocumentnavigator']//li[2]/a"))
 	private WebElement CabinetForFav;
 
 	@FindBy(xpath = ("(//span[@id='Navigationcreatefav'])[1]"))
@@ -38,7 +38,7 @@ public class FavoritesPom extends BaseClass {
 	@FindBy(xpath = ("(//div[@id='bookmarkid'])[1]"))
 	private WebElement favBookMarkIconTab;
 
-	@FindBy(xpath = ("//*[@id=\"2422\"]/a"))
+	@FindBy(xpath = ("//*[@id='viewDocumentnavigator']//li[3]/a"))
 	private WebElement SystemLevelFavCabinet;
 
 	@FindBy(xpath = ("(//li[@id='loadAllfavrites'])[1]"))
@@ -105,7 +105,10 @@ public class FavoritesPom extends BaseClass {
 		Reporter.log("Logout the page");
 		LogoutPage();
 		Reporter.log("Login as another user");
-		loginCVS();
+		loginRNISHA47();
+		Thread.sleep(2000);
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(3000);
 		movingclkElement(favBookMarkIconTab);
 		Reporter.log(" Mouse hover on favorite icon");
 		Thread.sleep(3000);

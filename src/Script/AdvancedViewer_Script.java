@@ -1,6 +1,9 @@
 package Script;
 
+
 import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.interactions.Actions;
+
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,7 +18,7 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
 
 	@BeforeClass
-	public void ladBrowser() {
+	public void loadBrowser() {
 		loadBrowser("Chrome");
 
 		log.info("Chrome Browser Launched");
@@ -41,7 +44,7 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.AdvancedViewerOption();
-		log.info("Pdf document and office document changed as advanced viewing successsfully...");
+		log.info("Pdf document and office document changed as advanced viewing successfully...");
 		Thread.sleep(5000);
 	}
 
@@ -58,7 +61,8 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.AdvancedViewPDFDocument();
 		Reporter.log("PDF Document verified successfull");
-
+	
+		
 	}
 
 	@Test(priority = 5)

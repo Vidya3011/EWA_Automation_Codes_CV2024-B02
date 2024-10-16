@@ -11,19 +11,21 @@ import Pom.Documents_ContextMenu;
 
 public class DocumentContextMenu_Function extends BaseClass {
 
-	/*
-	 * @BeforeClass
-	 * 
-	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
-	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
-	 * 
-	 * @Test
-	 * 
-	 * public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully", true);
-	 * 
-	 * }
-	 */
+	@BeforeClass
+
+	public void Launch_Browser() throws Exception {
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully", true);
+
+	}
 
 	@Test(priority = 1, invocationCount = 2)
 	public void Create_PDF_Documents() throws Exception {
@@ -82,56 +84,49 @@ public class DocumentContextMenu_Function extends BaseClass {
 	}
 
 	// @Test(priority = 9)
-	public void TC_08_Verify_SendToWorkflow_Document() throws Exception {
-
-		Documents_ContextMenu Doc = new Documents_ContextMenu();
-		Doc.Verify_SendToWorkflow_Document();
-	}
-
-	// @Test(priority = 10)
-	public void TC_07_Verify_Notification_on_Document() throws Exception {
+	public void TC_08_Verify_Notification_on_Document() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_Notification_on_Document();
 	}
 
-	@Test(priority = 11)
-	public void TC_08_Verify_SendTo_Mail_as_References() throws Exception {
+	@Test(priority = 10)
+	public void TC_09_Verify_SendTo_Mail_as_References() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Mail_as_References();
 	}
 
-	@Test(priority = 12)
-	public void TC_09_Verify_SendTo_Mail_ascopy() throws Exception {
+	@Test(priority = 11)
+	public void TC_10_Verify_SendTo_Mail_ascopy() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Mail_ascopy();
 	}
 
-	@Test(priority = 13)
-	public void TC_10_Verify_SendTo_Print() throws Exception {
+	@Test(priority = 12)
+	public void TC_11_Verify_SendTo_Print() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Print();
 	}
 
-	@Test(priority = 14)
-	public void TC_11_Verify_SendTo_Export() throws Exception {
+	@Test(priority = 13)
+	public void TC_12_Verify_SendTo_Export() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Export();
 	}
 
-	@Test(priority = 15)
-	public void TC_12_Verify_SendTo_GenerateDocumentLink() throws Exception {
+	@Test(priority = 14)
+	public void TC_13_Verify_SendTo_GenerateDocumentLink() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_GenerateDocumentLink();
 	}
 
-	@Test(priority = 16)
-	public void TC_13_Verify_SendTo_SecureLink() throws Exception {
+	@Test(priority = 15)
+	public void TC_14_Verify_SendTo_SecureLink() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_SecureLink();

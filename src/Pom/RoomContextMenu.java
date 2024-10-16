@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -302,7 +303,7 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("//a[@id='nodeProperties']"))
 	private WebElement NodeProperties;
 
-	@FindBy(xpath = ("(//input[@id='nodePropVal_340'])[1]"))
+	@FindBy(xpath = ("//*[@id=\"docIndicesDivNodeProperties\"]//tr[1]/td[3]/input[2]"))
 	private WebElement TextKey;
 
 	@FindBy(xpath = ("(//button[@id='navigatorTreeReset31'])[1]"))
@@ -314,7 +315,7 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("(//input[@id='nodePropVal_341'])[1]"))
 	private WebElement numeric123;
 
-	@FindBy(xpath = ("//*[@id=\"navigatorTreeOk31\"]"))
+	@FindBy(xpath = ("//*[@id='navigatorTreeOk31']"))
 	private WebElement NodePropOKBTN;
 
 	@FindBy(xpath = ("(//a[normalize-space()='3'])[1]"))
@@ -368,25 +369,25 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("(//button[@id='reset'])[1]"))
 	private WebElement resetBTNmyPref;
 
-	@FindBy(xpath = ("//div[@id='viewDocumentnavigator']/ul/li[7]/a"))
+	@FindBy(xpath = ("//div[@id='viewDocumentnavigator']/ul/li[3]/a"))
 	private WebElement CabinetForCustomDoc;
 
 	@FindBy(xpath = ("//a[@id='custmDocumentTypes']"))
 	private WebElement customdoc;
 
-	@FindBy(xpath = ("(//span[@id='spanCheckCustomDocTypeValues_12'])[1]"))
+	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[1]/span[2]"))
 	private WebElement bill;
 
-	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[14]/span[2]"))
+	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[3]/span[2]"))
 	private WebElement dateMask;
 
-	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[13]/span[2]"))
+	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[4]/span[2]"))
 	private WebElement cvReports;// cvReports
 
-	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[13]/span[2]"))
+	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[2]/span[2]"))
 	private WebElement cvReports1;
 
-	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[67]/span[2]"))
+	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[6]/span[2]"))
 	private WebElement WithDrawn;
 
 	@FindBy(xpath = ("//div[@id='showcustomDocTypeModel']/ul/li[5]/span[2]"))
@@ -455,6 +456,17 @@ public class RoomContextMenu extends BaseClass {
 		n.selectByVisibleText("All data type");
 	}
 
+	
+	public void selectDocNamesCvRep() throws Exception {
+		WebElement allList = driver.findElement(By.id("nodePropertiesDocTypeList"));
+		org.openqa.selenium.support.ui.Select n = new org.openqa.selenium.support.ui.Select(allList);
+		n.selectByVisibleText("CVReports");
+	}
+	
+	
+	
+	
+	
 	public void selectDocNamesCSR() throws Exception {
 		WebElement allList = driver.findElement(By.id("nodePropertiesDocTypeList"));
 		org.openqa.selenium.support.ui.Select n = new org.openqa.selenium.support.ui.Select(allList);
@@ -518,6 +530,8 @@ public class RoomContextMenu extends BaseClass {
 
 	public void TakeOwnerShip() throws Exception {
 		Reporter.log("Scenario 01: Verify Roomcontextmenu tab 'Takeownership and ReleaseOwnership' option");
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(2000);
 		jsclick(RoomContextTab);
 		Reporter.log("Click on RoomContextMenu tab", true);
 		Thread.sleep(3000);
@@ -569,7 +583,7 @@ public class RoomContextMenu extends BaseClass {
 		Reporter.log("Admin user Logout the session", true);
 		Thread.sleep(4000);
 
-		loginCVS();
+		loginRNISHA47();
 		Reporter.log("Log into EWA with another user account", true);
 		Thread.sleep(3000);
 
@@ -651,7 +665,7 @@ public class RoomContextMenu extends BaseClass {
 		}
 		Reporter.log("Admin user logout the session", true);
 		Thread.sleep(3000);
-		loginCVS();
+		loginRNISHA47();
 		Reporter.log("Another user log into EWA to check TakeOwnerShip option", true);
 		Thread.sleep(3000);
 		/*
@@ -703,6 +717,7 @@ public class RoomContextMenu extends BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		Reporter.log("Scenario 02: Verify RoomContextMenu tab - (copy and paste drawer)", true);
 		Reporter.log("Log into as admin user", true);
+		jsclick(Refresh_Button(driver));
 		jsclick(RoomContextTab);
 		Thread.sleep(3000);
 		jsclick(CabinetTest);
@@ -909,6 +924,124 @@ public class RoomContextMenu extends BaseClass {
 		Reporter.log("node properties verified successfully", true);
 	}
 
+	public void NodePropertiesCVReports() throws Exception {
+		Thread.sleep(3000);
+
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		Reporter.log("Scenario 04: Verify Node properties Option", true);
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(3000);
+	
+		expandCabinets();
+		Thread.sleep(3000);
+		Reporter.log("Mousehover on Roomcontextmenu tab", true);
+		Actions act = new Actions(driver);
+		act.moveToElement(RoomContextTab).perform();
+
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(NodeProperties));
+		Reporter.log("Click on Nodeproperties option", true);
+		jsclick(NodeProperties);
+
+		Thread.sleep(25000);
+		jsclick(selectDocDropDownFrNode);
+		Reporter.log("Node properties dialog should be open", true);
+		Thread.sleep(3000);
+		Reporter.log("Select AllDataType ", true);
+		selectDocNamesCvRep();
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(TextKey));
+		movingclkElement(TextKey);
+		//TextKey.clear();
+		Reporter.log("Enter value into TextKey field", true);
+		act.moveToElement(TextKey).click().sendKeys("Document Automations").build().perform();
+	
+		Thread.sleep(3000);
+		Thread.sleep(3000);
+		
+		act.moveToElement(NodePropOKBTN).click().build().perform();
+		try {
+			WebElement updatePopup = driver.findElement(By.id("confirmMessageOk35"));
+			if (updatePopup.isDisplayed()) {
+				updatePopup.click();
+			}
+		} catch (Exception e) {
+			Reporter.log("Node Properties Updated Successfully...", true);
+		}
+		Reporter.log("Click NodeProperties dialog OK button", true);
+
+		Thread.sleep(3000);
+		Reporter.log("Click on new document tab", true);
+		movingclkElement(CreateDocTab);
+		Thread.sleep(3000);
+
+		WebElement moveToPlusIcon = driver.findElement(By.xpath("//*[@id=\"addPagesDropDown\"]/span"));
+		VisiblityOf(moveToPlusIcon);
+		Reporter.log("Click on browse icon", true);
+		movingElement(moveToPlusIcon);
+		Thread.sleep(4000);
+		// Reporter.log("Click broswe submenu");
+		WebElement browseOption = driver.findElement(By.xpath("//input[@id='viewDocumentAddPages']"));
+		movingclkElement(browseOption);
+		Reporter.log("By using AutoIT add file from the external folder ", true);
+		Thread.sleep(8000);
+		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\EdgeFileUpload.exe");
+		Thread.sleep(8000);
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			acceptAlert();
+		} catch (Exception e) {
+			Reporter.log("Alert not present. . .", true);
+		}
+		Thread.sleep(5000);
+		WebElement CreateBTN = driver.findElement(By.xpath("//*[@id=\"createDocumentSubmit\"]"));
+		jsclick(CreateBTN);
+		Reporter.log("Click on create button", true);
+		Thread.sleep(8000);
+		WebElement viewOption = driver.findElement(By.xpath("//*[@id=\"viewCreatedDocument\"]"));
+		jsclick(viewOption);
+		Reporter.log("'Document created succssfully' dialog opened, Click View button", true);
+
+		Thread.sleep(8000);
+		Reporter.log("'Document created succssfully' dialog opened, Click View button", true);
+		jsclick(RoomContextTab);
+		Thread.sleep(3000);
+		Reporter.log("Indices should save the values which are set for the Node Properties", true);
+		act.moveToElement(RoomContextTab).perform();
+		Reporter.log("Close the document", true);
+		Thread.sleep(5000);
+		Reporter.log("Mousehover on RoomContextMenu tab", true);
+		wait.until(ExpectedConditions.visibilityOf(NodeProperties));
+		jsclick(NodeProperties);
+		Reporter.log("Click on NodeProperties option, Node properties dialog should be open ", true);
+		Thread.sleep(6000);
+		jsclick(NodeResetBTN);
+		Reporter.log("Click on reset button confirm dialog OK button", true);
+		Thread.sleep(3000);
+		jsclick(NodeResetYesBTN);
+		Reporter.log("Reset confirm dialog should be open, Click Reset confirm dialog OK button", true);
+		Reporter.log("Node properties was reset successfully...", true);
+		Thread.sleep(8000);
+		jsclick(NodePropOKBTN);
+		Thread.sleep(3000);
+		try {
+			WebElement updatePopup = driver.findElement(By.id("confirmMessageOk35"));
+			if (updatePopup.isDisplayed()) {
+				updatePopup.click();
+			}
+		} catch (Exception e) {
+			System.out.println("Node Properties Updated Successfully...");
+		}
+
+		Thread.sleep(3000);
+		movingclkElement(CreateDocTab);
+		Thread.sleep(8000);
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(5000);
+		Reporter.log("Node properties verified successfully", true);
+	}
+	
+	
 	public void NodeProperties() throws Exception {
 		Thread.sleep(3000);
 
@@ -1157,9 +1290,12 @@ public class RoomContextMenu extends BaseClass {
 				"If any changes have been made by other user in the selected notification folder, the specified user will receive a notification",
 				true);
 		Thread.sleep(10000);
+		try {
 		selectElement(ForOpenNotiAgain);
-
+		}
+		catch(Exception e) {
 		// jsclick(Notification);
+		}
 		Thread.sleep(3000);
 		jsclick(NotificationDropDown);
 		Thread.sleep(3000);
@@ -1178,6 +1314,8 @@ public class RoomContextMenu extends BaseClass {
 		}
 		Thread.sleep(3000);
 		Actions act = new Actions(driver);
+	//	jsclick(Refresh_Button(driver));
+		Thread.sleep(4000);
 		act.moveToElement(RoomContextTab).perform();
 
 		wait.until(ExpectedConditions.visibilityOf(Notification));
@@ -1204,82 +1342,78 @@ public class RoomContextMenu extends BaseClass {
 	}
 
 	public void CustomDocTypes() throws Exception {
-		Reporter.log("Scenario 08: Verify RoomContextmenu 'CustomDocumentType' option", true);
-		jsclick(RoomContextTab);
-		Thread.sleep(3000);
-		jsclick(CabinetForCustomDoc);
-		GrantSuperivorPermissionForADMINAC();
-		Thread.sleep(2000);
-		jsclick(Refresh_Button(driver));
-		Thread.sleep(4000);
-		jsclick(CabinetForCustomDoc);
-		Reporter.log("Select a cabinet to set custom document type", true);
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		movingElement(RoomContextTab);
-		Reporter.log("Mousehover on Roomcontextmenu tab", true);
-		Thread.sleep(6000);
-		wait.until(ExpectedConditions.visibilityOf(customdoc));
-		Thread.sleep(3000);
-		jsclick(customdoc);
-		Reporter.log("Select Custom DocumentType Submenu", true);
-		Thread.sleep(3000);
-		Actions act = new Actions(driver);
-		try {
-			act.moveToElement(bill).click().build().perform();
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			System.out.println("Failed to add custom column");
-		}
-		try {
-			act.moveToElement(dateMask).click().build().perform();
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			System.out.println("Failed to add custom column");
-		}
-		try {
-			act.moveToElement(cvReports).click().build().perform();
-			Thread.sleep(3000);
-			act.moveToElement(WithDrawn).click().build().perform();
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			System.out.println("Failed to add custom column");
-		}
+	    Reporter.log("Scenario 08: Verify RoomContextmenu 'CustomDocumentType' option", true);
+	    jsclick(RoomContextTab);
+	    Thread.sleep(3000);
+	    jsclick(CabinetForCustomDoc);
+	    GrantSuperivorPermissionForADMINAC();
+	    Thread.sleep(2000);
+	    Thread.sleep(4000);
+	    jsclick(CabinetForCustomDoc);
+	    Reporter.log("Select a cabinet to set custom document type", true);
+	    WebDriverWait wait = new WebDriverWait(driver, 20);
+	    movingElement(RoomContextTab);
+	    Reporter.log("Mousehover on Roomcontextmenu tab", true);
+	    Thread.sleep(6000);
+	    wait.until(ExpectedConditions.visibilityOf(customdoc));
+	    Thread.sleep(3000);
+	    jsclick(customdoc);
+	    Reporter.log("Select Custom DocumentType Submenu", true);
+	    Thread.sleep(3000);
 
-		Reporter.log("Custom document type dialog box should be open", true);
-		Reporter.log("Select the required document types", true);
-		Thread.sleep(3000);
-		act.moveToElement(alldataType).click().build().perform();
+	    Actions act = new Actions(driver);
+	    
+  List<WebElement> options = Arrays.asList(bill, dateMask, cvReports, cvReports1, WithDrawn, alldataType);
+        
+        for (WebElement option : options) {
+            try {
+                // Check if the option is already selected
+                if (!option.getAttribute("class").contains("selected")) { // Update selector based on your application
+                    option.click();
+                    Reporter.log(option.getText() + " selected.", true);
+                } else {
+                    Reporter.log(option.getText() + " is already selected.", true);
+                }
+            } catch (NoSuchElementException e) {
+                System.out.println("Element not found: " + option.getText());
+            } catch (Exception e) {
+                System.out.println("Failed to select " + option.getText() + ": " + e.getMessage());
+            }
+        }
+    
+	    
+	    // Proceed with further steps
+	    WebElement OKBTNcustomcol = driver.findElement(By.xpath("(//button[@id='setCustomDocTypeOK'])[1]"));
+	    jsclick(OKBTNcustomcol);
+	    Reporter.log("Click on custom document type dialog OK button", true);
+	    Thread.sleep(3000);
+	    jsclick(CreateDocTab);
+	    Reporter.log("Click on new document tab", true);
+	    Thread.sleep(5000);
+	    movingclkElement(selectDocDropDown);
+	    Reporter.log("Click on 'Select DocumentType' option", true);
+	    Thread.sleep(15000);
+	    jsclick(RoomContextTab);
+	    Thread.sleep(4000);
+	    Reporter.log("It should show the saved document types", true);
+	    jsclick(CabinetForCustomDoc);
+	    Thread.sleep(4000);
+	    Reporter.log("The saved document type displayed successfully", true);
+	    movingElement(RoomContextTab);
+	    Thread.sleep(3000);
+	    Reporter.log("Custom document type verified successfully", true);
+	    wait.until(ExpectedConditions.visibilityOf(customdoc));
+	    Thread.sleep(3000);
+	    Reporter.log("MouseHover on RoomContextmenu tab and select Reset custom document option", true);
+	    Reporter.log("Custom document type reset successfully...", true);
+	    jsclick(ResetcustomDocType);
+	    Thread.sleep(7000);
 
-		Thread.sleep(5000);
-		WebElement OKBTNcustomcol = driver.findElement(By.xpath("(//button[@id='setCustomDocTypeOK'])[1]"));
-		jsclick(OKBTNcustomcol);
-		Reporter.log("Click on custom document type dialog OK button", true);
-		Thread.sleep(3000);
-		jsclick(CreateDocTab);
-		Reporter.log("Click on new document tab", true);
-		Thread.sleep(5000);
-		movingclkElement(selectDocDropDown);
-		Reporter.log("Click on 'Select DocumentType' option", true);
-		Thread.sleep(15000);
-		jsclick(RoomContextTab);
-		Thread.sleep(4000);
-		Reporter.log("It should show the saved document types", true);
-		jsclick(CabinetForCustomDoc);
-		Thread.sleep(4000);
-		Reporter.log("The saved document type displayed successfully", true);
-		movingElement(RoomContextTab);
-		Thread.sleep(3000);
-		Reporter.log("Custom document type verified successfully", true);
-		wait.until(ExpectedConditions.visibilityOf(customdoc));
-		Thread.sleep(3000);
-		Reporter.log("MouseHover on RoomContextmenu tab and select Reset custom document option", true);
-		Reporter.log("Custom document type reset successfully...", true);
-		jsclick(ResetcustomDocType);
-		Thread.sleep(7000);
-
-		jsclick(Refresh_Button(driver));
-		// Reporter.log("Custom documents verified successfully", true);
+	    jsclick(Refresh_Button(driver));
+	    // Reporter.log("Custom documents verified successfully", true);
 	}
+
+
 
 	public void CategoryPrivate() throws Exception {
 		Thread.sleep(3000);
@@ -1382,6 +1516,9 @@ public class RoomContextMenu extends BaseClass {
 	public void CategoryPublic() throws Exception {
 		Reporter.log("Scenario 10: RoomcontextMenu tab 'Category - public' option", true);
 		Thread.sleep(5000);
+		jsclick(Refresh_Button(driver));
+		Thread.sleep(4000);
+		
 		jsclick(Cabinet);
 		// jsclick(Cabinet);
 		Thread.sleep(2000);

@@ -40,20 +40,28 @@ ManualWorkflow extends Generic.BaseClass {
 
 	public static SoftAssert so;
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(ManualWorkflow.class);
-	/*
-	 * @BeforeClass public void ladBrowser() { loadBrowser("Chrome");
-	 * log.info("Chrome Browser started Successfully...");
-	 * driver.manage().deleteAllCookies(); launchUrl();
-	 * 
-	 * log.info("CVS URL started Successfully..."); }
-	 */
+	@BeforeClass
+	public void loadBrowser() {
+		loadBrowser("Chrome");
+
+		log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+		log.info("Contentverse URL launched successfully...");
+	}
 
 	@Test(priority = 1)
 	public void Login() throws Exception {
-		loginCVS();
-		Reporter.log("User Logged in successfull...");
-		log.info("EWA User is logged in successfully...");
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
+
 
 	@Test(priority = 2)
 	public void TC_1_SendDoc() throws InterruptedException {
@@ -70,6 +78,7 @@ ManualWorkflow extends Generic.BaseClass {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(4000);
 		todo.LogVidyaTaskUser1();
+		jsclick(Refresh_Button(driver));
 		log.info("Task User1 logged in successfully... ");
 		log.info("New manual for automation first task user vidya has logged in successful");
 	}
@@ -88,6 +97,7 @@ ManualWorkflow extends Generic.BaseClass {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(8000);
 		todo.refrshLogNishaTaskUser();
+		jsclick(Refresh_Button(driver));
 		log.info("Task user 2 RNisha Logged in successful");
 	}
 
@@ -103,6 +113,9 @@ ManualWorkflow extends Generic.BaseClass {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(3000);
 		todo.refrshLogDipakTaskUser();
+		Thread.sleep(3000);
+	
+		jsclick(Refresh_Button(driver));
 		Reporter.log("TaskUser3 Dipak Logged in successful");
 	}
 

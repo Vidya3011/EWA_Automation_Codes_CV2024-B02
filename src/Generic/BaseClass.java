@@ -72,11 +72,14 @@ public class BaseClass {
 	public static void loadBrowser(String browserName) {
 
 		if (browserName.equals("Chrome")) {
-			// WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\nisha.r\\Downloads\\chromedriver-win64\\chromedriver.exe");
-			// driver = new ChromeDriver();
-			ChromeOptions options = new ChromeOptions();
+			WebDriverManager.chromedriver().setup();
+			
+			/*
+			 * System.setProperty("webdriver.chrome.driver",
+			 * "C:\\Users\\nisha.r\\Downloads\\chromedriver-win64\\chromedriver.exe"); //
+			 * driver = new ChromeDriver();
+			 */
+			  ChromeOptions options = new ChromeOptions();
 			// options.addArguments("--headless");
 			// options.addArguments("--disable-extensions");
 			options.addArguments("--disable-extensions");
@@ -108,15 +111,14 @@ public class BaseClass {
 
 	// 2.
 	public static void launchUrl() {
-		driver.get("http://10.4.10.60:8080/CVWeb/cvLgn");
+		driver.get("http://10.4.10.21:8080/CVWeb/cvLgn");
 		Reporter.log("EWA URL launched successfull");
 	}
-	
+
 	public static void launch47Url() {
-		driver.get("http://10.4.10.47:8080/CVWeb/cvLgn");
+		driver.get("http://10.4.10.21:8080/CVWeb/cvLgn");
 		Reporter.log("EWA URL launched successfull");
 	}
-	
 
 	// 3.
 	public static void launchLocalUrl() {
@@ -136,7 +138,7 @@ public class BaseClass {
 	}
 
 	//////////////////////////////////// ====================================================NishaR
-	
+
 	public static void loginRNISHA47() throws Exception {
 		Thread.sleep(4000);
 
@@ -146,13 +148,13 @@ public class BaseClass {
 
 		UserName.sendKeys(readFromExLogin(2, 0));
 		Thread.sleep(3000);
-		driver.findElement(By.id("loginPassword")).sendKeys("vw");
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");
 		Reporter.log("Enter valid password into password field", true);
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByIndex(0);
-		
-		//sel.selectByVisibleText(ExcelLogin(1, 2));
+		sel.selectByIndex(2);
+
+		// sel.selectByVisibleText(ExcelLogin(1, 2));
 		Thread.sleep(4000);
 		Reporter.log("Select a Room", true);
 		try {
@@ -179,7 +181,6 @@ public class BaseClass {
 			Reporter.log("Session message not appeared");
 		}
 	}
-	
 
 	public static void loginCVS() throws Exception {
 		Thread.sleep(4000);
@@ -335,16 +336,18 @@ public class BaseClass {
 	public static void LogInAdmin() throws Exception {
 		Reporter.log("Log into EWA");
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(readFromExLogin(3, 0));
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("cvadmin");//
 		Reporter.log("Enter valid username into username text box");
 		Thread.sleep(3000);
-		driver.findElement(By.id("loginPassword")).sendKeys(readFromExLogin(3, 1));
+		driver.findElement(By.id("loginPassword")).sendKeys("vw");//readFromExLogin(3, 1)
 		Reporter.log("Enter valid password into password text box");
 		Thread.sleep(2000);
 
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByVisibleText(ExcelLogin(1, 2));
+		sel.selectByIndex(3);
+		
+		//sel.selectByVisibleText(ExcelLogin(1, 2));
 		Thread.sleep(4000);
 		Reporter.log("Select a Room", true);
 

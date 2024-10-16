@@ -10,17 +10,20 @@ import Pom.TemplatePage;
 
 public class Negative_Templates extends Generic.BaseClass {
 
-	/*
-	 * @BeforeClass public void Launch_Browser() throws Exception {
-	 * 
-	 * loadBrowser("edge"); launchUrl(); Reporter.log("CVS URL started Successfull",
-	 * true); }
-	 * 
-	 * @Test public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully.", true);
-	 * 
-	 * }
-	 */
+	/*@BeforeClass
+	public void Launch_Browser() throws Exception {
+
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfull", true);
+	}
+
+	@Test
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully.", true);
+
+	}*/
 
 	@Test(priority = 1)
 	public void TC_01_Login_Template_permissionassign_User_and_verify_message_Select_Folder_ToCreateDoc()

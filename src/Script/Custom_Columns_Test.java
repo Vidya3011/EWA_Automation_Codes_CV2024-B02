@@ -5,25 +5,27 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Pom.Customcolumns;
 
-//Dipak Automation Coading
+// Dipak Automation script
 
 public class Custom_Columns_Test extends Generic.BaseClass {
 
-	/*
-	 * @BeforeClass
-	 * 
-	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
-	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
-	 * 
-	 * @Test
-	 * 
-	 * public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully", true);
-	 * 
-	 * }
-	 */
+	/*@BeforeClass
 
-	// Custom columns for Room
+	public void Launch_Browser() throws Exception {
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully", true);
+
+	}*/
+
+	// Room level Custom columns
 
 	@Test(priority = 1)
 	public void TC_01_Verify_Open_Custom_List_Dialog_Title() throws Exception {
@@ -33,7 +35,7 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	}
 
 	@Test(priority = 2)
-	public void TC_02_Verify__Text_of_Custom_List_Dialog() throws Exception {
+	public void TC_02_Verify_Text_of_Custom_List_Dialog() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Verify_Custom_List_Dialog_Text();
@@ -61,14 +63,7 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 	}
 
 	@Test(priority = 6)
-	public void TC_06_Verify_Custom_Columns_RoomLevel() throws Exception {
-
-		Customcolumns pojo = new Customcolumns();
-		pojo.Custom_Columns_RoomLevel();
-	}
-
-	@Test(priority = 7)
-	public void TC_07_Verify_Reset_Columns_Functionality() throws Exception {
+	public void TC_06_Verify_Reset_Columns_Functionality() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Reset_Columns_RoomLevel();
@@ -76,59 +71,59 @@ public class Custom_Columns_Test extends Generic.BaseClass {
 
 	// Custom columns for Search
 
-	@Test(priority = 8)
-	public void TC_08_Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn() throws Exception {
+	@Test(priority = 7)
+	public void TC_07_Open_Custom_List_Dialog_And_Verify_Title_Searchcolumn() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Title_Custom_Columns_Search();
 	}
 
-	@Test(priority = 9)
-	public void TC_09_Verify__Text_of_Custom_List_Dialog_Searchcolumn() throws Exception {
+	@Test(priority = 8)
+	public void TC_08_Verify_Text_of_Custom_List_Dialog_Searchcolumn() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Text_Custom_Columns_Search();
 	}
 
-	@Test(priority = 10)
-	public void TC_10_Verify_Set_Custom_Columns_for_Search() throws Exception {
+	@Test(priority = 9)
+	public void TC_9_Verify_Set_Custom_Columns_for_Search() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Set_Custom_Columns_Search();
 	}
 
-	@Test(priority = 11)
-	public void TC_11_Verify_Reset_Columns_for_Search() throws Exception {
+	@Test(priority = 10)
+	public void TC_10_Verify_Reset_Columns_for_Search() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Reset_Custom_Columns_Search();
 	}
 
-	// Custom column for ToDolist
+// Custom column for ToDolist
 
-	@Test(priority = 12)
-	public void TC_12_Open_Custom_List_Dialog_And_Verify_Title_ToDoList() throws Exception {
+	@Test(priority = 11)
+	public void TC_11_Open_Custom_List_Dialog_And_Verify_Title_ToDoList() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Title_Custom_Columns_TodoList();
 	}
 
-	@Test(priority = 13)
-	public void TC_13_Verify_Text_of_Custom_List_Dialog_ToDoList() throws Exception {
+	@Test(priority = 12)
+	public void TC_12_Verify_Text_of_Custom_List_Dialog_ToDoList() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Text_Custom_Columns_TodoList();
 	}
 
-	@Test(priority = 14)
-	public void TC_14_Verify_Set_Custom_Columns_for_ToDoList() throws Exception {
+	@Test(priority = 13)
+	public void TC_13_Verify_Set_Custom_Columns_for_ToDoList() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Set_Custom_Columns_TodoList();
 	}
 
-	@Test(priority = 15)
-	public void TC_15_Reset_Custom_Columns_for_ToDoList() throws Exception {
+	@Test(priority = 14)
+	public void TC_14_Reset_Custom_Columns_for_ToDoList() throws Exception {
 
 		Customcolumns pojo = new Customcolumns();
 		pojo.Reset_Custom_Columns_TodoList();

@@ -14,19 +14,21 @@ import Pom.My_Preferences;
 //Dipak Automation script
 public class My_Preferences_Viewer_Zoom extends Generic.BaseClass {
 
-	/*
-	 * @BeforeClass
-	 * 
-	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
-	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
-	 * 
-	 * @Test
-	 * 
-	 * public void Login_EWA() throws Exception { LogDipakUser();
-	 * Reporter.log("User has logged in successfully.", true);
-	 * 
-	 * }
-	 */
+	/*@BeforeClass
+
+	public void Launch_Browser() throws Exception {
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully.", true);
+
+	}*/
 
 	@Test(priority = 1)
 	public void TC_01_Verify_Viewer_Zoom_Fit_To_Width() throws Exception {

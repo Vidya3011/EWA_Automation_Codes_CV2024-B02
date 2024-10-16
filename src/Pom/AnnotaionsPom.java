@@ -307,7 +307,7 @@ public class AnnotaionsPom extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("Save Confirm Dialog Not Displayed");
 		}
-		Thread.sleep(7000);
+		Thread.sleep(3000);
 		movingElement(AnnotationTab);
 
 		Reporter.log("Mouse hover on the annotation icon");
@@ -359,6 +359,57 @@ public class AnnotaionsPom extends BaseClass {
 		Thread.sleep(8000);
 
 	}
+	
+	
+	
+	public void RegisterCustomStampAnnotation() throws Exception {
+		Language pojo = new Language();
+
+		Reporter.log("Scenario 2:Open the document and Add Register custom stamp Annotation on the page");
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		jsclick(RoomContextTab);
+		Thread.sleep(4000);
+		Reporter.log("Click on room context menu tab");
+		jsclick(Cabinet);
+		// Reporter.log("Click on the cabinet");
+		Thread.sleep(3000);
+		ElementToBeClickable(Drawer);
+		selectElement(Drawer);
+		// Reporter.log("Click on the drawer");
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.elementToBeClickable(Folder));
+		selectElement(Folder);
+		// Reporter.log("Open the folder");
+		Thread.sleep(8000);
+		AdvancedViewer an = new AdvancedViewer();
+		an.create_document_Auto();
+
+		Thread.sleep(4000);
+		try {
+			WebElement CreateAsNew = driver.findElement(By.xpath("//*[@id=\"messageButtonCreate_as_New29\"]"));
+			jsclick(CreateAsNew);
+
+		} catch (Exception e) {
+			System.out.println("Overwrite dialog not present");
+		}
+		try {
+			jsclick(SaveConfirmYes);
+
+		} catch (Exception e) {
+			System.out.println("Save Confirm Dialog Not Displayed");
+		}
+		Thread.sleep(7000);
+		movingElement(AnnotationTab);
+
+		Reporter.log("Mouse hover on the annotation icon");
+	
+	
+	
+	
+	
+	}	
+	
+	
 
 	public void HighLighFunction() throws Exception {
 		Reporter.log("Scenario 03: Verify Highlight annotation ");

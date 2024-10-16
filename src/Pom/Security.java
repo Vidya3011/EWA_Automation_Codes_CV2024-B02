@@ -2,7 +2,7 @@ package Pom;
 
 //Dipak Automation Coading
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 //Dipak Automation script
@@ -14,7 +14,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.asynchttpclient.util.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -44,17 +43,20 @@ public class Security extends Generic.BaseClass {
 	@FindBy(xpath = "//li[normalize-space()='cvadmins']") // Here you can change groupname instaed cvadmins
 	private WebElement Click_Groupcvadmin;
 
-	@FindBy(xpath = "//li[normalize-space()='cvnamed']") // Here you can change groupname instaed cvnamed
-	private WebElement Click_Groupcvnamed;
+	@FindBy(xpath = "//li[normalize-space()='ECGroup']") // Here you can change groupname instaed EcGroup
+	private WebElement Click_GroupECGroup;
 
-	@FindBy(xpath = "//*[@id=\"menu-content\"]/li[3]/a/span/img")
-	private WebElement cvnamed;
+	@FindBy(xpath = "//*[@id=\"menu-content\"]/li[4]/a/span/img")
+	private WebElement EcGroup;
 
 	@FindBy(xpath = "//*[@id=\"menu-content\"]/li[2]")
-	private WebElement cvadmins;
+	private WebElement cvadmins; 
+	
+	@FindBy(xpath = "//a[normalize-space()='dipak']")
+	private WebElement EcGroup_User;
 
-	@FindBy(xpath = "//*[@id=\"cvnamed\"]/li[1]/a/img")
-	private WebElement cvnamed_User;
+	@FindBy(xpath = "//a[normalize-space()='dipak']") // User which you want to select
+	private WebElement Select_ValidationUser;
 
 	@FindBy(xpath = "//*[@id=\"security\"]")
 	private WebElement Security_option;
@@ -230,9 +232,6 @@ public class Security extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"newEntry\"]")
 	private WebElement NewEntry;
 
-	@FindBy(xpath = "//a[normalize-space()='dipak']")
-	private WebElement Select_ValidationUser;
-
 	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
 	private WebElement MoveTo_Menu_Recent;
 
@@ -319,7 +318,7 @@ public class Security extends Generic.BaseClass {
 		jsclick(UserSearchbox);
 		UserSearchbox.sendKeys(Security_excelRead(4, 0));
 		Thread.sleep(2000);
-		jsclick(Click_Groupcvnamed);
+		jsclick(Click_GroupECGroup);
 	}
 
 	public WebElement getSelect_Document_Type_Dropdown() {
@@ -404,11 +403,6 @@ public class Security extends Generic.BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is already Logged");
 		}
-		if (Nobutton.isDisplayed() == true) {
-			movingclkElement(Nobutton);
-		} else {
-			// Saving dialog not present
-		}
 		try {
 			Thread.sleep(2000);
 			jsclick(CancelSecuritydialog);
@@ -439,9 +433,9 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on  Security dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(6000);
-		Reporter.log("Select cvnamed Group", true);
+		Reporter.log("Select EcGroup Group", true);
 		jsclick(Ok_button_UserDialog);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security dialog Ok button", true);
@@ -468,10 +462,10 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on  Security dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(6000);
-		Reporter.log("Select cvnamed Group", true);
-		jsclick(cvnamed_User);
+		Reporter.log("Select EcGroup Group", true);
+		jsclick(EcGroup_User);
 		Thread.sleep(6000);
 		Reporter.log("Select User from Group", true);
 		jsclick(Ok_button_UserDialog);
@@ -546,7 +540,7 @@ public class Security extends Generic.BaseClass {
 		selectElement(Select_Folder1);
 		Thread.sleep(2000);
 		Reporter.log("select a Folder", true);
-		jsclick(OK_Button_BrowseforFolder);
+		movingclkElement(OK_Button_BrowseforFolder);
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button ", true);
 		getSelect_Document_Type_Dropdown();
@@ -711,10 +705,10 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(6000);
-		Reporter.log("Select cvnamed Group", true);
-		jsclick(cvnamed_User);
+		Reporter.log("Select EcGroup Group", true);
+		jsclick(EcGroup_User);
 		Thread.sleep(6000);
 		Reporter.log("Select User from Group", true);
 		jsclick(Ok_button_UserDialog);
@@ -757,9 +751,6 @@ public class Security extends Generic.BaseClass {
 		LogDipakUser();
 		Thread.sleep(6000);
 		Reporter.log("Login EWA with User Credential ", true);
-		Refresh_Button();
-		Thread.sleep(6000);
-		Reporter.log("Click on Refresh button", true);
 		selectElement(Select_Cabinet);
 		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
@@ -785,7 +776,7 @@ public class Security extends Generic.BaseClass {
 			System.out.println("delete option found disabled");
 		}
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		jsclick(Select_DocumentList);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List ", true);
@@ -914,10 +905,10 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(6000);
-		Reporter.log("Click on cvnamed Group", true);
-		jsclick(cvnamed_User);
+		Reporter.log("Click on EcGroup Group", true);
+		jsclick(EcGroup_User);
 		Thread.sleep(6000);
 		Reporter.log("Select from Group", true);
 		jsclick(Ok_button_UserDialog);
@@ -1076,10 +1067,10 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security Dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(6000);
 		Reporter.log("Select Cvnamed Group", true);
-		jsclick(cvnamed_User);
+		jsclick(EcGroup_User);
 		Thread.sleep(3000);
 		Reporter.log("Select User from Group", true);
 		movingclkElement(Ok_button_UserDialog);
@@ -1132,7 +1123,7 @@ public class Security extends Generic.BaseClass {
 		softAssert.assertTrue(Renamenode.isEnabled());
 		softAssert.assertTrue(copynode.isEnabled());
 		softAssert.assertTrue(Security_option.isEnabled());
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		jsclick(Select_DocumentList);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List ", true);
@@ -1597,9 +1588,9 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on  Security dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(6000);
-		Reporter.log("Select cvnamed Group", true);
+		Reporter.log("Select EcGroup Group", true);
 		jsclick(Select_ValidationUser);
 		Thread.sleep(6000);
 		Reporter.log("Select User from Group", true);
@@ -1863,7 +1854,7 @@ public class Security extends Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(7000);
 		Reporter.log("Click on Security dialog Add button", true);
-		jsclick(cvnamed);
+		jsclick(EcGroup);
 		Thread.sleep(7000);
 		Reporter.log("Select Cvnamed Group", true);
 		jsclick(Select_ValidationUser);
@@ -1936,6 +1927,6 @@ public class Security extends Generic.BaseClass {
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
-
+		
 	}
 }
