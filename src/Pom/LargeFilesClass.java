@@ -234,7 +234,7 @@ public class LargeFilesClass extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("Alert not present");
 		}
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 
 		jsclick(Create_Button);
 		Reporter.log("Click on create button");

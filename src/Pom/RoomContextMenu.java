@@ -369,7 +369,7 @@ public class RoomContextMenu extends BaseClass {
 	@FindBy(xpath = ("(//button[@id='reset'])[1]"))
 	private WebElement resetBTNmyPref;
 
-	@FindBy(xpath = ("//div[@id='viewDocumentnavigator']/ul/li[3]/a"))
+	@FindBy(xpath = ("//div[@id='viewDocumentnavigator']/ul/li[2]/a"))
 	private WebElement CabinetForCustomDoc;
 
 	@FindBy(xpath = ("//a[@id='custmDocumentTypes']"))

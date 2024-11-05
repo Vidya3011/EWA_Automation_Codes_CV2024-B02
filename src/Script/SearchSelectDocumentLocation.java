@@ -46,7 +46,7 @@ public class SearchSelectDocumentLocation extends Generic.BaseClass {
 	@BeforeClass
 	public void ladBrowser() {
 		loadBrowser("Chrome");
-
+	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
 		launch47Url();
@@ -54,20 +54,20 @@ public class SearchSelectDocumentLocation extends Generic.BaseClass {
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
-
+	
 	@Test(priority = 1)
 	public void Login() throws Exception {
-
+	
 		// LogoutPage();
 		loginRNISHA47();
-
+	
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
 	
 
 
-/*	@Test(priority = 2) // blank search
+	@Test(priority = 2) // blank search
 	public void A_BlankSearch() throws InterruptedException {
 		Reporter.log("Scenario 01: Search tab - blank search");
 		SearchFunction sr = new SearchFunction();
@@ -203,7 +203,7 @@ public class SearchSelectDocumentLocation extends Generic.BaseClass {
 
 		log.info(" verify Search text contains functionality with all of the words option.");
 	}
-*/
+
 
 	@Test(priority = 21)
 	public void AppendToHit() throws InterruptedException, IOException {

@@ -20,6 +20,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -67,10 +68,10 @@ public class TemplatePage extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"templateDocumentPermissions\"]/a")
 	private WebElement Select_Document_Template;
 
-	@FindBy(xpath = "//div[@id='templatePrefs']/div[2]/div[3]/div/div/div")
+	@FindBy(xpath = "//*[@id=\"templatePrefs\"]/div[2]/div[3]/div/div/div")
 	private WebElement Select_Userlist;
 
-	@FindBy(xpath = "//*[@id='templateDocDrop_popup']/div/div/span[2]")
+	@FindBy(css = ".e-selectall-parent .e-frame")
 	private WebElement Select_AllUser;
 
 	@FindBy(xpath = "//*[@id=\"templatePermissionApply\"]")
@@ -94,7 +95,7 @@ public class TemplatePage extends Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"createTemplateBtn\"]")
 	private WebElement Save_Template_Button;
 
-	@FindBy(xpath = "//div[@id='addPagesDropDown']/span")
+	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
 	private WebElement Move_To_PlusIcon;
 
 	@FindBy(xpath = "//*[@id=\"createTemplateCancel\"]")
@@ -388,7 +389,8 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "Template Created Successfully!";
 		String actualtext = Template_Created_Message_Verify.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext);
+		Reporter.log(Template_Created_Message_Verify.getText(), true);
 
 	}
 
@@ -403,7 +405,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "Template Edited Successfully!";
 		String actualtext = EditTemplate_Created_Message_Verify.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 
 	}
 
@@ -419,13 +421,11 @@ public class TemplatePage extends Generic.BaseClass {
 
 	}
 
-	SoftAssert softAssert=new SoftAssert();
-	
 	public void getFolderSelectMessage() {
 
 		String expectedtext = "Please select a folder to create document";
 		String actualtext = FolderSelectMessage.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 		Reporter.log(FolderSelectMessage.getText() + " this validation message should show", true);
 		movingclkElement(CommentOK);
 
@@ -435,7 +435,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "Please add pages to the template before creating!";
 		String actualtext = addpagesMessage.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(addpagesMessage.getText() + " this validation message should show", true);
 		movingclkElement(CommentOKbutton);
 
@@ -445,7 +445,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "*Template name should be specified.";
 		String actualtext = validationerror.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(validationerror.getText() + " this validation message should show", true);
 
 	}
@@ -454,7 +454,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "ReportName*   field is required";
 		String actualtext = Reportvaluevalidationerror.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(Reportvaluevalidationerror.getText() + " this validation message should show", true);
 		jsclick(CommentOKbutton);
 
@@ -464,7 +464,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "Please enter file name";
 		String actualtext = Filenamevalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(Filenamevalidation.getText() + " this validation message should show", true);
 		jsclick(CommentOKbutton);
 
@@ -474,7 +474,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "Document created successfully";
 		String actualtext = NavigateDoc.getText();
-		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(NavigateDoc.getText() + " this message should show", true);
 		jsclick(NavigateButton);
 
@@ -484,7 +484,7 @@ public class TemplatePage extends Generic.BaseClass {
 
 		String expectedtext = "Please add form fields before mapping.";
 		String actualtext = Formmappingvalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 		Reporter.log(Formmappingvalidation.getText() + " this validation message should show", true);
 		jsclick(FormOKbutton);
 	}
@@ -510,6 +510,8 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
+		Thread.sleep(6000);
+		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Setting_Icon);
@@ -559,7 +561,6 @@ public class TemplatePage extends Generic.BaseClass {
 		} else {
 			System.out.println("user have Template document permission");
 		}
-		Thread.sleep(6000);
 		jsclick(Destination_Folder_Textbox);
 		Thread.sleep(6000);
 		Reporter.log("Click on Destination Folder Textbox", true);
@@ -573,11 +574,19 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("select a Folder", true);
 		jsclick(OK_Button_BrowseforFolder);
-		Thread.sleep(6000);
+		Thread.sleep(9000);
 		Reporter.log("Click on Ok button", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(6000);
+		Reporter.log("Select Value from Document type Dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(6000);
+		Reporter.log("Select Report Name Textbox", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Reporter.log("Enter value into Report Name field", true);
 		movingclkElement(Move_To_PlusIcon);
 		getBrowse_Option();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Reporter.log("Browse Document page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
 		Thread.sleep(6000);
@@ -590,17 +599,6 @@ public class TemplatePage extends Generic.BaseClass {
 			System.out.println("Alert is not present...");
 		}
 		Reporter.log("By using AutoIT add file from external folder", true);
-		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(8000);
-		Reporter.log("Select Value from Document type Dropdown", true);
-		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
-		Reporter.log("Enter value into Report Name field", true);
-		Thread.sleep(8000);
-		movingclkElement(Move_To_PlusIcon);
-		getBrowse_Option();
-		Thread.sleep(3000);
-		Reporter.log("Browse Document page", true);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
 		Thread.sleep(6000);
 		jsclick(Save_Template_Button);
 		Reporter.log("Click on Save Template button", true);
@@ -634,9 +632,9 @@ public class TemplatePage extends Generic.BaseClass {
 			// Delete Existing Template and create new
 
 			jsclick(Template_Created_OK_button);
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 			getMoveto_Templates_Option();
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 			Reporter.log("Mousehover to Template Tab", true);
 			movingclkElement(Select_Created_Template);
 			Reporter.log("Select Created Template Page", true);
@@ -679,11 +677,13 @@ public class TemplatePage extends Generic.BaseClass {
 			Thread.sleep(9000);
 			Reporter.log("Click on Ok button", true);
 			jsclick(getSelect_Document_Type_Dropdown());
-			Thread.sleep(8000);
+			Thread.sleep(6000);
 			Reporter.log("Select Value from Document type Dropdown", true);
+			jsclick(Select_ReportName_Test);
+			Thread.sleep(6000);
+			Reporter.log("Select Report Name Textbox", true);
 			Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
 			Reporter.log("Enter value into Report Name field", true);
-			Thread.sleep(8000);
 			movingclkElement(Move_To_PlusIcon);
 			getBrowse_Option();
 			Thread.sleep(3000);
@@ -701,9 +701,8 @@ public class TemplatePage extends Generic.BaseClass {
 			Reporter.log("By using AutoIT add file from external folder", true);
 			Thread.sleep(6000);
 			movingclkElement(Move_To_PlusIcon);
-			Thread.sleep(2000);
 			getBrowse_Option();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			Reporter.log("Browse Document page", true);
 			Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
 			Thread.sleep(6000);
@@ -731,15 +730,14 @@ public class TemplatePage extends Generic.BaseClass {
 			System.out.println("Template Created succesfully");
 		}
 
-		Thread.sleep(6000);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Verifying Template Created succesfully Message", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		Reporter.log("Verifying to CreateorBrowse Template Defaultviewing", true);
-
+		Reporter.log("Click on Refresh button", true);
 	}
 
 	public void Verify_to_Edit_and_Delete_DefaultTemplate() throws Exception {
@@ -763,7 +761,8 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
+		Refresh_Button();
+		Thread.sleep(6000);
 		getMoveto_Templates_Option();
 		Thread.sleep(6000);
 		Reporter.log("Mousehover to Template Tab", true);
@@ -840,7 +839,9 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -875,18 +876,20 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button of Browse for folder Dialog", true);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		Reporter.log("Select Value from Document Type Dropdown ", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(6000);
+		Reporter.log("Click on Report Name Textbox", true);
 		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
 		Reporter.log("Enter value into Report Name field", true);
-		Thread.sleep(8000);
 		movingclkElement(Move_To_PlusIcon);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse Document page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficedoc.exe");
 		Reporter.log("By using AutoIT add file from external folder", true);
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		jsclick(Save_Template_Button);
 		Reporter.log("Click on Save Template button", true);
 		jsclick(Template_Description_No_button);
@@ -911,7 +914,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Description box Ok button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Verifying Template created successfully Message", true);
 		jsclick(Template_Created_OK_button);
 		Reporter.log("Click on Template Created Ok button", true);
@@ -939,7 +942,8 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
+		Refresh_Button();
+		Thread.sleep(6000);
 		getMoveto_Templates_Option();
 		Thread.sleep(6000);
 		Reporter.log("Mousehover to Template Tab", true);
@@ -1013,7 +1017,9 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1026,8 +1032,6 @@ public class TemplatePage extends Generic.BaseClass {
 		movingclkElement(Apply_button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Apply button", true);
-		Refresh_Button();
-		Thread.sleep(6000);
 		jsclick(Templates_MenuOption);
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Tab", true);
@@ -1047,18 +1051,20 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		Reporter.log("Select value from Document type dropdown", true);
+		jsclick(Select_ReportName_Test);
+		Thread.sleep(2000);
+		Reporter.log("Click on Report Name Textbox", true);
 		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		Reporter.log("Enter value into Report Name field", true);
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(2000);
 		getNew_pdf_Document_Option();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Browse Document Page", true);
 		getEnter_pdf_File_Name();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Enter Pdf file Name", true);
 		jsclick(pdfViewer);
 		Thread.sleep(6000);
@@ -1067,13 +1073,13 @@ public class TemplatePage extends Generic.BaseClass {
 		Actions act = new Actions(driver);
 		act.click(Textbox).moveToElement(Add_Textbox_Onpage).click().build().perform();
 
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Select and Add Textbox on  Page", true);
 		jsclick(Click_Formmapper);
 		Thread.sleep(6000);
 		Reporter.log("Click on Form mapping Option", true);
 		getSelect_Formfield();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		Reporter.log("Select Form field", true);
 		jsclick(FormOK);
 		Thread.sleep(6000);
@@ -1097,11 +1103,11 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Template Created Successfully", true);
 		jsclick(Template_Created_OK_button);
 		Reporter.log("Verifying to CreateorBrowse Formmapping Template advancedviewing", true);
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 	}
 
 	public void Verify_to_Edit_and_Delete_Formfield() throws Exception {
@@ -1124,9 +1130,9 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
+		Thread.sleep(4000);
 		getMoveto_Templates_Option();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Click on Template Tab", true);
 		movingclkElement(Select_Created_Template);
 		Thread.sleep(6000);
@@ -1198,7 +1204,9 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1215,7 +1223,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Apply button", true);
 		Refresh_Button();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Click on Refresh button", true);
 	}
 
@@ -1240,7 +1248,8 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		
+		Refresh_Button();
+		Thread.sleep(6000);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1327,17 +1336,16 @@ public class TemplatePage extends Generic.BaseClass {
 	public void verify_message_addPages_Using_SaveandClearButton() throws Exception {
 
 		Reporter.log("Test Scenario 2 : Verifying message add Pages Using Save and Clear button ", true);
-
-		if (Nobutton.isDisplayed() == true) {
-			movingclkElement(Nobutton);
-		} else {
-			// Saving dialog not present
-		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
 		}
 		Thread.sleep(6000);
 		jsclick(Save_Template_Button);
@@ -1365,7 +1373,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Save Template button", true);
 		getFolder_ErrorMessage();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Verified Error message", true);
 		Reporter.log("Add pages message verified", true);
 	}
@@ -1374,23 +1382,22 @@ public class TemplatePage extends Generic.BaseClass {
 
 		Reporter.log("Test Scenario 3 : Verifying Textbox Name and Templatename validation ", true);
 
-		if (Nobutton.isDisplayed() == true) {
-			movingclkElement(Nobutton);
-		} else {
-			// Saving dialog not present
-		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
 		Thread.sleep(6000);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Reporter.log("Select Value from Document type Dropdown", true);
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
@@ -1431,9 +1438,9 @@ public class TemplatePage extends Generic.BaseClass {
 			// Delete Existing Template and create new
 
 			jsclick(Template_Created_OK_button);
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 			getMoveto_Templates_Option();
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 			Reporter.log("Mousehover to Template Tab", true);
 			movingclkElement(Select_Created_Template);
 			Reporter.log("Select Created Template Page", true);
@@ -1479,7 +1486,6 @@ public class TemplatePage extends Generic.BaseClass {
 			Thread.sleep(3000);
 			Reporter.log("Select Value from Document type Dropdown", true);
 			movingclkElement(Move_To_PlusIcon);
-			Thread.sleep(1000);
 			getBrowse_Option();
 			Thread.sleep(3000);
 			Reporter.log("Browse Document page", true);
@@ -1496,7 +1502,6 @@ public class TemplatePage extends Generic.BaseClass {
 			Reporter.log("By using AutoIT add file from external folder", true);
 			Thread.sleep(6000);
 			movingclkElement(Move_To_PlusIcon);
-			Thread.sleep(1000);
 			getBrowse_Option();
 			Thread.sleep(2000);
 			Reporter.log("Browse Document page", true);
@@ -1527,7 +1532,7 @@ public class TemplatePage extends Generic.BaseClass {
 		}
 
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Verified Template created successfully", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
@@ -1620,7 +1625,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Select Document type dropdown", true);
 		jsclick(Select_ReportName_Test);
 		Thread.sleep(3000);
@@ -1630,7 +1635,6 @@ public class TemplatePage extends Generic.BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
@@ -1645,11 +1649,10 @@ public class TemplatePage extends Generic.BaseClass {
 			System.out.println("Alert is not present...");
 		}
 		Reporter.log("By using AutoIT add file from external folder", true);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebDriverWait wait2 = new WebDriverWait(driver, 20);
 		wait2.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
@@ -1679,7 +1682,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Description dialog OK button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Verified Template created successfully", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
@@ -1717,9 +1720,8 @@ public class TemplatePage extends Generic.BaseClass {
 		WebDriverWait wait3 = new WebDriverWait(driver, 20);
 		wait3.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getBrowse_Option();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Reporter.log("Browse a Document Page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
 		Thread.sleep(6000);
@@ -1732,7 +1734,6 @@ public class TemplatePage extends Generic.BaseClass {
 		WebDriverWait wait5 = new WebDriverWait(driver, 20);
 		wait5.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
@@ -1804,7 +1805,6 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			System.out.println("user alreday Logged");
 		}
-
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
@@ -1861,7 +1861,6 @@ public class TemplatePage extends Generic.BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getNew_Word_Document_Option();
 		Thread.sleep(2000);
 		Reporter.log("Browse Word document", true);
@@ -1894,11 +1893,10 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Enter Excel file name", true);
 		jsclick(Open_Excel_page);
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		WebDriverWait wait2 = new WebDriverWait(driver, 20);
 		wait2.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse  Document Page", true);
@@ -1930,7 +1928,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(8000);
 		Reporter.log("Click on Ok button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Verified Template created successfully", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
@@ -1962,7 +1960,7 @@ public class TemplatePage extends Generic.BaseClass {
 		Refresh_Button();
 		Thread.sleep(6000);
 		getMoveto_Templates_Option();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover to Template Tab", true);
 		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Select_Created_Template);
@@ -1994,7 +1992,6 @@ public class TemplatePage extends Generic.BaseClass {
 		} catch (Exception e) {
 			System.out.println("user alreday Logged");
 		}
-
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
@@ -2043,14 +2040,13 @@ public class TemplatePage extends Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Document type dropdown", true);
 		jsclick(Select_ReportName_Test);
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Click on Report Name", true);
 		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
 		Reporter.log("Enter value Report Name Textbox", true);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
-		Thread.sleep(1000);
 		getNew_pdf_Document_Option();
 		Thread.sleep(6000);
 		Reporter.log("Browse New Pdf document", true);

@@ -1,39 +1,38 @@
 package Script;
 
-
 import org.apache.logging.log4j.LogManager;
-import org.openqa.selenium.interactions.Actions;
-
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import Generic.BaseClass;
 import Pom.AdvancedViewer;
 
 //NishaR codes
 
 //**************************************NishaR codes*********************************************************************
-public class AdvancedViewer_Script extends Generic.BaseClass {
+public class AdvancedViewer_Script extends Generic.BaseGrid {
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
+BaseClass bc=new BaseClass();
 
-	@BeforeClass
+	/*@BeforeClass
 	public void loadBrowser() {
 		loadBrowser("Chrome");
-
+	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
 		launch47Url();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void Login() throws Exception {
 	
 		//LogoutPage();
-		loginRNISHA47();
+		bc.loginRNISHA47();
 		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
@@ -44,7 +43,7 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.AdvancedViewerOption();
-		log.info("Pdf document and office document changed as advanced viewing successfully...");
+		log.info("Pdf document and office document changed as advanced viewing successsfully...");
 		Thread.sleep(5000);
 	}
 
@@ -61,8 +60,7 @@ public class AdvancedViewer_Script extends Generic.BaseClass {
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.AdvancedViewPDFDocument();
 		Reporter.log("PDF Document verified successfull");
-	
-		
+
 	}
 
 	@Test(priority = 5)

@@ -18,27 +18,26 @@ UnsupportedFiles extends Generic.BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(UnsupportedFiles.class);
 
 	@BeforeClass
-	public void loadBrowser() {
-		loadBrowser("edge");
+	public void ladBrowser() {
+		loadBrowser("Chrome");
 
-		log.info("Chrome Browser Launched");
+	
 		Reporter.log("Chrome Browser launched Successfully...");
-		// launchUrl();
-		launchUrl();
+		launch47Url();
+		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
-		log.info("Contentverse URL launched successfully...");
+	
 	}
 
 	@Test(priority = 1)
-	public void TC_1_Login() throws Exception {
-
-		// loginCVS();
-		loginCVS();
-
-		// Reporter.log("Rnisha user logged in
-		// 'CVWin19Server.Win2019_TestRoom'successfully... ");
-		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
 	}
+
 
 	@Test(priority = 2)
 	public void TC_2_CreateDocumentWithUnsupportedFiles() throws Exception {

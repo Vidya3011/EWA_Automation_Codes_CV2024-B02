@@ -50,14 +50,14 @@ public class RoomContextMenu_Categories extends BaseClass {
 		rm.CategoryPublic();
 		jsclick(Refresh_Button(driver));
 		log.info("User can set colour of particular document in public level.works fine verified successfully...");
-
+	
 	}
-
+	
 	@Test(priority = 4)
 	public void TC_3_ChangeNavigationToID() throws Exception {
 		RoomContextMenu rm = new RoomContextMenu();
 		rm.ChangeNavigationID();
-
+	
 	}
 
 }

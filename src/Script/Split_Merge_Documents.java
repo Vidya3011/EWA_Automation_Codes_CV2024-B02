@@ -13,22 +13,42 @@ import Generic.BaseClass;
 import Pom.My_Preferences;
 
 public class Split_Merge_Documents extends BaseClass {
+	
+	@BeforeClass
+	public void loadBrowser() {
+		loadBrowser("Chrome");
 
-	/*@BeforeClass
-
-	public void Launch_Browser() throws Exception {
-		loadBrowser("edge");
-		launchUrl();
-		Reporter.log("CVS URL started Successfully", true);
+		//log.info("Chrome Browser Launched");
+		Reporter.log("Chrome Browser launched Successfully...");
+		launch47Url();
+		// launchLocalUrl();
+		Reporter.log("Contentverse URL launched successfully...");
+	//	log.info("Contentverse URL launched successfully...");
 	}
 
-	@Test
+	@Test(priority = 1)
+	public void Login() throws Exception {
+	
+		//LogoutPage();
+		loginRNISHA47();
+		
+		Reporter.log("User logged in successfully... ");
+		//log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+	}
 
-	public void Login_EWA() throws Exception {
-		LogDipakUser();
-		Reporter.log("User has logged in successfully.", true);
-
-	}*/
+	/*
+	 * @BeforeClass
+	 * 
+	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
+	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
+	 * 
+	 * @Test
+	 * 
+	 * public void Login_EWA() throws Exception { LogDipakUser();
+	 * Reporter.log("User has logged in successfully.", true);
+	 * 
+	 * }
+	 */
 
 	@Test(priority = 1)
 	public void Create_PDF_Document() throws Exception {
@@ -37,7 +57,7 @@ public class Split_Merge_Documents extends BaseClass {
 		pojo.Create_PDF_Document();
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void TC_02_Verify_CopyPaste_Viewer() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();

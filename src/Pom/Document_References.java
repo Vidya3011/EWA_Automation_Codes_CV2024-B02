@@ -22,8 +22,6 @@ public class Document_References extends Generic.BaseClass {
 	public Document_References() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	
 
 	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
 	private WebElement Select_Cabinet;
@@ -42,15 +40,15 @@ public class Document_References extends Generic.BaseClass {
 
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[2]/td[1]/label/span"))
 	private WebElement Check_Document2;
-	
+
 	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle\"]")
 	private WebElement Cancel_Button_BrowseforFolder;
 
-	@FindBy(xpath = "//*[@id=\"copyId\"]")
-	private WebElement Copy_ID;
-	
 	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
 	private WebElement Nobutton;
+
+	@FindBy(xpath = "//*[@id=\"copyId\"]")
+	private WebElement Copy_ID;
 
 	@FindBy(xpath = "//*[@id=\"docReferencePaste\"]")
 	private WebElement ReferencePaste;
@@ -75,10 +73,10 @@ public class Document_References extends Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
 	private WebElement MoveTo_Menu_Recent;
-	
+
 	@FindBy(xpath = "//*[@id=\"createDocument\"]")
 	private WebElement Click_New_Document;
-	
+
 	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
 	private WebElement Destination_Folder_Textbox;
 
@@ -90,13 +88,13 @@ public class Document_References extends Generic.BaseClass {
 
 	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 	private WebElement Select_Folder1;
-	
+
 	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
-	
+
 	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
 	private WebElement Click_Document_Type_Dropdown;
-	
+
 	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
 	private WebElement Enter_ReportName;
 
@@ -105,32 +103,31 @@ public class Document_References extends Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
 	private WebElement Browse_Option;
-	
+
 	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
 	private WebElement Create_button;
 
 	@FindBy(xpath = "//*[@id=\"modelHome\"]")
 	private WebElement Navigate_button;
-	
+
 	public WebElement getBrowse_Option() {
 		WebElement ele = Browse_Option;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele);
 		return ele;
 	}
-	
+
 	public WebElement getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
 		drop.selectByVisibleText("CVReports");
 		return Click_Document_Type_Dropdown;
 	}
-	
+
 	public void getEnter_ReportName() throws Exception {
-		
+
 		jsclick(Enter_ReportName);
 		Enter_ReportName.sendKeys(MyPreferences_excelRead(1, 0));
 	}
-
 
 	public void getMoveTo_Menu_Recent() {
 		Actions action = new Actions(driver);
@@ -164,19 +161,19 @@ public class Document_References extends Generic.BaseClass {
 		try {
 			LogDipakUser();
 			Thread.sleep(6000);
-		}catch (Exception e){
+		} catch (Exception e) {
 			System.out.println("User is already logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
 		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
-		}
-		if(Nobutton.isDisplayed()==true) {
-			movingclkElement(Nobutton);
-		}else {
-			// Saving dialog not present
 		}
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -202,16 +199,16 @@ public class Document_References extends Generic.BaseClass {
 		jsclick(Select_Document);
 		Thread.sleep(6000);
 		try {
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alt = driver.switchTo().alert();
 			alt.accept();
 		} catch (Exception e) {
 			System.out.println("Alert is not present...");
 		}
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		Reporter.log("Verified copy and paste References document", true);
-		
+
 		Actions action = new Actions(driver);
 		action.moveToElement(Click_References).click().build().perform();
 		Thread.sleep(6000);
@@ -230,19 +227,19 @@ public class Document_References extends Generic.BaseClass {
 		try {
 			LogDipakUser();
 			Thread.sleep(6000);
-		}catch (Exception e){
+		} catch (Exception e) {
 			System.out.println("User is already logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
 		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
-		}
-		if(Nobutton.isDisplayed()==true) {
-			movingclkElement(Nobutton);
-		}else {
-			// Saving dialog not present
 		}
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -276,16 +273,21 @@ public class Document_References extends Generic.BaseClass {
 		Reporter.log("Deleted added References document successfully", true);
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
-		
+
 	}
-	
+
 	public void Create_pdf_Documents() throws Exception {
-		
+
 		try {
 			LogDipakUser();
 			Thread.sleep(6000);
-		}catch (Exception e){
+		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
+		}
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
 		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
@@ -293,13 +295,8 @@ public class Document_References extends Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		if(Nobutton.isDisplayed()==true) {
-			movingclkElement(Nobutton);
-		}else {
-			// Saving dialog not present
-		}
 		Refresh_Button();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		jsclick(Click_New_Document);
 		Thread.sleep(4000);
 		Reporter.log("Click on New Document Tab", true);
@@ -331,6 +328,7 @@ public class Document_References extends Generic.BaseClass {
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\PdfDoc\\FileUploadUpdate.exe");
+		Thread.sleep(6000);
 		Reporter.log("By using AutoIT add file from external folder", true);
 		try {
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
@@ -346,5 +344,5 @@ public class Document_References extends Generic.BaseClass {
 		Reporter.log("Click on Create button", true);
 		jsclick(Navigate_button);
 		Thread.sleep(6000);
-}
+	}
 }

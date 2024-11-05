@@ -3,7 +3,9 @@ package Pom;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
+import org.apache.velocity.runtime.directive.Foreach;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptException;
@@ -293,6 +295,26 @@ public class UnSupporterFiles extends BaseClass {
 				System.out.println("Offline dialog not visible for document " + i);
 			}
 		}
+		
+		/*	List<WebElement> elements = driver.findElements(By.xpath("(//img[@class='imgP'])"));
+			
+			int size = elements.size();
+			
+			for (WebElement doc : elements) {
+				
+				String text = doc.getText();
+				
+				if(text.contains("FileName")) {
+					
+					WebElement Sel = driver.findElement(By.xpath("(//img[@class='imgP'])[1]"));
+					Sel.click();
+					
+				}
+				
+				
+			}*/
 	}
+	
+	
 
 }

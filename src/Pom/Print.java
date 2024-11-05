@@ -933,13 +933,13 @@ public class Print extends Generic.BaseClass {
 	public void SentDocumentToView() throws Exception {
 		Print pojo = new Print();
 		driver.get(
-				"http://10.4.10.60:8080/CVWeb/secureLinkLogin?serverName=CVWin19Server&roomName=Win2019_TestRoom&documentId=83701");
+				"http://10.4.10.21:8080/CVWeb/secureLinkLogin?serverName=TestServer_2024B264bit&roomName=CV2024B2_64bitDB&documentId=19871");
 		Thread.sleep(3000);
 		Reporter.log("Open securelink mail ", true);
-		secLinkUserName.sendKeys(readFromExMail(1, 0));
+		secLinkUserName.sendKeys("nisha.rahamah@computhink.in");
 		Thread.sleep(3000);
 		Reporter.log("Enter user email", true);
-		secLinkUserPwrd.sendKeys("4977138662");
+		secLinkUserPwrd.sendKeys("72d2371fc8");
 		Thread.sleep(3000);
 		Reporter.log("Enter valid password", true);
 		jsclick(secLinkLogin);

@@ -47,7 +47,7 @@ ManualWorkflow extends Generic.BaseClass {
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
 		launch47Url();
-		// launchLocalUrl();
+		
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
@@ -55,7 +55,7 @@ ManualWorkflow extends Generic.BaseClass {
 	@Test(priority = 1)
 	public void Login() throws Exception {
 	
-		//LogoutPage();
+		
 		loginRNISHA47();
 		
 		Reporter.log("User logged in successfully... ");
@@ -64,9 +64,9 @@ ManualWorkflow extends Generic.BaseClass {
 
 
 	@Test(priority = 2)
-	public void TC_1_SendDoc() throws InterruptedException {
+	public void TC_1_SendDoc() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
-		todo.SendingDocumentInworkflow();
+		todo.SendingDocumentToworkflow();
 		Thread.sleep(10000);
 		log.info("Nisha User Sending the document in to new manual for automation workflow successful");
 		Reporter.log("Logout the current session");
@@ -74,10 +74,10 @@ ManualWorkflow extends Generic.BaseClass {
 	}
 
 	@Test(priority = 3)
-	public void TC_2_refrshAndLogVidyaUser() throws Exception {
+	public void TC_2_refrshAndLogRnishaUser() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(4000);
-		todo.LogVidyaTaskUser1();
+		todo.LogRnishaTaskUser1();
 		jsclick(Refresh_Button(driver));
 		log.info("Task User1 logged in successfully... ");
 		log.info("New manual for automation first task user vidya has logged in successful");
@@ -93,26 +93,26 @@ ManualWorkflow extends Generic.BaseClass {
 	}
 
 	@Test(priority = 5)
-	public void TC_4_Task2UserNishaAccept() throws Exception {
+	public void TC_4_Task2UserVidyaAccept() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(8000);
-		todo.refrshLogNishaTaskUser();
+		todo.refrshLogVidyaTaskUser();
 		jsclick(Refresh_Button(driver));
-		log.info("Task user 2 RNisha Logged in successful");
+		log.info("Task user 2 Vidya Logged in successful");
 	}
 
 	@Test(priority = 6)
-	public void TC_5_TaskUser2RNishaRejectTheDocument() throws Exception {
+	public void TC_5_TaskUserVidyaAcceptTheDocument() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		todo.TaskUser2RNishaRejectTheDocument();
 
 	}
 
 	@Test(priority = 7)
-	public void TC_6_refrshAndLogDipak() throws Exception {
+	public void TC_6_refrshAndLogDNishaC() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		Thread.sleep(3000);
-		todo.refrshLogDipakTaskUser();
+		todo.refrshLog3rdTaskUserNishaC();
 		Thread.sleep(3000);
 	
 		jsclick(Refresh_Button(driver));
@@ -126,9 +126,9 @@ ManualWorkflow extends Generic.BaseClass {
 	}
 
 	@Test(priority = 9)
-	public void TC_8_DocEndedFromTask3DipakUser() throws Exception {
+	public void TC_8_DocEndedFromTask3NishaCUser() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
-		todo.DocEndedFromTask3DipakUser();
+		todo.DocEndedFromTask3NishaCUser();
 	}
 
 }

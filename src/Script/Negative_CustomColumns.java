@@ -10,21 +10,19 @@ import Pom.Customcolumns;
 
 public class Negative_CustomColumns extends Generic.BaseClass {
 
-	/*@BeforeClass
-
-	public void Launch_Browser() throws Exception {
-		loadBrowser("edge");
-		launchUrl();
-		Reporter.log("CVS URL started Successfully", true);
-	}
-
-	@Test
-
-	public void Login_EWA() throws Exception {
-		LogDipakUser();
-		Reporter.log("User has logged in successfully.", true);
-
-	}*/
+	/*
+	 * @BeforeClass
+	 * 
+	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
+	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
+	 * 
+	 * @Test
+	 * 
+	 * public void Login_EWA() throws Exception { LogDipakUser();
+	 * Reporter.log("User has logged in successfully.", true);
+	 * 
+	 * }
+	 */
 
 	// Custom columns negative scenario
 

@@ -111,7 +111,7 @@ public class BaseClass {
 
 	// 2.
 	public static void launchUrl() {
-		driver.get("http://10.4.10.21:8080/CVWeb/cvLgn");
+		driver.get("http://10.4.10.60:8080/CVWeb/cvLgn");
 		Reporter.log("EWA URL launched successfull");
 	}
 
@@ -339,13 +339,13 @@ public class BaseClass {
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("cvadmin");//
 		Reporter.log("Enter valid username into username text box");
 		Thread.sleep(3000);
-		driver.findElement(By.id("loginPassword")).sendKeys("vw");//readFromExLogin(3, 1)
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//readFromExLogin(3, 1)
 		Reporter.log("Enter valid password into password text box");
 		Thread.sleep(2000);
 
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByIndex(3);
+		sel.selectByIndex(2);
 		
 		//sel.selectByVisibleText(ExcelLogin(1, 2));
 		Thread.sleep(4000);
@@ -435,7 +435,9 @@ public class BaseClass {
 		Reporter.log("Enter valid password into password field", true);
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage
+		
+		sel.selectByIndex(2);
+		//sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage
 													// driver.findElement(By.xpath("//select[@id='rooms']")) name from
 													// Excel sheet
 		Reporter.log("Select a room", true);

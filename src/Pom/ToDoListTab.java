@@ -1,6 +1,5 @@
 package Pom;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +26,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import Generic.BaseClass;
+import Script.AnnotationFunctionality;
 
 //NishaR codes
 
@@ -298,7 +298,7 @@ public class ToDoListTab extends BaseClass {
 	public void SecondUserVidyaForAnnotationWf() throws Exception {
 
 		Thread.sleep(8000);
-		LogVidyaTaskUser1();
+		LogRnishaTaskUser1();
 		// log.info("New manual for automation first task user vidya has logged in
 		// successful");
 	}
@@ -328,7 +328,7 @@ public class ToDoListTab extends BaseClass {
 	public void LoggedInAsThirdUser() throws Exception {
 
 		Thread.sleep(3000);
-		refrshLogDipakTaskUser();
+		refrshLog3rdTaskUserNishaC();
 		Reporter.log("TaskUser3 Dipak Logged in successful");
 	}
 
@@ -489,7 +489,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id='todobuttons']/a[5]"))
 	private WebElement CommentButton;
 
-	@FindBy(xpath = ("//*[@id=\"taskMenu\"]/li[3]"))
+	@FindBy(xpath = ("//a[@id=\"todoReviewed\"]"))
 	private WebElement RewiewITems;
 
 	@FindBy(xpath = ("(//a[normalize-space()='Review'])[1]"))
@@ -510,7 +510,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("(//h2[@class='headerText'])[52]"))
 	private WebElement assertvalid;
 
-	@FindBy(xpath = ("//*[@id=\"taskMenu\"]/li[2]")) // pending items
+	@FindBy(xpath = ("//a[@id='todoPending']")) // pending items
 	private WebElement TodolistPendingItems;
 
 	@FindBy(xpath = ("//*[@id=\"taskMenu\"]/li[4]")) // all items
@@ -522,7 +522,7 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("(//span[@class='jconfirm-title'])[1]"))
 	private WebElement opendocwfvalidation;
 
-	@FindBy(xpath = ("//*[@id=\"sendtoworkflow\"]"))
+	@FindBy(xpath = ("//*[@id=\"viewSendToWrkflw\"]"))
 	private WebElement SendToWF;
 
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[1]/td[1]"))
@@ -534,14 +534,14 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("(//button[@id='CommentsMessageModelOk'])[1]"))
 	private WebElement docSendDialogbocOKBTN;
 
-	@FindBy(xpath = ("//*[@id=\"assignedWfTable\"]/tbody/tr[5]/td"))
+	@FindBy(xpath = ("//*[@id=\"sidbisendworkflow\"]//table/tbody/tr[2]/td"))
 	private WebElement AnyWorkflow;// new manual for automation///Here u can change the number so that it will
 									// change the wf names position
 
 	@FindBy(xpath = ("//*[@id=\"homeMenuBtn\"]/img	"))
 	private WebElement RefreshButton;
 
-	public void LogVidyaTaskUser1() throws Exception {
+	public void LogRnishaTaskUser1() throws Exception {
 		Thread.sleep(4000);
 		LogoutPage();
 		Reporter.log("Scenario 02: Task User Log into EWA");
@@ -550,11 +550,11 @@ public class ToDoListTab extends BaseClass {
 		WebElement Username = driver.findElement(By.xpath("//input[@id='userName']"));
 		Thread.sleep(3000);
 		Reporter.log("Enter task user name into user name field ");
-		Username.sendKeys(TodoListExcel(1, 1));
-		driver.findElement(By.id("loginPassword")).sendKeys("vw");//TodoListExcel(2, 1)
+		Username.sendKeys("Rnisha");//vidya
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 1)
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByIndex(3);
+		sel.selectByIndex(2);
 		Thread.sleep(3000);
 		Reporter.log("Click on Login Button");
 		try {
@@ -592,10 +592,10 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(xpath = ("//*[@id='viewDocumentnavigator']/ul/li[1]/ul/li/ul/li[1]/a"))
 	private WebElement Folder;
 
-	public void SendingDocumentInworkflow() throws InterruptedException {
+	public void SendingDocumentToworkflow() throws Exception {
 
-		Print pojo = new Print();
-		Thread.sleep(5000);
+		
+		/*Thread.sleep(5000);
 		ElementToBeClickable(Cabinet);
 		selectElement(Cabinet);
 		Reporter.log("Scenario 01: Document send to manual workflow");
@@ -608,28 +608,39 @@ public class ToDoListTab extends BaseClass {
 		selectElement(Folder);
 		Thread.sleep(5000);
 		Reporter.log("Open any folder");
-
+		
 		CheckBox.click();
 		Reporter.log("Select any document from the document list");
-
+		
 		movingElement(DocumentList);
-		Reporter.log("Mousehover on document tab");
+		Reporter.log("Mousehover on document tab");*/
+		
+		AnnotaionsPom an=new AnnotaionsPom();
+		an.WorkflowCreateDocument();
 
 		jsclick(SendToWF);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Reporter.log("Select sendto workflow option");
 
 		jsclick(AnyWorkflow);
 		Reporter.log("Select any workflow");
-
+		Thread.sleep(2000);
+		
+		jsclick(ApplyBTN);
+		Thread.sleep(2000);
+		
 		jsclick(docSendDialogbocOKBTN);
 		Reporter.log("Document send to workflow successfully dialog will be appeared...");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Reporter.log("Click confirmation dialog OK button");
 
 		Reporter.log("Document send to manual workflow successfully");
 
 	}
+	//*[@id="sidbisendworkflowOk"]
+	@FindBy(xpath = "//*[@id=\"sidbisendworkflowOk\"]")
+	private WebElement ApplyBTN;
+
 
 	@FindBy(id = "cvModelLoginValidationMessage")
 	private WebElement SessionMessage;
@@ -637,17 +648,17 @@ public class ToDoListTab extends BaseClass {
 	@FindBy(id = "cvModelLoginValidationOk")
 	private WebElement SessionMessageOK;
 
-	public void refrshLogDipakTaskUser() throws Exception {
+	public void refrshLog3rdTaskUserNishaC() throws Exception {
 		LogoutPage();
 		Reporter.log("Scenario 06: Task user log into EWA");
 		Thread.sleep(3000);
 		Reporter.log("Enter valid task user name into user name field");
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 3));
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("nisha");//TodoListExcel(1, 3)dopak
 		Reporter.log("Enter valid password into password field");
 		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByIndex(3);
+		sel.selectByIndex(2);
 		Thread.sleep(3000);
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
@@ -673,17 +684,93 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Task user log into EWA successfully...");
 	}
 
-	public void refrshLogNishaTaskUser() throws Exception {
+	
+	
+	public void LogVidyaTaskUser1() throws Exception {
 		LogoutPage();
 		Reporter.log("Scenario 4: Task user Log into EWA ");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys(TodoListExcel(1, 2));
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("Vidya");
 		Reporter.log("Enter valid task name into user name field");
-		driver.findElement(By.id("loginPassword")).sendKeys("vw");//TodoListExcel(2, 2)
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
 		Reporter.log("Enter valid password into password field ");
 		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 		Select sel = new Select(room);
-		sel.selectByIndex(3);
+		sel.selectByIndex(2);
+		Thread.sleep(3000);
+		Reporter.log("Click Login button");
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
+		}
+		Thread.sleep(3000);
+		WebElement ele = driver.findElement(By.id("submitid"));
+		jsclick(ele);
+		Thread.sleep(3000);
+		try {
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if (sessiomsg.isDisplayed()) {
+				jsclick(sessiomsgOK);
+			}
+		} catch (NoSuchElementException e) {
+			Reporter.log("Login without session message");
+		}
+		Reporter.log("Task user Logged into EWA successfully...");
+	}
+	
+	
+	public void refrshLogDipakTaskUser() throws Exception {
+		LogoutPage();
+		Reporter.log("Scenario 4: Task user Log into EWA ");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("Dipak");
+		Reporter.log("Enter valid task name into user name field");
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
+		Reporter.log("Enter valid password into password field ");
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByIndex(2);
+		Thread.sleep(3000);
+		Reporter.log("Click Login button");
+		try {
+			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+			enterCaptch.sendKeys(Captch.getText());
+		} catch (Exception e) {
+			System.out.println("Captcha is not there");
+		}
+		Thread.sleep(3000);
+		WebElement ele = driver.findElement(By.id("submitid"));
+		jsclick(ele);
+		Thread.sleep(3000);
+		try {
+			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+			if (sessiomsg.isDisplayed()) {
+				jsclick(sessiomsgOK);
+			}
+		} catch (NoSuchElementException e) {
+			Reporter.log("Login without session message");
+		}
+		Reporter.log("Task user Logged into EWA successfully...");
+	}
+	
+	
+	public void refrshLogVidyaTaskUser() throws Exception {
+		LogoutPage();
+		Reporter.log("Scenario 4: Task user Log into EWA ");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("Vidya");
+		Reporter.log("Enter valid task name into user name field");
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
+		Reporter.log("Enter valid password into password field ");
+		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+		Select sel = new Select(room);
+		sel.selectByIndex(2);
 		Thread.sleep(3000);
 		Reporter.log("Click Login button");
 		try {
@@ -985,17 +1072,49 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Task user_3 Rejected the document");
 
 	}
+	
+	
+	public void Originator_Pending_Items() throws Exception {
+		ToDoListTab todo = new ToDoListTab();
+		Reporter.log("Scenario 09: Originator reviewed the  dynamic workflow document");
+		SoftAssert so = new SoftAssert();
+		Reporter.log("Select a todolist tab");
+		movingElement(TodolistTab);
+		Thread.sleep(3000);
+		Reporter.log("Select New items");
+		jsclick(RewiewITems);
+		Thread.sleep(6000);
+		Reporter.log("Expand any document metadata option");
+		VisiblityOf(Metadata);
+		movingclkElement(Metadata);
+		Thread.sleep(3000);
+		Reporter.log("Select Review button");
+		jsclick(ReviewButton);
+		Thread.sleep(3000);
+		Reporter.log("Enter comment in the Review dialog box");
+		WorkflowComments.sendKeys(TodoListExcel(1, 5));
+		Thread.sleep(3000);
+		WorkflowCommentsOKButton.click();
+
+		Thread.sleep(8000);
+		jsclick(Refresh_Button(driver));
+		Reporter.log("Document Reviewed Successfully");
+		Reporter.log("Originator Reviewed the document");
+
+	}
+    @FindBy(xpath="//*[@id='review']")
+	private WebElement ReviewButton;
 
 	public void SendAndNewItemsMetaDataAgree() throws Exception {
 		Reporter.log("Scenario 03:Task User1 Accept the workflow document");
 		ToDoListTab todo = new ToDoListTab();
 		SoftAssert so = new SoftAssert();
 		Thread.sleep(3000);
-		jsclick(TodolistTab);
+		movingElement(TodolistTab);
 		Reporter.log("Click on Todolist tab");
 		Thread.sleep(3000);
 
-		jsclick(NewItems);
+		jsclick(TodolistPendingItems);
 		Reporter.log("Select Newitems option");
 		Thread.sleep(5000);
 		ElementToBeClickable(Metadata);
@@ -1019,8 +1138,8 @@ public class ToDoListTab extends BaseClass {
 	public void TaskUser2RNishaRejectTheDocument() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
 		SoftAssert so = new SoftAssert();
-		Reporter.log("Scenario 05: Task user2 Reject the workflow document");
-		jsclick(TodolistTab);
+		Reporter.log("Scenario 05: Task user2 Accept the workflow document");
+		movingElement(TodolistTab);
 		Reporter.log("Click on Todolist tab ");
 		Thread.sleep(3000);
 		jsclick(NewItems);
@@ -1030,7 +1149,7 @@ public class ToDoListTab extends BaseClass {
 		movingclkElement(Metadata);
 		Reporter.log("Expand workflow document metadata option");
 		Thread.sleep(3000);
-		jsclick(RejectButton);
+		jsclick(AcceptButton);
 		Reporter.log("Click Reject button");
 		Thread.sleep(3000);
 		Reporter.log("Add comment in Reject dialog box");
@@ -1069,7 +1188,7 @@ public class ToDoListTab extends BaseClass {
 		// comments successfully");
 	}
 
-	public void DocEndedFromTask3DipakUser() throws Exception {
+	public void DocEndedFromTask3NishaCUser() throws Exception {
 
 		Reporter.log("Scenario 07: Task user3 will do End workflow");
 		movingElement(TodolistTab);
@@ -1083,7 +1202,7 @@ public class ToDoListTab extends BaseClass {
 		jsclick(Metadata);
 		Reporter.log("Click on Endworkflow button");
 		Thread.sleep(3000);
-		jsclick(EndWfButton);
+		jsclick(AcceptButton);
 		Thread.sleep(3000);
 		Reporter.log("Enter comment in Endworkflow dialog");
 		WorkflowComments.sendKeys(TodoListExcel(2, 6));

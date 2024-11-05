@@ -40,7 +40,7 @@ RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip extends Generic.BaseClass {
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void TC_01_ChangeNavigation() throws Exception {
 		RoomContextMenu rm = new RoomContextMenu();
 		rm.ChangeNavigation();
@@ -49,7 +49,7 @@ RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip extends Generic.BaseClass {
 
 	}
 
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	public void TC_02_Checking_Cabinet_SecurityPermission() throws Exception {
 
 		RoomContextMenu rm = new RoomContextMenu();

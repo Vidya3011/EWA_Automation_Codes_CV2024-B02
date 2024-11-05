@@ -6,40 +6,44 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import Generic.BaseClass;
+import Generic.BaseGrid;
 import Pom.AdvancedViewer;
 
-public class Creating_More_Document extends BaseClass {
+public class Creating_More_Document extends BaseGrid {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(Creating_More_Document.class);
 
+	BaseClass bc=new BaseClass();
+	
 	@BeforeClass
 	public void ladBrowser() {
-		loadBrowser("Chrome");
-
+		//loadBrowser("Chrome");
+	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
+		
+		//launch47Url();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
-
+	
 	@Test(priority = 1)
 	public void Login() throws Exception {
+	    
 	
-		//LogoutPage();
-		loginRNISHA47();
+	 bc.loginRNISHA47();
 		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
 
 	
-	/*@Test(priority = 2,invocationCount=100)
+	@Test(priority = 2,invocationCount=1)
 	public void TC_1_ShowThumbnail() throws Exception {
 	
 		AdvancedViewer adv = new AdvancedViewer();
 		adv.CreateDocumentMore();
 	
-	}*/
+	}
 
 }

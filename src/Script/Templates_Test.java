@@ -1,30 +1,25 @@
 package Script;
 
-//Dipak Automation Coading
+//Dipak Automation script
 
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Pom.TemplatePage;
 
-//Dipak Automation script
-
 public class Templates_Test extends Generic.BaseClass {
 
-/* @BeforeClass
-	public void Launch_Browser() throws Exception {
-
-		loadBrowser("edge");
-		launchUrl();
-		Reporter.log("CVS URL started Successfully", true);
-	}
-
-	@Test
-	public void Login_EWA() throws Exception {
-		LogDipakUser();
-		Reporter.log("User has logged in successfully.", true);
-
-	}*/
+	/*
+	 * @BeforeClass public void Launch_Browser() throws Exception {
+	 * 
+	 * loadBrowser("edge"); launchUrl();
+	 * Reporter.log("CVS URL started Successfully", true); }
+	 * 
+	 * @Test public void Login_EWA() throws Exception { LogDipakUser();
+	 * Reporter.log("User has logged in successfully.", true);
+	 * 
+	 * }
+	 */
 
 	@Test(priority = 1)
 	public void TC_01_verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {

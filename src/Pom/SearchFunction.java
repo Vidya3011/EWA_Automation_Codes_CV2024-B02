@@ -40,7 +40,7 @@ public class SearchFunction extends BaseClass {
 		// JDBC URL, username, and password of MySQL server
 		String jdbcUrl = "jdbc:sqlserver://10.4.8.13:1433;DatabaseName=CV2024B2_64bitDB;SelectMethod=direct;";
 		String username = "sa";
-		String password = "Cipl@2024!";
+		String password = "Cipl@2024!";//syntax@10
 
 		try {
 			// Load Microsoft SQL JDBC driver
@@ -390,9 +390,6 @@ public class SearchFunction extends BaseClass {
 		}
 
 	}
-	
-	@FindBy(xpath = ("//button[@id='ownershipMessageModelOk']"))
-	private WebElement Lockeddoc;
 
 	@FindBy(xpath = ("//*[@id='viewDocumentnavigator']/ul/li[1]/ins"))
 	private WebElement Cabinet1;
@@ -467,10 +464,10 @@ public class SearchFunction extends BaseClass {
 	@FindBy(xpath = ("(//option[@value='0'])[5]"))
 	private WebElement newsearch;
 
-	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[1]/td[3]"))
+	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[3]/td[3]"))
 	private WebElement opendocfortext;
 
-	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[1]/td[3]"))
+	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[4]/td[3]"))
 	private WebElement opendocfortextSQL;
 
 	@FindBy(xpath = ("//*[@id=\"docViewerMetaData\"]"))
@@ -491,7 +488,7 @@ public class SearchFunction extends BaseClass {
 
 	}
 
-	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[1]/td[3]"))
+	@FindBy(xpath = ("//*[@id='searchListTable']/tbody/tr[4]/td[3]"))
 	private WebElement opendocforallwrdtext;
 
 	@FindBy(xpath = ("(//button[normalize-space()='LOAD MORE...'])[1]"))
@@ -668,16 +665,10 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(3000);
 		jsclick(FindButton);
 		Reporter.log("Click on find button");
-		Thread.sleep(8000);
+		Thread.sleep(10000);
 
 		try {
 		jsclick(opendocfortext);
-		Thread.sleep(2000);
-		if (Lockeddoc.isDisplayed()) {
-
-			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
-			jsclick(element1);
-		}
 		Reporter.log(
 				"open the document from the list, verify the thumbnail it will be highlihted for the particular search.");
 		}
@@ -685,17 +676,22 @@ public class SearchFunction extends BaseClass {
 
 			Reporter.log("AlertNotPresent");
 		}
-		try {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		
 
 		
+		Reporter.log(
+				"open the document from the list, verify the thumbnail it will be highlihted for the particular search.");
+		
+
+		try {
+			
+			jsclick(opendocfortext);
 			if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
 				// WebDriverWait wait = new WebDriverWait(driver, 30);
 				wait.until(ExpectedConditions.alertIsPresent());
 				acceptAlert();
 			}
-			
 
 		} catch (Exception e) {
 
@@ -725,12 +721,8 @@ public class SearchFunction extends BaseClass {
 		jsclick(fortextcontainsdrpdwnicon);
 		Reporter.log("Select text contains 'AtLeastOneOFTheWord' option");
 		Thread.sleep(3000);
-		try {
 		movingclkElement(forExactPhraseText);
-		}
-		catch(JavascriptException e) {
-			//
-		}
+
 		Reporter.log("Start the  indexer by using sql statement");
 		Thread.sleep(2000);
 		jsclick(TextContainsSearch);
@@ -744,14 +736,6 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(10000);
 		try {
 		jsclick(opendocforallwrdtext);
-		
-		Thread.sleep(2000);
-		
-		if (Lockeddoc.isDisplayed()) {
-
-			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
-			jsclick(element1);
-		}
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		
 	
@@ -806,14 +790,12 @@ public class SearchFunction extends BaseClass {
 		Thread.sleep(5000);
 		try {
 		jsclick(forRandomdocOpen);
-		Thread.sleep(2000);
-		if (Lockeddoc.isDisplayed()) {
-
-			WebElement element1 = driver.findElement(By.xpath("//*[@id=\"ownershipMessageModelOk\"]"));
-			jsclick(element1);
-		}
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		
+
+		
+	
+
 			if (wait.until(ExpectedConditions.alertIsPresent()) != null) {
 				// WebDriverWait wait = new WebDriverWait(driver, 30);
 				wait.until(ExpectedConditions.alertIsPresent());
@@ -1083,7 +1065,7 @@ public class SearchFunction extends BaseClass {
 		jsclick(DateFrom);
 		Thread.sleep(3000);
 		Reporter.log("Enter the datefrom");
-		jsclick(EnterDateFrom);
+		EnterDateFrom.click();
 		Thread.sleep(2000);
 		Reporter.log("Click on ok button");
 		jsclick(DataOKButton);
@@ -1092,7 +1074,7 @@ public class SearchFunction extends BaseClass {
 		jsclick(DateTo);
 		Thread.sleep(2000);
 		Reporter.log("Enter the Dateto");
-		jsclick(EnterDateTo);
+		EnterDateTo.click();
 		Reporter.log("Click on ok button");
 		jsclick(DataOKButton);
 		Thread.sleep(2000);
