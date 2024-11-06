@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="6" failed="2" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Chrome driver launched successfull]]>
     </line>
     <line>
       <![CDATA[Chrome Browser launched Successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Launched Contentverse URL Details: http://10.4.10.21:8080/CVWeb/cvLgn]]>
+    </line>
+    <line>
+      <![CDATA[No error message found]]>
+    </line>
+    <line>
+      <![CDATA[Page title name: Contentverse]]>
     </line>
     <line>
       <![CDATA[EWA URL launched successfull]]>
@@ -26,204 +35,207 @@
       <![CDATA[Select a Room]]>
     </line>
     <line>
-      <![CDATA[Click Login button]]>
-    </line>
-    <line>
-      <![CDATA[Session message not appeared]]>
-    </line>
-    <line>
-      <![CDATA[User logged in successfully... ]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 2:Open the document and Add Redaction Annotation on the page]]>
-    </line>
-    <line>
-      <![CDATA[Click on room context menu tab]]>
-    </line>
-    <line>
-      <![CDATA[Select sendto workflow option]]>
-    </line>
-    <line>
-      <![CDATA[Select any workflow]]>
-    </line>
-    <line>
-      <![CDATA[Document send to workflow successfully dialog will be appeared...]]>
-    </line>
-    <line>
-      <![CDATA[Click confirmation dialog OK button]]>
-    </line>
-    <line>
-      <![CDATA[Document send to manual workflow successfully]]>
-    </line>
-    <line>
-      <![CDATA[Logout the current session]]>
-    </line>
-    <line>
-      <![CDATA[Click on Username option]]>
-    </line>
-    <line>
-      <![CDATA[Click on Logout option]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 02: Task User Log into EWA]]>
-    </line>
-    <line>
-      <![CDATA[Enter task user name into user name field ]]>
-    </line>
-    <line>
-      <![CDATA[Click on Login Button]]>
-    </line>
-    <line>
-      <![CDATA[Login without session message...]]>
-    </line>
-    <line>
-      <![CDATA[Task user logged into EWA successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 03:Task User1 Accept the workflow document]]>
-    </line>
-    <line>
-      <![CDATA[Click on Todolist tab]]>
-    </line>
-    <line>
-      <![CDATA[Select Newitems option]]>
-    </line>
-    <line>
-      <![CDATA[Expand a document metadata option]]>
-    </line>
-    <line>
-      <![CDATA[Click on Accept button]]>
-    </line>
-    <line>
-      <![CDATA[Add comment in Accept dialog]]>
-    </line>
-    <line>
-      <![CDATA[Click on Accept dialog OK button]]>
-    </line>
-    <line>
-      <![CDATA[Task user1 Accept the document successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Task user1 Logout the Session...]]>
-    </line>
-    <line>
-      <![CDATA[Successfully Document  Move to Task User2]]>
-    </line>
-    <line>
-      <![CDATA[Task user1 Logout the Session...]]>
-    </line>
-    <line>
-      <![CDATA[Click on Username option]]>
-    </line>
-    <line>
-      <![CDATA[Click on Logout option]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 4: Task user Log into EWA ]]>
-    </line>
-    <line>
-      <![CDATA[Enter valid task name into user name field]]>
-    </line>
-    <line>
-      <![CDATA[Enter valid password into password field ]]>
+      <![CDATA[Captcha is not present, proceeding with login.]]>
     </line>
     <line>
       <![CDATA[Click Login button]]>
     </line>
     <line>
-      <![CDATA[Login without session message]]>
+      <![CDATA[Session for user is already active. Do you want to create a new session? Dialog box displayed. User clicks OK button.]]>
     </line>
     <line>
-      <![CDATA[Task user Logged into EWA successfully...]]>
+      <![CDATA[Test scenario 01: Verify 'dashboard search' functionality]]>
     </line>
     <line>
-      <![CDATA[Scenario 05: Task user2 Accept the workflow document]]>
+      <![CDATA[Click on dashboard tab]]>
     </line>
     <line>
-      <![CDATA[Click on Todolist tab ]]>
+      <![CDATA[Dashboard opened successfully]]>
     </line>
     <line>
-      <![CDATA[Cick on New items Option]]>
+      <![CDATA[Click on search icon from the dashboard page]]>
     </line>
     <line>
-      <![CDATA[Expand workflow document metadata option]]>
+      <![CDATA[It will redirect to Search tab successfully...]]>
     </line>
     <line>
-      <![CDATA[Click Reject button]]>
+      <![CDATA[Click on find button]]>
     </line>
     <line>
-      <![CDATA[Add comment in Reject dialog box]]>
+      <![CDATA[Searched document display on the page successfully...]]>
     </line>
     <line>
-      <![CDATA[Click on Reject dialog OK button]]>
+      <![CDATA[Scenario 02: Verify dashboard 'Notification' functionality]]>
     </line>
     <line>
-      <![CDATA[Rejected Document  Move to Task User3 successfully...]]>
+      <![CDATA[Click on dashboard tab]]>
     </line>
     <line>
-      <![CDATA[Click on Reject dialog OK button]]>
+      <![CDATA[Click on notification icon]]>
     </line>
     <line>
-      <![CDATA[Task user 2 logout the session successfully...]]>
+      <![CDATA[It will redirect to Notification tab successfully...]]>
     </line>
     <line>
-      <![CDATA[Click on Username option]]>
+      <![CDATA[Notification page displayed successfully...]]>
     </line>
     <line>
-      <![CDATA[Click on Logout option]]>
+      <![CDATA[Scenario 03: Verify dashboard 'Todolist' dropdown]]>
     </line>
     <line>
-      <![CDATA[Scenario 06: Task user log into EWA]]>
+      <![CDATA[Click on dashboard tab]]>
     </line>
     <line>
-      <![CDATA[Enter valid task user name into user name field]]>
+      <![CDATA[Click on todo list dropdown]]>
     </line>
     <line>
-      <![CDATA[Enter valid password into password field]]>
+      <![CDATA[Click on New items option]]>
     </line>
     <line>
-      <![CDATA[Click login button]]>
+      <![CDATA[It will list the New items workflow documents]]>
     </line>
     <line>
-      <![CDATA[Login without session  message]]>
+      <![CDATA[Click on Pending items option]]>
     </line>
     <line>
-      <![CDATA[Task user log into EWA successfully...]]>
+      <![CDATA[It will list the Pending items workflow documents]]>
     </line>
     <line>
-      <![CDATA[TaskUser3 Dipak Logged in successful]]>
+      <![CDATA[Click on Reviewed items option]]>
     </line>
     <line>
-      <![CDATA[Scenario 07: Task user3 will do End workflow]]>
+      <![CDATA[It will list the Reviewed items workflow documents]]>
     </line>
     <line>
-      <![CDATA[Click Todo list tab]]>
+      <![CDATA[Click on Sent items option]]>
     </line>
     <line>
-      <![CDATA[Select New items]]>
+      <![CDATA[It will list the Sent items workflow documents]]>
     </line>
     <line>
-      <![CDATA[Expand New items document metadata]]>
+      <![CDATA[Click on All items option]]>
     </line>
     <line>
-      <![CDATA[Click on Endworkflow button]]>
+      <![CDATA[It will list the All items workflow documents]]>
     </line>
     <line>
-      <![CDATA[Enter comment in Endworkflow dialog]]>
+      <![CDATA[No more pages]]>
     </line>
     <line>
-      <![CDATA[Click Endworkflow dialog OK button]]>
+      <![CDATA[Click on Next page icon]]>
     </line>
     <line>
-      <![CDATA[Task user 3 successfully completed the workflow...]]>
+      <![CDATA[Page should move to Next page]]>
+    </line>
+    <line>
+      <![CDATA[Todo list dropdown options verified successfully...]]>
+    </line>
+    <line>
+      <![CDATA[No more pages]]>
+    </line>
+    <line>
+      <![CDATA[Scenario 06: Verify dashboard 'New document' functionality]]>
+    </line>
+    <line>
+      <![CDATA[Click on dashboard tab]]>
+    </line>
+    <line>
+      <![CDATA[Click on New document icon]]>
+    </line>
+    <line>
+      <![CDATA[It will redirect to New document tab successfully...]]>
+    </line>
+    <line>
+      <![CDATA[The New document page opened successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Scenario 06: Verify 'ContentverseReport' - Document Reports]]>
+    </line>
+    <line>
+      <![CDATA[Click on dashboard tab]]>
+    </line>
+    <line>
+      <![CDATA[Select Contentverse Report icon]]>
+    </line>
+    <line>
+      <![CDATA[Select 'Document Report']]>
+    </line>
+    <line>
+      <![CDATA[Select 'This Week']]>
+    </line>
+    <line>
+      <![CDATA[Click on Generate Button]]>
+    </line>
+    <line>
+      <![CDATA[No alert present]]>
+    </line>
+    <line>
+      <![CDATA[It should list the Document Report on the page]]>
+    </line>
+    <line>
+      <![CDATA[Click on Excel export]]>
+    </line>
+    <line>
+      <![CDATA[Click on PDF Export]]>
+    </line>
+    <line>
+      <![CDATA[Generated Document Report has Exported Successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Scenario 07: Verify 'ContentverseReport' - Workflow Status Reports]]>
+    </line>
+    <line>
+      <![CDATA[Scenario 01: Log into EWA]]>
+    </line>
+    <line>
+      <![CDATA[Enter valid user name into username field]]>
+    </line>
+    <line>
+      <![CDATA[Exception while logging in and accessing dashboard]]>
+    </line>
+    <line>
+      <![CDATA[Mouse hover on Document Report dropdown and Select 'Workflow Status Report']]>
+    </line>
+    <line>
+      <![CDATA[Select 'This Week']]>
+    </line>
+    <line>
+      <![CDATA[Click on Generate Button]]>
+    </line>
+    <line>
+      <![CDATA[No alert present]]>
+    </line>
+    <line>
+      <![CDATA[It should list the 'Workflow Status Report' on the page]]>
+    </line>
+    <line>
+      <![CDATA[Click on Excel export]]>
+    </line>
+    <line>
+      <![CDATA[Click on PDF Export]]>
+    </line>
+    <line>
+      <![CDATA[Generated Document Report has Exported Successfully...]]>
+    </line>
+    <line>
+      <![CDATA[Scenario 08: Verify 'ContentverseReport' - Reject document in workflow Report]]>
+    </line>
+    <line>
+      <![CDATA[Mouse hover on Document Report dropdown and Select 'Reject document in workflow Report']]>
+    </line>
+    <line>
+      <![CDATA[Select 'This Week']]>
+    </line>
+    <line>
+      <![CDATA[Click on Generate Button]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-11-05T15:31:06 IST" name="Default suite" finished-at="2024-11-05T15:38:46 IST" duration-ms="459233">
+  <suite started-at="2024-11-06T17:39:42 IST" name="Default suite" finished-at="2024-11-06T17:45:03 IST" duration-ms="320483">
     <groups>
     </groups>
-    <test started-at="2024-11-05T15:31:06 IST" name="Default test" finished-at="2024-11-05T15:38:46 IST" duration-ms="459233">
-      <class name="Script.ManualWorkflow">
-        <test-method is-config="true" signature="loadBrowser()[pri:0, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:31:06 IST" name="loadBrowser" finished-at="2024-11-05T15:31:11 IST" duration-ms="4921" status="PASS">
+    <test started-at="2024-11-06T17:39:42 IST" name="Default test" finished-at="2024-11-06T17:45:03 IST" duration-ms="320483">
+      <class name="Computhink.Script.DashBoardScript">
+        <test-method is-config="true" signature="ladBrowser()[pri:0, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:39:42 IST" name="ladBrowser" finished-at="2024-11-06T17:39:56 IST" duration-ms="13752" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Chrome driver launched successfull]]>
@@ -232,14 +244,70 @@
               <![CDATA[Chrome Browser launched Successfully...]]>
             </line>
             <line>
+              <![CDATA[Launched Contentverse URL Details: http://10.4.10.21:8080/CVWeb/cvLgn]]>
+            </line>
+            <line>
+              <![CDATA[No error message found]]>
+            </line>
+            <line>
+              <![CDATA[Page title name: Contentverse]]>
+            </line>
+            <line>
               <![CDATA[EWA URL launched successfull]]>
             </line>
             <line>
               <![CDATA[Contentverse URL launched successfully...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- loadBrowser -->
-        <test-method signature="Login()[pri:1, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:31:11 IST" name="Login" finished-at="2024-11-05T15:31:51 IST" duration-ms="39436" status="PASS">
+        </test-method> <!-- ladBrowser -->
+        <test-method signature="Login()[pri:1, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:39:56 IST" name="Login" finished-at="2024-11-06T17:40:27 IST" duration-ms="31167" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Room selection is not correct. expected [Room 3] but found [TestServer_2024B264bit.CV2024B2_64bitDB],
+Captcha image is not displayed. expected [true] but found [false],
+Captcha input field is not displayed. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Room selection is not correct. expected [Room 3] but found [TestServer_2024B264bit.CV2024B2_64bitDB],
+Captcha image is not displayed. expected [true] but found [false],
+Captcha input field is not displayed. expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at Computhink.Generic.BaseClass.loginRNISHA47(BaseClass.java:279)
+at Computhink.Script.DashBoardScript.Login(DashBoardScript.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
               <![CDATA[Scenario 01: Log into EWA]]>
@@ -254,228 +322,295 @@
               <![CDATA[Select a Room]]>
             </line>
             <line>
+              <![CDATA[Captcha is not present, proceeding with login.]]>
+            </line>
+            <line>
               <![CDATA[Click Login button]]>
             </line>
             <line>
-              <![CDATA[Session message not appeared]]>
-            </line>
-            <line>
-              <![CDATA[User logged in successfully... ]]>
+              <![CDATA[Session for user is already active. Do you want to create a new session? Dialog box displayed. User clicks OK button.]]>
             </line>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="TC_1_SendDoc()[pri:2, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:31:51 IST" name="TC_1_SendDoc" finished-at="2024-11-05T15:34:25 IST" duration-ms="154536" status="PASS">
+        <test-method signature="TC_1_SearchIconDashBoardFunctionality()[pri:2, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:40:27 IST" name="TC_1_SearchIconDashBoardFunctionality" finished-at="2024-11-06T17:40:51 IST" duration-ms="23486" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 2:Open the document and Add Redaction Annotation on the page]]>
+              <![CDATA[Test scenario 01: Verify 'dashboard search' functionality]]>
             </line>
             <line>
-              <![CDATA[Click on room context menu tab]]>
+              <![CDATA[Click on dashboard tab]]>
             </line>
             <line>
-              <![CDATA[Select sendto workflow option]]>
+              <![CDATA[Dashboard opened successfully]]>
             </line>
             <line>
-              <![CDATA[Select any workflow]]>
+              <![CDATA[Click on search icon from the dashboard page]]>
             </line>
             <line>
-              <![CDATA[Document send to workflow successfully dialog will be appeared...]]>
+              <![CDATA[It will redirect to Search tab successfully...]]>
             </line>
             <line>
-              <![CDATA[Click confirmation dialog OK button]]>
+              <![CDATA[Click on find button]]>
             </line>
             <line>
-              <![CDATA[Document send to manual workflow successfully]]>
-            </line>
-            <line>
-              <![CDATA[Logout the current session]]>
+              <![CDATA[Searched document display on the page successfully...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_1_SendDoc -->
-        <test-method signature="TC_2_refrshAndLogRnishaUser()[pri:3, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:34:25 IST" name="TC_2_refrshAndLogRnishaUser" finished-at="2024-11-05T15:35:27 IST" duration-ms="61480" status="PASS">
+        </test-method> <!-- TC_1_SearchIconDashBoardFunctionality -->
+        <test-method signature="TC_2_NotifiactionIconDashBoardFunctionality()[pri:3, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:40:51 IST" name="TC_2_NotifiactionIconDashBoardFunctionality" finished-at="2024-11-06T17:41:04 IST" duration-ms="13800" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Click on Username option]]>
+              <![CDATA[Scenario 02: Verify dashboard 'Notification' functionality]]>
             </line>
             <line>
-              <![CDATA[Click on Logout option]]>
+              <![CDATA[Click on dashboard tab]]>
             </line>
             <line>
-              <![CDATA[Scenario 02: Task User Log into EWA]]>
+              <![CDATA[Click on notification icon]]>
             </line>
             <line>
-              <![CDATA[Enter task user name into user name field ]]>
+              <![CDATA[It will redirect to Notification tab successfully...]]>
             </line>
             <line>
-              <![CDATA[Click on Login Button]]>
-            </line>
-            <line>
-              <![CDATA[Login without session message...]]>
-            </line>
-            <line>
-              <![CDATA[Task user logged into EWA successfully...]]>
+              <![CDATA[Notification page displayed successfully...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_2_refrshAndLogRnishaUser -->
-        <test-method signature="TC_3_SendAndNewItemsMetaDataAgree()[pri:4, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:35:27 IST" name="TC_3_SendAndNewItemsMetaDataAgree" finished-at="2024-11-05T15:35:52 IST" duration-ms="25022" status="PASS">
+        </test-method> <!-- TC_2_NotifiactionIconDashBoardFunctionality -->
+        <test-method signature="TodoListWFDetailsDashBoardFunctionality()[pri:4, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:41:04 IST" name="TodoListWFDetailsDashBoardFunctionality" finished-at="2024-11-06T17:42:14 IST" duration-ms="69497" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 03:Task User1 Accept the workflow document]]>
+              <![CDATA[Scenario 03: Verify dashboard 'Todolist' dropdown]]>
             </line>
             <line>
-              <![CDATA[Click on Todolist tab]]>
+              <![CDATA[Click on dashboard tab]]>
             </line>
             <line>
-              <![CDATA[Select Newitems option]]>
+              <![CDATA[Click on todo list dropdown]]>
             </line>
             <line>
-              <![CDATA[Expand a document metadata option]]>
+              <![CDATA[Click on New items option]]>
             </line>
             <line>
-              <![CDATA[Click on Accept button]]>
+              <![CDATA[It will list the New items workflow documents]]>
             </line>
             <line>
-              <![CDATA[Add comment in Accept dialog]]>
+              <![CDATA[Click on Pending items option]]>
             </line>
             <line>
-              <![CDATA[Click on Accept dialog OK button]]>
+              <![CDATA[It will list the Pending items workflow documents]]>
             </line>
             <line>
-              <![CDATA[Task user1 Accept the document successfully...]]>
+              <![CDATA[Click on Reviewed items option]]>
             </line>
             <line>
-              <![CDATA[Task user1 Logout the Session...]]>
+              <![CDATA[It will list the Reviewed items workflow documents]]>
             </line>
             <line>
-              <![CDATA[Successfully Document  Move to Task User2]]>
+              <![CDATA[Click on Sent items option]]>
             </line>
             <line>
-              <![CDATA[Task user1 Logout the Session...]]>
+              <![CDATA[It will list the Sent items workflow documents]]>
+            </line>
+            <line>
+              <![CDATA[Click on All items option]]>
+            </line>
+            <line>
+              <![CDATA[It will list the All items workflow documents]]>
+            </line>
+            <line>
+              <![CDATA[No more pages]]>
+            </line>
+            <line>
+              <![CDATA[Click on Next page icon]]>
+            </line>
+            <line>
+              <![CDATA[Page should move to Next page]]>
+            </line>
+            <line>
+              <![CDATA[Todo list dropdown options verified successfully...]]>
+            </line>
+            <line>
+              <![CDATA[No more pages]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_3_SendAndNewItemsMetaDataAgree -->
-        <test-method signature="TC_4_Task2UserVidyaAccept()[pri:5, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:35:52 IST" name="TC_4_Task2UserVidyaAccept" finished-at="2024-11-05T15:36:50 IST" duration-ms="58378" status="PASS">
+        </test-method> <!-- TodoListWFDetailsDashBoardFunctionality -->
+        <test-method signature="TC_4_CreateNewDocumentFromDB()[pri:5, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:42:14 IST" name="TC_4_CreateNewDocumentFromDB" finished-at="2024-11-06T17:42:34 IST" duration-ms="20183" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Click on Username option]]>
+              <![CDATA[Scenario 06: Verify dashboard 'New document' functionality]]>
             </line>
             <line>
-              <![CDATA[Click on Logout option]]>
+              <![CDATA[Click on dashboard tab]]>
             </line>
             <line>
-              <![CDATA[Scenario 4: Task user Log into EWA ]]>
+              <![CDATA[Click on New document icon]]>
             </line>
             <line>
-              <![CDATA[Enter valid task name into user name field]]>
+              <![CDATA[It will redirect to New document tab successfully...]]>
             </line>
             <line>
-              <![CDATA[Enter valid password into password field ]]>
-            </line>
-            <line>
-              <![CDATA[Click Login button]]>
-            </line>
-            <line>
-              <![CDATA[Login without session message]]>
-            </line>
-            <line>
-              <![CDATA[Task user Logged into EWA successfully...]]>
+              <![CDATA[The New document page opened successfully...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_4_Task2UserVidyaAccept -->
-        <test-method signature="TC_5_TaskUserVidyaAcceptTheDocument()[pri:6, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:36:50 IST" name="TC_5_TaskUserVidyaAcceptTheDocument" finished-at="2024-11-05T15:37:14 IST" duration-ms="24099" status="PASS">
+        </test-method> <!-- TC_4_CreateNewDocumentFromDB -->
+        <test-method signature="TC_5_Contentverse_Document_Report()[pri:6, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:42:34 IST" name="TC_5_Contentverse_Document_Report" finished-at="2024-11-06T17:43:41 IST" duration-ms="67144" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Scenario 05: Task user2 Accept the workflow document]]>
+              <![CDATA[Scenario 06: Verify 'ContentverseReport' - Document Reports]]>
             </line>
             <line>
-              <![CDATA[Click on Todolist tab ]]>
+              <![CDATA[Click on dashboard tab]]>
             </line>
             <line>
-              <![CDATA[Cick on New items Option]]>
+              <![CDATA[Select Contentverse Report icon]]>
             </line>
             <line>
-              <![CDATA[Expand workflow document metadata option]]>
+              <![CDATA[Select 'Document Report']]>
             </line>
             <line>
-              <![CDATA[Click Reject button]]>
+              <![CDATA[Select 'This Week']]>
             </line>
             <line>
-              <![CDATA[Add comment in Reject dialog box]]>
+              <![CDATA[Click on Generate Button]]>
             </line>
             <line>
-              <![CDATA[Click on Reject dialog OK button]]>
+              <![CDATA[No alert present]]>
             </line>
             <line>
-              <![CDATA[Rejected Document  Move to Task User3 successfully...]]>
+              <![CDATA[It should list the Document Report on the page]]>
             </line>
             <line>
-              <![CDATA[Click on Reject dialog OK button]]>
+              <![CDATA[Click on Excel export]]>
             </line>
             <line>
-              <![CDATA[Task user 2 logout the session successfully...]]>
+              <![CDATA[Click on PDF Export]]>
+            </line>
+            <line>
+              <![CDATA[Generated Document Report has Exported Successfully...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_5_TaskUserVidyaAcceptTheDocument -->
-        <test-method signature="TC_6_refrshAndLogDNishaC()[pri:7, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:37:14 IST" name="TC_6_refrshAndLogDNishaC" finished-at="2024-11-05T15:38:11 IST" duration-ms="56687" status="PASS">
+        </test-method> <!-- TC_5_Contentverse_Document_Report -->
+        <test-method signature="TC_6_Contentverse_WrokflowStatus_Report()[pri:7, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:43:41 IST" name="TC_6_Contentverse_WrokflowStatus_Report" finished-at="2024-11-06T17:44:47 IST" duration-ms="65348" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Click on Username option]]>
+              <![CDATA[Scenario 07: Verify 'ContentverseReport' - Workflow Status Reports]]>
             </line>
             <line>
-              <![CDATA[Click on Logout option]]>
+              <![CDATA[Scenario 01: Log into EWA]]>
             </line>
             <line>
-              <![CDATA[Scenario 06: Task user log into EWA]]>
+              <![CDATA[Enter valid user name into username field]]>
             </line>
             <line>
-              <![CDATA[Enter valid task user name into user name field]]>
+              <![CDATA[Exception while logging in and accessing dashboard]]>
             </line>
             <line>
-              <![CDATA[Enter valid password into password field]]>
+              <![CDATA[Mouse hover on Document Report dropdown and Select 'Workflow Status Report']]>
             </line>
             <line>
-              <![CDATA[Click login button]]>
+              <![CDATA[Select 'This Week']]>
             </line>
             <line>
-              <![CDATA[Login without session  message]]>
+              <![CDATA[Click on Generate Button]]>
             </line>
             <line>
-              <![CDATA[Task user log into EWA successfully...]]>
+              <![CDATA[No alert present]]>
             </line>
             <line>
-              <![CDATA[TaskUser3 Dipak Logged in successful]]>
+              <![CDATA[It should list the 'Workflow Status Report' on the page]]>
+            </line>
+            <line>
+              <![CDATA[Click on Excel export]]>
+            </line>
+            <line>
+              <![CDATA[Click on PDF Export]]>
+            </line>
+            <line>
+              <![CDATA[Generated Document Report has Exported Successfully...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_6_refrshAndLogDNishaC -->
-        <test-method signature="TC_8_DocEndedFromTask3NishaCUser()[pri:9, instance:Script.ManualWorkflow@2262b621]" started-at="2024-11-05T15:38:11 IST" name="TC_8_DocEndedFromTask3NishaCUser" finished-at="2024-11-05T15:38:46 IST" duration-ms="34597" status="PASS">
+        </test-method> <!-- TC_6_Contentverse_WrokflowStatus_Report -->
+        <test-method signature="TC_7_Contentverse_RejectDocumentInWFReport_Report()[pri:8, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:44:47 IST" name="TC_7_Contentverse_RejectDocumentInWFReport_Report" finished-at="2024-11-06T17:45:03 IST" duration-ms="16046" status="FAIL">
+          <exception class="org.openqa.selenium.JavascriptException">
+            <message>
+              <![CDATA[javascript error: {"status":60,"value":"[object HTMLLIElement] has no size and location"}
+  (Session info: chrome=130.0.6723.92)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.93 (dbcf0550c05e..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61903}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f4fdd7ebe962387162aacaa17aba93c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: {"status":60,"value":"[object HTMLLIElement] has no size and location"}
+  (Session info: chrome=130.0.6723.92)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.93 (dbcf0550c05e..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61903}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f4fdd7ebe962387162aacaa17aba93c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at Computhink.Pom.DashBoardPom.ContentverseRejectDocumentInWFReport(DashBoardPom.java:384)
+at Computhink.Script.DashBoardScript.TC_7_Contentverse_RejectDocumentInWFReport_Report(DashBoardScript.java:89)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
             <line>
-              <![CDATA[Scenario 07: Task user3 will do End workflow]]>
+              <![CDATA[Scenario 08: Verify 'ContentverseReport' - Reject document in workflow Report]]>
             </line>
             <line>
-              <![CDATA[Click Todo list tab]]>
+              <![CDATA[Mouse hover on Document Report dropdown and Select 'Reject document in workflow Report']]>
             </line>
             <line>
-              <![CDATA[Select New items]]>
+              <![CDATA[Select 'This Week']]>
             </line>
             <line>
-              <![CDATA[Expand New items document metadata]]>
-            </line>
-            <line>
-              <![CDATA[Click on Endworkflow button]]>
-            </line>
-            <line>
-              <![CDATA[Enter comment in Endworkflow dialog]]>
-            </line>
-            <line>
-              <![CDATA[Click Endworkflow dialog OK button]]>
-            </line>
-            <line>
-              <![CDATA[Task user 3 successfully completed the workflow...]]>
+              <![CDATA[Click on Generate Button]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_8_DocEndedFromTask3NishaCUser -->
-      </class> <!-- Script.ManualWorkflow -->
+        </test-method> <!-- TC_7_Contentverse_RejectDocumentInWFReport_Report -->
+      </class> <!-- Computhink.Script.DashBoardScript -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

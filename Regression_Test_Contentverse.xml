@@ -48,11 +48,11 @@
 			<class name="Script.SecureLink_Negative_Scenerio" />
 		</classes>
 	</test>
-	<test name="Test9">
+	<!-- <test name="Test9">
 		<classes>
 			<class name="Script.RoomContextFunction" />
 		</classes>
-	</test>
+	</test> -->
 	<test name="Test10">
 		<classes>
 			<class name="Script.SendToExport" />

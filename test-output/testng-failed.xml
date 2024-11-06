@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Script.DynamicWorkflow">
+      <class name="Computhink.Script.DashBoardScript">
         <methods>
-          <include name="Originator_Reviewing_Workflow_Document"/>
-          <include name="loadBrowser"/>
+          <include name="Login"/>
+          <include name="TC_7_Contentverse_RejectDocumentInWFReport_Report"/>
+          <include name="ladBrowser"/>
         </methods>
-      </class> <!-- Script.DynamicWorkflow -->
+      </class> <!-- Computhink.Script.DashBoardScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
