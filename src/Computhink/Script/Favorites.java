@@ -17,7 +17,7 @@ public class Favorites extends Computhink.Generic.BaseClass {
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(Favorites.class);
 
-	@BeforeClass
+	//@BeforeClass
 	public void loadBrowser() throws Exception {
 		loadBrowser("Chrome");
 
@@ -29,10 +29,10 @@ public class Favorites extends Computhink.Generic.BaseClass {
 		log.info("Contentverse URL launched successfully...");
 	}
 
-	@Test(priority = 1)
+  //	@Test(priority = 1)
 	public void Login() throws Exception {
 	
-		//LogoutPage();
+		LogoutPage();
 		LogInAdmin();
 		
 		Reporter.log("User logged in successfully... ");

@@ -90,7 +90,7 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 
 	}
 
-//	@Test(priority = 9)
+	@Test(priority = 9)
 	public void TC_8_logoutFromDB() throws Exception {
 
 		DashBoardPom db = new DashBoardPom();

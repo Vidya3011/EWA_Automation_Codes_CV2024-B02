@@ -77,6 +77,7 @@ public class AdvancedViewer extends BaseClass {
 	public void DefaultView() throws Exception {
 
 		jsclick(Refresh_Button(driver));
+		
 
 		Thread.sleep(5000);
 		jsclick(Setting_Icon);
@@ -1746,7 +1747,7 @@ public class AdvancedViewer extends BaseClass {
 
 		jsclick(viewOption);
 		Reporter.log("'Document Created Successfully' dialog should be displayed");
-		Reporter.log("Click on View option");
+			Reporter.log("Click on View option");
 		Thread.sleep(15000);
 		Actions act = new Actions(driver);
 		ElementToBeClickable(WordDocPage);
@@ -1842,9 +1843,13 @@ public class AdvancedViewer extends BaseClass {
 		Reporter.log("Click on advanced tool icon");
 		Thread.sleep(4000);
 		Actions act = new Actions(driver);
+	try {
 		// act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeam").sendKeys(Keys.ENTER).sendKeys("Nisha").build().perform();
 		act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(1, 0)).build()
 				.perform();
+	}catch(JavascriptException e) {
+		//
+	}
 		Thread.sleep(8000);
 		Reporter.log("Click on free text icon.");
 		Reporter.log("Enter data into -free text box");

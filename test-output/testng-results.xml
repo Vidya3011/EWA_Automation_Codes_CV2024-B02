@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="6" failed="2" skipped="0">
+<testng-results ignored="0" total="11" passed="2" failed="9" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Chrome driver launched successfull]]>
@@ -29,6 +29,9 @@
       <![CDATA[Enter valid user name into username field]]>
     </line>
     <line>
+      <![CDATA[UserName Details: dipak]]>
+    </line>
+    <line>
       <![CDATA[Enter valid password into password field]]>
     </line>
     <line>
@@ -41,201 +44,78 @@
       <![CDATA[Click Login button]]>
     </line>
     <line>
-      <![CDATA[Session for user is already active. Do you want to create a new session? Dialog box displayed. User clicks OK button.]]>
+      <![CDATA[Session message did not appear. Proceeding with login.]]>
     </line>
     <line>
-      <![CDATA[Test scenario 01: Verify 'dashboard search' functionality]]>
+      <![CDATA[User logged in successfully... ]]>
     </line>
     <line>
-      <![CDATA[Click on dashboard tab]]>
+      <![CDATA[User click on setting icon]]>
     </line>
     <line>
-      <![CDATA[Dashboard opened successfully]]>
+      <![CDATA[User click on the my preference tab]]>
     </line>
     <line>
-      <![CDATA[Click on search icon from the dashboard page]]>
+      <![CDATA[User changes pdf document as default viewing]]>
     </line>
     <line>
-      <![CDATA[It will redirect to Search tab successfully...]]>
+      <![CDATA[User click on Apply button and the default view successfully applied...]]>
     </line>
     <line>
-      <![CDATA[Click on find button]]>
+      <![CDATA[Click on Username option]]>
     </line>
     <line>
-      <![CDATA[Searched document display on the page successfully...]]>
+      <![CDATA[Click on Logout option]]>
     </line>
     <line>
-      <![CDATA[Scenario 02: Verify dashboard 'Notification' functionality]]>
+      <![CDATA[Timeout waiting for alert to appear.]]>
     </line>
     <line>
-      <![CDATA[Click on dashboard tab]]>
+      <![CDATA[Scenario 2:Open the document and Add Redaction Annotation on the page]]>
     </line>
     <line>
-      <![CDATA[Click on notification icon]]>
+      <![CDATA[Scenario 03: Verify Highlight annotation ]]>
     </line>
     <line>
-      <![CDATA[It will redirect to Notification tab successfully...]]>
+      <![CDATA[Scenario 04: Verify Sticky note annotation ]]>
     </line>
     <line>
-      <![CDATA[Notification page displayed successfully...]]>
+      <![CDATA[Mouse hover on annotation icon]]>
     </line>
     <line>
-      <![CDATA[Scenario 03: Verify dashboard 'Todolist' dropdown]]>
+      <![CDATA[Scenario 05: verify RubberStamp annotation ]]>
     </line>
     <line>
-      <![CDATA[Click on dashboard tab]]>
+      <![CDATA[Scenario 06: Verify Rectangle annotation tool]]>
     </line>
     <line>
-      <![CDATA[Click on todo list dropdown]]>
+      <![CDATA[Scenario 07: verify Stamp annotation tool]]>
     </line>
     <line>
-      <![CDATA[Click on New items option]]>
+      <![CDATA[Switch to the second page]]>
     </line>
     <line>
-      <![CDATA[It will list the New items workflow documents]]>
+      <![CDATA[Scenario 08: Verify Line annotation]]>
     </line>
     <line>
-      <![CDATA[Click on Pending items option]]>
+      <![CDATA[Mouse hover on annotation tool icon]]>
     </line>
     <line>
-      <![CDATA[It will list the Pending items workflow documents]]>
+      <![CDATA[Scenario 10: Verify Signature annotation ]]>
     </line>
     <line>
-      <![CDATA[Click on Reviewed items option]]>
+      <![CDATA[Mouse  on the annotation tool icon]]>
     </line>
     <line>
-      <![CDATA[It will list the Reviewed items workflow documents]]>
-    </line>
-    <line>
-      <![CDATA[Click on Sent items option]]>
-    </line>
-    <line>
-      <![CDATA[It will list the Sent items workflow documents]]>
-    </line>
-    <line>
-      <![CDATA[Click on All items option]]>
-    </line>
-    <line>
-      <![CDATA[It will list the All items workflow documents]]>
-    </line>
-    <line>
-      <![CDATA[No more pages]]>
-    </line>
-    <line>
-      <![CDATA[Click on Next page icon]]>
-    </line>
-    <line>
-      <![CDATA[Page should move to Next page]]>
-    </line>
-    <line>
-      <![CDATA[Todo list dropdown options verified successfully...]]>
-    </line>
-    <line>
-      <![CDATA[No more pages]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 06: Verify dashboard 'New document' functionality]]>
-    </line>
-    <line>
-      <![CDATA[Click on dashboard tab]]>
-    </line>
-    <line>
-      <![CDATA[Click on New document icon]]>
-    </line>
-    <line>
-      <![CDATA[It will redirect to New document tab successfully...]]>
-    </line>
-    <line>
-      <![CDATA[The New document page opened successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 06: Verify 'ContentverseReport' - Document Reports]]>
-    </line>
-    <line>
-      <![CDATA[Click on dashboard tab]]>
-    </line>
-    <line>
-      <![CDATA[Select Contentverse Report icon]]>
-    </line>
-    <line>
-      <![CDATA[Select 'Document Report']]>
-    </line>
-    <line>
-      <![CDATA[Select 'This Week']]>
-    </line>
-    <line>
-      <![CDATA[Click on Generate Button]]>
-    </line>
-    <line>
-      <![CDATA[No alert present]]>
-    </line>
-    <line>
-      <![CDATA[It should list the Document Report on the page]]>
-    </line>
-    <line>
-      <![CDATA[Click on Excel export]]>
-    </line>
-    <line>
-      <![CDATA[Click on PDF Export]]>
-    </line>
-    <line>
-      <![CDATA[Generated Document Report has Exported Successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 07: Verify 'ContentverseReport' - Workflow Status Reports]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 01: Log into EWA]]>
-    </line>
-    <line>
-      <![CDATA[Enter valid user name into username field]]>
-    </line>
-    <line>
-      <![CDATA[Exception while logging in and accessing dashboard]]>
-    </line>
-    <line>
-      <![CDATA[Mouse hover on Document Report dropdown and Select 'Workflow Status Report']]>
-    </line>
-    <line>
-      <![CDATA[Select 'This Week']]>
-    </line>
-    <line>
-      <![CDATA[Click on Generate Button]]>
-    </line>
-    <line>
-      <![CDATA[No alert present]]>
-    </line>
-    <line>
-      <![CDATA[It should list the 'Workflow Status Report' on the page]]>
-    </line>
-    <line>
-      <![CDATA[Click on Excel export]]>
-    </line>
-    <line>
-      <![CDATA[Click on PDF Export]]>
-    </line>
-    <line>
-      <![CDATA[Generated Document Report has Exported Successfully...]]>
-    </line>
-    <line>
-      <![CDATA[Scenario 08: Verify 'ContentverseReport' - Reject document in workflow Report]]>
-    </line>
-    <line>
-      <![CDATA[Mouse hover on Document Report dropdown and Select 'Reject document in workflow Report']]>
-    </line>
-    <line>
-      <![CDATA[Select 'This Week']]>
-    </line>
-    <line>
-      <![CDATA[Click on Generate Button]]>
+      <![CDATA[Scenario 11: Verify polygon annotation ]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-11-06T17:39:42 IST" name="Default suite" finished-at="2024-11-06T17:45:03 IST" duration-ms="320483">
+  <suite started-at="2024-11-19T12:39:06 IST" name="Default suite" finished-at="2024-11-19T12:42:20 IST" duration-ms="194213">
     <groups>
     </groups>
-    <test started-at="2024-11-06T17:39:42 IST" name="Default test" finished-at="2024-11-06T17:45:03 IST" duration-ms="320483">
-      <class name="Computhink.Script.DashBoardScript">
-        <test-method is-config="true" signature="ladBrowser()[pri:0, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:39:42 IST" name="ladBrowser" finished-at="2024-11-06T17:39:56 IST" duration-ms="13752" status="PASS">
+    <test started-at="2024-11-19T12:39:06 IST" name="Default test" finished-at="2024-11-19T12:42:20 IST" duration-ms="194213">
+      <class name="Computhink.Script.AnnotationFunctionality">
+        <test-method is-config="true" signature="ladBrowser()[pri:0, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:39:06 IST" name="ladBrowser" finished-at="2024-11-19T12:39:20 IST" duration-ms="14144" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Chrome driver launched successfull]]>
@@ -260,60 +140,16 @@
             </line>
           </reporter-output>
         </test-method> <!-- ladBrowser -->
-        <test-method signature="Login()[pri:1, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:39:56 IST" name="Login" finished-at="2024-11-06T17:40:27 IST" duration-ms="31167" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-Room selection is not correct. expected [Room 3] but found [TestServer_2024B264bit.CV2024B2_64bitDB],
-Captcha image is not displayed. expected [true] but found [false],
-Captcha input field is not displayed. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-Room selection is not correct. expected [Room 3] but found [TestServer_2024B264bit.CV2024B2_64bitDB],
-Captcha image is not displayed. expected [true] but found [false],
-Captcha input field is not displayed. expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at Computhink.Generic.BaseClass.loginRNISHA47(BaseClass.java:279)
-at Computhink.Script.DashBoardScript.Login(DashBoardScript.java:35)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="Login()[pri:1, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:39:20 IST" name="Login" finished-at="2024-11-19T12:39:59 IST" duration-ms="39608" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Scenario 01: Log into EWA]]>
             </line>
             <line>
               <![CDATA[Enter valid user name into username field]]>
+            </line>
+            <line>
+              <![CDATA[UserName Details: dipak]]>
             </line>
             <line>
               <![CDATA[Enter valid password into password field]]>
@@ -328,227 +164,61 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[Click Login button]]>
             </line>
             <line>
-              <![CDATA[Session for user is already active. Do you want to create a new session? Dialog box displayed. User clicks OK button.]]>
+              <![CDATA[Session message did not appear. Proceeding with login.]]>
+            </line>
+            <line>
+              <![CDATA[User logged in successfully... ]]>
             </line>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="TC_1_SearchIconDashBoardFunctionality()[pri:2, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:40:27 IST" name="TC_1_SearchIconDashBoardFunctionality" finished-at="2024-11-06T17:40:51 IST" duration-ms="23486" status="PASS">
+        <test-method signature="TC_A_DefaultView()[pri:2, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:39:59 IST" name="TC_A_DefaultView" finished-at="2024-11-19T12:40:39 IST" duration-ms="39666" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Test scenario 01: Verify 'dashboard search' functionality]]>
+              <![CDATA[User click on setting icon]]>
             </line>
             <line>
-              <![CDATA[Click on dashboard tab]]>
+              <![CDATA[User click on the my preference tab]]>
             </line>
             <line>
-              <![CDATA[Dashboard opened successfully]]>
+              <![CDATA[User changes pdf document as default viewing]]>
             </line>
             <line>
-              <![CDATA[Click on search icon from the dashboard page]]>
+              <![CDATA[User click on Apply button and the default view successfully applied...]]>
             </line>
             <line>
-              <![CDATA[It will redirect to Search tab successfully...]]>
+              <![CDATA[Click on Username option]]>
             </line>
             <line>
-              <![CDATA[Click on find button]]>
+              <![CDATA[Click on Logout option]]>
             </line>
             <line>
-              <![CDATA[Searched document display on the page successfully...]]>
+              <![CDATA[Timeout waiting for alert to appear.]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_1_SearchIconDashBoardFunctionality -->
-        <test-method signature="TC_2_NotifiactionIconDashBoardFunctionality()[pri:3, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:40:51 IST" name="TC_2_NotifiactionIconDashBoardFunctionality" finished-at="2024-11-06T17:41:04 IST" duration-ms="13800" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 02: Verify dashboard 'Notification' functionality]]>
-            </line>
-            <line>
-              <![CDATA[Click on dashboard tab]]>
-            </line>
-            <line>
-              <![CDATA[Click on notification icon]]>
-            </line>
-            <line>
-              <![CDATA[It will redirect to Notification tab successfully...]]>
-            </line>
-            <line>
-              <![CDATA[Notification page displayed successfully...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_2_NotifiactionIconDashBoardFunctionality -->
-        <test-method signature="TodoListWFDetailsDashBoardFunctionality()[pri:4, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:41:04 IST" name="TodoListWFDetailsDashBoardFunctionality" finished-at="2024-11-06T17:42:14 IST" duration-ms="69497" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 03: Verify dashboard 'Todolist' dropdown]]>
-            </line>
-            <line>
-              <![CDATA[Click on dashboard tab]]>
-            </line>
-            <line>
-              <![CDATA[Click on todo list dropdown]]>
-            </line>
-            <line>
-              <![CDATA[Click on New items option]]>
-            </line>
-            <line>
-              <![CDATA[It will list the New items workflow documents]]>
-            </line>
-            <line>
-              <![CDATA[Click on Pending items option]]>
-            </line>
-            <line>
-              <![CDATA[It will list the Pending items workflow documents]]>
-            </line>
-            <line>
-              <![CDATA[Click on Reviewed items option]]>
-            </line>
-            <line>
-              <![CDATA[It will list the Reviewed items workflow documents]]>
-            </line>
-            <line>
-              <![CDATA[Click on Sent items option]]>
-            </line>
-            <line>
-              <![CDATA[It will list the Sent items workflow documents]]>
-            </line>
-            <line>
-              <![CDATA[Click on All items option]]>
-            </line>
-            <line>
-              <![CDATA[It will list the All items workflow documents]]>
-            </line>
-            <line>
-              <![CDATA[No more pages]]>
-            </line>
-            <line>
-              <![CDATA[Click on Next page icon]]>
-            </line>
-            <line>
-              <![CDATA[Page should move to Next page]]>
-            </line>
-            <line>
-              <![CDATA[Todo list dropdown options verified successfully...]]>
-            </line>
-            <line>
-              <![CDATA[No more pages]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TodoListWFDetailsDashBoardFunctionality -->
-        <test-method signature="TC_4_CreateNewDocumentFromDB()[pri:5, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:42:14 IST" name="TC_4_CreateNewDocumentFromDB" finished-at="2024-11-06T17:42:34 IST" duration-ms="20183" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 06: Verify dashboard 'New document' functionality]]>
-            </line>
-            <line>
-              <![CDATA[Click on dashboard tab]]>
-            </line>
-            <line>
-              <![CDATA[Click on New document icon]]>
-            </line>
-            <line>
-              <![CDATA[It will redirect to New document tab successfully...]]>
-            </line>
-            <line>
-              <![CDATA[The New document page opened successfully...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_4_CreateNewDocumentFromDB -->
-        <test-method signature="TC_5_Contentverse_Document_Report()[pri:6, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:42:34 IST" name="TC_5_Contentverse_Document_Report" finished-at="2024-11-06T17:43:41 IST" duration-ms="67144" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 06: Verify 'ContentverseReport' - Document Reports]]>
-            </line>
-            <line>
-              <![CDATA[Click on dashboard tab]]>
-            </line>
-            <line>
-              <![CDATA[Select Contentverse Report icon]]>
-            </line>
-            <line>
-              <![CDATA[Select 'Document Report']]>
-            </line>
-            <line>
-              <![CDATA[Select 'This Week']]>
-            </line>
-            <line>
-              <![CDATA[Click on Generate Button]]>
-            </line>
-            <line>
-              <![CDATA[No alert present]]>
-            </line>
-            <line>
-              <![CDATA[It should list the Document Report on the page]]>
-            </line>
-            <line>
-              <![CDATA[Click on Excel export]]>
-            </line>
-            <line>
-              <![CDATA[Click on PDF Export]]>
-            </line>
-            <line>
-              <![CDATA[Generated Document Report has Exported Successfully...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_5_Contentverse_Document_Report -->
-        <test-method signature="TC_6_Contentverse_WrokflowStatus_Report()[pri:7, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:43:41 IST" name="TC_6_Contentverse_WrokflowStatus_Report" finished-at="2024-11-06T17:44:47 IST" duration-ms="65348" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Scenario 07: Verify 'ContentverseReport' - Workflow Status Reports]]>
-            </line>
-            <line>
-              <![CDATA[Scenario 01: Log into EWA]]>
-            </line>
-            <line>
-              <![CDATA[Enter valid user name into username field]]>
-            </line>
-            <line>
-              <![CDATA[Exception while logging in and accessing dashboard]]>
-            </line>
-            <line>
-              <![CDATA[Mouse hover on Document Report dropdown and Select 'Workflow Status Report']]>
-            </line>
-            <line>
-              <![CDATA[Select 'This Week']]>
-            </line>
-            <line>
-              <![CDATA[Click on Generate Button]]>
-            </line>
-            <line>
-              <![CDATA[No alert present]]>
-            </line>
-            <line>
-              <![CDATA[It should list the 'Workflow Status Report' on the page]]>
-            </line>
-            <line>
-              <![CDATA[Click on Excel export]]>
-            </line>
-            <line>
-              <![CDATA[Click on PDF Export]]>
-            </line>
-            <line>
-              <![CDATA[Generated Document Report has Exported Successfully...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_6_Contentverse_WrokflowStatus_Report -->
-        <test-method signature="TC_7_Contentverse_RejectDocumentInWFReport_Report()[pri:8, instance:Computhink.Script.DashBoardScript@f667fe]" started-at="2024-11-06T17:44:47 IST" name="TC_7_Contentverse_RejectDocumentInWFReport_Report" finished-at="2024-11-06T17:45:03 IST" duration-ms="16046" status="FAIL">
-          <exception class="org.openqa.selenium.JavascriptException">
+        </test-method> <!-- TC_A_DefaultView -->
+        <test-method signature="TC_B_Redaction_UnlockRedaction()[pri:3, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:40:39 IST" name="TC_B_Redaction_UnlockRedaction" finished-at="2024-11-19T12:40:49 IST" duration-ms="10100" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[javascript error: {"status":60,"value":"[object HTMLLIElement] has no size and location"}
-  (Session info: chrome=130.0.6723.92)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@id='navigationMenuBtn'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.93 (dbcf0550c05e..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61903}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0f4fdd7ebe962387162aacaa17aba93c]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//a[@id='navigationMenuBtn'])[1]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: {"status":60,"value":"[object HTMLLIElement] has no size and location"}
-  (Session info: chrome=130.0.6723.92)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@id='navigationMenuBtn'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.93 (dbcf0550c05e..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61903}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0f4fdd7ebe962387162aacaa17aba93c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//a[@id='navigationMenuBtn'])[1]}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -560,10 +230,25 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
-at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
-at Computhink.Pom.DashBoardPom.ContentverseRejectDocumentInWFReport(DashBoardPom.java:384)
-at Computhink.Script.DashBoardScript.TC_7_Contentverse_RejectDocumentInWFReport_Report(DashBoardScript.java:89)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+at Computhink.Generic.BaseClass.jsclick(BaseClass.java:1408)
+at Computhink.Pom.AnnotaionsPom.RedactionAnnotation(AnnotaionsPom.java:279)
+at Computhink.Script.AnnotationFunctionality.TC_B_Redaction_UnlockRedaction(AnnotationFunctionality.java:58)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -594,23 +279,955 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
             <line>
-              <![CDATA[Scenario 08: Verify 'ContentverseReport' - Reject document in workflow Report]]>
-            </line>
-            <line>
-              <![CDATA[Mouse hover on Document Report dropdown and Select 'Reject document in workflow Report']]>
-            </line>
-            <line>
-              <![CDATA[Select 'This Week']]>
-            </line>
-            <line>
-              <![CDATA[Click on Generate Button]]>
+              <![CDATA[Scenario 2:Open the document and Add Redaction Annotation on the page]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC_7_Contentverse_RejectDocumentInWFReport_Report -->
-      </class> <!-- Computhink.Script.DashBoardScript -->
+        </test-method> <!-- TC_B_Redaction_UnlockRedaction -->
+        <test-method signature="TC_C_HighLight_Annotation()[pri:4, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:40:49 IST" name="TC_C_HighLight_Annotation" finished-at="2024-11-19T12:40:59 IST" duration-ms="10033" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Generic.BaseClass.movingElement(BaseClass.java:1318)
+at Computhink.Pom.AnnotaionsPom.HighLighFunction(AnnotaionsPom.java:455)
+at Computhink.Script.AnnotationFunctionality.TC_C_HighLight_Annotation(AnnotationFunctionality.java:66)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 51 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 03: Verify Highlight annotation ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_C_HighLight_Annotation -->
+        <test-method signature="TC_E_StikyNote_Annotation()[pri:5, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:40:59 IST" name="TC_E_StikyNote_Annotation" finished-at="2024-11-19T12:41:09 IST" duration-ms="10062" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Generic.BaseClass.movingElement(BaseClass.java:1318)
+at Computhink.Pom.AnnotaionsPom.StickyNoteAnnotation(AnnotaionsPom.java:477)
+at Computhink.Script.AnnotationFunctionality.TC_E_StikyNote_Annotation(AnnotationFunctionality.java:74)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 51 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 04: Verify Sticky note annotation ]]>
+            </line>
+            <line>
+              <![CDATA[Mouse hover on annotation icon]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_E_StikyNote_Annotation -->
+        <test-method signature="TC_F_RubberStampAnnotation()[pri:6, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:41:09 IST" name="TC_F_RubberStampAnnotation" finished-at="2024-11-19T12:41:19 IST" duration-ms="10096" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Generic.BaseClass.movingElement(BaseClass.java:1318)
+at Computhink.Pom.AnnotaionsPom.RubberStampAnnotation(AnnotaionsPom.java:510)
+at Computhink.Script.AnnotationFunctionality.TC_F_RubberStampAnnotation(AnnotationFunctionality.java:82)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 51 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 05: verify RubberStamp annotation ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_F_RubberStampAnnotation -->
+        <test-method signature="TC_G_Rectangle_Annotation()[pri:7, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:41:19 IST" name="TC_G_Rectangle_Annotation" finished-at="2024-11-19T12:41:29 IST" duration-ms="10080" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Generic.BaseClass.movingElement(BaseClass.java:1318)
+at Computhink.Pom.AnnotaionsPom.rectangleAnnotation(AnnotaionsPom.java:623)
+at Computhink.Script.AnnotationFunctionality.TC_G_Rectangle_Annotation(AnnotationFunctionality.java:89)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 51 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 06: Verify Rectangle annotation tool]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_G_Rectangle_Annotation -->
+        <test-method signature="TC_H_StampAnnotation()[pri:8, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:41:29 IST" name="TC_H_StampAnnotation" finished-at="2024-11-19T12:41:43 IST" duration-ms="14043" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//img[@class='imgP'])[2]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//img[@class='imgP'])[2]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//img[@class='imgP'])[2]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//img[@class='imgP'])[2]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+at Computhink.Generic.BaseClass.jsclick(BaseClass.java:1408)
+at Computhink.Pom.AnnotaionsPom.StampAnnotation(AnnotaionsPom.java:541)
+at Computhink.Script.AnnotationFunctionality.TC_H_StampAnnotation(AnnotationFunctionality.java:96)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 07: verify Stamp annotation tool]]>
+            </line>
+            <line>
+              <![CDATA[Switch to the second page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_H_StampAnnotation -->
+        <test-method signature="TC_I_LineAnnotation_Ellipse_Annotation()[pri:9, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:41:43 IST" name="TC_I_LineAnnotation_Ellipse_Annotation" finished-at="2024-11-19T12:41:58 IST" duration-ms="14096" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Generic.BaseClass.movingElement(BaseClass.java:1318)
+at Computhink.Pom.AnnotaionsPom.LineAnnotation(AnnotaionsPom.java:601)
+at Computhink.Script.AnnotationFunctionality.TC_I_LineAnnotation_Ellipse_Annotation(AnnotationFunctionality.java:104)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 51 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 08: Verify Line annotation]]>
+            </line>
+            <line>
+              <![CDATA[Mouse hover on annotation tool icon]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_I_LineAnnotation_Ellipse_Annotation -->
+        <test-method signature="TC_J_Signature_Annotation()[pri:10, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:41:58 IST" name="TC_J_Signature_Annotation" finished-at="2024-11-19T12:42:08 IST" duration-ms="10084" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Generic.BaseClass.movingElement(BaseClass.java:1318)
+at Computhink.Pom.AnnotaionsPom.signatureAnnotation(AnnotaionsPom.java:682)
+at Computhink.Script.AnnotationFunctionality.TC_J_Signature_Annotation(AnnotationFunctionality.java:115)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 51 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 56 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 10: Verify Signature annotation ]]>
+            </line>
+            <line>
+              <![CDATA[Mouse  on the annotation tool icon]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_J_Signature_Annotation -->
+        <test-method signature="TC_K_Polygon()[pri:11, instance:Computhink.Script.AnnotationFunctionality@328cf0e1]" started-at="2024-11-19T12:42:08 IST" name="TC_K_Polygon" finished-at="2024-11-19T12:42:20 IST" duration-ms="12097" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+at org.openqa.selenium.json.Json.toJson(Json.java:42)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at Computhink.Pom.AnnotaionsPom.PolygonAnnotation(AnnotaionsPom.java:580)
+at Computhink.Script.AnnotationFunctionality.TC_K_Polygon(AnnotationFunctionality.java:124)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+at org.openqa.selenium.json.Json.toJson(Json.java:44)
+... 38 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+... 50 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='icon annotationRoot'])[1]"}
+  (Session info: chrome=131.0.6778.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'CIPLWKT014', ip: '10.4.8.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.70, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e74cc1c415a8b003ef44dbb2c1a51909
+*** Element info: {Using=xpath, value=(//span[@class='icon annotationRoot'])[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy26.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+... 55 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Scenario 11: Verify polygon annotation ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_K_Polygon -->
+      </class> <!-- Computhink.Script.AnnotationFunctionality -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

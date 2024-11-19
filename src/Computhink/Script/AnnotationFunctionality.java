@@ -40,7 +40,7 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 		loginRNISHA47();
 		
 		Reporter.log("User logged in successfully... ");
-		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+		log.info("User log in to 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
 
 	@Test(priority = 2)
@@ -48,6 +48,7 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.DefaultView();
+	
 
 	}
 

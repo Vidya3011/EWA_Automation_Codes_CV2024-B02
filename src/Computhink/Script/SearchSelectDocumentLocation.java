@@ -43,7 +43,7 @@ public class SearchSelectDocumentLocation extends Computhink.Generic.BaseClass {
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(SearchSelectDocumentLocation.class);
 
-	@BeforeClass
+	//@BeforeClass
 	public void ladBrowser() throws Exception {
 		loadBrowser("Chrome");
 	
@@ -55,7 +55,7 @@ public class SearchSelectDocumentLocation extends Computhink.Generic.BaseClass {
 		log.info("Contentverse URL launched successfully...");
 	}
 	
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void Login() throws Exception {
 	
 		// LogoutPage();

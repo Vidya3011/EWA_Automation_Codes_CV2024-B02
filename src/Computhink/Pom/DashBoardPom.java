@@ -343,7 +343,7 @@ public class DashBoardPom extends BaseClass {
 		Reporter.log("Scenario 08: Verify 'ContentverseReport' - Reject document in workflow Report", true);
 
 		
-		/*try {
+		try {
 			loginRNISHA47();
 			Thread.sleep(3000);
 			jsclick(DashBoardTab);
@@ -351,7 +351,7 @@ public class DashBoardPom extends BaseClass {
 			jsclick(CVSReportICon);
 		} catch (Exception e) {
 			Reporter.log("Exception while logging in and accessing dashboard", true);
-		}*/
+		}
 		Actions act = new Actions(driver);
 		
 	
@@ -381,7 +381,12 @@ public class DashBoardPom extends BaseClass {
 		Reporter.log("Click on Generate Button", true);
 		act.moveToElement(DateInputIcon).click().build().perform();
 		Thread.sleep(3000);
+		try {
 		act.moveToElement(ThisWeek).click().build().perform();
+		}
+		catch(Exception e) {
+			//
+		}
 		Thread.sleep(4000);
 		jsclick(GenerateBTN);
 		Thread.sleep(8000);

@@ -1,20 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
-    <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="Computhink.Generic.ListenersRetry"/>
+    <listener class-name="Computhink.Generic.CustomTestLisner"/>
+  </listeners>
+  <test thread-count="5" name="Test2(failed)">
     <classes>
-      <class name="Script.AdvancedViewer_Script">
+      <class name="Computhink.Script.AdvancedViewer_Script">
         <methods>
-          <include name="TestCase_1_AdvancedViewerOptionSelection"/>
-          <include name="TestCase_3_AdvancedViewerPDfDoc"/>
-          <include name="Login"/>
-          <include name="closeBrowser"/>
           <include name="TestCase_2_AdvancedViewerWordDocument"/>
-          <include name="setDriver"/>
           <include name="TestCase_4_AdvancedViewerExcelFile"/>
+          <include name="TestCase_3_AdvancedViewerPDfDoc"/>
         </methods>
-      </class> <!-- Script.AdvancedViewer_Script -->
+      </class> <!-- Computhink.Script.AdvancedViewer_Script -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test2(failed) -->
+  <test thread-count="5" name="Test 10(failed)">
+    <classes>
+      <class name="Computhink.Script.DashBoardScript">
+        <methods>
+          <include name="TC_7_Contentverse_RejectDocumentInWFReport_Report"/>
+          <include name="ladBrowser"/>
+        </methods>
+      </class> <!-- Computhink.Script.DashBoardScript -->
+    </classes>
+  </test> <!-- Test 10(failed) -->
+  <test thread-count="5" name="Test 11(failed)">
+    <classes>
+      <class name="Computhink.Script.SecureLink">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="TC_1_DocumentSendToSecureLink"/>
+          <include name="TC_3_SecureLinkFromDocumentList"/>
+        </methods>
+      </class> <!-- Computhink.Script.SecureLink -->
+    </classes>
+  </test> <!-- Test 11(failed) -->
+  <test thread-count="5" name="Test 12(failed)">
+    <classes>
+      <class name="Computhink.Script.PrintFunctionality">
+        <methods>
+          <include name="TC_A_Email_Reference"/>
+          <include name="TC_F_exports_with_convert_to_pdf_and_best_quality"/>
+          <include name="TC_B_Email_Copy_WithMsgBox_SubjectBox"/>
+        </methods>
+      </class> <!-- Computhink.Script.PrintFunctionality -->
+    </classes>
+  </test> <!-- Test 12(failed) -->
+  <test thread-count="5" name="Test 16(failed)">
+    <classes>
+      <class name="Computhink.Script.Thumbnail_MicroSoft_FabBTN">
+        <methods>
+          <include name="TC_5_View_Document_Delete"/>
+        </methods>
+      </class> <!-- Computhink.Script.Thumbnail_MicroSoft_FabBTN -->
+    </classes>
+  </test> <!-- Test 16(failed) -->
+  <test thread-count="5" name="Test 18(failed)">
+    <classes>
+      <class name="Computhink.Script.DocuSignScript">
+        <methods>
+          <include name="TC_1_DocusignDocument"/>
+        </methods>
+      </class> <!-- Computhink.Script.DocuSignScript -->
+    </classes>
+  </test> <!-- Test 18(failed) -->
+  <test thread-count="5" name="Test19(failed)">
+    <classes>
+      <class name="Computhink.Script.RegisterStamp__Advanced_Viewing">
+        <methods>
+          <include name="TestCase_3_Dynamic_Stamp"/>
+          <include name="TestCase_2_Add_Stamp_SignHere"/>
+          <include name="ladBrowser"/>
+        </methods>
+      </class> <!-- Computhink.Script.RegisterStamp__Advanced_Viewing -->
+    </classes>
+  </test> <!-- Test19(failed) -->
+  <test thread-count="5" name="Test20(failed)">
+    <classes>
+      <class name="Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip">
+        <methods>
+          <include name="loadBrowser"/>
+          <include name="Login"/>
+          <include name="TC_04_ReleaseOwnerShip"/>
+        </methods>
+      </class> <!-- Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip -->
+    </classes>
+  </test> <!-- Test20(failed) -->
+  <test thread-count="5" name="Test21(failed)">
+    <classes>
+      <class name="Computhink.Script.RoomContextMenu_CopyPaste">
+        <methods>
+          <include name="loadBrowser"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- Computhink.Script.RoomContextMenu_CopyPaste -->
+    </classes>
+  </test> <!-- Test21(failed) -->
+  <test thread-count="5" name="Test22(failed)">
+    <classes>
+      <class name="Computhink.Script.RoomContextMenu_Notification">
+        <methods>
+          <include name="TC_08_NotificationFunction"/>
+          <include name="loadBrowser"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- Computhink.Script.RoomContextMenu_Notification -->
+    </classes>
+  </test> <!-- Test22(failed) -->
 </suite> <!-- Failed suite [Suite] -->

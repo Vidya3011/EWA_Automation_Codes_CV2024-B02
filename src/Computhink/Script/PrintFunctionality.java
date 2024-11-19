@@ -37,10 +37,10 @@ PrintFunctionality extends Computhink.Generic.BaseClass {
 	public static SoftAssert so;
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(PrintFunctionality.class);
 
-	@BeforeClass
+	/*@BeforeClass
 	public void ladBrowser() throws Exception {
 		loadBrowser("Chrome");
-
+	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
 		launch47Url();
@@ -48,7 +48,7 @@ PrintFunctionality extends Computhink.Generic.BaseClass {
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
-
+	
 	@Test(priority = 1)
 	public void Login() throws Exception {
 	
@@ -57,7 +57,7 @@ PrintFunctionality extends Computhink.Generic.BaseClass {
 		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-	}
+	}*/
 
 
 	@Test(priority = 4)

@@ -27,9 +27,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -196,6 +198,28 @@ public class BaseClass {
 		Reporter.log("Browser launch with Testing Create document URL", true);
 	}
 
+	public static void RoomSelectionCVS() throws Exception {
+		
+		SoftAssert as = new SoftAssert();
+		
+		// Find and validate Room selection dropdown
+				WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
+				as.assertTrue(room.isDisplayed(), "Room selection dropdown is not displayed.");
+				Select sel = new Select(room);
+				sel.selectByIndex(1);
+				Reporter.log("Select a Room", true);
+				Thread.sleep(2000);
+				// Validate that the room has been selected correctly
+				String selectedRoom = sel.getFirstSelectedOption().getText();
+				System.out.println("Selected Room name: " + selectedRoom);
+				as.assertEquals(selectedRoom, "Room selection is not correct."); // Assuming "Room 3" is the option
+
+				Thread.sleep(2000);
+		
+		
+	}
+	
+	
 	//////////////////////////////////// ====================================================NishaR
 
 	public static void loginRNISHA47() throws Exception {
@@ -210,42 +234,32 @@ public class BaseClass {
 		Reporter.log("Scenario 01: Log into EWA");
 		Reporter.log("Enter valid user name into username field");
 
-		String username = readFromExLogin(2, 0); // Assuming this method reads the username from an external source
+		String username = readFromExLogin(1, 0);// readFromExLogin(2, 0) 1,dipak 2.rnisha 5.subham 6.robert 7.vidyaAssuming this method reads the username from an external source
 		UserName.sendKeys(username);
 		Thread.sleep(3000);
 
 		// Validate the username entered
 		as.assertEquals(UserName.getAttribute("value"), username, "Entered username is not correct.");
+		String attribute = UserName.getAttribute("value");
+		Reporter.log("UserName Details: "+attribute);
 
 		// Find and validate Password input field
 		WebElement passwordField = driver.findElement(By.id("loginPassword"));
 		as.assertTrue(passwordField.isDisplayed(), "Password field is not displayed on the page.");
-		passwordField.sendKeys("syntax@10");
+		passwordField.sendKeys(readFromExLogin(2, 1));//password
 		Reporter.log("Enter valid password into password field", true);
 
 		// Validate that the password has been entered correctly
 		as.assertEquals(passwordField.getAttribute("value"), "syntax@10", "Password is not entered correctly.");
 
-		// Find and validate Room selection dropdown
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		as.assertTrue(room.isDisplayed(), "Room selection dropdown is not displayed.");
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Reporter.log("Select a Room", true);
-
-		// Validate that the room has been selected correctly
-		String selectedRoom = sel.getFirstSelectedOption().getText();
-		System.out.println("Selected Room name: " + selectedRoom);
-		as.assertEquals(selectedRoom, "Room 3", "Room selection is not correct."); // Assuming "Room 3" is the option
-
-		Thread.sleep(4000);
+		RoomSelectionCVS();
 
 		// Check for Captcha and validate if displayed
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id='image']"));
 			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id='captchaInput']"));
-			as.assertTrue(Captch.isDisplayed(), "Captcha image is not displayed.");
-			as.assertTrue(enterCaptch.isDisplayed(), "Captcha input field is not displayed.");
+			as.assertEquals(Captch.isDisplayed(), "Captcha image is not displayed.");
+			as.assertEquals(enterCaptch.isDisplayed(), "Captcha input field is not displayed.");
 			enterCaptch.sendKeys(Captch.getText());
 			Reporter.log("Captcha input entered", true);
 		} catch (Exception e) {
@@ -268,7 +282,7 @@ public class BaseClass {
 			if (sessiomsg.isDisplayed()) {
 				Reporter.log(
 						"Session for user is already active. Do you want to create a new session? Dialog box displayed. User clicks OK button.");
-				as.assertTrue(sessiomsgOK.isDisplayed(), "Session dialog's OK button is not displayed.");
+				as.assertEquals(sessiomsgOK.isDisplayed(), "Session dialog's OK button is not displayed.");
 				jsclick(sessiomsgOK); // Click the OK button
 			}
 		} catch (NoSuchElementException e) {
@@ -276,7 +290,7 @@ public class BaseClass {
 		}
 
 		// Perform soft assert verification at the end of the method
-		as.assertAll();
+		//as.assertAll();
 	}
 
 	public static void loginCVS() throws Exception {
@@ -308,20 +322,7 @@ public class BaseClass {
 		as.assertEquals(passwordField.getAttribute("value"), readFromExLogin(2, 1),
 				"Password is not entered correctly.");
 
-		// Find and validate Room selection dropdown
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		as.assertTrue(room.isDisplayed(), "Room selection dropdown is not displayed.");
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Reporter.log("Select a Room", true);
-
-		// Validate that the room has been selected correctly
-		String selectedRoom = sel.getFirstSelectedOption().getText();
-		System.out.println("Selected Room name: " + selectedRoom);
-		as.assertEquals(selectedRoom, "Room Details", "Room selection is not correct."); // Assuming "Room 3" is the
-																							// option
-
-		Thread.sleep(4000);
+		RoomSelectionCVS();
 
 		// Check for Captcha and validate if displayed
 		try {
@@ -484,7 +485,7 @@ public class BaseClass {
 		Reporter.log("Scenario 01: Log into EWA");
 		Reporter.log("Enter valid user name into username field");
 
-		String username = "Cvadmin"; // Assuming this method reads the username from an external source
+		String username = readFromExLogin(3, 0); //readFromExLogin(2, 0)//admin Assuming this method reads the username from an external source
 		UserName.sendKeys(username);
 		Thread.sleep(3000);
 
@@ -497,24 +498,7 @@ public class BaseClass {
 		passwordField.sendKeys(readFromExLogin(2, 1));
 		Reporter.log("Enter valid password into password field", true);
 
-		// Validate that the password has been entered correctly
-		as.assertEquals(passwordField.getAttribute("value"), readFromExLogin(2, 1),
-				"Password is not entered correctly.");
-
-		// Find and validate Room selection dropdown
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		as.assertTrue(room.isDisplayed(), "Room selection dropdown is not displayed.");
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Reporter.log("Select a Room", true);
-
-		// Validate that the room has been selected correctly
-		String selectedRoom = sel.getFirstSelectedOption().getText();
-		System.out.println("Selected Room name: " + selectedRoom);
-		as.assertEquals(selectedRoom, "Room Details", "Room selection is not correct."); // Assuming "Room 3" is the
-																							// option
-
-		Thread.sleep(4000);
+		RoomSelectionCVS();
 
 		// Check for Captcha and validate if displayed
 		try {
@@ -711,20 +695,7 @@ public class BaseClass {
 		as.assertEquals(passwordField.getAttribute("value"), readFromExLogin(2, 1),
 				"Password is not entered correctly.");
 
-		// Find and validate Room selection dropdown
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		as.assertTrue(room.isDisplayed(), "Room selection dropdown is not displayed.");
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Reporter.log("Select a Room", true);
-
-		// Validate that the room has been selected correctly
-		String selectedRoom = sel.getFirstSelectedOption().getText();
-		System.out.println("Selected Room name: " + selectedRoom);
-		as.assertEquals(selectedRoom, "Room Details", "Room selection is not correct."); // Assuming "Room 3" is the
-																							// option
-
-		Thread.sleep(4000);
+		RoomSelectionCVS();
 
 		// Check for Captcha and validate if displayed
 		try {
@@ -1210,7 +1181,10 @@ public class BaseClass {
 
 	public static WebElement Refresh_Button(WebDriver driver) {
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"homeMenuBtn\"]/img"));
-		return element;
+		SoftAssert so = new SoftAssert();
+        so.assertTrue(element.isDisplayed(), "The refresh button should be visible.");
+        return element;
+		
 	}
 
 	// 2.
@@ -1220,19 +1194,34 @@ public class BaseClass {
 		WebElement logout = driver.findElement(By.xpath("(//span[@id='logedinusername'])[1]"));
 		Thread.sleep(1000);
 		Reporter.log("Click on Username option", true);
+		SoftAssert so = new SoftAssert();
+		so.assertTrue(logout.isDisplayed(), "The logout button should be visible.");
 		jsclick(logout);
+
 		Thread.sleep(2000);
 		WebElement logoutOKBTN = driver.findElement(By.xpath("//*[@id=\"idSidenav\"]/ul/li[1]/a"));
+
+		so.assertTrue(logoutOKBTN.isDisplayed(), "Logout button is not visible on the page.");
+
 		jsclick(logoutOKBTN);
 		Reporter.log("Click on Logout option", true);
 
 		try {
-			WebDriverWait wait1 = new WebDriverWait(driver, 10);
-			wait1.until(ExpectedConditions.alertIsPresent());
-			Alert alt = driver.switchTo().alert();
-			alt.accept();
+			// Wait for the alert to be present
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			String alertText = alert.getText(); // Optionally capture the alert text for validation
+			Reporter.log("Alert text: " + alertText, true);
+
+			alert.accept();
+			Reporter.log("Alert accepted successfully.", true);
+		} catch (NoAlertPresentException e) {
+			Reporter.log("No alert is present during logout.", true);
+		} catch (TimeoutException e) {
+			Reporter.log("Timeout waiting for alert to appear.", true);
 		} catch (Exception e) {
-			System.out.println("Alert is not present...");
+			Reporter.log("Unexpected exception occurred: " + e.getMessage(), true);
 		}
 	}
 

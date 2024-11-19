@@ -552,10 +552,7 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Enter task user name into user name field ");
 		Username.sendKeys("Rnisha");//vidya
 		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 1)
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Thread.sleep(3000);
+		RoomSelectionCVS();
 		Reporter.log("Click on Login Button");
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
@@ -656,10 +653,7 @@ public class ToDoListTab extends BaseClass {
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("nisha");//TodoListExcel(1, 3)dopak
 		Reporter.log("Enter valid password into password field");
 		driver.findElement(By.id("loginPassword")).sendKeys(TodoListExcel(2, 3));
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Thread.sleep(3000);
+		RoomSelectionCVS();
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
 			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
@@ -694,10 +688,7 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Enter valid task name into user name field");
 		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
 		Reporter.log("Enter valid password into password field ");
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Thread.sleep(3000);
+		RoomSelectionCVS();
 		Reporter.log("Click Login button");
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
@@ -731,10 +722,7 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Enter valid task name into user name field");
 		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
 		Reporter.log("Enter valid password into password field ");
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Thread.sleep(3000);
+		RoomSelectionCVS();
 		Reporter.log("Click Login button");
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
@@ -768,10 +756,7 @@ public class ToDoListTab extends BaseClass {
 		Reporter.log("Enter valid task name into user name field");
 		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
 		Reporter.log("Enter valid password into password field ");
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByIndex(2);
-		Thread.sleep(3000);
+		RoomSelectionCVS();
 		Reporter.log("Click Login button");
 		try {
 			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
@@ -805,10 +790,7 @@ public class ToDoListTab extends BaseClass {
 		Thread.sleep(3000);
 		UserNam.sendKeys(TodoListExcel(5, 0));
 		driver.findElement(By.id("loginPassword")).sendKeys("vw");//TodoListExcel(2, 2)
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByIndex(3);
-		Thread.sleep(3000);
+		RoomSelectionCVS();
 		WebElement ele = driver.findElement(By.id("submitid"));
 		jsclick(ele);
 		Thread.sleep(3000);

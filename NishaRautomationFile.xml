@@ -2,118 +2,118 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
  <listeners>
-<listener class-name="Generic.ListenersRetry"></listener>
+<listener class-name="Computhink.Generic.ListenersRetry"></listener>
 
- 
+ <listener class-name="Computhink.Generic.CustomTestLisner"></listener>
  </listeners>
      <test name="Test1">
    <classes>
-      <class name="Script.AnnotationFunctionality"/>
+      <class name="Computhink.Script.AnnotationFunctionality"/>
     </classes>
   </test>   
   <test name="Test2"> 
    <classes>
-      <class name="Script.AdvancedViewer_Script"/>
+      <class name="Computhink.Script.AdvancedViewer_Script"/>
     </classes>
   </test> 
    <test name="Test3">
     <classes>
-      <class name="Script.SearchSelectDocumentLocation"/>
+      <class name="Computhink.Script.SearchSelectDocumentLocation"/>
        </classes>
        </test>  
      
    <!--   <test name="Test 5">
        <classes>
-       <class name="Script.ManualWorkflow"/> 
+       <class name="Computhink.Script.ManualWorkflow"/> 
     </classes>
   </test>  
   <test name="Test 6">
        <classes>
-      <class name="Script.DynamicWorkflow"/>
+      <class name="Computhink.Script.DynamicWorkflow"/>
     </classes>
   </test>     --> 
    
    
   <test name="Test 9">
        <classes>
-      <class name="Script.Favorites"/>
+      <class name="Computhink.Script.Favorites"/>
     </classes>
   </test> 
    <test name="Test 10">
        <classes>
-      <class name="Script.DashBoardScript"/>
+      <class name="Computhink.Script.DashBoardScript"/>
     </classes>
   </test>    
   <test name="Test 11">
        <classes>
-      <class name="Script.SecureLink"/>
+      <class name="Computhink.Script.SecureLink"/>
     </classes> 
   </test> 
   <test name="Test 12">
        <classes>
-      <class name="Script.PrintFunctionality"/>
+      <class name="Computhink.Script.PrintFunctionality"/>
     </classes>
   </test> 
        <test name="Test 13">
        <classes>
-      <class name="Script.SecureLink_Negative_Scenerio"/>
+      <class name="Computhink.Script.SecureLink_Negative_Scenerio"/>
     </classes>
   </test>
    <test name="Test 14">
        <classes>
-      <class name="Script.Print_Email_Export_Negative_Scenerio"/>
+      <class name="Computhink.Script.Print_Email_Export_Negative_Scenerio"/>
     </classes>
   </test>
   <test name="Test 15">
        <classes>
-      <class name="Script.LargeFiles_AutomationTesting"/>
+      <class name="Computhink.Script.LargeFiles_AutomationTesting"/>
     </classes>
   </test>
  
    <test name="Test 16">
        <classes>
-      <class name="Script.Thumbnail_MicroSoft_FabBTN"/>
+      <class name="Computhink.Script.Thumbnail_MicroSoft_FabBTN"/>
     </classes>
   </test>
    
    <test name="Test 18">
        <classes>
-      <class name="Script.DocuSignScript"/>
+      <class name="Computhink.Script.DocuSignScript"/>
     </classes>
   </test>
      <test name="Test19">
        <classes>
-      <class name="Script.RegisterStamp__Advanced_Viewing"/>
+      <class name="Computhink.Script.RegisterStamp__Advanced_Viewing"/>
     </classes>
   </test> 
    <test name="Test20">
        <classes>
-      <class name="Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip"/>
+      <class name="Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip"/>
     </classes>
   </test>    
    <test name="Test21">
        <classes>
-      <class name="Script.RoomContextMenu_CopyPaste"/>
+      <class name="Computhink.Script.RoomContextMenu_CopyPaste"/>
     </classes>
   </test> 
    <test name="Test22">
        <classes>
-      <class name="Script.RoomContextMenu_Notification"/>
+      <class name="Computhink.Script.RoomContextMenu_Notification"/>
     </classes>
   </test> 
    <test name="Test23">
        <classes>
-      <class name="Script.RMC_NodeProperties"/>
+      <class name="Computhink.Script.RMC_NodeProperties"/>
     </classes>
   </test> 
    <test name="Test24">
        <classes>
-      <class name="Script.RMC_Custom_Document_Types"/>
+      <class name="Computhink.Script.RMC_Custom_Document_Types"/>
     </classes>
   </test> 
    <!--  <test name="Test20">
        <classes>
-      <class name="Script.UnsupportedFiles"/>
+      <class name="Computhink.Script.UnsupportedFiles"/>
     </classes>
   </test>   --> 
  </suite> 

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test2</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/5</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Nov 05 15:53:00 IST 2024</td>
+<td>Started on:</td><td>Thu Nov 14 18:11:31 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (68 ms)</td>
+<tr><td>Total time:</td><td>347 seconds (347523 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,7 +68,7 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,24 +76,50 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.AdvancedViewer_Script.setDriver()'><b>setDriver</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
+<td title='Computhink.Script.AdvancedViewer_Script.TestCase_2_AdvancedViewerWordDocument()'><b>TestCase_2_AdvancedViewerWordDocument</b><br>Test class: Computhink.Script.AdvancedViewer_Script<br/>
+<a href="#Output-522065374" onClick='toggleBox("Output-522065374", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-522065374" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-522065374">
+Scenario 2: Create a document with Advanced viewer -  new word document.<br/>
+Click the New Document tab.<br/>
+Click the 'Select destination folder location' text box.<br/>
+'Brower for folder' dialog should be open.<br/>
+Expand the cabinet<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (8a9396239ac01c77c9f5b294b16c70bb)] -&gt; xpath: //div[@id=&apos;createDocuemntNavigator&apos;]/ul/li[2]/ul/li[1]/a] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65273}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a9396239ac01c77c9f5b294b16c70bb
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at Computhink.Generic.BaseClass.VisiblityOf(BaseClass.java:1667)
+	at Computhink.Pom.AdvancedViewer.CreateDocumentAdvancedViewWordDocument(AdvancedViewer.java:1708)
+	at Computhink.Script.AdvancedViewer_Script.TestCase_2_AdvancedViewerWordDocument(AdvancedViewer_Script.java:54)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1762997532", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1762997532'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:264)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace522065374", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace522065374'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (8a9396239ac01c77c9f5b294b16c70bb)] -&gt; xpath: //div[@id=&apos;createDocuemntNavigator&apos;]/ul/li[2]/ul/li[1]/a] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\nisha.r\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65273}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a9396239ac01c77c9f5b294b16c70bb
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at Computhink.Generic.BaseClass.VisiblityOf(BaseClass.java:1667)
+	at Computhink.Pom.AdvancedViewer.CreateDocumentAdvancedViewWordDocument(AdvancedViewer.java:1708)
+	at Computhink.Script.AdvancedViewer_Script.TestCase_2_AdvancedViewerWordDocument(AdvancedViewer_Script.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
@@ -115,11 +141,133 @@ in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFil
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>-1730802180</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
+<td>40</td>
+<td>Computhink.Script.AdvancedViewer_Script@58ebfd03</td></tr>
+<tr>
+<td title='Computhink.Script.AdvancedViewer_Script.TestCase_4_AdvancedViewerExcelFile()'><b>TestCase_4_AdvancedViewerExcelFile</b><br>Test class: Computhink.Script.AdvancedViewer_Script<br/>
+<a href="#Output-1693626804" onClick='toggleBox("Output-1693626804", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1693626804" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1693626804">
+Scenario 3: Create a document with Advanced viewer - 'New Excel Document' <br/>
+Click on the New Document tab<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: CVReports
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at Computhink.Pom.AdvancedViewer.getSelect_Document_Type_Dropdown(AdvancedViewer.java:144)
+	at Computhink.Pom.AdvancedViewer.AdvancedViewExcelDocumentt(AdvancedViewer.java:1907)
+	at Computhink.Script.AdvancedViewer_Script.TestCase_4_AdvancedViewerExcelFile(AdvancedViewer_Script.java:69)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1693626804", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1693626804'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: CVReports
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at Computhink.Pom.AdvancedViewer.getSelect_Document_Type_Dropdown(AdvancedViewer.java:144)
+	at Computhink.Pom.AdvancedViewer.AdvancedViewExcelDocumentt(AdvancedViewer.java:1907)
+	at Computhink.Script.AdvancedViewer_Script.TestCase_4_AdvancedViewerExcelFile(AdvancedViewer_Script.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>16</td>
+<td>Computhink.Script.AdvancedViewer_Script@58ebfd03</td></tr>
+<tr>
+<td title='Computhink.Script.AdvancedViewer_Script.TestCase_3_AdvancedViewerPDfDoc()'><b>TestCase_3_AdvancedViewerPDfDoc</b><br>Test class: Computhink.Script.AdvancedViewer_Script<br/>
+<a href="#Output-938987040" onClick='toggleBox("Output-938987040", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-938987040" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-938987040">
+Scenario 4:Create a document with Advanced viewer -  new PDF document <br/>
+Click on New Document tab<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: CVReports
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at Computhink.Pom.AdvancedViewer.getSelect_Document_Type_Dropdown(AdvancedViewer.java:144)
+	at Computhink.Pom.AdvancedViewer.AdvancedViewPDFDocument(AdvancedViewer.java:1815)
+	at Computhink.Script.AdvancedViewer_Script.TestCase_3_AdvancedViewerPDfDoc(AdvancedViewer_Script.java:61)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace938987040", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace938987040'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: CVReports
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at Computhink.Pom.AdvancedViewer.getSelect_Document_Type_Dropdown(AdvancedViewer.java:144)
+	at Computhink.Pom.AdvancedViewer.AdvancedViewPDFDocument(AdvancedViewer.java:1815)
+	at Computhink.Script.AdvancedViewer_Script.TestCase_3_AdvancedViewerPDfDoc(AdvancedViewer_Script.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>13</td>
+<td>Computhink.Script.AdvancedViewer_Script@58ebfd03</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -127,269 +275,23 @@ in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFil
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.AdvancedViewer_Script.setDriver()'><b>setDriver</b><br>Test class: Script.AdvancedViewer_Script</td>
+<td title='Computhink.Script.AdvancedViewer_Script.TestCase_1_AdvancedViewerOptionSelection()'><b>TestCase_1_AdvancedViewerOptionSelection</b><br>Test class: Computhink.Script.AdvancedViewer_Script<br/>
+<a href="#Output-2092912524" onClick='toggleBox("Output-2092912524", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2092912524" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2092912524">
+Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer<br/>
+Click on Setting icon<br/>
+Go to Mypreference<br/>
+Set the office document to advanced viewing<br/>
+Set the PDF document to advanced viewing<br/>
+Click on Apply button<br/>
+Advanced viewer mode has been set successfully...<br/>
+</div>
+</td>
 <td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.setDriver()'><b>setDriver</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.setDriver()'><b>setDriver</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.closeBrowser()'><b>closeBrowser</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.closeBrowser()'><b>closeBrowser</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.setDriver()'><b>setDriver</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.closeBrowser()'><b>closeBrowser</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.closeBrowser()'><b>closeBrowser</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.closeBrowser()'><b>closeBrowser</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.TestCase_2_AdvancedViewerWordDocument()'><b>TestCase_2_AdvancedViewerWordDocument</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1700499817", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1700499817'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:264)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.Login()'><b>Login</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace96974084", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace96974084'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:264)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.TestCase_3_AdvancedViewerPDfDoc()'><b>TestCase_3_AdvancedViewerPDfDoc</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace513633400", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace513633400'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:264)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.TestCase_1_AdvancedViewerOptionSelection()'><b>TestCase_1_AdvancedViewerOptionSelection</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace201591949", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace201591949'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:264)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
-<tr>
-<td title='Script.AdvancedViewer_Script.TestCase_4_AdvancedViewerExcelFile()'><b>TestCase_4_AdvancedViewerExcelFile</b><br>Test class: Script.AdvancedViewer_Script</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace733026478", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace733026478'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by BeforeMethod on method setDriver but has not been marked @Optional or defined
-in C:\Users\nisha.r\eclipse-workspace\CVS_Auto_2024_B2_64Bit\NishaRautomationFile.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:264)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>Script.AdvancedViewer_Script@30d4b288</td></tr>
+<td>14</td>
+<td>Computhink.Script.AdvancedViewer_Script@58ebfd03</td></tr>
 </table><p>
 </body>
 </html>
