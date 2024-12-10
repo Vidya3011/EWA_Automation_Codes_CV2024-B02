@@ -5,15 +5,15 @@
     <classes>
       <class name="Computhink.Script.AnnotationFunctionality">
         <methods>
+          <include name="TC_C_HighLight_Annotation"/>
           <include name="TC_K_Polygon"/>
           <include name="TC_F_RubberStampAnnotation"/>
-          <include name="TC_C_HighLight_Annotation"/>
           <include name="ladBrowser"/>
           <include name="TC_H_StampAnnotation"/>
           <include name="TC_G_Rectangle_Annotation"/>
           <include name="TC_I_LineAnnotation_Ellipse_Annotation"/>
-          <include name="TC_J_Signature_Annotation"/>
           <include name="TC_B_Redaction_UnlockRedaction"/>
+          <include name="TC_J_Signature_Annotation"/>
           <include name="TC_E_StikyNote_Annotation"/>
         </methods>
       </class> <!-- Computhink.Script.AnnotationFunctionality -->

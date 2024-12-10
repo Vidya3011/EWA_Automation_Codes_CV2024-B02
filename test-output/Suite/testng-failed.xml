@@ -5,45 +5,30 @@
     <listener class-name="Computhink.Generic.ListenersRetry"/>
     <listener class-name="Computhink.Generic.CustomTestLisner"/>
   </listeners>
-  <test thread-count="5" name="Test2(failed)">
+  <test thread-count="5" name="Test3(failed)">
     <classes>
-      <class name="Computhink.Script.AdvancedViewer_Script">
+      <class name="Computhink.Script.SearchSelectDocumentLocation">
         <methods>
-          <include name="TestCase_2_AdvancedViewerWordDocument"/>
-          <include name="TestCase_4_AdvancedViewerExcelFile"/>
-          <include name="TestCase_3_AdvancedViewerPDfDoc"/>
+          <include name="R_QuickSearch"/>
+          <include name="B_ExactSearchInIndexWithLoadMoreCount"/>
         </methods>
-      </class> <!-- Computhink.Script.AdvancedViewer_Script -->
+      </class> <!-- Computhink.Script.SearchSelectDocumentLocation -->
     </classes>
-  </test> <!-- Test2(failed) -->
+  </test> <!-- Test3(failed) -->
   <test thread-count="5" name="Test 10(failed)">
     <classes>
       <class name="Computhink.Script.DashBoardScript">
         <methods>
           <include name="TC_7_Contentverse_RejectDocumentInWFReport_Report"/>
-          <include name="ladBrowser"/>
         </methods>
       </class> <!-- Computhink.Script.DashBoardScript -->
     </classes>
   </test> <!-- Test 10(failed) -->
-  <test thread-count="5" name="Test 11(failed)">
-    <classes>
-      <class name="Computhink.Script.SecureLink">
-        <methods>
-          <include name="ladBrowser"/>
-          <include name="TC_1_DocumentSendToSecureLink"/>
-          <include name="TC_3_SecureLinkFromDocumentList"/>
-        </methods>
-      </class> <!-- Computhink.Script.SecureLink -->
-    </classes>
-  </test> <!-- Test 11(failed) -->
   <test thread-count="5" name="Test 12(failed)">
     <classes>
       <class name="Computhink.Script.PrintFunctionality">
         <methods>
-          <include name="TC_A_Email_Reference"/>
           <include name="TC_F_exports_with_convert_to_pdf_and_best_quality"/>
-          <include name="TC_B_Email_Copy_WithMsgBox_SubjectBox"/>
         </methods>
       </class> <!-- Computhink.Script.PrintFunctionality -->
     </classes>
@@ -57,26 +42,6 @@
       </class> <!-- Computhink.Script.Thumbnail_MicroSoft_FabBTN -->
     </classes>
   </test> <!-- Test 16(failed) -->
-  <test thread-count="5" name="Test 18(failed)">
-    <classes>
-      <class name="Computhink.Script.DocuSignScript">
-        <methods>
-          <include name="TC_1_DocusignDocument"/>
-        </methods>
-      </class> <!-- Computhink.Script.DocuSignScript -->
-    </classes>
-  </test> <!-- Test 18(failed) -->
-  <test thread-count="5" name="Test19(failed)">
-    <classes>
-      <class name="Computhink.Script.RegisterStamp__Advanced_Viewing">
-        <methods>
-          <include name="TestCase_3_Dynamic_Stamp"/>
-          <include name="TestCase_2_Add_Stamp_SignHere"/>
-          <include name="ladBrowser"/>
-        </methods>
-      </class> <!-- Computhink.Script.RegisterStamp__Advanced_Viewing -->
-    </classes>
-  </test> <!-- Test19(failed) -->
   <test thread-count="5" name="Test20(failed)">
     <classes>
       <class name="Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip">
@@ -84,6 +49,7 @@
           <include name="loadBrowser"/>
           <include name="Login"/>
           <include name="TC_04_ReleaseOwnerShip"/>
+          <include name="TC_03_TakeOwnerShip"/>
         </methods>
       </class> <!-- Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip -->
     </classes>
@@ -102,11 +68,30 @@
     <classes>
       <class name="Computhink.Script.RoomContextMenu_Notification">
         <methods>
-          <include name="TC_08_NotificationFunction"/>
           <include name="loadBrowser"/>
           <include name="Login"/>
         </methods>
       </class> <!-- Computhink.Script.RoomContextMenu_Notification -->
     </classes>
   </test> <!-- Test22(failed) -->
+  <test thread-count="5" name="Test23(failed)">
+    <classes>
+      <class name="Computhink.Script.RMC_NodeProperties">
+        <methods>
+          <include name="loadBrowser"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- Computhink.Script.RMC_NodeProperties -->
+    </classes>
+  </test> <!-- Test23(failed) -->
+  <test thread-count="5" name="Test24(failed)">
+    <classes>
+      <class name="Computhink.Script.RMC_Custom_Document_Types">
+        <methods>
+          <include name="loadBrowser"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- Computhink.Script.RMC_Custom_Document_Types -->
+    </classes>
+  </test> <!-- Test24(failed) -->
 </suite> <!-- Failed suite [Suite] -->

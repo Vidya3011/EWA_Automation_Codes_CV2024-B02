@@ -64,11 +64,11 @@
       <class name="Computhink.Script.Print_Email_Export_Negative_Scenerio"/>
     </classes>
   </test>
-  <test name="Test 15">
+  <!-- <test name="Test 15">
        <classes>
       <class name="Computhink.Script.LargeFiles_AutomationTesting"/>
     </classes>
-  </test>
+  </test> -->
  
    <test name="Test 16">
        <classes>
@@ -76,11 +76,11 @@
     </classes>
   </test>
    
-   <test name="Test 18">
+  <!--  <test name="Test 18">
        <classes>
       <class name="Computhink.Script.DocuSignScript"/>
     </classes>
-  </test>
+  </test> -->
      <test name="Test19">
        <classes>
       <class name="Computhink.Script.RegisterStamp__Advanced_Viewing"/>

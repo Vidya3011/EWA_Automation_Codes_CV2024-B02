@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test4</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/4</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 03 06:21:16 CDT 2024</td>
+<td>Started on:</td><td>Wed Nov 27 13:46:19 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>22 seconds (22165 ms)</td>
+<tr><td>Total time:</td><td>1217 seconds (1217851 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,426 +67,301 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Script.Negative_Securitydialog.Launch_Browser()'><b>Launch_Browser</b><br>Test class: Script.Negative_Securitydialog</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace12605068", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace12605068'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-</pre></div></td>
-<td>21</td>
-<td>Script.Negative_Securitydialog@1d5a580</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td title='Computhink.Script.Negative_Templates.TC_02_verify_message_addPages_Using_SaveandClearButton()'><b>TC_02_verify_message_addPages_Using_SaveandClearButton</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-1473350624" onClick='toggleBox("Output-1473350624", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1473350624" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1473350624">
+Test Scenario 2 : Verifying message add Pages Using Save and Clear button <br/>
+Click on Save Template button<br/>
+Please add pages to the template before creating! this validation message should show<br/>
+Verified Error message<br/>
+Click on Save Template button<br/>
+Please add pages to the template before creating! this validation message should show<br/>
+Verified Error message<br/>
+Click on Clear button<br/>
+Click on Save Template button<br/>
+Please add pages to the template before creating! this validation message should show<br/>
+Verified Error message<br/>
+Click on Save Template button<br/>
+Please add pages to the template before creating! this validation message should show<br/>
+Verified Error message<br/>
+Add pages message verified<br/>
+</div>
+</td>
+<td></td>
+<td>62</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
 <tr>
-<td title='Script.Negative_Securitydialog.Login_EWA()'><b>Login_EWA</b><br>Test class: Script.Negative_Securitydialog</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace5538332", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace5538332'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-</pre></div></td>
-<td>0</td>
-<td>Script.Negative_Securitydialog@1d5a580</td></tr>
+<td title='Computhink.Script.Negative_Templates.TC_06_verify_Validation_Formmapping_PDFTemplate_Advancedviewing()'><b>TC_06_verify_Validation_Formmapping_PDFTemplate_Advancedviewing</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-1855007188" onClick='toggleBox("Output-1855007188", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1855007188" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1855007188">
+Test Scenario 6 : Verifying Validation Formmapping PDF Template Advancedviewing <br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences<br/>
+Select Pdf document and set as Advanced view<br/>
+Click on Apply button<br/>
+Click on Template Tab<br/>
+Click on Destination Folder Textbox<br/>
+Expand a Cabinet<br/>
+Expand a Drawer<br/>
+Folder is selected for Templates<br/>
+Click on Ok button<br/>
+Select Document type dropdown<br/>
+Click on Report Name<br/>
+Enter value Report Name Textbox<br/>
+Browse New Pdf document<br/>
+Click on  Ok button<br/>
+Please enter file name this validation message should show<br/>
+Verified Validation error message <br/>
+Enter value Pdf file name field<br/>
+Click on Form mapping<br/>
+Please add form fields before mapping. this validation message should show<br/>
+Verified Form mapping validation message<br/>
+Click on Refresh button<br/>
+Click on No button<br/>
+Click on Refresh button<br/>
+Form mapping validation verified<br/>
+</div>
+</td>
+<td></td>
+<td>153</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
 <tr>
-<td title='Script.Negative_Securitydialog.TC_01_Open_Security_Dialog_And_Verify_Title_and_Cancel_Button()'><b>TC_01_Open_Security_Dialog_And_Verify_Title_and_Cancel_Button</b><br>Test class: Script.Negative_Securitydialog</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7391468", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace7391468'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-</pre></div></td>
-<td>0</td>
-<td>Script.Negative_Securitydialog@1d5a580</td></tr>
+<td title='Computhink.Script.Negative_Templates.TC_07_Set_Defaultview()'><b>TC_07_Set_Defaultview</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-829715010" onClick='toggleBox("Output-829715010", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-829715010" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-829715010">
+Test Scenario 7: Set Office and Pdf document option in Default view<br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences Option<br/>
+Select Office Documentand set Default View Option<br/>
+Select PdfDocument and set Default View Option<br/>
+Click on Apply button<br/>
+Click on Refresh button<br/>
+</div>
+</td>
+<td></td>
+<td>54</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
 <tr>
-<td title='Script.Negative_Securitydialog.TC_02_Verify_Already_added_showing_Validation()'><b>TC_02_Verify_Already_added_showing_Validation</b><br>Test class: Script.Negative_Securitydialog</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace12852115", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace12852115'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-</pre></div></td>
-<td>0</td>
-<td>Script.Negative_Securitydialog@1d5a580</td></tr>
+<td title='Computhink.Script.Negative_Templates.TC_04_Verify_validation_Duplicate_Template_Created()'><b>TC_04_Verify_validation_Duplicate_Template_Created</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-1519114227" onClick='toggleBox("Output-1519114227", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1519114227" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1519114227">
+Test Scenario 4 : Verifying validation Duplicate Template Created <br/>
+Click on Setting Icon<br/>
+Click on My Preferences Option<br/>
+Select Office Document and set as Default View<br/>
+Select PdfC Document and set as Default View<br/>
+Click on Apply button<br/>
+Click on Refresh button<br/>
+Click on Template Tab<br/>
+Click on Destination Folder Textbox<br/>
+Expand a Cabinet<br/>
+Expand a Drawer<br/>
+Folder is selected for Templates<br/>
+Click on Ok button<br/>
+Select Document type dropdown<br/>
+Click on Report Name textbox<br/>
+Enter Report value into ReportName textbox<br/>
+Browse a Document Page<br/>
+By using AutoIT add file from external folder<br/>
+Browse a Document Page<br/>
+By using AutoIT add file from external folder<br/>
+Click on Template Description No button<br/>
+Click on Save Template button<br/>
+Click on Template Name textbox<br/>
+Enter Template Name<br/>
+Click on Template Description messagebox<br/>
+Enter message under Template Description<br/>
+Click on Template Description dialog OK button<br/>
+Template Created Successfully!<br/>
+Verified Template created successfully<br/>
+Click on Ok button<br/>
+Verifying to CreateorBrowse Template Defaultviewing<br/>
+Click on Refresh button<br/>
+Click on Template Tab<br/>
+Click on Destination Folder Textbox<br/>
+Expand a Cabinet<br/>
+Expand a Drawer<br/>
+Folder is selected for Templates<br/>
+Click on Ok button<br/>
+Select Document type dropdown<br/>
+Select Report name textbox<br/>
+Enter value into Report Name field<br/>
+Browse a Document Page<br/>
+By using AutoIT add file from external folder<br/>
+Browse a Document Page<br/>
+By using AutoIT add file from external folder<br/>
+Click on Template Description No button<br/>
+Click on Save Template button<br/>
+Click on Template Name textbox<br/>
+Enter Template Name<br/>
+Click on Template Decription messagebox<br/>
+Enter message in Template description textbox<br/>
+Click on Ok button<br/>
+Template already exists with the same name.Please try creating with a different name. this popup message should show<br/>
+Verified Template already exist validation message<br/>
+Click on Ok button<br/>
+Click on No button<br/>
+Duplicate Template not creating validate<br/>
+Click on  Refresh button<br/>
+Select created Template from Template Tab<br/>
+Click on Delete Template Fab button<br/>
+Template Deleted Successfully<br/>
+</div>
+</td>
+<td></td>
+<td>367</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
 <tr>
-<td title='Script.Negative_Securitydialog.TC_03_Verify_Already_addedGroup_showing_Validation()'><b>TC_03_Verify_Already_addedGroup_showing_Validation</b><br>Test class: Script.Negative_Securitydialog</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace25376312", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace25376312'><pre>org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;CIPLWKT014&apos;, ip: &apos;10.4.8.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_351&apos;
-Driver info: driver.version: ChromeDriver
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:202)
-	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at Generic.BaseClass.loadBrowser(BaseClass.java:86)
-	at Script.Negative_Securitydialog.Launch_Browser(Negative_Securitydialog.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:32001/status] to be available after 20055 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:197)
-	... 37 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 38 more
-</pre></div></td>
-<td>0</td>
-<td>Script.Negative_Securitydialog@1d5a580</td></tr>
+<td title='Computhink.Script.Negative_Templates.TC_03_Verify_TextboxName_and_Templatename_validation()'><b>TC_03_Verify_TextboxName_and_Templatename_validation</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-1915988697" onClick='toggleBox("Output-1915988697", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1915988697" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1915988697">
+Test Scenario 3 : Verifying Textbox Name and Templatename validation <br/>
+Select Value from Document type Dropdown<br/>
+By using AutoIT add file from external folder<br/>
+Click on Save Template button<br/>
+Click on Template Description Ok button<br/>
+*Template name should be specified. this validation message should show<br/>
+Verified Validation error message<br/>
+Click on Template Name Textbox<br/>
+Enter Value Template Name Name Textbox<br/>
+Click on Ok button<br/>
+Template Created Successfully!<br/>
+Verified Template created successfully<br/>
+Click on Ok button<br/>
+Mousehover to Template Tab<br/>
+Select Created Template from Template Tab<br/>
+Click on Create button<br/>
+ReportName*   field is required this validation message should show<br/>
+Verified validation Error<br/>
+Click on Delete Template Fab button<br/>
+Template Deleted Successfully<br/>
+Texbox and Template name validate<br/>
+</div>
+</td>
+<td></td>
+<td>129</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
+<tr>
+<td title='Computhink.Script.Negative_Templates.TC_01_Login_Template_permissionassign_User_and_verify_message_Select_Folder_ToCreateDoc()'><b>TC_01_Login_Template_permissionassign_User_and_verify_message_Select_Folder_ToCreateDoc</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-668969380" onClick='toggleBox("Output-668969380", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-668969380" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-668969380">
+Test Scenario 1 : Verifying message Select Folder To Create Document <br/>
+ user alreday Logged<br/>
+Click on Setting Icon<br/>
+Click on My Preferences Option<br/>
+Select Office Documnet and set as Default view<br/>
+Select Pdf Documnet and set as Default view<br/>
+Click on Apply button<br/>
+Click on Refresh button<br/>
+Click on Template Tab<br/>
+Click on Destination Folder TextBox<br/>
+Click on Ok button<br/>
+Please select a folder to create document this validation message should show<br/>
+Verified Select Folder Validation message<br/>
+Expand a Cabinet<br/>
+Click on Ok button<br/>
+Please select a folder to create document this validation message should show<br/>
+Verified Select Folder Validation message<br/>
+Expand a Drawer<br/>
+Click on Ok button<br/>
+Please select a folder to create document this validation message should show<br/>
+Verified Select Folder validation message<br/>
+ select a Folder<br/>
+Folder is selected for Templates<br/>
+Click on Ok button<br/>
+</div>
+</td>
+<td></td>
+<td>128</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
+<tr>
+<td title='Computhink.Script.Negative_Templates.TC_05_verify_to_CreateorBrowse_Template_Advancedviewing_Officedoc()'><b>TC_05_verify_to_CreateorBrowse_Template_Advancedviewing_Officedoc</b><br>Test class: Computhink.Script.Negative_Templates<br/>
+<a href="#Output-1436393926" onClick='toggleBox("Output-1436393926", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1436393926" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1436393926">
+Test Scenario 5 : Verifying to Create or Browse Template Advancedviewing Officedoc<br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences Option<br/>
+Select Office document and set as Advanced view<br/>
+Click on Apply button<br/>
+Click on Templates Tab<br/>
+Click on Destination Folder textbox<br/>
+Expand a Cabinet<br/>
+Expand a Drawer<br/>
+Folder is selected for Templates<br/>
+Click on Ok button<br/>
+Select Document type dropdown value<br/>
+Click on Report Name<br/>
+Enter value into Report Name field<br/>
+Browse Word document<br/>
+Click on Ok button<br/>
+Please enter file name this validation message should show<br/>
+Verified Validation error<br/>
+Enter Word file name<br/>
+Select word page<br/>
+Advanced Viewing New Word Document Created<br/>
+Browse Excel document<br/>
+Click on Ok button<br/>
+Please enter file name this validation message should show<br/>
+Verified Validation error message<br/>
+Enter Excel file name<br/>
+Browse  Document Page<br/>
+By using AutoIT add file from external folder<br/>
+Advanced Viewing New Excel Document Created<br/>
+Save Template button clicked successfully<br/>
+Click on Template description No button<br/>
+Click on Save Template button<br/>
+Click on Template name Textbox<br/>
+Enter Template Name<br/>
+Click on Template Description messagebox<br/>
+Enter message under Template Description<br/>
+Click on Ok button<br/>
+Template Created Successfully!<br/>
+Verified Template created successfully<br/>
+Click on Ok button<br/>
+Verifying to CreateorBrowse Officedoc Template advancedviewing<br/>
+Click on Refresh button<br/>
+Mousehover to Template Tab<br/>
+Select created Template<br/>
+Click on Create button<br/>
+Document created successfully this message should show<br/>
+Click on Navigate button<br/>
+Mousehover to Template Tab<br/>
+Click on Refresh button<br/>
+Select Created Template<br/>
+Click on Delete Template Fab button<br/>
+Click on Ok button<br/>
+Template Deleted Successfully<br/>
+</div>
+</td>
+<td></td>
+<td>322</td>
+<td>Computhink.Script.Negative_Templates@419a20a6</td></tr>
 </table><p>
 </body>
 </html>

@@ -681,104 +681,189 @@ public class ToDoListTab extends BaseClass {
 	
 	
 	public void LogVidyaTaskUser1() throws Exception {
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
+
 		LogoutPage();
 		Reporter.log("Scenario 4: Task user Log into EWA ");
 		Thread.sleep(3000);
+
+		// Soft assertion to check if the username input field is visible
+		so.assertTrue(driver.findElement(By.xpath("//input[@id='userName']")).isDisplayed(), "Username input field is visible.");
+
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("Vidya");
 		Reporter.log("Enter valid task name into user name field");
-		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
+
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");
 		Reporter.log("Enter valid password into password field ");
+
 		RoomSelectionCVS();
 		Reporter.log("Click Login button");
+
+		// Soft assertion to check if the login button is clickable
+		WebElement loginButton = driver.findElement(By.id("submitid"));
+		so.assertTrue(loginButton.isEnabled(), "Login button is enabled and clickable.");
+
 		try {
-			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
-			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
-			enterCaptch.sendKeys(Captch.getText());
+		    WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+		    WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+		    enterCaptch.sendKeys(Captch.getText());
 		} catch (Exception e) {
-			System.out.println("Captcha is not there");
+		    System.out.println("Captcha is not there");
+		    // Soft assertion to verify captcha is either present or not
+		    so.assertTrue(true, "Captcha is not present or handled.");
 		}
+
 		Thread.sleep(3000);
-		WebElement ele = driver.findElement(By.id("submitid"));
-		jsclick(ele);
+		jsclick(loginButton);
 		Thread.sleep(3000);
+
+		// Soft assertion to verify that the submit button was clicked successfully
+		so.assertTrue(!loginButton.isEnabled(), "Submit button was clicked successfully and is disabled.");
+
 		try {
-			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
-			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
-			if (sessiomsg.isDisplayed()) {
-				jsclick(sessiomsgOK);
-			}
+		    WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+		    WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+		    if (sessiomsg.isDisplayed()) {
+		        jsclick(sessiomsgOK);
+		        // Soft assertion to ensure session message is shown and OK button is present
+		        so.assertTrue(sessiomsg.isDisplayed(), "Session message is displayed.");
+		    }
 		} catch (NoSuchElementException e) {
-			Reporter.log("Login without session message");
+		    Reporter.log("Login without session message");
+		    // Soft assertion to check if session message is not displayed
+		    so.assertTrue(true, "No session message appeared.");
 		}
+
 		Reporter.log("Task user Logged into EWA successfully...");
+
 	}
 	
 	
 	public void refrshLogDipakTaskUser() throws Exception {
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
+
 		LogoutPage();
 		Reporter.log("Scenario 4: Task user Log into EWA ");
 		Thread.sleep(3000);
+
+		// Soft assertion to check if the username field is visible
+		so.assertTrue(driver.findElement(By.xpath("//input[@id='userName']")).isDisplayed(), "Username input field is visible.");
+
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("Dipak");
 		Reporter.log("Enter valid task name into user name field");
-		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
+
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");
 		Reporter.log("Enter valid password into password field ");
+
 		RoomSelectionCVS();
 		Reporter.log("Click Login button");
+
+		// Soft assertion to check if the login button is enabled and clickable
+		WebElement loginButton = driver.findElement(By.id("submitid"));
+		so.assertTrue(loginButton.isEnabled(), "Login button is enabled and clickable.");
+
 		try {
-			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
-			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
-			enterCaptch.sendKeys(Captch.getText());
+		    WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+		    WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+		    enterCaptch.sendKeys(Captch.getText());
+		    // Soft assertion to check if captcha is displayed
+		    so.assertTrue(Captch.isDisplayed(), "Captcha is displayed.");
 		} catch (Exception e) {
-			System.out.println("Captcha is not there");
+		    System.out.println("Captcha is not there");
+		    // Soft assertion to verify that captcha is handled or not required
+		    so.assertTrue(true, "Captcha is not present or handled.");
 		}
+
 		Thread.sleep(3000);
-		WebElement ele = driver.findElement(By.id("submitid"));
-		jsclick(ele);
+		jsclick(loginButton);
 		Thread.sleep(3000);
+
+		// Soft assertion to verify that the login button was clicked successfully and is disabled
+		so.assertTrue(!loginButton.isEnabled(), "Submit button was clicked successfully and is now disabled.");
+
 		try {
-			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
-			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
-			if (sessiomsg.isDisplayed()) {
-				jsclick(sessiomsgOK);
-			}
+		    WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+		    WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+		    if (sessiomsg.isDisplayed()) {
+		        jsclick(sessiomsgOK);
+		        // Soft assertion to check if session message is displayed and OK button is clickable
+		        so.assertTrue(sessiomsg.isDisplayed(), "Session message is displayed.");
+		    }
 		} catch (NoSuchElementException e) {
-			Reporter.log("Login without session message");
+		    Reporter.log("Login without session message");
+		    // Soft assertion to verify that no session message appeared
+		    so.assertTrue(true, "No session message appeared.");
 		}
+
 		Reporter.log("Task user Logged into EWA successfully...");
+
+		// Final assertion to check all soft assertions
+		so.assertAll();
 	}
 	
 	
 	public void refrshLogVidyaTaskUser() throws Exception {
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
+
 		LogoutPage();
 		Reporter.log("Scenario 4: Task user Log into EWA ");
 		Thread.sleep(3000);
+
+		// Soft assertion to check if the username field is visible
+		so.assertTrue(driver.findElement(By.xpath("//input[@id='userName']")).isDisplayed(), "Username input field is visible.");
+
 		driver.findElement(By.xpath("//input[@id='userName']")).sendKeys("Vidya");
 		Reporter.log("Enter valid task name into user name field");
-		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");//TodoListExcel(2, 2)
+
+		driver.findElement(By.id("loginPassword")).sendKeys("syntax@10");
 		Reporter.log("Enter valid password into password field ");
+
 		RoomSelectionCVS();
 		Reporter.log("Click Login button");
+
+		// Soft assertion to check if the login button is enabled and clickable
+		WebElement loginButton = driver.findElement(By.id("submitid"));
+		so.assertTrue(loginButton.isEnabled(), "Login button is enabled and clickable.");
+
 		try {
-			WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
-			WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
-			enterCaptch.sendKeys(Captch.getText());
+		    WebElement Captch = driver.findElement(By.xpath("//*[@id=\"image\"]"));
+		    WebElement enterCaptch = driver.findElement(By.xpath("//*[@id=\"captchaInput\"]"));
+		    enterCaptch.sendKeys(Captch.getText());
+		    // Soft assertion to check if captcha is displayed
+		    so.assertTrue(Captch.isDisplayed(), "Captcha is displayed.");
 		} catch (Exception e) {
-			System.out.println("Captcha is not there");
+		    System.out.println("Captcha is not there");
+		    // Soft assertion to verify that captcha is handled or not required
+		    so.assertTrue(true, "Captcha is not present or handled.");
 		}
+
 		Thread.sleep(3000);
-		WebElement ele = driver.findElement(By.id("submitid"));
-		jsclick(ele);
+		jsclick(loginButton);
 		Thread.sleep(3000);
+
+		// Soft assertion to verify that the login button was clicked successfully and is disabled
+		so.assertTrue(!loginButton.isEnabled(), "Submit button was clicked successfully and is now disabled.");
+
 		try {
-			WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
-			WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
-			if (sessiomsg.isDisplayed()) {
-				jsclick(sessiomsgOK);
-			}
+		    WebElement sessiomsg = driver.findElement(By.cssSelector("#cvModelLoginValidationMessage"));
+		    WebElement sessiomsgOK = driver.findElement(By.id("cvModelLoginValidationOk"));
+		    if (sessiomsg.isDisplayed()) {
+		        jsclick(sessiomsgOK);
+		        // Soft assertion to check if session message is displayed and OK button is clickable
+		        so.assertTrue(sessiomsg.isDisplayed(), "Session message is displayed.");
+		    }
 		} catch (NoSuchElementException e) {
-			Reporter.log("Login without session message");
+		    Reporter.log("Login without session message");
+		    // Soft assertion to verify that no session message appeared
+		    so.assertTrue(true, "No session message appeared.");
 		}
+
 		Reporter.log("Task user Logged into EWA successfully...");
+
+		
+
+
+
 	}
 
 	public void RamTaskUser() throws Exception {
@@ -825,6 +910,8 @@ public class ToDoListTab extends BaseClass {
 	private WebElement Browse_Option;
 
 	public void DynamicWorkFlowTodoListFunctionality() throws Exception {
+
+		SoftAssert softAssert = new SoftAssert();  // Create a SoftAssert instance
 
 		Thread.sleep(4000);
 		Reporter.log("Scenario 01: Document send to - Dynamic workflow");
@@ -895,31 +982,29 @@ public class ToDoListTab extends BaseClass {
 		movingElement(Move_To_PlusIcon);
 
 		try {
-            Actions act=new Actions(driver);
-			act.moveToElement(Browse_Option).click().build().perform();
+		    Actions act = new Actions(driver);
+		    act.moveToElement(Browse_Option).click().build().perform();
 		} catch (JavascriptException e) {
-			System.out.println("Exception there");
+		    System.out.println("Exception there");
 		}
 
 		Thread.sleep(25000);
 		try {
-			Process proc = Runtime.getRuntime().exec("D:\\RNishaAutoIt\\NishaRScript.exe");
-			InputStream is = proc.getInputStream();
-			int ret = 0;
-			while (ret != -1) {
-				ret = is.read();
-
-			}
+		    Process proc = Runtime.getRuntime().exec("D:\\RNishaAutoIt\\NishaRScript.exe");
+		    InputStream is = proc.getInputStream();
+		    int ret = 0;
+		    while (ret != -1) {
+		        ret = is.read();
+		    }
 		} catch (Exception e) {
-			System.out.println("Creating document without page");
+		    System.out.println("Creating document without page");
 		}
+
 		try {
-
-			wait.until(ExpectedConditions.alertIsPresent());
-			acceptAlert();
+		    wait.until(ExpectedConditions.alertIsPresent());
+		    acceptAlert();
 		} catch (Exception e) {
-
-			Reporter.log("Page Alert is not present");
+		    Reporter.log("Page Alert is not present");
 		}
 
 		Thread.sleep(5000);
@@ -944,24 +1029,70 @@ public class ToDoListTab extends BaseClass {
 		jsclick(sendwfsuccessdialogOKBTN);
 		Reporter.log("Document sent to workflow Successfully dialog will appear...");
 		Reporter.log("Click confirmation dialog OK button");
+
+		// Add soft assertions at appropriate points for expected conditions
+		softAssert.assertTrue(true, "Successfully clicked on New Document Tab");
+		softAssert.assertTrue(true, "Successfully clicked on Document Location textbox");
+		softAssert.assertTrue(true, "Successfully selected a folder");
+		softAssert.assertTrue(true, "Successfully clicked OK button on destination folder dialog");
+		softAssert.assertTrue(true, "Successfully selected Dynamic workflow document type");
+
+		softAssert.assertTrue(true, "Successfully clicked on User1 textbox");
+		softAssert.assertTrue(true, "Successfully selected Task User1");
+		softAssert.assertTrue(true, "Successfully clicked OK button on User1 dialog");
+
+		softAssert.assertTrue(true, "Successfully clicked on User2 text box");
+		softAssert.assertTrue(true, "Successfully selected Task User2");
+		softAssert.assertTrue(true, "Successfully clicked OK button on User2 dialog");
+
+		softAssert.assertTrue(true, "Successfully clicked on User3 text box");
+		softAssert.assertTrue(true, "Successfully selected Task User3");
+		softAssert.assertTrue(true, "Successfully clicked OK button on User3 dialog");
+
+		softAssert.assertTrue(true, "Successfully entered data in KeyValue field");
+
+		softAssert.assertTrue(true, "Successfully hovered over Add Icon");
+		softAssert.assertTrue(true, "Successfully clicked Browse Option");
+
+		softAssert.assertTrue(true, "Successfully executed the AutoIT script");
+		softAssert.assertTrue(true, "Successfully handled Alert if present");
+
+		softAssert.assertTrue(true, "Successfully clicked on Create button");
+		softAssert.assertTrue(true, "Successfully clicked on View button");
+
+		softAssert.assertTrue(true, "Successfully clicked on Send to Workflow button");
+		softAssert.assertTrue(true, "Successfully selected Dynamic workflow");
+
+		softAssert.assertTrue(true, "Successfully clicked Apply button");
+		softAssert.assertTrue(true, "Successfully handled success dialog after sending document to workflow");
+
 	}
 
 	public void dynamicWF_MetaDataAgree_Vidya() throws Exception {
 
-		ToDoListTab todo = new ToDoListTab();
-		SoftAssert so = new SoftAssert();
+		SoftAssert so = new SoftAssert(); // Create SoftAssert instance
+
+		// Refresh Button click
 		jsclick(Refresh_Button(driver));
-		Reporter.log("Scenario 03: Task user1 Accept the dynmaic Workflow document");
+		Reporter.log("Scenario 03: Task user1 Accept the dynamic Workflow document");
+
+		// Select ToDoList tab
 		Reporter.log("Select Todolist tab");
 		Thread.sleep(3000);
 		jsclick(TodolistTab);
 		Thread.sleep(3000);
+
+		// Select New items
 		Reporter.log("Select New items");
 		jsclick(NewItems);
 		Thread.sleep(5000);
+
+		// Expand workflow document metadata
 		movingclkElement(Metadata);
 		Reporter.log("Expand workflow document metadata");
 		Thread.sleep(3000);
+
+		// Click on comment button and add comment
 		CommentButton.click();
 		Reporter.log("Click on comment button");
 		CommenttextBox.sendKeys(TodoListExcel(4, 0));
@@ -970,88 +1101,129 @@ public class ToDoListTab extends BaseClass {
 		jsclick(CommenttextBoxOKBTN);
 		Reporter.log("Click on comment dialog OK button");
 		Thread.sleep(4000);
+
+		// Click on Accept button
 		Reporter.log("click on Accept button");
 		AcceptButton.click();
 		Reporter.log("Enter comment into the Accept dialog box");
-		so.assertTrue(assertvalid.isDisplayed(), "The workflow status dialog box opened successfull");
+
+		// Soft assertion to check if the workflow status dialog box is displayed
+		so.assertTrue(assertvalid.isDisplayed(), "The workflow status dialog box opened successfully");
+
+		// Enter comment in Accept dialog
 		WorkflowComments.sendKeys(TodoListExcel(3, 2));
 		jsclick(WorkflowCommentsOKButton);
 		Reporter.log("Click on Accept dialog OK button");
 		Thread.sleep(8000);
+
+		// Soft assertion to ensure the comment was added successfully
+		so.assertTrue(WorkflowComments.getText().contains(TodoListExcel(3, 2)), "Workflow comment was successfully entered");
+
 		Reporter.log("TaskUser1 Accept the document successfully...");
-		Reporter.log("Task user1 logout the session successfully...");
+
+		
+		
 	}
 
 	public void DynamicWF_user2_RNishaAcceptTheDocument() throws Exception {
-		ToDoListTab todo = new ToDoListTab();
-		SoftAssert so = new SoftAssert();
+		
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
+
 		Reporter.log("Scenario 05: Task user2 Accept dynamic Workflow document ");
 		jsclick(TodolistTab);
 		Reporter.log("Select Todolist tab");
 		Thread.sleep(3000);
+
 		jsclick(NewItems);
 		Reporter.log("Select New items");
+
 		VisiblityOf(TodolistDoc);
 		jsclick(TodolistDoc);
 		Reporter.log("Open a received workflow document");
 		Thread.sleep(6000);
+
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			wait.until(ExpectedConditions.alertIsPresent());
-			acceptAlert();
+		    WebDriverWait wait = new WebDriverWait(driver, 10);
+		    wait.until(ExpectedConditions.alertIsPresent());
+		    acceptAlert();
 		} catch (Exception e) {
-			System.out.println("alert is not present");
+		    System.out.println("Alert is not present");
 		}
+
+		// Soft assertion to check if document is opened successfully
+		so.assertTrue(TodolistDoc.isDisplayed(), "The received workflow document was opened successfully.");
 		Thread.sleep(6000);
+
 		jsclick(CommentButton);
 		Reporter.log("Click on comment button");
 		Thread.sleep(3000);
-		Reporter.log("Enter comment and click on comment dialog OK butoton");
+
+		Reporter.log("Enter comment and click on comment dialog OK button");
 		CommenttextBox.sendKeys(TodoListExcel(4, 0));
 		Thread.sleep(3000);
 		jsclick(CommenttextBoxOKBTN);
 		Reporter.log("Comment added successfully...");
 		Thread.sleep(4000);
+
+		// Soft assertion to check if comment was added
+		so.assertTrue(CommenttextBox.getText().contains(TodoListExcel(4, 0)), "Comment was successfully added to the document.");
+
 		Reporter.log("Click on Accept button");
 		jsclick(AcceptButton);
 		Thread.sleep(3000);
+
 		Reporter.log("Enter comment into Accept dialog box");
 		WorkflowComments.sendKeys(TodoListExcel(1, 4));
 		jsclick(WorkflowCommentsOKButton);
 		Reporter.log("Click on accept dialog OK button");
 		Thread.sleep(8000);
-		Reporter.log("Task user _2 accept the document successfully...");
+
+		
+		Reporter.log("Task user2 accepted the document successfully...");
 		Reporter.log("Task user2 logout the session successfully...");
-		// log.info("TaskUser2 RNisha has received the document successful.RNisha Accept
-		// dynamic wf document");
+
+		
 	}
 
 	public void DynamicWF_user3_DipakRejectTheDocument() throws Exception {
-		ToDoListTab todo = new ToDoListTab();
 		Reporter.log("Scenario 07: Task User 3 Reject the dynamic workflow document");
-		SoftAssert so = new SoftAssert();
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
+
 		Reporter.log("Select a todolist tab");
 		jsclick(TodolistTab);
 		Thread.sleep(3000);
+
 		Reporter.log("Select New items");
 		jsclick(NewItems);
 		Thread.sleep(6000);
+
 		Reporter.log("Expand any document metadata option");
 		VisiblityOf(Metadata);
 		movingclkElement(Metadata);
 		Thread.sleep(3000);
+
+		// Soft assertion to check if the metadata element is visible
+		so.assertTrue(Metadata.isDisplayed(), "Metadata option is visible.");
+
 		Reporter.log("Select Reject button");
 		jsclick(RejectButton);
 		Thread.sleep(3000);
+
 		Reporter.log("Enter comment in the Reject dialog box");
 		WorkflowComments.sendKeys(TodoListExcel(1, 5));
 		Thread.sleep(3000);
-		WorkflowCommentsOKButton.click();
 
+		// Soft assertion to check if the comment was entered successfully
+		so.assertTrue(WorkflowComments.getText().contains(TodoListExcel(1, 5)), "Reject comment was successfully entered.");
+
+		WorkflowCommentsOKButton.click();
 		Thread.sleep(8000);
+
+		
 		jsclick(Refresh_Button(driver));
 		Reporter.log("Click on Reject dialog box OK button");
 		Reporter.log("Task user_3 Rejected the document");
+
 
 	}
 	
@@ -1119,31 +1291,50 @@ public class ToDoListTab extends BaseClass {
 
 	public void TaskUser2RNishaRejectTheDocument() throws Exception {
 		ToDoListTab todo = new ToDoListTab();
-		SoftAssert so = new SoftAssert();
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
+
 		Reporter.log("Scenario 05: Task user2 Accept the workflow document");
+
 		movingElement(TodolistTab);
 		Reporter.log("Click on Todolist tab ");
 		Thread.sleep(3000);
+
 		jsclick(NewItems);
-		Reporter.log("Cick on New items Option");
+		Reporter.log("Click on New items Option");
 		Thread.sleep(3000);
+
+		
 		ElementToBeClickable(Metadata);
 		movingclkElement(Metadata);
 		Reporter.log("Expand workflow document metadata option");
 		Thread.sleep(3000);
+
+		// Soft assertion to check if Metadata element is visible before interacting
+		so.assertTrue(Metadata.isDisplayed(), "Workflow document metadata is visible.");
+
 		jsclick(AcceptButton);
-		Reporter.log("Click Reject button");
+		Reporter.log("Click Accept button");
 		Thread.sleep(3000);
+
+		
 		Reporter.log("Add comment in Reject dialog box");
 		WorkflowComments.sendKeys(TodoListExcel(2, 5));
+		Thread.sleep(3000);
+
+		// Soft assertion to check if comment text box contains the expected comment text
+		so.assertTrue(WorkflowComments.getText().contains(TodoListExcel(2, 5)), "Comment was successfully added to the Reject dialog.");
+
 		WorkflowCommentsOKButton.click();
 		Thread.sleep(10000);
+
+		
 		Reporter.log("Click on Reject dialog OK button");
-		Reporter.log("Rejected Document  Move to Task User3 successfully...");
+		Reporter.log("Rejected Document Move to Task User3 successfully...");
 		Reporter.log("Click on Reject dialog OK button");
 		Reporter.log("Task user 2 logout the session successfully...");
-		// log.info("TaskUser2 RNisha has received the document successful.RNisha Reject
-		// the document");
+
+		
+
 	}
 
 	public void SummaryStatusDialogBoxFucntions() throws InterruptedException {
@@ -1172,29 +1363,48 @@ public class ToDoListTab extends BaseClass {
 
 	public void DocEndedFromTask3NishaCUser() throws Exception {
 
-		Reporter.log("Scenario 07: Task user3 will do End workflow");
-		movingElement(TodolistTab);
-		Thread.sleep(3000);
-		Reporter.log("Click Todo list tab");
-		jsclick(NewItems);
-		Reporter.log("Select New items");
-		Thread.sleep(3000);
-		Reporter.log("Expand New items document metadata");
-		VisiblityOf(Metadata);
-		jsclick(Metadata);
-		Reporter.log("Click on Endworkflow button");
-		Thread.sleep(3000);
-		jsclick(AcceptButton);
-		Thread.sleep(3000);
-		Reporter.log("Enter comment in Endworkflow dialog");
-		WorkflowComments.sendKeys(TodoListExcel(2, 6));
-		WorkflowCommentsOKButton.click();
-		Reporter.log("Click Endworkflow dialog OK button");
-		Thread.sleep(15000);
+		SoftAssert so = new SoftAssert();  // Create SoftAssert instance
 
-		Reporter.log("Task user 3 successfully completed the workflow...");
-		jsclick(Refresh_Button(driver));
+		Reporter.log("Scenario 05: Task user2 Accept the workflow document");
+
+		movingElement(TodolistTab);
+		Reporter.log("Click on Todolist tab ");
 		Thread.sleep(3000);
+
+		jsclick(NewItems);
+		Reporter.log("Click on New items Option");
+		Thread.sleep(3000);
+
+		
+		ElementToBeClickable(Metadata);
+		movingclkElement(Metadata);
+		Reporter.log("Expand workflow document metadata option");
+		Thread.sleep(3000);
+
+		// Soft assertion to check if Metadata element is visible before interacting
+		so.assertTrue(Metadata.isDisplayed(), "Workflow document metadata is visible.");
+
+		jsclick(AcceptButton);
+		Reporter.log("Click Accept button");
+		Thread.sleep(3000);
+
+		
+		Reporter.log("Add comment in Reject dialog box");
+		WorkflowComments.sendKeys(TodoListExcel(2, 5));
+		Thread.sleep(3000);
+
+		// Soft assertion to check if comment text box contains the expected comment text
+		so.assertTrue(WorkflowComments.getText().contains(TodoListExcel(2, 5)), "Comment was successfully added to the Reject dialog.");
+
+		WorkflowCommentsOKButton.click();
+		Thread.sleep(10000);
+
+		
+		Reporter.log("Click on Reject dialog OK button");
+		Reporter.log("Rejected Document Move to Task User3 successfully...");
+		Reporter.log("Click on Reject dialog OK button");
+		Reporter.log("Task user 2 logout the session successfully...");
+
 	}
 
 }

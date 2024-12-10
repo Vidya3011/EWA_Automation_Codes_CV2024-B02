@@ -16,29 +16,29 @@ public class AdvancedViewer_Script extends Computhink.Generic.BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
 //BaseClass bc=new BaseClass();
 
-@BeforeClass
-	public void loadBrowser() throws Exception {
-		loadBrowser("Chrome");
-	
-		log.info("Chrome Browser Launched");
-		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
-		// launchLocalUrl();
-		Reporter.log("Contentverse URL launched successfully...");
-		log.info("Contentverse URL launched successfully...");
-	}
-	
-
-	@Test(priority = 1)
-	public void Login_To_EWA() throws Exception {
-		//LogoutPage();
+	@BeforeClass
+		public void loadBrowser() throws Exception {
+			loadBrowser("Chrome");
 		
-        loginRNISHA47();
-		Reporter.log("User logged in successful... ");
-		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successful... ");
-	}
-
-	//@Test(priority=2)
+			log.info("Chrome Browser Launched");
+			Reporter.log("Chrome Browser launched Successfully...");
+			launch47Url();
+			// launchLocalUrl();
+			Reporter.log("Contentverse URL launched successfully...");
+			log.info("Contentverse URL launched successfully...");
+		}
+		
+	
+		@Test(priority = 1)
+		public void Login_To_EWA() throws Exception {
+			//LogoutPage();
+			
+	    loginRNISHA47();
+			Reporter.log("User logged in successful... ");
+			log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successful... ");
+		}
+	
+	@Test(priority=2)
 	public void TestCase_1_AdvancedViewerOptionSelection() throws Exception {
 
 		AdvancedViewer ad = new AdvancedViewer();

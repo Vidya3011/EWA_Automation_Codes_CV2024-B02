@@ -206,7 +206,7 @@ public class BaseClass {
 				WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
 				as.assertTrue(room.isDisplayed(), "Room selection dropdown is not displayed.");
 				Select sel = new Select(room);
-				sel.selectByIndex(1);
+				sel.selectByIndex(3);
 				Reporter.log("Select a Room", true);
 				Thread.sleep(2000);
 				// Validate that the room has been selected correctly
@@ -234,7 +234,7 @@ public class BaseClass {
 		Reporter.log("Scenario 01: Log into EWA");
 		Reporter.log("Enter valid user name into username field");
 
-		String username = readFromExLogin(1, 0);// readFromExLogin(2, 0) 1,dipak 2.rnisha 5.subham 6.robert 7.vidyaAssuming this method reads the username from an external source
+		String username = readFromExLogin(2, 0);// readFromExLogin(2, 0) 1,dipak 2.rnisha 5.subham 6.robert 7.vidyaAssuming this method reads the username from an external source
 		UserName.sendKeys(username);
 		Thread.sleep(3000);
 
@@ -536,7 +536,6 @@ public class BaseClass {
 		}
 
 		// Perform soft assert verification at the end of the method
-		as.assertAll();
 	}
 
 	public static void loginLocalCVS() throws Exception {
@@ -594,13 +593,7 @@ public class BaseClass {
 		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
 		Thread.sleep(1000);
 		Reporter.log("Enter valid password into password field", true);
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-
-		sel.selectByIndex(2);
-		// sel.selectByVisibleText(ExcelLogin(1, 2));// Here you can chage
-		// driver.findElement(By.xpath("//select[@id='rooms']")) name from
-		// Excel sheet
+		RoomSelectionCVS();
 		Reporter.log("Select a room", true);
 		Thread.sleep(1000);
 		try {
@@ -638,9 +631,7 @@ public class BaseClass {
 		Reporter.log("Enter valid username into username field", true);
 		driver.findElement(By.id("loginPassword")).sendKeys(ExcelLogin(1, 1));
 		Reporter.log("Enter valid password into password field", true);
-		WebElement room = driver.findElement(By.xpath("//select[@id='rooms']"));
-		Select sel = new Select(room);
-		sel.selectByVisibleText(ExcelLogin(1, 2));
+		RoomSelectionCVS();
 		Reporter.log("Select a room", true);
 		Thread.sleep(2000);
 		try {

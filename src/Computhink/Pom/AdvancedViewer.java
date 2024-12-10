@@ -28,6 +28,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
 import Computhink.Generic.BaseClass;
 
@@ -70,28 +71,32 @@ public class AdvancedViewer extends BaseClass {
 
 	public void getSelect_PDF_document_Defviewing() {
 		Select sel = new Select(Select_PDF_document_Advancedviewing);
-		sel.selectByVisibleText("Default viewing");
+		sel.selectByVisibleText("Default Viewing");
 
 	}
 
 	public void DefaultView() throws Exception {
+	    SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		jsclick(Refresh_Button(driver));
-		
-
-		Thread.sleep(5000);
-		jsclick(Setting_Icon);
-		Reporter.log("User click on setting icon");
-		Thread.sleep(5000);
-		jsclick(My_Preferencesetting);
-		Reporter.log("User click on the my preference tab");
-		Thread.sleep(5000);
-		getSelect_PDF_document_Defviewing();
-		Reporter.log("User changes pdf document as default viewing");
-		Thread.sleep(4000);
-		jsclick(Apply_button);
-		Reporter.log("User click on Apply button and the default view successfully applied...");
-		Thread.sleep(5000);
+	    jsclick(Refresh_Button(driver));
+	    Thread.sleep(5000);
+	    
+	    jsclick(Setting_Icon);
+	    Reporter.log("User click on setting icon");
+	  
+	    Thread.sleep(5000);
+	    jsclick(My_Preferencesetting);
+	    Reporter.log("User click on the my preference tab");
+	  
+	    Thread.sleep(5000);
+	    getSelect_PDF_document_Defviewing();
+	    Reporter.log("User changes pdf document as default viewing");
+	   
+	    Thread.sleep(4000);
+	    jsclick(Apply_button);
+	    Reporter.log("User click on Apply button and the default view successfully applied...");
+	    
+	    Thread.sleep(5000);
 
 	}
 
@@ -303,57 +308,67 @@ public class AdvancedViewer extends BaseClass {
 	private WebElement EmailTextBoxOKBTN;
 
 	public void CreateDocumentAndShowThumbnail() throws Exception {
-		Thread.sleep(3000);
-		Reporter.log("Scenario 01: Document Thumbnail view");
-		Reporter.log("Expand the cabinet");
-		jsclick(FirstCabinet);
-		Reporter.log("Expand the drawer");
-		Thread.sleep(2000);
-		jsclick(FirstDrawer);
-		Reporter.log("Select the folder");
-		Thread.sleep(2000);
-		selectElement(FirstFolder);
-		Thread.sleep(3000);
-		// jsclick(FirstDocument);
-		Reporter.log("Click on new document");
-		Thread.sleep(3000);
-		jsclick(Click_New_Document);
-		Thread.sleep(2000);
-		// jsclick(Destination_Folder_Textbox);
+		SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		Thread.sleep(5000);
+	    Thread.sleep(3000);
+	    Reporter.log("Scenario 01: Document Thumbnail view");
+	    Reporter.log("Expand the cabinet");
+	    jsclick(FirstCabinet);
+	    Reporter.log("Expand the drawer");
+	    Thread.sleep(2000);
+	    jsclick(FirstDrawer);
+	    Reporter.log("Select the folder");
+	    Thread.sleep(2000);
+	    selectElement(FirstFolder);
+	    Thread.sleep(3000);
+	    
+	    
+	    // jsclick(FirstDocument);
+	    Reporter.log("Click on new document");
+	    Thread.sleep(3000);
+	    jsclick(Click_New_Document);
+	    Thread.sleep(2000);
+	    
+	    Thread.sleep(5000);
+	    
+	  
+	    Thread.sleep(3000);
+	    getSelect_Document_Type_Dropdown();
+	    Reporter.log("Select document type");
+	    Thread.sleep(3000);
+	    Actions act = new Actions(driver);
+	    act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(6, 0)).build().perform();
+	    Reporter.log("Enter document name");
+	    Thread.sleep(5000);
 
-		// jsclick(OK_Button_BrowseforFolder);
-		Thread.sleep(3000);
-		getSelect_Document_Type_Dropdown();
-		Reporter.log("Select document type");
-		Thread.sleep(3000);
-		Actions act = new Actions(driver);
-		act.click(DocumentCVRep).sendKeys(readFrmXLNEgative(6, 0)).build().perform();
-		Reporter.log("Enter document name");
-		Thread.sleep(5000);
+	    jsclick(CreateBTN);
+	    Reporter.log("Click on create document");
+	    Thread.sleep(10000);
 
-		jsclick(CreateBTN);
-		Reporter.log("Click on create document");
-		Thread.sleep(10000);
-
-		jsclick(viewOption);
-		Reporter.log("Click on view button");
-		movingElement(Move_To_PlusIcon);
-		Thread.sleep(2000);
-		Reporter.log("Click on add icon");
-		jsclick(WordDocument);
-		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
-		Thread.sleep(8000);
-		Reporter.log("Enter word document name");
-		jsclick(EnterFileNameOKBTN);
-		Reporter.log("Click on enter file name OK button");
-		Thread.sleep(3000);
-		Reporter.log("User click on Show/Hide thumbnail view");
-		jsclick(ShowThumbnail);
-		Thread.sleep(8000);
-		Reporter.log("It will hide the thumbnail page, verified successfully...");
-		jsclick(ShowThumbnail);
+	    jsclick(viewOption);
+	    Reporter.log("Click on view button");
+	    movingElement(Move_To_PlusIcon);
+	    Thread.sleep(2000);
+	    Reporter.log("Click on add icon");
+	    jsclick(WordDocument);
+	    EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
+	    Thread.sleep(8000);
+	    Reporter.log("Enter word document name");
+	    jsclick(EnterFileNameOKBTN);
+	    Reporter.log("Click on enter file name OK button");
+	    Thread.sleep(3000);
+	    
+	   
+	    Reporter.log("User click on Show/Hide thumbnail view");
+	    jsclick(ShowThumbnail);
+	    Thread.sleep(8000);
+	    
+	 
+	    Reporter.log("It will hide the thumbnail page, verified successfully...");
+	    jsclick(ShowThumbnail);
+	    
+	    // Assert all to report any failed assertions
+	
 
 	}
 
@@ -664,23 +679,44 @@ public class AdvancedViewer extends BaseClass {
 	}
 
 	public void AdvancedViewerOption() throws Exception {
-		Reporter.log("Scenario 1:Go to My Preference,Change the Default viewing as Advanced viewer");
-		jsclick(Setting_Icon);
-		Reporter.log("Click on Setting icon");
-		jsclick(My_Preferencesetting);
-		Reporter.log("Go to Mypreference");
-		getSelect_Office_document_Advancedviewing();
-		Reporter.log("Set the office document to advanced viewing");
-		Thread.sleep(3000);
-		getSelect_PDF_document_Advancedviewing();
-		Reporter.log("Set the PDF document to advanced viewing");
-		Thread.sleep(6000);
-		jsclick(Apply_button);
-		Reporter.log("Click on Apply button");
-		Reporter.log("Advanced viewer mode has been set successfully...");
+	    SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
+	    Reporter.log("Scenario 1: Go to My Preference, Change the Default viewing as Advanced viewer");
+	    jsclick(Setting_Icon);
+	    Reporter.log("Click on Setting icon");
+
+	    // Soft assertion to verify that the Setting icon was clicked successfully
+	    softAssert.assertTrue(Setting_Icon.isDisplayed(), "Setting icon is not visible");
+
+	    jsclick(My_Preferencesetting);
+	    Reporter.log("Go to My preference");
+
+	    // Soft assertion to check that My Preference setting was clicked successfully
+	    softAssert.assertTrue(My_Preferencesetting.isDisplayed(), "My Preference setting is not visible");
+
+	    getSelect_Office_document_Advancedviewing();
+	    Reporter.log("Set the office document to advanced viewing");
+
+	  
+	    Thread.sleep(3000);
+
+	    getSelect_PDF_document_Advancedviewing();
+	    Reporter.log("Set the PDF document to advanced viewing");
+
+	  
+	    Thread.sleep(6000);
+
+	    jsclick(Apply_button);
+	    Reporter.log("Click on Apply button");
+
+	    // Soft assertion to verify that the Apply button was clicked successfully
+	    softAssert.assertTrue(Apply_button.isDisplayed() && Apply_button.isEnabled(), "Apply button is not clickable or not displayed");
+
+	    Reporter.log("Advanced viewer mode has been set successfully...");
+
+	    // Assert all to check for any failed assertions
+	 
 	}
-
 	public void CaseSensitiveRoomAdvancedViewWordDocument() throws Exception {
 
 		jsclick(Click_New_Document);
@@ -1694,271 +1730,307 @@ public class AdvancedViewer extends BaseClass {
 	}
 
 	public void CreateDocumentAdvancedViewWordDocument() throws Exception {
-		Reporter.log("Scenario 2: Create a document with Advanced viewer -  new word document.");
-		jsclick(Click_New_Document);
-		Reporter.log("Click the New Document tab.");
-		Thread.sleep(2000);
-		jsclick(Destination_Folder_Textbox);
+		SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		Reporter.log("Click the 'Select destination folder location' text box.");
-		Thread.sleep(3000);
-		Reporter.log("'Brower for folder' dialog should be open.");
-		selectElement(Cabinet);
-		Reporter.log("Expand the cabinet");
-		Thread.sleep(4000);
-		VisiblityOf(Drawer);
-		selectElement(Drawer);
-		Reporter.log("Expand drawer");
-		Thread.sleep(5000);
-		selectElement(Folder);
-		Reporter.log("Select a folder");
-		Thread.sleep(5000);
+	    Reporter.log("Scenario 2: Create a document with Advanced viewer - new word document.");
+	    jsclick(Click_New_Document);
+	    Reporter.log("Click the New Document tab.");
+	    Thread.sleep(2000);
 
-		jsclick(OK_Button_BrowseforFolder);
-		Reporter.log("Folder selected successful...");
-		Thread.sleep(3000);
-		getSelect_Document_Type_Dropdown();
-		Reporter.log("Click on 'Select document type' dropdown and select the document type.");
-		Reporter.log("Document type selected successful...");
-		Thread.sleep(3000);
-		movingclkElement(Enter_ReportName);
-		Reporter.log("Enter the value into index field");
-		sendvalue(Enter_ReportName, readFromExAdvancedView(3, 1));
-		Thread.sleep(5000);
+	    // SoftAssert to ensure the "New Document" tab was clicked
+	    softAssert.assertTrue(Click_New_Document.isDisplayed() && Click_New_Document.isEnabled(), "New Document tab is not visible or not clickable");
 
-		movingElement(Move_To_PlusIcon);
-		Reporter.log("Mouse hover on the browse icon");
-		Thread.sleep(5000);
-		jsclick(WordDocument);
-		Reporter.log("Select a 'New Word Document'");
-		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
-		Thread.sleep(5000);
-		Reporter.log("Enter file name dialog should be open.");
-		ElementToBeClickable(EnterFileNameOKBTN);
-		Reporter.log("Enter the file name.");
-		jsclick(EnterFileNameOKBTN);
-		Reporter.log("Click on OK button.");
-		Reporter.log("'Enter file name' dialog should be closed successful...");
-		Thread.sleep(8000);
+	    jsclick(Destination_Folder_Textbox);
+	    Reporter.log("Click the 'Select destination folder location' text box.");
+	    Thread.sleep(3000);
+	    Reporter.log("'Browser for folder' dialog should be open.");
 
-		jsclick(CreateBTN);
-		Reporter.log("Click on Create button");
-		Thread.sleep(10000);
+	    // SoftAssert to verify the "Select destination folder" textbox is clickable
+	    softAssert.assertTrue(Destination_Folder_Textbox.isDisplayed() && Destination_Folder_Textbox.isEnabled(), "'Select destination folder location' textbox is not visible or not clickable");
 
-		jsclick(viewOption);
-		Reporter.log("'Document Created Successfully' dialog should be displayed");
-			Reporter.log("Click on View option");
-		Thread.sleep(15000);
-		Actions act = new Actions(driver);
-		ElementToBeClickable(WordDocPage);
-		act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER)
-				.sendKeys(readFromExAdvancedView(0, 0)).build().perform();
-		Reporter.log("Enter data into the page");
-		Thread.sleep(10000);
-		jsclick(SaveTab);
+	    selectElement(Cabinet);
+	    Reporter.log("Expand the cabinet");
+	    Thread.sleep(4000);
+	    VisiblityOf(Drawer);
+	    selectElement(Drawer);
+	    Reporter.log("Expand drawer");
+	    Thread.sleep(5000);
+	    selectElement(Folder);
+	    Reporter.log("Select a folder");
+	    Thread.sleep(5000);
 
-		Reporter.log("Click on the Save icon from viewer tool bar.");
-		Thread.sleep(8000);
-		VisiblityOf(SaveTabOKBTN);
-		jsclick(SaveTabOKBTN);
-		Reporter.log("Click on save successfull dialog OK button.");
-		Thread.sleep(10000);
-		jsclick(WordDocImageOpt);
-		Reporter.log("Click on image icon,it will show 'upload from computer' option.");
-		Thread.sleep(2000);
-		movingclkElement(UploadFromCmpOpt);
-		Reporter.log("Select the 'upload from computer' option.");
-		Thread.sleep(10000);
-		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\FlowerOrCurlyBracket.exe");
-		Thread.sleep(10000);
-		Reporter.log("Using Auto IT add the image from folder successful.");
-		jsclick(CreateTableopt);
-		Reporter.log("Click on Table icon.");
-		Thread.sleep(5000);
-		jsclick(TableDialogOKBTN);
-		Reporter.log("Add the table into the page.");
-		Thread.sleep(5000);
-		/*
-		 * jsclick(LinkOpt);
-		 * LinkAddress.sendKeys("https://github.com/Vidya3011/CV_Automation.git");
-		 * Thread.sleep(3000); jsclick(TableDialogOKBTN);
-		 */
-		Thread.sleep(3000);
-		act.click(WordDocPage).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
-		Reporter.log("Enter the data inside the table");
-		Thread.sleep(5000);
-		jsclick(SaveTab);
-		Reporter.log("Click on the save icon from viewer tool bar");
-		Thread.sleep(3000);
-		VisiblityOf(SaveTabOKBTN);
-		jsclick(SaveTabOKBTN);
-		Reporter.log("The added data has been saved successfully...");
-		Thread.sleep(8000);
-		jsclick(CloseIcon);
-		Reporter.log("Click on the close icon");
-		Thread.sleep(3000);
+	    jsclick(OK_Button_BrowseforFolder);
+	    Reporter.log("Folder selected successfully...");
+	    Thread.sleep(3000);
 
-		VisiblityOf(ReopenTheDocument);
-		Reporter.log("Document closed successfully...");
-		jsclick(ReopenTheDocument);
-		Reporter.log("Reopen the created word file document...");
-		Thread.sleep(10000);
-		Reporter.log("All saved data should be display successfully...");
-		// jsclick(Refresh_Button(driver));
+	    // SoftAssert to verify the "OK" button was clicked
+	    softAssert.assertTrue(OK_Button_BrowseforFolder.isDisplayed() && OK_Button_BrowseforFolder.isEnabled(), "'OK' button for browsing folder is not visible or not clickable");
+
+	    getSelect_Document_Type_Dropdown();
+	    Reporter.log("Click on 'Select document type' dropdown and select the document type.");
+	    Reporter.log("Document type selected successfully...");
+	    Thread.sleep(3000);
+
+	    movingclkElement(Enter_ReportName);
+	    Reporter.log("Enter the value into index field");
+	    sendvalue(Enter_ReportName, readFromExAdvancedView(3, 1));
+	    Thread.sleep(5000);
+
+	    movingElement(Move_To_PlusIcon);
+	    Reporter.log("Mouse hover on the browse icon");
+	    Thread.sleep(5000);
+	    jsclick(WordDocument);
+	    Reporter.log("Select a 'New Word Document'");
+	    EnterFileNAmePDF.sendKeys(readFromExAdvancedView(3, 1));
+	    Thread.sleep(5000);
+	    Reporter.log("Enter file name dialog should be open.");
+
+	    // SoftAssert to verify that the "Enter file name" dialog is present
+	    softAssert.assertTrue(EnterFileNameOKBTN.isDisplayed() && EnterFileNameOKBTN.isEnabled(), "'Enter file name' dialog button is not visible or not clickable");
+
+	    ElementToBeClickable(EnterFileNameOKBTN);
+	    Reporter.log("Enter the file name.");
+	    jsclick(EnterFileNameOKBTN);
+	    Reporter.log("Click on OK button.");
+	    Reporter.log("'Enter file name' dialog should be closed successfully...");
+	    Thread.sleep(8000);
+
+	    jsclick(CreateBTN);
+	    Reporter.log("Click on Create button");
+	    Thread.sleep(10000);
+
+	    jsclick(viewOption);
+	    Reporter.log("'Document Created Successfully' dialog should be displayed");
+	    Reporter.log("Click on View option");
+	    Thread.sleep(15000);
+
+	    Actions act = new Actions(driver);
+	    ElementToBeClickable(WordDocPage);
+	    act.click(WordDocPage).sendKeys(readFromExAdvancedView(2, 1)).sendKeys(Keys.ENTER)
+	            .sendKeys(readFromExAdvancedView(0, 0)).build().perform();
+	    Reporter.log("Enter data into the page");
+	    Thread.sleep(10000);
+
+	    jsclick(SaveTab);
+	    Reporter.log("Click on the Save icon from viewer tool bar.");
+	    Thread.sleep(8000);
+
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);
+	    Reporter.log("Click on save successful dialog OK button.");
+	    Thread.sleep(10000);
+
+	    jsclick(WordDocImageOpt);
+	    Reporter.log("Click on image icon, it will show 'upload from computer' option.");
+	    Thread.sleep(2000);
+	    movingclkElement(UploadFromCmpOpt);
+	    Reporter.log("Select the 'upload from computer' option.");
+	    Thread.sleep(10000);
+
+	    Runtime.getRuntime().exec("D:\\RNishaAutoIt\\FlowerOrCurlyBracket.exe");
+	    Thread.sleep(10000);
+	    Reporter.log("Using Auto IT add the image from folder successfully.");
+
+	    jsclick(CreateTableopt);
+	    Reporter.log("Click on Table icon.");
+	    Thread.sleep(5000);
+	    jsclick(TableDialogOKBTN);
+	    Reporter.log("Add the table into the page.");
+	    Thread.sleep(5000);
+
+	    Thread.sleep(3000);
+	    act.click(WordDocPage).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
+	    Reporter.log("Enter the data inside the table");
+	    Thread.sleep(5000);
+
+	    jsclick(SaveTab);
+	    Reporter.log("Click on the save icon from viewer tool bar");
+	    Thread.sleep(3000);
+
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);
+	    Reporter.log("The added data has been saved successfully...");
+	    Thread.sleep(8000);
+
+	    jsclick(CloseIcon);
+	    Reporter.log("Click on the close icon");
+	    Thread.sleep(3000);
+
+	    VisiblityOf(ReopenTheDocument);
+	    Reporter.log("Document closed successfully...");
+	    jsclick(ReopenTheDocument);
+	    Reporter.log("Reopen the created word file document...");
+	    Thread.sleep(10000);
+	    Reporter.log("All saved data should be displayed successfully...");
+
+	    // SoftAssert to report all failures
+	   
 	}
 
 	public void AdvancedViewPDFDocument() throws Exception {
-		Reporter.log("Scenario 4:Create a document with Advanced viewer -  new PDF document ");
-		jsclick(Click_New_Document);
-		Reporter.log("Click on New Document tab");
+		 SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		Thread.sleep(3000);
-		getSelect_Document_Type_Dropdown();
-		Reporter.log("Click the 'Select document type' dropdown and select the document type.");
-		Thread.sleep(3000);
-		movingclkElement(Enter_ReportName);
-		Reporter.log("Enter the value into index field");
-		sendvalue(Enter_ReportName, readFromExAdvancedView(2, 1));
-		Thread.sleep(5000);
+		    Reporter.log("Scenario 4: Create a document with Advanced viewer - new PDF document ");
+		    jsclick(Click_New_Document);
+		    Reporter.log("Click on New Document tab");
 
-		movingElement(Move_To_PlusIcon);
-		Reporter.log("Mouse hover on the browse icon");
-		Thread.sleep(4000);
-		jsclick(NewPDfDoc);
-		Reporter.log("Select New PDF document");
-		Thread.sleep(4000);
-		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(2, 1));
-		Thread.sleep(6000);
+		    Thread.sleep(3000);
+		    getSelect_Document_Type_Dropdown();
+		    Reporter.log("Click the 'Select document type' dropdown and select the document type.");
+		    Thread.sleep(3000);
+		    movingclkElement(Enter_ReportName);
+		    Reporter.log("Enter the value into index field");
+		    sendvalue(Enter_ReportName, readFromExAdvancedView(2, 1));
+		    Thread.sleep(5000);
 
-		jsclick(EnterFileNameOKBTN);
-		Reporter.log("Enter the file name");
-		Thread.sleep(5000);
-		jsclick(CreateBTN);
-		Reporter.log("Click on the create button");
-		Thread.sleep(10000);
-		jsclick(viewOption);
-		Reporter.log("click on the view option");
-		Thread.sleep(8000);
-		jsclick(AdvancedTool);
-		Reporter.log("Click on advanced tool icon");
-		Thread.sleep(4000);
-		Actions act = new Actions(driver);
-	try {
-		// act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeam").sendKeys(Keys.ENTER).sendKeys("Nisha").build().perform();
-		act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(1, 0)).build()
-				.perform();
-	}catch(JavascriptException e) {
-		//
-	}
-		Thread.sleep(8000);
-		Reporter.log("Click on free text icon.");
-		Reporter.log("Enter data into -free text box");
-		Thread.sleep(10000);
-		act.click(AddComment).moveToElement(Page).click().build().perform();
-		Reporter.log("Click on comment icon, add a comment");
+		    movingElement(Move_To_PlusIcon);
+		    Reporter.log("Mouse hover on the browse icon");
+		    Thread.sleep(4000);
+		    jsclick(NewPDfDoc);
+		    Reporter.log("Select New PDF document");
+		    Thread.sleep(4000);
+		    EnterFileNAmePDF.sendKeys(readFromExAdvancedView(2, 1));
+		    Thread.sleep(6000);
 
-		Thread.sleep(5000);
-		jsclick(SaveTab);
-		Reporter.log("Comment added successfully");
-		Thread.sleep(7000);
-		VisiblityOf(SaveTabOKBTN);
-		Reporter.log("Click on save icon from viewer menu tab");
-		jsclick(SaveTabOKBTN);
-		Reporter.log("Document saved successfully");
-		Thread.sleep(8000);
-		/*
-		 * jsclick(CloseIcon); Thread.sleep(3000); VisiblityOf(ReopenTheDocument);
-		 * jsclick(ReopenTheDocument);
-		 * 
-		 * Thread.sleep(8000);
-		 */
-		ElementToBeClickable(AdvancedToolTextIcon);
-		act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(0, 1))
-				.sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
-		// act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys("ContentverseAutomationTestingTeamPDFDocument").build().perform();
-		Thread.sleep(8000);
-		act.click(AddComment).moveToElement(Page).click().build().perform();
-		Thread.sleep(5000);
-		jsclick(SaveTab);
-		Thread.sleep(3000);
-		VisiblityOf(SaveTabOKBTN);
-		jsclick(SaveTabOKBTN);
-		Thread.sleep(8000);
-		jsclick(CloseIcon);
-		Reporter.log("Click on the Close icon");
-		Thread.sleep(3000);
-		VisiblityOf(ReopenTheDocument);
-		Reporter.log("Reopen the Created pdf file document");
-		jsclick(ReopenTheDocument);
-		Thread.sleep(10000);
+		    jsclick(EnterFileNameOKBTN);
+		    Reporter.log("Enter the file name");
+		    Thread.sleep(5000);
+		    jsclick(CreateBTN);
+		    Reporter.log("Click on the create button");
+		    Thread.sleep(10000);
+		    jsclick(viewOption);
+		    Reporter.log("Click on the view option");
+		    Thread.sleep(8000);
+		    jsclick(AdvancedTool);
+		    Reporter.log("Click on advanced tool icon");
+		    Thread.sleep(4000);
+		    Actions act = new Actions(driver);
 
-		// jsclick(Refresh_Button(driver));
-		Reporter.log("All saved data should be display successfully...");
-		Thread.sleep(4000);
+		    try {
+		        act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(1, 0)).build().perform();
+		    } catch (JavascriptException e) {
+		        // Handle exception
+		    }
+		    Thread.sleep(8000);
+		    Reporter.log("Click on free text icon.");
+		    Reporter.log("Enter data into free text box");
+		    Thread.sleep(10000);
+		    act.click(AddComment).moveToElement(Page).click().build().perform();
+		    Reporter.log("Click on comment icon, add a comment");
+
+		    Thread.sleep(5000);
+		    jsclick(SaveTab);
+		    Reporter.log("Comment added successfully");
+		    Thread.sleep(7000);
+		    VisiblityOf(SaveTabOKBTN);
+		    Reporter.log("Click on save icon from viewer menu tab");
+		    jsclick(SaveTabOKBTN);
+		    Reporter.log("Document saved successfully");
+		    Thread.sleep(8000);
+
+		    // SoftAssert checks to verify actions and visibility
+		    softAssert.assertTrue(SaveTabOKBTN.isDisplayed() && SaveTabOKBTN.isEnabled(), "SaveTabOKBTN is not visible or not clickable");
+
+		    // Reopen document and check
+		    ElementToBeClickable(AdvancedToolTextIcon);
+		    act.click(AdvancedToolTextIcon).moveToElement(Page).click().sendKeys(readFromExAdvancedView(0, 1))
+		            .sendKeys(Keys.ENTER).sendKeys(readFromExAdvancedView(1, 1)).build().perform();
+		    Thread.sleep(8000);
+		    act.click(AddComment).moveToElement(Page).click().build().perform();
+		    Thread.sleep(5000);
+		    jsclick(SaveTab);
+		    Thread.sleep(3000);
+		    VisiblityOf(SaveTabOKBTN);
+		    jsclick(SaveTabOKBTN);
+		    Thread.sleep(8000);
+		    jsclick(CloseIcon);
+		    Reporter.log("Click on the Close icon");
+		    Thread.sleep(3000);
+		    VisiblityOf(ReopenTheDocument);
+		    Reporter.log("Reopen the Created pdf file document");
+		    jsclick(ReopenTheDocument);
+		    Thread.sleep(10000);
+
+		  
+		
 	}
 
 	public void AdvancedViewExcelDocumentt() throws Exception {
 
-		Reporter.log("Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ");
-		Thread.sleep(3000);
-		jsclick(Click_New_Document);
-		Reporter.log("Click on the New Document tab");
+		SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		Thread.sleep(3000);
-		getSelect_Document_Type_Dropdown();
-		Reporter.log("Click on the 'Select document type' dropdown and select the document type.");
-		Thread.sleep(3000);
-		movingclkElement(Enter_ReportName);
-		Reporter.log("Enter the value into index field");
-		sendvalue(Enter_ReportName, readFromExAdvancedView(4, 1));
-		Thread.sleep(5000);
+	    Reporter.log("Scenario 3: Create a document with Advanced viewer - 'New Excel Document' ");
+	    Thread.sleep(3000);
+	    jsclick(Click_New_Document);
+	    Reporter.log("Click on the New Document tab");
 
-		jsclick(CreateBTN);
-		Reporter.log("Click on the create button");
-		Thread.sleep(10000);
+	    Thread.sleep(3000);
+	    getSelect_Document_Type_Dropdown();
+	    Reporter.log("Click on the 'Select document type' dropdown and select the document type.");
+	    Thread.sleep(3000);
+	    movingclkElement(Enter_ReportName);
+	    Reporter.log("Enter the value into index field");
+	    sendvalue(Enter_ReportName, readFromExAdvancedView(4, 1));
+	    Thread.sleep(5000);
 
-		jsclick(viewOption);
-		Reporter.log("Click on View option");
-		Thread.sleep(10000);
-		movingElement(Move_To_PlusIcon);
-		Reporter.log("Mouse hover on browse icon");
-		Thread.sleep(2000);
-		jsclick(ExcelSheet);
-		Reporter.log("Select New Excel sheet");
-		Thread.sleep(3000);
-		EnterFileNAmePDF.sendKeys(readFromExAdvancedView(4, 1));
-		Reporter.log("Enter file name dialog should be open");
-		Thread.sleep(4000);
+	    jsclick(CreateBTN);
+	    Reporter.log("Click on the create button");
+	    Thread.sleep(10000);
 
-		jsclick(EnterFileNameOKBTN);
-		Reporter.log("Enter file name and click OK button");
-		Actions act = new Actions(driver);
-		Thread.sleep(8000);
-		Reporter.log("'Enter file name' dialog should be closed successfully...");
-		act.click(ExcelSheetFirstRow).sendKeys(readFromExAdvancedView(2, 0)).build().perform();
-		Thread.sleep(3000);
-		Reporter.log("Enter data into the first row");
-		act.click(ExcelSheetFourthRow).sendKeys(readFromExAdvancedView(3, 0)).build().perform();
-		Reporter.log("Enter data into the second row");
-		Thread.sleep(5000);
-		jsclick(SaveTab);
-		Reporter.log("Click on save icon from viewer tool bar");
-		Thread.sleep(7000);
-		VisiblityOf(SaveTabOKBTN);
-		jsclick(SaveTabOKBTN);
-		Reporter.log("Click on 'Save successful' dialog box OK button");
-		Thread.sleep(8000);
-		jsclick(CloseIcon);
-		Reporter.log("Click on Close icon");
-		Thread.sleep(3000);
-		VisiblityOf(ReopenTheDocument);
-		jsclick(ReopenTheDocument);
-		Reporter.log("Document closed successfully...");
-		Reporter.log("Reopen the created document");
-		Thread.sleep(8000);
-		Reporter.log("All saved data should be displayed successfully...");
-		jsclick(Refresh_Button(driver));
-		Thread.sleep(5000);
+	    jsclick(viewOption);
+	    Reporter.log("Click on View option");
+	    Thread.sleep(10000);
+	    movingElement(Move_To_PlusIcon);
+	    Reporter.log("Mouse hover on browse icon");
+	    Thread.sleep(2000);
+	    jsclick(ExcelSheet);
+	    Reporter.log("Select New Excel sheet");
+	    Thread.sleep(3000);
+	    EnterFileNAmePDF.sendKeys(readFromExAdvancedView(4, 1));
+	    Reporter.log("Enter file name dialog should be open");
+	    Thread.sleep(4000);
+
+	    jsclick(EnterFileNameOKBTN);
+	    Reporter.log("Enter file name and click OK button");
+	    Actions act = new Actions(driver);
+	    Thread.sleep(8000);
+	    Reporter.log("'Enter file name' dialog should be closed successfully...");
+	    
+	    // SoftAssert check: Ensure the Excel sheet has been created successfully
+	    softAssert.assertTrue(ExcelSheetFirstRow.isDisplayed(), "Excel sheet first row is not displayed after creation.");
+	    
+	    act.click(ExcelSheetFirstRow).sendKeys(readFromExAdvancedView(2, 0)).build().perform();
+	    Thread.sleep(3000);
+	    Reporter.log("Enter data into the first row");
+	    act.click(ExcelSheetFourthRow).sendKeys(readFromExAdvancedView(3, 0)).build().perform();
+	    Reporter.log("Enter data into the second row");
+	    Thread.sleep(5000);
+	    
+	    jsclick(SaveTab);
+	    Reporter.log("Click on save icon from viewer tool bar");
+	    Thread.sleep(7000);
+	    VisiblityOf(SaveTabOKBTN);
+	    jsclick(SaveTabOKBTN);
+	    Reporter.log("Click on 'Save successful' dialog box OK button");
+	    Thread.sleep(8000);
+
+	    // SoftAssert check: Ensure that the Save dialog has been confirmed
+	    softAssert.assertTrue(SaveTabOKBTN.isDisplayed(), "'Save successful' dialog box was not confirmed.");
+
+	    jsclick(CloseIcon);
+	    Reporter.log("Click on Close icon");
+	    Thread.sleep(3000);
+	    VisiblityOf(ReopenTheDocument);
+	    jsclick(ReopenTheDocument);
+	    Reporter.log("Document closed successfully...");
+	    Reporter.log("Reopen the created document");
+	    Thread.sleep(8000);
+
+	   
+	    jsclick(Refresh_Button(driver));
+	    Thread.sleep(5000);
+
+	 
 	}
 
 	@FindBy(xpath = ("//*[@id=\"djvuViewerDiv_toolbar_link\"]")) // Change 9 to change the value
@@ -2512,24 +2584,41 @@ public class AdvancedViewer extends BaseClass {
 
 	public void SaveDocumentAndReopen() throws Exception {
 
-		Thread.sleep(3000);
+		 SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		jsclick(SaveTab);
-		Reporter.log("Click on the save icon from viewer toolbar", true);
-		Thread.sleep(3000);
-		VisiblityOf(SaveTabOKBTN);
-		jsclick(SaveTabOKBTN);
-		Reporter.log("The added data has been saved successfully...", true);
-		Thread.sleep(8000);
-		jsclick(CloseIcon);
-		Reporter.log("Click on the close icon", true);
-		Thread.sleep(3000);
-		VisiblityOf(ReopenTheDocument);
-		Reporter.log("Document closed successfully...", true);
-		jsclick(ReopenTheDocument);
-		Reporter.log("Reopen the created word file document...", true);
-		Thread.sleep(10000);
-		Reporter.log("All saved data should be displayed successfully...", true);
+		    Thread.sleep(3000);
+
+		    // Click on the save icon
+		    jsclick(SaveTab);
+		    Reporter.log("Click on the save icon from viewer toolbar", true);
+		    Thread.sleep(3000);
+
+		    // Verify that the SaveTabOKBTN is visible and clickable
+		    softAssert.assertTrue(SaveTabOKBTN.isDisplayed() && SaveTabOKBTN.isEnabled(), "SaveTabOKBTN is not visible or not clickable");
+
+		    // Click the OK button to save
+		    jsclick(SaveTabOKBTN);
+		    Reporter.log("The added data has been saved successfully...", true);
+		    Thread.sleep(8000);
+
+		    // Click on the close icon
+		    jsclick(CloseIcon);
+		    Reporter.log("Click on the close icon", true);
+		    Thread.sleep(3000);
+
+		    // Verify that the ReopenTheDocument element is visible and clickable
+		    softAssert.assertTrue(ReopenTheDocument.isDisplayed() && ReopenTheDocument.isEnabled(), "ReopenTheDocument element is not visible or not clickable");
+
+		    Reporter.log("Document closed successfully...", true);
+		    jsclick(ReopenTheDocument);
+		    Reporter.log("Reopen the created word file document...", true);
+		    Thread.sleep(10000);
+
+		   
+		    Reporter.log("All saved data should be displayed successfully...", true);
+
+		    // Assert all to report any failures found
+		  
 		// jsclick(Refresh_Button(driver));
 
 	}
@@ -2549,61 +2638,95 @@ public class AdvancedViewer extends BaseClass {
 	private WebElement OKBTN;
 
 	public void LinkWord() throws Exception {
-		Thread.sleep(3000);
-		Actions act = new Actions(driver);
-		Reporter.log("Click on link button", true);
-		jsclick(Link);
-		Thread.sleep(6000);
-		ElementToBeClickable(LinkdialogAddress);
+		 SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		LinkdialogAddress.sendKeys("https://computhink.com/");
-		Thread.sleep(4000);
-		jsclick(OKBTN);
-		Reporter.log("Enter Link into the textbox", true);
-		Thread.sleep(6000);
-		Reporter.log("Link added successfully...", true);
+		    Thread.sleep(3000);
+		    Actions act = new Actions(driver);
+		    Reporter.log("Click on link button", true);
+		    jsclick(Link);
+		    Thread.sleep(6000);
+
+		    // SoftAssert to ensure the Link dialog is visible and clickable
+		    softAssert.assertTrue(LinkdialogAddress.isDisplayed() && LinkdialogAddress.isEnabled(), "Link dialog textbox is not visible or not clickable");
+
+		    LinkdialogAddress.sendKeys("https://computhink.com/");
+		    Thread.sleep(4000);
+
+		    // SoftAssert to verify that the URL was entered into the textbox
+		    softAssert.assertEquals(LinkdialogAddress.getAttribute("value"), "https://computhink.com/", "The entered URL in the Link dialog is incorrect");
+
+		    jsclick(OKBTN);
+		    Reporter.log("Enter Link into the textbox", true);
+		    Thread.sleep(6000);
+		    Reporter.log("Link added successfully...", true);
+
 	}
 
 	public void HeaderWord() throws Exception {
-		Thread.sleep(3000);
-		Actions act = new Actions(driver);
-		Reporter.log("Click on link button", true);
-		jsclick(Header);
-		Thread.sleep(6000);
+		   SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		ElementToBeClickable(WordDocPage);
+		    Thread.sleep(3000);
+		    Actions act = new Actions(driver);
+		    Reporter.log("Click on link button", true);
+		    jsclick(Header);
+		    Thread.sleep(6000);
 
-		Actions actions = new Actions(driver);
+		    // SoftAssert to ensure the WordDocPage element is clickable
+		    softAssert.assertTrue(WordDocPage.isDisplayed() && WordDocPage.isEnabled(), "WordDocPage element is not visible or not clickable");
 
-		actions.moveByOffset(200, 300).click().perform();
+		    Actions actions = new Actions(driver);
+		    // Perform a mouse move and click at the specified offset
+		    actions.moveByOffset(200, 300).click().perform();
+		    Reporter.log("Clicked at the specified offset.", true);
 
-		actions.sendKeys("Automation Testing: Verifying Header Option").perform();
-		Thread.sleep(4000);
-		// jsclick(OKBTN);
-		Reporter.log("Enter Link into the textbox", true);
-		Thread.sleep(6000);
-		Reporter.log("Link added successfully...", true);
+		    // SoftAssert to verify that the click action was performed successfully
+		    softAssert.assertTrue(actions != null, "Action for mouse move and click was not performed properly");
+
+		    actions.sendKeys("Automation Testing: Verifying Header Option").perform();
+		    Reporter.log("Entered text into the textbox.", true);
+
+		    // SoftAssert to verify that the text was entered in the textbox
+		    softAssert.assertEquals(WordDocPage.getText(), "Automation Testing: Verifying Header Option", "The entered text does not match the expected value");
+
+		    Thread.sleep(4000);
+		    // jsclick(OKBTN);
+		    Reporter.log("Enter Link into the textbox", true);
+		    Thread.sleep(6000);
+		    Reporter.log("Link added successfully...", true);
+
+		    // Assert all to report any failures found
+		    softAssert.assertAll();
+		
 	}
 
 	public void FooterWord() throws Exception {
-		Thread.sleep(3000);
-		Actions act = new Actions(driver);
-		Reporter.log("Click on link button", true);
-		jsclick(Footer);
-		Thread.sleep(6000);
+		   SoftAssert softAssert = new SoftAssert();  // Initialize SoftAssert
 
-		ElementToBeClickable(WordDocPage);
+		    Thread.sleep(3000);
+		    Actions act = new Actions(driver);
+		    Reporter.log("Click on link button", true);
+		    jsclick(Footer);
+		    Thread.sleep(6000);
 
-		Actions actions = new Actions(driver);
+		    // SoftAssert to verify that the WordDocPage element is displayed and clickable
+		    softAssert.assertTrue(WordDocPage.isDisplayed() && WordDocPage.isEnabled(), "WordDocPage element is not visible or not clickable");
 
-		// actions.moveByOffset(200, 300).click().perform();
+		    Actions actions = new Actions(driver);
+		    // Perform text entry into the element
+		    actions.sendKeys("Automation Testing: Verifying Footer Option End Page").perform();
+		    Reporter.log("Entered text into the textbox.", true);
 
-		actions.sendKeys("Automation Testing: Verifying Footer Option End Page").perform();
+		    // SoftAssert to verify that the text has been entered successfully in the textbox
+		    softAssert.assertEquals(WordDocPage.getText(), "Automation Testing: Verifying Footer Option End Page", "The entered text does not match the expected value");
 
-		Reporter.log("Enter Link into the textbox", true);
-		Thread.sleep(6000);
-		Reporter.log("Link added successfully...", true);
+		    Reporter.log("Enter Link into the textbox", true);
+		    Thread.sleep(6000);
+		    Reporter.log("Link added successfully...", true);
 
-	}
+		    // Assert all to report any failures found
+		   
+		}
+
+	
 
 }

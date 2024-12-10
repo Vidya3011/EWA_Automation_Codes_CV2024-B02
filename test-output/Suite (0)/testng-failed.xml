@@ -1,156 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite (0)]">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite (0)]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="Generic.ListenersRetry"/>
+    <listener class-name="Computhink.Generic.ListenersRetry"/>
+    <listener class-name="Computhink.Generic.CustomTestLisner"/>
   </listeners>
-  <test thread-count="5" name="Test4(failed)">
+  <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="Script.Negative_Securitydialog">
+      <class name="Computhink.Script.Login_Validation">
         <methods>
-          <include name="Launch_Browser"/>
+          <include name="TC_05_Verifying_Login_EWA_with_Invalid_Username"/>
           <include name="Login_EWA"/>
-          <include name="TC_01_Open_Security_Dialog_And_Verify_Title_and_Cancel_Button"/>
-          <include name="TC_03_Verify_Already_addedGroup_showing_Validation"/>
-          <include name="TC_02_Verify_Already_added_showing_Validation"/>
+          <include name="TC_03_Verifying_Login_EWA_with_blank_Password"/>
+          <include name="Launch_Browser"/>
+          <include name="TC_06_Verifying_Login_EWA_with_Invalid_Password"/>
+          <include name="TC_02_Verifying_Login_EWA_with_blank_Username"/>
         </methods>
-      </class> <!-- Script.Negative_Securitydialog -->
+      </class> <!-- Computhink.Script.Login_Validation -->
     </classes>
-  </test> <!-- Test4(failed) -->
+  </test> <!-- Test1(failed) -->
   <test thread-count="5" name="Test5(failed)">
     <classes>
-      <class name="Script.Document_Version_Test">
+      <class name="Computhink.Script.Security_dialog_Test">
         <methods>
-          <include name="TC_02_Upload_and_Save_New_page_and_Verify_Version_with_New_Comments"/>
+          <include name="TC_02_Verify_All_permission_for_Cabinet"/>
+          <include name="TC_03_Remove_All_permission_for_Cabinet"/>
+          <include name="TC_08_Verify_Modify_Permissions_Denied_on_subFolder"/>
+          <include name="TC_04_Set_Delete_permission_Denied_for_Folder"/>
           <include name="Launch_Browser"/>
-          <include name="TC_05_Add_Annotation"/>
-          <include name="TC_06_Set_active_version"/>
-          <include name="TC_07_Update_Document_Properties"/>
+          <include name="TC_01_Give_All_permission_To_Cabinet"/>
+          <include name="TC_05_Verify_Delete_permission_Denied_for_Folder"/>
+          <include name="TC_10_Verify_Respective_permission_To_Group_for_AllNodes"/>
+          <include name="TC_06_Remove_Delete_permission_Denied_for_Drawer"/>
+          <include name="TC_07_Share_permission_Denied_for_Folder"/>
         </methods>
-      </class> <!-- Script.Document_Version_Test -->
+      </class> <!-- Computhink.Script.Security_dialog_Test -->
     </classes>
   </test> <!-- Test5(failed) -->
   <test thread-count="5" name="Test6(failed)">
     <classes>
-      <class name="Script.My_Preferences_Viewer_Zoom">
+      <class name="Computhink.Script.Negative_Securitydialog">
         <methods>
-          <include name="TC_02_Verify_Viewer_Zoom_Fit_To_Height"/>
-          <include name="Launch_Browser"/>
+          <include name="TC_02_Verify_Already_added_showing_Validation"/>
         </methods>
-      </class> <!-- Script.My_Preferences_Viewer_Zoom -->
+      </class> <!-- Computhink.Script.Negative_Securitydialog -->
     </classes>
   </test> <!-- Test6(failed) -->
+  <test thread-count="5" name="Test9(failed)">
+    <classes>
+      <class name="Computhink.Script.Split_Merge_Documents">
+        <methods>
+          <include name="TC_03_Verify_Split_Merge_Viewer"/>
+          <include name="loadBrowser"/>
+          <include name="Create_PDF_Document"/>
+        </methods>
+      </class> <!-- Computhink.Script.Split_Merge_Documents -->
+    </classes>
+  </test> <!-- Test9(failed) -->
   <test thread-count="5" name="Test10(failed)">
     <classes>
-      <class name="Script.My_Preferences_Annotation">
+      <class name="Computhink.Script.DocumentContextMenu_Function">
         <methods>
-          <include name="TC_02_Verify_set_Annotation1"/>
-          <include name="Launch_Browser"/>
+          <include name="TC_01_Verify_TakeOwnership_ReleaseOwnership_OnDocuments"/>
         </methods>
-      </class> <!-- Script.My_Preferences_Annotation -->
+      </class> <!-- Computhink.Script.DocumentContextMenu_Function -->
     </classes>
   </test> <!-- Test10(failed) -->
-  <test thread-count="5" name="Test14(failed)">
+  <test thread-count="5" name="Test11(failed)">
     <classes>
-      <class name="Script.My_Preferences_QuickFind">
+      <class name="Computhink.Script.Document_Version_Test">
         <methods>
-          <include name="Launch_Browser"/>
-          <include name="TC_01_Verify_QuickFind_DocIdSearch"/>
+          <include name="TC_07_Update_Document_Properties"/>
         </methods>
-      </class> <!-- Script.My_Preferences_QuickFind -->
+      </class> <!-- Computhink.Script.Document_Version_Test -->
     </classes>
-  </test> <!-- Test14(failed) -->
+  </test> <!-- Test11(failed) -->
+  <test thread-count="5" name="Test15(failed)">
+    <classes>
+      <class name="Computhink.Script.My_Preferences_Defaultviewing">
+        <methods>
+          <include name="TC_02_Verify_Defaultviewing_Native_Format"/>
+          <include name="TC_01_Verify_Defaultviewing_Convert_To_PDF"/>
+        </methods>
+      </class> <!-- Computhink.Script.My_Preferences_Defaultviewing -->
+    </classes>
+  </test> <!-- Test15(failed) -->
   <test thread-count="5" name="Test16(failed)">
     <classes>
-      <class name="Script.Templates_Test">
+      <class name="Computhink.Script.My_Preferences_Download_Allfiles">
         <methods>
-          <include name="TC_05_verify_to_Create_Formmapping_PDFTemplate_Advancedviewing"/>
-          <include name="TC_01_verify_to_CreateorBrowse_Template_Defaultviewing"/>
-          <include name="TC_04_Verify_to_Edit_and_Delete_AdvancedTemplate_Officedoc"/>
-          <include name="TC_06_Verify_to_Edit_and_Delete_Formfield"/>
-          <include name="Launch_Browser"/>
+          <include name="TC_01_Verify_Download_All_Files"/>
         </methods>
-      </class> <!-- Script.Templates_Test -->
+      </class> <!-- Computhink.Script.My_Preferences_Download_Allfiles -->
     </classes>
   </test> <!-- Test16(failed) -->
-  <test thread-count="5" name="Test19(failed)">
-    <classes>
-      <class name="Script.Negative_Templates">
-        <methods>
-          <include name="TC_03_Verify_TextboxName_and_Templatename_validation"/>
-          <include name="Launch_Browser"/>
-          <include name="TC_01_Login_Template_permissionassign_User_and_verify_message_Select_Folder_ToCreateDoc"/>
-          <include name="TC_04_Verify_validation_Duplicate_Template_Created"/>
-        </methods>
-      </class> <!-- Script.Negative_Templates -->
-    </classes>
-  </test> <!-- Test19(failed) -->
-  <test thread-count="5" name="Test23(failed)">
-    <classes>
-      <class name="Script.DocumentContextMenu_Function">
-        <methods>
-          <include name="Launch_Browser"/>
-          <include name="TC_05_Verify_cut_and_paste_Option"/>
-        </methods>
-      </class> <!-- Script.DocumentContextMenu_Function -->
-    </classes>
-  </test> <!-- Test23(failed) -->
   <test thread-count="5" name="Test25(failed)">
     <classes>
-      <class name="Script.Security_dialog_Test">
+      <class name="Computhink.Script.My_Preferences_Viewer_Zoom">
         <methods>
-          <include name="TC_10_Verify_Respective_permission_To_Group_for_AllNodes"/>
-          <include name="TC_05_Verify_Delete_permission_Denied_for_Drawer"/>
-          <include name="Launch_Browser"/>
+          <include name="TC_04_Verify_Viewer_Zoom_Actual_Size"/>
+          <include name="TC_01_Verify_Viewer_Zoom_Fit_To_Width"/>
+          <include name="TC_03_Verify_Viewer_Zoom_Fit_Entire_Image"/>
+          <include name="TC_02_Verify_Viewer_Zoom_Fit_To_Height"/>
         </methods>
-      </class> <!-- Script.Security_dialog_Test -->
+      </class> <!-- Computhink.Script.My_Preferences_Viewer_Zoom -->
     </classes>
   </test> <!-- Test25(failed) -->
-  <test thread-count="5" name="Test26(failed)">
-    <classes>
-      <class name="Script.BatchIndexing_Test">
-        <methods>
-          <include name="TC_01_Verify_Create_Folder_and_Create_Indexing_Document_with_show_Thumbnails"/>
-          <include name="TC_05_Verify_Give_Assign_Share_Permission_To_User"/>
-          <include name="Launch_Browser"/>
-          <include name="TC_02_Verify_Create_As_Single_Document"/>
-          <include name="TC_03_Verify_Delete_Indexing_Document"/>
-          <include name="TC_07_Verify_Revoke_Share_Permission_Of_User"/>
-          <include name="TC_04_Verify_Setting_Delete_on_Index_on_Document"/>
-          <include name="TC_06_Verify_Assign_Share_Permission_Respective_User"/>
-        </methods>
-      </class> <!-- Script.BatchIndexing_Test -->
-    </classes>
-  </test> <!-- Test26(failed) -->
   <test thread-count="5" name="Test27(failed)">
     <classes>
-      <class name="Script.My_Preferences_Redaction_View_Password">
+      <class name="Computhink.Script.Negative_Batchindexing">
         <methods>
-          <include name="TC_01_Verify_Redaction_View_Password"/>
-          <include name="Launch_Browser"/>
+          <include name="TC_02_Verify_Without_adding_ShareandRevoke_Permission"/>
         </methods>
-      </class> <!-- Script.My_Preferences_Redaction_View_Password -->
+      </class> <!-- Computhink.Script.Negative_Batchindexing -->
     </classes>
   </test> <!-- Test27(failed) -->
   <test thread-count="5" name="Test28(failed)">
     <classes>
-      <class name="Script.Negative_Batchindexing">
+      <class name="Computhink.Script.BatchIndexing_Test">
         <methods>
-          <include name="TC_02_Verify_Without_adding_ShareandRevoke_Permission"/>
-          <include name="Launch_Browser"/>
+          <include name="TC_02_Verify_Create_As_Single_Document"/>
+          <include name="TC_07_Verify_Revoke_Share_Permission_Of_User"/>
+          <include name="TC_01_Verify_Create_Folder_and_Create_Indexing_Document_with_show_Thumbnails"/>
+          <include name="TC_06_Verify_Assign_Share_Permission_Respective_User"/>
+          <include name="TC_04_Verify_Setting_Delete_on_Index_on_Document"/>
+          <include name="TC_03_Verify_Delete_Indexing_Document"/>
+          <include name="TC_05_Verify_Give_Assign_Share_Permission_To_User"/>
         </methods>
-      </class> <!-- Script.Negative_Batchindexing -->
+      </class> <!-- Computhink.Script.BatchIndexing_Test -->
     </classes>
   </test> <!-- Test28(failed) -->
   <test thread-count="5" name="Test29(failed)">
     <classes>
-      <class name="Script.Negative_Mypreference_Redactionpassword">
+      <class name="Computhink.Script.My_Preferences_Register_CustomStamp">
         <methods>
-          <include name="Launch_Browser"/>
-          <include name="TC_02_Verify_InvalidRedaction_View_Password"/>
-          <include name="TC_01_Verify_Redaction_View_Password"/>
+          <include name="TC_02_Add_Register_Custom_Stamp_LeadViewer"/>
+          <include name="TC_04_Reset_Register_Custom_Stamp"/>
+          <include name="TC_03_Add_Register_Custom_Stamp_AdvancedViewer"/>
+          <include name="TC_01_Verify_Register_Custom_Stamp_UI_and_UploadStamp"/>
         </methods>
-      </class> <!-- Script.Negative_Mypreference_Redactionpassword -->
+      </class> <!-- Computhink.Script.My_Preferences_Register_CustomStamp -->
     </classes>
   </test> <!-- Test29(failed) -->
 </suite> <!-- Failed suite [Suite (0)] -->

@@ -1,7 +1,11 @@
 package Computhink.Pom;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -130,6 +134,8 @@ public class Print extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[4]/td[3]"))
 	private WebElement Document;
+	
+	
 
 	@FindBy(xpath = ("//a[@id='createDocument']"))
 	private WebElement NewDocumentID;
@@ -292,7 +298,7 @@ public class Print extends Computhink.Generic.BaseClass {
 	}
 
 	public void Email_Reference() throws Exception {
-		Print pojo = new Print();
+		
 		Reporter.log("Scenario 01: Verify reference Email");
 		Thread.sleep(4000);
 		jsclick(TestCabExpIcon);
@@ -793,6 +799,106 @@ public class Print extends Computhink.Generic.BaseClass {
 		Thread.sleep(8000);
 	}
 
+	
+	
+	
+	public void OpenDocumentAndCheckPages() throws Exception{
+		   Reporter.log("Scenario 01: Document send to SecureLink from viewer page", true);
+	        
+	        // Expanding the cabinet
+	        Reporter.log("Expand the cabinet", true);
+	        jsclick(TestCabExpIcon);  // Custom method to click an element
+	        Thread.sleep(3000);
+	        
+	        // Expanding the drawer
+	        jsclick(TesttestDrawerExpIcon);  // Custom method to click an element
+	        Reporter.log("Expand the drawer", true);
+	        Thread.sleep(3000);
+	        
+	        // Expanding the folder
+	        selectElement(VidyaTestFolder);  // Custom method to select an element
+	        Reporter.log("Expand the folder", true);
+	        Thread.sleep(5000);
+	        
+	        // Opening the document
+	        Reporter.log("Open the document", true);
+	        
+	        // Waiting for the document list to appear
+	        List<WebElement> DocumentNames = driver.findElements(By.xpath("//*[@id='documentListTable']/tbody/tr/td[3]"));
+
+	        Thread.sleep(5000); // Allow time for page to load
+
+	        for (int i = 0; i < DocumentNames.size(); i++) {
+	            try {
+	                System.out.println("First open one document and check whether it has document or not, then close and open another document and verify whether it has content.");
+
+	                // Click on the current document in the list
+	                WebElement document = DocumentNames.get(i);
+	                jsclick(document); // Click on the document
+	                
+	                Thread.sleep(5000);
+
+	                // Wait for the document viewer to load and for the thumbnails to be visible
+	                WebDriverWait wait = new WebDriverWait(driver, 10);
+	                WebElement thumbnail = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='docViewerMetaData']")));
+
+	                // Re-locate the document pages after the page has been updated
+	                List<WebElement> pages = driver.findElements(By.xpath("//div[@id='docViewerMetaData']//img"));
+
+	                // Check if the document has content
+	                if (pages.isEmpty()) {
+	                    System.out.println("Do not perform action: the opened document is empty.");
+	                } else {
+	                    boolean documentHasContent = false;
+	                    for (WebElement page : pages) {
+	                        // Check if the image has a valid 'src' attribute (indicating the document is loaded)
+	                        String srcAttribute = page.getAttribute("src");
+	                        if (srcAttribute != null && !srcAttribute.isEmpty()) {
+	                            System.out.println("Perform action: image is loaded. src=" + srcAttribute);
+	                            documentHasContent = true;
+	                            break;  // Stop checking after finding one valid image
+	                        }
+	                    }
+
+	                    if (!documentHasContent) {
+	                        System.out.println("Do not perform action: image is empty or not loaded.");
+	                    }
+	                }
+                    Thread.sleep(4000);
+	                // Close the document viewer after checking
+	              
+
+	            } catch (StaleElementReferenceException e) {
+	                System.out.println("Stale element reference error occurred: " + e.getMessage());
+	                // Re-locate the element and retry the action
+	                DocumentNames = driver.findElements(By.xpath("//*[@id='documentListTable']/tbody/tr/td[3]"));
+	                // Retry clicking the document
+	                Thread.sleep(3000);
+	                WebElement document = DocumentNames.get(i);
+	               jsclick(document);
+	            } catch (NoSuchElementException e) {
+	                System.out.println("An error occurred while interacting with the document: " + e.getMessage());
+	            } catch (Exception e) {
+	                System.out.println("Unexpected error: " + e.getMessage());
+	            }
+	        }
+	        Thread.sleep(4000);
+            // Close the document viewer after checking
+            WebElement closeIcon = driver.findElement(By.xpath("//*[@id='cvDocumentClose']/span"));
+            jsclick(closeIcon); 
+	      
+	        
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void SecLinkReceipientDailogBoxInvalid_Email_ID() throws Exception {
 
 		Reporter.log("Negative Scenario 3: Securelink with valid email and invalid confirm mail ");

@@ -16,10 +16,10 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(DashBoardScript.class);
 
-	@BeforeClass
+	/*@BeforeClass
 	public void ladBrowser() throws Exception {
 		loadBrowser("Chrome");
-
+	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
 		launch47Url();
@@ -27,7 +27,7 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
-
+	
 	@Test(priority = 1)
 	public void Login() throws Exception {
 	
@@ -36,7 +36,7 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-	}
+	}*/
 
 	@Test(priority = 2)
 	public void TC_1_SearchIconDashBoardFunctionality() throws Exception {

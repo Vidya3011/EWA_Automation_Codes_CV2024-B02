@@ -27,8 +27,8 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
-	launch47Url();
-		//launchUrl();
+		launch47Url();
+		// launchUrl();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
@@ -36,9 +36,9 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 
 	@Test(priority = 1)
 	public void Login() throws Exception {
-		
+
 		loginRNISHA47();
-		
+
 		Reporter.log("User logged in successfully... ");
 		log.info("User log in to 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
@@ -48,7 +48,6 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.DefaultView();
-	
 
 	}
 

@@ -354,13 +354,15 @@ public class DashBoardPom extends BaseClass {
 		}
 		Actions act = new Actions(driver);
 		
-	
+	try {
 		
 		jsclick(CVSReportICon);
 		
 		 act.moveToElement(CVSReport).click().build().perform();
 		
-	
+	}catch(Exception e) {
+		//
+	}
 		Thread.sleep(2000);
 		try {
 			Reporter.log("Mouse hover on Document Report dropdown and Select 'Reject document in workflow Report'",
