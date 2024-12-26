@@ -15,8 +15,8 @@ import Computhink.Pom.RoomContextMenu;
 
 //NishaR codes
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~NishaR codes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
+	
 	public static Actions act;
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AnnotationFunctionality.class);
@@ -24,21 +24,21 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 	@BeforeClass
 	public void ladBrowser() throws Exception {
 		loadBrowser("Chrome");
-
+	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
-		// launchUrl();
+	launch47Url();
+		//launchUrl();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");
 	}
-
+	
 	@Test(priority = 1)
 	public void Login() throws Exception {
-
+		
 		loginRNISHA47();
-
+		
 		Reporter.log("User logged in successfully... ");
 		log.info("User log in to 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
@@ -48,6 +48,7 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.DefaultView();
+	
 
 	}
 
@@ -79,7 +80,7 @@ public class AnnotationFunctionality extends Computhink.Generic.BaseClass {
 	public void TC_F_RubberStampAnnotation() throws Exception {
 		AnnotaionsPom an = new AnnotaionsPom();
 		an.RubberStampAnnotation();
-		log.info("RubberStampAnnotationAddedSuccessful");
+		log.info("RubberStamp Annotation Added Successful");
 	}
 
 	@Test(priority = 7)

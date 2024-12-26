@@ -385,7 +385,8 @@ public class LargeFilesClass extends BaseClass {
 
 		Thread.sleep(10000);
 		Reporter.log("Click on browse option");
-		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\LargeXlxsFile.exe");
+		//Runtime.getRuntime().exec("D:\\RNishaAutoIt\\LargeXlxsFile.exe"); it has some functionality issue so taking long time to upload
+		Runtime.getRuntime().exec("D:\\RNishaAutoIt\\LargeWordFile.exe");
 		Thread.sleep(10000);
 		Reporter.log("Add large excel file from folder by using AutoIT script");
 		try {

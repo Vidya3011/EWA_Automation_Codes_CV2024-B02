@@ -16,7 +16,7 @@ public class AdvancedViewer_Script extends Computhink.Generic.BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
 //BaseClass bc=new BaseClass();
 
-	@BeforeClass
+	/*@BeforeClass
 		public void loadBrowser() throws Exception {
 			loadBrowser("Chrome");
 		
@@ -37,8 +37,8 @@ public class AdvancedViewer_Script extends Computhink.Generic.BaseClass {
 			Reporter.log("User logged in successful... ");
 			log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successful... ");
 		}
-	
-	@Test(priority=2)
+	*/
+	@Test(priority = 2)
 	public void TestCase_1_AdvancedViewerOptionSelection() throws Exception {
 
 		AdvancedViewer ad = new AdvancedViewer();
@@ -51,8 +51,8 @@ public class AdvancedViewer_Script extends Computhink.Generic.BaseClass {
 	public void TestCase_2_AdvancedViewerWordDocument() throws Exception {
 
 		AdvancedViewer ad = new AdvancedViewer();
-		
-		 ad.CreateDocumentAdvancedViewWordDocument();
+
+		ad.CreateDocumentAdvancedViewWordDocument();
 		Reporter.log("Word Document verified successful");
 	}
 
@@ -90,7 +90,7 @@ public class AdvancedViewer_Script extends Computhink.Generic.BaseClass {
 	}
 
 	@Test(priority = 8)
-	public void TestCase_3_AdvancedViewerPDfDocument() throws Exception {
+	public void TestCase_7_AdvancedViewerPDfDocument() throws Exception {
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.AdvancedViewPDFDocument();
 		Reporter.log("PDF Document verified successfull");
@@ -98,10 +98,10 @@ public class AdvancedViewer_Script extends Computhink.Generic.BaseClass {
 	}
 
 	@Test(priority = 9)
-	public void TestCase_4_AdvancedViewerExcelDocument() throws Exception {
+	public void TestCase_8_AdvancedViewerExcelDocument() throws Exception {
 		AdvancedViewer ad = new AdvancedViewer();
 		ad.AdvancedViewExcelDocumentt();
 		Reporter.log("Excel spread sheet verified successfull");
-		
+
 	}
 }

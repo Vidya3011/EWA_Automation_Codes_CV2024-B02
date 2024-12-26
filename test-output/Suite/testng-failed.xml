@@ -5,12 +5,25 @@
     <listener class-name="Computhink.Generic.ListenersRetry"/>
     <listener class-name="Computhink.Generic.CustomTestLisner"/>
   </listeners>
+  <test thread-count="5" name="Test2(failed)">
+    <classes>
+      <class name="Computhink.Script.AdvancedViewer_Script">
+        <methods>
+          <include name="TestCase_6_Save_And_Reopen"/>
+          <include name="TestCase_2_AdvancedViewerWordDocument"/>
+          <include name="TestCase_7_AdvancedViewerPDfDocument"/>
+          <include name="TestCase_4_Verify_Header_Option"/>
+          <include name="TestCase_8_AdvancedViewerExcelDocument"/>
+        </methods>
+      </class> <!-- Computhink.Script.AdvancedViewer_Script -->
+    </classes>
+  </test> <!-- Test2(failed) -->
   <test thread-count="5" name="Test3(failed)">
     <classes>
       <class name="Computhink.Script.SearchSelectDocumentLocation">
         <methods>
           <include name="R_QuickSearch"/>
-          <include name="B_ExactSearchInIndexWithLoadMoreCount"/>
+          <include name="M_PendingWorkflow"/>
         </methods>
       </class> <!-- Computhink.Script.SearchSelectDocumentLocation -->
     </classes>
@@ -20,6 +33,8 @@
       <class name="Computhink.Script.DashBoardScript">
         <methods>
           <include name="TC_7_Contentverse_RejectDocumentInWFReport_Report"/>
+          <include name="TC_8_logoutFromDB"/>
+          <include name="ladBrowser"/>
         </methods>
       </class> <!-- Computhink.Script.DashBoardScript -->
     </classes>
@@ -28,70 +43,9 @@
     <classes>
       <class name="Computhink.Script.PrintFunctionality">
         <methods>
-          <include name="TC_F_exports_with_convert_to_pdf_and_best_quality"/>
+          <include name="PrintWithcertifiedCoverPageUnlockRedaction"/>
         </methods>
       </class> <!-- Computhink.Script.PrintFunctionality -->
     </classes>
   </test> <!-- Test 12(failed) -->
-  <test thread-count="5" name="Test 16(failed)">
-    <classes>
-      <class name="Computhink.Script.Thumbnail_MicroSoft_FabBTN">
-        <methods>
-          <include name="TC_5_View_Document_Delete"/>
-        </methods>
-      </class> <!-- Computhink.Script.Thumbnail_MicroSoft_FabBTN -->
-    </classes>
-  </test> <!-- Test 16(failed) -->
-  <test thread-count="5" name="Test20(failed)">
-    <classes>
-      <class name="Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip">
-        <methods>
-          <include name="loadBrowser"/>
-          <include name="Login"/>
-          <include name="TC_04_ReleaseOwnerShip"/>
-          <include name="TC_03_TakeOwnerShip"/>
-        </methods>
-      </class> <!-- Computhink.Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip -->
-    </classes>
-  </test> <!-- Test20(failed) -->
-  <test thread-count="5" name="Test21(failed)">
-    <classes>
-      <class name="Computhink.Script.RoomContextMenu_CopyPaste">
-        <methods>
-          <include name="loadBrowser"/>
-          <include name="Login"/>
-        </methods>
-      </class> <!-- Computhink.Script.RoomContextMenu_CopyPaste -->
-    </classes>
-  </test> <!-- Test21(failed) -->
-  <test thread-count="5" name="Test22(failed)">
-    <classes>
-      <class name="Computhink.Script.RoomContextMenu_Notification">
-        <methods>
-          <include name="loadBrowser"/>
-          <include name="Login"/>
-        </methods>
-      </class> <!-- Computhink.Script.RoomContextMenu_Notification -->
-    </classes>
-  </test> <!-- Test22(failed) -->
-  <test thread-count="5" name="Test23(failed)">
-    <classes>
-      <class name="Computhink.Script.RMC_NodeProperties">
-        <methods>
-          <include name="loadBrowser"/>
-          <include name="Login"/>
-        </methods>
-      </class> <!-- Computhink.Script.RMC_NodeProperties -->
-    </classes>
-  </test> <!-- Test23(failed) -->
-  <test thread-count="5" name="Test24(failed)">
-    <classes>
-      <class name="Computhink.Script.RMC_Custom_Document_Types">
-        <methods>
-          <include name="loadBrowser"/>
-          <include name="Login"/>
-        </methods>
-      </class> <!-- Computhink.Script.RMC_Custom_Document_Types -->
-    </classes>
-  </test> <!-- Test24(failed) -->
 </suite> <!-- Failed suite [Suite] -->

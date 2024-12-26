@@ -30,7 +30,7 @@ public class RoomContextMenu_Notification extends BaseClass {
 	public void Login() throws Exception {
 
 		// LogoutPage();
-		LogInAdmin();
+		loginRNISHA47();
 
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
