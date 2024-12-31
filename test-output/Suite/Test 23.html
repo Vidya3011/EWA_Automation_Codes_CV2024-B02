@@ -1,0 +1,202 @@
+<html>
+<head>
+<title>TestNG:  Test 23</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test 23</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Oct 14 19:37:51 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>567 seconds (567165 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip.TC_04_ReleaseOwnerShip()'><b>TC_04_ReleaseOwnerShip</b><br>Test class: Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip<br/>
+<a href="#Output-1571907926" onClick='toggleBox("Output-1571907926", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1571907926" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1571907926">
+Log into EWA<br/>
+Enter valid username into username text box<br/>
+Enter valid password into password text box<br/>
+Select a Room<br/>
+Click on Login button<br/>
+Session already activate message not appeared<br/>
+User logged in successfully...<br/>
+Log into EWA as admin user<br/>
+Expand a cabinet 1<br/>
+Expand a cabinet 2<br/>
+Expand a drawer 1<br/>
+Expand a folder [[ChromeDriver: chrome on WINDOWS (c6cf30694778b355298616d389efe867)] -> xpath: //div[@id='viewDocumentnavigator']/ul/li[2]/ul/li[1]/ul/li[1]/a]<br/>
+Select a folder<br/>
+Mousehover on RoomcontextMenu tab and click Release ownership option<br/>
+Click on Username option<br/>
+Click on Logout option<br/>
+Admin user logout the session<br/>
+Scenario 01: Log into EWA<br/>
+Enter valid user name into username field<br/>
+Enter valid password into password field<br/>
+Select a Room<br/>
+Click Login button<br/>
+Session message not appeared<br/>
+Another user log into EWA to check TakeOwnerShip option<br/>
+Expand a cabinet 1<br/>
+Expand a cabinet 2<br/>
+Expand a drawer 1<br/>
+Expand a folder [[ChromeDriver: chrome on WINDOWS (c6cf30694778b355298616d389efe867)] -> xpath: //div[@id='viewDocumentnavigator']/ul/li[2]/ul/li[1]/ul/li[1]/a]<br/>
+Select a folder<br/>
+Mousehover on RoomContextTab and check TakeOwnerShip it should be enable<br/>
+Open a document it should not show a warning dialog <br/>
+The user able to use viewer menu tool bar icon it should not disable<br/>
+Click on Username option<br/>
+Click on Logout option<br/>
+Logout the session<br/>
+TakeOwnerShip and ReleaseOwnerShip option verified successfully...<br/>
+Log into EWA<br/>
+Enter valid username into username text box<br/>
+Enter valid password into password text box<br/>
+Select a Room<br/>
+Click on Login button<br/>
+Session already activate message not appeared<br/>
+User logged in successfully...<br/>
+</div>
+</td>
+<td></td>
+<td>261</td>
+<td>Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip@30f5a68a</td></tr>
+<tr>
+<td title='Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip.Login()'><b>Login</b><br>Test class: Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip<br/>
+<a href="#Output-1437379910" onClick='toggleBox("Output-1437379910", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1437379910" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1437379910">
+Click on Username option<br/>
+Click on Logout option<br/>
+Log into EWA<br/>
+Enter valid username into username text box<br/>
+Enter valid password into password text box<br/>
+Select a Room<br/>
+Click on Login button<br/>
+Session already activate message not appeared<br/>
+User logged in successfully...<br/>
+User logged in successfully... <br/>
+</div>
+</td>
+<td></td>
+<td>57</td>
+<td>Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip@30f5a68a</td></tr>
+<tr>
+<td title='Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip.TC_03_TakeOwnerShip()'><b>TC_03_TakeOwnerShip</b><br>Test class: Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip<br/>
+<a href="#Output-1343018358" onClick='toggleBox("Output-1343018358", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1343018358" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1343018358">
+Scenario 01: Verify Roomcontextmenu tab 'Takeownership and ReleaseOwnership' option<br/>
+Click on RoomContextMenu tab<br/>
+Expand a cabinet<br/>
+Expand a drawer<br/>
+Expand a cabinet 1<br/>
+Expand a cabinet 2<br/>
+Expand a drawer 1<br/>
+Expand a folder [[ChromeDriver: chrome on WINDOWS (c6cf30694778b355298616d389efe867)] -> xpath: //div[@id='viewDocumentnavigator']/ul/li[2]/ul/li[1]/ul/li[1]/a]<br/>
+Select a folder<br/>
+Mousehover on RoomContextMenu tab<br/>
+Click on TakeOwnerShip option<br/>
+Mousehover on Roomcontextmenu tab to check TakeOwnerShip is visible or disable<br/>
+Click on Username option<br/>
+Click on Logout option<br/>
+Admin user Logout the session<br/>
+Scenario 01: Log into EWA<br/>
+Enter valid user name into username field<br/>
+Enter valid password into password field<br/>
+Select a Room<br/>
+Click Login button<br/>
+Session message not appeared<br/>
+Log into EWA with another user account<br/>
+Expand taken OwnerShip cabinet<br/>
+Expand taken Ownership drawer<br/>
+Open a taken Ownership folder<br/>
+Expand a cabinet 1<br/>
+Expand a cabinet 2<br/>
+Expand a drawer 1<br/>
+Expand a folder [[ChromeDriver: chrome on WINDOWS (c6cf30694778b355298616d389efe867)] -> xpath: //div[@id='viewDocumentnavigator']/ul/li[2]/ul/li[1]/ul/li[1]/a]<br/>
+Mousehover on RoomcontextMenu tab and check Takeownership option it should be disable<br/>
+Open a document from taken ownership folder<br/>
+It should display 'Document locked by admin' warning dialog, Warning dialog displayed successfully<br/>
+Viewer menu tool bar should be disable on the page<br/>
+NoAlertISPResent<br/>
+Click on Username option<br/>
+Click on Logout option<br/>
+Current user LogOut the session Successfully...<br/>
+</div>
+</td>
+<td></td>
+<td>248</td>
+<td>Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip@30f5a68a</td></tr>
+</table><p>
+</body>
+</html>

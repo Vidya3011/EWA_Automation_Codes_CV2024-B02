@@ -1,0 +1,348 @@
+<html>
+<head>
+<title>TestNG:  Test24</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test24</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Dec 24 13:20:02 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>86 seconds (86296 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Computhink.Script.RMC_Custom_Document_Types.Login()'><b>Login</b><br>Test class: Computhink.Script.RMC_Custom_Document_Types<br/>
+<a href="#Output-1817854862" onClick='toggleBox("Output-1817854862", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1817854862" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1817854862">
+Scenario 01: Log into EWA<br/>
+Enter valid user name into username field<br/>
+Enter valid password into password field<br/>
+Select a Room<br/>
+Selected Room name: TestServer_2024B264bit.vw56demo<br/>
+Captcha is not present, proceeding with login.<br/>
+Click Login button<br/>
+Session for user is already active. Do you want to create a new session? Dialog box displayed. User clicks OK button.<br/>
+User logged in successfully... <br/>
+</div>
+</td>
+<td></td>
+<td>26</td>
+<td>Computhink.Script.RMC_Custom_Document_Types@2364305a</td></tr>
+<tr>
+<td title='Computhink.Script.RMC_Custom_Document_Types.TC_1_CustomDocumentTypes()'><b>TC_1_CustomDocumentTypes</b><br>Test class: Computhink.Script.RMC_Custom_Document_Types<br/>
+<a href="#Output-1545438645" onClick='toggleBox("Output-1545438645", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1545438645" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1545438645">
+Scenario 08: Verify RoomContextmenu 'CustomDocumentType' option<br/>
+Selected a cabinet to set custom document type.<br/>
+Opened Custom DocumentType Submenu<br/>
+Checking document type: <br/>
+Checking document type: Acknowledgement Letter<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Creditors<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Lien<br/>
+Checking document type: <br/>
+Checking document type: All doc type<br/>
+Selected document type: All doc type<br/>
+Clicked OK button successfully.<br/>
+Popup appeared with message: Node already has the following document types and they must be selected Acknowledgement Letter,Analytics,CVReports,MS DocTypes<br/>
+Missing document types: [ Acknowledgement Letter, Analytics, CVReports, MS DocTypes]<br/>
+Clicked OK on the missing document type popup.<br/>
+Checking document type: <br/>
+Checking document type: Acknowledgement Letter<br/>
+Selected document type: Acknowledgement Letter<br/>
+Clicked OK button successfully.<br/>
+Checking document type: <br/>
+Checking document type: Acknowledgement Letter<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Creditors<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Lien<br/>
+Checking document type: <br/>
+Checking document type: All doc type<br/>
+Checking document type: <br/>
+Checking document type: Analytics<br/>
+Selected document type: Analytics<br/>
+Clicked OK button successfully.<br/>
+Checking document type: <br/>
+Checking document type: Acknowledgement Letter<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Creditors<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Lien<br/>
+Checking document type: <br/>
+Checking document type: All doc type<br/>
+Checking document type: <br/>
+Checking document type: Analytics<br/>
+Checking document type: <br/>
+Checking document type: Anchorage Rental Agreement<br/>
+Checking document type: <br/>
+Checking document type: App for Educ Expense<br/>
+Checking document type: <br/>
+Checking document type: Application<br/>
+Checking document type: <br/>
+Checking document type: Application for Employment<br/>
+Checking document type: <br/>
+Checking document type: Appraisal<br/>
+Checking document type: <br/>
+Checking document type: Architectural Extension Request<br/>
+Checking document type: <br/>
+Checking document type: Articles of Incorporation<br/>
+Checking document type: <br/>
+Checking document type: Audit Report<br/>
+Checking document type: <br/>
+Checking document type: Audit Schedule<br/>
+Checking document type: <br/>
+Checking document type: Boat OP,REG,INDEM,Release<br/>
+Checking document type: <br/>
+Checking document type: Case Review<br/>
+Checking document type: <br/>
+Checking document type: Cell Services Agreement<br/>
+Checking document type: <br/>
+Checking document type: Cert of Test<br/>
+Checking document type: <br/>
+Checking document type: Certificate<br/>
+Checking document type: <br/>
+Checking document type: Change in Status<br/>
+Checking document type: <br/>
+Checking document type: Change Order<br/>
+Checking document type: <br/>
+Checking document type: Check<br/>
+Checking document type: <br/>
+Checking document type: Claim Form<br/>
+Checking document type: <br/>
+Checking document type: Complaint<br/>
+Checking document type: <br/>
+Checking document type: Contract<br/>
+Checking document type: <br/>
+Checking document type: Credit Increase Memo<br/>
+Checking document type: <br/>
+Checking document type: Customer Order<br/>
+Checking document type: <br/>
+Checking document type: CVReports<br/>
+Selected document type: CVReports<br/>
+Clicked OK button successfully.<br/>
+Checking document type: <br/>
+Checking document type: Acknowledgement Letter<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Creditors<br/>
+Checking document type: <br/>
+Checking document type: Affidavit of No Lien<br/>
+Checking document type: <br/>
+Checking document type: All doc type<br/>
+Checking document type: <br/>
+Checking document type: Analytics<br/>
+Checking document type: <br/>
+Checking document type: Anchorage Rental Agreement<br/>
+Checking document type: <br/>
+Checking document type: App for Educ Expense<br/>
+Checking document type: <br/>
+Checking document type: Application<br/>
+Checking document type: <br/>
+Checking document type: Application for Employment<br/>
+Checking document type: <br/>
+Checking document type: Appraisal<br/>
+Checking document type: <br/>
+Checking document type: Architectural Extension Request<br/>
+Checking document type: <br/>
+Checking document type: Articles of Incorporation<br/>
+Checking document type: <br/>
+Checking document type: Audit Report<br/>
+Checking document type: <br/>
+Checking document type: Audit Schedule<br/>
+Checking document type: <br/>
+Checking document type: Boat OP,REG,INDEM,Release<br/>
+Checking document type: <br/>
+Checking document type: Case Review<br/>
+Checking document type: <br/>
+Checking document type: Cell Services Agreement<br/>
+Checking document type: <br/>
+Checking document type: Cert of Test<br/>
+Checking document type: <br/>
+Checking document type: Certificate<br/>
+Checking document type: <br/>
+Checking document type: Change in Status<br/>
+Checking document type: <br/>
+Checking document type: Change Order<br/>
+Checking document type: <br/>
+Checking document type: Check<br/>
+Checking document type: <br/>
+Checking document type: Claim Form<br/>
+Checking document type: <br/>
+Checking document type: Complaint<br/>
+Checking document type: <br/>
+Checking document type: Contract<br/>
+Checking document type: <br/>
+Checking document type: Credit Increase Memo<br/>
+Checking document type: <br/>
+Checking document type: Customer Order<br/>
+Checking document type: <br/>
+Checking document type: CVReports<br/>
+Checking document type: <br/>
+Checking document type: Deed<br/>
+Checking document type: <br/>
+Checking document type: Document Control<br/>
+Checking document type: <br/>
+Checking document type: Drawing<br/>
+Checking document type: <br/>
+Checking document type: DrawingMicro<br/>
+Checking document type: <br/>
+Checking document type: Dynamic Workflow Doc<br/>
+Checking document type: <br/>
+Checking document type: EAS Email Archive<br/>
+Checking document type: <br/>
+Checking document type: Education Agreement<br/>
+Checking document type: <br/>
+Checking document type: Education Expense<br/>
+Checking document type: <br/>
+Checking document type: Email<br/>
+Checking document type: <br/>
+Checking document type: Employee Expense Rpt.<br/>
+Checking document type: <br/>
+Checking document type: Employee Record<br/>
+Checking document type: <br/>
+Checking document type: Employee withholding Exemption Cert<br/>
+Checking document type: <br/>
+Checking document type: Enquire MTA<br/>
+Checking document type: <br/>
+Checking document type: Equipment Checkout Agreement<br/>
+Checking document type: <br/>
+Checking document type: Estoppel Affidavit of Mortgagor<br/>
+Checking document type: <br/>
+Checking document type: Exam Paper<br/>
+Checking document type: <br/>
+Checking document type: Excel WorkSheets<br/>
+Checking document type: <br/>
+Checking document type: FC Expense Report<br/>
+Checking document type: <br/>
+Checking document type: FC Order<br/>
+Checking document type: <br/>
+Checking document type: Funds Transfer Form<br/>
+Checking document type: <br/>
+Checking document type: General DNU<br/>
+Checking document type: <br/>
+Checking document type: General Green Sheet<br/>
+Checking document type: <br/>
+Checking document type: Government Doc<br/>
+Checking document type: <br/>
+Checking document type: Graphics(R)<br/>
+Checking document type: <br/>
+Checking document type: Groupwise Email<br/>
+Checking document type: <br/>
+Checking document type: GWAVA Email Archive<br/>
+Checking document type: <br/>
+Checking document type: Health Insurance Claim Form<br/>
+Checking document type: <br/>
+Checking document type: Holiday Request<br/>
+Checking document type: <br/>
+Checking document type: HR Forms<br/>
+Checking document type: <br/>
+Checking document type: Identification<br/>
+Checking document type: <br/>
+Checking document type: Incident Report<br/>
+Checking document type: <br/>
+Checking document type: Invoice 1<br/>
+Checking document type: <br/>
+Checking document type: IXR document<br/>
+Checking document type: <br/>
+Checking document type: Land Registration<br/>
+Checking document type: <br/>
+Checking document type: Lease Authorization<br/>
+Checking document type: <br/>
+Checking document type: LOT Specification<br/>
+Checking document type: <br/>
+Checking document type: Ltd Power of Attorney<br/>
+Checking document type: <br/>
+Checking document type: Map<br/>
+Checking document type: <br/>
+Checking document type: Material<br/>
+Checking document type: <br/>
+Checking document type: Membership Agreement<br/>
+Checking document type: <br/>
+Checking document type: MOC Request<br/>
+Checking document type: <br/>
+Checking document type: Model Specification.<br/>
+Checking document type: <br/>
+Checking document type: MS DocTypes<br/>
+Selected document type: MS DocTypes<br/>
+Clicked OK button successfully.<br/>
+Clicked OK button to finalize document type selection.<br/>
+Custom document type reset successfully.<br/>
+Refreshed to verify document types.<br/>
+</div>
+</td>
+<td></td>
+<td>46</td>
+<td>Computhink.Script.RMC_Custom_Document_Types@2364305a</td></tr>
+</table><p>
+</body>
+</html>
