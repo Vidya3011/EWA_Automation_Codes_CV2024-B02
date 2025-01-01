@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>TestNG:  Test10</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test10</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Jun 26 08:31:35 CDT 2024</td>
+</tr>
+<tr><td>Total time:</td><td>229 seconds (229302 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.My_Preferences_Annotation.Login_EWA()'><b>Login_EWA</b><br>Test class: Script.My_Preferences_Annotation<br/>
+<a href="#Output-6368169" onClick='toggleBox("Output-6368169", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-6368169" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-6368169">
+Enter valid username into username field<br/>
+Enter valid password into password field<br/>
+Select a room<br/>
+Click on the Login button<br/>
+Session for Dipak is already active.Do you want to create new session?this message is displayed<br/>
+Click on the Yes button<br/>
+User has logged in successfully<br/>
+</div>
+</td>
+<td></td>
+<td>35</td>
+<td>Script.My_Preferences_Annotation@135c3b</td></tr>
+<tr>
+<td title='Script.My_Preferences_Annotation.TC_01_Verify_Maximum_Annotation()'><b>TC_01_Verify_Maximum_Annotation</b><br>Test class: Script.My_Preferences_Annotation<br/>
+<a href="#Output-14301918" onClick='toggleBox("Output-14301918", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-14301918" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-14301918">
+Test Scenario 1 : Verifying Maximum Annotation <br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences Option<br/>
+Click on Annotation<br/>
+Select Annotation value<br/>
+Please select maximum three annotations! this toast message should show<br/>
+Verified maximum annotation error message<br/>
+Click on Apply button<br/>
+Alert not present!!!<br/>
+Enter valid username into username field<br/>
+Enter valid password into password field<br/>
+Select a room<br/>
+Click on the Login button<br/>
+Login EWA with User credential <br/>
+</div>
+</td>
+<td></td>
+<td>96</td>
+<td>Script.My_Preferences_Annotation@135c3b</td></tr>
+<tr>
+<td title='Script.My_Preferences_Annotation.TC_02_Verify_set_Annotation1()'><b>TC_02_Verify_set_Annotation1</b><br>Test class: Script.My_Preferences_Annotation<br/>
+<a href="#Output-19345893" onClick='toggleBox("Output-19345893", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-19345893" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-19345893">
+Test Scenario 2 : Verifying set Annotation <br/>
+Click on Refresh button<br/>
+Click on New Document Tab<br/>
+Click on Destination Folder Textbox<br/>
+Expand a Cabinet<br/>
+Expand a Drawer<br/>
+select a Folder<br/>
+Click on Ok button<br/>
+Select Document type Dropdown<br/>
+Enter value Report Name field<br/>
+Browse a Document<br/>
+By using AutoIT add file from external folder<br/>
+Redaction_Annotation option is Enable<br/>
+Highlight_Annotation option from button is Enable<br/>
+Sticky_Notes_Annotation option from button is Enable<br/>
+Verified Added annotation enable from menu<br/>
+Click on Create button<br/>
+New Document Created successfully with verifying Annotation<br/>
+Close the browser<br/>
+</div>
+</td>
+<td></td>
+<td>88</td>
+<td>Script.My_Preferences_Annotation@135c3b</td></tr>
+</table><p>
+</body>
+</html>

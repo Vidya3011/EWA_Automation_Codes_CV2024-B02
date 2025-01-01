@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="jar/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="jar/accessors-smart-2.5.0.jar"/>
+	<classpathentry kind="lib" path="jar/asm-9.6.jar"/>
+	<classpathentry kind="lib" path="jar/commons-codec-1.16.0.jar"/>
+	<classpathentry kind="lib" path="jar/commons-jvm-4.1.0.jar"/>
+	<classpathentry kind="lib" path="jar/commons-logging-1.3.0.jar"/>
+	<classpathentry kind="lib" path="jar/commons-net-3.10.0.jar"/>
+	<classpathentry kind="lib" path="jar/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="jar/httpclient5-5.3.jar"/>
+	<classpathentry kind="lib" path="jar/httpcore5-5.2.4.jar"/>
+	<classpathentry kind="lib" path="jar/httpcore5-5.2.4 (1).jar"/>
+	<classpathentry kind="lib" path="jar/httpcore5-h2-5.2.4.jar"/>
+	<classpathentry kind="lib" path="jar/kotlinx-coroutines-swing-1.7.3.jar"/>
+	<classpathentry kind="lib" path="jar/lets-plot-common-4.1.0.jar"/>
+	<classpathentry kind="lib" path="jar/log4j-api-2.20.0.jar"/>
+	<classpathentry kind="lib" path="jar/log4j-core-2.20.0.jar"/>
+	<classpathentry kind="lib" path="jar/log4j-core-2.22.1.jar"/>
+	<classpathentry kind="lib" path="jar/log4j-slf4j-impl-2.22.1.jar"/>
+	<classpathentry kind="lib" path="jar/mssql-jdbc-7.2.2.jre11.jar"/>
+	<classpathentry kind="lib" path="jar/mssql-jdbc-7.2.2.jre8.jar"/>
+	<classpathentry kind="lib" path="jar/velocity-dep-1.4.jar"/>
+	<classpathentry kind="lib" path="jar/webdrivermanager-5.5.2.jar"/>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="mainresources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/dipak.p/Downloads/testng-7.10.2.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

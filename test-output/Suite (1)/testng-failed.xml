@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite (1)]">
+  <listeners>
+    <listener class-name="Generic.ListenersRetry"/>
+  </listeners>
+  <test thread-count="5" name="Test1(failed)">
+    <classes>
+      <class name="Script.My_Preferences_Add_signature">
+        <methods>
+          <include name="LandBrowser"/>
+          <include name="TC_01_Verify_Upload_New_Signature"/>
+          <include name="TC_02_Verify_Type_New_Signature"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_Add_signature -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test thread-count="5" name="Test4(failed)">
+    <classes>
+      <class name="Script.BatchIndexing_Test">
+        <methods>
+          <include name="TC_03_Verify_Delete_Indexing_Document"/>
+          <include name="LandBrowser"/>
+        </methods>
+      </class> <!-- Script.BatchIndexing_Test -->
+    </classes>
+  </test> <!-- Test4(failed) -->
+  <test thread-count="5" name="Test5(failed)">
+    <classes>
+      <class name="Script.Document_Version_Test">
+        <methods>
+          <include name="TC_01_Create_Document_and_Verify_Document_Versions"/>
+          <include name="TC_02_Upload_and_Save_New_page_and_Verify_Version_with_New_Comments"/>
+          <include name="TC_06_Set_active_version"/>
+          <include name="TC_03_Delete_Page_and_Verify_Version"/>
+          <include name="LandBrowser"/>
+          <include name="TC_04_Verify_Delete_All_versions_and_FullScreen_Option"/>
+        </methods>
+      </class> <!-- Script.Document_Version_Test -->
+    </classes>
+  </test> <!-- Test5(failed) -->
+  <test thread-count="5" name="Test7(failed)">
+    <classes>
+      <class name="Script.My_Preferences_Defaultviewing">
+        <methods>
+          <include name="TC_01_Verify_Defaultviewing_Convert_To_PDF"/>
+          <include name="LandBrowser"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_Defaultviewing -->
+    </classes>
+  </test> <!-- Test7(failed) -->
+  <test thread-count="5" name="Test8(failed)">
+    <classes>
+      <class name="Script.My_Preferences_Load_more_count">
+        <methods>
+          <include name="LandBrowser"/>
+          <include name="TC_03_Verify_Maximum_Load_MoreCountOn_Search"/>
+          <include name="TC_01_Verify_Load_MoreCount_On_Search"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_Load_more_count -->
+    </classes>
+  </test> <!-- Test8(failed) -->
+  <test thread-count="5" name="Test10(failed)">
+    <classes>
+      <class name="Script.My_Preferences_Annotation">
+        <methods>
+          <include name="TC_02_Verify_set_Annotation1"/>
+          <include name="LandBrowser"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_Annotation -->
+    </classes>
+  </test> <!-- Test10(failed) -->
+  <test thread-count="5" name="Test14(failed)">
+    <classes>
+      <class name="Script.My_Preferences_QuickFind">
+        <methods>
+          <include name="TC_02_Verify_QuickFind_TextSearch"/>
+          <include name="LandBrowser"/>
+          <include name="TC_03_Verify_QuickFind_IndexSearch"/>
+          <include name="TC_01_Verify_QuickFind_DocIdSearch"/>
+          <include name="TC_04_Verify_QuickFind_BothSearch"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_QuickFind -->
+    </classes>
+  </test> <!-- Test14(failed) -->
+  <test thread-count="5" name="Test18(failed)">
+    <classes>
+      <class name="Script.My_preferences_Pdf_documents">
+        <methods>
+          <include name="TC_02_Verify_Create_New_pdf_document_Advancedviewing"/>
+          <include name="LandBrowser"/>
+          <include name="TC_03_Verify_Browse_PDF_documents_Defaultviewing"/>
+        </methods>
+      </class> <!-- Script.My_preferences_Pdf_documents -->
+    </classes>
+  </test> <!-- Test18(failed) -->
+  <test thread-count="5" name="Test19(failed)">
+    <classes>
+      <class name="Script.My_Preferences_Office_documents">
+        <methods>
+          <include name="TC_03_Verify_NewExcelSpreadsheet_Office_documents_Advancedviewing"/>
+          <include name="LandBrowser"/>
+          <include name="TC_04_Verify_Browse_Office_documents_Defaultviewing"/>
+          <include name="TC_02_Verify_NewWordDocuments_Office_documents_Advancedviewing"/>
+        </methods>
+      </class> <!-- Script.My_Preferences_Office_documents -->
+    </classes>
+  </test> <!-- Test19(failed) -->
+  <test thread-count="5" name="Test22(failed)">
+    <classes>
+      <class name="Script.DocumentContextMenu_Function">
+        <methods>
+          <include name="TC_13_Verify_SendTo_Export"/>
+          <include name="TC_14_Verify_SendTo_GenerateDocumentLink"/>
+          <include name="LandBrowser"/>
+          <include name="TC_06_Verify_Delete_Option"/>
+          <include name="TC_07_Verify_CreateFavorites_Document"/>
+          <include name="TC_01_Verify_TakeOwnership_ReleaseOwnership_OnDocuments"/>
+          <include name="TC_02_Verify_Refresh_Option"/>
+          <include name="TC_11_Verify_SendTo_Mail_ascopy"/>
+          <include name="TC_03_Verify_Categories_Option"/>
+          <include name="TC_05_Verify_cut_and_paste_Option"/>
+          <include name="TC_09_Verify_Notification_on_Document"/>
+          <include name="TC_15_Verify_SendTo_SecureLink"/>
+          <include name="TC_10_Verify_SendTo_Mail_as_References"/>
+          <include name="TC_12_Verify_SendTo_Print"/>
+        </methods>
+      </class> <!-- Script.DocumentContextMenu_Function -->
+    </classes>
+  </test> <!-- Test22(failed) -->
+  <test thread-count="5" name="Test23(failed)">
+    <classes>
+      <class name="Script.Security_dialog_Test">
+        <methods>
+          <include name="TC_05_Verify_Delete_permission_Denied_for__for_Drawer"/>
+          <include name="TC_07_Share_permission_Denied__for_Folder"/>
+          <include name="TC_04_Set_Delete_permission_Denied_for__for_Drawer"/>
+          <include name="LandBrowser"/>
+        </methods>
+      </class> <!-- Script.Security_dialog_Test -->
+    </classes>
+  </test> <!-- Test23(failed) -->
+  <test thread-count="5" name="Test25(failed)">
+    <classes>
+      <class name="Script.Split_Merge_Documents">
+        <methods>
+          <include name="LandBrowser"/>
+          <include name="TC_02_Verify_CopyPaste_Viewer"/>
+          <include name="TC_01_Create_PDF"/>
+          <include name="TC_03_Verify_Split_Merge_Viewer"/>
+        </methods>
+      </class> <!-- Script.Split_Merge_Documents -->
+    </classes>
+  </test> <!-- Test25(failed) -->
+</suite> <!-- Failed suite [Suite (1)] -->

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ <listeners>
+<listener class-name="Generic.ListenersRetry"></listener>
+</listeners> 
+
+
+ <test name="Test2">
+   <classes>
+      <class name="French_Language.AdvancedViewer_Script"/>
+    </classes>
+  </test>  
+  <test name="Test3"> 
+   <classes>
+      <class name="French_Language.AnnotationFunctionality"/>
+    </classes>
+  </test> 
+   <test name="Test4">
+    <classes>
+      <class name="French_Language.SearchSelectDocumentLocation"/>
+       </classes>
+       </test>  
+       <test name="Test5">
+       <classes>
+      <class name="French_Language.RoomContextFunction"/>
+    </classes>
+  </test>      
+   <test name="Test 9">
+       <classes>
+      <class name="French_Language.DashBoardScript"/>
+    </classes>
+  </test> 
+   <test name="Test 10">
+       <classes>
+      <class name="French_Language.Favorites"/>
+    </classes>
+  </test>    
+  <test name="Test 11">
+       <classes>
+      <class name="French_Language.SecureLink"/>
+    </classes>
+  </test> 
+  <test name="Test 12">
+       <classes>
+      <class name="French_Language.PrintFunctionality"/>
+    </classes>
+  </test>
+       <!--  <test name="Test 13">
+       <classes>
+      <class name="French_Language.SecureLink_Negative_Scenerio"/>
+    </classes>
+  </test> 
+   <test name="Test 14">
+       <classes>
+      <class name="French_Language.Print_Email_Export_Negative_Scenerio"/>
+    </classes>
+  </test>   -->
+</suite> <!-- Suite -->
+

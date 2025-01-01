@@ -1,0 +1,369 @@
+<html>
+<head>
+<title>TestNG:  Test7</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test7</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/3</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Apr 06 05:22:17 CDT 2024</td>
+</tr>
+<tr><td>Total time:</td><td>565 seconds (565487 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF()'><b>TC_01_Verify_Defaultviewing_Convert_To_PDF</b><br>Test class: Script.My_Preferences_Defaultviewing<br/>
+<a href="#Output-27304613" onClick='toggleBox("Output-27304613", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-27304613" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-27304613">
+Test Scenario 1 : Verifying Default viewing Convert To PDF<br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences<br/>
+Select Default view <br/>
+Select Convert To Pdf Option<br/>
+Click on Apply button<br/>
+Click on Search Tab<br/>
+Enter Document Name<br/>
+Click on Find button<br/>
+Select and Open Document<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace27304613", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace27304613'><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>104</td>
+<td>Script.My_Preferences_Defaultviewing@1f0a5a1</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.My_Preferences_Defaultviewing.Login_EWA()'><b>Login_EWA</b><br>Test class: Script.My_Preferences_Defaultviewing<br/>
+<a href="#Output-27777762" onClick='toggleBox("Output-27777762", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-27777762" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-27777762">
+Enter valid username into username field<br/>
+Enter valid password into password field<br/>
+Select a room<br/>
+Click on the Login button<br/>
+Session for user is already active.Do you want to create new Session? dialog box displayed<br/>
+Click on the Yes button<br/>
+User has logged in successfully.<br/>
+</div>
+</td>
+<td></td>
+<td>33</td>
+<td>Script.My_Preferences_Defaultviewing@1f0a5a1</td></tr>
+<tr>
+<td title='Script.My_Preferences_Defaultviewing.TC_02_Verify_Defaultviewing_Native_Format()'><b>TC_02_Verify_Defaultviewing_Native_Format</b><br>Test class: Script.My_Preferences_Defaultviewing<br/>
+<a href="#Output-28877021" onClick='toggleBox("Output-28877021", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-28877021" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-28877021">
+Test Scenario 2 : Verifying Default viewing Native Format <br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences Option<br/>
+Select Default View<br/>
+Select Native Formatio Option<br/>
+Click on Apply button<br/>
+Click on Search Tab<br/>
+Enter Document Name<br/>
+Click on Find button<br/>
+Defaultviewing Native Format verified successfully<br/>
+Click on Refresh button<br/>
+Close the application<br/>
+</div>
+</td>
+<td></td>
+<td>99</td>
+<td>Script.My_Preferences_Defaultviewing@1f0a5a1</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF()'><b>TC_01_Verify_Defaultviewing_Convert_To_PDF</b><br>Test class: Script.My_Preferences_Defaultviewing<br/>
+<a href="#Output-14006437" onClick='toggleBox("Output-14006437", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-14006437" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-14006437">
+Test Scenario 1 : Verifying Default viewing Convert To PDF<br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences<br/>
+Select Default view <br/>
+Select Convert To Pdf Option<br/>
+Click on Apply button<br/>
+Click on Search Tab<br/>
+Enter Document Name<br/>
+Click on Find button<br/>
+Select and Open Document<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace14006437", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace14006437'><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>107</td>
+<td>Script.My_Preferences_Defaultviewing@1f0a5a1</td></tr>
+<tr>
+<td title='Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF()'><b>TC_01_Verify_Defaultviewing_Convert_To_PDF</b><br>Test class: Script.My_Preferences_Defaultviewing<br/>
+<a href="#Output-31852506" onClick='toggleBox("Output-31852506", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-31852506" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-31852506">
+Test Scenario 1 : Verifying Default viewing Convert To PDF<br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences<br/>
+Select Default view <br/>
+Select Convert To Pdf Option<br/>
+Click on Apply button<br/>
+Click on Search Tab<br/>
+Enter Document Name<br/>
+Click on Find button<br/>
+Select and Open Document<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace31852506", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace31852506'><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>104</td>
+<td>Script.My_Preferences_Defaultviewing@1f0a5a1</td></tr>
+<tr>
+<td title='Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF()'><b>TC_01_Verify_Defaultviewing_Convert_To_PDF</b><br>Test class: Script.My_Preferences_Defaultviewing<br/>
+<a href="#Output-23699095" onClick='toggleBox("Output-23699095", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-23699095" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-23699095">
+Test Scenario 1 : Verifying Default viewing Convert To PDF<br/>
+Click on Refresh button<br/>
+Click on Setting Icon<br/>
+Click on My Preferences<br/>
+Select Default view <br/>
+Select Convert To Pdf Option<br/>
+Click on Apply button<br/>
+Click on Search Tab<br/>
+Enter Document Name<br/>
+Click on Find button<br/>
+Select and Open Document<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace23699095", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace23699095'><pre>java.lang.NullPointerException
+	at Generic.BaseClass.excelRead(BaseClass.java:701)
+	at Pom.My_Preferences.getSearch_Page_Number(My_Preferences.java:116)
+	at Script.My_Preferences_Defaultviewing.TC_01_Verify_Defaultviewing_Convert_To_PDF(My_Preferences_Defaultviewing.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>103</td>
+<td>Script.My_Preferences_Defaultviewing@1f0a5a1</td></tr>
+</table><p>
+</body>
+</html>
