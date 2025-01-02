@@ -49,10 +49,10 @@ import org.testng.asserts.SoftAssert;
 import Computhink.Pom.ToDoListTab;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-//Dipak codes
+//Dipak Automation codes
 
 public class BaseClass {
-// I am cheacking git verify Changes
+
 	public static WebDriver driver;
 	public static Alert a;
 	public static Actions a1;

@@ -12,7 +12,7 @@ import Computhink.Pom.Security;
 //Dipak Automation script
 public class Security_dialog_Test extends Computhink.Generic.BaseClass {
 
-	@BeforeClass
+	/*@BeforeClass
 	public void Launch_Browser() throws Exception {
 
 		loadBrowser("edge");
@@ -24,7 +24,7 @@ public class Security_dialog_Test extends Computhink.Generic.BaseClass {
 	public void Login_EWA() throws Exception {
 		LogDipakUser();
 		Reporter.log("User has logged in successfully.", true);
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void TC_01_Give_All_permission_To_Cabinet() throws Exception {
