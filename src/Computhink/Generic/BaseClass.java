@@ -52,7 +52,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 //Dipak codes
 
 public class BaseClass {
-
+// I am cheacking git verify Changes
 	public static WebDriver driver;
 	public static Alert a;
 	public static Actions a1;
