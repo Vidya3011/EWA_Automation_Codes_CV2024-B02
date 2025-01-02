@@ -230,11 +230,12 @@ public class DashBoardPom extends BaseClass {
 	    Reporter.log("Click on dashboard tab", true);
 	    Thread.sleep(3000);
 	    movingElement(LogoutFromDashBRD);
+	    softAssert.assertTrue(LogoutFromDashBRD.isDisplayed(), "Logout icon is not displayed");
+
 
 	    Reporter.log("Click on logout icon", true);
 	    jsclick(LogoutFromDashBRD);
-	    softAssert.assertTrue(LogoutFromDashBRD.isDisplayed(), "Logout icon is not displayed");
-
+	   
 	    Reporter.log("Session logged out successfully", true);
 	    Thread.sleep(6000);
 	    Reporter.log("Dashboard logout option verified successfully...", true);

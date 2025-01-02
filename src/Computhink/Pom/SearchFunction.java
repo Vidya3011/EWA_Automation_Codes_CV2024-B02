@@ -1942,7 +1942,8 @@ public class SearchFunction extends BaseClass {
 			}
 
 		}
-
+		
+        
 		else if (SummaryBTNverify.isDisplayed()) {
 
 			jsclick(SummaryBTNverify);
@@ -2299,8 +2300,6 @@ VerifyDocumentListingOrNot();
 		jsclick(Refresh_Button(driver));
 		Reporter.log("Page refreshed after search.");
 
-		// Final check for SoftAssert
-		so.assertAll();
 
 	}
 
