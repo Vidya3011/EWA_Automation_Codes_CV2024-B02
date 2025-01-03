@@ -1,0 +1,96 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 130, Failures: 23, Errors: 0, Skipped: 106, Time elapsed: 56.519 s <<< FAILURE! - in TestSuite
+ladBrowser(Script.AnnotationFunctionality)  Time elapsed: 2.908 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.AnnotationFunctionality.ladBrowser(AnnotationFunctionality.java:26)
+
+loadBrowser(Script.AdvancedViewer_Script)  Time elapsed: 0.093 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.AdvancedViewer_Script.loadBrowser(AdvancedViewer_Script.java:22)
+
+ladBrowser(Script.SearchSelectDocumentLocation)  Time elapsed: 0.064 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.SearchSelectDocumentLocation.ladBrowser(SearchSelectDocumentLocation.java:48)
+
+loadBrowser(Script.Favorites)  Time elapsed: 0.05 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.Favorites.loadBrowser(Favorites.java:22)
+
+ladBrowser(Script.DashBoardScript)  Time elapsed: 0.05 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.DashBoardScript.ladBrowser(DashBoardScript.java:21)
+
+ladBrowser(Script.SecureLink)  Time elapsed: 0.055 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.SecureLink.ladBrowser(SecureLink.java:26)
+
+ladBrowser(Script.SendToMail)  Time elapsed: 0.051 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.SendToMail.ladBrowser(SendToMail.java:27)
+
+ladBrowser(Script.PrintFunctionality)  Time elapsed: 0.045 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.PrintFunctionality.ladBrowser(PrintFunctionality.java:44)
+
+loadBrowser(Script.SendToExport)  Time elapsed: 0.044 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.SendToExport.loadBrowser(SendToExport.java:24)
+
+ladBrowser(Script.SecureLink_Negative_Scenerio)  Time elapsed: 0.048 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.SecureLink_Negative_Scenerio.ladBrowser(SecureLink_Negative_Scenerio.java:24)
+
+loadBrowser(Script.NewDocumentNegativeScenerio)  Time elapsed: 0.056 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.NewDocumentNegativeScenerio.loadBrowser(NewDocumentNegativeScenerio.java:18)
+
+ladBrowser(Script.NegativeScenarioAdvancedView)  Time elapsed: 0.063 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.NegativeScenarioAdvancedView.ladBrowser(NegativeScenarioAdvancedView.java:19)
+
+loadBrowser(Script.Print_Email_Export_Negative_Scenerio)  Time elapsed: 0.045 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.Print_Email_Export_Negative_Scenerio.loadBrowser(Print_Email_Export_Negative_Scenerio.java:27)
+
+loadBrowser(Script.LargeFiles_AutomationTesting)  Time elapsed: 0.044 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.LargeFiles_AutomationTesting.loadBrowser(LargeFiles_AutomationTesting.java:28)
+
+ladBrowser(Script.Thumbnail_MicroSoft_FabBTN)  Time elapsed: 0.046 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.Thumbnail_MicroSoft_FabBTN.ladBrowser(Thumbnail_MicroSoft_FabBTN.java:22)
+
+ladBrowser(Script.RegisterStamp__Advanced_Viewing)  Time elapsed: 0.044 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.RegisterStamp__Advanced_Viewing.ladBrowser(RegisterStamp__Advanced_Viewing.java:20)
+
+loadBrowser(Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip)  Time elapsed: 0.062 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip.loadBrowser(RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip.java:23)
+
+loadBrowser(Script.RoomContextMenu_CopyPaste)  Time elapsed: 0.051 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.RoomContextMenu_CopyPaste.loadBrowser(RoomContextMenu_CopyPaste.java:20)
+
+loadBrowser(Script.RoomContextMenu_Notification)  Time elapsed: 0.046 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.RoomContextMenu_Notification.loadBrowser(RoomContextMenu_Notification.java:19)
+
+loadBrowser(Script.RMC_NodeProperties)  Time elapsed: 0.041 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.RMC_NodeProperties.loadBrowser(RMC_NodeProperties.java:19)
+
+loadBrowser(Script.RMC_Custom_Document_Types)  Time elapsed: 0.043 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chrome.ChromeOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
+	at Script.RMC_Custom_Document_Types.loadBrowser(RMC_Custom_Document_Types.java:19)
+
+TC_2_CreateDocumentWithUnsupportedFiles(Script.UnsupportedFiles)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'void org.openqa.selenium.support.PageFactory.initElements(org.openqa.selenium.WebDriver, java.lang.Object)'
+	at Script.UnsupportedFiles.TC_2_CreateDocumentWithUnsupportedFiles(UnsupportedFiles.java:46)
+
+TC_3_Verify_UnsupportedFiles_Download_Offline(Script.UnsupportedFiles)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'void org.openqa.selenium.support.PageFactory.initElements(org.openqa.selenium.WebDriver, java.lang.Object)'
+	at Script.UnsupportedFiles.TC_3_Verify_UnsupportedFiles_Download_Offline(UnsupportedFiles.java:55)
+
