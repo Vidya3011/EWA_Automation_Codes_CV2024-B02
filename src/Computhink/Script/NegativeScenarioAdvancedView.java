@@ -15,11 +15,11 @@ NegativeScenarioAdvancedView extends Computhink.Generic.BaseClass {
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AdvancedViewer_Script.class);
 
 	@BeforeClass
-	public void ladBrowser() throws Exception {
+	public void ladBrowser() {
 		loadBrowser("Chrome");
 		log.info("Chrome Browser");
 
-		launchUrl();
+		launchLocalUrl();
 		log.info("ContentVerseURL");
 	}
 

@@ -2,19 +2,14 @@ package Computhink.Pom;
 
 //Dipak Automation Coading
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
@@ -74,6 +69,9 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"myPreferencesSettingsNav\"]")
 	private WebElement My_Preferencesetting;
+
+	@FindBy(xpath = "//*[@id='CustomListTodoCancel']")
+	private static WebElement Cancel_Button_TodoCustomList;
 
 	@FindBy(xpath = "//*[@id=\"myPreferencesSubmit\"]")
 	private WebElement Apply_button;
@@ -138,9 +136,6 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"CustomListCancel\"]")
 	private static WebElement Cancel_Button_CustomList;
-
-	@FindBy(xpath = "//*[@id='CustomListTodoCancel']")
-	private static WebElement Cancel_Button_TodoCustomList;
 
 	@FindBy(xpath = "//*[@id=\"CustomListOK\"]")
 	private static WebElement Search_Ok_Button_CustomList;
@@ -223,7 +218,11 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"CustomList\"]")
 	private WebElement CustomColumnOptionRoom;
 
-	SoftAssert softAssert = new SoftAssert();
+	public void Verify_Reset_CustomColumsnRoom() {
+		if (Room_Reset_CustomColumns.isEnabled() == true) {
+			jsclick(Room_Reset_CustomColumns);
+		}
+	}
 
 	public void Verify_Reset_CustomColumsnSearch() {
 
@@ -243,7 +242,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Custom List";
 		String actualtext = titelvalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 
 	}
 
@@ -251,10 +250,10 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Set custom columns :";
 		String actualtext = textlvalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 		String expectedtext2 = "Select the indices you want display for documents";
 		String actualtext2 = textlvalidation2.getText();
-		softAssert.assertEquals(actualtext2, expectedtext2);
+		Assert.assertEquals(actualtext2, expectedtext2);
 
 	}
 
@@ -288,7 +287,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Custom List";
 		String actualtext = Search_titelvalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 
 	}
 
@@ -296,7 +295,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Select the indices you want display for documents";
 		String actualtext = Search_textvalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 
 	}
 
@@ -310,7 +309,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Custom List";
 		String actualtext = titlevalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 
 	}
 
@@ -318,7 +317,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Select the indices to display for To Do List documents";
 		String actualtext = textvalidation.getText();
-		softAssert.assertEquals(actualtext, expectedtext);
+		Assert.assertEquals(actualtext, expectedtext);
 
 	}
 
@@ -336,7 +335,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		element = MoveTo_Menu_Documents;
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		jsclick(Paste_ID);
 
 	}
@@ -360,7 +359,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Thread.sleep(4000);
 		String expectedtext2 = "DOCUMENT SIZE";
 		String actualtext2 = DocumentSize.getText();
-		softAssert.assertEquals(actualtext2, expectedtext2);
+		Assert.assertEquals(actualtext2, expectedtext2);
 		Reporter.log("Indices value displayed successfully " + DocumentSize.getText(), true);
 	}
 
@@ -369,19 +368,19 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Thread.sleep(4000);
 		String expectedtext2 = "WORKFLOW STATUS";
 		String actualtext2 = WorkflowStatus.getText();
-		softAssert.assertEquals(actualtext2, expectedtext2);
+		Assert.assertEquals(actualtext2, expectedtext2);
 		Reporter.log("Indices value displayed successfully " + WorkflowStatus.getText(), true);
 	}
 
 	public void ToDoEndWorkflow() throws Exception {
 
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		jsclick(EndWorkflow);
 		Thread.sleep(4000);
 		jsclick(WfComment);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		WfComment.sendKeys(CustomColumns_excelRead(3, 0));
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		jsclick(okbutton);
 
 	}
@@ -392,7 +391,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
@@ -406,65 +405,44 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		} else {
 			// Custom List Dialog not present
 		}
-
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		selectElement(Select_Cabinet);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
 		selectElement(Select_Drawer);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Drawer", true);
 		selectElement(Select_Folder);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Folder", true);
 		movingElement(MoveTo_Menu_RoomName);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Moousehover on Roomname Tab", true);
-		try {
-			if (Room_Reset_CustomColumns.isEnabled() == true) {
-				Thread.sleep(3000);
-				jsclick(Room_Reset_CustomColumns);
-				Reporter.log("Click on Reset Column Option", true);
-				jsclick(Reset_Column_OK_Button);
-				Reporter.log("Click on Ok button", true);
-				Thread.sleep(9000);
-				Reporter.log("Custom columns Reset Successfully on Room Level", true);
-			}
-		} catch (Exception e) {
+
+		if (Room_Reset_CustomColumns.isEnabled() == true) {
+			Thread.sleep(3000);
+			jsclick(Room_Reset_CustomColumns);
+			Reporter.log("Click on Reset Column Option", true);
+			jsclick(Reset_Column_OK_Button);
+			Reporter.log("Click on Ok button", true);
+			Thread.sleep(9000);
+			Reporter.log("Custom columns Reset Successfully on Room Level", true);
+		} else {
 			System.out.println("Reset Column Option is Disable");
-
 		}
-
+		jsclick(CustomColumnOptionRoom);
+		Thread.sleep(12000);
+		Reporter.log("Click on Custom column Option", true);
+		titelvalidation();
+		Reporter.log("Custom List title validate", true);
 	}
 
 	public void Verify_Custom_List_Dialog_Text() throws Exception {
 
 		Reporter.log("Test Scenario 2 : Verifying  text of custom List dialog", true);
-
-		Refresh_Button();
-		Thread.sleep(9000);
-		Reporter.log("Click on Refresh button", true);
-		selectElement(Select_Cabinet);
-		Thread.sleep(9000);
-		Reporter.log("Expand a Cabinet", true);
-		selectElement(Select_Drawer);
-		Thread.sleep(9000);
-		Reporter.log("Expand a Drawer", true);
-		selectElement(Select_Folder);
-		Thread.sleep(9000);
-		Reporter.log("Expand a Folder", true);
-		movingElement(MoveTo_Menu_RoomName);
-		Thread.sleep(2000);
-		Reporter.log("Moousehover on Roomname Tab", true);
-		movingclkElement(CustomColumnOptionRoom);
-		Reporter.log("Click on Custom column Option", true);
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"showcustomlistModel\"]")));
-		titelvalidation();
-		Reporter.log("Custom List title validate", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		textvalidation();
 		Reporter.log("Custom List dialog text verified", true);
 	}
@@ -472,37 +450,37 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Set_Custom_Column_Node_Level() throws Exception {
 
 		Reporter.log("Test Scenario 3 : Set and verifying Custom Columns Node Level ", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		SearchBoxIndices1();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Enter Indices Name in search textbox field", true);
 		jsclick(Select_Indices01);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Select entered Indices", true);
 		jsclick(Ok_Button_CustomList);
 		Reporter.log("Click on Ok button", true);
 		Reporter.log("Indices selected successfully", true);
 		Thread.sleep(12000);
 		jsclick(Setting_Icon);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on setting Icon", true);
 		jsclick(My_Preferencesetting);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on My Preferences Option", true);
 		Verify_CompactView_checkbox();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Uncheck Compact View checkbox", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Apply button", true);
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		selectElement(Select_Cabinet);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
 		selectElement(Select_Drawer);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Drawer", true);
 		selectElement(Select_Folder);
 		Thread.sleep(7000);
@@ -517,7 +495,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 4 : Verifying Default Custom Columns ", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
@@ -527,30 +505,29 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 			// Custom List Dialog not present
 		}
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		selectElement(Select_Cabinet);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
 		selectElement(Select_Drawer);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Drawer", true);
 		selectElement(Select_Folder);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Folder", true);
 		movingElement(MoveTo_Menu_RoomName);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on Roomname Tab", true);
-		movingclkElement(CustomColumnOptionRoom);
+		jsclick(CustomColumnOptionRoom);
+		Thread.sleep(12000);
 		Reporter.log("Click on Custom Column Option", true);
-		WebDriverWait wait1 = new WebDriverWait(driver, 50);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"showcustomlistModel\"]")));
 		Default_Button_CustomList();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Default button", true);
 		jsclick(Ok_Button_CustomList);
 		Reporter.log("Click on Ok button", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Set and Verifying Default Custom columns successfully", true);
 	}
 
@@ -558,19 +535,11 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		Reporter.log("Test Scenario 5 : Verifying Cancel button of Custom List ", true);
 
-		if (Cancel_Button_CustomList.isDisplayed() == true) {
-			movingclkElement(Cancel_Button_CustomList);
-		} else {
-			// Custom List Dialog not present
-		}
 		movingElement(MoveTo_Menu_RoomName);
 		Reporter.log("Mousehover on Roomname Tab", true);
-		Thread.sleep(9000);
-		movingclkElement(CustomColumnOptionRoom);
+		jsclick(CustomColumnOptionRoom);
+		Thread.sleep(12000);
 		Reporter.log("Click on Custom Column Option", true);
-		WebDriverWait wait1 = new WebDriverWait(driver, 50);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"showcustomlistModel\"]")));
-		Thread.sleep(9000);
 		Cancel_Button_CustomList();
 		Reporter.log("Click on Cancel button", true);
 	}
@@ -578,29 +547,26 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Custom_Columns_RoomLevel() throws Exception {
 
 		Reporter.log("Test Scenario 6 : Verifying Custom Columns Room Level ", true);
-
 		if (Cancel_Button_CustomList.isDisplayed() == true) {
 			movingclkElement(Cancel_Button_CustomList);
 		} else {
 			// Custom List Dialog not present
 		}
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		movingElement(MoveTo_Menu_RoomName);
 		Reporter.log("Mousehover on Roomname Tab", true);
-		Thread.sleep(9000);
-		movingclkElement(CustomColumnOptionRoom);
+		Thread.sleep(6000);
+		jsclick(CustomColumnOptionRoom);
+		Thread.sleep(12000);
 		Reporter.log("Click on Custom Column Option", true);
-		WebDriverWait wait1 = new WebDriverWait(driver, 50);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"showcustomlistModel\"]")));
-		Thread.sleep(9000);
 		jsclick(Click_DropdownOption);
 		Reporter.log("Click on Dropdown", true);
 		Select_DropdownValue();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Select Dropdown value", true);
 		jsclick(Ok_Button_CustomList);
 		Reporter.log("Click on Ok button", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Indices is Selected Successfully for RoomLevel", true);
 
 	}
@@ -615,9 +581,9 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		}
 		movingElement(MoveTo_Menu_RoomName);
 		Reporter.log("Mousehover on Roomname Tab", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		jsclick(Room_Reset_CustomColumns);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Reset Column Option", true);
 		jsclick(Reset_Column_OK_Button);
 		Reporter.log("Click on Ok button", true);
@@ -629,7 +595,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 8 : Open Custom List Dialog And Verifying Title Search column ", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
@@ -639,19 +605,19 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 			// Custom List Dialog not present
 		}
 		movingElement(MoveTo_Search_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on Search Tab", true);
 		try {
 			Verify_Reset_CustomColumsnSearch();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 			Reporter.log("Click on Reset Column Option", true);
 			jsclick(Reset_Column_OK_Button);
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 			Reporter.log("Click on Ok button", true);
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 			Reporter.log("Custom columns Reset Successfully on Search Level", true);
 			movingElement(MoveTo_Search_Option);
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println(" Reset Column Option is Disable");
 		}
@@ -665,7 +631,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Text_Custom_Columns_Search() throws Exception {
 
 		Reporter.log("Test Scenario 9 : Verifying  Text of Custom List Dialog Search column ", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Search_textvalidation();
 		Reporter.log("Search Custom List Dialog Text verified", true);
 
@@ -674,37 +640,37 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Set_Custom_Columns_Search() throws Exception {
 
 		Reporter.log("Test Scenario 10 : Verifying Set Custom Columns for Search ", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		SearchBoxIndices4();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Enter Indices value in Search textbox field", true);
 		jsclick(Search_Select_Indices01);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Select Entered Indices", true);
 		jsclick(Search_Ok_Button_CustomList);
 		Reporter.log("Click on Ok button", true);
 		Reporter.log("Indices Selected Successfully", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		jsclick(Click_Search_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Search Tab", true);
 		jsclick(Document_Location);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Document Location textbox", true);
 		selectElement(Search_Cabinet);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
 		selectElement(Search_Drawer);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Drawer", true);
 		selectElement(Search_Folder);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Folder", true);
 		jsclick(Ok_button);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		jsclick(Find_Button);
 		Thread.sleep(50000);
@@ -720,7 +686,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 11 : Verifying Reset Columns for Search ", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
@@ -730,16 +696,16 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 			// Custom List Dialog not present
 		}
 		movingElement(MoveTo_Search_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on Search Tab", true);
 		jsclick(Search_ResetColumn);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Reset Column Option ", true);
 		jsclick(Reset_Column_OK_Button);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		jsclick(Find_Button);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Find button", true);
 		Reporter.log("Reset Custom Columns Successfully for Search", true);
 	}
@@ -747,32 +713,27 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Title_Custom_Columns_TodoList() throws Exception {
 
 		Reporter.log("Test Scenario 12 : Open Custom List Dialog And Verifying Title ToDoLis ", true);
-		if (Cancel_Button_CustomList.isDisplayed() == true) {
-			movingclkElement(Cancel_Button_CustomList);
-		} else {
-			// Custom List Dialog not present
-		}
 		if (Cancel_Button_TodoCustomList.isDisplayed() == true) {
 			movingclkElement(Cancel_Button_TodoCustomList);
 		} else {
 			// Custom List Dialog not present
 		}
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		try {
 			Verify_Reset_CustomColumsnTodolist();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 			Reporter.log("Click on Reset Column Option", true);
 			jsclick(Reset_Column_OK_Button);
 			Reporter.log("Click on Ok button", true);
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 			Reporter.log("Custom columns Reset Successfully on TodoList Level", true);
 			movingElement(MoveTo_ToDoList_Option);
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println(" Reset Column Option is Disable");
 		}
@@ -786,10 +747,10 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Text_Custom_Columns_TodoList() throws Exception {
 
 		Reporter.log("Test Scenario 13: Verifying  Text of Custom List Dialog ToDoList ", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		ToDoList_textvalidation();
 		Reporter.log("Custom List Dialog Text verified", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 
 	}
 
@@ -797,11 +758,11 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 
 		Reporter.log("Test Scenario 14 : Verifying Set Custom Columns for ToDoList ", true);
 
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		TODOSearchBox.click();
 		TODOSearchBox.sendKeys(CustomColumns_excelRead(2, 0));
 		Reporter.log("Search Indices value", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		jsclick(Select_ToDoIndices);
 		Reporter.log("Select Indices value", true);
 		jsclick(ToDoList_Ok_Button_CustomList);
@@ -809,10 +770,10 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Indices Selected Successfully", true);
 		Thread.sleep(12000);
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		jsclick(ToDoNew_Item);
 		Thread.sleep(9000);
@@ -820,7 +781,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		VerifyTodo_Indicess_Value();
 		Reporter.log("Indices Value display in New Item", true);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		jsclick(ToDo_Pending);
 		Thread.sleep(9000);
@@ -828,7 +789,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		VerifyTodo_Indicess_Value();
 		Reporter.log("Indices Value display in Pending Item", true);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		jsclick(ToDoReviewed);
 		Thread.sleep(9000);
@@ -836,7 +797,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		VerifyTodo_Indicess_Value();
 		Reporter.log("Indices Value display in Reviewed Item", true);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		jsclick(ToDoSentItem);
 		Thread.sleep(9000);
@@ -844,7 +805,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		VerifyTodo_Indicess_Value();
 		Reporter.log("Indices Value display in Sent Item", true);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		jsclick(Select_All_Item);
 		Thread.sleep(9000);
@@ -858,7 +819,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 15 : Reset Custom Columns for ToDoList ", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
@@ -867,19 +828,19 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		} else {
 			// Custom List Dialog not present
 		}
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover on ToDoList Tab", true);
 		jsclick(To_Do_Resetcolumn_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Reset Column Option", true);
 		jsclick(Reset_Column_OK_Button);
 		Reporter.log("Click on Ok button", true);
 		Reporter.log("ToDoList Custom column Reset Successfully", true);
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 	}
 
 	public void Negative_Default_Custom_Columns_RoomLevel() throws Exception {
@@ -887,7 +848,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 1: Verifying Default Custom Columns RoomLevel", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
@@ -896,26 +857,25 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		} else {
 			// Custom List Dialog not present
 		}
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Refresh_Button();
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		selectElement(Select_Cabinet);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
 		selectElement(Select_Drawer);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Expand a Drawer", true);
 		selectElement(Select_Folder);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("select a Folder", true);
 		movingElement(MoveTo_Menu_RoomName);
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover to Roomname Tab", true);
-		movingclkElement(CustomColumnOptionRoom);
+		jsclick(CustomColumnOptionRoom);
+		Thread.sleep(12000);
 		Reporter.log("Click on  Custom Column Option", true);
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"showcustomlistModel\"]")));
 		jsclick(Default_Button_CustomList);
 		Reporter.log("Default Custom Columns Roomlevel Verified");
 	}
@@ -923,7 +883,7 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void CrossCancelButton_RoomLevel() throws Exception {
 
 		Reporter.log("Test Scenario 2: Verifying Cross Cancel button Room Custom Columns", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		jsclick(Crosscancel);
 		Reporter.log("Click on  Cross button and Close Custom Column dialog", true);
 		Reporter.log("Cross Cancel button Roomlevel Verified");
@@ -932,14 +892,13 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void CancelButton_RoomCustomColumns() throws Exception {
 
 		Reporter.log("Test Scenario 3 : Verifying Cancel button Room Custom Columns ", true);
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		movingElement(MoveTo_Menu_RoomName);
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover to Roomname Tab", true);
-		movingclkElement(CustomColumnOptionRoom);
+		jsclick(CustomColumnOptionRoom);
+		Thread.sleep(12000);
 		Reporter.log("Click on  Custom Column Option", true);
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"showcustomlistModel\"]")));
 		jsclick(cancelbutton);
 		Reporter.log("Cancel button Room level Custom columns Verified");
 	}
@@ -949,13 +908,18 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 4 : Verifying Cross Cancel button Search Custom Columns", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
-		Thread.sleep(9000);
+		if (Cancel_Button_CustomList.isDisplayed() == true) {
+			movingclkElement(Cancel_Button_CustomList);
+		} else {
+			// Custom List Dialog not present
+		}
+		Thread.sleep(6000);
 		movingElement(MoveTo_Search_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover to Search Tab", true);
 		jsclick(Search_Custom_Columns_option);
 		Thread.sleep(12000);
@@ -970,13 +934,13 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 		Reporter.log("Test Scenario 5: Verifying Cancel button Search Custom Columns", true);
 		try {
 			LogDipakUser();
-			Thread.sleep(9000);
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		movingElement(MoveTo_Search_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover to Search Tab", true);
 		jsclick(Search_Custom_Columns_option);
 		Thread.sleep(12000);
@@ -989,12 +953,12 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void Cross_CancelButton_TodoList() throws Exception {
 
 		Reporter.log("Test Scenario 6: Verifying Cross Cancel button TO DOCustom Columns", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Moushover to ToDoList Tab", true);
 		jsclick(ToDoList_Custom_Columns_option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Custom Column Option", true);
 		jsclick(CrosscancelTODObutton);
 		Reporter.log("Click on Cross cancel button", true);
@@ -1004,15 +968,15 @@ public class Customcolumns extends Computhink.Generic.BaseClass {
 	public void CancelButton_TodoList() throws Exception {
 
 		Reporter.log("Test Scenario 7 : Verifying Cancel button TO DOCustom Columns", true);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		movingElement(MoveTo_ToDoList_Option);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Mousehover to ToDoList Tab", true);
 		jsclick(ToDoList_Custom_Columns_option);
 		Thread.sleep(12000);
 		Reporter.log("Click on To Do List Custom column Option", true);
 		jsclick(cancelTODObutton);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Cancel  button ToDo List Dialog ", true);
 		Reporter.log("TODO list Custom columns Cancel button Verified");
 		Refresh_Button();

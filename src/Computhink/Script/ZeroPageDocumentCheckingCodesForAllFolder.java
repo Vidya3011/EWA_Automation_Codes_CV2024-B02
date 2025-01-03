@@ -18,7 +18,7 @@ public class ZeroPageDocumentCheckingCodesForAllFolder  extends Computhink.Gener
 		
 			log.info("Chrome Browser Launched");
 			Reporter.log("Chrome Browser launched Successfully...");
-			launchUrl();
+			launch47Url();
 			
 			Reporter.log("Contentverse URL launched successfully...");
 			log.info("Contentverse URL launched successfully...");

@@ -82,42 +82,56 @@ public class DocumentContextMenu_Function extends BaseClass {
 		Doc.Verify_CreateFavorites_Document();
 	}
 
-	@Test(priority = 9)
+	// @Test(priority = 9)
+	public void TC_08_Verify_SendToWorkflow_Document() throws Exception {
+
+		Documents_ContextMenu Doc = new Documents_ContextMenu();
+		Doc.Verify_SendToWorkflow_Document();
+	}
+
+	// @Test(priority = 10)
+	public void TC_07_Verify_Notification_on_Document() throws Exception {
+
+		Documents_ContextMenu Doc = new Documents_ContextMenu();
+		Doc.Verify_Notification_on_Document();
+	}
+
+	@Test(priority = 11)
 	public void TC_08_Verify_SendTo_Mail_as_References() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Mail_as_References();
 	}
 
-	@Test(priority = 10)
-	public void TC_9_Verify_SendTo_Mail_ascopy() throws Exception {
+	@Test(priority = 12)
+	public void TC_09_Verify_SendTo_Mail_ascopy() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Mail_ascopy();
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 13)
 	public void TC_10_Verify_SendTo_Print() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Print();
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 14)
 	public void TC_11_Verify_SendTo_Export() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Export();
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 15)
 	public void TC_12_Verify_SendTo_GenerateDocumentLink() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_GenerateDocumentLink();
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 16)
 	public void TC_13_Verify_SendTo_SecureLink() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();

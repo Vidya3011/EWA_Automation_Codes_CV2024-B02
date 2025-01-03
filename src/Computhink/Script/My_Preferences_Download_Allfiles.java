@@ -18,7 +18,7 @@ public class My_Preferences_Download_Allfiles extends BaseClass {
 	/*
 	 * @BeforeClass
 	 * 
-	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
+	 * public void Launch_Browser() throws Exception { loadBrowser("Chrome");
 	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
 	 * 
 	 * @Test

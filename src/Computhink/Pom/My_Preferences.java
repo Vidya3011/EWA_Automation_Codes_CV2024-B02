@@ -284,7 +284,7 @@ public class My_Preferences extends BaseClass {
 	@FindBy(xpath = "//*[@id=\"lockenable1\"]")
 	private WebElement Redaction_Option;
 
-	@FindBy(xpath = ("//*[@id=\"imageViewerDiv\"]/div[2]/canvas"))
+	@FindBy(xpath = ("//*[@id=\"imageViewerDiv\"]/div[2]/canvas")) 
 	private WebElement Page;
 
 	@FindBy(xpath = ("//div[@id='pdfViewerDiv_textLayer_0']"))
@@ -493,9 +493,6 @@ public class My_Preferences extends BaseClass {
 	@FindBy(xpath = "//input[@class='thumbnailOptionSelected']")
 	private WebElement SelectCheckbox;
 
-	@FindBy(xpath = "//img[@class='imgP']")
-	private WebElement AllPages;
-
 	@FindBy(xpath = "//span[contains(@class,'pageMenu')]")
 	private WebElement Click_Pagemenu;
 
@@ -504,9 +501,6 @@ public class My_Preferences extends BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"pastDoc\"]")
 	private WebElement Pastepage;
-
-	@FindBy(xpath = "//*[@id=\"pageCount\"]")
-	private WebElement Pagecount;
 
 	@FindBy(xpath = "//*[@id=\"messageButtonCreate_as_NewOnPaste\"]")
 	private WebElement createNewpage;
@@ -549,9 +543,6 @@ public class My_Preferences extends BaseClass {
 
 	@FindBy(css = ".e-toast-content")
 	private WebElement Toastmessage;
-
-	@FindBy(xpath = "//*[@id=\"generalRow_Id\"]/td[2]")
-	private WebElement GeneralTabDociID;
 
 	@FindBy(xpath = "//*[@id=\"addCustomStamps\"]")
 	private WebElement Register_Custom_Stamp;
@@ -661,14 +652,12 @@ public class My_Preferences extends BaseClass {
 
 	public void getSelect_Office_document_Defaultviewing() {
 		Select sel = new Select(Select_Office_document_Defaultviewing);
-		// sel.selectByVisibleText("Default viewing");
-		sel.selectByIndex(0);
+		sel.selectByVisibleText("Default viewing");
 	}
 
 	public void getSelect_Office_document_Advancedviewing() {
 		Select sel = new Select(Select_Office_document_Advancedviewing);
-		// sel.selectByVisibleText("Advanced viewing");
-		sel.selectByIndex(1);
+		sel.selectByVisibleText("Advanced viewing");
 	}
 
 	public WebElement getSelect_Document_Type_Dropdown() {
@@ -734,8 +723,7 @@ public class My_Preferences extends BaseClass {
 
 	public void getPdf_document_Advancedviewing() {
 		Select drop = new Select(Pdf_document_Advancedviewing);
-		// drop.selectByVisibleText("Advanced viewing");
-		drop.selectByIndex(1);
+		drop.selectByVisibleText("Advanced viewing");
 
 	}
 
@@ -759,8 +747,7 @@ public class My_Preferences extends BaseClass {
 
 	public void getPdf_document_Defaultviewing() throws Exception {
 		Select sel = new Select(Pdf_document_Defaultviewing);
-		// sel.selectByVisibleText("Default viewing");
-		sel.selectByIndex(0);
+		sel.selectByVisibleText("Default viewing");
 	}
 
 	public void getEnter_ReportNameDefaultview() throws Exception {
@@ -1036,7 +1023,7 @@ public class My_Preferences extends BaseClass {
 		jsclick(Click_AddSignature_Upload);
 	}
 
-	@FindBy(xpath = "//button[@id='saveUploadedSignature']") 
+	@FindBy(xpath = "//*[@id=\"uploadSignatureOk\"]")
 	private WebElement Overidesignature;
 
 	public void getClick_AddSignature_Save() throws Exception {
@@ -1045,6 +1032,7 @@ public class My_Preferences extends BaseClass {
 		} catch (Exception e) {
 			// Uploaded
 		}
+		jsclick(Click_AddSignature_Save);
 	}
 
 	public void getClick_AddSignature_Yes_button() throws Exception {
@@ -1295,10 +1283,10 @@ public class My_Preferences extends BaseClass {
 
 	public void getEnterpassword() throws Exception {
 
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		jsclick(Enterpassword1);
 		Enterpassword1.sendKeys(MyPreferences_excelRead(13, 0));
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		jsclick(Enterpassword2);
 		Enterpassword2.sendKeys(MyPreferences_excelRead(13, 0));
 		Thread.sleep(1000);
@@ -1638,9 +1626,9 @@ public class My_Preferences extends BaseClass {
 
 	// Split and Merge Document
 
-	public void Create_Documents_SplitMerge() throws Exception {
+	public void Create_PDF_Document() throws Exception {
 
-		Reporter.log("Test Scenario 1: Verifying  Create new documents for Split & Merge", true);
+		Reporter.log("Test Scenario 1: Verifying  Create new Pdf document", true);
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
@@ -1707,7 +1695,7 @@ public class My_Preferences extends BaseClass {
 		getBrowse_Option();
 		Thread.sleep(5000);
 		Reporter.log("Browse Document page", true);
-		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadSplitMerge.exe");
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
 		try {
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
 			wait1.until(ExpectedConditions.alertIsPresent());
@@ -1724,46 +1712,46 @@ public class My_Preferences extends BaseClass {
 		jsclick(ViewDocument_Button);
 		Thread.sleep(9000);
 		Reporter.log("Click on View document option", true);
-		Reporter.log("Document is created successfully", true);
+		Reporter.log("PDF is created successfully", true);
 	}
 
-	public void Select_PdfPage_SplitAll() throws Exception {
-
-		Reporter.log("Test Scenario 3: Verify selected page is pdf or not and do Split All pages for pdf document",
-				true);
+	public void Verify_CopyPaste_Viewer() throws Exception {
 
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
 			// Saving dialog not present
 		}
-
-		// Verify and Print total Number of Pages Present in Document
-
-		Thread.sleep(9000);
-		List<WebElement> files = driver.findElements(By.xpath("//input[@class='thumbnailOptionSelected']"));
-		int fileCount = files.size();
-		Reporter.log("Number of files present: " + fileCount, true);
-
-		// Verify and Select Only pdf file type for Split
-
-		List<WebElement> pages = driver.findElements(By.xpath("//div[@class='ThumbnailHolder']"));
-
-		for (WebElement doc : pages) {
-
-			String href = doc.getAttribute("title");
-			if (href.endsWith(".pdf")) {
-				// Click the pdf if it ends with .pdf
-				doc.click();
-
-				Thread.sleep(3000);
-
-				// String regex = "^[0-9]";
-
-				String pagecounttext = Pagecount.getAttribute("value");
-				System.out.println(pagecounttext);
-			}
-		}
+		Reporter.log("Test Scenario 2: Verifying  Copy and Paste from Viewer menu option", true);
+		Thread.sleep(4000);
+		jsclick(SelectCheckbox);
+		Thread.sleep(6000);
+		Reporter.log("Select First page Thumbnail", true);
+		movingclkElement(Click_Pagemenu);
+		Thread.sleep(4000);
+		Reporter.log("Click on Page menu option", true);
+		jsclick(Copypage);
+		Thread.sleep(4000);
+		Reporter.log("Click on Copy option", true);
+		jsclick(Clickokbutton);
+		Thread.sleep(4000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Click_Pagemenu);
+		Thread.sleep(4000);
+		Reporter.log("Click on Page menu option", true);
+		jsclick(Pastepage);
+		Thread.sleep(4000);
+		Reporter.log("Click on Paste option", true);
+		jsclick(Clickokbutton);
+		Thread.sleep(4000);
+		Reporter.log("Click on Ok button", true);
+		jsclick(Save_button);
+		Thread.sleep(6000);
+		Reporter.log("Click on Save menu option", true);
+		jsclick(DocumentSave_Ok_button);
+		Thread.sleep(4000);
+		Reporter.log("Click on Ok button", true);
+		Reporter.log("Copy and paste document Verifying successfully", true);
 	}
 
 	public void Verify_Split_Merge_Viewer() throws Exception {
@@ -1775,35 +1763,6 @@ public class My_Preferences extends BaseClass {
 		} else {
 			// Saving dialog not present
 		}
-
-		List<WebElement> elements = driver.findElements(By.xpath("(//img[@class='imgP'])"));
-
-		int size = elements.size();
-
-		// String regex = "^[0-9]";
-
-		String pagecounttext = Pagecount.getAttribute("value");
-
-		System.out.println(pagecounttext);
-
-		// / 9
-
-		// int pagenumbers = Pagecount.size();
-
-		for (WebElement doc : elements) {
-
-			String text = doc.getAttribute("title");
-
-			if (text.endsWith(".PDF")) {
-
-			}
-
-			WebElement Sel = driver.findElement(By.xpath("(//img[@class='imgP'])[1]"));
-			Sel.click();
-			System.out.println("File extention is found PDF and file is selected");
-
-		}
-
 		jsclick(SelectCheckbox);
 		Thread.sleep(4000);
 		Reporter.log("Select Frst page Thumbnail", true);
@@ -1869,7 +1828,6 @@ public class My_Preferences extends BaseClass {
 		}
 		Refresh_Button();
 		Thread.sleep(6000);
-		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1908,30 +1866,24 @@ public class My_Preferences extends BaseClass {
 		wait.until(ExpectedConditions.elementToBeClickable(Click_AddSignature_Upload));
 		getClick_AddSignature_Upload();
 		Thread.sleep(4000);
+		getclickProtectpassword();
+		Thread.sleep(6000);
+		Reporter.log("Check on Protect password Icon", true);
 		Actions act = new Actions(driver);
 		act.moveToElement(Click_AddSignature_Browse).click().build().perform();
 		Thread.sleep(6000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\UploadSignature.exe");
 		Reporter.log("By using AutoIT add file from external folder", true);
-		Thread.sleep(8000);
-		getclickProtectpassword();
 		Thread.sleep(6000);
-		Reporter.log("Check on Protect password Icon", true);
 		getClick_AddSignature_Save();
-		Thread.sleep(2000);
-		jsclick(Signature_Upload_OkButton);
-		
-		try {
-			Reporter.log("Click on Save button", true);
-			getEnterpassword();
-			Thread.sleep(6000);
-			Reporter.log("Enter a Password", true);
-			getSignature_Upload_OkButton();
-			Thread.sleep(6000);
-		} catch (Exception e) {
-			System.out.println("Alert is not present...");
-		}
-		
+		Thread.sleep(6000);
+		Reporter.log("Click on Save button", true);
+		getEnterpassword();
+		Thread.sleep(6000);
+		Reporter.log("Enter a Password", true);
+		getSignature_Upload_OkButton();
+		Thread.sleep(6000);
+		Reporter.log("Click on Upload button", true);
 		Reporter.log("New signature Upload Successfully", true);
 		jsclick(Click_New_Document);
 		Thread.sleep(6000);
@@ -1978,13 +1930,9 @@ public class My_Preferences extends BaseClass {
 		getClick_signature_Menuoption();
 		Thread.sleep(6000);
 		Reporter.log("Click on signature menu Option", true);
-		try {
-			getinputpassword();
-			Thread.sleep(6000);
-			Reporter.log("Enter a Password", true);
-		} catch (Exception e) {
-			System.out.println("Signature is not password protected");
-		}
+		getinputpassword();
+		Thread.sleep(6000);
+		Reporter.log("Enter a Password", true);
 		getAdd_Signature_Onpage();
 		Thread.sleep(6000);
 		Reporter.log("New signature added Successfully on  Document", true);
@@ -2025,15 +1973,6 @@ public class My_Preferences extends BaseClass {
 		jsclick(My_Preferencesetting);
 		Thread.sleep(6000);
 		Reporter.log("Click on My Preferences", true);
-		getSelect_Office_document_Defaultviewing();
-		Thread.sleep(6000);
-		Reporter.log("Select Office document and set as Default view", true);
-		getPdf_document_Defaultviewing();
-		Thread.sleep(6000);
-		Reporter.log("Select Pdf document and set as Default view", true);
-		movingclkElement(Apply_button);
-		Thread.sleep(6000);
-		Reporter.log("Click on Apply button", true);
 		getClick_AddSignature();
 		Thread.sleep(6000);
 		Reporter.log("Click on Add Signature button", true);
@@ -2499,12 +2438,9 @@ public class My_Preferences extends BaseClass {
 		jsclick(My_Preferencesetting);
 		Thread.sleep(6000);
 		Reporter.log("Click on My Preferences", true);
-		getSelect_Office_document_Defaultviewing();
+		getClick_Dropdown_DefaultViewing();
 		Thread.sleep(6000);
-		Reporter.log("Select Office document and set as Default view", true);
-		getPdf_document_Defaultviewing();
-		Thread.sleep(6000);
-		Reporter.log("Select Pdf document and set as Default view", true);
+		Reporter.log("Select Default view ", true);
 		getSelect_Dropdown_Convert_To_PDF();
 		Thread.sleep(6000);
 		Reporter.log("Select Convert To Pdf Option", true);
@@ -2530,7 +2466,7 @@ public class My_Preferences extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("Alert is not present...");
 		}
-		Thread.sleep(50000);
+		Thread.sleep(30000);
 		getSearch_Page_Number();
 		Thread.sleep(6000);
 		Reporter.log("Enter page number", true);
@@ -2627,7 +2563,6 @@ public class My_Preferences extends BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-
 		Thread.sleep(6000);
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -2651,7 +2586,6 @@ public class My_Preferences extends BaseClass {
 		LogoutPage();
 		LogDipakUser();
 		Thread.sleep(4000);
-
 		Refresh_Button();
 		Thread.sleep(8000);
 		Reporter.log("Click on Refresh button", true);
@@ -2696,27 +2630,6 @@ public class My_Preferences extends BaseClass {
 		Refresh_Button();
 		Thread.sleep(4000);
 		Reporter.log("Click on Refresh button", true);
-
-		// Verify Download Path
-
-		File directory = new File("C:\\Users\\dipak.p\\Downloads");
-		boolean downloadinFilePresence = false;
-		File[] filesList = null;
-		LOOP: while (true) {
-			filesList = directory.listFiles();
-			for (File file : filesList) {
-				downloadinFilePresence = file.getName().contains(".zip");
-			}
-			if (downloadinFilePresence) {
-				for (; downloadinFilePresence;) {
-					Thread.sleep(5000);
-					continue LOOP;
-				}
-			} else {
-				break;
-			}
-		}
-
 	}
 
 	// Enable Dashboard
@@ -3485,7 +3398,13 @@ public class My_Preferences extends BaseClass {
 			System.out.println("Alert is not present...");
 		}
 		Reporter.log("By using AutoIT add file from external folder", true);
-		Thread.sleep(8000);
+		Thread.sleep(6000);
+		getMove_to_ViewMenu_Option_inViewer();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to View Menu Option", true);
+		getVerify_PDF_with_Overlay_option();
+		Thread.sleep(6000);
+		Reporter.log("Verifying PDF with overlay Option", true);
 		movingclkElement(Create_button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Create button", true);
@@ -3525,7 +3444,15 @@ public class My_Preferences extends BaseClass {
 		jsclick(Open_Document);
 		Thread.sleep(6000);
 		Reporter.log("Select and Open document", true);
-
+		getMove_to_ViewMenu_Option_inViewer();
+		Thread.sleep(6000);
+		Reporter.log("Mousehover to View menu Option", true);
+		getVerify_PDF_with_Overlay_option();
+		Thread.sleep(6000);
+		Reporter.log("Verifying Pdf with overlay Option", true);
+		jsclick(Click_PDF_with_Overlay_option);
+		Thread.sleep(6000);
+		Reporter.log("Verifying PDF with Overlay is Enable", true);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -4347,7 +4274,7 @@ public class My_Preferences extends BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on New Document Tab", true);
 		jsclick(Destination_Folder_Textbox);
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Destination Folder Textbox", true);
 		selectElement(Select_Cabinet1);
 		Thread.sleep(6000);
