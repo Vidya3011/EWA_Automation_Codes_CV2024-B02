@@ -3,20 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Computhink.Script.AnnotationFunctionality">
+      <class name="Computhink.Script.DashBoardScript">
         <methods>
-          <include name="TC_C_HighLight_Annotation"/>
-          <include name="TC_K_Polygon"/>
-          <include name="TC_F_RubberStampAnnotation"/>
+          <include name="TC_7_Contentverse_RejectDocumentInWFReport_Report"/>
+          <include name="TC_6_Contentverse_WrokflowStatus_Report"/>
+          <include name="TC_8_logoutFromDB"/>
           <include name="ladBrowser"/>
-          <include name="TC_H_StampAnnotation"/>
-          <include name="TC_G_Rectangle_Annotation"/>
-          <include name="TC_I_LineAnnotation_Ellipse_Annotation"/>
-          <include name="TC_B_Redaction_UnlockRedaction"/>
-          <include name="TC_J_Signature_Annotation"/>
-          <include name="TC_E_StikyNote_Annotation"/>
+          <include name="TC_5_Contentverse_Document_Report"/>
         </methods>
-      </class> <!-- Computhink.Script.AnnotationFunctionality -->
+      </class> <!-- Computhink.Script.DashBoardScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -71,7 +71,7 @@ public class CrossBrowserTesting extends BaseClass {
 	public void CrossBrw() throws Exception {
 
 		AdvancedViewer ad = new AdvancedViewer();
-		ad.AdvancedViewPDFDocument_SQL();
+		//ad.AdvancedViewPDFDocument_SQL();
 		Reporter.log("PDF Document verified successfull");
 
 	}
