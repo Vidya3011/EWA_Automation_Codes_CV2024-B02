@@ -39,11 +39,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-<<<<<<< HEAD
 
-=======
+
+
 import org.openqa.selenium.support.FindBy;
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -53,12 +53,12 @@ import org.testng.asserts.SoftAssert;
 import Computhink.Pom.ToDoListTab;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-<<<<<<< HEAD
+
 //NishaR codes
-=======
+
 //Dipak Automation codes
 //Merging the code into Master branch
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 public class BaseClass {
 
@@ -118,7 +118,7 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 	}
-<<<<<<< HEAD
+
 
 	public static void ContentVerseURLAndTitleAssertValidation() throws Exception {
 		// Get the current URL
@@ -227,7 +227,7 @@ public class BaseClass {
 		
 		
 	}
-=======
+
 	
 
 		public static void ContentVerseURLAndTitleAssertValidation() throws Exception {
@@ -535,12 +535,12 @@ public class BaseClass {
 			Reporter.log(Toastmessage.getText() + " this toast message should show", true);
 
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	
 	
 	
 	
-	//////////////////////////////////// ====================================================NishaR
+	//////////////////////////////////// ===NishaR
 
 	public static void loginRNISHA47() throws Exception {
 		SoftAssert as = new SoftAssert(); // Initialize SoftAssert to capture all assertions
@@ -898,7 +898,7 @@ public class BaseClass {
 	 * 3)); Reporter.log("Browser launch with Testing URL", true); }
 	 */
 
-<<<<<<< HEAD
+
 	// 3.
 	// Dipak EWA Baseclass *************//
 
@@ -1084,11 +1084,11 @@ public class BaseClass {
 			// Session message is not displayed
 		}
 	}
-=======
+
 	
 
 		
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 	// 4. All POM datadriven
 
@@ -2032,13 +2032,13 @@ public class BaseClass {
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 
 	}
-<<<<<<< HEAD
+
 
 }
-=======
+
 	}
 
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 /*
  * //53. public static String excelRead(String fileName, String sheetName, int
@@ -2110,8 +2110,8 @@ public class BaseClass {
  * sheetName) throws IOException { int rows = getNoOfRows(fileName, sheetName);
  * int column = getNoOFColumn(fileName, sheetName); int Totalcells =rows*column;
  * return Totalcells; } }
-<<<<<<< HEAD
+
  */
-=======
+
  */
->>>>>>> origin/Dipak-Pandurang-Gawali
+
