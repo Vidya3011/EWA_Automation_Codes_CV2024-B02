@@ -22,11 +22,11 @@ public class Document_References extends Computhink.Generic.BaseClass {
 	public Document_References() {
 		PageFactory.initElements(driver, this);
 	}
-<<<<<<< HEAD
-=======
+
+
 	
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
 	private WebElement Select_Cabinet;
@@ -45,7 +45,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[2]/td[1]/label/span"))
 	private WebElement Check_Document2;
-<<<<<<< HEAD
+
 
 	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle\"]")
 	private WebElement Cancel_Button_BrowseforFolder;
@@ -55,7 +55,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"copyId\"]")
 	private WebElement Copy_ID;
-=======
+
 	
 	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle\"]")
 	private WebElement Cancel_Button_BrowseforFolder;
@@ -65,7 +65,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 	
 	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
 	private WebElement Nobutton;
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 	@FindBy(xpath = "//*[@id=\"docReferencePaste\"]")
 	private WebElement ReferencePaste;
@@ -90,17 +90,17 @@ public class Document_References extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
 	private WebElement MoveTo_Menu_Recent;
-<<<<<<< HEAD
+
 
 	@FindBy(xpath = "//*[@id=\"createDocument\"]")
 	private WebElement Click_New_Document;
 
-=======
+
 	
 	@FindBy(xpath = "//*[@id=\"createDocument\"]")
 	private WebElement Click_New_Document;
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	@FindBy(xpath = "//*[@id=\"createDocuemtnLocation\"]")
 	private WebElement Destination_Folder_Textbox;
 
@@ -112,7 +112,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = (".//div[@id='navigatorModel']/div[2]/div[1]/div[1]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 	private WebElement Select_Folder1;
-<<<<<<< HEAD
+
 
 	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
@@ -120,7 +120,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
 	private WebElement Click_Document_Type_Dropdown;
 
-=======
+
 	
 	@FindBy(xpath = "//*[@id=\"navigatorTreeOk\"]")
 	private WebElement OK_Button_BrowseforFolder;
@@ -128,7 +128,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"docTypeList\"]")
 	private WebElement Click_Document_Type_Dropdown;
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	@FindBy(xpath = "//*[@id='docTypeIndicesTable']/tbody[1]/tr[1]/td[2]/input[1]")
 	private WebElement Enter_ReportName;
 
@@ -137,54 +137,54 @@ public class Document_References extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"viewDocumentAddPages\"]")
 	private WebElement Browse_Option;
-<<<<<<< HEAD
 
-=======
+
+
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	@FindBy(xpath = "//*[@id=\"createDocumentSubmit\"]")
 	private WebElement Create_button;
 
 	@FindBy(xpath = "//*[@id=\"modelHome\"]")
 	private WebElement Navigate_button;
-<<<<<<< HEAD
 
-=======
+
+
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	public WebElement getBrowse_Option() {
 		WebElement ele = Browse_Option;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", ele);
 		return ele;
 	}
-<<<<<<< HEAD
 
-=======
+
+
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	public WebElement getSelect_Document_Type_Dropdown() {
 		Select drop = new Select(Click_Document_Type_Dropdown);
 		drop.selectByVisibleText("CVReports");
 		return Click_Document_Type_Dropdown;
 	}
-<<<<<<< HEAD
+
 
 	public void getEnter_ReportName() throws Exception {
 
-=======
+
 	
 	public void getEnter_ReportName() throws Exception {
 		
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		jsclick(Enter_ReportName);
 		Enter_ReportName.sendKeys(MyPreferences_excelRead(1, 0));
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
+
 	public void getMoveTo_Menu_Recent() {
 		Actions action = new Actions(driver);
 		action.moveToElement(MoveTo_Menu_Recent).build().perform();
@@ -217,7 +217,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		try {
 			LogDipakUser();
 			Thread.sleep(6000);
-<<<<<<< HEAD
+
 		} catch (Exception e) {
 			System.out.println("User is already logged");
 		}
@@ -226,25 +226,25 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		} else {
 			// Saving dialog not present
 		}
-=======
+
 		}catch (Exception e){
 			System.out.println("User is already logged");
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-<<<<<<< HEAD
-=======
+
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
 			// Saving dialog not present
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -269,26 +269,26 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		jsclick(Select_Document);
 		Thread.sleep(6000);
 		try {
-<<<<<<< HEAD
+
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
-=======
+
 			WebDriverWait wait1 = new WebDriverWait(driver, 30);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alt = driver.switchTo().alert();
 			alt.accept();
 		} catch (Exception e) {
 			System.out.println("Alert is not present...");
 		}
-<<<<<<< HEAD
+
 		Thread.sleep(8000);
 		Reporter.log("Verified copy and paste References document", true);
 
-=======
+
 		Thread.sleep(6000);
 		Reporter.log("Verified copy and paste References document", true);
 		
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Actions action = new Actions(driver);
 		action.moveToElement(Click_References).click().build().perform();
 		Thread.sleep(6000);
@@ -307,7 +307,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		try {
 			LogDipakUser();
 			Thread.sleep(6000);
-<<<<<<< HEAD
+
 		} catch (Exception e) {
 			System.out.println("User is already logged");
 		}
@@ -316,25 +316,25 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		} else {
 			// Saving dialog not present
 		}
-=======
+
 		}catch (Exception e){
 			System.out.println("User is already logged");
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-<<<<<<< HEAD
-=======
+
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
 			// Saving dialog not present
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Refresh_Button();
 		Thread.sleep(6000);
 		getMoveTo_Menu_Recent();
@@ -367,7 +367,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		Reporter.log("Deleted added References document successfully", true);
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
-<<<<<<< HEAD
+
 
 	}
 
@@ -384,7 +384,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		} else {
 			// Saving dialog not present
 		}
-=======
+
 		
 	}
 	
@@ -396,17 +396,17 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		}catch (Exception e){
 			System.out.println("User is alreday Logged");
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-<<<<<<< HEAD
+
 		Refresh_Button();
 		Thread.sleep(8000);
-=======
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
@@ -414,7 +414,7 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		}
 		Refresh_Button();
 		Thread.sleep(6000);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		jsclick(Click_New_Document);
 		Thread.sleep(4000);
 		Reporter.log("Click on New Document Tab", true);
@@ -446,10 +446,10 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\PdfDoc\\FileUploadUpdate.exe");
-<<<<<<< HEAD
+
 		Thread.sleep(6000);
-=======
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
 		Reporter.log("By using AutoIT add file from external folder", true);
 		try {
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
@@ -465,9 +465,9 @@ public class Document_References extends Computhink.Generic.BaseClass {
 		Reporter.log("Click on Create button", true);
 		jsclick(Navigate_button);
 		Thread.sleep(6000);
-<<<<<<< HEAD
+
 	}
-=======
+
 }
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 }
