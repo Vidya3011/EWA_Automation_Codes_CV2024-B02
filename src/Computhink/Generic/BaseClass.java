@@ -61,6 +61,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseClass {
+	
+	//Am dipak sending the codes to GIT
 
 	public static WebDriver driver;
 	public static Alert a;
