@@ -19,10 +19,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-<<<<<<< HEAD
-=======
+
+
 import org.testng.Assert;
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 import org.testng.Reporter;
 
 public class Document_Version extends Computhink.Generic.BaseClass {
@@ -32,11 +32,11 @@ public class Document_Version extends Computhink.Generic.BaseClass {
 	public Document_Version() {
 		PageFactory.initElements(driver, this);
 	}
-<<<<<<< HEAD
-=======
+
+
 	@FindBy(xpath = "//*[@id=\"navigatorTreeCancle\"]")
 	private WebElement Cancel_Button_BrowseforFolder;
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 	@FindBy(xpath = ".//div[@id='viewDocumentnavigator']/ul[1]/li[1]/a[1]")
 	private WebElement Select_Cabinet;
@@ -53,12 +53,12 @@ public class Document_Version extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = ("//*[@id=\"documentListTable\"]/tbody/tr[1]/td[3]"))
 	private WebElement Select_Document;
 
-<<<<<<< HEAD
+
 	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
 	private WebElement Nobutton;
 
-=======
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
 	@FindBy(xpath = "//*[@id=\"version\"]/div/div[1]/span")
 	private WebElement Version_Option;
 
@@ -70,19 +70,19 @@ public class Document_Version extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"uploadFabButton\"]")
 	private WebElement UploadFab;
-<<<<<<< HEAD
-=======
+
+
 	
 	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
 	private WebElement Nobutton;
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 	@FindBy(xpath = "//*[@id=\"saveFabButton\"]")
 	private WebElement SaveFab;
 
 	@FindBy(xpath = "//*[@id=\"messageButtonOK42\"]")
 	private WebElement SaveOkButton;
-<<<<<<< HEAD
+
 
 	@FindBy(xpath = "//*[@id=\"versionRow_1.0\"]")
 	private WebElement Verify_Message;
@@ -92,7 +92,7 @@ public class Document_Version extends Computhink.Generic.BaseClass {
 		Reporter.log(Message.getText() + " this message should show", true);
 
 	}
-=======
+
 	
 	@FindBy(xpath = "//*[@id=\"versionRow_1.0\"]/td[1]/input")
 	private WebElement CheckFirst_Version;
@@ -160,7 +160,7 @@ public void getVerify_ThirdVersion() {
 }
 	
 	
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 
 	@FindBy(xpath = "//td[normalize-space()='Pages Updated']")
 	private WebElement Click_Message;
@@ -287,11 +287,11 @@ public void getVerify_ThirdVersion() {
 	@FindBy(xpath = "(//a[normalize-space()='Update'])[1]")
 	private WebElement Update_Button;
 
-<<<<<<< HEAD
+
 	@FindBy(xpath = "//*[@id=\"Val_33\"]")
-=======
+
 	@FindBy(xpath = "//input[@id='Val_21']")
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	private WebElement Update_ReportName;
 
 	@FindBy(xpath = "(//a[normalize-space()='Save'])[1]")
@@ -387,11 +387,11 @@ public void getVerify_ThirdVersion() {
 		} catch (Exception e) {
 			System.out.println("User is already logged");
 		}
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
-=======
+
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
@@ -401,7 +401,7 @@ public void getVerify_ThirdVersion() {
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			// Saving dialog not present
 		}
 		Refresh_Button();
@@ -435,10 +435,10 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("Browse Document Page", true);
 		Thread.sleep(2000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
-<<<<<<< HEAD
+
 		Thread.sleep(6000);
-=======
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
 		Reporter.log("By using AutoIT add file from external folder", true);
 		try {
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
@@ -454,12 +454,12 @@ public void getVerify_ThirdVersion() {
 		Thread.sleep(6000);
 		Reporter.log("Click on Create button", true);
 		jsclick(ViewDocument_Button);
-<<<<<<< HEAD
+
 		Thread.sleep(6000);
 		Reporter.log("Click on View document option", true);
 		Reporter.log("PDF is created successfully", true);
 		Reporter.log("Verified Current Document Version Successfully");
-=======
+
 		Thread.sleep(10000);
 		Reporter.log("Click on View document option", true);
 		Reporter.log("PDF is created successfully", true);
@@ -469,21 +469,21 @@ public void getVerify_ThirdVersion() {
 		getVerify_FirstVersion();
 		Reporter.log("Verified Current Document Version Successfully");
 		
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	}
 
 	public void Add_Page_with_Comment() throws Exception {
 
 		Reporter.log("Test Scenario 2 : Upload and Save New page and Verifying Version with new Comments ", true);
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
-=======
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			// Saving dialog not present
 		}
 		Thread.sleep(6000);
@@ -498,11 +498,11 @@ public void getVerify_ThirdVersion() {
 		jsclick(UploadFab);
 		Thread.sleep(2000);
 		Reporter.log("Click on Upload Fab button", true);
-<<<<<<< HEAD
+
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\Sample exe file Special characters\\Allowing files\\Tile.exe");
-=======
+
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Reporter.log("By using AutoIT add file from external folder", true);
 		Thread.sleep(6000);
 		jsclick(SaveFab);
@@ -514,11 +514,11 @@ public void getVerify_ThirdVersion() {
 		jsclick(Version_Option);
 		Thread.sleep(6000);
 		Reporter.log("Click on Version Option", true);
-<<<<<<< HEAD
+
 		getVerify_Message();
-=======
+
 		getVerify_secondVersion();
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Thread.sleep(6000);
 		Reporter.log("Message Verified", true);
 		jsclick(Click_Message);
@@ -535,29 +535,29 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("Enter Comment into Comment field", true);
 		jsclick(Save_Comments);
 		Thread.sleep(6000);
-<<<<<<< HEAD
+
 		jsclick(Select_ThumbnailPage);
 		Thread.sleep(6000);
 		Reporter.log("Click on Save button", true);
 		Reporter.log("Document Version Update with Comments", true);
-=======
+
 		Reporter.log("Click on Save button", true);
 		getVerify_secondVersionupdateComment();
 		
 		Reporter.log("Document Version Update with Comments and verified", true);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	}
 
 	public void Delete_Page() throws Exception {
 
 		Reporter.log("Test Scenario 3 : Delete Page and Verifying Version ", true);
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
 			// Saving dialog not present
 		}
-=======
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
@@ -565,7 +565,7 @@ public void getVerify_ThirdVersion() {
 		}
 		jsclick(Select_ThumbnailPage);
 		Thread.sleep(6000);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Reporter.log("Check Thumbnail page", true);
 		jsclick(Delete_FabButton);
 		Thread.sleep(6000);
@@ -585,26 +585,26 @@ public void getVerify_ThirdVersion() {
 		movingclkElement(Version_Option);
 		Thread.sleep(6000);
 		Reporter.log("Click on Version Option", true);
-<<<<<<< HEAD
-=======
+
+
 		
 		
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Reporter.log("Document Page delete and Verified versions", true);
 	}
 
 	public void Delete_All_version_with_Fullscreen() throws Exception {
 
 		Reporter.log("Test Scenario 4 : Verifying Delete All versions and Full Screen Option ", true);
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
-=======
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			// Saving dialog not present
 		}
 		jsclick(Delete_AllVersions);
@@ -628,15 +628,15 @@ public void getVerify_ThirdVersion() {
 	public void Add_Annotations() throws Exception {
 
 		Reporter.log("Test Scenario 5 : Verifying set Active version ", true);
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
-=======
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			// Saving dialog not present
 		}
 		Refresh_Button();
@@ -666,7 +666,7 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("Click on Floating button", true);
 		jsclick(UploadFab);
 		Thread.sleep(2000);
-<<<<<<< HEAD
+
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
 		Thread.sleep(6000);
 		Reporter.log("By using AutoIT add file from external folder", true);
@@ -675,7 +675,7 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("Click on Save button menu Option", true);
 		jsclick(DocumentSave_Ok_button);
 		Thread.sleep(6000);
-=======
+
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
 		Thread.sleep(6000);
 		Reporter.log("By using AutoIT add file from external folder", true);
@@ -686,7 +686,7 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("Click on Save button", true);
 		jsclick(SaveOkButton);
 		Thread.sleep(9000);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		Reporter.log("Click on Ok button", true);
 		jsclick(Version_Option);
 		Thread.sleep(6000);
@@ -719,15 +719,15 @@ public void getVerify_ThirdVersion() {
 	public void Set_ActiveVersion() throws Exception {
 
 		Reporter.log("Test Scenario 6 : Verifying set Active version ", true);
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
 			// Saving dialog not present
 		}
-=======
 
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
 		try {
 			LogDipakUser();
 			Thread.sleep(6000);
@@ -740,10 +740,10 @@ public void getVerify_ThirdVersion() {
 			Thread.sleep(6000);
 			jsclick(Select_Document);
 			Thread.sleep(6000);
-<<<<<<< HEAD
-=======
+
+
 			Thread.sleep(6000);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			Reporter.log("Open document from Document List", true);
 			jsclick(Version_Option);
 			Thread.sleep(6000);
@@ -761,15 +761,15 @@ public void getVerify_ThirdVersion() {
 		} catch (Exception e) {
 			System.out.println("User is already logged");
 		}
-<<<<<<< HEAD
 
-=======
+
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
 			// Saving dialog not present
 		}
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 		jsclick(Set_active_version);
 		Thread.sleep(6000);
 		Reporter.log("select version to set active version", true);
@@ -777,31 +777,31 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("Click on Set active Version button", true);
 		Thread.sleep(6000);
 		jsclick(Version_Option);
-<<<<<<< HEAD
+
 		Thread.sleep(6000);
 		Reporter.log("Click on Version Option", true);
 		Reporter.log("Active version set and verified successfully", true);
 		Thread.sleep(6000);
-=======
+
 		Thread.sleep(9000);
 		Reporter.log("Click on Version Option", true);
 		Reporter.log("Active version set and verified successfully", true);
 		
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	}
 
 	public void Update_Doc_Properties() throws Exception {
 
 		Reporter.log("Test Scenario 7 : Update document properties ", true);
-<<<<<<< HEAD
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
-=======
+
 		if(Nobutton.isDisplayed()==true) {
 			movingclkElement(Nobutton);
 		}else {
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 			// Saving dialog not present
 		}
 		jsclick(Update_Button);
@@ -824,9 +824,9 @@ public void getVerify_ThirdVersion() {
 		Reporter.log("verified and updated Document properties", true);
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
-<<<<<<< HEAD
-=======
+
+
 		Thread.sleep(6000);
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	}
 }
