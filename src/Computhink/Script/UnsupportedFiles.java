@@ -23,7 +23,7 @@ UnsupportedFiles extends Computhink.Generic.BaseClass {
 
 	
 		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
+		launchUrl();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 	

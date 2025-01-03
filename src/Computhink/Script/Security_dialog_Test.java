@@ -9,13 +9,14 @@ import org.testng.annotations.Test;
 import Computhink.Pom.Document_References;
 import Computhink.Pom.Security;
 
+//Dipak Automation script
 public class Security_dialog_Test extends Computhink.Generic.BaseClass {
 
-	@BeforeClass
+	/*@BeforeClass
 	public void Launch_Browser() throws Exception {
 
 		loadBrowser("edge");
-		launch47Url();
+		launchUrl();
 		Reporter.log("CVS URL started Successfully", true);
 	}
 
@@ -23,7 +24,7 @@ public class Security_dialog_Test extends Computhink.Generic.BaseClass {
 	public void Login_EWA() throws Exception {
 		LogDipakUser();
 		Reporter.log("User has logged in successfully.", true);
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void TC_01_Give_All_permission_To_Cabinet() throws Exception {
@@ -61,7 +62,7 @@ public class Security_dialog_Test extends Computhink.Generic.BaseClass {
 	}
 
 	@Test(priority = 6)
-	public void TC_06_Remove_Delete_permission_Denied_for_Drawer() throws Exception {
+	public void TC_06_Remove_Delete_permission_Denied_for_Folder() throws Exception {
 
 		Security sec = new Security();
 		sec.Remove_Delete_Denied_Folder();

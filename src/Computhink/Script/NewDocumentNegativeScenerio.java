@@ -19,7 +19,7 @@ public class NewDocumentNegativeScenerio extends BaseClass {
 
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
+		launchUrl();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");

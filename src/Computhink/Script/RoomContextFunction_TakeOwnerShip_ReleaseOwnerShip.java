@@ -24,7 +24,7 @@ RoomContextFunction_TakeOwnerShip_ReleaseOwnerShip extends Computhink.Generic.Ba
 
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
+		launchUrl();
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");

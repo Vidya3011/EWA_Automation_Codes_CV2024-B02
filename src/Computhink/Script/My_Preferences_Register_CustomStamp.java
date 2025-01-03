@@ -11,22 +11,20 @@ import Computhink.Pom.My_Preferences;
 
 public class My_Preferences_Register_CustomStamp extends BaseClass {
 
-	/*@BeforeClass
+	/*
+	 * @BeforeClass
+	 * 
+	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
+	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
+	 * 
+	 * @Test
+	 * 
+	 * public void Login_EWA() throws Exception { LogDipakUser();
+	 * Reporter.log("User has logged in successfully.", true);
+	 * 
+	 * }
+	 */
 
-	public void Launch_Browser() throws Exception {
-		loadBrowser("edge");
-		launchUrl();
-		Reporter.log("CVS URL started Successfully", true);
-	}
-
-	@Test
-
-	public void Login_EWA() throws Exception {
-		LogDipakUser();
-		Reporter.log("User has logged in successfully.", true);
-
-	}*/
-	
 	@Test(priority = 1)
 	public void TC_01_Verify_Register_Custom_Stamp_UI_and_UploadStamp() throws Exception {
 

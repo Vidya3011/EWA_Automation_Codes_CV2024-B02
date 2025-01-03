@@ -2,16 +2,8 @@ package Computhink.Pom;
 
 //Dipak Automation Coading
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.time.Duration;
-
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,9 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TemplatePage extends Computhink.Generic.BaseClass {
@@ -33,6 +23,10 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		PageFactory.initElements(driver, this);
 
 	}
+
+	// Add Soft assert
+
+	SoftAssert softAssert = new SoftAssert();
 
 	// Select From Document Navigator
 
@@ -68,14 +62,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"templateDocumentPermissions\"]/a")
 	private WebElement Select_Document_Template;
 
-	@FindBy(xpath = "//*[@id=\"templatePrefs\"]/div[2]/div[3]/div/div/div")
+	@FindBy(xpath = "//div[@id='templatePrefs']/div[2]/div[3]/div/div/div")
 	private WebElement Select_Userlist;
 
-	@FindBy(css = ".e-selectall-parent .e-frame")
+	@FindBy(xpath = "//*[@id='templateDocDrop_popup']/div/div/span[2]")
 	private WebElement Select_AllUser;
-
-	@FindBy(xpath = "//*[@id=\"templatePermissionApply\"]")
-	private WebElement TemplateApply;
 
 	@FindBy(xpath = "//*[@id=\"documentTemplates\"]")
 	private WebElement Templates_MenuOption;
@@ -95,7 +86,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"createTemplateBtn\"]")
 	private WebElement Save_Template_Button;
 
-	@FindBy(xpath = "//*[@id=\"addPagesDropDown\"]/span")
+	@FindBy(xpath = "//div[@id='addPagesDropDown']/span")
 	private WebElement Move_To_PlusIcon;
 
 	@FindBy(xpath = "//*[@id=\"createTemplateCancel\"]")
@@ -287,6 +278,23 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"messageButtonOK\"]")
 	private WebElement TemplateDeniedmessageok;
 
+	@FindBy(xpath = "//*[@id=\"templateDocumentPermissions\"]/a")
+	private WebElement DocumentTempOption;
+	@FindBy(xpath = "//*[@id=\"templateDocumentPermissions\"]/p")
+	private WebElement DocumentTempOptionDescription;
+	@FindBy(xpath = "//h3[normalize-space()='Document Templates']")
+	private WebElement DocumentTemplate_Dialog;
+	@FindBy(xpath = "//small[contains(text(),'*selected users and groups will have the permissio')]")
+	private WebElement DocumentTemplatetext_Dialog;
+	@FindBy(xpath = "//h5[normalize-space()='Users List']")
+	private WebElement UserList_Dialog;
+	@FindBy(xpath = "//h5[normalize-space()='Template User Permission']")
+	private WebElement Template_UserPermission_Dialog;
+	@FindBy(xpath = "//*[@id=\"templatePermissionApply\"]")
+	private WebElement TemplateApply;
+	@FindBy(xpath = "//button[@id='templatePermissionClose']")
+	private WebElement TemplateClose;
+
 	// New Word Document
 
 	public void getNew_Word_Document_Option() {
@@ -321,7 +329,8 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 	public void getPdf_document_Advancedviewing() {
 		Select drop = new Select(Pdf_document_Advancedviewing);
-		drop.selectByVisibleText("Advanced viewing");
+		//drop.selectByVisibleText("Advanced viewing");
+		drop.selectByIndex(1);
 
 	}
 
@@ -354,7 +363,8 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 	public void getPdf_document_Defaultviewing() {
 		Select drop = new Select(Pdf_document_Defaultviewing);
-		drop.selectByVisibleText("Default viewing");
+		//drop.selectByVisibleText("Default viewing");
+		drop.selectByIndex(0);
 
 	}
 
@@ -389,9 +399,8 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Template Created Successfully!";
 		String actualtext = Template_Created_Message_Verify.getText();
-		Assert.assertEquals(actualtext, expectedtext);
-		Reporter.log(Template_Created_Message_Verify.getText(), true);
-
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertAll();
 	}
 
 	public void getMoveto_Templates_Option() {
@@ -405,19 +414,66 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Template Edited Successfully!";
 		String actualtext = EditTemplate_Created_Message_Verify.getText();
-		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertAll();
 
+	}
+
+	public void getTemplate_Denied_Message_Verify() {
+
+		String expectedtext = "Permission to create template denied.";
+		String actualtext = EditTemplate_Created_Message_Verify.getText();
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertAll();
+	}
+
+	public void Verify_Document_Template_OptionDescription() {
+
+		String expectedtext = "Document Templates";
+		String actualtext = DocumentTempOption.getText();
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+
+		String expectedtext1 = "Setting the document templates permission...";
+		String actualtext1 = DocumentTempOptionDescription.getText();
+		softAssert.assertEquals(actualtext1, expectedtext1, "Text verification failed");
+		softAssert.assertAll();
+	}
+
+	public void Verify_Document_Template_AllOptions_onDialog() {
+
+		softAssert.assertTrue(TemplateApply.isDisplayed(), "Apply button is not displayed on the page.");
+		softAssert.assertTrue(TemplateApply.isEnabled(), "Apply button is not enable on the page.");
+		softAssert.assertTrue(TemplateClose.isDisplayed(), "Close button is not displayed on the page.");
+		softAssert.assertTrue(TemplateClose.isEnabled(), "Close button is not enable on the page.");
+
+		String expectedtext = "Document Templates";
+		String actualtext = DocumentTemplate_Dialog.getText();
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
+
+		String expectedtext1 = "*selected users and groups will have the permission to create,modify and delete document templates.";
+		String actualtext1 = DocumentTemplatetext_Dialog.getText();
+		softAssert.assertEquals(actualtext1, expectedtext1, "Text verification failed");
+
+		String expectedtext2 = "Users List";
+		String actualtext2 = UserList_Dialog.getText();
+		softAssert.assertEquals(actualtext2, expectedtext2, "Text verification failed");
+
+		String expectedtext3 = "Template User Permission";
+		String actualtext3 = Template_UserPermission_Dialog.getText();
+		softAssert.assertEquals(actualtext3, expectedtext3, "Text verification failed");
+		softAssert.assertAll();
 	}
 
 	public void getSelect_Office_document_Defaultviewing() {
 		Select sel = new Select(Select_Office_document_Defaultviewing);
-		sel.selectByVisibleText("Default viewing");
-
+		//sel.selectByVisibleText("Default viewing");
+		sel.selectByIndex(0);
 	}
 
 	public void getSelect_Office_document_Advancedviewing() {
 		Select sel = new Select(Select_Office_document_Advancedviewing);
-		sel.selectByVisibleText("Advanced viewing");
+		//sel.selectByVisibleText("Advanced viewing");
+		sel.selectByIndex(1);
 
 	}
 
@@ -425,9 +481,10 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Please select a folder to create document";
 		String actualtext = FolderSelectMessage.getText();
-		Assert.assertEquals(actualtext, expectedtext);
+		softAssert.assertEquals(actualtext, expectedtext);
 		Reporter.log(FolderSelectMessage.getText() + " this validation message should show", true);
 		movingclkElement(CommentOK);
+		softAssert.assertAll();
 
 	}
 
@@ -435,9 +492,10 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Please add pages to the template before creating!";
 		String actualtext = addpagesMessage.getText();
-		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(addpagesMessage.getText() + " this validation message should show", true);
 		movingclkElement(CommentOKbutton);
+		softAssert.assertAll();
 
 	}
 
@@ -445,8 +503,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "*Template name should be specified.";
 		String actualtext = validationerror.getText();
-		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(validationerror.getText() + " this validation message should show", true);
+		softAssert.assertAll();
 
 	}
 
@@ -454,9 +513,10 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "ReportName*   field is required";
 		String actualtext = Reportvaluevalidationerror.getText();
-		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(Reportvaluevalidationerror.getText() + " this validation message should show", true);
 		jsclick(CommentOKbutton);
+		softAssert.assertAll();
 
 	}
 
@@ -464,9 +524,10 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Please enter file name";
 		String actualtext = Filenamevalidation.getText();
-		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(Filenamevalidation.getText() + " this validation message should show", true);
 		jsclick(CommentOKbutton);
+		softAssert.assertAll();
 
 	}
 
@@ -474,19 +535,20 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		String expectedtext = "Document created successfully";
 		String actualtext = NavigateDoc.getText();
-		Assert.assertEquals(actualtext, expectedtext, "Text verification failed");
+		softAssert.assertEquals(actualtext, expectedtext, "Text verification failed");
 		Reporter.log(NavigateDoc.getText() + " this message should show", true);
 		jsclick(NavigateButton);
-
+		softAssert.assertAll();
 	}
 
 	public void getFormmappingvalidation() {
 
 		String expectedtext = "Please add form fields before mapping.";
 		String actualtext = Formmappingvalidation.getText();
-		Assert.assertEquals(actualtext, expectedtext);
+		softAssert.assertEquals(actualtext, expectedtext);
 		Reporter.log(Formmappingvalidation.getText() + " this validation message should show", true);
 		jsclick(FormOKbutton);
+		softAssert.assertAll();
 	}
 
 	public void verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {
@@ -511,8 +573,6 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			// Folder navigation dialog not open
 		}
 		Thread.sleep(6000);
-		Refresh_Button();
-		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
@@ -527,25 +587,48 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Pdf Document and set Default View Option", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
+
+		// Validate Template Tab
+
+		if (Templates_MenuOption.isDisplayed()) {
+
+			Reporter.log("Template tab is displayed successfully.", true);
+		} else {
+			Reporter.log("Template tab is NOT displayed.", true);
+		}
+
+		softAssert.assertTrue(Templates_MenuOption.isDisplayed(), "Template tab is not displayed");
+		Thread.sleep(6000);
 		movingclkElement(Templates_MenuOption);
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Tab", true);
-		// Assign Permission
+
+		// If Create Template perssion is Denied then Assign Permission to User
 		if (TemplateDeniedmessageok.isDisplayed() == true) {
+			Thread.sleep(3000);
+			Reporter.log("Document Template permission is Denied for Selected User need to assign Document Template permission", true);
+			getTemplate_Denied_Message_Verify();
+			Thread.sleep(2000);
 			jsclick(TemplateDeniedmessageok);
+			Thread.sleep(4000);
 			LogoutPage();
 			LoginAdminUser();
 			movingclkElement(Setting_Icon);
 			Thread.sleep(3000);
 			Reporter.log("Click on Setting Icon", true);
+			Verify_Document_Template_OptionDescription();
+			Thread.sleep(2000);
 			jsclick(Select_Document_Template);
 			Thread.sleep(3000);
 			Reporter.log("Click on Document Template", true);
+			Verify_Document_Template_AllOptions_onDialog();
+			Thread.sleep(4000);
 			movingclkElement(Select_Userlist);
 			Thread.sleep(3000);
 			Reporter.log("Click on User List dropdown", true);
@@ -553,14 +636,16 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			Thread.sleep(3000);
 			Reporter.log("Select all Users from Dropdown", true);
 			movingclkElement(TemplateApply);
-			Thread.sleep(3000);
 			Reporter.log("Click on Apply button", true);
+			Thread.sleep(2000);
+			getToastmessage();
 			LogoutPage();
 			LogDipakUser();
 			movingclkElement(Templates_MenuOption);
 		} else {
 			System.out.println("user have Template document permission");
 		}
+		Thread.sleep(6000);
 		jsclick(Destination_Folder_Textbox);
 		Thread.sleep(6000);
 		Reporter.log("Click on Destination Folder Textbox", true);
@@ -574,19 +659,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("select a Folder", true);
 		jsclick(OK_Button_BrowseforFolder);
-		Thread.sleep(9000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
-		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(6000);
-		Reporter.log("Select Value from Document type Dropdown", true);
-		jsclick(Select_ReportName_Test);
-		Thread.sleep(6000);
-		Reporter.log("Select Report Name Textbox", true);
-		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
-		Reporter.log("Enter value into Report Name field", true);
 		movingclkElement(Move_To_PlusIcon);
 		getBrowse_Option();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Reporter.log("Browse Document page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
 		Thread.sleep(6000);
@@ -599,6 +676,17 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			System.out.println("Alert is not present...");
 		}
 		Reporter.log("By using AutoIT add file from external folder", true);
+		jsclick(getSelect_Document_Type_Dropdown());
+		Thread.sleep(8000);
+		Reporter.log("Select Value from Document type Dropdown", true);
+		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
+		Reporter.log("Enter value into Report Name field", true);
+		Thread.sleep(8000);
+		movingclkElement(Move_To_PlusIcon);
+		getBrowse_Option();
+		Thread.sleep(3000);
+		Reporter.log("Browse Document page", true);
+		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
 		Thread.sleep(6000);
 		jsclick(Save_Template_Button);
 		Reporter.log("Click on Save Template button", true);
@@ -632,9 +720,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			// Delete Existing Template and create new
 
 			jsclick(Template_Created_OK_button);
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			getMoveto_Templates_Option();
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			Reporter.log("Mousehover to Template Tab", true);
 			movingclkElement(Select_Created_Template);
 			Reporter.log("Select Created Template Page", true);
@@ -677,13 +765,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			Thread.sleep(9000);
 			Reporter.log("Click on Ok button", true);
 			jsclick(getSelect_Document_Type_Dropdown());
-			Thread.sleep(6000);
+			Thread.sleep(8000);
 			Reporter.log("Select Value from Document type Dropdown", true);
-			jsclick(Select_ReportName_Test);
-			Thread.sleep(6000);
-			Reporter.log("Select Report Name Textbox", true);
 			Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
 			Reporter.log("Enter value into Report Name field", true);
+			Thread.sleep(8000);
 			movingclkElement(Move_To_PlusIcon);
 			getBrowse_Option();
 			Thread.sleep(3000);
@@ -701,8 +787,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			Reporter.log("By using AutoIT add file from external folder", true);
 			Thread.sleep(6000);
 			movingclkElement(Move_To_PlusIcon);
-			getBrowse_Option();
 			Thread.sleep(2000);
+			getBrowse_Option();
+			Thread.sleep(3000);
 			Reporter.log("Browse Document page", true);
 			Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScript.exe");
 			Thread.sleep(6000);
@@ -730,14 +817,15 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			System.out.println("Template Created succesfully");
 		}
 
+		Thread.sleep(6000);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Verifying Template Created succesfully Message", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		Reporter.log("Verifying to CreateorBrowse Template Defaultviewing", true);
-		Reporter.log("Click on Refresh button", true);
+
 	}
 
 	public void Verify_to_Edit_and_Delete_DefaultTemplate() throws Exception {
@@ -761,8 +849,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Refresh_Button();
-		Thread.sleep(6000);
+
 		getMoveto_Templates_Option();
 		Thread.sleep(6000);
 		Reporter.log("Mousehover to Template Tab", true);
@@ -839,9 +926,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Refresh_Button();
-		Thread.sleep(6000);
-		Reporter.log("Click on Refresh button", true);
+
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -852,8 +937,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Office Document and set Advanced View Option", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -876,20 +962,18 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button of Browse for folder Dialog", true);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		Reporter.log("Select Value from Document Type Dropdown ", true);
-		jsclick(Select_ReportName_Test);
-		Thread.sleep(6000);
-		Reporter.log("Click on Report Name Textbox", true);
 		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
 		Reporter.log("Enter value into Report Name field", true);
+		Thread.sleep(8000);
 		movingclkElement(Move_To_PlusIcon);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse Document page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\OfficeDoc\\FileUploadOfficedoc.exe");
 		Reporter.log("By using AutoIT add file from external folder", true);
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		jsclick(Save_Template_Button);
 		Reporter.log("Click on Save Template button", true);
 		jsclick(Template_Description_No_button);
@@ -914,7 +998,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Description box Ok button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Verifying Template created successfully Message", true);
 		jsclick(Template_Created_OK_button);
 		Reporter.log("Click on Template Created Ok button", true);
@@ -942,8 +1026,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Refresh_Button();
-		Thread.sleep(6000);
+
 		getMoveto_Templates_Option();
 		Thread.sleep(6000);
 		Reporter.log("Mousehover to Template Tab", true);
@@ -1017,9 +1100,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Refresh_Button();
-		Thread.sleep(6000);
-		Reporter.log("Click on Refresh button", true);
+
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1030,8 +1111,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Pdf Document and set Advanced view Option", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
+		Refresh_Button();
+		Thread.sleep(6000);
 		jsclick(Templates_MenuOption);
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Tab", true);
@@ -1051,20 +1135,18 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		Reporter.log("Select value from Document type dropdown", true);
-		jsclick(Select_ReportName_Test);
-		Thread.sleep(2000);
-		Reporter.log("Click on Report Name Textbox", true);
 		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		Reporter.log("Enter value into Report Name field", true);
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(2000);
 		getNew_pdf_Document_Option();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Browse Document Page", true);
 		getEnter_pdf_File_Name();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 		Reporter.log("Enter Pdf file Name", true);
 		jsclick(pdfViewer);
 		Thread.sleep(6000);
@@ -1073,13 +1155,13 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Actions act = new Actions(driver);
 		act.click(Textbox).moveToElement(Add_Textbox_Onpage).click().build().perform();
 
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Select and Add Textbox on  Page", true);
 		jsclick(Click_Formmapper);
 		Thread.sleep(6000);
 		Reporter.log("Click on Form mapping Option", true);
 		getSelect_Formfield();
-		Thread.sleep(8000);
+		Thread.sleep(6000);
 		Reporter.log("Select Form field", true);
 		jsclick(FormOK);
 		Thread.sleep(6000);
@@ -1103,11 +1185,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Template Created Successfully", true);
 		jsclick(Template_Created_OK_button);
 		Reporter.log("Verifying to CreateorBrowse Formmapping Template advancedviewing", true);
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 	}
 
 	public void Verify_to_Edit_and_Delete_Formfield() throws Exception {
@@ -1130,9 +1212,10 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Thread.sleep(4000);
+
+		Thread.sleep(6000);
 		getMoveto_Templates_Option();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Template Tab", true);
 		movingclkElement(Select_Created_Template);
 		Thread.sleep(6000);
@@ -1204,9 +1287,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Refresh_Button();
-		Thread.sleep(6000);
-		Reporter.log("Click on Refresh button", true);
+
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1220,10 +1301,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select PdfDocument and set Default View Option", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		Refresh_Button();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 	}
 
@@ -1248,8 +1330,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		Refresh_Button();
-		Thread.sleep(6000);
+
 		movingclkElement(Setting_Icon);
 		Thread.sleep(6000);
 		Reporter.log("Click on Setting Icon", true);
@@ -1263,25 +1344,47 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Pdf Documnet and set as Default view", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
+
+		// Validate Template Tab
+
+		if (Templates_MenuOption.isDisplayed()) {
+
+			Reporter.log("Search tab is displayed successfully.", true);
+		} else {
+			Reporter.log("Search tab is NOT displayed.", true);
+		}
+
+		softAssert.assertTrue(Templates_MenuOption.isDisplayed(), "Template tab is not displayed");
+		Thread.sleep(6000);
 		jsclick(Templates_MenuOption);
 		Thread.sleep(3000);
 		Reporter.log("Click on Template Tab", true);
 
+		// If Create Template perssion is Denied then Assign Permission to User
 		if (TemplateDeniedmessageok.isDisplayed() == true) {
+			Thread.sleep(3000);
+			getTemplate_Denied_Message_Verify();
+			Thread.sleep(2000);
 			jsclick(TemplateDeniedmessageok);
+			Thread.sleep(4000);
 			LogoutPage();
 			LoginAdminUser();
 			movingclkElement(Setting_Icon);
 			Thread.sleep(3000);
 			Reporter.log("Click on Setting Icon", true);
+			Verify_Document_Template_OptionDescription();
+			Thread.sleep(2000);
 			jsclick(Select_Document_Template);
 			Thread.sleep(3000);
 			Reporter.log("Click on Document Template", true);
+			Verify_Document_Template_AllOptions_onDialog();
+			Thread.sleep(4000);
 			movingclkElement(Select_Userlist);
 			Thread.sleep(3000);
 			Reporter.log("Click on User List dropdown", true);
@@ -1289,14 +1392,16 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			Thread.sleep(3000);
 			Reporter.log("Select all Users from Dropdown", true);
 			movingclkElement(TemplateApply);
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			Reporter.log("Click on Apply button", true);
+			getToastmessage();
 			LogoutPage();
 			LogDipakUser();
 			movingclkElement(Templates_MenuOption);
 		} else {
 			System.out.println("user have Template document permission");
 		}
+
 		jsclick(Destination_Folder_Textbox);
 		Thread.sleep(6000);
 		Reporter.log("Click on Destination Folder TextBox", true);
@@ -1336,16 +1441,17 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 	public void verify_message_addPages_Using_SaveandClearButton() throws Exception {
 
 		Reporter.log("Test Scenario 2 : Verifying message add Pages Using Save and Clear button ", true);
+
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
-		}
-		if (Nobutton.isDisplayed() == true) {
-			movingclkElement(Nobutton);
-		} else {
-			// Saving dialog not present
 		}
 		Thread.sleep(6000);
 		jsclick(Save_Template_Button);
@@ -1373,7 +1479,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Save Template button", true);
 		getFolder_ErrorMessage();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Verified Error message", true);
 		Reporter.log("Add pages message verified", true);
 	}
@@ -1382,22 +1488,23 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 
 		Reporter.log("Test Scenario 3 : Verifying Textbox Name and Templatename validation ", true);
 
+		if (Nobutton.isDisplayed() == true) {
+			movingclkElement(Nobutton);
+		} else {
+			// Saving dialog not present
+		}
 		try {
 			jsclick(Cancel_Button_BrowseforFolder);
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// Folder navigation dialog not open
 		}
-		if (Nobutton.isDisplayed() == true) {
-			movingclkElement(Nobutton);
-		} else {
-			// Saving dialog not present
-		}
 		Thread.sleep(6000);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		Reporter.log("Select Value from Document type Dropdown", true);
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
@@ -1438,9 +1545,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			// Delete Existing Template and create new
 
 			jsclick(Template_Created_OK_button);
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			getMoveto_Templates_Option();
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			Reporter.log("Mousehover to Template Tab", true);
 			movingclkElement(Select_Created_Template);
 			Reporter.log("Select Created Template Page", true);
@@ -1486,6 +1593,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			Thread.sleep(3000);
 			Reporter.log("Select Value from Document type Dropdown", true);
 			movingclkElement(Move_To_PlusIcon);
+			Thread.sleep(1000);
 			getBrowse_Option();
 			Thread.sleep(3000);
 			Reporter.log("Browse Document page", true);
@@ -1502,6 +1610,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			Reporter.log("By using AutoIT add file from external folder", true);
 			Thread.sleep(6000);
 			movingclkElement(Move_To_PlusIcon);
+			Thread.sleep(1000);
 			getBrowse_Option();
 			Thread.sleep(2000);
 			Reporter.log("Browse Document page", true);
@@ -1532,7 +1641,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		}
 
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Verified Template created successfully", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
@@ -1601,8 +1710,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select PdfC Document and set as Default View", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -1625,7 +1735,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button", true);
 		jsclick(getSelect_Document_Type_Dropdown());
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Select Document type dropdown", true);
 		jsclick(Select_ReportName_Test);
 		Thread.sleep(3000);
@@ -1635,6 +1745,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
@@ -1649,10 +1760,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 			System.out.println("Alert is not present...");
 		}
 		Reporter.log("By using AutoIT add file from external folder", true);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		WebDriverWait wait2 = new WebDriverWait(driver, 20);
 		wait2.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
@@ -1682,7 +1794,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Description dialog OK button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Verified Template created successfully", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
@@ -1720,20 +1832,26 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		WebDriverWait wait3 = new WebDriverWait(driver, 20);
 		wait3.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getBrowse_Option();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
 		Runtime.getRuntime().exec("D:\\DipakAutoit\\FileUploadScriptpdf.exe");
 		Thread.sleep(6000);
+		try {
 		WebDriverWait wait4 = new WebDriverWait(driver, 20);
 		wait4.until(ExpectedConditions.alertIsPresent());
 		Alert alt1 = driver.switchTo().alert();
 		alt1.accept();
+		}catch(Exception e) {
+			System.out.println("Alert is not Present");
+		}
 		Reporter.log("By using AutoIT add file from external folder", true);
 		Thread.sleep(3000);
 		WebDriverWait wait5 = new WebDriverWait(driver, 20);
 		wait5.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse a Document Page", true);
@@ -1805,6 +1923,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			System.out.println("user alreday Logged");
 		}
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
@@ -1830,8 +1949,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Office document and set as Advanced view", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		jsclick(Templates_MenuOption);
 		Thread.sleep(6000);
 		Reporter.log("Click on Templates Tab", true);
@@ -1861,6 +1981,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getNew_Word_Document_Option();
 		Thread.sleep(2000);
 		Reporter.log("Browse Word document", true);
@@ -1893,10 +2014,11 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Enter Excel file name", true);
 		jsclick(Open_Excel_page);
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		WebDriverWait wait2 = new WebDriverWait(driver, 20);
 		wait2.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getBrowse_Option();
 		Thread.sleep(3000);
 		Reporter.log("Browse  Document Page", true);
@@ -1928,7 +2050,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(8000);
 		Reporter.log("Click on Ok button", true);
 		getTemplate_Created_Message_Verify();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Verified Template created successfully", true);
 		jsclick(Template_Created_OK_button);
 		Thread.sleep(6000);
@@ -1960,7 +2082,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Refresh_Button();
 		Thread.sleep(6000);
 		getMoveto_Templates_Option();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		Reporter.log("Mousehover to Template Tab", true);
 		Reporter.log("Click on Refresh button", true);
 		movingclkElement(Select_Created_Template);
@@ -1992,6 +2114,7 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			System.out.println("user alreday Logged");
 		}
+
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
@@ -2016,8 +2139,9 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Pdf document and set as Advanced view", true);
 		movingclkElement(Apply_button);
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		Reporter.log("Click on Apply button", true);
+		getToastmessage();
 		jsclick(Templates_MenuOption);
 		Thread.sleep(6000);
 		Reporter.log("Click on Template Tab", true);
@@ -2040,13 +2164,14 @@ public class TemplatePage extends Computhink.Generic.BaseClass {
 		Thread.sleep(6000);
 		Reporter.log("Select Document type dropdown", true);
 		jsclick(Select_ReportName_Test);
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Reporter.log("Click on Report Name", true);
 		Select_ReportName_Test.sendKeys(Templates_excelRead(1, 0));
 		Reporter.log("Enter value Report Name Textbox", true);
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(Move_To_PlusIcon));
 		movingclkElement(Move_To_PlusIcon);
+		Thread.sleep(1000);
 		getNew_pdf_Document_Option();
 		Thread.sleep(6000);
 		Reporter.log("Browse New Pdf document", true);
