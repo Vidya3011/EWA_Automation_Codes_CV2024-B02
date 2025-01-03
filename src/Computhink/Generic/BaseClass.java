@@ -50,6 +50,7 @@ import Computhink.Pom.ToDoListTab;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 //Dipak Automation codes
+//Merging the code into Master branch
 
 public class BaseClass {
 
