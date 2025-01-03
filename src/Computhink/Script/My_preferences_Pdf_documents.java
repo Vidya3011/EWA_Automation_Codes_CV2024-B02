@@ -13,10 +13,10 @@ import Computhink.Pom.My_Preferences;
 //Dipak Automation Coading
 
 public class My_preferences_Pdf_documents extends Computhink.Generic.BaseClass {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
+
 	/*
 	 * @BeforeClass
 	 * 
