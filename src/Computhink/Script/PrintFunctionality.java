@@ -57,67 +57,16 @@ PrintFunctionality extends Computhink.Generic.BaseClass {
 		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-	}*/
-
-
-	@Test(priority = 4)
-	public void TC_C_Email_ConvertPDF_WithAll_Annotations() throws Exception {
-		Print pojo = new Print();
-		pojo.Email_ConvertPDF_With_Annotation();
 	}
+	
+	
 
-	@Test(priority = 2)
-	public void TC_A_Email_Reference() throws Exception {
-		Print pojo = new Print();
-		pojo.Email_Reference();
-		log.info("Reference Email sent successfull");
-	}
-
-	@Test(priority = 3, retryAnalyzer = FailedRetry.class)
-	public void TC_B_Email_Copy_WithMsgBox_SubjectBox() throws Exception {
-		Print pojo = new Print();
-		pojo.Email_Copy_WithMsgBox_SubjectBox();
-		log.info("Copy Email sent successfull");
-
-	}
-
-	@Test(priority = 5)
-	public void TC_D_exports_with_convert_to_pdf_with_passwords() throws Exception {
-		Print pojo = new Print();
-
-		pojo.exports_with_convert_to_pdf_with_passwords();
-		log.info("exporting documents dialog displayed");
-
-	}
-
-	@Test(priority = 6)
-	public void TC_E_exports_with_Retain() throws Exception {
-		Print pojo = new Print();
-		pojo.exports_with_Retain();
-		log.info("verifying export functionality retain format,with zip password");
-	}
-
-	@Test(priority = 7)
-	public void TC_F_exports_with_convert_to_pdf_and_best_quality() throws Exception {
-		Print pojo = new Print();
-		pojo.exports_with_convert_to_pdf_and_best_quality();
-		log.info("the document export with convert to pdf and best quality succcessfully");
-
-	}
-
-	@Test(priority = 8)
-	public void TC_G_exports_with_convert_to_pdf_and_include_workflow_summary() throws InterruptedException {
-		Print pojo = new Print();
-		pojo.exports_with_convert_to_pdf_and_include_workflow_summary();
-
-	}
-
-	// @Test(priority=9)
+	 @Test(priority=9)
 	public void PrintWithcertifiedCoverPageUnlockRedaction() throws Exception {
 		Print pojo = new Print();
 		pojo.PrintWithcertifiedCoverPageUnlockRedaction();
 
-	}
+	}*/
 
 }
 

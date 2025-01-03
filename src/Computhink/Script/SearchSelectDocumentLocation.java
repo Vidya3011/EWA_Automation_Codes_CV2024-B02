@@ -43,34 +43,34 @@ public class SearchSelectDocumentLocation extends Computhink.Generic.BaseClass {
 	public static Actions act;
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(SearchSelectDocumentLocation.class);
+	/*
+		@BeforeClass
+		public void ladBrowser() throws Exception {
+			loadBrowser("Chrome");
+		
+			log.info("Chrome Browser Launched");
+			Reporter.log("Chrome Browser launched Successfully...");
+			launch47Url();
+			// launchLocalUrl();
+			Reporter.log("Contentverse URL launched successfully...");
+			log.info("Contentverse URL launched successfully...");
+		}
+		
+		@Test(priority = 1)
+		public void Login() throws Exception {
+		
+			// LogoutPage();
+			loginRNISHA47();
+		
+			Reporter.log("User logged in successfully... ");
+			log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
+			Print pr=new Print();
+			pr.OpenDocumentAndCheckPages();
+		}
+		*/
 
-	@BeforeClass
-	public void ladBrowser() throws Exception {
-		loadBrowser("Chrome");
 	
-		log.info("Chrome Browser Launched");
-		Reporter.log("Chrome Browser launched Successfully...");
-		launch47Url();
-		// launchLocalUrl();
-		Reporter.log("Contentverse URL launched successfully...");
-		log.info("Contentverse URL launched successfully...");
-	}
-	
-	@Test(priority = 1)
-	public void Login() throws Exception {
-	
-		// LogoutPage();
-		loginRNISHA47();
-	
-		Reporter.log("User logged in successfully... ");
-		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-		Print pr=new Print();
-		pr.OpenDocumentAndCheckPages();
-	}
-	
-
-	
-	/*	@Test(priority = 2) // blank search
+		@Test(priority = 2) // blank search
 		public void A_BlankSearch() throws InterruptedException {
 			Reporter.log("Scenario 01: Search tab - blank search");
 			SearchFunction sr = new SearchFunction();
@@ -264,5 +264,5 @@ public class SearchSelectDocumentLocation extends Computhink.Generic.BaseClass {
 	public void CreateAndModifyDate() throws InterruptedException, IOException {
 		SearchFunction sr = new SearchFunction();
 		sr.SavedDocumentDateEnter();
-	}*/
+	}
 }

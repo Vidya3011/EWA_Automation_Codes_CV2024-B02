@@ -1,13 +1,13 @@
 package Computhink.Generic;
 
-import java.awt.AWTException;
+
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -76,20 +76,19 @@ public class BaseClass {
 		if (browserName.equals("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 
-			/*
-			 * System.setProperty("webdriver.chrome.driver",
-			 * "C:\\Users\\nisha.r\\Downloads\\chromedriver-win64\\chromedriver.exe"); //
-			 * driver = new ChromeDriver();
-			 */
+		
 			ChromeOptions options = new ChromeOptions();
 			// options.addArguments("--headless");
 			// options.addArguments("--disable-extensions");
+			driver = new ChromeDriver(options);
+			options.addArguments("--remote-allow-origins=*"); // Resolve version-specific Chrome driver issues
+
 			options.addArguments("--disable-extensions");
 			options.addArguments("--disable-popup-blocking");
 			options.addArguments("--disable-infobars");
 			options.setExperimentalOption("useAutomationExtension", false);
 
-			driver = new ChromeDriver(options);
+			
 			Reporter.log("Chrome driver launched successfull");
 
 		} else if (browserName.equals("edge")) {
@@ -167,7 +166,7 @@ public class BaseClass {
 
 	// 2.
 	public static void launchUrl() throws Exception {
-		driver.get("http://10.4.10.60:8080/CVWeb/cvLgn");
+		driver.get("http://10.4.10.21:8080/CVWeb/cvLgn");
 		ContentVerseURLAndTitleAssertValidation();
 		Reporter.log("EWA URL launched successfull");
 	}
@@ -208,16 +207,18 @@ public class BaseClass {
 				Select sel = new Select(room);
 				sel.selectByIndex(3);
 				Reporter.log("Select a Room", true);
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				// Validate that the room has been selected correctly
 				String selectedRoom = sel.getFirstSelectedOption().getText();
-				System.out.println("Selected Room name: " + selectedRoom);
+				Reporter.log("Selected Room name: " + selectedRoom,true);
 				as.assertEquals(selectedRoom, "Room selection is not correct."); // Assuming "Room 3" is the option
 
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 		
 		
 	}
+	
+	
 	
 	
 	//////////////////////////////////// ====================================================NishaR
@@ -226,7 +227,7 @@ public class BaseClass {
 		SoftAssert as = new SoftAssert(); // Initialize SoftAssert to capture all assertions
 
 		// Wait for the page to load
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 
 		// Find and validate Username input field
 		WebElement UserName = driver.findElement(By.xpath("//input[@id='userName']"));
@@ -895,6 +896,9 @@ public class BaseClass {
 		}
 	}
 
+
+	
+	
 	// Template characters datadriven
 
 	public String Templates_excelRead(int rowNo, int cellNo) throws Exception {
@@ -1246,6 +1250,19 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 
+	
+	public static void ExcelSheetAlert() throws Exception{
+		try {
+		WebElement ExcelAlerrt = driver.findElement(By.xpath("//*[@id=\"messageButtonOK\"]"));
+		jsclick(ExcelAlerrt);
+		}catch(Exception e){
+			System.out.println("Excel Alert Is Not Present....");
+		}
+		
+	}
+	
+	
+	
 	// 4.
 	public static String pageTitle() {
 		String title = driver.getTitle();

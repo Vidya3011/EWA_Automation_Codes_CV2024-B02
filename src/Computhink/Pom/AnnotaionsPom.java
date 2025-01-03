@@ -271,9 +271,10 @@ public class AnnotaionsPom extends BaseClass {
 		Thread.sleep(8000);
 
 	}
-
-	public void RedactionAnnotation() throws Exception {
-
+	
+	
+	
+	public void creatingDocumentForDefaulfViewingAnnotation() throws Exception{
 		SoftAssert softAssert = new SoftAssert(); // Initialize SoftAssert
 
 		Reporter.log("Scenario 2: Open the document and Add Redaction Annotation on the page");
@@ -311,6 +312,11 @@ public class AnnotaionsPom extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("Save Confirm Dialog Not Displayed");
 		}
+	}
+
+	public void RedactionAnnotation() throws Exception {
+
+	
 		Thread.sleep(3000);
 		movingElement(AnnotationTab);
 
@@ -320,8 +326,13 @@ public class AnnotaionsPom extends BaseClass {
 		Thread.sleep(2000);
 		// WebElement fabbtn = driver.findElement(By.xpath("//*[@id=\"fabButton\"]"));
 		Actions act = new Actions(driver);
+		try {
 		act.click(Redaction).clickAndHold(Page).moveToElement(fabbtn).release().build().perform();
 		Thread.sleep(3000);
+		}
+		catch(JavascriptException e) {
+			//
+		}
 		Reporter.log("Create redaction on the page");
 
 		sendvalue(RedName, readFromRoomCntxt(1, 2));

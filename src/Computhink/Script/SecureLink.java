@@ -21,7 +21,7 @@ SecureLink extends Computhink.Generic.BaseClass {
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(SecureLink.class);
 
-	//@BeforeClass
+	@BeforeClass
 	public void ladBrowser() throws Exception {
 		loadBrowser("Chrome");
 

@@ -16,7 +16,7 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 
 	private static org.apache.logging.log4j.Logger log = LogManager.getLogger(DashBoardScript.class);
 
-	/*@BeforeClass
+	@BeforeClass
 	public void ladBrowser() throws Exception {
 		loadBrowser("Chrome");
 	
@@ -36,35 +36,35 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 		
 		Reporter.log("User logged in successfully... ");
 		log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
-	}*/
-
-	@Test(priority = 2)
-	public void TC_1_SearchIconDashBoardFunctionality() throws Exception {
-
-		DashBoardPom db = new DashBoardPom();
-		db.DashBoardSeachIcon();
 	}
 
-	@Test(priority = 3)
-	public void TC_2_NotifiactionIconDashBoardFunctionality() throws Exception {
-
-		DashBoardPom db = new DashBoardPom();
-		db.NotificationIcon();
-	}
-
-	@Test(priority = 4)
-	public void TodoListWFDetailsDashBoardFunctionality() throws Exception {
-
-		DashBoardPom db = new DashBoardPom();
-		db.TodoListWFDetailsfromDb();
-	}
-
-	@Test(priority = 5)
-	public void TC_4_CreateNewDocumentFromDB() throws Exception {
-
-		DashBoardPom db = new DashBoardPom();
-		db.NewDocumentfromDb();
-	}
+		@Test(priority = 2)
+		public void TC_1_SearchIconDashBoardFunctionality() throws Exception {
+	
+			DashBoardPom db = new DashBoardPom();
+			db.DashBoardSeachIcon();
+		}
+	
+		@Test(priority = 3)
+		public void TC_2_NotifiactionIconDashBoardFunctionality() throws Exception {
+	
+			DashBoardPom db = new DashBoardPom();
+			db.NotificationIcon();
+		}
+	
+		@Test(priority = 4)
+		public void TodoListWFDetailsDashBoardFunctionality() throws Exception {
+	
+			DashBoardPom db = new DashBoardPom();
+			db.TodoListWFDetailsfromDb();
+		}
+	
+		@Test(priority = 5)
+		public void TC_4_CreateNewDocumentFromDB() throws Exception {
+	
+			DashBoardPom db = new DashBoardPom();
+			db.NewDocumentfromDb();
+		}
 	
 	@Test(priority = 6)
 	public void TC_5_Contentverse_Document_Report() throws Exception {

@@ -64,11 +64,11 @@
       <class name="Computhink.Script.Print_Email_Export_Negative_Scenerio"/>
     </classes>
   </test>
-  <!-- <test name="Test 15">
+   <test name="Test 15">
        <classes>
       <class name="Computhink.Script.LargeFiles_AutomationTesting"/>
     </classes>
-  </test> -->
+  </test> 
  
    <test name="Test 16">
        <classes>
@@ -111,9 +111,14 @@
       <class name="Computhink.Script.RMC_Custom_Document_Types"/>
     </classes>
   </test> 
-   <!--  <test name="Test20">
+     <test name="Test25">
+       <classes>
+      <class name="Computhink.Script.ZeroPageDocumentCheckingCodesForAllFolder"/>
+    </classes>
+  </test>
+    <test name="Test26">
        <classes>
       <class name="Computhink.Script.UnsupportedFiles"/>
     </classes>
-  </test>   --> 
+  </test>   
  </suite> 
