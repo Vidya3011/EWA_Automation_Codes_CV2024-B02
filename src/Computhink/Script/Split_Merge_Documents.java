@@ -2,13 +2,13 @@ package Computhink.Script;
 
 //Dipak Automation Coading
 
-<<<<<<< HEAD
+
 import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-=======
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ import Computhink.Generic.BaseClass;
 import Computhink.Pom.My_Preferences;
 
 public class Split_Merge_Documents extends BaseClass {
-<<<<<<< HEAD
+
 	
 	@BeforeClass
 	public void loadBrowser() throws Exception {
@@ -40,8 +40,8 @@ public class Split_Merge_Documents extends BaseClass {
 		Reporter.log("User logged in successfully... ");
 		//log.info("Rnisha user logged in 'CVWin19Server.Win2019_TestRoom'successfully... ");
 	}
-=======
->>>>>>> origin/Dipak-Pandurang-Gawali
+
+
 
 	/*
 	 * @BeforeClass
@@ -58,7 +58,7 @@ public class Split_Merge_Documents extends BaseClass {
 	 */
 
 	@Test(priority = 1)
-<<<<<<< HEAD
+
 	public void Create_PDF_Document() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
@@ -77,7 +77,7 @@ public class Split_Merge_Documents extends BaseClass {
 
 		My_Preferences pojo = new My_Preferences();
 		pojo.Verify_Split_Merge_Viewer();
-=======
+
 	public void Create_Documents() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
@@ -89,6 +89,6 @@ public class Split_Merge_Documents extends BaseClass {
 
 		My_Preferences pojo = new My_Preferences();
 		pojo.Select_PdfPage_SplitAll();
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	}
 }
