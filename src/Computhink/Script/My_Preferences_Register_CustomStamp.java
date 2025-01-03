@@ -11,7 +11,7 @@ import Computhink.Pom.My_Preferences;
 
 public class My_Preferences_Register_CustomStamp extends BaseClass {
 
-<<<<<<< HEAD
+
 	/*@BeforeClass
 
 	public void Launch_Browser() throws Exception {
@@ -28,7 +28,7 @@ public class My_Preferences_Register_CustomStamp extends BaseClass {
 
 	}*/
 	
-=======
+
 	/*
 	 * @BeforeClass
 	 * 
@@ -43,7 +43,7 @@ public class My_Preferences_Register_CustomStamp extends BaseClass {
 	 * }
 	 */
 
->>>>>>> origin/Dipak-Pandurang-Gawali
+
 	@Test(priority = 1)
 	public void TC_01_Verify_Register_Custom_Stamp_UI_and_UploadStamp() throws Exception {
 
