@@ -1,6 +1,10 @@
 package Computhink.Script;
 
+<<<<<<< HEAD
 //Dipak Automation script
+=======
+//Dipak Automation Coading
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
@@ -8,6 +12,7 @@ import org.testng.annotations.Test;
 
 import Computhink.Pom.TemplatePage;
 
+<<<<<<< HEAD
 public class Templates_Test extends Computhink.Generic.BaseClass {
 
 	/*
@@ -21,6 +26,26 @@ public class Templates_Test extends Computhink.Generic.BaseClass {
 	 * 
 	 * }
 	 */
+=======
+//Dipak Automation script
+
+public class Templates_Test extends Computhink.Generic.BaseClass {
+
+	/*@BeforeClass
+	public void Launch_Browser() throws Exception {
+
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully.", true);
+
+	}*/
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	@Test(priority = 1)
 	public void TC_01_verify_to_CreateorBrowse_Template_Defaultviewing() throws Exception {

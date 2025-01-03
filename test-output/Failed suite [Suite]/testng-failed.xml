@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]">
+  <listeners>
+    <listener class-name="Generic.ListenersRetry"/>
+  </listeners>
+  <test thread-count="5" name="Test3(failed)(failed)">
+    <classes>
+      <class name="Script.SearchSelectDocumentLocation">
+        <methods>
+          <include name="TextSearchWithSQLData"/>
+          <include name="TextSearchWithAllOftheWords"/>
+          <include name="TextSearchWithAtpartOftheWord"/>
+        </methods>
+      </class> <!-- Script.SearchSelectDocumentLocation -->
+    </classes>
+  </test> <!-- Test3(failed)(failed) -->
+  <test thread-count="5" name="Test4(failed)(failed)">
+    <classes>
+      <class name="Script.RoomContextFunction">
+        <methods>
+          <include name="CustomDocTypesFunction"/>
+        </methods>
+      </class> <!-- Script.RoomContextFunction -->
+    </classes>
+  </test> <!-- Test4(failed)(failed) -->
+  <test thread-count="5" name="Test 11(failed)(failed)">
+    <classes>
+      <class name="Script.SecureLink">
+        <methods>
+          <include name="SecureLinkFromDocumentList"/>
+        </methods>
+      </class> <!-- Script.SecureLink -->
+    </classes>
+  </test> <!-- Test 11(failed)(failed) -->
+  <test thread-count="5" name="Test 12(failed)(failed)">
+    <classes>
+      <class name="Script.PrintFunctionality">
+        <methods>
+          <include name="ladBrowser"/>
+          <include name="Email_ConvertPDF_WithAll_Annotations"/>
+          <include name="exports_with_convert_to_pdf_with_passwords"/>
+        </methods>
+      </class> <!-- Script.PrintFunctionality -->
+    </classes>
+  </test> <!-- Test 12(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->

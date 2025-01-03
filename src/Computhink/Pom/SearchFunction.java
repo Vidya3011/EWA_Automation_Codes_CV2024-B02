@@ -1942,8 +1942,12 @@ public class SearchFunction extends BaseClass {
 			}
 
 		}
+<<<<<<< HEAD
 		
         
+=======
+
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		else if (SummaryBTNverify.isDisplayed()) {
 
 			jsclick(SummaryBTNverify);
@@ -2300,6 +2304,11 @@ VerifyDocumentListingOrNot();
 		jsclick(Refresh_Button(driver));
 		Reporter.log("Page refreshed after search.");
 
+<<<<<<< HEAD
+=======
+		// Final check for SoftAssert
+		so.assertAll();
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	}
 

@@ -11,6 +11,7 @@ import Computhink.Pom.My_Preferences;
 
 public class My_Preferences_Add_signature extends BaseClass {
 
+<<<<<<< HEAD
 	/*
 	 * @BeforeClass
 	 * 
@@ -24,6 +25,23 @@ public class My_Preferences_Add_signature extends BaseClass {
 	 * 
 	 * }
 	 */
+=======
+	/*@BeforeClass
+
+	public void Launch_Browser() throws Exception {
+		loadBrowser("edge");
+		launchUrl();
+		Reporter.log("CVS URL started Successfully", true);
+	}
+
+	@Test
+
+	public void Login_EWA() throws Exception {
+		LogDipakUser();
+		Reporter.log("User has logged in successfully", true);
+
+	}*/
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	@Test(priority = 1)
 	public void TC_01_Verify_Upload_New_Signature() throws Exception {

@@ -82,6 +82,7 @@ public class DocumentContextMenu_Function extends BaseClass {
 		Doc.Verify_CreateFavorites_Document();
 	}
 
+<<<<<<< HEAD
 	// @Test(priority = 9)
 	public void TC_08_Verify_SendToWorkflow_Document() throws Exception {
 
@@ -97,41 +98,65 @@ public class DocumentContextMenu_Function extends BaseClass {
 	}
 
 	@Test(priority = 11)
+=======
+	@Test(priority = 9)
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	public void TC_08_Verify_SendTo_Mail_as_References() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Mail_as_References();
 	}
 
+<<<<<<< HEAD
 	@Test(priority = 12)
 	public void TC_09_Verify_SendTo_Mail_ascopy() throws Exception {
+=======
+	@Test(priority = 10)
+	public void TC_9_Verify_SendTo_Mail_ascopy() throws Exception {
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Mail_ascopy();
 	}
 
+<<<<<<< HEAD
 	@Test(priority = 13)
+=======
+	@Test(priority = 11)
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	public void TC_10_Verify_SendTo_Print() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Print();
 	}
 
+<<<<<<< HEAD
 	@Test(priority = 14)
+=======
+	@Test(priority = 12)
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	public void TC_11_Verify_SendTo_Export() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_Export();
 	}
 
+<<<<<<< HEAD
 	@Test(priority = 15)
+=======
+	@Test(priority = 13)
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	public void TC_12_Verify_SendTo_GenerateDocumentLink() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();
 		Doc.Verify_SendTo_GenerateDocumentLink();
 	}
 
+<<<<<<< HEAD
 	@Test(priority = 16)
+=======
+	@Test(priority = 14)
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	public void TC_13_Verify_SendTo_SecureLink() throws Exception {
 
 		Documents_ContextMenu Doc = new Documents_ContextMenu();

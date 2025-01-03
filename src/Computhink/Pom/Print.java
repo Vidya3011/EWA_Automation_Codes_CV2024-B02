@@ -1480,15 +1480,25 @@ public class Print extends Computhink.Generic.BaseClass {
 		Reporter.log("Click on first securelink dialog box OK button");
 		System.out.println("SecureLink : blank confirm email id");
 		System.out.println(EmailIDMismatchMessage.getText());
+<<<<<<< HEAD
 		// SoftAssert validation for email mismatch message
 				String msg = "Email id Mismatch";
 				softAssert.assertEquals(EmailIDMismatchMessage.getText(), msg, "The mismatch message is incorrect.");
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(3000);
 		Reporter.log("Should not enter email id, just click on second securelink dialog box OK button");
 		jsclick(EmailIDMismatchDialogOKBTN);
 
+<<<<<<< HEAD
 		
+=======
+		// SoftAssert validation for email mismatch message
+		String msg = "Email id Mismatch";
+		softAssert.assertEquals(EmailIDMismatchMessage.getText(), msg, "The mismatch message is incorrect.");
+
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		// Log success message
 		Reporter.log("User should get 'Email id Mismatch' warning alert");
 		Reporter.log("Warning alert displayed...");
@@ -1562,7 +1572,16 @@ public class Print extends Computhink.Generic.BaseClass {
 		jsclick(secureLinkOKBTNsecond);
 		Thread.sleep(5000);
 
+<<<<<<< HEAD
 		
+=======
+		// SoftAssert: Verify if recipient and confirm email addresses are entered correctly
+		String expectedEmail = readFromExMail(2, 0);
+		softAssert.assertEquals(secureLinkReceipientMail.getAttribute("value"), expectedEmail, "Recipient email is incorrect.");
+		softAssert.assertEquals(secureLinkConfirmMail.getAttribute("value"), expectedEmail, "Confirm email is incorrect.");
+
+		// Log success message after email is sent
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log("Secure link Mail has sent successfully...");
 		Reporter.log("Sending secure link mail from viewer page, selected document from page List was sent successfully. Mail has been received.");
 	}
@@ -1649,7 +1668,12 @@ public class Print extends Computhink.Generic.BaseClass {
 		jsclick(secureLinkOKBTNsecond);
 		Thread.sleep(5000);
 		Reporter.log("User clicks on Securelink dialog OK button");
+<<<<<<< HEAD
 		
+=======
+		jsclick(Refresh_Button(driver));
+		Reporter.log("Secure link sent successfully...");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log("Sending secure link mail from document tab, selected document from Document List was sent successfully. Mail has been received.");
 
 		// SoftAssert: Verify if recipient and confirm email addresses are entered correctly
@@ -1658,8 +1682,11 @@ public class Print extends Computhink.Generic.BaseClass {
 		softAssert.assertEquals(secureLinkConfirmMail.getAttribute("value"), expectedEmail, "Confirm email is incorrect.");
 		softAssert.assertEquals(secLinkReceipientMailAgain.getAttribute("value"), expectedEmail, "Recipient email again is incorrect.");
 		softAssert.assertEquals(secLinkConfirmtMailAgain.getAttribute("value"), expectedEmail, "Confirm email again is incorrect.");
+<<<<<<< HEAD
 		jsclick(Refresh_Button(driver));
 		Reporter.log("Secure link sent successfully...");
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 
 	@FindBy(xpath = ("//a[@id='advSearchMenuBtn']"))

@@ -10,6 +10,7 @@ import Computhink.Pom.My_Preferences;
 
 public class Create_Open_Update_Document_DefaultView extends Computhink.Generic.BaseClass {
 
+<<<<<<< HEAD
 	/*@BeforeClass
 
 	public void Launch_Browser() throws Exception {
@@ -25,6 +26,21 @@ public class Create_Open_Update_Document_DefaultView extends Computhink.Generic.
 		Reporter.log("User has logged in successfully.", true);
 
 	}*/
+=======
+	/*
+	 * @BeforeClass
+	 * 
+	 * public void Launch_Browser() throws Exception { loadBrowser("edge");
+	 * launchUrl(); Reporter.log("CVS URL started Successfully", true); }
+	 * 
+	 * @Test
+	 * 
+	 * public void Login_EWA() throws Exception { LogDipakUser();
+	 * Reporter.log("User has logged in successfully.", true);
+	 * 
+	 * }
+	 */
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	@Test(priority = 1)
 	public void TC_01_Create_and_Open_document_Default_View() throws Exception {

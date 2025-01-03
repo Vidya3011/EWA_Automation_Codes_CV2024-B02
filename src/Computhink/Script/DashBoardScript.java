@@ -22,7 +22,11 @@ public class DashBoardScript extends Computhink.Generic.BaseClass {
 	
 		log.info("Chrome Browser Launched");
 		Reporter.log("Chrome Browser launched Successfully...");
+<<<<<<< HEAD
 		launch47Url();
+=======
+		launchUrl();
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		// launchLocalUrl();
 		Reporter.log("Contentverse URL launched successfully...");
 		log.info("Contentverse URL launched successfully...");

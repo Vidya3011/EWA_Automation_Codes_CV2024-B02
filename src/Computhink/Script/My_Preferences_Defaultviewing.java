@@ -1,7 +1,10 @@
 package Computhink.Script;
 
+<<<<<<< HEAD
 //Dipak Automation Coading
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +15,11 @@ import org.testng.annotations.Test;
 
 import Computhink.Pom.My_Preferences;
 
+<<<<<<< HEAD
 //Dipak Automation script
+=======
+//Dipak Automation Coading
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 public class My_Preferences_Defaultviewing extends Computhink.Generic.BaseClass {
 
@@ -34,7 +41,10 @@ public class My_Preferences_Defaultviewing extends Computhink.Generic.BaseClass 
 	public void TC_01_Verify_Defaultviewing_Convert_To_PDF() throws Exception {
 
 		My_Preferences pojo = new My_Preferences();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		pojo.Verify_Defaultviewing_Convert_To_PDF();
 
 	}

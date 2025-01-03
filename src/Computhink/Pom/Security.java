@@ -2,7 +2,11 @@ package Computhink.Pom;
 
 //Dipak Automation Coading
 
+<<<<<<< HEAD
 import static org.testng.Assert.assertTrue;
+=======
+import static org.testng.Assert.assertFalse;
+>>>>>>> origin/Dipak-Pandurang-Gawali
 import static org.testng.Assert.assertTrue;
 
 //Dipak Automation script
@@ -14,7 +18,10 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+<<<<<<< HEAD
 import org.asynchttpclient.util.Assertions;
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -44,6 +51,7 @@ public class Security extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//li[normalize-space()='cvadmins']") // Here you can change groupname instaed cvadmins
 	private WebElement Click_Groupcvadmin;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//li[normalize-space()='cvnamed']") // Here you can change groupname instaed cvnamed
 	private WebElement Click_Groupcvnamed;
 
@@ -55,6 +63,22 @@ public class Security extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"cvnamed\"]/li[1]/a/img")
 	private WebElement cvnamed_User;
+=======
+	@FindBy(xpath = "//li[normalize-space()='ECGroup']") // Here you can change groupname instaed EcGroup
+	private WebElement Click_GroupECGroup;
+
+	@FindBy(xpath = "//*[@id=\"menu-content\"]/li[7]/a/span/img")
+	private WebElement EcGroup;
+
+	@FindBy(xpath = "//*[@id=\"menu-content\"]/li[3]")
+	private WebElement cvadmins; 
+	
+	@FindBy(xpath = "//a[normalize-space()='dipak']")
+	private WebElement EcGroup_User;
+
+	@FindBy(xpath = "//a[normalize-space()='dipak']") // User which you want to select
+	private WebElement Select_ValidationUser;
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	@FindBy(xpath = "//*[@id=\"security\"]")
 	private WebElement Security_option;
@@ -230,9 +254,12 @@ public class Security extends Computhink.Generic.BaseClass {
 	@FindBy(xpath = "//*[@id=\"newEntry\"]")
 	private WebElement NewEntry;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//a[normalize-space()='dipak']")
 	private WebElement Select_ValidationUser;
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	@FindBy(xpath = "//*[@id=\"recentMenuBtn\"]")
 	private WebElement MoveTo_Menu_Recent;
 
@@ -268,6 +295,13 @@ public class Security extends Computhink.Generic.BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"copyNodeLi\"]")
 	private WebElement copynode;
+<<<<<<< HEAD
+=======
+	
+	
+	@FindBy(xpath = "//*[@id=\"pasteNodeAnchor\"]")
+	private WebElement pastenode;
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	@FindBy(xpath = "//*[@id=\"renameNodeAnchor\"]")
 	private WebElement Renamenode;
@@ -319,7 +353,11 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(UserSearchbox);
 		UserSearchbox.sendKeys(Security_excelRead(4, 0));
 		Thread.sleep(2000);
+<<<<<<< HEAD
 		jsclick(Click_Groupcvnamed);
+=======
+		jsclick(Click_GroupECGroup);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 
 	public WebElement getSelect_Document_Type_Dropdown() {
@@ -353,13 +391,23 @@ public class Security extends Computhink.Generic.BaseClass {
 
 	public void getSelect_Office_document_Defaultviewing() {
 		Select sel = new Select(Select_Office_document_Defaultviewing);
+<<<<<<< HEAD
 		sel.selectByVisibleText("Default viewing");
+=======
+		//sel.selectByVisibleText("Default viewing");
+		sel.selectByIndex(0);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	}
 
 	public void getPdf_document_Defaultviewing() {
 		Select drop = new Select(Pdf_document_Defaultviewing);
+<<<<<<< HEAD
 		drop.selectByVisibleText("Default viewing");
+=======
+		//drop.selectByVisibleText("Default viewing");
+		drop.selectByIndex(0);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 
 	public void getaddvalidationmessage() {
@@ -404,11 +452,14 @@ public class Security extends Computhink.Generic.BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is already Logged");
 		}
+<<<<<<< HEAD
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
 			// Saving dialog not present
 		}
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		try {
 			Thread.sleep(2000);
 			jsclick(CancelSecuritydialog);
@@ -439,9 +490,15 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on  Security dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
 		Thread.sleep(6000);
 		Reporter.log("Select cvnamed Group", true);
+=======
+		jsclick(EcGroup);
+		Thread.sleep(6000);
+		Reporter.log("Select EcGroup Group", true);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Ok_button_UserDialog);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security dialog Ok button", true);
@@ -468,10 +525,17 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on  Security dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
 		Thread.sleep(6000);
 		Reporter.log("Select cvnamed Group", true);
 		jsclick(cvnamed_User);
+=======
+		jsclick(EcGroup);
+		Thread.sleep(6000);
+		Reporter.log("Select EcGroup Group", true);
+		jsclick(EcGroup_User);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Reporter.log("Select User from Group", true);
 		jsclick(Ok_button_UserDialog);
@@ -546,7 +610,11 @@ public class Security extends Computhink.Generic.BaseClass {
 		selectElement(Select_Folder1);
 		Thread.sleep(2000);
 		Reporter.log("select a Folder", true);
+<<<<<<< HEAD
 		jsclick(OK_Button_BrowseforFolder);
+=======
+		movingclkElement(OK_Button_BrowseforFolder);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Reporter.log("Click on Ok button ", true);
 		getSelect_Document_Type_Dropdown();
@@ -590,6 +658,7 @@ public class Security extends Computhink.Generic.BaseClass {
 		Reporter.log("select a Folder", true);
 		getMoveTo_Menu_RoomName();
 		Reporter.log("Mousehover to Roomname Tab", true);
+<<<<<<< HEAD
 		Thread.sleep(1000);
 		softAssert.assertTrue(!cutnode.isEnabled());
 		softAssert.assertTrue(!copynode.isEnabled());
@@ -601,6 +670,39 @@ public class Security extends Computhink.Generic.BaseClass {
 	    softAssert.assertTrue(!deletenode.isEnabled());
 		softAssert.assertTrue(!Security_option.isEnabled());
 		Thread.sleep(2000);
+=======
+		
+		Thread.sleep(1000);
+		softAssert.assertTrue(cutnode.isEnabled());
+		softAssert.assertTrue(copynode.isEnabled());
+		
+		WebElement delteatt=driver.findElement(By.xpath("//a[@id='deleteNodeAnchor']"));//i made changes
+		if(delteatt.isEnabled()){
+		System.out.println("The delete button is enabled");
+			
+		}
+				
+	
+		Thread.sleep(2000);
+		
+		// For Paste
+		
+		WebElement pasteatt=driver.findElement(By.xpath("//*[@id=\"pasteNodeAnchor\"]"));//i made changes
+		String pastetribute = pasteatt.getAttribute("class");
+		System.out.println(pastetribute);
+		
+		softAssert.assertEquals(pastetribute, "disabled");
+	
+	    
+		Thread.sleep(2000);
+		
+		
+		System.out.println("Update visible");
+	    
+		softAssert.assertTrue(!Security_option.isEnabled());
+		Thread.sleep(2000);
+		
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_DocumentList);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List ", true);
@@ -716,10 +818,17 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
 		Thread.sleep(6000);
 		Reporter.log("Select cvnamed Group", true);
 		jsclick(cvnamed_User);
+=======
+		jsclick(EcGroup);
+		Thread.sleep(6000);
+		Reporter.log("Select EcGroup Group", true);
+		jsclick(EcGroup_User);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Reporter.log("Select User from Group", true);
 		jsclick(Ok_button_UserDialog);
@@ -762,9 +871,12 @@ public class Security extends Computhink.Generic.BaseClass {
 		LogDipakUser();
 		Thread.sleep(6000);
 		Reporter.log("Login EWA with User Credential ", true);
+<<<<<<< HEAD
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		selectElement(Select_Cabinet);
 		Thread.sleep(6000);
 		Reporter.log("Expand a Cabinet", true);
@@ -790,7 +902,11 @@ public class Security extends Computhink.Generic.BaseClass {
 			System.out.println("delete option found disabled");
 		}
 
+<<<<<<< HEAD
 		Thread.sleep(2000);
+=======
+		Thread.sleep(3000);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_DocumentList);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List ", true);
@@ -919,10 +1035,17 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
 		Thread.sleep(6000);
 		Reporter.log("Click on cvnamed Group", true);
 		jsclick(cvnamed_User);
+=======
+		jsclick(EcGroup);
+		Thread.sleep(6000);
+		Reporter.log("Click on EcGroup Group", true);
+		jsclick(EcGroup_User);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Reporter.log("Select from Group", true);
 		jsclick(Ok_button_UserDialog);
@@ -1081,10 +1204,17 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on Security Dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
 		Thread.sleep(6000);
 		Reporter.log("Select Cvnamed Group", true);
 		jsclick(cvnamed_User);
+=======
+		jsclick(EcGroup);
+		Thread.sleep(6000);
+		Reporter.log("Select Cvnamed Group", true);
+		jsclick(EcGroup_User);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(3000);
 		Reporter.log("Select User from Group", true);
 		movingclkElement(Ok_button_UserDialog);
@@ -1137,7 +1267,11 @@ public class Security extends Computhink.Generic.BaseClass {
 		softAssert.assertTrue(Renamenode.isEnabled());
 		softAssert.assertTrue(copynode.isEnabled());
 		softAssert.assertTrue(Security_option.isEnabled());
+<<<<<<< HEAD
 		Thread.sleep(2000);
+=======
+		Thread.sleep(3000);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_DocumentList);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List ", true);
@@ -1602,9 +1736,15 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(6000);
 		Reporter.log("Click on  Security dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
 		Thread.sleep(6000);
 		Reporter.log("Select cvnamed Group", true);
+=======
+		jsclick(EcGroup);
+		Thread.sleep(6000);
+		Reporter.log("Select EcGroup Group", true);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_ValidationUser);
 		Thread.sleep(6000);
 		Reporter.log("Select User from Group", true);
@@ -1868,7 +2008,11 @@ public class Security extends Computhink.Generic.BaseClass {
 		jsclick(Add_Button);
 		Thread.sleep(7000);
 		Reporter.log("Click on Security dialog Add button", true);
+<<<<<<< HEAD
 		jsclick(cvnamed);
+=======
+		jsclick(EcGroup);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(7000);
 		Reporter.log("Select Cvnamed Group", true);
 		jsclick(Select_ValidationUser);
@@ -1941,6 +2085,10 @@ public class Security extends Computhink.Generic.BaseClass {
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 }

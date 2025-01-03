@@ -24,7 +24,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+<<<<<<< HEAD
 import org.testng.Assert;
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -62,9 +65,12 @@ public class Documents_ContextMenu extends BaseClass {
 	@FindBy(xpath = ("//tbody/tr[1]/td[1]/label[1]/span[1]"))
 	private WebElement CheckfirstDocument;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
 	private WebElement Nobutton;
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	@FindBy(xpath = "//*[@id=\"documentListSubMenu\"]")
 	private WebElement MoveTo_Menu_Documents;
 
@@ -73,6 +79,12 @@ public class Documents_ContextMenu extends BaseClass {
 
 	@FindBy(xpath = "//*[@id=\"idSidenav\"]/ul/li[1]/a")
 	private WebElement Click_LogoutOption;
+<<<<<<< HEAD
+=======
+	
+	@FindBy(xpath = "//*[@id=\"messageButtonNo27\"]")
+	private WebElement Nobutton;
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	@FindBy(xpath = "//*[@id=\"takeOwnership\"]")
 	private WebElement Select_Option_TakeOwnership;
@@ -140,6 +152,7 @@ public class Documents_ContextMenu extends BaseClass {
 	@FindBy(xpath = "//*[@id=\"createfavshowAllModelTabel\"]/tbody/tr[1]/td[1]")
 	private WebElement doc;
 
+<<<<<<< HEAD
 	@FindBy(xpath = "//*[@id=\"sendtoworkflow\"]")
 	private WebElement Workflow;
 
@@ -147,6 +160,9 @@ public class Documents_ContextMenu extends BaseClass {
 	private WebElement AutoWorkflow;
 
 	@FindBy(css = ".odd:nth-child(1) > .customDocName")
+=======
+	@FindBy(xpath="//table[@id='documentListTable']/tbody/tr/td[3]")
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	private WebElement customdoc;
 
 	@FindBy(xpath = "//*[@id=\"ownershipMessageModelOk\"]")
@@ -178,9 +194,12 @@ public class Documents_ContextMenu extends BaseClass {
 	@FindBy(xpath = "//*[@id=\"notifySaveBtn\"]")
 	private WebElement savenotify;
 
+<<<<<<< HEAD
 	@FindBy(css = ".odd:nth-child(1) > .customDocName")
 	private WebElement customdocname;
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	@FindBy(xpath = "//*[@id=\"general\"]/div/div[1]/span")
 	private WebElement general;
 
@@ -576,6 +595,7 @@ public class Documents_ContextMenu extends BaseClass {
 
 	}
 
+<<<<<<< HEAD
 	public void getCreate_SendToWorkflow_Document() throws Exception {
 
 		jsclick(Workflow);
@@ -610,6 +630,8 @@ public class Documents_ContextMenu extends BaseClass {
 		Reporter.log("Close the Document", true);
 	}
 
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	public void getClick_signature_Menuoption() throws Exception {
 		Click_signature_Menuoption.click();
 	}
@@ -637,11 +659,23 @@ public class Documents_ContextMenu extends BaseClass {
 		Thread.sleep(6000);
 		jsclick(Select_Folder);
 		Thread.sleep(6000);
+<<<<<<< HEAD
 		jsclick(customdocname);
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
 		wait1.until(ExpectedConditions.alertIsPresent());
 		Alert alt1 = driver.switchTo().alert();
 		alt1.accept();
+=======
+		jsclick(customdoc);
+		try {
+			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alt = driver.switchTo().alert();
+			alt.accept();
+		} catch (Exception e) {
+			System.out.println("Alert is not present...");
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		jsclick(general);
 		Thread.sleep(6000);
@@ -917,13 +951,23 @@ public class Documents_ContextMenu extends BaseClass {
 
 	public void getSelect_Office_document_Defaultviewing() {
 		Select sel = new Select(Select_Office_document_Defaultviewing);
+<<<<<<< HEAD
 		sel.selectByVisibleText("Default viewing");
+=======
+		//sel.selectByVisibleText("Default viewing");
+		sel.selectByIndex(0);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	}
 
 	public void getPdf_document_Defaultviewing() {
 		Select drop = new Select(Pdf_document_Defaultviewing);
+<<<<<<< HEAD
 		drop.selectByVisibleText("Default viewing");
+=======
+		//drop.selectByVisibleText("Default viewing");
+		drop.selectByIndex(0);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	}
 
@@ -952,10 +996,17 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void getmessagevalidation() {
+<<<<<<< HEAD
 
 		String expectedtext = "Email id should not  be Blank.";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Email id should not  be Blank.";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -975,10 +1026,17 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void getmessagevalidationInvalid() {
+<<<<<<< HEAD
 
 		String expectedtext = "Please enter a valid 'To E-mail id'";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter a valid 'To E-mail id'";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -1005,10 +1063,17 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void getmessagevalidationCCEmailInvalid() {
+<<<<<<< HEAD
 
 		String expectedtext = "Please enter a valid 'Cc E-mail id'";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter a valid 'Cc E-mail id'";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -1046,10 +1111,17 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void getmessagevalidationBlankmail() {
+<<<<<<< HEAD
 
 		String expectedtext = "Please enter recipient email id";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter recipient email id";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -1069,10 +1141,17 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void getmessagevalidationConfirmmail() {
+<<<<<<< HEAD
 
 		String expectedtext = "Please enter confirmation email id";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter confirmation email id";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -1101,20 +1180,34 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void getenter_validemailmessage() {
+<<<<<<< HEAD
 
 		String expectedtext = "Please enter a valid  E-mail id";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter a valid  E-mail id";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
 	}
 
 	public void get_Mismatch_validation() {
+<<<<<<< HEAD
 
 		String expectedtext = "Email id Mismatch ";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Email id Mismatch ";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -1215,10 +1308,17 @@ public class Documents_ContextMenu extends BaseClass {
 	}
 
 	public void get_comment_Validation() {
+<<<<<<< HEAD
 
 		String expectedtext = "Please enter the comments.";
 		String actualtext = messageContent.getText();
 		Assert.assertEquals(actualtext, expectedtext);
+=======
+		SoftAssert softassert = new SoftAssert();
+		String expectedtext = "Please enter the comments.";
+		String actualtext = messageContent.getAttribute("value");
+		softassert.assertEquals(actualtext, expectedtext, "Text verified");
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log(messageContent.getText() + " this validation message should show", true);
 		jsclick(messageok);
 
@@ -1292,9 +1392,21 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
+=======
+		try {
+			jsclick(Cancel_Button_BrowseforFolder);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// Folder navigation dialog not open
+		}
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+>>>>>>> origin/Dipak-Pandurang-Gawali
 			// Saving dialog not present
 		}
 		Refresh_Button();
@@ -1418,6 +1530,10 @@ public class Documents_ContextMenu extends BaseClass {
 		Reporter.log("Document Closed Successfully");
 		LogoutPage();
 		Reporter.log("Login EWA with User Credential", true);
+<<<<<<< HEAD
+=======
+		LogDipakUser();
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 
 	public void Verify_Refresh_Option() throws Exception {
@@ -1429,9 +1545,15 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
 		if (Nobutton.isDisplayed() == true) {
 			movingclkElement(Nobutton);
 		} else {
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+>>>>>>> origin/Dipak-Pandurang-Gawali
 			// Saving dialog not present
 		}
 		Refresh_Button();
@@ -1471,6 +1593,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_Document);
 		Thread.sleep(6000);
 		Reporter.log("Check document from Document List", true);
@@ -1498,6 +1628,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		getMoveTo_Menu_Recent();
@@ -1530,6 +1668,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_Document);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List", true);
@@ -1555,6 +1701,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(CheckfirstDocument);
 		Thread.sleep(6000);
 		Reporter.log("Test Scenario 6 : Verifying Delete Option ", true);
@@ -1578,6 +1732,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getVerify_CreateFavorites_Document();
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -1587,6 +1749,7 @@ public class Documents_ContextMenu extends BaseClass {
 		Reporter.log("CreateFavorites Document Functionality verified Successfully", true);
 	}
 
+<<<<<<< HEAD
 	public void Verify_SendToWorkflow_Document() throws Exception {
 
 		Reporter.log("Test Scenario 8 : Verifying Send To Workflow Document ", true);
@@ -1676,6 +1839,8 @@ public class Documents_ContextMenu extends BaseClass {
 		Reporter.log("SendToWorkflow Document Functionality verified Successfully");
 
 	}
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 
 	public void Verify_Notification_on_Document() throws Exception {
 
@@ -1686,11 +1851,22 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			// already logged
 		}
+<<<<<<< HEAD
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
 		selectElement(Select_Cabinet);
 		Thread.sleep(6000);
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+		Refresh_Button();
+		Thread.sleep(6000);
+		Reporter.log("Click on Refresh button", true);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getMoveTo_Menu_Recent();
 		Thread.sleep(6000);
 		Reporter.log("Mousehover on Recent Tab", true);
@@ -1747,6 +1923,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -1783,6 +1967,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		jsclick(Select_Document);
 		Thread.sleep(6000);
 		Reporter.log("Check Document from Document List", true);
@@ -1809,6 +2001,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getSentTo_Print();
 		Reporter.log("SendTo Print Functionality verified Successfully", true);
 
@@ -1829,6 +2029,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getSentTo_Export();
 		Reporter.log("SendTo Export Functionality verified Successfully", true);
 
@@ -1849,6 +2057,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -1861,8 +2077,11 @@ public class Documents_ContextMenu extends BaseClass {
 		getSentTo_GenerateDocumentLink();
 		Thread.sleep(6000);
 		Reporter.log("Document send to Generate Document", true);
+<<<<<<< HEAD
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
+=======
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Reporter.log("SendTo GenerateDocumentLink Functionality verified Successfully", true);
 	}
 
@@ -1881,6 +2100,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -1898,6 +2125,10 @@ public class Documents_ContextMenu extends BaseClass {
 		Reporter.log("SendTo SecureLink Functionality verified Successfully", true);
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
+<<<<<<< HEAD
+=======
+		Thread.sleep(6000);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 
 	public void Verify_BlankToemailID() throws Exception {
@@ -1909,6 +2140,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		Refresh_Button();
 		Thread.sleep(6000);
@@ -1939,6 +2178,15 @@ public class Documents_ContextMenu extends BaseClass {
 	public void Verify_InvalidToEmailId() throws Exception {
 
 		Reporter.log("Test Scenario 2 : Verifying Invalid To Email Id ", true);
+<<<<<<< HEAD
+=======
+		
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		getVerify_SendTo_InvalidEmail();
 		Thread.sleep(6000);
@@ -1951,6 +2199,15 @@ public class Documents_ContextMenu extends BaseClass {
 	public void Verify_InvalidCCEmailId() throws Exception {
 
 		Reporter.log("Test Scenario 3 : Verifying Invalid CC Email Id", true);
+<<<<<<< HEAD
+=======
+		
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		getVerify_SendTo_InvalidCCEmail();
 		Thread.sleep(6000);
@@ -1963,6 +2220,15 @@ public class Documents_ContextMenu extends BaseClass {
 	public void Verify_MailDialog_Cancel_button() throws Exception {
 
 		Reporter.log("Test Scenario 4: Verifying Mail Dialog Cancel button ", true);
+<<<<<<< HEAD
+=======
+		
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		jsclick(DialogCancel);
 		Reporter.log("Click on  Mail dialog Cancel button", true);
@@ -1986,6 +2252,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		getMoveTo_Menu_Documents();
 		Thread.sleep(6000);
@@ -2015,6 +2289,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		getMoveTo_Menu_Documents();
 		Thread.sleep(6000);
@@ -2044,6 +2326,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Thread.sleep(6000);
 		getMoveTo_Menu_Documents();
 		Thread.sleep(6000);
@@ -2126,6 +2416,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreday Logged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -2152,7 +2450,11 @@ public class Documents_ContextMenu extends BaseClass {
 		jsclick(Open_ToDoDocument);
 		Thread.sleep(6000);
 		Reporter.log("Select and Open To Do List Document", true);
+<<<<<<< HEAD
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+=======
+		WebDriverWait wait1 = new WebDriverWait(driver, 10);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		wait1.until(ExpectedConditions.alertIsPresent());
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
@@ -2185,7 +2487,11 @@ public class Documents_ContextMenu extends BaseClass {
 			jsclick(Open_ToDoDocument);
 			Thread.sleep(6000);
 			Reporter.log("Select and Open To Do List Document", true);
+<<<<<<< HEAD
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+=======
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alt = driver.switchTo().alert();
 			alt.accept();
@@ -2194,6 +2500,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			Reporter.log(" user alreday Logging and Workflow document open", true);
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getVerifyReject();
 		Thread.sleep(6000);
 		Reporter.log("Verified Reject Tab", true);
@@ -2221,7 +2535,11 @@ public class Documents_ContextMenu extends BaseClass {
 			jsclick(Open_ToDoDocument);
 			Thread.sleep(6000);
 			Reporter.log("Select and Open To Do List Document", true);
+<<<<<<< HEAD
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+=======
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alt = driver.switchTo().alert();
 			alt.accept();
@@ -2230,6 +2548,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			Reporter.log(" user alreday Logging and Workflow document open", true);
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getVerifyEndWorkflow();
 		Thread.sleep(6000);
 		Reporter.log("Verified End Workflow Tab", true);
@@ -2257,7 +2583,11 @@ public class Documents_ContextMenu extends BaseClass {
 			jsclick(Open_ToDoDocument);
 			Thread.sleep(6000);
 			Reporter.log("Select and Open To Do List Document", true);
+<<<<<<< HEAD
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+=======
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alt = driver.switchTo().alert();
 			alt.accept();
@@ -2266,6 +2596,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			Reporter.log(" user alreday Logging and Workflow document open", true);
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getverifySummary();
 		Thread.sleep(6000);
 		Reporter.log("Verified Workflow Summary Tab", true);
@@ -2289,7 +2627,11 @@ public class Documents_ContextMenu extends BaseClass {
 			jsclick(Open_ToDoDocument);
 			Thread.sleep(6000);
 			Reporter.log("Select and Open To Do List Document", true);
+<<<<<<< HEAD
 			WebDriverWait wait1 = new WebDriverWait(driver, 20);
+=======
+			WebDriverWait wait1 = new WebDriverWait(driver, 10);
+>>>>>>> origin/Dipak-Pandurang-Gawali
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alt = driver.switchTo().alert();
 			alt.accept();
@@ -2298,6 +2640,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			Reporter.log(" user alreday Logging and Workflow document open", true);
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		getverifyComment();
 		Thread.sleep(6000);
 		Reporter.log("Verified Workflow Comment Tab", true);
@@ -2323,6 +2673,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreadyLogged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on the Refresh button", true);
@@ -2367,6 +2725,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreadyLogged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -2391,6 +2757,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreadyLogged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -2418,6 +2792,14 @@ public class Documents_ContextMenu extends BaseClass {
 		} catch (Exception e) {
 			System.out.println("User is alreadyLogged");
 		}
+<<<<<<< HEAD
+=======
+		if(Nobutton.isDisplayed()==true) {
+			movingclkElement(Nobutton);
+		}else {
+			// Saving dialog not present
+		}
+>>>>>>> origin/Dipak-Pandurang-Gawali
 		Refresh_Button();
 		Thread.sleep(6000);
 		Reporter.log("Click on Refresh button", true);
@@ -2454,6 +2836,10 @@ public class Documents_ContextMenu extends BaseClass {
 		Reporter.log("Document Release successfully", true);
 		Refresh_Button();
 		Reporter.log("Click on Refresh button", true);
+<<<<<<< HEAD
 		Thread.sleep(6000);
+=======
+
+>>>>>>> origin/Dipak-Pandurang-Gawali
 	}
 }

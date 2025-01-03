@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>TestNG:  Test 11</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test 11</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Dec 27 13:05:26 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>219 seconds (219984 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Computhink.Script.SecureLink.TC_1_DocumentSendToSecureLink()'><b>TC_1_DocumentSendToSecureLink</b><br>Test class: Computhink.Script.SecureLink<br/>
+<a href="#Output-435014542" onClick='toggleBox("Output-435014542", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-435014542" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-435014542">
+Scenario 01: Document send to securelink from viewer page<br/>
+Expand the cabinet<br/>
+Expand the drawer<br/>
+Expand the folder<br/>
+Open the document<br/>
+Locked message displayed<br/>
+No Alert is present<br/>
+Select a page check box in thumbnail view<br/>
+Click on sendTo tool button<br/>
+Select secure link option<br/>
+Enter the valid mail into securelink email textbox<br/>
+Enter the valid mail into securelink confirm textbox<br/>
+Click the modify check box<br/>
+Click on securelink dialog ok button<br/>
+Enter recipient mail again<br/>
+Enter recipient mail in confirm textbox<br/>
+Secure link Mail has sent successfully...<br/>
+Sending secure link mail from viewer page, selected document from page List was sent successfully. Mail has been received.<br/>
+</div>
+</td>
+<td></td>
+<td>81</td>
+<td>Computhink.Script.SecureLink@62435e70</td></tr>
+<tr>
+<td title='Computhink.Script.SecureLink.Login()'><b>Login</b><br>Test class: Computhink.Script.SecureLink<br/>
+<a href="#Output-1392414086" onClick='toggleBox("Output-1392414086", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1392414086" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1392414086">
+Scenario 01: Log into EWA<br/>
+Enter valid user name into username field<br/>
+UserName Details: Rnisha<br/>
+Enter valid password into password field<br/>
+Select a Room<br/>
+Selected Room name: TestServer_2024B264bit.vw56demo<br/>
+Captcha is not present, proceeding with login.<br/>
+Click Login button<br/>
+Session message did not appear. Proceeding with login.<br/>
+User logged in successfully... <br/>
+</div>
+</td>
+<td></td>
+<td>35</td>
+<td>Computhink.Script.SecureLink@62435e70</td></tr>
+<tr>
+<td title='Computhink.Script.SecureLink.TC_2_SecureLinkFromSearchTab()'><b>TC_2_SecureLinkFromSearchTab</b><br>Test class: Computhink.Script.SecureLink<br/>
+<a href="#Output-2130697476" onClick='toggleBox("Output-2130697476", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2130697476" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2130697476">
+Scenario 03: Document send to securelink from Search list page<br/>
+Click on search tab<br/>
+Click on find button<br/>
+Click on document page check box<br/>
+Mouse hover on document tab<br/>
+Click on sendto submenu<br/>
+Click on securelink option<br/>
+Enter valid email<br/>
+Enter valid email id on confirm mail text box<br/>
+Click on secure link ok button<br/>
+Enter recipient mail <br/>
+Confirm the recipient mail <br/>
+Click on securelink dialog OK button<br/>
+Securelink sent successfully...<br/>
+Searching the document and select the document from searchList, the selected document was sent successfully... Mail has received.<br/>
+</div>
+</td>
+<td></td>
+<td>52</td>
+<td>Computhink.Script.SecureLink@62435e70</td></tr>
+<tr>
+<td title='Computhink.Script.SecureLink.TC_3_SecureLinkFromDocumentList()'><b>TC_3_SecureLinkFromDocumentList</b><br>Test class: Computhink.Script.SecureLink<br/>
+<a href="#Output-1107130176" onClick='toggleBox("Output-1107130176", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1107130176" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1107130176">
+Scenario 02: Document send to securelink from Document page<br/>
+Scenario 02: Document send to securelink from Document page<br/>
+Click on recent folder tab<br/>
+Open the recent folder<br/>
+Click on document page check box<br/>
+Mouse hover on document tab<br/>
+Click sendto submenu securelink option<br/>
+Enter the valid email id<br/>
+Enter the mail id in confirm mail textbox<br/>
+Click on modify check box<br/>
+Click on securelink dialog OK button<br/>
+Enter recipient mail<br/>
+Enter confirm mail<br/>
+User clicks on Securelink dialog OK button<br/>
+Secure link sent successfully...<br/>
+Sending secure link mail from document tab, selected document from Document List was sent successfully. Mail has been received.<br/>
+</div>
+</td>
+<td></td>
+<td>36</td>
+<td>Computhink.Script.SecureLink@62435e70</td></tr>
+</table><p>
+</body>
+</html>
